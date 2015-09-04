@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila">
+    <title>A401. Funcions I</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="css/m03b2Activities.css" rel="stylesheet">
+    <link href="css/scrolling-slides.css" rel="stylesheet">
+    <link href="css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL TOP BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL TOP BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li>
+                          <li><a href="#slc-toKnow">Què cal saber</a></li> 
+                          <li><a href="#slc-toDo">Què cal fer</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END MENU -->
+    </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A401 - Funcions</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                 <p>Resulta realment difícil realitzar implementacions complexes, escrivint tota una aplicació d'una tirada, des de la primera línia de codi a la darrera. Això només es possible si es tracta de petits programes com els que heu anat fent al bloc 1 d'aquest mòdul. l'augment de la complexitat ens obligarà a dividir l'aplicació en petites porcions, més senzilles de planificar i implementar sense errors.</p>
+                                 <p>Els llenguatges de programació disposen de diverses formes de dividir el codi. Una de les més esteses s'aconsegueix amb el que s'anomenen <strong><em>funcions</em></strong>.</p>
+                                 <p>Aquesta activitat us permetrà descobrir com cal implementar i usar <em>funcions</em>, de manera que us serveixi de pràctica per poder-les fer servir més endavant quan calgui començar a implementar el projecte.</p>
+                                 <p>En primer lloc haureu de llegir l'apartat <em><a href="#slc-toKnow">Què cal saber</a></em>. Allà, se us explicaran els coneixements bàsics per poder realitzar les vostres primeres funcions </p>
+                                 <p>Després caldrà que feu els exercicis que se us demana a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em>. Es tracta d'un conjunt d'exercicis que us ajudaran a consolidar l'aprenentatge anterior.</p>
+                                 <p>A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions</p> 
+                                 <p>Finalment, a l'apartat <em><a href="#slc-toContinue">Com continuar</a></em>, us redirigirà a la següent activitat. </p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION  toknow ================-->    
+            <section id="slc-toKnow" class="vsections">
+                <!--=========== BEGIN SUBSECTION Definició informal ================-->    
+                <section id="slc-toKnow10" class=" section">
+                    <div class="container">  <!--Bootstrap container-->
+                        <!-- header -->            
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Funcions</h2>
+                                     <h3 >Què és una funció?</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <!-- body -->            
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <div id="slider1_container" data-u="slider" data-rate="0.65" data-min-width="400px" style="position: relative; top: 0px; left: 0px; width: 700px; height: 250px;float:left;margin-right:10px">
+                                        <!-- Slides Container -->
+                                        <div data-u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 700px; height: 250px;">
+                                            <div class=jssorTitle> FUNCIONS
+                                            </div>
+                                            <div>
+                                                <img data-u="image" src="images/activities/funcioDiguesHola.png" />
+                                                <div data-u="caption" data-t="L-*|B" data-d="-300" style="position: absolute; left: 50px; top: 105px; width: 100%; height: 50px; line-height: 40px; text-align: center; opacity: 0.4; clip: rect(0px 630px 140px 0px); background-color: rgb(216, 0, 0);"> </div>
+                                                <div data-u="caption" data-t="CLIP|L" data-d=-300 style="position:absolute;left:320px;top:80px;width:360px;height:40px;font-size:36px;color:#D80000;line-height:40px; text-align: center;">Línies de codi</div>
+                                                <div data-u="caption" data-t="L-*|B" data-d="-300" style="position:absolute;left:65px;top:85px; width: 96px; height: 20px; line-height: 40px; text-align: center; opacity: 0.4; clip: rect(0px 630px 140px 0px); background-color: #8B2323;"> </div>
+                                                <div data-u="caption" data-t="CLIP|L" data-d=-300 style="position:absolute;left:7px;top:60px;width:160px;height:40px;font-size:36px;color:#8B2323;line-height:40px; text-align: center;">Nom</div>
+                                            </div>
+                                            <div>
+                                                <img data-u="image" src="images/activities/equivalenciaFuncioCodi.png" />
+                                                <div data-u="caption" data-t="CLIP|L" data-d="-300" style="position: absolute; left: 10px; top: 40px; width: 360px; height: 40px; font-size: 36px; color: rgb(139, 111, 24); line-height: 40px; text-align: center; clip: rect(0px 360px 40px 0px);">Ambdues execucions</div>
+                                                <div data-u="caption" data-t="CLIP|L" data-d="-300" style="position: absolute; left: 255px; top: 170px; width: 460px; height: 40px; font-size: 36px; color: rgb(139, 111, 24); line-height: 40px; text-align: center; clip: rect(0px 630px 40px 0px);">donen el mateix resultat</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>Informalment podem dir que una funció és un conjunt de línies de codi identificades per un nom, de manera que el llenguatge de programació pot reconèixer el codi a través del nom. Així, la majoria de llenguatges de programació poden executar el codi d'una funció fent només referència al seu nom.</p>
+                                    <p>És a dir, com podeu veure a l'exemple, és equivalent escriure les tres línies de codi contingudes a la funció  <em>diguesHola</em> que invocar el seu nom com si fos una instrucció del llenguatge.</p>
+                                    <p>En el context del llenguatge Java diem que un parell de claus delimiten un bloc de codi, en referencia al conjunt d'instruccions. A partir d'ara usarem indistintament conjunt de línies de codi o bloc de codi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION definició informal  ================-->    
+                
+                <!--=========== BEGIN SUBSECTION definició formal ================-->    
+                <section id="slc-toKnow20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Funcions</h2>
+                                     <h3 >Definició formal</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>La definició formal posa l'èmfasi en el que la funció fa. Al material didàctic del mòdul podeu trobar la definició formal de funció: </p>
+
+                                    <p class="iocimportant">En general dins dels llenguatges de programació, s’anomena <em>funció</em> a un conjunt d’instruccions amb <strong>un objectiu comú</strong> que es declaren de manera explícitament diferenciada dins del codi font mitjançant una etiqueta o identificador.</p>
+                                    <p>És important destacar d'aquesta definició, el fet que les instruccions no poden ser línies de codi agafades aleatòriament d'un programa, sinó que es troben agrupades per alguna raó específica, per aconseguir un objectiu comú o dit d'una altra manera, per realitzar una tasca concreta.</p>
+                                    <p>De fet, s'anomenen <em>funcions</em> per la seva semblança amb la paraula homònima de l'àmbit matemàtic. Des de la perspectiva matemàtica, el concepte de funció és relaciona amb una <strong>transformació ben definida</strong> d'un o més valors (<em>entrada</em>). La transformació dóna com a resultat un valor (sortida) que depèn directament dels valors d'entrada.</p>
+                                    <p>Són exemples de funcions matemàtiques les sumes, restes i en general qualsevol operació o combinació d'operacions. Algunes funcions poden arribar a ser realment complexes, però totes compleixen el requisit que sempre obtindrem el mateix resultat si fem servir les mateixes entrades.</p>
+                                    <p>De forma similar, les funcions dels llenguatges de programació s'han de codificar per tal aconseguir realitzar una <em>tasca ben definida</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION definició formal ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Operativa bàsica ================-->    
+                <section id="slc-toKnow25" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Funcions</h2>
+                                     <h3 >Operativa bàsica</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Un cop donada la definició, convé que us adoneu que, encara que sense saber-ho, heu estat usant funcions des de que vàreu començar aquest mòdul en el bloc 1. Això és així perquè el llenguatge <em>Java</em> obliga a escriure totes les instruccions dins d'alguna funció. No és possible escriure codi fora de les funcions, el llenguatge no sabria interpretar-lo. És per això que Java estableix fins i tot, el nom de la funció <em>main</em>, com una forma d'identificar el codi que cal executar en primer lloc mantenint a l'hora la premissa de contenir tot el codi executable dins d'alguna funció.</p>
+
+                                    <p>Val a dir que en el llenguatge Java, les funcions  s'anomenen mètodes. Segur que la paraula us sona més, però a efectes pràctics, els podeu considerar el mateix.</p>
+                                    <p>El llenguatge <em>Java</em> disposa de mecanismes per definir el contingut dels mètodes, es coneixen amb el nom genèric de <em>declaració de mètodes</em> i permeten informar al llenguatge del codi que quedarà agrupat dins d'un mètode i de com s'intercanvia la informació generada dins i fora del mètode.</p>
+                                    <p>La declaració bàsica d’un mètode es fa usant la sintaxi que es mostra tot seguit:</p>                                 
+                                    
+                                    <pre><code class="java">
+    public void nomMetode() {
+        //Aquí dins aniran les seves instruccions
+        //...
+    }
+                                    </code></pre>                         
+                                    <p>La declaració de mètodes es pot dur a terme en qualsevol lloc del fitxer font sempre que sigui entre les claus que identifiquen l’inici i fi de fitxer <code>(public class NomClasse { … })</code> i fora del bloc d’instruccions del mètode principal, o qualsevol altre mètode.</p>
+                                    <p>La declaració dels mètodes no n'executa el seu contingut. Per executar el codi d'un mètode, cal invocar els seu nom seguit de dos parèntesis, que són els signes que identifiquen les funcions i les distingeixen de les variables. La invocació de mètodes s'anomena també crida. Vegem-ne un exemple</p>
+                                    <pre><code class="java">
+    public void init(){
+        //...
+        nomMetode();
+        //...
+    }
+
+    public void nomMetode() {
+        //Aquí dins aniran les seves instruccions
+        //...
+    }
+                                    </code></pre>                         
+                                    <p>A l'exemple anterior es fa una crida al mètode <em>nomMetode</em> com a part de les instruccions del mètode <em>inici</em>. Recordeu que fins ara, fèiem servir el mètode inici per escriure tota la nostra aplicació. De fet, estàvem  declarant un mètode sense saber-ho.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Operativa bàsica ================-->    
+                                
+                <!--=========== BEGIN SUBSECTION Característiques fonamentals de les funcions ================-->    
+                <section id="slc-toKnow30" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Funcions</h2>
+                                     <h3 >Característiques fonamentals de les funcions </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Una de les principals raons de ser de les funcions, és <strong>minimitzar la complexitat</strong> de les implementacions reduint el nombre de línies de codi que un programador ha de tenir en compte a l'hora de fer una programa.</p>
+                                    <p>Les funcions permeten construir noves instruccions cada cop més complexes, que es poden usar per implementar grans aplicacions escrivint un menor número de línies.</p> 
+                                    <p class="iocimportant">És per això que diem que les <strong>funcions encapsulen o amaguen el codi que contenen</strong>.</p>
+                                    <p>Certament, no és necessari conèixer el codi intern d'una funció per poder-la fer servir, només caldrà saber en prou detall, què és el que la funció fa i com i quan cal fer-la servir.</p> 
+                                    <p>Gràcies a les funcions, és possible fer implementacions eficients en equip i reduir al mateix temps el nombre d'errors generats durant la codificació.</p>
+                                    <p>A més de reduir la complexitat, les funcions també eviten la repetició de codi de forma innecessària. ja que les instruccions d'una funció només s'escriuen una única vegada.</p>
+                                    <p>Això ens obliga a dissenyar de forma acurada les funcions, intentat, sempre que es pugui escriure mètodes genèrics que puguin reutilitzar-se en diferents situacions.</p>
+                                    <p>Malauradament, això pot acabar incrementant el nombre final de línies usades o fins i tot, acabar generant una implementació globalment més complexa, però des del punt de vista de la implementació que cada programador acabarà fent, la complexitat es redueix sempre i per tant surt a compte l'ús de funcions</p>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Característiques fonamentals de les funcions ================-->    
+
+                <!--=========== BEGIN SUBSECTION Intercanvi d'informació. Àmbit de variables i ús de paràmetres ================-->    
+                <section id="slc-toKnow35" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Funcions</h2>
+                                     <h3 >Intercanvi d'informació. Àmbit de variables i ús de paràmetres</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Si les funcions encapsulen codi, quan un programador en fa servir una, no hauria de preocupar-se de quines variables fa servir internament, ni de quines variables es manipulen internament.</p>
+                                    <p>Això obliga al llenguatge a treballar amb el que s'anomena <strong><em>àmbit de les variables</em></strong>. Entenem per àmbit de les variables, que en la identificació de les mateixes no només intervé el seu <em>nom</em>, sinó també el <em>lloc</em> on han estat declarades (per exemple dins una funció). D'aquesta manera és possible utilitzar el mateix nom de variables en funcions diferents sense que es produeixi cap mena d'interferència. De fet, durant l'execució seran tractades sempre com variables diferents.</p>
+                                    <p>Si això és així, el llenguatge haurà de disposar de mecanismes per intercanviar informació entre diferents funcions, ja que sovint poden complementar-se i treballar en cadena. El mecanisme previst pel llenguatge Java és la declaració de <strong><em>paràmetres</em></strong> (entrada) i del <em><strong>resultat</strong></em> obtingut en executar la funció (sortida), per tal d'aprofitar el resultat obtingut en altres llocs del codi.</p>
+                                    <p>La declaració de paràmetres s'afegeix a la declaració de la funció indicant el tipus de dada i un nom que els identifiqui. el resultat retornat, també es declara indicant el tipus de dada retornada. Així la declaració bàsica d'una funció quedaria de la marera següent:</p>
+                                    
+                                    <pre><code class="java">
+tipusDadaRetorn nomFuncio(tipusParam1 nomParam, ..., tipusParamN nomParamN){
+    &lt;declaració de variables de la funció&gt;;
+    &lt;instruccions&gt;;
+    return &lt;dada de retorn&gt;;
+}
+                                    </code></pre>                         
+                                    <p>Fixeu-vos que d'acord amb aquest mecanisme les funcions només poden retornar un únic valor. Més endavant estudiarem com canviar aquesta limitació.</p>
+                                    <p>Òbviament la forma anterior de declarar funcions continua vigent.En realitat aquest nou mecanisme és una extensió de l'anterior de manera que el tipus <em>void</em> significa que la funció no retorna cap dada i l'absència de paràmetres declarat entre els parèntesis implica que la funció no necessita cap entrada de dades.</p>
+                                    <p>El mecanisme per invocar mètodes que declaren paràmetres, també canvia lleugerament, doncs a la crida caldrà especificar els valors d'entrada mitjançant una expressió del llenguatge i quan calgui recollir el valor retornat dins una variable per tal que no es perdi el resultat retornat:</p>
+                                    <pre><code class="java">
+void inici(){
+    /*declaració d'una variable del mateix tipus de retorn per recollir el resultat*/
+   tipusDadaRetorn variablePerRecollirElResultat; 
+   
+   ...
+                                    
+   variablePerRecollirElResultat = nomFuncio(&lt;expressió per el param 1&gt;, ..., &lt;expressió per el param n&gt;);
+
+   ...
+}
+                                    </code></pre>                         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Intercanvi d'informació. Àmbit de variables i ús de paràmetres ================-->        
+
+                <!--=========== BEGIN SUBSECTION Exemples ================-->    
+                <section id="slc-toKnow40" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Funcions</h2>
+                                     <h3 >Exemples</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En el següent exemple es mostra una aplicació sencera que demana 3 valors enters i cerca el valor màxim. L'aplicació està escrita usant 4 funcions: main i inici, a les que ja esteu habituats i a més s'afegeixen les funcions <em> peresentació</em> i <em>maxim</em>.</p>
+                                    <pre><code class="java">
+public class Exemple1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       Exemple1 programa = new Exemple1();
+       programa.inici();
+    }
+
+    private void inici() {
+        //Declaració de la utilitat Scanner per llegir del teclat
+        Scanner scanner = new Scanner(System.in);
+        //Declaració de variables dins l'ambit de la funció
+        int a;
+        int b;
+        int c;
+        int max;
+        
+        //crida a una funció sense paràmetres que no retorna res.
+        presentacio();
+        
+        System.out.println("Indica el valor d’un número: ");
+        a = scanner.nextInt();
+        System.out.println("Indica el valor d’un altre número: ");
+        b = scanner.nextInt();
+        System.out.println("Indica el valor de l’últim número: ");
+        c = scanner.nextInt();
+        
+        //Crida a la funció maxim declarada més avall. Cal passar-li per 
+        //paràmetres dos valors enters i esperar-ne el valor màxim. El valor 
+        //retornat el recollim en una variable per no perdre'l.
+        max = maxim(a,b);
+        //Una altre crida a la mateixa funció maxim
+        max =maxim(max,c);
+        
+        
+        System.out.print("El valor màxim dels nombres que has introduït és:");
+        System.out.println(max);
+    }
+    
+    //declaració de la funció maxim. A la declaració s'indica que requereix 
+    //qe se li passin per paràmetres dos números  enters i que el resultat 
+    //retornat serà també un valor enter.
+    int maxim(int x, int y) {
+        int ret;
+        ret = (x < y) ? y : x;
+        return ret;
+    }
+
+    //declaració de la funció presentació. Es tracta d'una declaració bàsica. 
+    //Sense paràmetres ni retorns
+    void presentacio(){
+        System.out.println("Aquesta aplicació demana 3 nombres i calcula quin és el valor màxim dels tres.");
+        System.out.println("==============================================================================");
+        System.out.println();
+    }
+}
+                                    </code></pre>                         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exemples ================-->        
+                <!--=========== BEGIN SUBSECTION Ampliació àmbit de les variables ================-->    
+                <section id="slc-toKnow50" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Funcions</h2>
+                                     <h3 >Ampliació de l'àmbit de les variables</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>La majoria de llenguatges de programació incloent JAVA, permeten definir diversos àmbits de variables, no només l'àmbit dins una funció. En Java, l'àmbit de validesa d'una variable es delimita per mitjà de les dues claus (la d'obertura i la tancament) més properes a la variable. És per això que la funció actua com un delimitador d'àmbit, doncs el codi (incloses les variables) es troba tancat entre claus</p> 
+                                    <p>Però no és l'únic. Si declarem una variable entre les claus d'una instrucció <em>if</em> o <em>while</em>, la variable només serà valida dins del codi que es trobi entre els claus i no pas en altre lloc.</p>
+                                    <p>Java permet fins i tot definir àmbits a demanda del programador. Només caldria tancar la porció de codi que desitgem definir com a àmbit, entre dues claus i declarar-hi dins les variables: </p>
+                                    <div class="iocexample">
+                                         
+                                    <pre><code class="java">
+                                            public void unaFuncio(){
+                                                //àmbit de funció
+                                                int variableDeLaFuncio;
+                                                
+                                                ...
+                                                
+                                                if(variableDeFuncio){
+                                                     //àmbit d'instrucció 
+                                                     int variableDeLIf:
+                                                     ...
+                                                }
+                                                
+                                                {
+                                                    //àmbit a demanda. La variable només serà
+                                                    //vàlida pel codi que es trobi dins les claus
+                                                    int variableValidaNomesAqui;
+                                                    ...
+                                                }
+                                            }
+                                         </code></pre>
+                                    </div>
+                                    <p>L'única limitació que té aquest sistema és que les claus han de mantenir una imbricació correcte. És a dir no podem tancar una clau mentre contingui parells oberts.</p>
+                                    <p>Hi ha encara un àmbit major que els funcions. Fixeu-vos que quan escriviu programes, Java us obliga a definir també el nom del fitxer usant una declaració com:</p>
+                                    <div class="iocexample">
+                                         <pre><code class="java">
+                                            public class nomDelFitxer{
+                                                ...
+                                            }
+                                         </code></pre>
+                                    </div>
+                                    <p>en la que totes els funcions estan contingudes entre dues claus. </p>
+                                    <p>Efectivament Java permet declarar variables de l'àmbit fitxer, declarant les variables en el mateix nivell que es declaren les funcions. Sovint aquest àmbit se sol anomenar global perquè una variable així declarada serà vàlida per ser usada des de qualsevol mètode. </p>
+                                    <div class="iocexample">
+                                         <pre><code class="java">
+                                            public class nomDelFitxer{
+                                                int variableDAmbitGlobal;
+                                                
+                                                void unaFuncio(){
+                                                    //aquí es pot fer servir la variable variableDAmbitGlobal
+                                                    ...
+                                                    variableDAmbitGlobal=5;
+                                                    ...
+                                                }
+                                        
+                                            }
+                                         </code></pre>
+                                    </div>
+                                    <p>Per contraposició a les variables globals, les altres s'anomenen locals. </p>
+                                    <p>És important saber utilitzar els àmbits de les variables adequadament perquè ens poden estalviar molts maldecaps. A mida que les aplicacions que anem programant creixin, el nombre de variables a utilitzar creixerà també i ens resultarà molt difícil controlar-les. Sovint, per comoditat, estarem temptats de fer servir només variables globals, però aquesta <strong>no</strong> és un bona decisió:</p>
+                                    <ul>
+                                        <li>Les variables globals ocupen espai en memòria des de que s'inicia l'execució de l'aplicació fins que es tanca. Per tant, malbaraten la memòria. </li>
+                                        <li>Un canvi de valor d'una variable global en una línia de codi, podria afectar el resultat en una altre línia de codi allunyada de la que s'ha fet el canvi, i per tant difícilment relacionable.</li>
+                                        <li>La gran major part d'aplicacions s'implementen en equip. Sovint haurem d'usar funcions que no haguem escrit nosaltres i per tant no sabrem quines variables manipula. Si per fer servir la funció cal aprendre com estar feta, perdrem tota l'eficiència i avantatges de fer servir funcions.</li> 
+                                    </ul>
+                                    <p>De fet, l'ús de variables globals només es considera adequat si hi ha una dada que ha de ser manipulada per diverses funcions, l'objectiu de les quals impliqui canvis parcials que acabin resolent un problema  més gran. Malauradament, això només passa si l'aplicació és petita o només implica la resolució d'un únic problema.</p> 
+                                    <p>Un exemple força clarificador de l'ús de variables globals podria ser la implementació d'una calculadora. El resultat que es va mostrant a la pantalla es podria declarar en una variable global, ja que les diferents operacions fan servir sempre el resultat de la pantalla per a realitzar el nou càlcul.</p>
+                                    <p>Una bona política de declaració de variables consisteix en reduir el nombre de variables globals a les estrictament imprescindibles, tenint en compte que en cas de dubte cal optar sempre per variables locals i declarar totes les variables locals sempre a nivell de mètode.</p>
+                                    <p>En cas de necessitar declarar variables en àmbits menors que les funcions, cal assegurar-se que es tracta només de variables auxiliars dins el bloc de codi on es declaren i que mai es faran servir fora del bloc.</p>
+                                    <p>EL nivell d'àmbit de funció és suficient per reduir la complexitat i aconseguir controlar les variables de la immensa majoria d'aplicacions. Només en cas d'haver d'implementar una funció amb moltes línies de codi, ens pot resultar recomanable fer declaracions de variables d'àmbits menors. Tingueu en compte però que això no hauria de passar mai, ja que en aquests casos és preferible dividir les funcions grans en vàries de més petites.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Ampliació àmbit de les variables ================-->    
+            </section>
+            <!--=========== END SECTION toknow ================-->    
+
+            <!--=========== BEGIN SECTION toDo ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION Descripció dels exercicis ================-->    
+                <section id="slc-toDo10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3 >Descripció general</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta secció se us proposa fer 3 exercicis. El primer consisteix en implementar una senzilla aplicació fent servir funcions per tal de facilitar-vos l'assimilació del concepte i el seu ús per implementar programes. Es tracta d'un exercici amb solució. Consulteu-la per tal de comparar-la amb la vostra i analitzeu-ne les diferències si n'hi ha.</p>
+                                    <p>Els altres dos exercicis us permetran ampliar una mica més sobre l'ús de funcions i declaració de variables. El segon exercici us proposa que mantingueu una petita discussió al fòrum per tal de deduir les condicions d'accessibilitat a una variable en funció de l'àmbit on ha estat declarada. Les discussions en el fòrum són recursos d'aprenentatge de l'avaluació continuada. Cal que hi participeu. En cas que us costi argumentar la discussió, l'exercici us presentarà 3 pistes que us indicaran per on haurien d'anar els trets.</p>
+                                    <p>El darrer exercici, el fareu també individualment. Es tracta de valorar si les afirmacions que se us donen són certes o falses. Per a fer la valoració caldrà que analitzau el codi que se us donarà.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION EXAMPLE  ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exercici 1 ================-->    
+                <section id="slc-toDo20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3 >Exercici 1 - Declaració i crida de funcions</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Escriviu una aplicació que demani a l'usuari que escrigui per teclat un mes de l'any en format número. L'aplicació mostrarà per pantalla el nombre de dies que té el mes indicat. Se us demana que implementeu l'aplicació escrivint 3 funcions, a més de les ja usuals (<em>main</em> i <em>inici</em>).</p>
+                                    <p>Anomeneu a una de les funcions <em>demanarMes</em>. Es tracta d'una funció que ha de informar a l'usuari que escrigui per teclat un nombre que representi un dels dotze mesos de l'any, que esperi la resposta de l'usuari i retorni el valor entrat.</p>
+                                    <p>Una segona funció que anomenarem <em>calcularDiesQueTeElMes</em>, haurà de calcular quants dies té el més indicat per l'usuari.</p>
+                                    <p>Finalment, una funció anomenada <em>mostrarDiesDelMes</em>, traurà per la pantalla un missatge en que s'indiqui el nombre de dies que té el mes escollit. El missatge podria ser semblant al següent: </p>
+                                    <div class="iocexample"><div class="ioccontent"><p>T'informem que el més 4 conté 30 dies</p></div></div>
+                                    <p>Abans de començar a codificar pensa quines funcions necessitaran paràmetres i quines no, o quines retornaran alguna cosa. Recorda que cal declarar els paràmetres i els retorns de dades.</p>
+                                    <p>Un cop codificat l'exercici contesta les següents preguntes en el <span class='forumGrupReduit'></span>. Es tracta de discutir breument entre vosaltres intentant arribar a una conclusió final:</p>
+                                    <ol>
+                                        <li>Creieu que les funcions que heu creat les podríeu utilitzar en algun altre context (una altre aplicació)? Quina funció resultaria més fàcil de reutilitzar?</li>
+                                        <li>Imagineu que la funció <em>calcularDiesQueTeElMes</em>, a més de realitzar el càlcul, mostrés per pantalla el resultat. Creieu que seria igual de reutilitzable? Raoneu breument la resposta</li>
+                                    </ol>
+                                        <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-solution="#slc-toDo20-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo20-solution" class="iocSolution hidden">
+                                        
+                                    <pre><code class="java">
+public class DiesDelMes {
+
+    public static void main(String[] args) {
+        //Es crea una instància del programa
+        DiesDelMes programa = new DiesDelMes();
+        //Es crida el mètode inici per tal de començar l'execució
+        programa.inici();
+    }
+
+    public void inici() {
+        //variables de l'àmbit de la funció
+        int mes;
+        int diesMes;
+        
+        //crida a la funció demanarMes sense paràmetres. 
+        //Es recull el valor retornat
+        mes = demanarMes();        
+        //crida a la funció calcularDiesQueTeElMes passant el numero del 
+        //mes com a paràmetre. Es recull el valor retornat
+        diesMes = calcularDiesQueTeElMes(mes);
+        //crida a la funció mostrarDiesDelMes passant el numero del mes i els 
+        //dies que aquest té. No hi ha retorn.
+        mostrarDiesDelMes(mes, diesMes);
+    }
+
+    /**
+     * Aquesta funció anomenada demanaMes, demana a l'usuari que escrigui un mes 
+     * fent servir la notació numèrica. Retorna el valor introduït per l'usuari.
+     */
+    private int demanarMes() {
+        int retorn;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Indica el nombre d'un més per saber quants dies té:");
+        retorn = scanner.nextInt();
+        return retorn;
+    }
+
+    /**
+     * Aquesta funció anomenada calcularDiesQueTeElMes, rep per paràmetre un 
+     * valor numèric comprés entre 1 i 12, calcula el nombre de dies que té el 
+     * mes  especificat i en retorna el resultat obtingut.
+     */
+    private int calcularDiesQueTeElMes(int mes) {
+        int retorn =0;
+        switch(mes){
+            case 1:
+                retorn = 31;
+                break;
+            case 2:
+                retorn = 28;
+                break;
+            case 3:
+                retorn = 31;
+                break;
+            case 4:
+                retorn = 30;
+                break;
+            case 5:
+                retorn = 31;
+                break;
+            case 6:
+                retorn = 30;
+                break;
+            case 7:
+                retorn = 31;
+                break;
+            case 8:
+                retorn = 31;
+                break;
+            case 9:
+                retorn = 30;
+                break;
+            case 10:
+                retorn = 31;
+                break;
+            case 11:
+                retorn = 30;
+                break;
+            case 12:
+                retorn = 31;
+                break;
+        }
+        return retorn;
+    }
+
+    /**
+     * Mostra per pantalla un missatge indicant el més (en format numèric) que 
+     * s'ha demanat i el nombre de dies calculat. La funció rep ambdós valors 
+     * a mostrar com a paràmetres i no retorna res.
+     */
+    private void mostrarDiesDelMes(int mes, int diesMes) {
+        System.out.print("T'informem que el mes ");
+        System.out.print(mes);
+        System.out.print(" conté ");
+        System.out.print(diesMes);
+        System.out.println(" dies");
+    }
+    
+}
+                                    </code></pre>                         
+                                        
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 1 ================-->    
+
+                <!--=========== BEGIN SUBSECTION Exercici 2 ================-->    
+                <section id="slc-toDo30" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3 >Exercici 2- Accessibilitat a les variables segons el seu àmbit</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Analitzeu el codi que trobareu a continuació sense copiar-lo a l'IDE Netbeans. Intenteu descobrir tots els errors del codi relatius als àmbits de les variables i esbrinar la raó d'aquest.</p>
+                                    <p>Discutiu al  <span class='forumGrupReduit'></span>, els errors que trobeu i les raons per les que penseu que es produeixen. Intenteu arribar a una conclusió consensuada. En cas que us costi trobar els errors i les raons podeu consultar les pistes que trobareu en aquesta pàgina</p>
+                                    <div class="iocexample">
+                                        <pre><code class="java linenumbers">
+
+
+public class AccessibilitatVariables {
+    int variable1; //variable d'àmbit global
+
+    public static void main(String[] args) {
+       AccessibilitatVariables programa = new AccessibilitatVariables();
+       programa.inici();
+    }
+
+    private void inici() {
+        int variable2; //Variable d'àmbit de la funció inici
+        int variable3; //Variable d'àmbit de la funció inici
+        
+        variable1=1;
+        variable2=2;
+        variable3=12;
+        
+        if(variable1==1){
+            funcioDeProva(variable2);
+        }else{
+            int variable4; //variable d'àmbit del bloc if
+            
+            variable4=variable2;
+            while(variable4&lt;variable3){
+                int variable5; //variable d'àmbit del bloc while
+                
+                variable5=variable1;
+                variable1+=10;
+                variable4++;
+                if(variable1&lt;50){
+                    variable2 = variable5;
+                }
+            }
+
+            variable4+=variable5;            
+        }
+        variable4+=variable5;            
+        variable3=variable4;
+        variable2*=2;
+    }
+    
+    private void funcioDeProva(int variable8){
+        int variable7=0; //Variable d'àmbit de la funció funcioDeProva
+        
+        variable7 -= variable2;
+        while(variable7&lt;100){
+            variable7+=variable8;
+            if(variable1&gt;50){
+                variable7 = 1000;
+            }else{
+                variable1+=variable3;
+            }
+        }        
+    }   
+}
+                                        </code></pre>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo30" 
+                                            data-selector-clue="#slc-toDo30-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo30-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Sabent que els errors es troben a les línies:</p>
+                                        <ul>
+                                            <li>Línia 36: <code>variable4+=variable5;</code></li>
+                                            <li>Línia 38: <code>variable4+=variable5;</code></li>
+                                            <li>Línia 39: <code>variable3=variable4;</code></li>
+                                            <li>Línia 46: <code>variable7-=variable2;</code></li>
+                                            <li>Línia 52: <code>variable1+=variable3;</code></li>
+                                        </ul>
+                                        <p>... intenta deduir la raó dels errors</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo30" 
+                                            data-selector-clue="#slc-toDo30-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo30-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Aquesta és una pista referida només a l'error de la línia 36. On es declara la variable <em>variable4</em>? i la variable <em>variable5</em>? Estan declarades en el mateix bloc de codi?</p>
+                                        <p>I la instrucció de la línia 36, en quin bloc de codi s'executa? Pot ser aquesta la raó de l'error?</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo30" 
+                                            data-selector-clue="#slc-toDo30-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo30-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Fes un esquema dels blocs de codi de l'aplicació a analitzar, representant-los com un rectangle. Situa dins de cada rectangle les variables declarades dins i els blocs de codi continguts, de manera que et sigui fàcil veure quins blocs contenen d'altres i a quin bloc pertanyen les variables declarades.</p>
+                                        <p>Situa ara dins del bloc on es realitza la invocació, les línies amb errors. Intenta relacionar la ubicació de les línies d'error amb la ubicació de les variables contingudes a la intrucció</p>
+                                         
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 2 ================-->    
+                <!--=========== BEGIN SUBSECTION Exercici 3 ================-->    
+                <section id="slc-toDo40" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3 >Exercici 3- Prioritats i il·legalitats declarant variables en diferents àmbits</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Java pretén ser un llenguatge que facilita la creació d'aplicacions robustes i amb pocs errors. Bona part d'això es recolza en polítiques restrictives que intenten evitar l'error humà.</p>
+                                    <p>La declaració de variables de diferents àmbits amb una mateix nom pot suposar una font d'errors important. Per això Java no permet declarar variables d'un mateix nom malgrat que siguin de diferent àmbit. Es tracta però d'una restricció que per raons històriques i d'usabilitat contempla diverses excepcions que cal conèixer.</p>
+                                    <p>A continuació se us mostra un codi amb diverses situacions en que es declaren variables de diferent àmbit amb el mateix nom. Copieu-lo al Netbeans i analitzeu quins són els casos que donen error i quins no. Seguidament comenteu les línies d'error i executeu el codi per tal de veure el comportament dels casos sense error.</p>
+                                    <pre> <code class="java"> 
+
+
+public class IllegalitatsAmbitsVariables {
+    int variable0=100;
+    int variable1=500;
+
+    public static void main(String[] args) {
+        IllegalitatsAmbitsVariables prog = new IllegalitatsAmbitsVariables();
+        prog.inici();
+    }
+
+    private void inici() {
+        funcioDeProva1(0);
+        funcioDeProva2(0, 1);
+        funcioDeProva3();
+        funcioDeProva4(0);
+        funcioDeProva5();
+        funcioDeProva6(0);
+    }
+    
+    /*
+    Declaració d'una variable local de funció amb el mateix nom que un paràmetre
+    */
+    public void funcioDeProva1(int variable2){
+        int variable2=11;
+        int variable3=12;
+    }
+
+    /*
+    Declaració de variables locals de bloc amb el mateix nom que un paràmetre 
+    o una variable local de funció
+    */
+    public void funcioDeProva2(int variable4, int variable5){
+        int variable4=11;
+        while(variable4&gt;0){
+            int variable5=11;
+            int variable6=12;
+            int variable7;
+        }
+    }
+
+    /*
+    Declaració de variables locals de bloc amb el mateix nom que un paràmetre 
+    o una variable local de funció
+    */
+    public void funcioDeProva3(){
+        int variable4=-11;
+        int variable5=11;
+        while(variable4&gt;0){
+            int variable5=11;
+            int variable6=12;
+        }
+    }
+
+    /*
+    Declaració de paràmetres d'una funció amb el mateix nom que una variable 
+    global;
+    */
+    public void funcioDeProva4(int variable0){
+        System.out.print("funcioDeProva4(0)-&gt;");
+        System.out.print("El paràmetre 'variable0' val: ");
+        System.out.println(variable0);
+    }
+
+    /*
+    Declaració de variables locals amb el mateix nom que una variable global
+    */
+    public void funcioDeProva5(){
+        int variable0=90;
+        System.out.print("funcioDeProva5()-&gt;");
+        
+        System.out.print("La variable local 'variable0' val: ");
+        System.out.println(variable0);
+    }
+
+    /*
+    Declaració de variables locals amb el mateix nom
+    */
+    public void funcioDeProva6(int variable10){
+        System.out.print("funcioDeProva6(0)-&gt;");
+        if(variable10==0){
+            int variable11=10;
+            System.out.print("La variable 'variable11', dins de l'IF val: ");
+            System.out.println(variable11);
+            
+        }
+        int variable11 = 100;
+        System.out.print("                   ");
+        System.out.print("La variable 'variable11', fora de l'IF val: ");
+        System.out.println(variable11);
+    }
+
+    /*
+    Declaració de variables locals amb el mateix nom en dues funcions difrents
+    */
+    public void funcioDeProva7(){
+        int variable12 = 1;
+        System.out.print("funcioDeProva7()-&gt;");
+        System.out.print("La variable 'variable12' val: ");
+        System.out.println(variable12);
+    }
+    public void funcioDeProva8(){
+        int variable12 = 100;
+        System.out.print("funcioDeProva8()-&gt;");
+        System.out.print("La variable 'variable12' val: ");
+        System.out.println(variable12);
+    }
+}
+                                    </code></pre>
+                                    <p>Un cop analitzat el codi, llegiu les següents frases i indiqueu si es tracta d'afirmacions certes o falses.</p>
+                                    <ol>
+                                        <li>És possible declarar un paràmetre d'una funció i una variable local de la mateixa, usant el mateix nom, perquè els paràmetres es troben en una àmbit diferent al de les variables locals</li>
+                                        <li>Java no imposa restriccions a l'hora de permetre declarar variables locals que tinguin el mateix nom que variables globals, ja que en una invocació, la variable local tindria sempre prioritat sobre la global</li>
+                                        <li>Java no permet declarar una variables globals que tinguin el mateix nom que algun paràmetre d'alguna funció</li>
+                                        <li>Java no permet declarar una variable en un bloc de codi si aquest es troba declarat en un altre bloc que contingui declarada una variable amb el mateix nom, a excepció que es tracti d'una variable global</li>
+                                        <li>Java permet declarar variables amb noms iguals si pertanyen a àmbits diferents que no es continguin, com  per exemple en dues funcions diferents perquè mai hi haurà interferències</li>
+                                    </ol>
+                                        <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo40" 
+                                            data-selector-solution="#slc-toDo40-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo40-solution" class="iocSolution hidden">
+                                    <ol>
+                                        <li>L'afirmació és falsa. Java no permet declarar un paràmetre d'una funció i una variable local de la mateixa usant el mateix nom, doncs no hi ha manera de distingir-les en invocar-les. De fet l'àmbit dels paràmetres i el de les variables locals de funció són idèntics</li>
+                                        <li>L'afirmació és certa.</li>
+                                        <li>L'afirmació és falsa. Java permet declarar paràmetres amb el mateix nom que les variables globals. De fet,  les restriccions dels paràmetres són les mateixes que les de les variables locals de funció i per tant en aquest cas, en cas d'anomenar-se igual, el paràmetre tindria prioritat sobre la variable global</li>
+                                        <li>L'afirmació és parcialment certa, ja que Java permet declarar variables amb el mateix nom si pertanyen a blocs diferents malgrat que un estigui contingut dins l'altre sempre i quant la variable del més gran es trobi declarar posteriorment al bloc menor, ja que en sortir del bloc menor la variable deixa d'existir i per tant es poden tornar a declarar.</li>
+                                        <li>L'afirmació és certa.</li>
+                                    </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 3 ================-->
+            </section>
+            <!--=========== END SECTION toDo ================-->    
+
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Funcions</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <a class="bustiaLliurament">bústia de lliurament de la unitat 4</a>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                                            <h3> CANVIAR! </h3>
+
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <ul>
+                <li>Distingir i interpretar les funcions que es puguin trobar en un codi d'una aplicació</li>
+                <li>Declarar i cridar funcions quan s'implementi una aplicació</li>
+                <li>Declarar les variables d'acord amb l'àmbit més adient segons la seva utilitat</li>
+                <li>Enumerar les polítiques de declaració i visibilitat de variables de Java, d'acord amb el seu àmbit</li>
+            </ul>
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="js/jssor.js"></script>
+    <script src="js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        iocSlider = new IocSlider();
+        iocSlider.addJssorSlider("slider1_container");
+
+        $("[data-display-on-set-slide]").each(function(){
+            var slide;
+            var self = this;
+            var slideId = this.dataset.displayOnSetSlide; 
+            iocSlider.watch("onSetCurrentSlide", function(e){
+                var slide;
+                var oldSlide =e.oldValues.vindx!=-1
+                                    ?e.oldValues.vslides[e.oldValues.vindx]
+                                    :e.oldValues.hslides[e.oldValues.hindx];
+                if($(oldSlide).attr("id")===slideId){
+                   $(self).hide();
+                   if($(self).hasClass("active")){
+                        $(self).click();
+                   }
+                }
+                slide = this.hasVerticalSlides()
+                                    ?this.vslides[this.vindx]
+                                    :this.hslides[this.hindx];
+                if($(slide).attr("id")===slideId){
+                   $(self).show();
+                }
+            });
+    
+            slide = iocSlider.hasVerticalSlides()
+                                ?iocSlider.vslides[iocSlider.vindx]
+                                :iocSlider.hslides[iocSlider.hindx];
+            if($(slide).attr("id")===slideId){
+               $(this).show();
+            }
+        });
+
+        hljs.addLineNumbers();
+        hljs.initHighlightingOnLoad();
+        
+        $(document).ready(function(){
+            toReplaceOnLoad("data/toReplace.json", "A401");
+        });
+    </script>
+
+</body>
+
+</html>
+

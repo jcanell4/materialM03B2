@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila">
+    <title>A402. Funcions II</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="css/m03b2Activities.css" rel="stylesheet">
+    <link href="css/scrolling-slides.css" rel="stylesheet">
+    <link href="css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL TOP BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL TOP BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-toDo">Què cal fer</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A402 - Funcions</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Aquí aprofundirem en el concepte i ús de les funcions. L'activitat us servirà per descobrir quina utilitat podem donar a les funcions per tal de treure'n el màxim profit. Bàsicament aprendrem a: usar les funcions per crear blocs de codi (mòduls) independents entre sí, donar estructura a les aplicacions a partir de les crides a les funcions o bé crear funcions parametritzades que puguin reutilitzar-se, ja sigui a la mateixa aplicació o bé en d'altres.</p>
+                                <p>Aquesta activitat, no conté l'apartat <em>Què cal saber</em>, perquè aquí, l'aprenentatge l'obtindreu en fer els exercicis. L'aprenentatge implícit que esdevé en fer el que se us proposa, s'assimila millor que el contingut explícit d'una lectura.</p>
+                                <p>Aneu a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em> on trobareu detallades, les diferents propostes.</p>
+                                <p>A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions</p> 
+                                 <p>Finalment, a l'apartat <em><a href="#slc-toContinue">Com continuar</a></em>, us redirigirà a la següent activitat. </p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION toDo ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION Aplicació 1 ================-->    
+                <section id="slc-toDo10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3> Usos de les funcions en la implementació de programes</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Ja heu vist, en activitats anteriors, que les funcions encapsulen, delimiten o simplement agrupen codi que pot executar-se amb una simple invocació del nom de la funció. També hem vist que les crides, en Java, cal fer-les des d'una funció. Aquestes característiques són bàsiques perquè ens permetran estructurar i organitzar acuradament els programes, modularitzar o dividir blocs de codi de forma que es puguin tractar amb un alt grau independència entre ells. A més, les funcions ens ajudaran també a no repetir codi i reutilitzar el que ja es troba escrit.</p>
+                                    <p>Anem a veure-ho. Us proposem crear una aplicació que permeti calcular l'àrea de diferents figures planes com ara els triangles, els quadrats, els rectangles o els cercles. L'aplicació en iniciar-se informarà a l'usuari del que podrà fer i mostrarà per pantalla un menú que que permeti escollir la figura plana de la que es vol calcular l'àrea. Un cop feta la selecció, el programa demanarà les dades pertinents, calcularà l'àrea i mostrarà els resultats per la pantalla.</p>
+                                    <p> Sabent això, ens proposem modularitzar tant com siguem capaços l'aplicació. Ens adonem que cada àrea de cada figura ha de rebre un tractament independent i per tant ens proposem crear un mòdul diferent per cada càlcul, com si d'una aplicació diferent es tractés. És a dir, crearem un implementació específica per cada figura que demani a l'usuari les dades adequades per calcular-ne l'àrea, realitzi el càlcul amb la fórmula correcta i mostri el resultat per la pantalla. Ara bé, en comptes d'implementar-ho en aplicacions diferents (diferents fitxers que continguin el seu <em>main</em> i la seva funció <em>inici</em>), realitzarem la implementació encapsulada en un funció que anomenarem <strong><em>modulCalculAreaX</em></strong>, on <em>X</em> serà el nom de la figura: <em>triangle</em>, <em>quadrat</em>, ...</p> 
+                                    <p>Encapsular-ho tot en una funció, no significa pas que tot el codi s'hagi d'escriure en una única funció, sinó que la crida a la funció que encapsula, ha de ser suficient per executar tot el necessari per obtenir el que s'espera de la funció. En el nostre cas: la petició de dades, el càlcul de l'àrea i la mostra del resultat calculat. Per descomptat, podrem usar tantes funcions com creiem necessari durant la implementació.</p>
+                                    <p>De fet, fa temps que no toquem la geometria i tenim les fórmules de les àrees un mica rovellades. Per sort un amic matemàtic s'ens ha brindat per ajudar-nos.</p>
+                                    <p>A banda dels mòduls per calcular les diferents àrees, cal que ens adonem que d'acord amb l'enunciat, l'aplicació ha de mostrar un missatge inicial a mode de presentació i un menú que permeti escollir quin dels mòdul caldrà executar. Els diferents mòduls demanaran a l'usuari la mida de les figures a les que s'hagi de calcular l'àrea i també hauran de mostrar els resultats obtinguts. Ens estem referint a la forma com l'aplicació es comunicarà amb l'usuari, tant per demanar-li informació com per mostrar-li. Les funcions també ens poden servir de gran ajuda per estandarditzar la forma de mostrar missatges o demanar informació. A més si les implementem amb paràmetres aconseguirem reutilitzar la mateixa funció en diferents situacions.</p>
+                                    <p>Per tal que us resulti més fàcil, seguidament se us plantegen 3 exercicis, la realització dels quals us permetrà acabar implementant l'aplicació plantejada. Passeu a la següent pàgina per començar la implementació</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Aplicació 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exercici 1 ================-->    
+                <section id="slc-toDo21" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3 >Exercici 1 - Funcions per intercanviar informació amb l'usuari</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Com ja s'ha comentat, és important separar el codi dedicat a l'intercanvi d'informació  entre l'usuari i l'aplicació (interfície d'usuari) de la resta. Les interfícies d'usuari són probablement de les utilitats que més ràpidament canvien. Es poden crear interfícies d'usuari utilitzant codi HTML, fent servir les utilitats gràfiques dels sistemes operatius o bé les utilitats de consola (teclat i pantalla) tal com fem nosaltres. Si mantenim ben separat el codi de la interfície, ens resultarà força senzill convertir per exemple una aplicació de consola en una aplicació WEB.</p>
+                                    <p>Les utilitats de consola de Java (<em>System.in</em> i <em>System.out</em>), són tan simples que sovint, en implementar un programa cal repetir una i altre vegada instruccions força similars. Per exemple, la majoria de vegades que desitgem que l'usuari ens entri dades a través del teclat, li escrivim un missatge explicatiu, indicant què esperem de l'usuari. Per la calculadora d'àrees caldrà demanar diverses vegades que l'usuari entri les mides de les figures. Depenent de les figures, caldrà demanar la mesura de l'alçada, d'un costat o bé del radi, però en definitiva, al marge del contingut del missatge, l'usuari acabarà sempre entrant un valor double per teclat.</p>
+                                    <p><strong>Us demanarem que implementeu una funció anomenada <em>entrarUnNumero</em></strong>, que rebi una cadena de text per paràmetre. La funció mostrarà el text per pantalla a mode de missatge explicatiu i esperarà que l'usuari escrigui un valor double. Per tal de prevenir errors, la funció comprovarà que l'usuari entri realment un valor numèric. En cas que no for així, caldrà repetir la petició aclarint a l'usuari que esprem que entri un valor numèric. Quan l'usuari hagi entrar un valor correcte, la funció el retornarà i finalitzarà l'execució. Recordeu que la utilitat Scanner, després de retornar un valor numèric (double, enter, etc.) és necessari invocar el mètode <em>nextLine</em> del mateix <em>Scanner</em> per tal de netejar el retorn de carro del <em>buffer</em> del teclat i evitar comportaments inesperats a les crides posteriors.</p>
+                                    <p>De forma semblant a la funció anterior, la calculadora d'àrees necessitarà també una funció que permeti mostrar el resultat calculat per la pantalla indicant quina és la figura, i quina l'àrea. <strong>Se us demana </strong>doncs<strong> que implementeu una funció anomenada <em>mostrarResultat</em></strong> que rebi per paràmetre el nom de la figura i el valor de l'àrea. La funció mostrarà un missatge semblant a:</p>
+                                    <div class="iocexample"><pre>
+        ---------------------------------------------------
+            L'area del cercle demanat val: 25.3278
+        ---------------------------------------------------
+                                    </pre></div>
+                                    <p>La funció <em>mostrarResultat</em> no retorna cap valor.</p>
+                                    <p>A banda de les funcions descrites, l'aplicació requerirà també d'un menú que permeti escollir a l'usuari la figura amb la que treballar. Per tal de separar la interfície d'usuari de la resta de codi, forçarem que el menú, només mostri per pantalla les opcions possibles i esperi i retorni la selecció de de l'usuari. Més endavant ja farem la funció que invoqui el mòdul adequat a partir de la selecció feta, però aquesta part no es pot considerar interfície d'usuari. <strong>Implementeu </strong>doncs<strong>, una funció anomenada <em>menu</em>, tal com s'ha descrit.</strong></p>
+                                    <p>Per finalitzar serà també adient que <strong>implementeu una funció anomenada <em>presetacio</em></strong>. Es tracta de la funció que mostrarà el missatge de benvinguda o s'explicarà a l'usuari la finalitat de l'aplicació.</p>
+                                    <p>No us oblideu de provar que tot funciona. Per fer la comprovació invoqueu les funcions creades amb valors de prova des de la funció inici.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo21" 
+                                            data-selector-clue="#slc-toDo21-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo21-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Per saber com comprovar que l'usuari està entrant un tipus de dada correcta, consulteu els <a class="materialsM03U3" target="_blank">materials del mòdul, la unitat 3, apartat <em>1.3.1 Entrada de seqüències de valors per teclat</em></a> on explica l'ús del mètode <em>hasNext...</em> de la utilitat <em>Scanner</em> </p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo21" 
+                                            data-selector-clue="#slc-toDo21-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo21-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>La funció <em>mostrarResultat</em> hauria d'actuar com un formulari o plantilla parametritzable. Per combinar el text estàtic amb els valors dels paràmetres jugueu adequadament amb els mètodes <em>println</em> i <em>print</em> de l'eina <em>System.out</em></p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo21" 
+                                            data-selector-clue="#slc-toDo21-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo21-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>El més habitual en un menú de tipus consola és que les opcions es puguin escollir prement alguna tecla. La forma més senzilla de identificar una tecla acostuma a ser el seu valor de tipus caràcter, és per això que podeu optar per fer que el menú retorni una dada de tipus char.</p>
+                                        <p>El llenguatge Java obliga a finalitzar l'entrada de teclat fent servir una tecla especial com ara la tecla [ENTRAR]. Per tant, caldria avisar a l'usuari que cal escollir la opció del menú i prémer la tecla entrar, a més de mostrar les diferents opcions.</p>
+                                        <p>L'utilitat Scanner pot recollir l'entrada fent servir el mètode <em>nextLine</em> i recuperar el primer caràcter de la cadena retornada amb el mètode <em>charAt(0)</em>. El problema, esdevé si l'usuari prem [ENTRAR] sense haver escollit cap opció, ja que en aquest cas la cadena serà buida i si apliquem el mètode <em>charAt</em> sobre una cadena buida, sempre ens donarà error perquè no hi ha caràcters a consultar en cap posició.</p>
+                                        <pre><code class="java">
+/*
+ * El següent codi dóna error perquè la variable cadena és buida i no conté cap 
+ * caràcter a la posició zero.
+ */
+
+char caracter;
+String cadena = "";
+
+//...
+
+caracter = cadena.charAt(0);
+
+//...
+                                        </code></pre>
+                                        <p>Per evitar l'error caldrà comprovar si es pot invocar el mètode i en cas que no sigui possible, caldrà assignar un valor per defecte...</p>
+                                        <pre><code class="java">
+/*
+ * El següent codi NO dóna error perquè només invoquem charAt si la cadena no 
+ * és buida.
+ */
+
+char caracter;
+String cadena = "";
+
+//...
+if(cadetna.length()>0){
+    caracter = cadena.charAt(0);
+}else{
+    caracter=0;  //valor per defecte en cas que la cadena estigui buida.
+}
+
+//...
+                                        </code></pre>
+                                        <p>Generalment els menús no avisen mai de si la opció escollida forma part de les opcions o no. En cas de no coincidir amb cap opció, s'acostuma simplement a tornar a mostrar el menú sense comentaris</p>
+                                    </div>                                    
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo21" 
+                                            data-selector-solution="#slc-toDo21-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo21-solution" class="iocSolution hidden">
+                                        <pre><code class="java">
+
+
+import java.util.Scanner;
+
+public class InterficieUsuariCalculadoraArees {
+    public static void main(String[] args) {
+        InterficieUsuariCalculadoraArees prg = new InterficieUsuariCalculadoraArees();
+        prg.inici();
+    }
+    
+    private void inici(){
+        double mesura;
+        char opcio=0;
+        //proves
+        presentacio();
+        mesura = entrarUnNumero("Entreu la mida del costat del quadrat: ");
+        
+        System.out.print("La mesura entrada és: ");
+        System.out.println(mesura);
+        
+        mostrarResultat("cercle", 28.51);
+        
+        opcio = menu();
+        
+        System.out.print("La opció escollida és: ");
+        System.out.println(opcio);
+    }
+    
+    private double entrarUnNumero(String missatgeExplicatiu){
+        Scanner scanner = new Scanner(System.in);
+        double ret;
+        boolean correcte=false;
+        do{
+            System.out.print(missatgeExplicatiu);
+            correcte=scanner.hasNextDouble();
+            if(!correcte){ //Comprovem si l'usuari escriu un número o text
+                scanner.next();
+                System.out.println("Cal que entris un valor numèric si us plau.");
+            }
+        }while(!correcte);
+        ret = scanner.nextDouble();  
+        scanner.nextLine(); //buidem el buffer del teclat
+        return ret;
+    }
+    
+    private void mostrarResultat(String figura, double resultat){
+        System.out.println();
+        System.out.println("---------------------------------------------------");
+        System.out.print("L'area del ");
+        System.out.print(figura);
+        System.out.print(" val: ");
+        System.out.println(resultat);
+        System.out.println("---------------------------------------------------");
+        System.out.println();
+    }
+    
+    private void presentacio(){
+        System.out.println("======================================================================");
+        System.out.println("Benvinguts a la calculadora d'àrees.");
+        System.out.println("Seleccioneu la figura geomèrica de la que volugueu calcular l'àrea, ");
+        System.out.println("introduïu  les dades que se us dmanin i espereu el resultat.");
+        System.out.println("======================================================================");
+        System.out.println();
+    }
+    
+    private char menu(){
+        Scanner scanner = new Scanner(System.in);
+        String line;
+        char opcio=0;
+        System.out.println("---------------------------------------");
+        System.out.println("         Menú càlcul àrees");
+        System.out.println("---------------------------------------");
+        System.out.println("1. Triangle");
+        System.out.println("2. Quadrat");
+        System.out.println("3. Rectangle");
+        System.out.println("4. Cercle");
+        System.out.println("0. Sortir");
+        System.out.println();
+        System.out.print("Escull una opció i prem [ENTRAR]: ");
+        line = scanner.nextLine();
+        //Evitem l'error si l'usuari prem només [ENTRAR]
+        if(line.length()>0){
+            opcio = line.charAt(0);
+        }
+        return opcio;
+    }
+}
+                                        </code></pre>                         
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 1 ================-->    
+
+                <!--=========== BEGIN SUBSECTION Exercici 2 ================-->    
+                <section id="slc-toDo22" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3 >Exercici 2- Implementació dels mòduls de càlcul d'àrees</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>El nostre amic matemàtic ens ha passat el fórmules de les àrees:</p>
+                                    <ul>
+                                        <li>Àrea triangle = base * alçada / 2</li>
+                                        <li>Àrea quadrat = costat<sup>2</sup> </li>
+                                        <li>Àrea rectangle = base * alçada</li>
+                                        <li>Àrea cercle = PI * radi<sup>2</sup>, on PI = 3.14159265</li>
+                                    </ul>
+                                    
+                                    <p>Volem crear una funció per cada àrea, així ens resultarà molt fàcil fer-les servir sense haver de consultar ni recordar quina fórmula correspon a cada figura.</p>
+                                    <p>Crea les funcions <em>calcularAreaTriangle</em>, <em>calcularAreaQuadrat</em>, <em>calcularAreaRectangle</em>, <em>calcularAreaCercle</em>. Pensa quins paràmetres hauran de rebre. Recorda també que hauran de retornar l'àrea calculada amb les fórmules de l'amic matemàtic. </p>
+                                    <p>Usant les funcions de l'exercici anterior i les que acabes d'implementar aquí, codifica els 4 mòduls (<em>modulCalculAreaTriangle</em>, <em>modulCalculAreaQuadrat</em>, <em>modulCalculAreaRectangle</em> i <em>modulCalculAreaCercle</em>). Cada mòdul ha de ser una funció que es pugui invocar de manera totalment independent als altres.</p>
+                                    <p>No oblidis comprovar que tot funciona correctament!</p>
+
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo22" 
+                                            data-selector-clue="#slc-toDo22-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo22-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Recorda que el quadrat d'un número <em>n</em>, pot expressar-se també com: <em>n*n</em></p>
+                                    </div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo22" 
+                                            data-selector-solution="#slc-toDo22-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo22-solution" class="iocSolution hidden">
+                                        <pre><code class="java">
+
+
+import java.util.Scanner;
+
+public class ModulsCalculadoraDArees {
+    
+    public static void main(String[] args) {
+        ModulsCalculadoraDArees prg = new ModulsCalculadoraDArees();
+        prg.inici();
+    }
+    
+    private void inici(){
+        modulCalculAreaTriangle();
+        modulCalculAreaQuadrat();
+        modulCalculAreaRectangle();
+        modulCalculAreaCercle();
+    }
+    
+    double calcularAreaTriangle(double base, double alcada){
+        return base*alcada/2;
+    }
+    
+    double calcularAreaRectangle(double base, double alcada){
+        return base*alcada;
+    }
+
+    double calcularAreaQuadrat(double costat){
+        return costat*costat;
+    }
+    
+    double calcularAreaCercle(double radi){
+        return 3.14159265*radi*radi;
+    }
+    
+    private double entrarUnNumero(String missatgeExplicatiu){
+        Scanner scanner = new Scanner(System.in);
+        double ret;
+        boolean correcte=false;
+        do{
+            System.out.print(missatgeExplicatiu);
+            correcte=scanner.hasNextDouble();
+            if(!correcte){ //Comprovem si l'usuari escriu un número o text
+                scanner.next();
+                System.out.println("Cal que entris un valor numèric si us plau.");
+            }
+        }while(!correcte);
+        ret = scanner.nextDouble();  
+        scanner.nextLine(); //buidem el buffer del teclat
+        return ret;
+    }
+    
+    private void mostrarResultat(String figura, double resultat){
+        System.out.println();
+        System.out.println("---------------------------------------------------");
+        System.out.print("L'area del ");
+        System.out.print(figura);
+        System.out.print(" val: ");
+        System.out.println(resultat);
+        System.out.println("---------------------------------------------------");
+        System.out.println();
+    }
+    
+    private void modulCalculAreaTriangle() {
+        double base;
+        double alcada;
+        double area;
+        
+        base = entrarUnNumero("Quina és la base del triangle? ");
+        alcada = entrarUnNumero("I l'alçada? ");
+        
+        area = calcularAreaTriangle(base, alcada);
+        
+        mostrarResultat("triangle", area);        
+    }
+
+    private void modulCalculAreaQuadrat() {
+        double costat;
+        double area;
+        costat = entrarUnNumero("Quant mesura el costat del quadrat? ");
+             
+        area = calcularAreaQuadrat(costat);
+        
+        mostrarResultat("quadrat", area);        
+    }
+
+    private void modulCalculAreaRectangle() {
+        double base;
+        double alcada;
+        double area;
+        
+        base = entrarUnNumero("Quina és la base del rectangle? ");
+        alcada = entrarUnNumero("I l'alçada? ");
+        
+        area = calcularAreaRectangle(base, alcada);
+        
+        mostrarResultat("rectangle", area);        
+    }
+
+    private void modulCalculAreaCercle() {
+        double radi;
+        double area;
+        radi = entrarUnNumero("Quant mesura el radi del cercle? ");
+             
+        area = calcularAreaCercle(radi);
+        
+        mostrarResultat("cercle", area);        
+    }
+    
+}
+                                        </code></pre>                         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 2 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exercici 3 ================-->    
+                <section id="slc-toDo23" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3> Exercici 3- Implementació de la resta de funcions i integració de tot el codi</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquest darrer exercici ens disposarem a acabar la implementació de tota l'aplicació. De fet només queda per codificar la instrucció d'iteració que gestioni el menú i la instrucció de selecció que ens permeti invocar la opció seleccionada per l'usuari.</p>
+                                    <p>Podeu implementar la instrucció iterativa a la funció inici.</p>
+                                    <p>També seria aconsellable que la instrucció de selecció l'encapsuléssiu en una funció</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo23" 
+                                            data-selector-clue="#slc-toDo23-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo23-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Un menú requereix sempre d'una estructura d'iteració, ja que un cop executada i finalitzada la opció demanada per l'usuari, cal tornar de nou al menú fins que l'usuari decideixi sortir. La opció de sortida és la única que ha d'implicar l'abandonament de la iteració.</p>
+                                    </div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo23" 
+                                            data-selector-solution="#slc-toDo23-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo23-solution" class="iocSolution hidden">
+                                        <pre><code class="java">
+
+
+import java.util.Scanner;
+
+public class CalculadoraDArees {
+    
+    public static void main(String[] args) {
+        CalculadoraDArees prg = new CalculadoraDArees();
+        prg.inici();
+    }
+    
+    private void inici(){
+        char opcio=0;
+        presentacio();
+        
+        /* MOSTRAR EL MENÚ I CRIDAR A LA FUNCIÓ CORRESPONENT */
+        do{
+            opcio = menu();
+            executaModul(opcio);
+
+        }while(opcio!='0');
+    }
+    
+    double calcularAreaTriangle(double base, double alcada){
+        return base*alcada/2;
+    }
+    
+    double calcularAreaRectangle(double base, double alcada){
+        return base*alcada;
+    }
+
+    double calcularAreaQuadrat(double costat){
+        return costat*costat;
+    }
+    
+    double calcularAreaCercle(double radi){
+        return 3.141592*radi*radi;
+    }
+    
+    private double entrarUnNumero(String missatgeExplicatiu){
+        Scanner scanner = new Scanner(System.in);
+        double ret;
+        boolean correcte=false;
+        do{
+            System.out.print(missatgeExplicatiu);
+            correcte=scanner.hasNextDouble();
+            if(!correcte){ //Comprovem si l'usuari escriu un número o text
+                scanner.next();
+                System.out.println("Cal que entris un valor numèric si us plau.");
+            }
+        }while(!correcte);
+        ret = scanner.nextDouble();  
+        scanner.nextLine(); //buidem el buffer del teclat
+        return ret;
+    }
+    
+    private void mostrarResultat(String figura, double resultat){
+        System.out.println();
+        System.out.println("---------------------------------------------------");
+        System.out.print("L'area del ");
+        System.out.print(figura);
+        System.out.print(" val: ");
+        System.out.println(resultat);
+        System.out.println("---------------------------------------------------");
+        System.out.println();
+    }
+    
+    private void presentacio(){
+        System.out.println("======================================================================");
+        System.out.println("Benvinguts a la calculadora d'àrees.");
+        System.out.println("Seleccioneu la figura geomèrica de la que volugueu calcular l'àrea, ");
+        System.out.println("introduïu  les dades que se us dmanin i espereu el resultat.");
+        System.out.println("======================================================================");
+        System.out.println();
+    }
+    
+    private char menu(){
+        Scanner scanner = new Scanner(System.in);
+        String line;
+        char opcio=0;
+        System.out.println("---------------------------------------");
+        System.out.println("         Menú càlcul àrees");
+        System.out.println("---------------------------------------");
+        System.out.println("1. Triangle");
+        System.out.println("2. Quadrat");
+        System.out.println("3. Rectangle");
+        System.out.println("4. Cercle");
+        System.out.println("0. Sortir");
+        System.out.println();
+        System.out.print("Escull una opció i prem [ENTRAR]: ");
+        line = scanner.nextLine();
+        //Evitem l'error si l'usuari prem només [ENTRAR]
+        if(line.length()>0){
+            opcio = line.charAt(0);
+        }
+        return opcio;
+    }
+    
+    private void executaModul(char opcio){
+        switch(opcio){
+            case '1':
+                modulCalculAreaTriangle();
+                break;
+            case '2':
+                modulCalculAreaQuadrat();
+                break;
+            case '3':
+                modulCalculAreaRectangle();
+                break;
+            case '4':
+                modulCalculAreaCercle();
+                break;
+        }            
+    }
+
+    private void modulCalculAreaTriangle() {
+        double base;
+        double alcada;
+        double area;
+        
+        base = entrarUnNumero("Quina és la base del triangle? ");
+        alcada = entrarUnNumero("I l'alçada? ");
+        
+        area = calcularAreaTriangle(base, alcada);
+        
+        mostrarResultat("triangle", area);        
+    }
+
+    private void modulCalculAreaQuadrat() {
+        double costat;
+        double area;
+        costat = entrarUnNumero("Quant mesura el costat del quadrat? ");
+             
+        area = calcularAreaQuadrat(costat);
+        
+        mostrarResultat("quadrat", area);        
+    }
+
+    private void modulCalculAreaRectangle() {
+        double base;
+        double alcada;
+        double area;
+        
+        base = entrarUnNumero("Quina és la base del rectangle? ");
+        alcada = entrarUnNumero("I l'alçada? ");
+        
+        area = calcularAreaRectangle(base, alcada);
+        
+        mostrarResultat("rectangle", area);        
+    }
+
+    private void modulCalculAreaCercle() {
+        double radi;
+        double area;
+        radi = entrarUnNumero("Quant mesura el radi del cercle? ");
+             
+        area = calcularAreaCercle(radi);
+        
+        mostrarResultat("cercle", area);        
+    }
+    
+}
+                                        </code></pre>                         
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 3 ================-->
+            </section>
+            <!--=========== END SECTION toDo ================-->    
+
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Funcions</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <a class="bustiaLliurament">bústia de lliurament de la unitat 4</a>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                                            <h3> CANVIAR! </h3>
+
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="js/jssor.js"></script>
+    <script src="js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        iocSlider = new IocSlider();
+        
+        $("[data-display-on-set-slide]").each(function(){
+            var slide;
+            var self = this;
+            var slideId = this.dataset.displayOnSetSlide; 
+            iocSlider.watch("onSetCurrentSlide", function(e){
+                var slide;
+                var oldSlide =e.oldValues.vindx!=-1
+                                    ?e.oldValues.vslides[e.oldValues.vindx]
+                                    :e.oldValues.hslides[e.oldValues.hindx];
+                if($(oldSlide).attr("id")===slideId){
+                   $(self).hide();
+                   if($(self).hasClass("active")){
+                        $(self).click();
+                   }
+                }
+                slide = this.hasVerticalSlides()
+                                    ?this.vslides[this.vindx]
+                                    :this.hslides[this.hindx];
+                if($(slide).attr("id")===slideId){
+                   $(self).show();
+                }
+            });
+    
+            slide = iocSlider.hasVerticalSlides()
+                                ?iocSlider.vslides[iocSlider.vindx]
+                                :iocSlider.hslides[iocSlider.hindx];
+            if($(slide).attr("id")===slideId){
+               $(this).show();
+            }
+        });
+
+        hljs.addLineNumbers();
+        hljs.initHighlightingOnLoad();
+        
+        $(document).ready(function(){
+            toReplaceOnLoad("data/toReplace.json", "A402");
+        });
+    </script>
+
+</body>
+
+</html>
+

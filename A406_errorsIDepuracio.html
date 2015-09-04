@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila">
+    <title>A406. Errors i depuració</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="css/m03b2Activities.css" rel="stylesheet">
+    <link href="css/scrolling-slides.css" rel="stylesheet">
+    <link href="css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-toKnow">Què cal saber</a></li> 
+                          <li><a href="#slc-examples">Exemples</a></li> 
+                          <li><a href="#slc-toDo">Què cal fer</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A406 - Errors proves i depuració d'aplicacions</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                 <p>Els errors són quelcom intrínsec en la implementació d'aplicacions. Es poden reduir, però és impossible evitar-los. </p>
+                                 <p>L'estructuració dels programes fent servir funcions, l'ús adequat de l'àmbit de les variables i un bon disseny descendent ens poden ajudar a reduir-los, però no son mesures radicals que els evitin. Cal estar a l'aguait i utilitzar totes les eines que puguem per detectar i corregir els errors produïts durant la implementació.</p>
+                                 <p>En aquesta activitat, s'analitzaran quins tipus d'errors ens podem trobar quan programem, i com podem detectar-los, identificar-los i corregir-los.</p>
+                                 <p>En primer lloc haureu de llegir l'apartat <em><a href="#slc-toKnow">Què cal saber</a></em>. Allà, se us explicaran els diferents tipus d'error i com podem enfrontar-nos-hi. Es donarà a conèixer des eines fonamentals, els jocs de proves de les funcions i el depurador del llenguatge.</p>
+                                 <p>Després caldrà que feu els exercicis que se us demana a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em>. Es tracta d'un exercici per consolidar l'ús de jocs de proves per validar funcions i 3 sobre el depurador. Els exercicis del depurador intenten que agafeu agilitat en el seu ús ja que us resultarà bàsic per a trobar errors o simplement analitzar codi.</p>
+                                 <p>A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions</p> 
+                                 <p>Finalment, a l'apartat <em><a href="#slc-toContinue">Com continuar</a></em>, us redirigirà a la següent activitat. </p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION toKnow ================-->    
+            <section id="slc-toKnow" class="vsections">
+                <!--=========== BEGIN SUBSECTION Apartat 1 ================-->    
+                <section id="slc-toKnow10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Errors</h2>
+                                     <h3> Tipus d'error. Detecció, localització i correcció</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p><strong>Tan important és saber codificar com saber trobar i corregir els errors.</strong></p>
+                                    <p>En general podem parlar de 3 tipus d'errors:</p>
+                                    <ul>
+                                        <li><p><strong>Errors de compilació (sintaxi)</strong>. Quan el compilador detecta que una part del codi font no segueix les normes del llenguatge, el procés de compilació s’interromp i anuncia que hi ha un o més error de compilació. En cas que aparegui més d'un error, <strong>cal començar a corregir el primer error que el compilador hagi detectat</strong>, perquè sovint passa que gran part dels errors detectats són conseqüència d'un error previ.</p> 
+                                        <p>Per identificar-los cal llegir la informació associada a l'error i intentar deduir la raó per la qual el compilador l'ha detectat: una instrucció mal escrita, un tipus de dada erroni, etc. Si és precís aneu a la línia on s'ha detectat l'error, forma part de la informació que el compilador ens retorna davant d'un error. </p></li>
+                                        <li><strong>Errors d'execució o de run-time (operacions impossibles i errades de sistema)</strong>. Si durant l'execució d'un programa, es realitzen operacions impossibles d'executar, el programa s'aturarà indicant el tipus d'error que s'ha produït. Per exemple si intentem dividir pel valor zero o intentem convertir un valor en una altre incompatible (cadena de caràcters no numèrics a números). També es produirà error si el sistema no respon com s'esperava, per manca de memòria per exemple o per intentar accedir a informació protegida, etc. Quan es produeix aquest tipus d'error cal llegir la primera informació retornada per la màquina virtual de JAVA (excepció) i deduir perquè s'ha produït l'error. La cerca per Internet pot resultar força fructífera. Els principal problemes d'aquest tipus d'error són:</li>
+                                        <ul>
+                                            <li>Reconèixer la raó de l'error. Aquesta informació es pot deduir a través del tipus d'excepció utilitzada per java. Normalment amb el nom en tindrem prou, per exemple, si inetentem accedir a una posició inexistent d'un array (posició negativa o que sobrepassi la seva mida) l'excepció que obtindrem serà <em>ArrayIndexOutOfBoundsException</em>. Tot i així, podem obtenir molta informació cercant el nom de l'excepció per Internet.</li>
+                                            <li>Localitzar el mètode i la línia on es produeix l'error, sobretot si es tracta d'una aplicació gran molts mètodes i moltes línies de codi. Sortosament, les excepcions d'errors usades per JAVA ens faciliten aquesta feina mostrant totes les funcions i línies per on ha passat el flux del programa just abans de produir-se l'error. És el que s'anomena pila d'execució, un conjunt de línies indicant el nom de la classe, el nom d'una funció i el número de línia. Aquí el nom de la classe serà sempre el mateix perquè de moment només treballem amb una única classe. La primera línia mostrada (la de dalt de tot) indicarà el nom de la funció i la línia on s'ha produït l'error. La resta e línies des de la segona a la última indiquen en ordre invers, quines han estat les diferents crides per les que ha passat el flux per tal d'invocar la funció que ha provocat l'error. EL numero de línia en aquests casos indica la instrucció on s'ha fet la crida de la funció</li>
+                                            <li>Deduir les condicions sota les que apareix l'error, ja que sovint, no sempre es produeixen els errors, sinó nomes sota determinades condicions. Per exemple si una divisió depèn d'un calcul anterior, només es produirà error quan el dividend calculat valgui zero, no en altres moments.</li>
+                                        </ul>
+                                        <li><strong>Errors lògics o semàntics</strong>. Es produeixen quan treballem amb dades incoherents (sense significat) o inconsistents (contradictòries). Aquests errors són els pitjors de localitzar perquè ni el compilador, ni la màquina virtual els detecten. Normalment <strong>ens adonem de l'existència d'aquests errors perquè el resultat obtingut no coincideix amb l'esperat</strong>. Per exemple, si una variable lògica indica que s'ha realitzat un acció, però no ens recordem d'actualitzar-la, ens trobarem davant d'un error lògic d'inconsistència (s'ha realitzat la acció, però la variable no ho indica), que ens pot passar desapercebut si no comprovem els resultats. Per això és important realitzar proves que verifiquin els resultats dels programes.</li>
+                                        
+                                    </ul>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Apartat 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Apartat 2 ================-->    
+                <section id="slc-toKnow20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Errors</h2>
+                                     <h3 >Eines per detectar l'error d'execució i l'error semàntic</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <h4>Jocs de proves per a funcions</h4>
+                                    <p>Ja coneixem algunes de les característiques importants de les funcions. Per exemple, sabem que l'ús de funcions en una implementació ens ajuda focalitzar tota la nostra atenció en unes poques línies de codi, que a més s'agrupen sota un objectiu clar i ben identificat. També sabem que les funcions són modulars i per tant, si hem pres les precaucions correctes, el seu comportament no afecta a la resta de codi o afecta de forma mínima, i per tant controlable.</p>
+                                    <p>Podem fer servir aquestes característiques per fer proves dirigides a comprovar el bon funcionament de les funcions. És el que coneixem com a jocs de proves. Si coneixem de <strong>forma clara l'objectiu</strong> de la funció, podrem invocar-la passant-li diversos valors clau que ens permetin <strong>deduir si es comporta de forma correcta o no</strong>. Parlem de deducció perquè l'avaluació del comportant la farem observant el resultat (valor retornat, informació mostrada a la pantalla, etc.).</p>
+                                    <p>Per exemple si una funció ha de calcular el valor mitjà, però en passar-li una col·lecció amb els valors {5, 5.5, 6}, ens retorna el valor 5, caldrà deduir que no funciona correctament. Per contra si ens retorna el valor esperat, res no ens portaria a pensar que no funciona bé.</p>
+                                    <p>Els jocs de proves són una eina de detecció d'errors d'execució i errors lògics que permeten posar a prova un porció de prova independent per veure si es comporta de la manera esperada.</p>
+                                    <br/>
+                                    <h4>El depurador de codi</h4>
+                                    <p>El <strong>depurador</strong> és una <strong>eina</strong> que ens <strong>mostra la informació interna</strong> d'una execució. </p>
+                                    <p>El depurador també sol ser útil per comprendre o verificar quina és la seqüencia d'execució d'un algoritme o programa en general, ja que ens permet fer el seguiment de l'execució línia per línia.</p>
+                                    <p>Per tal de gestionar l'execució a una «velocitat humana», els depuradors permeten aturar l'execució en una línia especifica del codi marcada amb un<strong> punt de ruptura (breakpoint)</strong>. </p>
+                                    <p>Amb l'execució aturada podem <strong>obtenir el valor de les variables</strong>, fer un <strong>seguiment línia per línia</strong> de les ordres o veure quines han estat <strong>les crides successives</strong> des de la invocació més externa a la més profunda (pila d'execució o stack).</p>
+                                    <p>Quan treballem amb funcions, els depuradors també ens ajuden! ja que ens permetran fer servir una crida a una funció com una instrucció i <strong>saltar-nos la visualització de l'execució</strong> del codi de la funció crida, o bé usar-la com un invocació i <strong>monitoritzar l'execució del codi de la funció</strong> fen un salt a la línia de primera línia de codi i aturant l'execució per tal de fer l'anàlisi des de l'es entranyes de cada funció. </p>
+                                    <p>Us passem un parell de vídeos que expliquen amb força detall com fer servir el depurador amb NetBeans. L'explicació és semblant en ambdós, podeu escollir d'acord amb les vostres preferències de l'idioma. Les adreces són:</p>
+                                    <ul>
+                                        <li><a href="http://www.youtube.com/watch?v=joWldbcp1So" target="_blank">http://www.youtube.com/watch?v=joWldbcp1So (anglès)</a></li>
+                                        <li><a href="http://youtu.be/5USkL8aDKeA" target="_blank">http://youtu.be/5USkL8aDKeA (castellà)</a></li>
+                                    </ul>                                                                         
+                                    <p>Tingueu en compte que com a mínim, necessiteu saber com <a href="#" data-toggle="tooltip" data-html="true" data-original-title="<img width='600' src='images/activities/onOffBreakPoint.gif' alt='crear / elimnar punts de ruptura'>">establir o eliminar punts de ruptura</a>, com <a href="#" data-toggle="tooltip" data-html="true" data-original-title="Clicant [Ctrl-Shift-F5]">iniciar l'execució en mode depuració</a>, com consultar el valor de les <a href="#" data-toggle="tooltip" data-html="true" data-original-title="<img width='600' src='images/activities/variablesAndCallStack.gif' alt='variables/pila de crides'>">variables o la pila de crides</a>, com <a href="#" data-toggle="tooltip" data-html="true" data-original-title="<img width='600' src='images/activities/stepOver.gif' alt='a la línia següent'>">avançar a la següent línia</a>, com <a href="#" data-toggle="tooltip" data-html="true" data-original-title="<img width='600' src='images/activities/stepInto.gif' alt='a la línia següent'>">entrar dins una funció</a> (a la primera línia executable de la funció) o com <a href="#" data-toggle="tooltip" data-html="true" data-original-title="<img width='600' src='images/activities/continue.gif' alt='a la línia següent'>">coinuar l'execució</a> fins a trobar el següent punt de ruptura.</p>
+
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Apartat 2 ================-->    
+            </section>
+            <!--=========== END SECTION toKnow ================-->    
+
+            <!--=========== BEGIN SECTION Examples ================-->    
+            <section id="slc-examples" class="vsections">
+                <!--=========== BEGIN SUBSECTION Example 1 ================-->    
+                <section id="slc-example10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Exemples - Errors</h2>
+                                     <h3> Exemples1. Jocs de proves</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquest és un exemple senzill per il·lustrar l'ús dels jocs de proves. L'error que veurem, probablement es pugui deduir d'un cop d'ull, sense necessitat de fer cap joc de proves, però sovint hi ha molts errors difícils de veure que només es poden descobrir amb tècniques com aquesta. </p>
+                                    <p>Tenim el requeriment de fer una funció que sumi els 3 primers elements d'una col·lecció d'enters que arriba en forma de paràmetre de tipus array d'enters. Despres de donar alguna vola escrivim la funció següent:</p>
+                                    <pre><code class="java">
+    private int sumaTres(int[] valors){
+        int suma=0;
+        for(int i=0; i&lt;3; i++){
+            suma+=valors[i];
+        }
+        return suma;
+    }
+                                    </code></pre>
+                                    <p>Decidim provar-la amb un joc de proves. Preparem la funció main i la funció proves on farem diferents invocacions per comprovar el funcionament de la funció.</p>
+                                    <pre><code class="java">
+
+
+public class ExempleJocDeProves {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        ExempleJocDeProves prg = new ExempleJocDeProves();
+        prg.proves();
+    }
+    
+    private void proves(){
+        int res;
+        int[] col1 = {2,2,2,100,100};
+        res = sumaTres(col1);
+        System.out.print("sumaTres({2,2,2,100,100})=");
+        System.out.println(res);;
+    }
+    
+    private int sumaTres(int[] valors){
+        int suma=0;
+        for(int i=0; i&lt;3; i++){
+            suma+=valors[i];
+        }
+        return suma;
+    }    
+}
+
+                                    </code></pre>
+                                    <p>De moment tot funciona. Decidim però ampliar el joc de proves usant una col·lecció de just 3 elements i una altra de menys de 3</p>
+                                    <pre><code class="java">
+package ioc.m03.uf2.funcions.a406;
+
+public class ExempleJocDeProves {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        ExempleJocDeProves prg = new ExempleJocDeProves();
+        prg.proves();
+    }
+    
+    private void proves(){
+        int res;
+        int[] col1 = {2,2,2,100,100};
+        res = sumaTres(col1);
+        System.out.print("sumaTres({2,2,2,100,100})=");
+        System.out.println(res);;
+        
+        int[] col2 = {100,100, 100};
+        res = sumaTres(col2);
+        System.out.print("sumaTres({100,100, 100})=");
+        System.out.println(res);;
+
+        int[] col3 = {10,10};
+        res = sumaTres(col3);
+        System.out.print("sumaTres({10,10})=");
+        System.out.println(res);;
+    }
+    
+    private int sumaTres(int[] valors){
+        int suma=0;
+        for(int i=0; i&lt;3; i++){
+            suma+=valors[i];
+        }
+        return suma;
+    }    
+}
+                                    </code></pre>
+                                    <p>Aquest cop ja no hi ha hagut tanta sort, perquè a la tercera prova s'ha produït un error que ens permet corregir adequadament la funció:</p>
+                                    <pre><code class="java">
+...
+    private int sumaTres(int[] valors){
+        int suma=0;
+        for(int i=0; i&lt;valors.length && i&lt;3; i++){
+            suma+=valors[i];
+        }
+        return suma;
+    }    
+...
+                                    </code></pre>
+                                    <p>Amb aquest canvi, la funció ja passa totes les proves i deduïm que ja està preparada per ser usada en qualsevol altre implementació amb alta garantia de no provocar errors. </p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Example 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Example 2 ================-->    
+                <section id="slc-example20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Exemples - Errors</h2>
+                                     <h3 >Exemple 2. Ús del depurador</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>De nou un exemple senzill que il·lustrarà l''ús del depurador. Es possible que us adoneu de l'error sense necessitat de fer servir el depurador, però hi ha molts altres errors que només descobrireu si analitzeu el codi en execució mitjançant un depurador. Veiem l'exemple.</p>
+                                    <p>El següent algoritme presenta un error d'execució que desitgem descobrir:</p>
+                                    <pre><code class="java linenumbers">
+
+
+    import java.util.Scanner;
+
+    public class ExempleDepuracio {
+        
+    public static void main(String[] args) {
+        ExempleDepuracio prg = new ExempleDepuracio();
+        prg.inici();
+    }
+    
+    private void inici(){
+        double valorDoble = 12345.6789;
+        int valorEnter = 1000;
+        int resultat;
+        
+        resultat = calcul(valorDoble, valorEnter);
+        
+        System.out.println("vd: " + valorDoble);
+        System.out.println("ve: " + valorEnter);
+        System.out.println("re: " + resultat);        
+    }
+    
+    private int calcul(double valorDoble, int valorEnter){
+        int aux;
+        int comptador=0;
+        while(comptador&lt;10){
+            valorDoble= Math.log(valorDoble);
+            aux = (int) valorDoble;
+            valorEnter = valorEnter/aux;
+            comptador++;
+        }
+        return valorEnter;
+    }
+}
+                                    </code></pre>
+                                    <p>Sabem que es produeix a la funció calcul, a la línia 34. Com que es tracta d'un bucle decidim escriure un taula amb tots els valors de les variables implicades en el bucle. Posem un punt d'interrupció just abans d'entrar en el bucle i arranquem l'anàlisi.  Per fer-ho depurarem línia per línia anotant els valors a la taula. Hi ha 4 variables:</p>
+                                    <table border="1" cellspacing="0" cellpadding="1">
+                                        <tr>
+                                            <th>Linia</th>
+                                            <th>aux</th>
+                                            <th>ValorEnter</th>
+                                            <th>ValorDouble</th>
+                                            <th>comptador</th>
+                                        </tr>
+                                        <tr>
+                                            <td>27</td>
+                                            <td>-?</td>
+                                            <td>1000</td>
+                                            <td>12345.6789</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>28</td>
+                                            <td>-?</td>
+                                            <td>1000</td>
+                                            <td>9.4210613941918</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>29</td>
+                                            <td>9</td>
+                                            <td>1000</td>
+                                            <td>9.4210613941918</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>30</td>
+                                            <td>9</td>
+                                            <td>111</td>
+                                            <td>9.4210613941918</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>31</td>
+                                            <td>9</td>
+                                            <td>111</td>
+                                            <td>9.4210613941918</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr><td class="em" colspan="5">següent iteració</td></tr>
+                                        <tr>
+                                            <td>27</td>
+                                            <td>9</td>
+                                            <td>111</td>
+                                            <td>9.4210613941918</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>28</td>
+                                            <td>9</td>
+                                            <td>111</td>
+                                            <td>2.2429477567836</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>29</td>
+                                            <td>2</td>
+                                            <td>111</td>
+                                            <td>2.2429477567836</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>30</td>
+                                            <td>2</td>
+                                            <td>55</td>
+                                            <td>2.2429477567836</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>31</td>
+                                            <td>2</td>
+                                            <td>55</td>
+                                            <td>2.2429477567836</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr><td class="em" colspan="5">següent iteració</td></tr>
+                                        <tr>
+                                            <td>27</td>
+                                            <td>2</td>
+                                            <td>55</td>
+                                            <td>2.2429477567836</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>28</td>
+                                            <td>2</td>
+                                            <td>55</td>
+                                            <td>0.8077909635965</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>29</td>
+                                            <td>0</td>
+                                            <td>55</td>
+                                            <td>0.8077909635965</td>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr class="em">
+                                            <td>30</td>
+                                            <td colspan=4>ERROR</td>
+                                        </tr>
+                                    </table>
+                                    <p>Ens adonem que en el moment d'executar la línia 8 després de dues iteracions el valor de valorEnter1 és zero i per tant en intentar fer la divisió es produeix un error d'intent de dividir per zero. Per arreglar l'error, decidim retornar -1 si el valor no es pot calcular:</p>
+                                    <pre><code class="java">
+...
+    private int calcul(double valorDoble, int valorEnter){
+        int aux;
+        int comptador=0;
+        while(comptador&lt;10){
+            valorDoble= Math.log(valorDoble);
+            aux = (int) valorDoble;
+            if(aux==0){
+                valorEnter=-1;
+                comptador=10;
+            }else{
+                valorEnter = valorEnter/aux;
+            }
+            comptador++;
+        }
+        return valorEnter;
+    }
+...
+                                    </code></pre>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Example 2 ================-->    
+            </section>
+            <!--=========== END SECTION Examples ================-->    
+
+            <!--=========== BEGIN SECTION toDo ================-->    
+            <section id="slc-toDo" class="vsections">
+    
+                <!--=========== BEGIN SUBSECTION Exercici 1 ================-->    
+                <section id="slc-toDo10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Errors</h2>
+                                     <h3> Exercici 1 - Joc de proves</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Ens diuen que han escrit una funció que rep un array de doubles i un double. La funció cerca en quina posició de la col·lecció es troba el double passat com a segon paràmetre. En cas que la col·lecció contingui valors repetits, la posició retornada serà sempre la més baixa. En cas de demanar la cerca d'un valor inexistent el valor retornat serà la mida de la col·lecció.</p>
+                                    <p>La funció és:</p>
+                                    
+                                    <pre><code class="java">
+package ioc.m03.uf2.funcions.a406;
+
+public class ExerciciJocDeProves {
+
+    public int cercarPosicioValor(double[] colleccio, double aCercar){
+        boolean trobat = false;
+        int posicio=0;
+        
+        while(posicio&lt;colleccio.length && !trobat){
+            trobat = colleccio[posicio]==aCercar;
+            posicio++;
+        }
+        
+        return posicio;
+    }
+}
+                                    </code></pre>
+                                    <p>Es demana que feu un joc de proves per verificar el funcionament de la funció. En cas que trobeu alguna incorrecció, es demana també que la corregiu</p> 
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo10" 
+                                            data-selector-clue="#slc-toDo10-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo10-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Com a mínim caldria fer una invocació per a cada requisit expressat a l'enunciat (el valor es troba a l'array, el valor està repetit o el valor no es troba a l'array). </p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo10" 
+                                            data-selector-clue="#slc-toDo10-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo10-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Alguns requisits, a vegades poden necessitar diverses proves. Per exemple quan fem recorreguts d'arrays, les posicions inicial i darrera poden critiques i es mereixerien un prova específica. En general caldria pensar quin conjunt de valors dels paràmetres poden tenir comportaments anòmals i fer la prova amb un representant de cada conjunt.</p>
+                                    </div>                                    
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-3d toggle-off" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo10" 
+                                            data-selector-solution="#slc-toDo10-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo10-solution" class="iocSolution hidden">
+                                    <p>El joc de proves buscarà totes les condicions indicades a l'enunciat:</p>
+                                    <ol>
+                                        <li>Retorna la posició correcte</li>
+                                        <li>En cas d'haver valors repetits retorna la posició del que es trobi abans.</li>
+                                        <li>En cas d'un valor inexistent retorna la longitud de la col·lecció.</li>
+                                    </ol>
+                                    <p>Per provar el punt 1 es faran 3 proves demanant el valor que es trobi a la poció 0, el que es tobi en darrer lloc i un que es trobi en una posició intermèdia.</p>
+                                    <p>Per provar el punt 2 es realitzarà només un proba amb un valor repetit</p>
+                                    <p>Per provar el punt 3 es realitzarà només una prova amb un valor inexistent</p>
+                                        <pre><code class="java">
+
+
+public class ExerciciJocDeProves {
+    public static void main(String[] args) {
+        ExerciciJocDeProves prg = new ExerciciJocDeProves();
+        prg.proves();
+    }
+    
+    private void proves() {
+        int pos;
+        double[] col = {10.5, 1.0, 8.9, 5.2, 1.0, 7.5, -5.8, 0, 18.1};
+        
+        pos = cercarPosicioValor(col, col[0]);
+        System.out.print("cercarPosicioValor(col, col[0]) = ");
+        System.out.println(pos);
+        
+        pos = cercarPosicioValor(col, col[col.length-1]);
+        System.out.print("cercarPosicioValor(col, col[col.length-1]) = ");
+        System.out.println(pos);
+
+        pos = cercarPosicioValor(col, col[3]);
+        System.out.print("cercarPosicioValor(col, col[3]) = ");
+        System.out.println(pos);
+        
+        pos = cercarPosicioValor(col, 1);
+        System.out.print("cercarPosicioValor(col, 1) = ");
+        System.out.println(pos);
+
+        pos = cercarPosicioValor(col, 1000);
+        System.out.print("cercarPosicioValor(col, 1000) = ");
+        System.out.println(pos);
+
+    }
+
+    public int cercarPosicioValor(double[] colleccio, double aCercar){
+        boolean trobat = false;
+        int posicio=0;
+        
+        while(posicio&lt;colleccio.length && !trobat){
+            trobat = colleccio[posicio]==aCercar;
+            posicio++;
+        }
+        
+        return posicio;
+    }
+}
+
+                                            </code></pre>                         
+                                            <p>Ens adonem que la funció retorna una posició de més que la que hauria de retornar. Analitzant el codi ens adonem que sempre s'incrementa la posició, fins hi tot quan es troba el valor, cosa que explicaria el comportament. Decidim arreglar la funció i tronar-la a provar.</p>
+                                            <pre><code class="java">
+package ioc.m03.uf2.funcions.a406;
+
+public class ExerciciJocDeProves {
+    public static void main(String[] args) {
+        ExerciciJocDeProves prg = new ExerciciJocDeProves();
+        prg.proves();
+    }
+    
+    private void proves() {
+        int pos;
+        double[] col = {10.5, 1.0, 8.9, 5.2, 1.0, 7.5, -5.8, 0, 18.1};
+        
+        pos = cercarPosicioValor(col, col[0]);
+        System.out.print("cercarPosicioValor(col, col[0]) = ");
+        System.out.println(pos);
+        
+        pos = cercarPosicioValor(col, col[col.length-1]);
+        System.out.print("cercarPosicioValor(col, col[col.length-1]) = ");
+        System.out.println(pos);
+
+        pos = cercarPosicioValor(col, col[3]);
+        System.out.print("cercarPosicioValor(col, col[3]) = ");
+        System.out.println(pos);
+        
+        pos = cercarPosicioValor(col, 1);
+        System.out.print("cercarPosicioValor(col, 1) = ");
+        System.out.println(pos);
+
+        pos = cercarPosicioValor(col, 1000);
+        System.out.print("cercarPosicioValor(col, 1000) = ");
+        System.out.println(pos);
+
+    }
+
+    public int cercarPosicioValor(double[] colleccio, double aCercar){
+        boolean trobat = false;
+        int posicio=0;
+        
+        while(posicio&lt;colleccio.length && !trobat){
+            trobat = colleccio[posicio]==aCercar;
+            if(!trobat){
+                posicio++;
+            }
+        }
+        
+        return posicio;
+    }
+}
+
+                                            </code></pre>
+                                            <p>Ara la verificació és correcta. La funció compleix els requisits de l'enunciat</p>
+                                    </div> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exercici 2 ================-->    
+                <section id="slc-toDo20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Errors</h2>
+                                     <h3> Exercici 2 - Ús del depurador</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>EL depurador és una de les eines més útils pels programadors. Saber consultar el valor de les variables en el moment adequat pot resultar de gram importància quan estem cercant erros semàntics, perquè recordeu que són errors que passen desapercebuts (no fan petar l'execució). Si el programa és llarg resultarà impossible fer un seguiment línia per línia i per tant, cal trobar-los amb paciència, fent servir la intuïció i aturant el programam allà on sospitem que es pot trobar el comportament anòmal.</p>
+                                    <p>En aquest exercici se us demana que fent servir el depurador, aconseguir saber el valor d'una variable just en el moment que una altra prengui un determinat valor.</p>
+                                    <p>Sigui l'algoritme següent:</p>
+                                    <pre><code class="java">
+    public void exercici1(){
+        double valor=3027688.78618199;
+        int i=0;
+        
+        while(i&lt;10){
+            valor/=13;
+            //PUNT DE CONSULTA
+            i++;  
+        }
+}                                   </code></pre>
+                                    <p>Indiqueu quant val la variable <strong><em>valor</em></strong> en el PUNT DE CONSULTA, un cop la variable <strong><em>i</em></strong> valgui <em>3</em>. Per saber-ho, codifiqueu un programa amb aquest algoritme i feu una execució amb el depurador.</p> 
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Quan el depurador es troba aturat sobre una línia, aquesta encara no s'ha executat. Hem situat el punt de consulta sota la instrucció <em>valor/13</em> per tal que feu la consulta un cop executada aquesta instrucció.</p>
+                                    </div>                                    
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-3d toggle-off" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-solution="#slc-toDo20-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo20-solution" class="iocSolution hidden">
+                                            <p>La variable valor val  <em>106.00780036350233</em></p>
+                                    </div> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 2 ================-->    
+                                
+                <!--=========== BEGIN SUBSECTION Exercici 3 ================-->    
+                <section id="slc-toDo30" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Errors</h2>
+                                     <h3> Exercici 3 - Ús del depurador</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Recordeu que l'algoritme d'ordenació del mètode de la bombolla és:</p>
+                                    <pre><code class="java">
+    void bombolla(){
+       float aux;
+        
+        for(int passada = 0; passada&lt;valors.length-1; passada++){
+            //puja bombolla;
+            for(int ind = valors.length-1; ind>passada; ind--){
+                 //intercanvia si cal
+                if(valors[ind]&lt;valors[ind-1]){
+                    aux = valors[ind];
+                    valors[ind] = valors[ind-1];
+                    valors[ind-1] = aux;
+                }
+            }
+        }
+    } 
+                                  </code></pre>
+                                  <p>On valors és la col·lecció a ordenar.</p> 
+                                  <p>Codifiqueu un programa amb aquest algoritme amb una variable global anomenada valors per disposar de dades en executar. Inicialment doneu-li a la col·lecció els valors</p>
+                                  <table border="1" cellspacing="0" cellpadding="1">
+                                      <tr>
+                                        <td>4.2</td> <td>2.5</td> <td>3.0</td> <td>1.0</td>
+                                      </tr>
+                                  </table>
+                                  <p>Fent una execució amb el depurador i ompliu una taula com la següent, indicant a cada iteració com va canviant l'array, fins a quedar ordenat. </p>
+                                  <table border="1" cellspacing="0" cellpadding="1">
+                                      <tr>
+                                        <td class="em">inici</td> <td>4.2</td> <td>2.5</td> <td>3.0</td> <td>1.0</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">1a iteració</td> <td> </td> <td> </td> <td> </td> <td> </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">2a iteració</td> <td> </td> <td> </td> <td> </td> <td> </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">3a iteració</td> <td> </td> <td> </td> <td> </td> <td> </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">4a iteració</td> <td> </td> <td> </td> <td> </td> <td> </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">5a iteració</td> <td> </td> <td> </td> <td> </td> <td> </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">6a iteració</td> <td> </td> <td> </td> <td> </td> <td> </td>
+                                      </tr>
+                                  </table>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-3d toggle-off" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo30" 
+                                            data-selector-solution="#slc-toDo30-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo30-solution" class="iocSolution hidden">
+                                  <table border="1" cellspacing="0" cellpadding="1">
+                                      <tr>
+                                        <td class="em">inici</td>       <td>4.2</td> <td>2.5</td> <td>3.0</td> <td>1.0</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">1a iteració</td> <td>4.2</td> <td>2.5</td> <td>1.0</td> <td>3.0</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">2a iteració</td> <td>4.2</td> <td>1.0</td> <td>2.5</td> <td>3.0</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">3a iteració</td> <td>1.0</td> <td>4.2</td> <td>2.5</td> <td>3.0</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">4a iteració</td> <td>1.0</td> <td>4.2</td> <td>2.5</td> <td>3.0</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">5a iteració</td> <td>1.0</td> <td>2.5</td> <td>4.2</td> <td>3.0</td>
+                                      </tr>
+                                      <tr>
+                                        <td class="em">6a iteració</td> <td>1.0</td> <td>2.5</td> <td>3.0</td> <td>4.2</td>
+                                      </tr>
+                                  </table>
+                                    </div> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 3 ================-->    
+                                
+                <!--=========== BEGIN SUBSECTION Exercici 4 ================-->    
+                <section id="slc-toDo40" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Errors</h2>
+                                     <h3> Exercici 4 - Ús del depurador</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>A l'algoritme que us mostrem a continuació:</p>
+                                    <pre><code class="java linenumbers">
+public class ExerciciDepuracio {
+    float[] valors = {4.2f, 2.5f, 3f, 1f};             
+            
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        ExerciciDepuracio programa = new ExerciciDepuracio();
+        programa.cercarValor();
+    }
+    
+    public void cercarValor(){
+        /* Aquest algorisme demana a l'usuari que introdueixi una col·lecció
+         * de dades per teclat. Després demana que introdueixi un valor a 
+         * cercar i finalment mostra per pantalla la posició dins la col·lecció
+         * on es troba el valor cercat. 
+         */
+        Scanner scanner = new Scanner(System.in);
+        int midaColleccio;
+        double[] colleccio;        
+        double aCercar;
+        int posicio;
+        boolean trobat;
+        
+        System.out.println("Aquest algorisme us demanarà que "
+                + "introduïu una col·lecció de dades per teclat. Després "
+                + "demana que introduïu un valor a cercar i finalment mostra "
+                + "per pantalla la posició dins la col·lecció on es troba el "
+                + "valor cercat.\n");
+        System.out.println("Introduïu la mida de la col·lecció d'enters");
+        midaColleccio = scanner.nextInt();
+        
+        colleccio = new double[midaColleccio];
+        
+        for(int i=0; i&lt;midaColleccio; i++){
+            System.out.print("\nIntrodueix l'enter de la posició "+i+": ");
+            colleccio[i]=scanner.nextDouble();
+        }
+        
+        System.out.println("Ara introdueix un valor a cercar: ");
+        aCercar = scanner.nextDouble();
+        
+        posicio=cercarPosicioValor(colleccio, aCercar);
+        
+        if(aCercar&gt;=colleccio.length){
+            System.out.println("El valor cercat no es troba a la col·lecció");
+        }else{
+            System.out.println("El valor: " + aCercar 
+                    + " es troba a la posicio: " + posicio);
+        }  
+    }
+    
+    public int cercarPosicioValor(double[] colleccio, double aCercar){
+        boolean trobat = false;
+        int posicio=0;
+        
+        while(posicio&lt;colleccio.length && !trobat){
+            trobat = colleccio[posicio]==aCercar;
+            if(!trobat){
+                posicio++;
+            }
+        }
+        
+        return posicio;
+    }
+}
+
+                                  </code></pre>
+                                  <p>Hi ha algun error semàntic  o lògic que fa que el valor mostrat per pantalla no sempre sigui el correcte. Ens diuen per exemple, que amb l'array de valors: 5.2, 2.5, 3.0, 1.0, i 3.0, si es demana per cercar el valor 2.5 funciona bé, però si es demana el 5.2 indica que no el troba.</p>
+
+                                  <p>Usant el depurador trobeu de quin error es tracta i corregiu-lo.</p> 
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo40" 
+                                            data-selector-clue="#slc-toDo40-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo40-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Comprova si les posicions retornades per la funció <em>cercarPosicioValor</em>, són correctes. En cas afirmatiu, l'error ja de'estar en les línies seguents.</p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo40" 
+                                            data-selector-clue="#slc-toDo40-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo40-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Usant l'array proposat a l'enunciat, prova a demanar un valor inexistent més petit que 4. Repeteix la prov per un valor superior a 4</p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo40" 
+                                            data-selector-clue="#slc-toDo40-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo40-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>També pots provar de demanar la cerca d'un valor existent que sigui més gran que la mida de l'array i el d'un valor existent que sigui menor qiue la mida de l'array.</p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo40" 
+                                            data-selector-clue="#slc-toDo40-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-toDo40-clue4" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Recorda que l'error el trobaràs després de la línia 41. Quina instrucció pot ser responsable de donar un missatge erroni? Centra't en aquesta instrucció analitzant els casos que t'han funcionat i els que no</p>
+                                    </div>                                    
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-3d toggle-off" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo40" 
+                                            data-selector-solution="#slc-toDo40-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo40-solution" class="iocSolution hidden">
+                                        <p>Ens adonem que a vegades funciona i a vegades no.</p>
+                                        <p>Fent un seguiment amb el depurador podem dir que el valor de la posició emmagatzemat a la variable <em>posicio</em> es calcula sempre bé en sortir de la funció <em>cercarPosicioValor</em>. Per tant l'error ha d'estar en les línies següents al bucle.</p>
+                                        <p>Continuant la depuració a la resta de línies, ens adonem que l'error es troba al condicional de la línia 45. En codificar-lo el programador s'ha equivocat de nom de variable. Allà on diu:</p>
+                                        <pre><code class="java">
+                if(aCercar&gt;=colleccio.length){
+                                        </code></pre>
+                                        <p>hauria de dir:</p>
+                                        <pre><code class="java">
+                if(posicio&gt;=colleccio.length){
+                                        </code></pre>
+                                    </div> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 4 ================-->  
+            </section>
+            <!--=========== END SECTION toDo ================-->    
+
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Funcions</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <a class="bustiaLliurament">bústia de lliurament de la unitat 4</a>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <p>Aquesta activitat d'aprenentatge té per objectiu que:</p>
+            <ul>
+                <li>Reconegueu els tipus d'error que us podeu trobar programant i useu les eines adequades per trobar-los i solucionar-los.</li>
+                <li>Useu jocs de proves per validar el funcionament correcte de les funcions.</li>
+                <li>Us inicieu en l'ús del depurador del Netbeans.</li>
+                <li>Useu el depurador per cercar errors de tipus semàntic en programes complexos.</li>
+            </ul>
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="js/jssor.js"></script>
+    <script src="js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        iocSlider = new IocSlider();
+        
+        $("[data-display-on-set-slide]").each(function(){
+            var slide;
+            var self = this;
+            var slideId = this.dataset.displayOnSetSlide; 
+            iocSlider.watch("onSetCurrentSlide", function(e){
+                var slide;
+                var oldSlide =e.oldValues.vindx!=-1
+                                    ?e.oldValues.vslides[e.oldValues.vindx]
+                                    :e.oldValues.hslides[e.oldValues.hindx];
+                if($(oldSlide).attr("id")===slideId){
+                   $(self).hide();
+                   if($(self).hasClass("active")){
+                        $(self).click();
+                   }
+                }
+                slide = this.hasVerticalSlides()
+                                    ?this.vslides[this.vindx]
+                                    :this.hslides[this.hindx];
+                if($(slide).attr("id")===slideId){
+                   $(self).show();
+                }
+            });
+    
+            slide = iocSlider.hasVerticalSlides()
+                                ?iocSlider.vslides[iocSlider.vindx]
+                                :iocSlider.hslides[iocSlider.hindx];
+            if($(slide).attr("id")===slideId){
+               $(this).show();
+            }
+        });
+
+        hljs.addLineNumbers();
+        hljs.initHighlightingOnLoad();
+        
+        $(document).ready(function(){
+            toReplaceOnLoad("data/toReplace.json", "A406");
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

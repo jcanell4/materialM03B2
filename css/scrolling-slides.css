@@ -1,0 +1,383 @@
+/*
+ */
+
+/*!
+ * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+ 
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 2px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+.after-top-menu{
+    top: 55px;
+}
+
+/* logo */
+
+.logo-nav {
+    padding-top: 4px;
+}
+
+.navbar-left.logo-nav{
+    padding-left: 20px;
+}
+
+/* Custom Button Styles */
+
+.btn-dark {
+    border-radius: 6;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.btn-light {
+    border-radius: 6;
+    color: #333;
+    background-color: rgb(255,255,255);
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+    color: #333;
+    background-color: rgba(255,255,255,0.8);
+}
+
+/* Custom Horizontal Rule */
+
+hr.small {
+    max-width: 100px;
+}
+
+/* Arrow navigator */
+.arrownav{
+  display: block;
+  /* size of arrow element */
+  cursor: pointer;
+  background-image: url("../images/a02.png");
+  overflow: hidden;
+  bottom: 60px;
+  height: 50px;
+  position: fixed;
+
+  width: 50px;
+  z-index: 2000;
+  color: #fff;
+}
+
+.previousSection{
+    left: 50px;
+    background-position: -3px -33px;
+}
+.nextSection{
+    right: 50px;
+    background-position: -63px -33px;
+}
+
+.previousSection:hover,.previousSection:focus { 
+    background-position: -123px -33px; 
+}
+
+.nextSection:hover,.nextSection:focus { 
+    background-position: -183px -33px; 
+}
+
+.nextSection.active,.nextSection:active, 
+.previousSection.active,.previousSection:active{
+  background-image: url("../images/a02.png");
+  background-color: #fff;
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+/* Side Menu */
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: #222;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.sidebar-nav {
+    position: absolute;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+}
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 55px;
+    font-size: 18px;
+    line-height: 55px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+#menu-toggle {
+    z-index: 999;
+    position: fixed;
+/*    top: 0;*/
+    right: 0;
+}
+
+#sidebar-wrapper.active {
+    right: 250px;
+    width: 250px;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.toggle {
+    margin: 5px 5px 0 0;
+}
+
+.toggle-topz{
+    z-index: 2000;
+}
+
+#menu-close{
+    z-index: 2000;
+}
+
+.menu_area{
+    margin:0px;
+    padding:0px;
+}
+
+
+#sidepanel-wrapper {
+    z-index: 1000;
+    position: fixed;
+    width: 0px;
+    height: 100%;
+    overflow-y: auto;
+    background: #EEE;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+#sidepanel-wrapper.active {
+    width: 100%;
+    color: #111;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+#emptypanel-wrapper {
+    z-index: 1000;
+    position: fixed;
+    width: 0px;
+    height: 100%;
+    overflow-y: auto;
+    background: #EEE;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+#emptypanel-wrapper.active {
+    width: 90%;
+    color: #111;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+
+/*********************************************
+ * SLIDES
+ *********************************************/
+.iocMainPanel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.iocMainPanel .slides {
+  /*padding-top: 55px;*/
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: visible;
+  z-index: 1;
+  text-align: center;
+}
+.iocMainPanel .slides > section{
+    /*
+  padding-top:55px;
+    */
+}
+.iocMainPanel .slides > section, .iocMainPanel .slides > section > section {
+  /*display: none;*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  -webkit-transition: -webkit-transform-origin 800ms ease, -webkit-transform 800ms ease, visibility 800ms ease 100ms, opacity 800ms ease 100ms;
+  transition: -ms-transform-origin 800ms  ease, transform 800ms  ease, visibility  ease 100ms, opacity 800ms  ease 100ms;
+  transition: transform-origin 800ms  ease, transform 800ms  ease, visibility 800ms  ease 100ms, opacity 800ms  ease 100ms; 
+}
+
+.iocMainPanel .slides > section.vsections {
+  /*padding-top: 0;*/
+  padding-bottom: 0;
+  overflow:visible;
+  /*extra*/
+  height:100%;
+}
+
+.iocMainPanel .slides > section.current:not(.vsections), .iocMainPanel .slides > section > section.current {
+  /*extra*/
+  padding-top:55px;
+  overflow:auto;
+  z-index: 11;
+  padding-bottom: 20px;
+}
+
+.iocMainPanel .slides > section.current, .iocMainPanel .slides > section > section.current {
+  display: block;
+  opacity: 1;
+}
+
+.iocMainPanel .slides > section.front, .iocMainPanel .slides > section > section.front, .iocMainPanel .slides > section.rear, .iocMainPanel .slides > section > section.rear {
+  pointer-events: none; 
+}
+
+.iocMainPanel.overview .slides > section, .iocMainPanel.overview .slides > section > section {
+  pointer-events: auto; 
+}
+
+.iocMainPanel .slides > section.rear, .iocMainPanel .slides > section.front, .iocMainPanel .slides > section > section.rear, .iocMainPanel .slides > section > section.front {
+  opacity: 0; 
+}
+
+.iocMainPanel.slide section {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+
+.iocMainPanel .slides > section.rear  {
+  -webkit-transform: translate(-200%, 0);
+      -ms-transform: translate(-200%, 0);
+          transform: translate(-200%, 0); }
+
+.iocMainPanel .slides > section.front{
+  -webkit-transform: translate(200%, 0);
+      -ms-transform: translate(200%, 0);
+          transform: translate(200%, 0); }
+
+.iocMainPanel .slides > section > section.rear{
+  -webkit-transform: translate(0, -200%);
+      -ms-transform: translate(0, -200%);
+          transform: translate(0, -200%); }
+
+.iocMainPanel .slides > section > section.front{
+  -webkit-transform: translate(0, 200%);
+      -ms-transform: translate(0, 200%);
+          transform: translate(0, 200%); 
+}
+
+.left-position{
+    position: fixed;
+    left: 0;
+}
+
+.right-position{
+    position: fixed;
+    right: 0;
+}
+
+.column-panel{
+    position: fixed;
+    width:100px;
+    z-index: 100;
+}
+
+.toggle-off{
+    display:none;
+}

@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22/07/2015, 00:08:00
+    Author     : Josep Cañellas <jcanell4@ioc.cat>
+*/
+
+pre{
+    text-align: initial !important;
+}
+
+pre {
+  counter-reset: lines;
+}
+pre .line {
+  counter-increment: lines;
+}
+pre .line::before {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  -o-user-select: none;
+  user-select: none;
+  
+  content: counter(lines);
+  text-align: right;
+  display: inline-block; 
+  width: 3em;
+  padding-right: 0.5em; 
+  margin-right: 0.5em;
+  color: #BBB; 
+  border-right: solid 1px;
+}

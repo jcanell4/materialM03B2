@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila">
+    <title>A403. Funcions III</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="css/m03b2Activities.css" rel="stylesheet">
+    <link href="css/scrolling-slides.css" rel="stylesheet">
+    <link href="css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-toDo">Què cal fer</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A403 - Funcions</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Aquesta és la darrera activitat destinada específicament a funcions. Aquí aprendreu a fer servir arrays a les funcions. Els arrays són un tipus de dada compost i no es comporten exactament igual que els tipus de dades bàsics com els números, els caràcters o el text. Podrem utilitzar-los de forma semblant als altres tipus, això si, però caldrà tenir en compte algunes consideracions, sobretot si els fem servir de paràmetres d'entrada.</p>
+                                <p>Un cop més se us faran propostes que demandaran una resposta activa. Concretament, se us proposaran exercicis de codificació i també discussions al fòrum. Aquestes us han de permetre extreure les conclusions que us portaran a l'aprenentatge. </p>
+                                <p>Aneu a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em> on trobareu detallades les propostes.</p>
+                                <p>A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions</p> 
+                                 <p>Finalment, a l'apartat <em><a href="#slc-toContinue">Com continuar</a></em>, us redirigirà a la següent activitat. </p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION toDo ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION Exercici 1 ================-->    
+                <section id="slc-toDo10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3> Exercici 1 - Ús d'arrays com a paràmetres d'entrada o sortida</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Els arrays són un tipus de dada compost. Com sabeu, un array referencia tota una col·lecció de dades, i disposa de mecanismes per accedir i manipular els seus elements. La gran avantatge dels arrays és que amb una única variable podem accedir a multitud de dades. De fet, són també un mecanisme per reduir la complexitat. Es mantenen el nombre de dades, però s'aconsegueix reduir el nombre de variables cosa que facilita la implementació del programador.</p>
+                                    <p>De forma semblant a l'ús d'arrays per mitjà de variables, és possible fer servir paràmetres de funcions que referenciïn també arrays, de manera que sigui possible accedir a tots els seus elements utilitzant només un únic paràmetre</p>
+                                    <p>En aquest primer exercici se us proposa que practiqueu a crear funcions que rebin arrays. Concretament us proposem que feu tres funcions que rebin arrays de tipus <em>double</em>.</p>
+                                    <p>La primera s'anomenarà <em>valorMitjà</em> i calcularà el valor mitjà de la col·lecció de <em>doubles</em> que li arribi a través d'un paràmetre de tipus array. La funció haurà de retornar el valor calculat</p>
+                                    <p>La segona funció s'anomenarà <em>valorMinim</em> i en aquest cas, cercarà el valor mínim de tots els <em>doubles</em> que arribin per paràmetre. Per tant la funció retornarà un double amb el valor mínim trobat</p>
+                                    <p>La darrera funció s'anomenarà posicioMaxim. Es tracta d'una funció que tindrà per objectiu trobar el valor màxim dins l'array que li arribi per paràmetres, però en comptes de retornar el valor, el que retornarà és la posició de l'array on es trobi l'element amb el valor màxim. Retornar la posició en comptes del valor pot tenir certes avantatges; sovint cal treballar amb diversos arrays relacionats a través de la posició, per exemple per emmagatzemar les notes i els noms dels alumnes cal fer servir dos arrays perquè les dades son se tipus diferents. En un array de cadenes de text hi guardarem els noms dels alumnes i en un altre de doubles les seves notes. Ambdós arrays els mantindrem relacionats per posició. És a dir, el primer alumne tindrà la primera nota, el segon la segona nota i així successivament. Saber la posició d'un element especific d'un dels arrays suposa també disposar del valor corresponent de l'array realcionat. És per això que quan programen amb arrays pot ser preferible treballar sempre amb les posicions i fer el canvi només quan sigui necessari.</p>
+                                    
+                                    <p>Per tal de provar que us funcionen les vostres codificacions, us facilitem la funció <em>inici</em> i <em>main</em>:</p>
+                                    <pre><code class="java">
+ public static void main(String[] args) {
+    //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
+    FuncionsIArrays prg = new FuncionsIArrays(); 
+    prg.inici();
+}
+    
+private void inici(){
+    double[] valors ={2.5, 8.34, 1.42, 7.59, 3.22, 4.57, 12.5, 6.01, 5.54, 8.31};
+    /* Operar amb els valors d'una col·lecció*/
+    double valorMitja;
+    valorMitja = valorMitja(valors);
+    System.out.print("El valor mitjà de la col·lecció de doubles és: ");
+    System.out.println(valorMitja); //El valor que ha de sortir és 6.0
+    
+    /* Obtenir un valor d'una col·lecció */
+    double valorMinim;
+    valorMinim = valorMinim(valors);
+    System.out.print("El valor mínim de la col·lecció de doubles és: ");
+    System.out.println(valorMinim); //El valor mínim és 1.42
+    
+    /* Obtenir la posició en comptes del valor */
+    int posicioNotaMaxima;
+    double[] notes ={2.5, 8.34, 1.42, 7.69, 9.26, 5.57, 1.0, 6.01};
+    String[] alumnes ={"Albert", "Rosalia", "Jaume", "Maria", "Joana", 
+                       "Francesc", "Ramon", "Berta"};
+    posicioNotaMaxima = posicioMaxim(notes);
+    System.out.print("L'alumne/a ");
+    System.out.print(alumnes[posicioNotaMaxima]);
+    System.out.print(" ha tret un ");
+    System.out.print(notes[posicioNotaMaxima]);
+    System.out.println(", que és la nota màxima."); //la nota màxima l'ha tret la Joana
+}
+                                    </code></pre>
+                                    <p>Copieu ambdues funcions a la classe que estigueu implementant i arregleu el codi de la funció main d'acord amb el nom que hagueu posat al vostre fitxer de codi.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo10" 
+                                            data-selector-clue="#slc-toDo10-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo10-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Quan hagueu de trobar el valor mínim, no doneu mai, per defecte, cap valor per predeterminat a la variable que hagi de prendre el valor mínim. Ja que per gran que li doneu, sempre podrien haver valors coincidents a la col·lecció. EL millor és inicialitzar la variable amb el valor de la posició zero de la col·lecció i iniciar les comparacions a partir d'aquesta posició. </p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo10" 
+                                            data-selector-clue="#slc-toDo10-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo10-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Per trobar la posició del valor màxim, inicieu per defecte amb la posició zero, la variable que guardi la posició del valor màxim i que useu per anar-la comparant amb la resta.</p>
+                                    </div>                                    
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo10" 
+                                            data-selector-solution="#slc-toDo10-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo10-solution" class="iocSolution hidden">
+                                        <pre><code class="java">
+
+
+public class FuncionsIArrays {
+    public static void main(String[] args) {
+        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
+        FuncionsIArrays prg = new FuncionsIArrays();
+        prg.inici();
+    }
+    
+    private void inici(){
+        double[] valors ={2.5, 8.34, 1.42, 7.59, 3.22, 4.57, 12.5, 6.01, 5.54, 8.31};
+        /* Operar amb els valors d'una col·lecció*/
+        double valorMitja;
+        valorMitja = valorMitja(valors);
+        System.out.print("El valor mitjà de la col·lecció de doubles és: ");
+        System.out.println(valorMitja); //El valor que ha de sortir és 6.0
+        
+        /* Obtenir un valor d'una col·lecció */
+        double valorMinim;
+        valorMinim = valorMinim(valors);
+        System.out.print("El valor mínim de la col·lecció de doubles és: ");
+        System.out.println(valorMinim); //El valor mínim és 1.42
+        
+        /* Obtenir la posició en comptes del valor */
+        int posicioNotaMaxima;
+        double[] notes ={2.5, 8.34, 1.42, 7.69, 9.26, 5.57, 1.0, 6.01};
+        String[] alumnes ={"Albert", "Rosalia", "Jaume", "Maria", "Joana", 
+                           "Francesc", "Ramon", "Berta"};
+        posicioNotaMaxima = posicioMaxim(notes);
+        System.out.print("L'alumne/a ");
+        System.out.print(alumnes[posicioNotaMaxima]);
+        System.out.print(" ha tret un ");
+        System.out.print(notes[posicioNotaMaxima]);
+        System.out.println(", que és la nota màxima."); //la nota màxima l'ha tret la Joana
+    }
+    
+    double valorMitja(double[] valors){
+        double vSuma = 0;
+        for(int i=0; i&lt;valors.length; i++){
+            vSuma+=valors[i];
+        }
+        return vSuma/valors.length;
+    }
+    
+    double valorMinim(double[] valors){
+        double vMinim = valors[0];
+        for(int i=1; i&lt;valors.length; i++){
+            if(valors[i]&lt;vMinim){
+                vMinim=valors[i];
+            }
+        }
+        return vMinim;
+    }
+    
+    int posicioMaxim(double[] valors){
+        int pMaxim = 0;
+        for(int i=1; i&lt;valors.length; i++){
+            if(valors[i]&gt;valors[pMaxim]){
+                pMaxim= i;
+            }
+        }
+        return pMaxim;
+    }
+}
+                                        </code></pre>                         
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exercici 2 ================-->    
+                <section id="slc-toDo20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3 >Exercici 2 - Ús d'arrays com a paràmetres d'entrada o sortida</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>La proposta que us fem aquí pretén generar una discussió per tal que arribeu a la conclusió de quin és el comportament específic dels arrays com a paràmetres d'entrada i en conseqüència quines precaucions hauríeu prendre durant la codificació de funcions que usin paràmetres de tipus <em>array</em>.</p>
+                                    <p>Abans de començar la discussió us demanarem que analitzeu el codi que aneu trobant, doncs us ajudarà a centrar el debat i deduir les conclusions.</p>
+                                    <p>En primer lloc ens preguntarem què passa si modifiquem el valor d'una paràmetre de tipus bàsic. Caldria estendre la pregunta tant a nivell intern de la funció que rep el paràmetre com de la variable utilitzada a la crida. És a dir, caldria preguntar-nos, què passa amb el valor d'una variable utilitzada com a paràmetre en una crida d'una funció que en invocar-se canvia el valors del paràmetre?. Anem a deduir-ho amb un exemple. Genereu un projecte de Netbeans i copieu-hi en un fitxer anomenat <em>FuncionsIArrays</em> el següent codi:</p>
+                                    <pre><code class="java linenumbers">
+
+
+public class FuncionsIArrays {
+    public static void main(String[] args) {
+        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
+        FuncionsIArrays prg = new FuncionsIArrays();
+        prg.inici();
+    }
+    
+    private void inici(){
+
+        /* Per investigar què passa si fem canvis a un paràmetre de tipus bàsic, 
+         * com per exemple un int 
+         */
+        int varEnter = 5;
+        System.out.print("Abans d'entrar a la funció canviarValorParametreInt(param) ");
+        System.out.print("la variable val: ");
+        System.out.println(varEnter);
+        canviarValorParametreInt(varEnter);
+        System.out.print("Despres d'entrar a la funció canviarValorParametreInt(param) ");
+        System.out.print("la variable val: ");
+        System.out.println(varEnter);
+    }
+    
+    void canviarValorParametreInt(int param){
+        int valorACanviar=10;
+        System.out.print("Dins la funció canviarValorParametreInt(param), ");
+        System.out.print("abans del canvi [param=10] el paràmetre val: ");
+        System.out.println(param);
+        param=valorACanviar;
+        System.out.print("Dins la funció canviarValorParametreInt(param), ");
+        System.out.print("després del canvi [param=10] el paràmetre val: ");
+        System.out.println(param);
+    }
+}
+                                    </code></pre>
+                                    <p>Executeu el codi i intenteu contestar a les preguntes anteriors. Què passa amb la variable <em>varEnter</em> de la funció inic? Intenteu deduir-ho a partir del valor que la variable pren abans i després de fer la crida a la funció  <em>canviarValorParametreInt</em>. Hi han hagut canvis?</p>
+                                    <p>Valoreu també el que succeeix dins la funció <em>canviarValorParametreInt</em>. Què passa amb el valor del paràmetre <em>param</em>? Amb quin valor a entrat? Amb quin valor surt?</p>
+                                    
+                                    <p>Continuem analitzant codi. Ara afegirem una funció que rebi un paràmetre de tipus array i dins de la funció modificarem alguns dels seus elements:</p>
+                                    <pre><code class="java linenumbers">
+
+
+public class FuncionsIArrays {
+    public static void main(String[] args) {
+        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
+        FuncionsIArrays prg = new FuncionsIArrays();
+        prg.inici();
+    }
+    
+    private void inici(){
+
+        /* Per investigar què passa si fem canvis a un paràmetre de tipus bàsic, 
+         * com per exemple un int 
+         */
+        int varEnter = 5;
+        System.out.print("Abans d'entrar a la funció canviarValorParametreInt(param) ");
+        System.out.print("la variable val: ");
+        System.out.println(varEnter);
+        canviarValorParametreInt(varEnter);
+        System.out.print("Despres d'entrar a la funció canviarValorParametreInt(param) ");
+        System.out.print("la variable val: ");
+        System.out.println(varEnter);
+        
+        /* Per investigar què passa si fem canvis als elements d'un paràmetre de tipus Array*/
+        int[] varArray = new int[8];
+        for(int i=0; i&lt;varArray.length; i++){
+            varArray[i]=i*2;
+        }
+        System.out.print("Abans d'entrar a la funció ");
+        System.out.print("canviarValorElementsParametreArray(param) ");
+        System.out.print("la variable val: ");
+        printIntArray(varArray);
+        canviarValorElementsParametreArray(varArray);
+        System.out.print("Despres d'entrar a la funció ");
+        System.out.print("canviarValorElementsParametreArray(param) ");
+        System.out.print("la variable val: ");
+        printIntArray(varArray);
+    }
+    
+    void canviarValorParametreInt(int param){
+        int valorACanviar=10;
+        System.out.print("Dins la funció canviarValorParametreInt(param), ");
+        System.out.print("abans del canvi [param=10] el paràmetre val: ");
+        System.out.println(param);
+        param=valorACanviar;
+        System.out.print("Dins la funció canviarValorParametreInt(param), ");
+        System.out.print("després del canvi [param=10] el paràmetre val: ");
+        System.out.println(param);
+    }
+    
+     
+    void canviarValorElementsParametreArray(int[] param){
+        int valorACanviar=0;
+        System.out.print("Dins la funció canviarValorElementsParametreArray(param), ");
+        System.out.print("abans del canvi [param[i]=0] el paràmetre val: ");
+        printIntArray(param);
+        for(int i=2; i&lt;param.length; i++){
+            param[i]=valorACanviar;
+        }
+        System.out.print("Dins la funció canviarValorElementsParametreArray(param), ");
+        System.out.print("després del canvi [param[i]=0] el paràmetre val: ");
+        printIntArray(param);
+    }
+    
+    void printIntArray(int[] valors){
+        int limitFor = valors.length-1;
+        System.out.print("{ ");
+        for(int i=0; i&lt;limitFor; i++){
+            System.out.print(valors[i]);        
+            System.out.print(", ");        
+        }
+        if(limitFor&gt;=0){
+            System.out.print(valors[limitFor]);        
+        }
+        System.out.println(" }");        
+    }
+}
+                                    </code></pre>
+                                    <p>Fixeu-vos que per ajudar-nos a mostrar per pantalla el contingut d'una array d'enters, sense repetir codi, hem, creat una funció anomenada <em>printIntArray</em>. Un cop clarificat això, passeu a copiar-lo de nou al vostre projecte i executeu-lo. Intenteu contestar a la mateixes preguntes que abans, però adaptades a les noves variables i paràmetres.</p>
+                                    <p>Quin valor prenen els elements de la variable <em>varArray</em> abans i després de cridar la funció <em>canviarValorElementsParametreArray</em>? Hi han hagut canvis?.</p>
+                                    <p>Analitzeu també els canvis realitzats dins la funció <em>canviarValorElementsParametreArray</em> als elements del paràmetre rebut. Quina relació hi ha entre els canvis de la variable <em>varArray</em> i el paràmetre <em>param</em>?.</p>
+                                    <p>Compareu aquest resultat amb el de la variable <em>varEnter</em> i la funció <em>canviarValorParametreInt</em>.</p>
+                                    <p>Per finalitzar, repetirem l'exemple anterior, però farem que la funció invocada, en compte de fer canvis en els elements, modifiqui directament tota la col·lecció sencera. Veiem'ho:</p>
+                                    <pre><code class="java linenumbers">
+
+
+public class FuncionsIArrays {
+    public static void main(String[] args) {
+        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
+        FuncionsIArrays prg = new FuncionsIArrays();
+        prg.inici();
+    }
+    
+    private void inici(){
+
+        /* Per investigar què passa si fem canvis a un paràmetre de tipus bàsic, 
+         * com per exemple un int 
+         */
+        int varEnter = 5;
+        System.out.print("Abans d'entrar a la funció canviarValorParametreInt(param) ");
+        System.out.print("la variable val: ");
+        System.out.println(varEnter);
+        canviarValorParametreInt(varEnter);
+        System.out.print("Despres d'entrar a la funció canviarValorParametreInt(param) ");
+        System.out.print("la variable val: ");
+        System.out.println(varEnter);
+        
+        /* Per investigar què passa si fem canvis als elements d'un paràmetre de tipus Array*/
+        int[] varArray = new int[8];
+        for(int i=0; i&lt;varArray.length; i++){
+            varArray[i]=i*2;
+        }
+        System.out.print("Abans d'entrar a la funció ");
+        System.out.print("canviarValorParametreArray(param) ");
+        System.out.print("la variable val: ");
+        printIntArray(varArray);
+        canviarValorParametreArray(varArray);
+        System.out.print("Despres d'entrar a la funció ");
+        System.out.print("canviarValorParametreArray(param) ");
+        System.out.print("la variable val: ");
+        printIntArray(varArray);
+    }
+    
+    void canviarValorParametreInt(int param){
+        int valorACanviar=10;
+        System.out.print("Dins la funció canviarValorParametreInt(param), ");
+        System.out.print("abans del canvi [param=10] el paràmetre val: ");
+        System.out.println(param);
+        param=valorACanviar;
+        System.out.print("Dins la funció canviarValorParametreInt(param), ");
+        System.out.print("després del canvi [param=10] el paràmetre val: ");
+        System.out.println(param);
+    }
+    
+     
+    void canviarValorParametreArray(int[] param){
+        int[] valorACanviar = new int[8];
+        for(int i=0; i&lt;valorACanviar.length; i++){
+            valorACanviar[i]=i*3;
+        }
+        System.out.print("Dins la funció canviarValorParametreArray(param), ");
+        System.out.print("abans del canvi [param={0, 3, 9, ...}] el paràmetre val: ");
+        printIntArray(param);
+        param = valorACanviar;
+        System.out.print("Dins la funció canviarValorParametreArray(param), ");
+        System.out.print("després del canvi [param={0, 3, 9, ...}] el paràmetre val: ");
+        printIntArray(param);
+    }
+    
+    void printIntArray(int[] valors){
+        int limitFor = valors.length-1;
+        System.out.print("{ ");
+        for(int i=0; i&lt;limitFor; i++){
+            System.out.print(valors[i]);        
+            System.out.print(", ");        
+        }
+        if(limitFor&gt;=0){
+            System.out.print(valors[limitFor]);        
+        }
+        System.out.println(" }");        
+    }
+}
+                                    </code></pre>
+                                    <p>Què ha passat aquest cop? Quins canvis ha experimentat la variable <em>varArray</em>? Hi ha hagut modificació del paràmetre de la funció <em>canviarValorParametreArray</em>? Ha repercutit a la variable <em>varArray</em>?</p>
+                                    <p>Intenteu elaborar una regla que us ajudi a predir, quan els canvis dins les funcions repercuteixen sobre les variable usades com a paràmetres a la invocació de la funció. Discutiu la regla al <span class="forumGrupReduit"></span>, tot argumentat-ho amb les vostres deduccions.</p>
+                                    <p>Tenint en comte que, quan passem un paràmetre a una funció de forma que un canvi en aquest implica també una canvi a la variable,  es diu que fem un "<em>pas de paràmetres per referència</em>", en contraposició amb el pas clàssic de paràmetres anomenat "<em>pas de paràmetres per valor</em>". Com diries que passen els arrays? i els tipus enters? I en general els tipus bàsics? </p>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-solution="#slc-toDo20-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo20-solution" class="iocSolution hidden">
+                                        <p>Aquest exercici no té una solució oficial, per això és important que la discussió al fòrum sigui acurada i estigui ben argumentada per tal d'arribar a conclusions certes.</p>
+                                        <p>Tot i així, heu d'estar tranquils, perquè el professor de l'aula vigilarà el fòrum i en cas que observi conclusions errònies reconduirà ràpidament la discussió.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 2 ================-->    
+
+                <!--=========== BEGIN SUBSECTION Exercici 3 ================-->    
+                <section id="slc-toDo22" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3 >Exercici 3- Ús d'arrays com a paràmetres d'entrada o sortida</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Cal tenir en compte, que de la mateixa manera que les funcions retornen tipus bàsics, és també possible retornar arrays. L'array retornat es pot assignar a una variable, al qual passarà a contenir els mateixos elements que l'array retornat.</p>
+                                    <p>Crea un nou projecte Netbeans i copia-hi el codi següent:</p>
+                                    <pre><code class="java linenumbers">
+
+
+public class FuncionsIArrays {
+    public static void main(String[] args) {
+        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
+        FuncionsIArrays prg = new FuncionsIArrays();
+        prg.inici();
+    }
+    
+    private void inici(){
+        /* Per investigar què passa si fem canvis als elements d'un paràmetre de tipus Array*/
+        int[] varArray = new int[8];
+        for(int i=0; i&lt;varArray.length; i++){
+            varArray[i]=i*2;
+        }
+        /* retorn d'arrays*/
+        int[] var2Array = retornarArray(varArray);
+        System.out.print("varArray2 pren els valors retornats per la funció ");
+        System.out.print("retornarArray: ");
+        printIntArray(var2Array);
+    }
+    
+    int[] retornarArray(int[] param){
+        return param;
+    }
+
+    void printIntArray(int[] valors){
+        int limitFor = valors.length-1;
+        System.out.print("{ ");
+        for(int i=0; i&lt;limitFor; i++){
+            System.out.print(valors[i]);        
+            System.out.print(", ");        
+        }
+        if(limitFor>=0){
+            System.out.print(valors[limitFor]);        
+        }
+        System.out.println(" }");        
+    }
+
+}
+                                    </code></pre>
+                                    <p>Comprova quina similitud té el codi anterior amb haver assignat directament la variable <em>varArray</em> a la variable <em>var2Array</em>:</p>
+                                    <pre><code class="java">
+var2Array  = varArray;
+                                    </code></pre>
+                                    <p>Ara bé, les funcions a més de retornar arrays arribats a través d paràmetres també poden instanciar nous arrays, donar-los valors i retornar-los. És aper això que aquest tipus de funcions s'utilitzen molt per inicialitzar arrays amb valors per defecte o per crear instàncies d'arrays dels que inicialment desconeixíem la seva mida.</p>
+                                    <pre><code class="java linenumbers">
+public class FuncionsIArrays {
+    public static void main(String[] args) {
+        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
+        FuncionsIArrays prg = new FuncionsIArrays();
+        prg.inici();
+    }
+    
+    private void inici(){
+        /* retorn d'arrays*/
+        int[] varArray;
+        
+        varArray = retornarArrayInicialitzat();
+        System.out.print("varArray pren els valors retornats per la funció ");
+        System.out.print("retornarArrayInicialitzat: ");
+        printIntArray(varArray);
+        
+        varArray = retornarArrayInicialitzatIndicantMida(3);
+        System.out.print("varArray pren els valors retornats per la funció ");
+        System.out.print("retornarArrayInicialitzat: ");
+        printIntArray(varArray);
+    }
+    
+    int[] retornarArrayInicialitzat(){
+        int[] valorARetornar = new int[8];
+        for(int i=0; i&lt;valorARetornar.length; i++){
+            valorARetornar[i]=i*3;
+        }
+        return valorARetornar;
+    }
+
+    int[] retornarArrayInicialitzatIndicantMida(int mida){
+        int[] valorARetornar = new int[mida];
+        for(int i=0; i&lt;valorARetornar.length; i++){
+            valorARetornar[i]=0;
+        }
+        return valorARetornar;
+    }
+
+    void printIntArray(int[] valors){
+        int limitFor = valors.length-1;
+        System.out.print("{ ");
+        for(int i=0; i&lt;limitFor; i++){
+            System.out.print(valors[i]);        
+            System.out.print(", ");        
+        }
+        if(limitFor&gt;=0){
+            System.out.print(valors[limitFor]);        
+        }
+        System.out.println(" }");        
+    }
+
+}
+                                    </code></pre>
+                                    <p>Discuteix al <span class="forumGrupReduit"></span> si seria possible la següent inicialització, aprofitant les característiques dels arrays, de passar per referència:</p>
+                                    <pre><code class="java">
+private void inici(){
+    int[] varArray;
+
+    inicialitzarArray(varArray);
+    
+//    ...
+}
+
+void inicialitzarArray(int[] param){
+    int[] param = new int[8];
+    for(int i=0; i&lt;param.length; i++){
+        param[i]=i*3;
+    }
+}
+                                    </code></pre>
+                                    <p>Apliqueu el que heu aprés i codifiqueu un petit programa que pregunti a l'usuari de quina mida necessita un array de cadenes de text i seguidament inicialitzi una variable de la mida indicada i l'ompli de cadenes buides. Per inicialitzar l'array, creeu una funció d'inicialització. Feu servir el fòrum per plantejar els dubtes que us vagin sortint.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 3 ================-->
+            </section>
+            <!--=========== END SECTION toDo ================-->    
+
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Funcions</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <a class="bustiaLliurament">bústia de lliurament de la unitat 4</a>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                                            <h3> CANVIAR! </h3>
+
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="js/jssor.js"></script>
+    <script src="js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        iocSlider = new IocSlider();
+        
+        $("[data-display-on-set-slide]").each(function(){
+            var slide;
+            var self = this;
+            var slideId = this.dataset.displayOnSetSlide; 
+            iocSlider.watch("onSetCurrentSlide", function(e){
+                var slide;
+                var oldSlide =e.oldValues.vindx!=-1
+                                    ?e.oldValues.vslides[e.oldValues.vindx]
+                                    :e.oldValues.hslides[e.oldValues.hindx];
+                if($(oldSlide).attr("id")===slideId){
+                   $(self).hide();
+                   if($(self).hasClass("active")){
+                        $(self).click();
+                   }
+                }
+                slide = this.hasVerticalSlides()
+                                    ?this.vslides[this.vindx]
+                                    :this.hslides[this.hindx];
+                if($(slide).attr("id")===slideId){
+                   $(self).show();
+                }
+            });
+    
+            slide = iocSlider.hasVerticalSlides()
+                                ?iocSlider.vslides[iocSlider.vindx]
+                                :iocSlider.hslides[iocSlider.hindx];
+            if($(slide).attr("id")===slideId){
+               $(this).show();
+            }
+        });
+
+        hljs.addLineNumbers();
+        hljs.initHighlightingOnLoad();
+        
+        $(document).ready(function(){
+            toReplaceOnLoad("data/toReplace.json", "A403");
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

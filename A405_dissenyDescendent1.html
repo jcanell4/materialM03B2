@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila. Adaptació de textos de Joan Arnedo ">
+    <title>A405. Disseny descendent I</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="css/m03b2Activities.css" rel="stylesheet">
+    <link href="css/scrolling-slides.css" rel="stylesheet">
+    <link href="css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-exemples">Exemples</a></li>
+                          <li><a href="#slc-toDo">Què cal fer</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat disseny descendent</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Malgrat que la incorporació de funcions als llenguatges de programació ha estat un gran avenç per poder encarar aplicacions cada cop més complexes, sovint cal reforçar el procés d'implementació de la majoria d'aplicacions amb metodologies que ens ajudin a analitzar com cal dividir l'aplicació i quines funcions ens permetran estructurar millor el codi de l'aplicació.</p> 
+                                <p>La capacitat dels humans per copsar problemes complexos és limitada, ja que, en general, només som capaços de mantenir una visió simultània d’uns pocs elements. Quan el procés que cal realitzar és llarg o es basa en la manipulació de molts elements diferents, és molt fàcil equivocar-se, o fins i tot no saber ni per on començar.</p>
+                                <p>EL disseny descendent és una tècnica metodològica d'anàlisi que ens pot ajudar a superar aquesta dificultat. La tècnica es basa en el fet que molts problemes es poden resoldre aplicant una successió de solucions parcials. Cada solució parcial, direm que soluciona un subproblema. Per tant podríem establir la premissa que els problemes complexos es poden dividir sempre en subrpoblemes més petits, es a dir,  de menor complexitat i per tant més senzills de solucionar. Si la complexitat dels subproblemes és prou petita per poder-se resoldre intuïtivament, es passaria a obtenir la solució, però si la complexitat fos encara elevada, es podria repetir la descomposició cíclicament fins obtenir problemes de solució assumible.  Esquemàticament seria:</p>
+                                <figure>
+                                    <img width="464" src="images/activities/ic10m3u4_02.png" alt="esquema disseny descendent">
+                                </figure>
+                                <p>Un punt important a tenir en compte en aplicar aquesta descomposició és que cadascun dels subproblemes no es genera arbitràriament, sinó que es planteja com un objectiu parcial, amb entitat pròpia, per resoldre el seu problema de nivell superior.Un cop assolits tots aquests objectius parcials, es considera resolt el total. És a dir, entre nivells no s'estableix una relació de seqüencialitat com als diagrames de flux, sinó de composició: la solució del nivell superior es composa de les solucions dels nivells inferiors.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION Exemples ================-->    
+            <section id="slc-exemples" class="vsections">
+                <!--=========== BEGIN SUBSECTION Exemple 1 ================-->    
+                <section id="slc-exemples10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Exemples - Disseny descendent</h2>
+                                     <h3> Exemple 1 - Recepte de cuina</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                <figure id ="figura_receptaDeCuina" class="left">
+                                    <img width="464" src="images/activities/ReceptaDeCuina.png" alt="recepte de cuina">
+                                    <figcaption style="width: 429px; max-width: 75%;">
+                                        Des­com­po­si­ció de la pre­pa­ra­ció d’una recepta de cuina
+                                    </figcaption>
+                                </figure>
+                                    <p>El disseny descendent és una metodologia d'anàlisi genèrica que pot aplicar-se a qualsevol disciplina, no només a la programació d'aplicacions. Les receptes de cuina ens serviran com exemple clarificador per aprofundir una mica més en aquesta tècnica, que malauradament requereix de certa experiència per poder-se expressar en la seva màxima potència. És per això que haureu de fer un esforç important i posar en pràctica la metodologia tant sovint com pugueu. No us limiteu a la programació. Us serà útil en qualsevol àmbit.</p>
+                                    <p>Tornem a les receptes de cuina. Imaginem que haguem d'explicar una recepte de cuina com la de la <em>figura lateral</em>. Per tal que ens serveixi com exemple clarificador, hem suposat que fregir, bullir o saltar són tasques complexes que cal descompondre.</p>
+                                    <p>Ens plantegem què és el primer que hem de fer per poder començar a cuinar el plat: probablement recopilar els ingredients, comprant-los o buscant-los a la despesa. Per simplificar no entrarem en aquest detalls i ho resumirem amb el nom de recopilar. Com que estem aplicant disseny descendent, aturarem aquí el detall dels ingredients que caldrà obtenir. Ja hi tornarem en el següent nivell. Alguns ingredients necessitaran preparació que caldrà fer abans d'iniciar la cocció. Identifiquem doncs la tasca de preparar ingredients. Seguidament caldrà coure'ls, després integrar-ho tot (ho identificarem com a preparació final) i per últim caldrà servir-ho. </p>
+                                    <p>Fixeu-vos que de moment, tot el nostre esforç ha anat centrat només a trobar grans tasques que ens ajudin a seqüenciar les nostres accions sense perdre'ns en els detalls.</p>
+                                    <p>Arribats a aquí, ja podem iniciar el segon nivell de descomposició ara agafarem totes les descomposicions de primer nivell i repetirem l'anàlisi per cada una d'elles. Ja podem detallar els ingredients o explicar quins cal preparar i com. En aquest cas, la cocció la dividirem en dos grans blocs, la salsa i els espaguetis...</p>
+                                    <p>Observeu a la figura com poc a poc anem aconseguit una relació jeràrquica (esquemàtica) dels diferents nivells que anem explorant i detallant.</p>
+                                    <p>No existeix un nivell màxim en el que cal aturar-nos. Tot dependrà del nostre coneixement culinari. Si som novells, caldrà explorar molts nivells, però a mida que anem adquirint coneixements i confiança, podrem aturar-nos abans.</p>
+                                    <p>Cal insistir que la seqüencialitat només es dona dins d'un mateix nivell, però mai des d'un nivell superior als inferiors. En aquest cas, la relació és de composició: per a fregir el bacon i reservar cal, preparar la paella, coure el bacon i reservar-lo un cop cuit.</p>
+                                    <p> Potser una manera de visualitzar millor això esquemàticament, és la representació de cada nivell de descomposició,  com a un contenidor. En la següent imatge us mostrem com el mateix disseny descendent de la recepte de cuina que hem vist organitzat en forma de contenidors.</p>
+                                    <figure id ="figura_receptaDeCuina2">
+                                        <img width="464" src="images/activities/ReceptaDeCuina2.png" alt="recepte de cuina vista com a contenidors">
+                                        <figcaption style="width: 429px; max-width: 75%;">
+                                            Representació de la des­composició de la pre­pa­ra­ció d’una recepta de cuina en forma de contenidors
+                                        </figcaption>
+                                    </figure>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exemple 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exemple 2.1 ================-->    
+                <section id="slc-exemples20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Exemples - Disseny descendent</h2>
+                                     <h3> Exemple 2.1 - Disseny descendent aplicat a la programació</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquest cas l'exemple serà una aplicació que haurà de trobar quants números amb un nombre mínim de dígits estan continguts en una cadena de caràcters. Tant la cadena com el nombre de dígits mínim ens els proporciona l'usuari.</p>
+                                    <p>Per exemple, si l'usuari entrés la cadena: “L'any 1992 vaig començar a estudiar informàtica durant 4 anys. El 1997 vaig iniciar 3 projectes. 2 d'aquest van durar fins el 2001. El tercer encara dura. Estic a punt de vendre'l per 100.000€ .” i demanés el nombre de números que conté de 3 o més dígits, l'aplicació hauria d'indicar que hi ha 4 números que compleixen la condició.</p>
+                                    <p>Com veieu es tracta d'una peita aplicació sencera amb un algoritme que comença a presentar certa dificultat. Passem a fer l'anàlisi. Comencem per descompondre el primer nivell.</p>
+                                    <p>Ja que és una aplicació que requereix la intervenció de l'usuari, potser seria bo clarificar abans de res, el que s'espera de l'usuari i també informar del que l'aplicació acabarà fent. Probablement, n'hi haurà prou amb una missatge inicial. que podem titular com a <em>presentació de l'aplicació</em>.</p>
+                                    <p>Un cop informat l'usuari, podrem començar a demanar-li tot allò que necessitem: la cadena de text i el nombre mínim de dígits.</p>
+                                    <p>Amb les dades entrades, caldrà analitzar tota la cadena, buscant número per número i comptant els seus dígits. Només el comptabilitzarem si compleix les condicions del nombre de dígits mínim. </p>
+                                    <p>Un cop fet l'anàlisi caldrà mostrar el resultat per la pantalla i finalitzar l'aplicació.</p>
+                                    <p>Posant l'anàlisi feta en form d'esquena obtindrem el primer nivell del disseny descendent:</p>
+                                    <div class="iocexample single em  small">
+                                        <ol  class="nestedCounter">
+                                            <li>Presentació de l'aplicació</li>
+                                            <li>Demanar cadena de text</li>
+                                            <li>Demanar nombre mínim de dígits</li>
+                                            <li>Analitzar tota la cadena entrada, buscant número per número i comptant els seus dígits. Només el comptabilitzarem si compleix les condicions del nombre de dígits mínim.</li>
+                                            <li>Mostrar per pantalla el resultat</li>
+                                        </ol>
+                                    </div>
+                                    <p>Segur que exceptuant el punt 4, la resta no representaria cap problema a l'hora de codificar-los. Per tant podem decidir finalitzar la descomposició dels ítems 1, 2 ,3 i 5. Anem a centrar-nos en el 4.</p>
+                                    <p>Ara el problema es focalitza en trobar la manera d'analitzar tota la cadena entrada, buscant número per número, comptant els seus dígits i comptabilitzant només aquells números que compleixin les condicions del nombre de dígits mínim. Si hem de comptar el nombre de números, necessitarem disposar d'un comptador que caldrà anar incrementat a mida que trobem el que satisfaci la cerca. La cerca l'aplicarem sobre la cadena. Per tant caldrà començar a analitzar-la pel començament i acabar pel final. Cal adonar-se que abans de començar l'anàlisi de la cadena caldria posar el comptador a zero i situar-nos a l'inici de la cadena.</p>
+                                    <p>Incloent el segon nivell la descomposició es podria enunciar així:</p>
+                                    <div class="iocexample  single em  small">
+                                         <ol class="nestedCounter">
+                                            <li>Presentació de l'aplicació</li>
+                                            <li>Demanar cadena de text</li>
+                                            <li>Demanar nombre mínim de dígits</li>
+                                            <li>Analitzar tota la cadena entrada, buscant número per número i comptant els seus dígits. Només el comptabilitzarem si compleix les condicions del nombre de dígits mínim.
+                                                <ol>
+                                                    <li>Posar el comptador a zero</li>
+                                                    <li>Situar-nos a l'inici de la cadena</li>
+                                                    <li>Analitzar la cadena fins al final cercant tots els números que hi hagi, recomptant els seus dígits i incrementant el comptador només si tenen un mínim de dígits</li>
+                                                </ol>
+                                            </li>
+                                            <li>Mostrar per pantalla el resultat</li>
+                                        </ol>
+                                    </div>
+                                    <p>Els punts 4.1 i 4.2 d'aquest segon nivell no presenten, a priori, cap problema d'implementació, per tant els donarem per tancats i no continuarem descomponent-los. Ens centrarem només en el punt 4.3.</p>
+                                    <p>En l'anàlisi, nomes ens interessaran els números, no pas la resta de caràcters. Ens plantegem si seria possible saltar de número en número. De fet el subproblema consistiria en trobar el següent número de la cadena a partir de la posició que estiguem analitzant. Un cop trobat el número caldria recomptar el nombre de dígits que té i incrementar el comptador si arriba als dígits mínims.</p>
+                                    <p>Ara el disseny descendent quedaria:</p>
+                                    <div class="iocexample single em  small">
+                                        <ol class="nestedCounter">
+                                            <li>Presentació de l'aplicació</li>
+                                            <li>Demanar cadena de text</li>
+                                            <li>Demanar nombre mínim de dígits</li>
+                                            <li>Analitzar tota la cadena entrada, buscant número per número i comptant els seus dígits. Només el comptabilitzarem si compleix les condicions del nombre de dígits mínim.
+                                                <ol>
+                                                    <li>Posar el comptador a zero</li>
+                                                    <li>Situar-nos a l'inici de la cadena</li>
+                                                    <li>Analitzar la cadena fins al final cercant tots els números que hi hagi, recomptant els seus dígits i incrementant el comptador només si tenen un mínim de dígits
+                                                        <ol>
+                                                            <li>Trobar el següent número a partir de la posició de la cadena que estem analitzant</li>
+                                                            <li>Comptar els dígits del número trobat</li>
+                                                            <li>Incrementar el comptador si els dígits igualen o superes el nombre de dígits mínims</li>
+                                                        </ol>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>Mostrar per pantalla el resultat</li>
+                                        </ol>
+                                    </div>
+                                    <p>Ja estem arribant al final. De fet amb certa experiència podríem deixar-ho aquí, però en tractar-se d'un exemple, descompondrem encara un nivell més els punts 4.3.1 i 4.3.2.</p>
+                                    <p>Trobar el següent número a partir d'una posició podria simplement indicar, que caldria anar avançant de posició fins trobar un caràcter que fos un dígit. Ara bé, això només seria cert si assegurem que la posició actual es troba fora d'un número. Per tant haurem d'assegurar aquest requeriment.</p>
+                                    <p>Comptar dígits hauria de comptar els dígits que hi ha entre l'inici del número i el seu final (primera posició en que s'acabin els caràcters numèrics i comencin els no numèrics)</p>
+                                    <div class="iocexample single em small">
+                                         <ol class="nestedCounter">
+                                            <li>Presentació de l'aplicació</li>
+                                            <li>Demanar cadena de text</li>
+                                            <li>Demanar nombre mínim de dígits</li>
+                                            <li>Analitzar tota la cadena entrada, buscant número per número i comptant els seus dígits. Només el comptabilitzarem si compleix les condicions del nombre de dígits mínim.
+                                                <ol>
+                                                    <li>Posar el comptador a zero</li>
+                                                    <li>Situar-nos a l'inici de la cadena</li>
+                                                    <li>Analitzar la cadena fins al final cercant tots els números que hi hagi, recomptant els seus dígits i incrementant el comptador només si tenen un mínim de dígits
+                                                        <ol>
+                                                            <li>Trobar el següent número a partir de la posició de la cadena que estem analitzant
+                                                                <ol>
+                                                                    <li>Avançar caràcter a caràcter fins a trobar el primer dígit del següent número.</li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>Comptar els dígits del número trobat
+                                                                <ol>
+                                                                    <li>Inicialitzar el comptador de dígits</li>
+                                                                    <li>
+                                                                         <a href="#" data-toggle="tooltip" data-original-title="Tingueu en compte que poden haver caràcters que no siguin dígits, però que formin part del número. Per exemple 100.000 només té 6 dígits però conté un punt que forma part del número. Per tant podrem dir que el número s'haurà acabat quan trobem un caràcter que no sigui ni dígit, ni símbol numèric!">
+                                                                            Avançar caràcter a caràcter fins que s'acabi el número, incrementant el comptador si el caràcter és un dígit
+                                                                         </a>
+                                                                   . </li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>Incrementar el comptador si els dígits igualen o superen el nombre de dígits mínims</li>
+                                                            <li>
+                                                                <a href="#" data-toggle="tooltip" data-html="true" data-original-title="<ul><li>Només podrem assegurar el final del numero quan trobem el primer caràcter que no sigui ni dígit, ni símbol numèric</li><li>S'ha afegit aquest punt per assegurar el funcionament. Només així es pot estar segur que quan es torni a cercar el següent número es farà des d'una posició correcta</li></ul>">
+                                                                    Avançar la posició fins al final del número
+                                                                </a>.
+                                                            </li>
+                                                        </ol>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>Mostrar per pantalla el resultat</li>
+                                        </ol>
+                                    </div>
+                                    <p>Amb aquestes darreres descomposicions podem donar el disseny per finalitzat.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-exemples20" 
+                                            data-selector-advice="#slc-exemples20-consells">
+                                        Consells
+                                    </button>                                        
+                                    <div id="slc-exemples20-consells" class="iocAdvice hidden">
+                                        <p>Potser llegint aquest exemple, us pugui semblar que la tècnica de disseny descendent és una mica embafadora perquè costa d'arribar a la solució final. No hi doneu importància, per trobar una bona solució cal donar diverses voltes al problema, cal saber mastegar-lo amb calma i evitar precipitar-se. Quan us afronteu a un problema malgrat us sembli que intuïtivament sabríeu fer-lo, desconfieu. Sempre és preferible donar-hi alguna volta més fins que esteu segurs que heu copsat el problema i que la implementació ja és immediata.</p>
+                                        <p>Com a norma general cal tenir present que un subproblema hauria de respondre sempre a una tasca concreta, amb un objectiu clarament diferenciat, que haurà de quedar ben identificat amb l'enunciat del subproblema.</p>
+                                    </div>                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exemple 2.1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exemple 2.2 ================-->    
+                <section id="slc-exemples30" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Exemples - Disseny descendent</h2>
+                                     <h3> Exemple 2.2 - Implementació d'un disseny descendent</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Anem a veure ara, com enfocar la implementació a partir d'un disseny descendent acabat. Per fer-ho més senzill usarem el disseny descendent de l'exemple anterior. El recordem:</p>
+                                    <div class="iocexample single small">
+                                         <ol class="nestedCounter">
+                                            <li>Presentació de l'aplicació</li>
+                                            <li>Demanar cadena de text</li>
+                                            <li>Demanar nombre mínim de dígits</li>
+                                            <li>Analitzar tota la cadena entrada, buscant número per número i comptant els seus dígits. Només el comptabilitzarem si compleix les condicions del nombre de dígits mínim.
+                                                <ol>
+                                                    <li>Posar el comptador a zero</li>
+                                                    <li>Situar-nos a l'inici de la cadena</li>
+                                                    <li>Analitzar la cadena fins al final cercant tots els números que hi hagi, recomptant els seus dígits i incrementant el comptador només si tenen un mínim de dígits
+                                                        <ol>
+                                                            <li>Trobar el següent número a partir de la posició de la cadena que estem analitzant
+                                                                <ol>
+                                                                    <li>Avançar caràcter a caràcter fins a trobar el primer dígit del següent número.</li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>Comptar els dígits del número trobat
+                                                                <ol>
+                                                                    <li>Inicialitzar el comptador de dígits</li>
+                                                                    <li>Avançar caràcter a caràcter fins que s'acabi el número, incrementant el comptador si el caràcter és un dígit.</li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>Incrementar el comptador si els dígits igualen o superes el nombre de dígits mínims</li>
+                                                            <li>Avançar la posició fins al final del número</li>
+                                                        </ol>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                            <li>Mostrar per pantalla el resultat</li>
+                                        </ol>
+                                    </div>
+                                    <p>Per els primers nivells de descomposició, el més habitual és fer correspondre una funció per cada subproblema. A mida que anem aprofundint nivells caldrà decidir si és preferiblecrear una funció o escriure directament el codi. Tot i així, com que les funcions tendeixen a clarificar i a reduir la complexitat, en cas de dubte optarem sempre per crear una funció.</p>
+                                    <p>Crearem un projecte amb una classe anomenada <em>Exemple2DissenyDescendent</em> on hi implementarem la funció main i la funció inici que contindrà el primer nivell de descomposició:</p>
+                                    <p>Un aspecte molt important de la implementació són les dades. Caldrà decidir com guardem les dades, quantes variables usarem, de quin tipus, ... Sovint caldrà començar a implementar les funcions sense tenir clares quines variables usarem finalment, perquè la decisió no depèn només dels nivells superiors sinó també dels més profunds. En cas de dubte, podem deixar parts sense implementar amb comentaris que ens ajudin a recordar el que cal tenir en compte.</p>
+                                    <pre><code class="java">
+                                    
+
+import java.util.Scanner;
+
+public class Exemple2DissenyDescendent {
+
+    public static void main(String[] args) {
+        Exemple2DissenyDescendent programa = new Exemple2DissenyDescendent();
+        programa.inici();
+    }
+    
+    void inici(){
+        //Caldrà declarar les variables.
+        //I seguir l'esquema del primer nivell:
+        
+        //presentarAplicacio;
+        //demanarFrase;
+        //demanarNumDigits;
+        //comptarNumeros;
+        //mostrarResultats;
+    }
+}
+                                    </code></pre>
+                                    <p>La funció <em>presentarAplicacio</em> només a mostrar un missatge per pantalla. No necessita rebre cap dada i no genera dades noves (no té retorn).</p>
+                                    <pre><code class="java">
+                                    
+
+import java.util.Scanner;
+
+public class Exemple2DissenyDescendent {
+
+    public static void main(String[] args) {
+        Exemple2DissenyDescendent programa = new Exemple2DissenyDescendent();
+        programa.inici();
+    }
+    
+    void inici(){
+        //Caldrà declarar les variables.
+        //I seguir l'esquema del primer nivell:
+        
+        presentarAplicacio();
+        //demanarFrase;
+        //demanarNumDigits;
+        //comptarNumeros;
+        //mostrarResultats;
+    }
+    
+    void presentarAplicacio(){
+        System.out.println("Aquesta aplicació trobarà quants números, "
+                + "amb un nombre mínim de dígits, estan \n"
+                + "continguts en una cadena de caràcters.\n");
+    }
+    
+
+}
+                                    </code></pre>
+                                    <p>Ens adonem que caldrà emmagatzemar la cadena que demanem a l'usuari (mitjançant la funció <em>demanarFrase</em>) per poder-la analitzar a la funció <em>comptarNumeros</em>. Igual que el nombre de dígits mínim. Decidim declarar les variables d'àmbit local de la funció <em>inici</em> i anar-les passant per paràmetre a mida que les altres funcions necessitin les dades.</p>
+                                    <pre><code class="java">
+                                    
+
+import java.util.Scanner;
+
+public class Exemple2DissenyDescendent {
+
+    public static void main(String[] args) {
+        Exemple2DissenyDescendent programa = new Exemple2DissenyDescendent();
+        programa.inici();
+    }
+    
+    void inici(){
+        String frase;
+        int digits;
+    
+        //Caldrà seguir l'esquema del primer nivell:
+        
+        presentarAplicacio();
+        frase = demanarFrase();
+        digits = demanarNumDigits();
+        //comptarNumeros;
+        //mostrarResultats;
+    }
+    
+    ...
+    
+     String demanarFrase(){
+        Scanner scanner = new Scanner(System.in);
+        String frase;
+        System.out.print("En primer lloc, introduïu una frase que "
+                + "contingui paraules i números: ");
+        frase = scanner.nextLine();
+        System.out.println();
+        return frase;
+    }
+    
+    int demanarNumDigits(){
+        Scanner scanner = new Scanner(System.in);
+        int digits;
+        System.out.print("Seguidament indiqueu quin és el nombre de "
+                    + "dígits minim que han de tenir els números a "
+                    + "comptabilitzar: ");
+        digits = scanner.nextInt();
+        scanner.nextLine(); //Neteja el salt de línia del buffer del teclat
+        System.out.println();
+        return digits;
+    }
+
+}
+                                    </code></pre>
+                                    <p>Rellegint en el disseny descendent el que ha de fer la funció <em>comptarNumeros</em>, ens adonem que ha d'analitzar la cadena i comptar els números que acompleixin la mida minima. Necessitarà doncs la frase a analitzar i el nombre mínim de dígits. A més veiem que haurà de retornar el resultat calculat per tal que la funció mostrarResultats el pugui treure per pantalla. Això significa que necessitarem una altra variable contenint en resultat</p>
+                                    <pre><code class="java">
+                                    
+
+import java.util.Scanner;
+
+public class Exemple2DissenyDescendent {
+
+    public static void main(String[] args) {
+        Exemple2DissenyDescendent programa = new Exemple2DissenyDescendent();
+        programa.inici();
+    }
+    
+    void inici(){
+        String frase;
+        int digits;
+        int resultat; 
+    
+        //Caldrà seguir l'esquema del primer nivell:
+        
+        presentarAplicacio();
+        frase = demanarFrase();
+        digits = demanarNumDigits();
+        resultat = comptarNumeros(frase, digits);
+        mostrarResultats(resultat);
+    }
+    
+    ...
+    
+    int comptarNumeros(String frase, int numMinimDigits){
+        int resultat=0;
+        // Aquesta funció la implementarem més tard a mida que anem baixant de nivells
+        return resultat;
+    }
+    
+     void mostrarResultats(int resultat){
+        //Ens adonem que seria clarificador per l'usuari mostrar, a més del 
+        //resultat la frase analitzada i el nombre de dígits que s'ha tingut en 
+        //compte, però en aquesta funció no disposem d'aquesta informació! 
+    }    
+
+}
+                                    </code></pre>
+                                    <p>En intentar escriure la funció <em>mostrarResultats</em>, ens adonem que ens falta informació. Caldrà fer-la arribar a través de paràmetres.</p>
+                                    <pre><code class="java">
+                                    
+
+import java.util.Scanner;
+
+public class Exemple2DissenyDescendent {
+
+    public static void main(String[] args) {
+        Exemple2DissenyDescendent programa = new Exemple2DissenyDescendent();
+        programa.inici();
+    }
+    
+    void inici(){
+        String frase;
+        int digits;
+        int resultat; 
+    
+        //Caldrà seguir l'esquema del primer nivell:
+        
+        presentarAplicacio();
+        frase = demanarFrase();
+        digits = demanarNumDigits();
+        resultat = comptarNumeros(frase, digits);
+        mostrarResultats(frase, digits, resultat);
+    }
+    
+     ...
+    
+ void mostrarResultats(String frase, int numMinimDigits, int resultat){
+        System.out.println("La frase que heu introduït: ");
+        System.out.println(frase);
+        System.out.println("conté " + resultat + " números amb un nombre de "
+                + "dígits superior o igual a " + numMinimDigits);
+        
+    }   
+}
+                                    </code></pre>
+                                    <p>El punt 4 del disseny descendent, corresponent al que aquí hem anomenat <em>comptarNumeros</em>, es descomposa en 3 tasques que pretenen analitzar una cadena des de l'inici fins al final. És a dir es tracta d'una estructura iterativa, el cos de la qual es descomposa en els punts  4.3.1, 4.3.2 i 4.3.3 </p>
+                                    <pre><code class="java">
+                                    
+
+import java.util.Scanner;
+
+public class Exemple2DissenyDescendent {
+     ...
+    
+    int comptarNumeros(String frase, int numMinimDigits){
+        int resultat=0; //comptador de números (punt 4.1 del disseny)
+        int posFrase=0; //així ens situem a l'inici de la cadena (punt 4.2 del disseny)
+        
+        /* La iteració correspon al punt 4.3 del disseny descendent*/
+        while(posFrase&lt;frase.length()){
+            int numDigits;
+            
+            //trobarSeguentNumero               (punt 4.3.1)
+            //numDigits = comptarDigits         (punt 4.3.2)
+            
+            /* 
+             * El punt 4.3.3. el decidim codificar directament aquí en comptes 
+             * de fer una funció perquè es tracta d'una simple instrucció 
+             * condicional.
+             */
+            if(numDigits&gt;=numMinimDigits){
+                resultat++;
+            }
+            //trobarFinalNumero                 (punt 4.3.4)
+        }
+        
+        return resultat;
+    }
+    
+    ...
+}
+                                    </code></pre>
+                                    <p>La funció trobarSeguentNumero haurà de cercar en quina posició a partir de l'actual (posFrase) comença un número. Usant la posició retornada per trobarSeguentNumero com un identificador del número trobat, la funció  comptarDigits, comptarà el nombre de dígits que composen el número des de la posició posFrase fins que s'acabi el número. Finalment la funció trobarFinalNúmero haurà de trobar la posició on s'acaba el número recent analitzat per tal que <em>trobarSeguentNumero</em> comenci en una posició correcta.</p>
+                                    <pre><code class="java">
+                                    
+
+import java.util.Scanner;
+
+public class Exemple2DissenyDescendent {
+
+     ...
+    
+    int comptarNumeros(String frase, int numMinimDigits){
+        int numDigits;
+        int resultat=0;
+        int posFrase=0;
+        
+        while(posFrase&lt;frase.length()){
+            posFrase = trobarSeguentNumero(frase, posFrase);
+            numDigits = comptarDigits(frase, posFrase);
+            if(numDigits&gt;=numMinimDigits){
+                resultat++;
+            }
+            //com a mínim el numero ocuparà el nombre de dígits, encara que és 
+            //possible que ocupi més degut als caracters numèrics que no siguin 
+            //dígits (.,+-)
+            posFrase=trobarFinalNumero(frase, posFrase+numDigits);
+        }
+        return resultat;
+    }    
+    ...
+
+    int trobarSeguentNumero(String frase, int posFrase) {  
+         while(posFrase&lt;frase.length() && !esDigit(frase.charAt(posFrase))){
+             posFrase++;
+         }
+         return posFrase;
+    }
+    
+    int comptarDigits(String frase, int posFrase) {
+        int numDigits=0;
+        while(posFrase&lt;frase.length() 
+                && esSimbolNumeric(frase.charAt(posFrase))){
+            if(esDigit(frase.charAt(posFrase))){
+                numDigits++;
+            }
+            posFrase++;
+        }
+        return numDigits;
+    }     
+    
+    int trobarFinalNumero(String frase, int posFrase) {    
+         while(posFrase&lt;frase.length() && esSimbolNumeric(frase.charAt(posFrase))){
+             posFrase++;
+         }
+         return posFrase;
+    }
+    
+
+}
+                                    </code></pre>
+                                    <p>S'ha valorat que la tasca de saber si un caràcter és un dígit o un símbol numèric, es demanda diverses vegades i s'ha decidit implementar-ho en una funció apart per tal de poder reutilitzar el codi. La funció <em>esDigit</em> i <em>esSimbolNumeric</em> quedaria de la següent manera:</p>
+                                    <pre><code class="java">
+                                    
+
+import java.util.Scanner;
+
+public class Exemple2DissenyDescendent {
+
+    ...
+    
+    boolean esDigit(char caracter) {
+        return (caracter>='0' && caracter<='9'); 
+    }
+
+    boolean esSimbolNumeric(char caracter){
+        return esDigit(caracter)
+                || caracter=='+' 
+                || caracter=='-'
+                || caracter=='.'
+                || caracter==',';
+    }
+    
+    ...
+}
+                                    </code></pre>
+                                    <p>Amb això donarem el programa per finalitzat. A continuació mostrem el codi sencer:</p>
+                                    <pre><code class="java linenumbers">
+
+
+import java.util.Scanner;
+
+public class Exemple2DissenyDescendent {
+    public static void main(String[] args) {
+        Exemple2DissenyDescendent programa = new Exemple2DissenyDescendent();
+        programa.inici();
+    }
+    
+    void inici(){
+        String frase;
+        int resultat;
+        int digits;
+        presentarAplicacio();
+        frase = demanarFrase();
+        digits = demanarNumDigits();
+        resultat = comptarNumeros(frase, digits);
+        mostrarResultats(frase, digits, resultat);
+    }
+    
+    void presentarAplicacio(){
+        System.out.println("Aquesta aplicació trobarà quants números, "
+                + "amb un nombre mínim de dígits, estan \n"
+                + "continguts en una cadena de caràcters.\n");
+    }
+    
+    String demanarFrase(){
+        Scanner scanner = new Scanner(System.in);
+        String frase;
+        System.out.print("En primer lloc, introduïu una frase que "
+                + "contingui paraules i números: ");
+        frase = scanner.nextLine();
+        System.out.println();
+        return frase;
+    }
+    
+    int demanarNumDigits(){
+        Scanner scanner = new Scanner(System.in);
+        int digits;
+        System.out.print("Seguidament indiqueu quin és el nombre de "
+                    + "dígits minim que han de tenir els números a "
+                    + "comptabilitzar: ");
+        digits = scanner.nextInt();
+        scanner.nextLine(); //Neteja el salt de línia del buffer del teclat
+        System.out.println();
+        return digits;
+    }
+    
+    int comptarNumeros(String frase, int numMinimDigits){
+        int numDigits;
+        int resultat=0;
+        int posFrase=0;
+        
+        while(posFrase&lt;frase.length()){
+            posFrase = trobarSeguentNumero(frase, posFrase);
+            numDigits = comptarDigits(frase, posFrase);
+            if(numDigits&gt;=numMinimDigits){
+                resultat++;
+            }
+            //com a mínim el numero ocuparà el nombre de dígits, encara que és 
+            //possible que ocupi més degut als caracters numèrics que no siguin 
+            //dígits (.,+-)
+            posFrase=trobarFinalNumero(frase, posFrase+numDigits);
+        }
+        return resultat;
+    }
+    
+    void mostrarResultats(String frase, int numMinimDigits, int resultat){
+        System.out.println("La frase que heu introduït: ");
+        System.out.println(frase);
+        System.out.println("conté " + resultat + " números amb un nombre de "
+                + "dígits superior o igual a " + numMinimDigits);
+        
+    }   
+
+    int trobarSeguentNumero(String frase, int posFrase) {  
+         while(posFrase&lt;frase.length() && !esDigit(frase.charAt(posFrase))){
+             posFrase++;
+         }
+         return posFrase;
+    }
+    
+    int comptarDigits(String frase, int posFrase) {
+        int numDigits=0;
+        while(posFrase&lt;frase.length() 
+                && esSimbolNumeric(frase.charAt(posFrase))){
+            if(esDigit(frase.charAt(posFrase))){
+                numDigits++;
+            }
+            posFrase++;
+        }
+        return numDigits;
+    }     
+    
+    int trobarFinalNumero(String frase, int posFrase) {    
+         while(posFrase&lt;frase.length() && esSimbolNumeric(frase.charAt(posFrase))){
+             posFrase++;
+         }
+         return posFrase;
+    }
+    
+    boolean esDigit(char caracter) {
+        return (caracter&gt;='0' && caracter<='9'); 
+    }
+
+    boolean esSimbolNumeric(char caracter){
+        return esDigit(caracter)
+                || caracter=='+' 
+                || caracter=='-'
+                || caracter=='.'
+                || caracter==',';
+    }
+}
+
+                                    </code></pre>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exemple 2.2 ================-->    
+            </section>
+            <!--=========== END SECTION Exemples ================-->    
+
+            <!--=========== BEGIN SECTION toDo ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION Exercici 1 ================-->    
+                <section id="slc-toDo10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Disseny descendent </h2>
+                                     <h3> Exercici 1 - Refinament d'un  disseny descendent</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Sovint passa, que un cop acabat un disseny descendent, si el rellegim ens adonem que es pot millorar. D'això s'anomena refinament. </p>
+                                    <p>De vegades ens adonem que hem subdividit massa o massa poc. Això queda palès en la mida de les funcions. Si detectem funcions excessivament llargues caldrà plantejar-nos la possibilitat de no haver dividit suficientment el disseny. Si són massa curtes pot indicar el contrari. Tot i això, a vegades ens pot interessar, en pro de la claredat del codi, mantenir funcions curtes si amb el seu nom ens informa del que fan.</p>
+                                    <p>El nombre de nivells també pot ser un indicador. Caldria tenir en compte que el nombre de nivells hauria d'augmentar en funció de la complexitat del problema. Si això no ens passa, caldria sospitar que no ho hem acabat de fer del tot bé.</p>
+                                    <p>També és possible que detectem una manca de reutilització de les funcions. Quan el nostre codi estigui ple de funcions massa particulars de manera que no sigui possible reutilitzar-ne cap, ens ha de fer pensar que potser el disseny no ha estat del tot encertat i caldria repensar com incrementar la reutilització.</p>
+                                    <p>D'altres vegades ens adonem que no ho hem controlat tot, que hem deixat algun error latent i es clar, la seva aparició només es cosa de temps.</p>
+                                    <p> A <a href="#slc-exemples__slc-exemples30">La implementació de l'exemple 2</a> s'ha detectat que la funció <em>demanarNumDigits</em>, només funciona si l'usuari escriu correctament un valor enter, però si s'equivoca, i prem <em>[ENTRAR]</em> sense haver entrar cap número obtindrem un error.</p>
+                                    <p>Es tracta d'un problema molt típic, de qualsevol aplicació que requereixi entrades numèriques i se soluciona fent una comprovació prèvia del que l'usuari està escrivint. No cal fer una lectura del teclat, n'hi ha prou sabent si el que s'escriu és o no un enter. En cas afirmatiu es passaria a la lectura, però en cas negatiu, caldria recordar que el que l'aplicació espera és un enter i no altre tipus de dada.</p>
+                                    <p> EL més aconsellable seria crear un funció genèrica que es pugui reutilitzar en qualsevol context i parametritzar-la adequadament en el cas que ens ocupa. Ja heu fet una funció com aquesta a l'activitat <a href="A402_funcions2.html#slc-toDo__slc-toDo21">A402</a> per a doubles. Aquí us demanarem que escriviu una funció anomenada <em>entrarUnEnter</em> que rebi un missatge explicatiu per mostrar a l'usuari i esperi fins que l'usuari escrigui un valor enter fent la comprovació d'error esmentada. La funció retornarà l'enter entrat des de teclat.</p> 
+                                    <p>A banda de la funció <em>entrarUnEnter</em>, també us demanem que modifiqueu la funció <em>demanarNumDigits</em> per tal que faci servir la nova utilitat. Feu la modificació a la funció <em>demanarNumDigits</em> i no a la funció <em>inici</em>, perquè així es manté la informació intrínseca derivada del seu nom i el codi resulta més fàcil de llegir.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo10" 
+                                            data-selector-solution="#slc-toDo10-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo10-solution" class="iocSolution hidden">
+                                        <pre><code class="java">
+
+   ...
+   
+   int demanarNumDigits(){
+        int digits;
+        digits=entrarUnEnter("Seguidament indiqueu quin és el nombre de "
+                    + "dígits minim que han de tenir els números a "
+                    + "comptabilitzar: ");
+        System.out.println();
+        return digits;
+    }
+    
+    int entrarUnEnter(String missatge){
+        Scanner scanner = new Scanner(System.in);
+       int enter = 0;
+       boolean correcte=false;
+       do{
+            System.out.print(missatge);
+            correcte=scanner.hasNextInt();
+            if(correcte){
+                enter=scanner.nextInt();
+                scanner.nextLine();
+            }else{
+                scanner.nextLine();
+                System.out.println("Cal que introduïu un valor vàlid");
+            }
+       }while(!correcte);   
+       return enter;
+   }
+   
+   ...
+                                        </code></pre>                         
+                                    </div> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exercici 2 ================-->    
+                <section id="slc-toDo20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Disseny descendent </h2>
+                                     <h3> Exercici 2 - Disseny descendent i implementació</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Feu el disseny descendent i la implementació d'un programa que doni a l'usuari l'oportunitat d'endevinar un nombre de l'1 al 100 (prefixat en el programa) en un nombre màxim d'intents limitat. Inicialment s'explicaran les regles del joc i es demanarà a l'usuari en quants intents creu que  serà capaç d'endevinar el valor. A cada intent s'avisarà al jugador si s'ha passat, s'ha quedat curt o l'ha encertat. El programa s'acabarà quan s'arribi al nombre màxim d'intents  o quan s'encerti el número.</p>
+                                    <p>Tractant-se del primer disseny que has de fer, aconsellem que intentis obtenir almenys, 3 nivells de profunditat. Això et forçarà a donar voltes i cercar alternatives.</p>
+
+                                    <button type="button" class="btn btn-warning btn-lg btn-3d toggle-off" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-advice="#slc-toDo20-consell1">
+                                        Consell 1
+                                    </button>                                        
+                                    <div id="slc-toDo20-consell1" class="iocClue hidden">
+                                        <p>La intuïció és bona per iniciar el procés de descomposició, però no és suficient. Un cop tinguis una lleugera idea de com dividir un problema, intenta posar un nom significatiu a cada una de les parts i seguidament escriu quin hauria de ser el seu l'objectiu amb el màxim de detall i rigor que puguis.</p>
+                                        <p><strong>Alerta!</strong> La descripció de l'objectiu no consisteix en descriure el procés, el que ha de fer la tasca, sinó que cal descriure el resultat a obtenir.</p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-warning btn-lg btn-3d toggle-off" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-advice="#slc-toDo20-consell2">
+                                        Consell 2
+                                    </button>                                        
+                                    <div id="slc-toDo20-consell2" class="iocClue hidden">
+                                        <p>Si et costa, fes servir el teu <span class="forumGrupReduit"></span> per expressar els teus dubtes i demanar ajuda. De vegades és bo descansar i deixar que les idees s'assentin al cap tranquil·lament. Si et quedes en blanc, aparca la tasca i reprent-la en una altre moment.</p>
+                                        <p>Tampoc cal obsessionar-se, només és un exercici. Si veus que el temps passa i no t'en surts, omple l'informe i lliura l'activitat per tal que el professor conegui la teva dificultat i et pugui aconsellar. Relaxa't i mira tranquil·lament la solució intentant entendre-la. Consulta al fòrum o al professor tot el que no vegis clar.</p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-3d toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue1"
+                                            data-toggle="tooltip"
+                                            title="Pista per fer el disseny descendent">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Intenta construir mentalment una seqüència de grans tasques que caldria fer per aconseguir jugar al que proposa l'enunciat, amb independència de si el que dirigeix el joc és l'ordinador o una persona.</p>
+                                        <p>Si tu dirigissis el joc, que és el primer que faries? Explicaries al jugador en què consisteix el joc?</p>
+                                        <p>I després què faries? podries trobar un títol que resumeixi aquestes grans tasques?</p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-3d toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue2"
+                                            data-toggle="tooltip"
+                                            title="Pista per fer el disseny descendent">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Imagina que tu dirigeixes el joc. Com descriuries el diàleg entre tu i el jugador a partir del moment que el jugador fixa el límit d'intents i prova de fer propostes per endevinar el número secret? Sabries delimitar les tasques que cal feren aquest procés? </p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-3d toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue3"
+                                            data-toggle="tooltip"
+                                            title="Pista per fer la implementació">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Comença pels nivells superiors. Segur que tots ells es corresponen amb una funció. Declara-la sense massa detalls, ja decidiràs si cal parametritzar, les variables a declarar, etc. De moment n'hi ha prou amb declarar el nom.</p>
+                                        <p>Repeteix la operació per la resta de nivells tot plantejant-te quins són candidats a constituir-se en funció i quins no. <strong>Recorda! En cas de dubte es preferible crear funcions de més que no pas de menys!</strong></p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-3d toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue4"
+                                            data-toggle="tooltip"
+                                            title="Pista per fer la implementació">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Per cada funció has de plantejar-te quines dades necessites per poder desenvolupar-la.</p>
+                                        <p> Són dades locals que només afecten a la funció? Si és així declara-les com a variables dins la funció.  </p>
+                                        <p>Són dades externes que ja es coneixen abans d'iniciar la tasca que defineix la funció? En aquest cas cal pensar en fer arribar les dades a través de paràmetres. De vegades és necessari fer passar les dades per funcions intermèdies que només recullen paràmetres per a poder-los passar a una altre funció durant la invocació. És el que es coneix com a propagació de paràmetres. </p>
+                                        <p>Són dades que cal fer arribar a un nivell superior? Això significaria que cal declarar una variable local, i que després d'assignar-hi el valor final s'haurà de retornar amb la instrucció return. A més serà necessari disposar d'una variable a la funció que fa la invocació ter tal de no perdre la dada i assignant-la a aquesta variable.</p>
+                                        <p>Com veieu, cal tenir molt clar en quin nivell on s'origina la informació, i en quins nivells es fan servir per tal de preveure com traspassar la informació d'una funció a una altra!</p>
+                                    </div>                                    
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg  btn-3d toggle-off" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-solution="#slc-toDo20-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo20-solution" class="iocSolution hidden">
+                                    <p>EL disseny descendent podria se una cosa com:</p>
+                                    <figure>
+                                        <img width="864px" src="images/activities/SolucioExercici2DissenyDescendent.png" alt="solució dissey descendent">
+                                    </figure>
+                                    <p>I el codi:</p>
+                                        <pre><code class="java">
+
+
+import java.util.Scanner;
+
+public class Exercici2DissenyDescendent {
+    static final int ENCERTAT=0;
+    static final int MENOR=-1;
+    static final int MAJOR=1;
+    
+    static final int VALOR_A_ENCERTAR=57;
+
+    public static void main(String[] args) {
+        Exercici2DissenyDescendent programa  = new Exercici2DissenyDescendent();
+        programa.inici();
+    }
+
+    private void inici() {
+        int limitIntents; 
+        boolean encertat;
+        presentacio();
+        limitIntents = demanarLimitIntents();
+        encertat = demanarPropostes(limitIntents);
+        despedirJugador(encertat);
+    }
+
+    private void presentacio() {
+        System.out.println(
+                "---------------------------------------------------------------");
+        System.out.println(
+                "Aquesta aplicació et permet jugar a endeveninar un número de \n"
+              + "l'1 al 100.");
+        System.out.println(
+                "Quants intents creus que necessitaràs per endevinar el número? \n"
+              + "Molts? Pocs? Posa tu el límit i després comprovarem si n'éts \n"
+              + "capaç. Cada cop que proposis un nou intent, et diré si t'has \n"
+              + "quedat curt, si t'has passat io si l'has endevinat.");
+        System.out.println(
+                "---------------------------------------------------------------");
+    }
+
+    private int demanarLimitIntents() {
+        int limitIntents;
+        limitIntents = entrarUnEnter(                  
+                "Va! Atreveix-te! Quants intents creus que necessitaràs? "
+                + "Afina be. Escriu el nombre màxim d'intents i prem [ENTRAR]:");
+        return limitIntents;
+    }
+
+    private boolean demanarPropostes(int limitIntents) {
+        int intents=0;
+        int comparacio = MENOR;
+        while(intents&lt;limitIntents && comparacio!=ENCERTAT){
+            int proposta;
+            proposta = demanarProposta();
+            comparacio = compararProposta(proposta);
+            informaCOmparacio(comparacio);
+            intents++;
+        }
+        return comparacio==ENCERTAT;
+    }
+
+    private void despedirJugador(boolean encert) {
+        if(encert){
+            System.out.println("Molt be! Ho has aconseguit!");
+        }else{
+            System.out.println("Torna-ho a intentar en una altre moment. "
+                    + "No tot s'aconsegueix a la primera");
+        }
+    }
+
+    private int demanarProposta() {
+        int proposta;
+        proposta = entrarUnEnter("Fes una proposta. Quin numero creus que has d'endevinar? \n"
+                + "Escriu-lo i prem [ENTRAR] ");
+        return proposta;
+    }
+
+    private int compararProposta(int proposta) {
+        int comparacio;
+        if(proposta==VALOR_A_ENCERTAR){
+            comparacio= ENCERTAT;        
+        }else if(proposta&lt;VALOR_A_ENCERTAR){
+            comparacio=MENOR;
+        }else{
+            comparacio = MAJOR;
+        }
+        return comparacio;
+    }
+
+    private void informaCOmparacio(int comparacio) {
+        if(comparacio==MENOR){
+            System.out.println("T'has quedat curt.");
+        }else if(comparacio==MAJOR){
+            System.out.println("T'has passat");
+        }
+    }
+
+   int entrarUnEnter(String missatge){
+        Scanner scanner = new Scanner(System.in);
+       int enter = 0;
+       boolean correcte=false;
+       do{
+            System.out.print(missatge);
+            correcte=scanner.hasNextInt();
+            if(correcte){
+                enter=scanner.nextInt();
+                scanner.nextLine();
+            }else{
+                scanner.nextLine();
+                System.out.println("Cal que introduïu un valor vàlid");
+            }
+       }while(!correcte);   
+       return enter;
+   }
+}
+                                            </code></pre>                         
+                                    </div> 
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 2 ================-->    
+            </section>
+            <!--=========== END SECTION toDo ================-->    
+
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Funcions</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <a class="bustiaLliurament">bústia de lliurament de la unitat 4</a>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <p>Aquesta activitat d'aprenentatge té per objectius que:</p>
+            <ol>
+                <li>Us inicieu en el disseny descendent d'aplicacions informàtiques de dificultat mitjana-baixa.</li>
+                <li>Codifiqueu els dissenys realitzats implementant les aplicacions en llenguatge JAVA.</li>
+            </ol>
+            <hr>
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="js/jssor.js"></script>
+    <script src="js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        iocSlider = new IocSlider();
+        
+        $("[data-display-on-set-slide]").each(function(){
+            var slide;
+            var self = this;
+            var slideId = this.dataset.displayOnSetSlide; 
+            iocSlider.watch("onSetCurrentSlide", function(e){
+                var slide;
+                var oldSlide =e.oldValues.vindx!=-1
+                                    ?e.oldValues.vslides[e.oldValues.vindx]
+                                    :e.oldValues.hslides[e.oldValues.hindx];
+                if($(oldSlide).attr("id")===slideId){
+                   $(self).hide();
+                   if($(self).hasClass("active")){
+                        $(self).click();
+                   }
+                }
+                slide = this.hasVerticalSlides()
+                                    ?this.vslides[this.vindx]
+                                    :this.hslides[this.hindx];
+                if($(slide).attr("id")===slideId){
+                   $(self).show();
+                }
+            });
+    
+            slide = iocSlider.hasVerticalSlides()
+                                ?iocSlider.vslides[iocSlider.vindx]
+                                :iocSlider.hslides[iocSlider.hindx];
+            if($(slide).attr("id")===slideId){
+               $(this).show();
+            }
+        });
+
+        hljs.addLineNumbers();
+        hljs.initHighlightingOnLoad();
+        
+        $(document).ready(function(){
+            toReplaceOnLoad("data/toReplace.json", "A405");
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

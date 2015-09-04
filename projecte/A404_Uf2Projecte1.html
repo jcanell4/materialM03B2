@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila">
+    <title>A404. UF2 Projecte I</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-previes">Tasques prèvies</a></li>
+                          <li><a href="#slc-reunio">La reunió</a></li> 
+                          <li><a href="#slc-altresTasques">Altres tasques</a></li> 
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A404 - UF2 Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>[CANVIAR!]</p>
+                                <p>Aquesta activitat us servirà per començar a plantejar el projecte que haureu de lliurar al final de la UF2.</p>
+                                <p>Recordeu que es tracta d'un projecte que cal fer en equip i per tant, a hores d'ara, ja hauríeu de tenir constituït el grup, consensuat el calendari de càrrecs i els membres que ara exerceixin de secretari i coordinador, haurien d'haver convocat una reunió per ....</p>
+                                <p>Aquí es posarà una referència a l'enunciat: <a class="toProjectStatement">enunciat del projecte</a></p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION previes ================-->    
+            <section id="slc-previes" class="vsections">
+                <!--=========== BEGIN SUBSECTION previes 1 ================-->    
+                <section id="slc-previes10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques prèvies a la reunió - Projecte I</h2>
+                                     <h3> Tasca 1 - Llista de mòduls del projecte</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Poseu en pràctica el que heu aprés. Si les funcions serveixen entre d'altres coses, per modularitzar de la forma més independent possible, grans blocs de codi de les aplicacions, intenteu identificar quins mòduls creieu que hauria de tenir el projecte de la UF2. Cal que tingueu en compte que no sempre arriba a ser possible una independència total i que probablement alguns o tots els mòduls requeriran que se'ls passin dades per poder treballar adequadament. No us preocupeu per això, ara. Només cal que feu la llista del que considereu mòduls del projecte per poder-la consensuar amb la resta de grup.</p>
+                                    <p>Proposeu un nom per cada mòdul i un nom per la funció que definirà la funcionalitat del mòdul. Si considereu que pot clarificar la proposta, escriviu de forma molt breu una descripció de quina seria la funcionalitat del mòdul (de què se n'encarregaria). Us fem diferenciar entre el nom del mòdul i el de funció per tal que feu servir una format més entenedor en el nom (no limitat per les regles de JAVA) i pugueu evitar haver de complementar amb una descripció.</p>
+                                    <p>A l'hora de posar noms a les funcions, recordeu que presenten les mateixes restriccions que els noms de les variables. A més, igual que per les variables, Java recomana també fer servir la notació <em>lowerCamelCase</em>.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-previes10" 
+                                            data-selector-clue="#slc-previes10-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-previes10-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Tingueu en compte que el que caracteritza un mòdul no és pas si ha de rebre o no dades per poder funcionar, sinó que la seva execució no interfereix o interfereix el mínim possible en els altres mòduls. De fet una bona manera de valorar si un bloc és un bon candidat a mòdul, consisteix en preguntar-nos si seria possible eliminar el bloc però seguir executant la resta de mòduls.</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-previes10" 
+                                            data-selector-clue="#slc-previes10-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-previes10-clue2" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Podeu repassar la informació sobre la nomenclatura de variables i identificadors en general al material didàctic de la unitat 1, Concretament a l'apartat anomenat <a target=_blank href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u1/a2/continguts.html#identificadors">identificadors</a>. En aquest apartat també trobareu informació sobre la notació lowerCamelCase, i si voleu més detall sobre CamelCase en general, podeu anar a l'apartat <a target=_blank href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u1/a1/continguts.html#creacio_i_execucio_de_programes_java">Creació i execució de programes Java de la unitat 1</a></p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION previes 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION previes 2 ================-->    
+                <section id="slc-previes20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques prèvies a la reunió - Projecte I</h2>
+                                     <h3> Tasca 2 - Funcions útils per a la codificació</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>[TO DO! falta afegir les pistes!]</p>
+                                    <p>Deixeu el tema de l'estructuració de les aplicacions a partir de les crides de funcions per a més endavant. Trobar l'estructura idònia de les aplicacions, no és una tasca senzilla i es necessiten més coneixements que encara no teniu.</p>
+                                    <p>El que si podeu començar a pensar és, quines funcions podríeu necessitar per codificar alguns dels mòduls de forma mes intuïtiva. Ens referim a un tipus de funció que resolgui algun problema més o menys complicat de manera que en encapsular el codi en una funció només calgui pensar en el que fa i quan aplicar-ho més que no pas en com ho fa.</p>
+                                    <p>Prengueu com exemple les funcions usades a la calculadora d'àrees per realitzar el comput de la mida de l'àrea aplicant la fórmula corresponent a cada figura.</p>
+                                    <p>Es tracta de funcions més o menys genèriques, fàcilment reusables en diversos contextos i que ens alliberen d'estar pendents d'aplicar amb detall la resolució del problema que solucionen.</p>
+                                    <p>No es tracta d'identificar totes les funcions que seran necessàries. Aquesta també és una tasca complexa que requereix d'una anàlisi minuciosa. Ja ho farem més endavant. La proposta que us fem només pretén que hi comenceu a donar voltes per tal que ho pugueu comentar amb els vostres companys. De fet, es tractaria bàsicament de començar a teixir complicitats amb els vostres companys i compartir les primers idees de manera que quan toqui, us resulti més fàcil fer l'anàlisi i consensuar una proposta final.</p>
+                                    <p>Per tant, us demanem només que indiqueu alguna funció (nom i descripció de la funcionalitat) que us pugui resultar útil a l'hora d'implementar algun dels mòduls del projecte. No cal ni tant sols que penseu com s'han de codificar, només tingueu-les en compte.</p>                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION previes 2 ================-->    
+            </section>
+            <!--=========== END SECTION previes ================-->    
+
+            <!--=========== BEGIN SECTION la reunió ================-->    
+            <section id="slc-reunio">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >La reunió -  Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>[CANVIAR!] Aquí es plantejarà el que han de fer a la primera reunió</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION la reunió ================-->    
+            
+            <!--=========== BEGIN SECTION altresTasques ================-->    
+            <section id="slc-altresTasques" class="vsections">
+                <!--=========== BEGIN SUBSECTION altresTasques0 ================-->    
+                <section id="slc-altresTasques0" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Altres tasques a fer - Projecte I</h2>
+                                     <h3> Presentació</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>[CANVIAR!]</p>
+                                    <p>Aquí s'explica que a més de les tasque prèvies i la reunió cal fer altres tasques amb independència de quan es faci la reunió. Aixi pot haver marge per quadrar calendaris entre els diferents membres del grup sense que esperar => perdre el temps</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION altresTasques0 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION altresTasques10  ================-->    
+                <section id="slc-altresTasques10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Altres tasques a fer - Projecte I</h2>
+                                     <h3> Tasca 1 - Implementació de ...</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>[CANVIAR!]</p>
+                                    <p>Aquí es demanarà de fer una implementació d'alguna funció senzilla del projecte. A determinar!</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION altresTasques10 ================-->    
+            </section>
+            <!--=========== END SECTION altresTasques ================-->    
+            
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>[TO DO!] Cal adaptar la redacció als diversos lliraments: reunió i altres tasques</p>
+                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <a class="bustiaLliurament">bústia de lliurament de la unitat 4</a>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                                            <h3> CANVIAR! </h3>
+
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        iocSlider = new IocSlider();
+        
+        $("[data-display-on-set-slide]").each(function(){
+            var slide;
+            var self = this;
+            var slideId = this.dataset.displayOnSetSlide; 
+            iocSlider.watch("onSetCurrentSlide", function(e){
+                var slide;
+                var oldSlide =e.oldValues.vindx!=-1
+                                    ?e.oldValues.vslides[e.oldValues.vindx]
+                                    :e.oldValues.hslides[e.oldValues.hindx];
+                if($(oldSlide).attr("id")===slideId){
+                   $(self).hide();
+                   if($(self).hasClass("active")){
+                        $(self).click();
+                   }
+                }
+                slide = this.hasVerticalSlides()
+                                    ?this.vslides[this.vindx]
+                                    :this.hslides[this.hindx];
+                if($(slide).attr("id")===slideId){
+                   $(self).show();
+                }
+            });
+    
+            slide = iocSlider.hasVerticalSlides()
+                                ?iocSlider.vslides[iocSlider.vindx]
+                                :iocSlider.hslides[iocSlider.hindx];
+            if($(slide).attr("id")===slideId){
+               $(this).show();
+            }
+        });
+
+        hljs.addLineNumbers();
+        hljs.initHighlightingOnLoad();
+        
+        $(document).ready(function(){
+            toReplaceOnLoad("../data/toReplace.json", "A404");
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

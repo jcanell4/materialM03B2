@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila">
+    <title>Presentacio de la UF2</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="css/m03b2Activities.css" rel="stylesheet">
+    <link href="css/scrolling-slides.css" rel="stylesheet">
+    <link href="css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius de la UF2</a>
+                </li>
+                <li>
+                    <a href="#slc-laPlanificacio__slc-planificacioCalendari" onclick = '$("#menu-close").click();'>Calendari</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Ampliació</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-elProjecte">El projecte</a></li> 
+                          <li><a href="#slc-elTreballEnGrup">El treball en grup</a></li> 
+                          <li><a href="#slc-elsForums">Els fòrums</a></li> 
+                          <li><a href="#slc-propostaMillora">La proposta individual de millora</a></li> 
+                          <li><a href="#slc-laPlanificacio">La planificació</a></li> 
+                          <li><a href="#slc-elsLliuraments">Lliuraments</a></li> 
+                          <li><a href="#slc-avaluacio">L'avalcuació</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici Unitat Formativa 2</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>[CANVIAR!] Introducció a la unitat formativa 2. Aquí caldria fer una introducció sobre la metodologia emprada i la organització de la unitat formativa. Es trcata d'un introducció per tal que l'alumne es faci a la idea del que es trobarà i el que cal fer en aquesta unitat formativa.</p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION elProjecte ================-->    
+            <section id="slc-elProjecte" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >El projecte</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>[CANVIAR!] Aquí es presentarà l'eununciat del projecte i es donaran les directriu bàsiques per poder-lo dur a terme.</p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION elProjecte ================-->    
+
+            <!--=========== BEGIN SECTION elTreballEnGrup ================-->    
+            <section id="slc-elTreballEnGrup" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >El Treball en grup</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>[CANVIAR!] Aquí es donaran les directrius de com cal treballar en grup. També caldria donar el calendari: quan fer la presentació al fòrum, quan escollir grup, quan repartir càrrecs, normes del grup, etc.</p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION elTreballEnGrup ================-->    
+
+            <!--=========== BEGIN SECTION elsForums ================-->    
+            <section id="slc-elsForums" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Els fòrums</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>[CANVIAR!] Aquí S'explicaran quins fòrums hi ha a l'aula i que caldria tractar en cada fòrum. També s'explicarà com inscriure's a aquells fòrums que necessiten inscripció a través dels triagrup.</p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION elsForums ================-->    
+
+            <!--=========== BEGIN SECTION propostaMillora ================-->    
+            <section id="slc-propostaMillora" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >La propossta individual de millora</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>[CANVIAR!] Aquí S'explicarà que a banda de les activitats obligatòries de l'AC que culminen en el treball en grup, els alumnes que ho desitgin podran presentar un proposta de millora al treball en grup que serà totalment individual i que tindrà per objectiu pujar la nota de la UF2.</p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION propostaMillora ================-->    
+
+            <!--=========== BEGIN SECTION laPlanificacio ================-->    
+            <section id="slc-laPlanificacio" class="vsections">
+                <!--=========== BEGIN SUBSECTION Visió general a la planicficació ================-->    
+                <section id="slc-planificacioVisioGeneral" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >La planificació</h2>
+                                     <h3>Visió general</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>[CANVIAR!] Aquí es farà una visió egneral de la planicficació .</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Visió general a la planicficació ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Calendari ================-->    
+                <section id="slc-planificacioCalendari" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >La planificació</h2>
+                                     <h3>El calendari</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <table border="1" style="width:100%">
+                                        <tr>
+                                            <th class="vertical-text"><div>Període</div></th>
+                                            <th>Dates</th> 
+                                            <th class="vertical-text"><div>Id Activitat</div></th>
+                                            <th>Activitat</th>
+                                            <th class="vertical-text"><div>Lliurament<sup>1</sup></div></th>
+                                            <th>Data fi. recomenada</th>
+                                            <th>Data límit lliurament</th>
+                                            <th class="vertical-text"><div>Categoria<sup>2</sup></div></th>
+                                            <th class="vertical-text"><div>Tipus<sup>3</sup></div></th></tr>                                        
+                                        <tr>
+                                            <td >0</td>
+                                            <td>del <span id="A400p0I"></span> al <span id="A400p0F"></span></td> 
+                                            <td><span id="A400idA400"></span></td>
+                                            <td><span id="A400naA400"></span></td>
+                                            <td><span id="A400llA400"></span></td>
+                                            <td><span class="dataRecomanada"></span></td>
+                                            <td><span class="dataLimit"></span></td>
+                                            <td><span id="A400catA400"></span></td>
+                                            <td><span id="A400tipA400"></span></td>
+                                        </tr>                                        
+                                        <tr>
+                                            <td rowspan="4">1</td>
+                                            <td rowspan="4">del <span id="A400p1I"></span> al <span id="A400p1F"></span></td> 
+                                            <td><span id="A400idA401"></span></td>
+                                            <td><span id="A400naA401"></span></td>
+                                            <td><span id="A400llA401"></span></td>
+                                            <td><span id=A400drA401></span></td>
+                                            <td><span id=A400dlA401></span></td>
+                                            <td><span id="A400catA401"></span></td>
+                                            <td><span id="A400tipA401"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA402"></span></td>
+                                            <td><span id="A400naA402"></span></td>
+                                            <td><span id="A400llA402"></span></td>
+                                            <td><span id=A400drA402></span></td>
+                                            <td><span id=A400dlA402></span></td>
+                                            <td><span id="A400catA402"></span></td>
+                                            <td><span id="A400tipA402"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA403"></span></td>
+                                            <td><span id="A400naA403"></span></td>
+                                            <td><span id="A400llA403"></span></td>
+                                            <td><span id=A400drA403></span></td>
+                                            <td><span id=A400dlA403></span></td>
+                                            <td><span id="A400catA403"></span></td>
+                                            <td><span id="A400tipA403"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA404"></span></td>
+                                            <td><span id="A400naA404"></span></td>
+                                            <td><span id="A400llA404"></span></td>
+                                            <td><span id=A400drA404></span></td>
+                                            <td><span id=A400dlA404></span></td>
+                                            <td><span id="A400catA404"></span></td>
+                                            <td><span id="A400tipA404"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="3">2</td>
+                                            <td rowspan="3">del <span id="A400p2I"></span> al <span id="A400p2F"></span></td> 
+                                            <td><span id="A400idA405"></span></td>
+                                            <td><span id="A400naA405"></span></td>
+                                            <td><span id="A400llA405"></span></td>
+                                            <td><span id=A400drA405></span></td>
+                                            <td><span id=A400dlA405></span></td>
+                                            <td><span id="A400catA405"></span></td>
+                                            <td><span id="A400tipA405"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA406"></span></td>
+                                            <td><span id="A400naA406"></span></td>
+                                            <td><span id="A400llA406"></span></td>
+                                            <td><span id=A400drA406></span></td>
+                                            <td><span id=A400dlA406></span></td>
+                                            <td><span id="A400catA406"></span></td>
+                                            <td><span id="A400tipA406"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA407"></span></td>
+                                            <td><span id="A400naA407"></span></td>
+                                            <td><span id="A400llA407"></span></td>
+                                            <td><span id=A400drA407></span></td>
+                                            <td><span id=A400dlA407></span></td>
+                                            <td><span id="A400catA407"></span></td>
+                                            <td><span id="A400tipA407"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>del <span id="A400p3I"></span> al <span id="A400p3F"></span></td> 
+                                            <td><span id="A400idA408"></span></td>
+                                            <td><span id="A400naA408"></span></td>
+                                            <td><span id="A400llA408"></span></td>
+                                            <td><span id=A400drA408></span></td>
+                                            <td><span id=A400dlA408></span></td>
+                                            <td><span id="A400catA408"></span></td>
+                                            <td><span id="A400tipA408"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">4</td>
+                                            <td rowspan="2">del <span id="A400p4I"></span> al <span id="A400p4F"></span></td> 
+                                            <td><span id="A400idA501"></span></td>
+                                            <td><span id="A400naA501"></span></td>
+                                            <td><span id="A400llA501"></span></td>
+                                            <td><span id=A400drA501></span></td>
+                                            <td><span id=A400dlA501></span></td>
+                                            <td><span id="A400catA501"></span></td>
+                                            <td><span id="A400tipA501"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA502"></span></td>
+                                            <td><span id="A400naA502"></span></td>
+                                            <td><span id="A400llA502"></span></td>
+                                            <td><span id=A400drA502></span></td>
+                                            <td><span id=A400dlA502></span></td>
+                                            <td><span id="A400catA502"></span></td>
+                                            <td><span id="A400tipA502"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">5</td>
+                                            <td rowspan="2">del <span id="A400p5I"></span> al <span id="A400p5F"></span></td> 
+                                            <td><span id="A400idA503"></span></td>
+                                            <td><span id="A400naA503"></span></td>
+                                            <td><span id="A400llA503"></span></td>
+                                            <td><span id=A400drA503></span></td>
+                                            <td><span id=A400dlA503></span></td>
+                                            <td><span id="A400catA503"></span></td>
+                                            <td><span id="A400tipA503"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA504"></span></td>
+                                            <td><span id="A400naA504"></span></td>
+                                            <td><span id="A400llA504"></span></td>
+                                            <td><span id=A400drA504></span></td>
+                                            <td><span id=A400dlA504></span></td>
+                                            <td><span id="A400catA504"></span></td>
+                                            <td><span id="A400tipA504"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">6</td>
+                                            <td rowspan="2">del <span id="A400p6I"></span> al <span id="A400p6F"></span></td> 
+                                            <td><span id="A400idA505"></span></td>
+                                            <td><span id="A400naA505"></span></td>
+                                            <td><span id="A400llA505"></span></td>
+                                            <td><span id=A400drA505></span></td>
+                                            <td><span id=A400dlA505></span></td>
+                                            <td><span id="A400catA505"></span></td>
+                                            <td><span id="A400tipA505"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA506"></span></td>
+                                            <td><span id="A400naA506"></span></td>
+                                            <td><span id="A400llA506"></span></td>
+                                            <td><span id=A400drA506></span></td>
+                                            <td><span id=A400dlA506></span></td>
+                                            <td><span id="A400catA506"></span></td>
+                                            <td><span id="A400tipA506"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="3">7</td>
+                                            <td rowspan="3">del <span id="A400p7I"></span> al <span id="A400p7F"></span></td> 
+                                            <td><span id="A400idA507"></span></td>
+                                            <td><span id="A400naA507"></span></td>
+                                            <td><span id="A400llA507"></span></td>
+                                            <td><span id=A400drA507></span></td>
+                                            <td><span id=A400dlA507></span></td>
+                                            <td><span id="A400catA507"></span></td>
+                                            <td><span id="A400tipA507"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA508"></span></td>
+                                            <td><span id="A400naA508"></span></td>
+                                            <td><span id="A400llA508"></span></td>
+                                            <td><span id=A400drA508></span></td>
+                                            <td><span id=A400dlA508></span></td>
+                                            <td><span id="A400catA508"></span></td>
+                                            <td><span id="A400tipA508"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA509"></span></td>
+                                            <td><span id="A400naA509"></span></td>
+                                            <td><span id="A400llA509"></span></td>
+                                            <td><span id=A400drA509></span></td>
+                                            <td><span id=A400dlA509></span></td>
+                                            <td><span id="A400catA509"></span></td>
+                                            <td><span id="A400tipA509"></span></td>
+                                        </tr>
+                                    </table>
+                                    <p>[CANVIAR!] Aquí es presentarà el calendari en format taula.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Calendari ================-->    
+            </section>
+            <!--=========== END SECTION laPlanificacio ================-->    
+
+            <!--=========== BEGIN SECTION elsLliuraments ================-->    
+            <section id="slc-elsLliuraments" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Els lliuraments</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>[CANVIAR!] Això prenten ser una referencia que expliqui quins tipus de lliuraments tindràn (busties, fòrums, ...), com procedir en cada cas im potser un hipervincle a cada un dels que la UF2 del curs tingui actius.</p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION elsLliuraments ================-->    
+
+            <!--=========== BEGIN SECTION avaluacio ================-->    
+            <section id="slc-avaluacio" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >L'avaluació</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>[CANVIAR!] Aquí es donarà la normativa de l'avaluació: lliuraments mínims, obligatoris, puntuació, etc.</p> 
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION avaluacio ================-->    
+
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue" class="vsections">
+                <!--=========== BEGIN SUBSECTION per comencar ================-->    
+                <section id="slc-comencar" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Com continuar</h2>
+                                     <h3> Per començar</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>[CANVIAR!] Aquí es donarà la llista de coses que cal fer abans de començar: Panificació particular en funció de les hores i interessos, missatge de presentació per formar grup i donar-se a conèixer, etc.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION per comencar ================-->    
+                
+                <!--=========== BEGIN SUBSECTION nextActivity ================-->    
+                <section id="slc-toDo20" class=" section">
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                                 <h3>Següent pas</h3>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>[CANVIAR!] Aquí cal referenciar i vinclar quina és la següent activitat a fer. Per exemple: passeu a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION nextActivity ================-->    
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <h3> CANVIAR! </h3>
+            <p>Aquí caldria afegir els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació extra sobre la UF2</h2>
+            <p>[CANVIAR!]Aquí caldria posar una referència al material didàctic del mòdul tot dient que no és obligatori, però els pot ajudar a entendre i ampliar...</p>
+            <p>[CANVIAR!]També caldria posar referències bibliogràfiques rellevants</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="js/jssor.js"></script>
+    <script src="js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        iocSlider = new IocSlider();
+        
+        $("[data-display-on-set-slide]").each(function(){
+            var slide;
+            var self = this;
+            var slideId = this.dataset.displayOnSetSlide; 
+            iocSlider.watch("onSetCurrentSlide", function(e){
+                var slide;
+                var oldSlide =e.oldValues.vindx!=-1
+                                    ?e.oldValues.vslides[e.oldValues.vindx]
+                                    :e.oldValues.hslides[e.oldValues.hindx];
+                if($(oldSlide).attr("id")===slideId){
+                   $(self).hide();
+                   if($(self).hasClass("active")){
+                        $(self).click();
+                   }
+                }
+                slide = this.hasVerticalSlides()
+                                    ?this.vslides[this.vindx]
+                                    :this.hslides[this.hindx];
+                if($(slide).attr("id")===slideId){
+                   $(self).show();
+                }
+            });
+    
+            slide = iocSlider.hasVerticalSlides()
+                                ?iocSlider.vslides[iocSlider.vindx]
+                                :iocSlider.hslides[iocSlider.hindx];
+            if($(slide).attr("id")===slideId){
+               $(this).show();
+            }
+        });
+
+        hljs.addLineNumbers();
+        hljs.initHighlightingOnLoad();
+        
+        $(document).ready(function(){
+            toReplaceOnLoad("data/toReplace.json", "A400");
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+
