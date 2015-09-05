@@ -7,6 +7,7 @@
         "Ll_TG":{"type":"text", "value":"TG"},
         "Ll_TE":{"type":"text", "value":"TE"},
         "Ll_F":{"type":"text", "value":"F"},
+        "Ll_FP":{"type":"text", "value":"FP"},
         "Ll_FR":{"type":"text", "value":"FR"},
         "Ll_FT":{"type":"text", "value":"FT"},
         "Ll_FE":{"type":"text", "value":"FE"},
@@ -16,61 +17,80 @@
         "Cat_MI":{"type":"text", "value":"MI"},
         "Tip_I":{"type":"text", "value":"I"},
         "Tip_GG":{"type":"text", "value":"GG"},
-        "Tip_GT":{"type":"text", "value":"GT"}
+        "Tip_GT":{"type":"text", "value":"GT"},
+        "Tip_GR":{"type":"text", "value":"GR"}
     },
     "RP0":{
-        "dataInici": {"type":"text", "value":"15/09/2015"},
-        "dataFinal": {"type":"text", "value":"15/09/2015"}
+        "dataInici": {"type":"text", "value":"23/09/2015"},
+        "dataFinal": {"type":"text", "value":"23/09/2015"}
         
     },        
     "RP1":{
-        "dataInici": {"type":"text", "value":"16/09/2015"},
-        "dataFinal": {"type":"text", "value":"25/09/2015"}       
+        "dataInici": {"type":"text", "value":"24/09/2015"},
+        "dataFinal": {"type":"text", "value":"06/10/2015"},       
+        "dataLimit": {"type":"text", "value":"16/10/2015"}
     },        
     "RP2":{
-        "dataInici": {"type":"text", "value":"15/09/2015"},
-        "dataFinal": {"type":"text", "value":"25/09/2015"}       
+        "dataInici": {"type":"text", "value":"07/10/2015"},
+        "dataFinal": {"type":"text", "value":"21/10/2015"},       
+        "dataLimit": {"type":"text", "value":"03/11/2015"}
     },        
     "RP3":{
-        "dataInici": {"type":"text", "value":"15/09/2015"},
-        "dataFinal": {"type":"text", "value":"25/09/2015"}       
+        "dataInici": {"type":"text", "value":"22/10/2015"},
+        "dataFinal": {"type":"text", "value":"28/10/2015"},       
+        "dataLimit": {"type":"text", "value":"09/11/2015"}
     },        
     "RP4":{
-        "dataInici": {"type":"text", "value":"15/09/2015"},
-        "dataFinal": {"type":"text", "value":"25/09/2015"}       
+        "dataInici": {"type":"text", "value":"29/10/2015"},
+        "dataFinal": {"type":"text", "value":"06/11/2015"},       
+        "dataLimit": {"type":"text", "value":"10/11/2015"}       
     },        
     "RP5":{
-        "dataInici": {"type":"text", "value":"15/09/2015"},
-        "dataFinal": {"type":"text", "value":"25/09/2015"}       
+        "dataInici": {"type":"text", "value":"07/11/2015"},
+        "dataFinal": {"type":"text", "value":"13/11/2015"},       
+        "dataLimit": {"type":"text", "value":"16/11/2015"}       
     },        
     "RP6":{
-        "dataInici": {"type":"text", "value":"15/09/2015"},
-        "dataFinal": {"type":"text", "value":"25/09/2015"}       
+        "dataInici": {"type":"text", "value":"14/11/2015"},
+        "dataFinal": {"type":"text", "value":"21/11/2015"},       
+        "dataLimit": {"type":"text", "value":"23/11/2015"}       
     },        
     "RP7":{
-        "dataInici": {"type":"text", "value":"15/09/2015"},
-        "dataFinal": {"type":"text", "value":"25/09/2015"}       
+        "dataInici": {"type":"text", "value":"22/11/2015"},
+        "dataFinal": {"type":"text", "value":"01/12/2015"},       
+        "dataLimit": {"type":"text", "value":"01/12/2015"}
     },        
-    "RP8":{
-        "dataInici": {"type":"text", "value":"15/09/2015"},
-        "dataFinal": {"type":"text", "value":"25/09/2015"}       
+    "RPM":{
+        "dataInici": {"type":"text", "value":"02/12/2015"},
+        "dataFinal": {"type":"text", "value":"22/12/2015"},       
+        "dataLimit": {"type":"text", "value":"22/12/2015"}       
     },        
     "A400": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A400"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='#'>A400</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A400 Guia de treball"},
         "toNextActivity": {"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A401_funcions1.html"},
         "lliurament": {"selector":".lliurament", "type":"text", "value":"-"},
-        "dataRecomanada": {"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit": {"selector":".dataLimit", "type":"text", "value":"15/09/2015"},
+        "dataRecomanada": {"selector":".dataRecomanada", "type":"text", "value":"23/09/2015"},
+        "dataLimit": {"selector":".dataLimit", "type":"text", "value":"-"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        
         "A400p0I":{"selector":"#A400p0I", "type":"ref", "name":"RP0", "value":"dataInici"},
         "A400p0F":{"selector":"#A400p0F", "type":"ref", "name":"RP0", "value":"dataFinal"},
+        
         "A400idA400":{"selector":"#A400idA400", "type":"ref", "name":"A400", "value":"idActivitat"},
         "A400naA400":{"selector":"#A400naA400", "type":"ref", "name":"A400", "value":"nomActivitat"},
         "A400llA400":{"selector":"#A400llA400",  "type":"ref", "name":"A400", "value":"lliurament"},
         "A400catA400":{"selector":"#A400catA400", "type":"ref", "name":"A400", "value":"categoria"},
         "A400tipA400":{"selector":"#A400tipA400", "type":"ref", "name":"A400", "value":"tipus"},
+
+        "A400idTGFR":{"selector":"#A400idTGFR", "type":"html", "value":"<a href='url_TG_FR'>TGFR<a>"},
+        "A400naTGFR":{"selector":"#A400naTGFR", "type":"text", "value":"Elecció del grup de discussió de les activitats al fòrum reduït"},
+        "A400llTGFR":{"selector":"#A400llTGFR",  "defaultValue":"Ll_TG"},
+        "A400drTGFR":{"selector":"#A400drTGFR",  "type":"ref", "name":"A400", "value":"dataRecomanada"},
+        "A400dlTGFR":{"selector":"#A400dlTGFR",  "type":"ref", "name":"RP1", "value":"dataFinal"},
+        "A400catTGFR":{"selector":"#A400catTGFR", "defaultValue":"Cat_NQ"},
+        "A400tipTGFR":{"selector":"#A400tipTGFR", "defaultValue":"Tip_I"},
 
         "A400p1I":{"selector":"#A400p1I", "type":"ref", "name":"RP1", "value":"dataInici"},
         "A400p1F":{"selector":"#A400p1F", "type":"ref", "name":"RP1", "value":"dataFinal"},
@@ -227,28 +247,48 @@
         "A400drA509":{"selector":"#A400drA509",  "type":"ref", "name":"A509", "value":"dataRecomanada"},
         "A400dlA509":{"selector":"#A400dlA509",  "type":"ref", "name":"A509", "value":"dataLimit"},
         "A400catA509":{"selector":"#A400catA509", "type":"ref", "name":"A509", "value":"categoria"},
-        "A400tipA509":{"selector":"#A400tipA509", "type":"ref", "name":"A509", "value":"tipus"}
+        "A400tipA509":{"selector":"#A400tipA509", "type":"ref", "name":"A509", "value":"tipus"},
+
+        "A400pmI":{"selector":"#A400pmI", "type":"ref", "name":"RPM", "value":"dataInici"},
+        "A400pmF":{"selector":"#A400pmF", "type":"ref", "name":"RPM", "value":"dataFinal"},
+        
+        "A400idA5M1":{"selector":"#A400idA5M1", "type":"ref", "name":"A5M1", "value":"idActivitat"},
+        "A400naA5M1":{"selector":"#A400naA5M1", "type":"ref", "name":"A5M1", "value":"nomActivitat"},
+        "A400llA5M1":{"selector":"#A400llA5M1",  "type":"ref", "name":"A5M1", "value":"lliurament"},
+        "A400drA5M1":{"selector":"#A400drA5M1",  "type":"ref", "name":"A5M1", "value":"dataRecomanada"},
+        "A400dlA5M1":{"selector":"#A400dlA5M1",  "type":"ref", "name":"A5M1", "value":"dataLimit"},
+        "A400catA5M1":{"selector":"#A400catA5M1", "type":"ref", "name":"A5M1", "value":"categoria"},
+        "A400tipA5M1":{"selector":"#A400tipA5M1", "type":"ref", "name":"A5M1", "value":"tipus"},
+
+        "A400idA5M2":{"selector":"#A400idA5M2", "type":"ref", "name":"A5M2", "value":"idActivitat"},
+        "A400naA5M2":{"selector":"#A400naA5M2", "type":"ref", "name":"A5M2", "value":"nomActivitat"},
+        "A400llA5M2":{"selector":"#A400llA5M2",  "type":"ref", "name":"A5M2", "value":"lliurament"},
+        "A400drA5M2":{"selector":"#A400drA5M2",  "type":"ref", "name":"A5M2", "value":"dataRecomanada"},
+        "A400dlA5M2":{"selector":"#A400dlA5M2",  "type":"ref", "name":"A5M2", "value":"dataLimit"},
+        "A400catA5M2":{"selector":"#A400catA5M2", "type":"ref", "name":"A5M2", "value":"categoria"},
+        "A400tipA5M2":{"selector":"#A400tipA5M2", "type":"ref", "name":"A5M2", "value":"tipus"}
     },
     "A401": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A401"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A401_funcions1.html'>A401</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A401 Funcions I"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"26/09/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP1", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "forumGrupReduit":{"selector":".forumGrupReduit", "defaultValue":"fgr"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA401.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A402_funcions2.html"}
     },
     "A402": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A402"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A402_funcions2.html'>A402</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A402 Funcions II"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
         "materialsM03U3":{"selector":".materialsM03U3", "defaultValue":"mat"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"28/09/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP1", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
@@ -256,24 +296,24 @@
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A403_funcions3.html"}
     },
     "A403": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A403"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A403_funcions3.html'>A403</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A403 Funcions III"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"04/10/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP1", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
-        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "forumGrupReduit":{"selector":".forumGrupReduit", "defaultValue":"fgr"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA403.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"projecte/A404_Uf2Projecte1.html"}
     },
     "A404": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A404"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A404_Uf2Projecte1.html'>A404</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A404 Projecte I"},
-        "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FP"},{"defaultValue":"Ll_B"}]},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"06/10/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP1", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
@@ -282,11 +322,11 @@
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A405": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A405"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A405_dissenyDescendent1.html'>A405</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A405 Disseny descendent"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"11/10/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP2", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
@@ -294,11 +334,11 @@
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A406_errorsIDepuracio.html"}
     },
     "A406": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A406"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A406_errorsIDepuracio.html'>A406</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A406 Errors i depuració"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"16/10/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP2", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
@@ -306,37 +346,37 @@
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"projecte/A407_Uf2Projecte2.html"}
     },
     "A407": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A407"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A407_Uf2Projecte2.html'>A407</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A407 Projecte 2"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"21/10/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP2", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
-        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A408_Uf2Projecte3.html"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A408": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A408"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A408_Uf2Projecte3.html'>A408</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A408 Projecte 3"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"28/10/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP3", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
-        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A501_ClassesBiblioteques.html"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A501": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A501"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A501_ClassesBiblioteques.html'>A501</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A501 Classes i biblioteques"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"02/11/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP4", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
@@ -345,37 +385,37 @@
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A502": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A502"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A502_ActivitatsEspecialistes.html'>A502</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A502 Activitats Especialistes"},
-        "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FE"},{"defaultValue":"Ll_B"}]},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"06/11/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP4", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
-        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A503_Integracio1.html"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A503": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A503"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A503_Integracio1.html'>A503</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A503 Integració I"},
-        "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FT"},{"defaultValue":"Ll_B"}]},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"09/11/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP5", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
-        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A504_Implementacio1.html"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A504": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A504"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A504_Implementacio1.html'>A504</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A504 Implementació I"},
-        "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FT"},{"defaultValue":"Ll_B"}]},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"13/11/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP5", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
@@ -384,68 +424,94 @@
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A505": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A505"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A505_Integracio2.html'>A505</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A505 Integració II"},
-        "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FT"},{"defaultValue":"Ll_B"}]},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"16/11/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP6", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
-        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A506_Implementacio2.html"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A506": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A506"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A506_Implementacio2.html'>A506</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A506 Implementació II"},
-        "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FT"},{"defaultValue":"Ll_B"}]},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"21/11/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP6", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A507_Integracio3.html"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A507_Integracio3.html"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A507": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A507"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A507_Integracio3.html'>A507</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A507 Integració III"},
-        "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FT"},{"defaultValue":"Ll_B"}]},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"24/11/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP7", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
-        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A506_Implementacio2.html"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A508_Implementacio3.html"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A508": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A508"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A508_Implementacio3.html'>A508</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A508 Implementació III"},
-        "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FT"},{"defaultValue":"Ll_B"}]},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"29/11/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP7", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A509_Integracio4.html"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A509_Integracio4.html"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A509": {
-        "idActivitat": {"selector":".idActivitat", "type":"text", "value":"A509"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A509_Integracio4.html'>A509</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A509 Integració IV"},
+        "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FT"},{"defaultValue":"Ll_B"}]},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"02/12/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP7", "value":"dataLimit"},
+        "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
+        "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
+        "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
+        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A5M1_PropostaIndividualMillora.html"},
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+    },
+    "A5M1": {
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A5M1_PropostaIndividualMillora.html'>A5M1</a>"},
+        "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A5M1 Proposta individual de millora"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"15/09/2015"},
-        "dataLimit":{"selector":".dataLimit", "type":"text", "value":"25/09/2015"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"10/12/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RPM", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A510_PropostaMillora.html"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A5M2_ImplementacioPropostaMillora.html"},
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+    },
+    "A5M2": {
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A5M2_ImplementacioPropostaMillora.html'>A5M2</a>"},
+        "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A5M2 Implementació de la proposta individual de millora"},
+        "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"22/12/2015"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RPM", "value":"dataLimit"},
+        "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
+        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
+        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A5M1_PropostaIndividualMillora.html"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     }
 }

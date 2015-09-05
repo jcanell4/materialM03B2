@@ -257,16 +257,16 @@
                                         <tr>
                                             <th class="vertical-text"><div>Període</div></th>
                                             <th>Dates</th> 
-                                            <th class="vertical-text"><div>Id Activitat</div></th>
-                                            <th>Activitat</th>
-                                            <th class="vertical-text"><div>Lliurament<sup>1</sup></div></th>
-                                            <th>Data fi. recomenada</th>
+                                            <th class="vertical-text"><div>Activitat</div></th>
+                                            <th>Nom</th>
+                                            <th class="vertical-text"><div>Lliurament<sup id="sup1"><a href="#nota1">1</a></sup></div></th>
+                                            <th>Data fi. recomanada</th>
                                             <th>Data límit lliurament</th>
-                                            <th class="vertical-text"><div>Categoria<sup>2</sup></div></th>
-                                            <th class="vertical-text"><div>Tipus<sup>3</sup></div></th></tr>                                        
+                                            <th class="vertical-text"><div>Categoria<sup id="sup2"><a href="#nota2">2</a></sup></div></th>
+                                            <th class="vertical-text"><div>Tipus<sup id="sup3"><a href="#nota3">3</a></sup></div></th></tr>                                        
                                         <tr>
-                                            <td >0</td>
-                                            <td>del <span id="A400p0I"></span> al <span id="A400p0F"></span></td> 
+                                            <td rowspan="2" >0</td>
+                                            <td rowspan="2" >del <span id="A400p0I"></span> al <span id="A400p0F"></span></td> 
                                             <td><span id="A400idA400"></span></td>
                                             <td><span id="A400naA400"></span></td>
                                             <td><span id="A400llA400"></span></td>
@@ -274,6 +274,15 @@
                                             <td><span class="dataLimit"></span></td>
                                             <td><span id="A400catA400"></span></td>
                                             <td><span id="A400tipA400"></span></td>
+                                        </tr>                                        
+                                        <tr>
+                                            <td><span id="A400idTGFR"></span></td>
+                                            <td><span id="A400naTGFR"></span><sup id="sup4"><a href="#nota4">4</a></sup></td>
+                                            <td><span id="A400llTGFR"></span></td>
+                                            <td><span id=A400drTGFR></span></td>
+                                            <td><span id=A400dlTGFR></span></td>
+                                            <td><span id="A400catTGFR"></span></td>
+                                            <td><span id="A400tipTGFR"></span></td>
                                         </tr>                                        
                                         <tr>
                                             <td rowspan="4">1</td>
@@ -442,8 +451,46 @@
                                             <td><span id="A400catA509"></span></td>
                                             <td><span id="A400tipA509"></span></td>
                                         </tr>
+                                        <tr>
+                                            <td rowspan="2">MI</td>
+                                            <td rowspan="2">del <span id="A400pmI"></span> al <span id="A400pmF"></span></td> 
+                                            <td><span id="A400idA5M1"></span></td>
+                                            <td><span id="A400naA5M1"></span></td>
+                                            <td><span id="A400llA5M1"></span></td>
+                                            <td><span id=A400drA5M1></span></td>
+                                            <td><span id=A400dlA5M1></span></td>
+                                            <td><span id="A400catA5M1"></span></td>
+                                            <td><span id="A400tipA5M1"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="A400idA5M2"></span></td>
+                                            <td><span id="A400naA5M2"></span></td>
+                                            <td><span id="A400llA5M2"></span></td>
+                                            <td><span id=A400drA5M2></span></td>
+                                            <td><span id=A400dlA5M2></span></td>
+                                            <td><span id="A400catA5M2"></span></td>
+                                            <td><span id="A400tipA5M2"></span></td>
+                                        </tr>
                                     </table>
-                                    <p>[CANVIAR!] Aquí es presentarà el calendari en format taula.</p>
+                                    <h2 class="em">Notes</h2>
+                                    <table cellspacing="0" cellpadding="2"><tbody>
+                                        <tr>
+                                            <td valign="top"><a href="#sup1"><sup id="nota1">1</sup></a></td>
+                                            <td align="left">TG: Tria grup, TE: Tria especialitat, B: bústia de lliuraments múltiples, FP: fòrum de presentació, FR: fòrum reduït de discussió d'activitats proposades, FT: fòrum de discussió del grup de treball, FE: fòrum de discussió dels especialistes. Els lliuraments als fòrum porten també associat el lliurament a la bústia de la unitat per facilitat el control del seguiment de l'AC.</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top"><a href="#sup2"><sup id="nota2">2</sup></a></td>
+                                            <td align="left">NQ: L'activitat no es qualifica però és necessària per obtenir els punts de seguiment, Q: l'activitat es qualifica, , MI: Millora Individual, és optativa i permet pujar la nota de l'AC.</td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top"><a href="#sup3"><sup id="nota3">3</sup></a></td>
+                                            <td align="left">I: Individual, GG: Grup gran, GR: Grup reduït, GT: Grup de treball.</td>
+                                        </tr>
+                                         <tr>
+                                            <td valign="top"><a href="#sup4"><sup id="nota4">4</sup></a></td>
+                                            <td align="left">Cal destacar la importància de dur a terme aquesta activitat, ja que si no es fa la tria del grup pertinent, no es veuran els fòrums on cal discutir-hi i realitzar les activitats. Alerta doncs amb el termini màxim.</td>
+                                        </tr>
+                                    </tbody></table>
                                 </div> 
                             </div>
                         </div>
