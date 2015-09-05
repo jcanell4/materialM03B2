@@ -168,6 +168,14 @@
         "A400p4I":{"selector":"#A400p4I", "type":"ref", "name":"RP4", "value":"dataInici"},
         "A400p4F":{"selector":"#A400p4F", "type":"ref", "name":"RP4", "value":"dataFinal"},
 
+        "A400idRESP":{"selector":"#A400idRESP", "type":"html", "value":"<a href='url_TG_FR'>A500<a>"},
+        "A400naRESP":{"selector":"#A400naRESP", "type":"text", "value":"A500 Repartiment de responsabilitats"},
+        "A400llRESP":{"selector":"#A400llRESP",  "type":"arrayText", "value":[{"defaultValue":"Ll_FT"},{"defaultValue":"Ll_TE"}]},
+        "A400drRESP":{"selector":"#A400drRESP",  "type":"ref", "name":"RP4", "value":"dataInici"},
+        "A400dlRESP":{"selector":"#A400dlRESP",  "type":"text", "value":"-"},
+        "A400catRESP":{"selector":"#A400catRESP", "defaultValue":"Cat_NQ"},
+        "A400tipRESP":{"selector":"#A400tipRESP", "defaultValue":"Tip_GT"},
+
         "A400idA501":{"selector":"#A400idA501", "type":"ref", "name":"A501", "value":"idActivitat"},
         "A400naA501":{"selector":"#A400naA501", "type":"ref", "name":"A501", "value":"nomActivitat"},
         "A400llA501":{"selector":"#A400llA501",  "type":"ref", "name":"A501", "value":"lliurament"},
@@ -275,7 +283,6 @@
         "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"26/09/2015"},
         "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP1", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
-        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "forumGrupReduit":{"selector":".forumGrupReduit", "defaultValue":"fgr"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
