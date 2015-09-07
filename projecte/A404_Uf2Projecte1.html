@@ -84,8 +84,7 @@
                         <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
                           <li class="active"><a href="#slc-toStart">Inici</a></li> 
                           <li><a href="#slc-previes">Tasques prèvies</a></li>
-                          <li><a href="#slc-reunio">La reunió</a></li> 
-                          <li><a href="#slc-altresTasques">Altres tasques</a></li> 
+                          <li><a href="#slc-altresTasques">Implementació primeres funcions</a></li> 
                           <li><a href="#slc-toDelivery">Lliurament</a></li> 
                           <li><a href="#slc-toContinue">Com continuar</a></li> 
                         </ul>           
@@ -115,10 +114,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>[CANVIAR!]</p>
-                                <p>Aquesta activitat us servirà per començar a plantejar el projecte que haureu de lliurar al final de la UF2.</p>
-                                <p>Recordeu que es tracta d'un projecte que cal fer en equip i per tant, a hores d'ara, ja hauríeu de tenir constituït el grup, consensuat el calendari de càrrecs i els membres que ara exerceixin de secretari i coordinador, haurien d'haver convocat una reunió per ....</p>
-                                <p>Aquí es posarà una referència a l'enunciat: <a class="toProjectStatement">enunciat del projecte</a></p>
+                                <p>Aquesta activitat us servirà, d'una banda, per conèixer als vostres companys i poder escollir amb quins voleu realitzar el projecte que haureu de lliurar al final de la UF2. També us permetrà, d'altra banda, començar a implementar alguna funcionalitat senzilla del projecte, posant en pràctica el que heu aprés fins el moment.</p>
+                                <p>En relació a la tria del grup de treball del projecte, us proposarem que useu el <em> fòrum de presentació per triar grup</em>, per a presentar-vos als vostres companys omplint el formulari que posem a la vostra disposició a l'apartat <a href="#slc-previes">tasques prèvies</a> d'aquesta mateixa activitat, i seguiu les indicacions que allà se us donen per triar el grup.</p>
+                                <p>Si voleu podeu consultar l'enunciat del projecte en el següent enllaç: <a class="toProjectStatement">enunciat del projecte</a>. Així us podeu fer una idea del que se us demanarà.</p>
+                                <p>En relació a la implementació d'una funcionalitat senzilla del projecte, a l'apartat tasques d'implementació se us proposarà fer dues funcions que més endavant podreu utilitzar en el vostre projecte. Així podeu practicar implementant codi que reutilitzareu en algun moment.</p>
                              </div>
                         </div>
                     </div>
@@ -135,40 +134,15 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques prèvies a la reunió - Projecte I</h2>
-                                     <h3> Tasca 1 - Llista de mòduls del projecte</h3>
+                                     <h3> Tasca 1 - Presentació</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Poseu en pràctica el que heu aprés. Si les funcions serveixen entre d'altres coses, per modularitzar de la forma més independent possible, grans blocs de codi de les aplicacions, intenteu identificar quins mòduls creieu que hauria de tenir el projecte de la UF2. Cal que tingueu en compte que no sempre arriba a ser possible una independència total i que probablement alguns o tots els mòduls requeriran que se'ls passin dades per poder treballar adequadament. No us preocupeu per això, ara. Només cal que feu la llista del que considereu mòduls del projecte per poder-la consensuar amb la resta de grup.</p>
-                                    <p>Proposeu un nom per cada mòdul i un nom per la funció que definirà la funcionalitat del mòdul. Si considereu que pot clarificar la proposta, escriviu de forma molt breu una descripció de quina seria la funcionalitat del mòdul (de què se n'encarregaria). Us fem diferenciar entre el nom del mòdul i el de funció per tal que feu servir una format més entenedor en el nom (no limitat per les regles de JAVA) i pugueu evitar haver de complementar amb una descripció.</p>
-                                    <p>A l'hora de posar noms a les funcions, recordeu que presenten les mateixes restriccions que els noms de les variables. A més, igual que per les variables, Java recomana també fer servir la notació <em>lowerCamelCase</em>.</p>
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-previes10" 
-                                            data-selector-clue="#slc-previes10-clue1">
-                                        Pista 1
-                                    </button>                                        
-                                    <div id="slc-previes10-clue1" class="iocClue hidden">
-                                        <h2>Pista 1</h2>
-                                        <p>Tingueu en compte que el que caracteritza un mòdul no és pas si ha de rebre o no dades per poder funcionar, sinó que la seva execució no interfereix o interfereix el mínim possible en els altres mòduls. De fet una bona manera de valorar si un bloc és un bon candidat a mòdul, consisteix en preguntar-nos si seria possible eliminar el bloc però seguir executant la resta de mòduls.</p>
-                                    </div>
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-previes10" 
-                                            data-selector-clue="#slc-previes10-clue2">
-                                        Pista 2
-                                    </button>                                        
-                                    <div id="slc-previes10-clue2" class="iocClue hidden">
-                                        <h2>Pista 1</h2>
-                                        <p>Podeu repassar la informació sobre la nomenclatura de variables i identificadors en general al material didàctic de la unitat 1, Concretament a l'apartat anomenat <a target=_blank href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u1/a2/continguts.html#identificadors">identificadors</a>. En aquest apartat també trobareu informació sobre la notació lowerCamelCase, i si voleu més detall sobre CamelCase en general, podeu anar a l'apartat <a target=_blank href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u1/a1/continguts.html#creacio_i_execucio_de_programes_java">Creació i execució de programes Java de la unitat 1</a></p>
-                                    </div>
+                                    <p>[TO DO: crear un document odt amb el formulari a omplir basat en l'antic document A5P2_TriaDelGrupDeTreball. Explicar que cal omplir-lo i panjar-lo al fòrum i fer-ne seguiment per tal de trobar 2 companys. Haurien d'intetar posar-se d'acord en el fòrum per evitar fer assignacions errònies a grups.]</p>
+                                    <p>[TO DO: Indicar la ruta del fòrum de presentació: <a class="forumPresentacio"> fòrum de presentació per triar grup</a> usant toReplace.json.]</p>
                                 </div> 
                             </div>
                         </div>
@@ -183,20 +157,14 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques prèvies a la reunió - Projecte I</h2>
-                                     <h3> Tasca 2 - Funcions útils per a la codificació</h3>
+                                     <h3> Tasca 2 - Triar el grup de treball</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>[TO DO! falta afegir les pistes!]</p>
-                                    <p>Deixeu el tema de l'estructuració de les aplicacions a partir de les crides de funcions per a més endavant. Trobar l'estructura idònia de les aplicacions, no és una tasca senzilla i es necessiten més coneixements que encara no teniu.</p>
-                                    <p>El que si podeu començar a pensar és, quines funcions podríeu necessitar per codificar alguns dels mòduls de forma mes intuïtiva. Ens referim a un tipus de funció que resolgui algun problema més o menys complicat de manera que en encapsular el codi en una funció només calgui pensar en el que fa i quan aplicar-ho més que no pas en com ho fa.</p>
-                                    <p>Prengueu com exemple les funcions usades a la calculadora d'àrees per realitzar el comput de la mida de l'àrea aplicant la fórmula corresponent a cada figura.</p>
-                                    <p>Es tracta de funcions més o menys genèriques, fàcilment reusables en diversos contextos i que ens alliberen d'estar pendents d'aplicar amb detall la resolució del problema que solucionen.</p>
-                                    <p>No es tracta d'identificar totes les funcions que seran necessàries. Aquesta també és una tasca complexa que requereix d'una anàlisi minuciosa. Ja ho farem més endavant. La proposta que us fem només pretén que hi comenceu a donar voltes per tal que ho pugueu comentar amb els vostres companys. De fet, es tractaria bàsicament de començar a teixir complicitats amb els vostres companys i compartir les primers idees de manera que quan toqui, us resulti més fàcil fer l'anàlisi i consensuar una proposta final.</p>
-                                    <p>Per tant, us demanem només que indiqueu alguna funció (nom i descripció de la funcionalitat) que us pugui resultar útil a l'hora d'implementar algun dels mòduls del projecte. No cal ni tant sols que penseu com s'han de codificar, només tingueu-les en compte.</p>                                    
+                                    <p>[TO DO! explicar: Un cop hageu trobat els companys adients i us hàgiu posat d'acord, caldrà que els tres escolliu grup a través de la utilitat Tria Grup de Treball que trobareu a (<a class="triaGrupTreball">aquí</a>)... cal dir que els grups romandrant oberts (els poden assignar-se grup, sortir-ne i tornar-se a assignar en una altre usant l'eina Tria grup.) fins la dàta límit... Cla insisitir que intentin formar grup com més aviat millor.]</p>
                                 </div> 
                             </div>
                         </div>
@@ -206,27 +174,6 @@
             </section>
             <!--=========== END SECTION previes ================-->    
 
-            <!--=========== BEGIN SECTION la reunió ================-->    
-            <section id="slc-reunio">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class= "headSlide">
-                                 <h2 >La reunió -  Projecte I</h2>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class=bodySlide>
-                                <p>[CANVIAR!] Aquí es plantejarà el que han de fer a la primera reunió</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--=========== END SECTION la reunió ================-->    
-            
             <!--=========== BEGIN SECTION altresTasques ================-->    
             <section id="slc-altresTasques" class="vsections">
                 <!--=========== BEGIN SUBSECTION altresTasques0 ================-->    
@@ -236,15 +183,14 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Altres tasques a fer - Projecte I</h2>
-                                     <h3> Presentació</h3>
+                                     <h3> Lectura enunciat</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>[CANVIAR!]</p>
-                                    <p>Aquí s'explica que a més de les tasque prèvies i la reunió cal fer altres tasques amb independència de quan es faci la reunió. Aixi pot haver marge per quadrar calendaris entre els diferents membres del grup sense que esperar => perdre el temps</p>
+                                    <p>[To do! Explicar que cal llegir l'enunciat (<a class="toProjectStatement">enunciat del projecte</a>), i que per començar volem implementar dues funcions senzilles que els ajudins a practicar. Potser cal fer un petit anàlisi trobant que el foc més adient podria ser el de "Comença per ..."]</p>
                                 </div> 
                             </div>
                         </div>
@@ -259,7 +205,7 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Altres tasques a fer - Projecte I</h2>
-                                     <h3> Tasca 1 - Implementació de ...</h3>
+                                     <h3> Tasca 1 - Implementació I </h3>
                                  </div>
                             </div>
                         </div>
@@ -267,13 +213,58 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>[CANVIAR!]</p>
-                                    <p>Aquí es demanarà de fer una implementació d'alguna funció senzilla del projecte. A determinar!</p>
+                                    <p>Aquí es demanarà de fer una implementació de la funció esPotDonarNovaPista que determina si es pot mostrar una nova lletra de la paruale oculta. Cla tenir en comte que segons l'enunciat ... </p>
+                                    <p>La solució seria:</p>
+                                    <pre><code class="java">
+    boolean esPotDonarNovaPista(String paraulaAEndevinar, int pistesJaDonades) {
+        return (pistesJaDonades&lt;paraulaAEndevinar.length()-1);
+    }
+                                    </code></pre>
+                                    <p>Cal veure quines pistes donar per ajudar a la implementació</p>
                                 </div> 
                             </div>
                         </div>
                     </div>
                 </section>
                 <!--=========== END SUBSECTION altresTasques10 ================-->    
+                <!--=========== BEGIN SUBSECTION altresTasques20  ================-->    
+                <section id="slc-altresTasques20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Altres tasques a fer - Projecte I</h2>
+                                     <h3> Tasca 1 - Implementació I </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>[CANVIAR!]</p>
+                                    <p>Aquí es demanarà de fer una implementació de la funció obtePistes que retorna el nombre incial de lletres de la paraula a endevinar d'acord amb el nombre de pistes donades. Cla tenir en comte que segons l'enunciat ... </p>
+                                    <p>La solució seria:</p>
+                                    <pre><code class="java">
+ public String obtePistes(String paraulaAEndevinar,  int pistesDonades) {
+        char[] chars;
+        if(estat.pistesDonades==0){
+            return "";
+        }
+        
+        chars = new char[pistesDonades];
+        for(int i=0; i&lt;pistesDonades; i++){
+            chars[i]=paraulaAEndevinar.charAt(i);
+        }
+        return new String(chars);
+    }
+                                    </code></pre>
+                                    <p>Cal veure quines pistes donar per ajudar a la implementació</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION altresTasques20 ================-->
             </section>
             <!--=========== END SECTION altresTasques ================-->    
             

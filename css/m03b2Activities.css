@@ -383,3 +383,7 @@ ol.nestedCounter ol > li:before {
     -ms-transform: rotate(270deg);
     writing-mode: lr-tb;    
 }
+
+.tab{
+    padding-left: 6em;
+}

@@ -1,5 +1,7 @@
 {
     "defaultValues":{
+        "tgt":{"type":"attr", "name":"href", "value":"triaGrupTreball"},
+        "fpr":{"type":"attr", "name":"href", "value":"forumDePresentacioGrupTreball"},
         "fgr":{"type":"html", "value":"<a href='forumGrupReduit' target='_blank' title=\"Falta l'hipervincle del fòrum\">fòrum reduït de discussió</a>"},
         "bll":{"type":"attr", "name":"href", "value":"bustiaLliurament"},
         "pst":{"type":"attr", "name":"href", "value":"docs/225XM03B2_Projecte_Enunciat_1516S1.odt"},
@@ -326,7 +328,9 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "defaultValue":"bll"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA405.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A405_dissenyDescendent1.html"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
+        "forumPresentacio":{"selector":".forumPresentacio", "defaultValue":"fpr"},
+        "triaGrupTreball":{"selector":".triaGrupTreball", "defaultValue":"tgt"}
     },
     "A405": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A405_dissenyDescendent1.html'>A405</a>"},
