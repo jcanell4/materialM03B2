@@ -83,9 +83,8 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
                           <li class="active"><a href="#slc-toStart">Inici</a></li> 
-                          <li><a href="#slc-reunio">La reunió</a></li> 
-                          <li><a href="#slc-tasques">Les tasques</a></li> 
-                          <li><a href="#slc-avaluacio">L'avaluació</a></li> 
+                          <li><a href="#slc-organitzatives">Tasques Organitzatives</a></li> 
+                          <li><a href="#slc-individuals">Tasques individuals</a></li> 
                           <li><a href="#slc-toDelivery">Lliurament</a></li> 
                           <li><a href="#slc-toContinue">Com continuar</a></li> 
                         </ul>           
@@ -115,11 +114,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>[CANVIAR!]</p>
-                                <p>Aquí caldrà explicar que es trcata d'un activitat en la que caldrà fer dissenys descendents i implementacions  per começar a encara el projecte. El disseny descendent i les implemebntacions a fe es detallaran a l'apartat "Les tasques". </p>
-                                <p>L'activitat consisteix també en avaluar les tasques fetes d'un del companys del grup. No es tracta només d'una tasca evaluativa sinó que ha de permetre conèixer l'altre.</p>
-                                <p>Abans de tot això, però cal posar-se d'acord en quin serà el dia de lliurament per tal que tots acabin al mateix temps i pugui inciar-se el procés de correció. Per això caldrà fer una reunió valorar la feina que tenen els membre i decidir una data màxima dins del període d'aquesta activitat pde forma que tots puguin lliurar les tasques i fer l'avaluació dl company que els toqui.</p>
-                                <p>En aquesta reunió caldrà també repartir quin company i tasca ha d'avalauar cada un dels membres.</p>
+                                <p>[TODO!]</p>
+                                <p>Activitat dedicada a anar fent el projecte. Aquí es trobaran unes tasques organitzatives i altres que impliquen implementació individual.</p>
+                                <p>Aclarir que a hores d'ara ja seria bo tenir un grup format. En cas que no fos així es recomana fer-ho quan abans millor</p>
+                                <p>Informar també que activant el mení lateral (i) es pot accdir a l'enunciat del projecte si fos necessari.</p>
                                 <p>...</p>
                              </div>
                         </div>
@@ -130,37 +128,38 @@
 
 
 
-            <!--=========== BEGIN SECTION la reunió ================-->    
-            <section id="slc-reunio">
+            <!--=========== BEGIN SECTION organitzatives ================-->    
+            <section id="slc-organitzatives">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >La reunió -  Projecte II</h2>
+                                 <h2 >Normes i acords de grup -  Projecte II</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>[CANVIAR!] Aquí es plantejarà el que han de fer a la reunió:</p>
+                                <p>[TO DO!] Aquí es plantejarà la importància de tenir normes de grup clares per evitar conflictes i de consensuar acords mínims de treball. Almenys caldria tractar els temes següents:</p>
                                 <ul>
-                                    <li>Valorar feina a fer</li>
-                                    <li>Decidir data límit pevia a l'avaluació i dins del límit màxim del període</li>
-                                    <li>Repartir quins membres i tasques avalua cada un</li>                                    
+                                    <li>Mitja de comunicació principal (fòrum, whatsapp, skype, altres eines)</li>
+                                    <li>Clarificar i consensuar el nivells d'exigència i les expectatives dels membres (no pot ser que un vulgui fer molt per treure bona nota i altres no. Si calgués encara s'està a temps de canviar de grup).</li>
+                                    <li>Consensuar millors horaris i dies de la setmana per a fer reunions quan faci falta</li>
+                                    <li>Consensuar quins poden ser els motius d'expulsió d'un membre del grup, tenint en compte que l'expulsió ha de ser per motius realment greus i pot implicar que la persona expulsada no aprovi el mòdul i si no s'aconsegueix recol·locar en una altre grup</li>                                    
                                 </ul>
-                                
+                                <p>Explicar que caldrà fe una reunió per consensuar tot això. També caldrà elaborar un document breu del consens i penjar-lo al fòrum. Intenteu fer-la quant abans millor. </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!--=========== END SECTION la reunió ================-->    
+            <!--=========== END SECTION la organitzatives ================-->    
             
-            <!--=========== BEGIN SECTION Tasques ================-->    
-            <section id="slc-tasques" class="vsections">
-                <!--=========== BEGIN SUBSECTION tasques10 ================-->    
-                <section id="slc-tasques10" class=" section">
+            <!--=========== BEGIN SECTION individuals ================-->    
+            <section id="slc-individuals" class="vsections">
+                <!--=========== BEGIN SUBSECTION individuals10 ================-->    
+                <section id="slc-individuals10" class=" section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -177,15 +176,86 @@
                                     <p>Aquí s'explica la primera tasca en la que caldrà fer: disseny descendent, implementació d'una funció que resolgui el problema i joc de proves de la funció.</p>
                                     <p>Caldrà donar pistes interessants per guiar-los</p>
                                     <p>També caldrà aconsellar-los que facin activitats extra en cas que no sàìguen fer tal o qual cosa...</p>
+                                    
+                                    <p>Es proposa fer una funció que permeti gestionar la cadena a mostrar en el joc del penjat a partir de:</p>
+                                    <ul>
+                                        <li>La paraula amagada</li>
+                                        <li>Les lletres que ja visualitza el jugador fruit d'altres intents</li>
+                                        <li>La lletra que l'usuari a proposat per endevinar la paraula </li>
+                                    </ul>
+                                    <p>                                   
+                                    Cal fer adonar que una bona opció és que les lletres a mostrar arribin en forma de array de lletres per tal que passin per referencia de manera que en fer canvis repercuteixin sempre sobre l'array passat.
+                                    </p>
+                                    <p>
+                                    La funció retornarà un dels següents valors:
+                                    </p>
+                                    <ul>
+                                        <li>-1 Si la lletra proposada ja s'ha trobat abans</li>
+                                        <li>El nombre de lletres trobades en cas contrari</li>
+                                    </ul>
+                                    <p>òbviament a més la funció actualitzarà l'array de lletres a visualitzar en cas que calgui</p>
+                                    <p>possible solució:</p>
+                                    <pre><code>
+    public int comprovarLletra(String paraulaAEndevinar, 
+                                    char[] cadenaAMostrar, 
+                                    char lletra){
+        int resultatComprovacio = 0;
+        int pos=0;
+        while(pos&lt;paraulaAEndevinar.length() 
+                && resultatComprovacio!=LLETRA_REPETIDA){
+            if(cadenaAMostrar[pos]==lletra){
+                resultatComprovacio=LLETRA_REPETIDA;
+            }else if(paraulaAEndevinar.charAt(pos)==lletra){
+                cadenaAMostrar[pos]=lletra;
+                resultatComprovacio++;
+                pos++;
+            }
+        }
+        return resultatComprovacio;
+    }                                      
+                                    </code></pre>
+                                    <p> O bé</p>
+                                    <pre><code>
+public int comprovarLletra2(String paraulaAEndevinar, 
+                                    char[] cadenaAMostrar, 
+                                    char lletra){
+        int resultatComprovacio = 0;
+        int pos=trobarSeguentPosicio(paraulaAEndevinar, lletra, 0);
+        
+        if(pos&lt;paraulaAEndevinar.length()){
+            if(cadenaAMostrar[pos]==lletra){
+                resultatComprovacio=LLETRA_REPETIDA;
+            }else{
+                pos = trobarSeguentPosicio(paraulaAEndevinar, lletra, pos);
+                if(pos&lt;paraulaAEndevinar.length()){
+                    cadenaAMostrar[pos]=lletra;
+                    resultatComprovacio++;
+                }
+            }
+        }
+        return resultatComprovacio;
+    }   
+    
+    int trobarSeguentPosicio(String paraulaAEndevinar, char lletra, int posActual){
+        int pos=posActual;
+        while(pos&lt;paraulaAEndevinar.length() 
+                    && paraulaAEndevinar.charAt(pos)!=lletra){
+            pos++;
+        }
+        return pos;
+    }
+                                        
+                                    </code></pre>
+                                    <p> Segons com s'hagi fet el disseny descendent<p>
                                 </div> 
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION tasques10 ================-->    
+                <!--=========== END SUBSECTION individuals10 ================-->    
                 
-                <!--=========== BEGIN SUBSECTION tasques20  ================-->    
-                <section id="slc-tasques20" class=" section">
+                <!--=========== BEGIN SUBSECTION individuals20  ================-->    
+                <section id="slc-individuals20" class=" section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -207,9 +277,9 @@
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION tasques20 ================-->    
+                <!--=========== END SUBSECTION individuals20 ================-->    
             </section>
-            <!--=========== END SECTION tasques ================-->    
+            <!--=========== END SECTION individuals ================-->    
 
             <!--=========== BEGIN SECTION avaluació ================-->    
             <section id="slc-toDelivery">

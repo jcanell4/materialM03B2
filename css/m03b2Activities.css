@@ -385,5 +385,10 @@ ol.nestedCounter ol > li:before {
 }
 
 .tab{
-    padding-left: 6em;
+    padding-left: 5em;
 }
+
+.minFont, table.minFont{
+    font-size: 0.65em;
+}
+
