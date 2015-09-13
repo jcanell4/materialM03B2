@@ -297,7 +297,8 @@
         "forumGrupReduit":{"selector":".forumGrupReduit", "defaultValue":"fgr"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP1", "value":"bustiaLliurament"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA401.odt'> l'informe </a>"},
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A402_funcions2.html"}
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A402_funcions2.html"},
+        "triaForumReduit":{"selector":".triaForumReduit", "type":"ref", "name":"A400", "value":"A400idTGFR"}
     },
     "A402": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A402_funcions2.html'>A402</a>"},

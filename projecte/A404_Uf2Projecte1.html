@@ -190,7 +190,15 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>[To do! Explicar que cal llegir l'enunciat (<a class="toProjectStatement">enunciat del projecte</a>), i que per començar volem implementar dues funcions senzilles que els ajudins a practicar. Potser cal fer un petit anàlisi trobant que el foc més adient podria ser el de "Comença per ..."]</p>
+                                    <p>Obriu l'<a class="toProjectStatement">enunciat del projecte</a> i llegiu-lo atentament. Es tracta d'una lectura inicial que us ajudi a situar-vos en el context del projecte. </p>
+                                    <p>Abans de començar a codificar és important fer-se una idea mental de com funcionarà l'aplicació. Com veieu, es tracta d'una aplicació prou gran com per reflexionar-hi una mica abans de començar a escriure el codi.</p>
+                                    <p>Si no heu llegit encara l'enunciat del projecte, feu-ho ara, abans de continuar llegint. A partir d'aquí suposarem que ja heu llegit l'enunciat i coneixeu perfectament el seu contingut.</p>
+                                    <p>A aquestes alçades de curs, és normal que encara no sapigueu com codificar tota l'aplicació, però amb el que heu aprés fins ara, si que podeu començar a intuir funcions que podreu necessitar més endavant quan calgui encarar tota la implementació. </p>
+                                    <p>De l'enunciat es desprèn que es tracta d'una aplicació que conté dos jocs totalment independents. I el primer joc sembla força més senzill d'implementar que no pas el segon. Centrem-nos doncs, en el primer. Es pot intuir que un cop escollida una paraula del diccionari, s'anirà demanant a l'usuari que intenti endevinar-la...</p>
+                                    <p>Per tant, podem pensar que potser ens pot resultar útil una funció que faci la demanda i esperi l'entrada de l'usuari. Potser una funció similar a la que ja heu implementat a l'activitat A402, anomenada <em>entrarUnNumero</em>, que en comptes de retornar una dada numèrica, retornés un text, ens pot resultar útil i a més podem reutilitzar-la en multitud de contextos diferents.</p>
+                                    <p>El joc haurà també, de validar si la paraula proposada és o no la correcta i si no ho és, demanarà a l'usuari, en cas que sigui possible, si desitja obtenir una nova pista, mostrant una lletra més del començament de la paraula ...</p>
+                                    <p>Segur que una funció per validar la paraula proposada per l'usuari, o per dictaminar si encara és possible obtenir més pistes o una funció que ens retornés els primers caràcters de la paraula amagada, d'acord amb el nombre de pistes corresponent, ens ajudarà a fer una codificació ràpida quan calgui completar l'aplicació.</p>
+                                    <p>En les següents pantalles se't proposarà que codifiquis 3 d'aquestes funcions. Passa a la següent pantalla per veure les propostes.</p>
                                 </div> 
                             </div>
                         </div>
@@ -205,22 +213,30 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques individuals - Projecte I</h2>
-                                     <h3> Tasca 1 - Funció <em>esPotDonarNovaPista</em> del joc <em>Comença per ...</em> </h3>
+                                     <h3> Tasca 1 - Funció <em>entrarText</em></h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>[CANVIAR!]</p>
-                                    <p>Aquí es demanarà de fer una implementació de la funció esPotDonarNovaPista que determina si es pot mostrar una nova lletra de la paruale oculta. Cla tenir en comte que segons l'enunciat ... </p>
-                                    <p>La solució seria:</p>
-                                    <pre><code class="java">
-    boolean esPotDonarNovaPista(String paraulaAEndevinar, int pistesJaDonades) {
-        return (pistesJaDonades&lt;paraulaAEndevinar.length()-1);
-    }
-                                    </code></pre>
-                                    <p>Cal veure quines pistes donar per ajudar a la implementació</p>
+                                    <p>Inspirant-te en la funció implementada a l'activitat <a href="../A402_funcions2.html#slc-toDo__slc-toDo21" target="_blank">A402</a>, es demana que codifiquis una funció que rebi un missatge de text a mostrar per la pantalla i un cop mostrat esperi l'entrada per teclat de l'usuari fins que aquest premi la tecla [ENTRAR].</p>
+                                    <p>La funció comprovarà que el text entrat no sigui una cadena buida. Si l'entrada no fos correcta, caldria indicar a l'usuari que no s'accepten valors de text buits i que caldrà que escrigui de nou un text i premi [ENTRAR]. Quan l'entrada sigui correcta, es retornarà el valor i s'abandonarà la funció.</p>
+                                    <p>Per codificar la funció creeu un projecte de Netbeans on hi afegireu un fitxer de codi contenint la funció <em>entrarText</em>. Complementeu la codificació amb la funció main i un funció <em>prova</em> que us permeti provar el bon funcionament de funció <em>entrarText</em>.</p>
+
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue1">
+                                        Pista
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue1" class="iocClue hidden">
+                                        <h2>Pista</h2>
+                                        <p>Tenint en compta que un text pot ser una combinació de qualsevol caràcter (lletres, números, signes de puntuació, espais en blanc etc.), creus que serviria d'alguna cosa validar si l'entrada ha estat o no correcta amb un <em>hasNextLine</em>?</p>
+                                        <p>Si penses que no, quina hauria de ser la comparació alternativa que permetés verificar que l'entrada de l'usuari no és una cadena buida?</p>
+                                    </div>
                                 </div> 
                             </div>
                         </div>
@@ -234,31 +250,140 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques individuals - Projecte I</h2>
-                                     <h3> Tasca 2 - Funció <em>obtePistes</em> del joc <em>Comença per ...</em> </h3>
+                                     <h3> Tasca 2 - Funció <em>esPotDonarNovaPista</em> del joc <em>Comença per ...</em> </h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>[CANVIAR!]</p>
-                                    <p>Aquí es demanarà de fer una implementació de la funció obtePistes que retorna el nombre incial de lletres de la paraula a endevinar d'acord amb el nombre de pistes donades. Cla tenir en comte que segons l'enunciat ... </p>
-                                    <p>La solució seria:</p>
-                                    <pre><code class="java">
- public String obtePistes(String paraulaAEndevinar,  int pistesDonades) {
-        char[] chars;
-        if(estat.pistesDonades==0){
-            return "";
-        }
+                                    <p>Malgrat que la condició per saber si és possible o no donar una nova pista, no hauria de presentar cap dificultat d'implementació, encapsular la condició en una funció ens podria permetre, durant la implementació final, focalitzar l'atenció en altres aspectes de manera que aconseguim un codi de major qualitat.</p>
+                                    <p>Repasseu la part de l'enunciat referent a la condició que permet determinar si és o no possible donar una pista més a l'usuari, tenint en compta que  les pistes es refereixen al nombre de lletres inicials que es mostraran a l'usuari.</p>
+                                    <p>Intenteu esbrinar quins paràmetres haurà de rebre la funció. EL retorn, per descomptat serà de tipus booleà. Prendrà el valor cert en cas que es pugui ensenyar una nova lletra i fals en cas contrari.</p>
+                                    <p>Per codificar la funció caldrà crear un projecte de Netbeans on hi afegireu un fitxer de codi contenint la funció <em>esPotDonarNovaPista</em>. Complementeu la codificació amb la funció main i un funció <em>prova</em> que us permeti provar el bon funcionament de funció <em>esPotDonarNovaPista</em>.</p>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>A partir de l'enunciat pots constatar que la condició requerix 3 dades diferents per poder fer una avaluació correcta.</p>
+                                        <p>Quines dades són?</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>L'origen de les tres dades necessàries, es troba dins o fora de la funció? És a dir la informació es genera a la pròpia funció o es genera a fora d'aquesta? </p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Tingues en compte que si la informació es genera fora, caldrà fer-la arribar a la funció mitjançant paràmetres. Per contra si la informació es generés dintre no seria necessari l'ús de paràmetres.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals20 ================-->    
+                <!--=========== BEGIN SUBSECTION individuals30  ================-->    
+                <section id="slc-individuals30" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques individuals - Projecte I</h2>
+                                     <h3> Tasca 3 - Funció <em>obtenirPistes</em> del joc <em>Comença per ...</em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Us proposem encara la implementació d'una darrera funció anomenada <em>obtenirPistes</em>. Aquesta és una mica més complexa que les anteriors, però prou assumible com per poder implementar-la amb els coneixements actuals.</p>
+                                    <p>Ja hem analitzat que el joc <em>Comença per ...</em> necessita mostrar per pantalla les primeres lletres de la paraula a endevinar, d'acord amb el nombre de pistes sol·licitades pel jugador. Us plantegem d'implementar una funció que gestioni aquesta informació i retorni una cadena amb les primeres lletres que pertoquin de la paraula amagada.</p>
+                                    <p>Tingueu en compta, que tant la paraula amagada, com  el nombre de pistes sol·licitades (és a dir el nombre de lletres a mostrar) s'originaran segur en una altra banda i per tan caldrà passar aquesta informació per paràmetre.</p>
+                                    <p>També convé clarificar que el que es demana és una funció que retorni la cadena de caràcters amb les primeres lletres, no pas que les mostri per pantalla. D'això se n'encarregarà una altra funció, així aconseguirem separar perfectament les regles del joc de la interfície d'usuari, de forma semblant a com es va fer a les tasques de l'activitat A402, implementant la calculadora d'àrees. Allà també es va separar totalment la interfície d'usuari dels càlculs propis de l'aplicació.</p>
+                                    <p>No us oblideu de fer la verificació del funcionament de la funció, afegint en el fitxer de codi la funció main i la funció prova amb suficients casos per fer la verificació.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-advice="#slc-individuals30-consells">
+                                        Consell
+                                    </button>                                        
+                                    <div id="slc-individuals30-consells" class="iocClue hidden">
+                                        <h2>Consell</h2>
+                                        <p>Us proposem una alternativa a la concatenació text, lletra rere lletra. Concatenar text en JAVA implica una gran despesa de temps i de memòria, per això és important que conegueu i useu altres alternatives</p>
+                                        <p>La alternativa implica l'ús temporal d'arrays de caràcters per gestionar la concatenació d'una forma eficient (sense tanta despesa de temps o memòria) i una darrera conversió per acabar obtenint la cadena desitjada en comptes de l'array.</p>
+                                        <p>Per exemple, per obtenir la paraula <em>sort</em> concatenant les lletres 's', 'o', 'r' i 't' consecutivament caldria:</p>
+                                        <ol>
+                                            <li>Crear un array de caràcters de mateixa mida que la paraula a obtenir.</li>
+                                            <li>Afegir cada lletra a la posició corresponent</li>
+                                            <li>Convertir l'array a cadena</li>
+                                        </ol>
+                                        <pre><code class="java">
+        //1. Crear un array de caràcters de mateixa mida que la paraula a obtenir.
+        char[] chars = new char[4];
         
-        chars = new char[pistesDonades];
-        for(int i=0; i&lt;pistesDonades; i++){
-            chars[i]=paraulaAEndevinar.charAt(i);
-        }
-        return new String(chars);
-    }
-                                    </code></pre>
-                                    <p>Cal veure quines pistes donar per ajudar a la implementació</p>
+        //2. fegir cada lletra a la posició corresponent
+        chars[0]='s';
+        chars[1]='o';
+        chars[2]='r';
+        chars[3]='t';
+        
+        //3. Convertir l'array a cadena
+        cadena = new String(chars);
+                                        </code></pre>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Reflexiona i si fos necessari discuteix-ho al teu fòrum reduït: Quina informació t'indicarà la mida de la cadena a retornar? </p>
+                                    </div>
+
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Reflexiona i si fos necessari discuteix-ho al teu fòrum reduït: </p>
+                                        <ul>
+                                            <li>D'on obtindràs les lletres de la cadena a retornar?</li>
+                                            <li>Si a priori no saps quantes lletres tindrà la cadena resultant, quina instrucció de les apreses en el bloc 1 et pot ajudar a obtenir lletra per lletra la seqüencia de caràcters de la cadena a retornar i aturar-te quan hagis completat el nombre de lletres?</li>                                            
+                                        </ul>
+                                        
+                                    </div>
                                 </div> 
                             </div>
                         </div>
