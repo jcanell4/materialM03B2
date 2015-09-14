@@ -47,24 +47,24 @@
     },        
     "RP4":{
         "dataInici": {"type":"text", "value":"29/10/2015"},
-        "dataFinal": {"type":"text", "value":"06/11/2015"},       
+        "dataFinal": {"type":"text", "value":"05/11/2015"},       
         "dataLimit": {"type":"text", "value":"10/11/2015"},
         "bustiaLliurament":{"defaultValue":"bll"}       
     },        
     "RP5":{
-        "dataInici": {"type":"text", "value":"07/11/2015"},
-        "dataFinal": {"type":"text", "value":"13/11/2015"},       
+        "dataInici": {"type":"text", "value":"06/11/2015"},
+        "dataFinal": {"type":"text", "value":"12/11/2015"},       
         "dataLimit": {"type":"text", "value":"16/11/2015"},
         "bustiaLliurament":{"defaultValue":"bll"}       
     },        
     "RP6":{
-        "dataInici": {"type":"text", "value":"14/11/2015"},
-        "dataFinal": {"type":"text", "value":"21/11/2015"},       
+        "dataInici": {"type":"text", "value":"13/11/2015"},
+        "dataFinal": {"type":"text", "value":"19/11/2015"},       
         "dataLimit": {"type":"text", "value":"23/11/2015"},
         "bustiaLliurament":{"defaultValue":"bll"}       
     },        
     "RP7":{
-        "dataInici": {"type":"text", "value":"22/11/2015"},
+        "dataInici": {"type":"text", "value":"20/11/2015"},
         "dataFinal": {"type":"text", "value":"01/12/2015"},       
         "dataLimit": {"type":"text", "value":"01/12/2015"},
         "bustiaLliurament":{"defaultValue":"bll"}
