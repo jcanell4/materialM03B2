@@ -106,6 +106,12 @@ function toReplaceOnLoad(url, id, onError){
            alert( "error" );
         };
     }
+    if(location.search){
+        url = url.substring(0,url.lastIndexOf("/")).concat(
+                                        "/", 
+                                        location.search.substring(1),
+                                        url.substring(url.lastIndexOf("/")));
+    }
     $.ajax({
         url:url,
         dataType: "json",

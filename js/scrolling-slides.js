@@ -89,17 +89,26 @@ IocSlider = function(){
         var hCurrentId, vCurrentId;
         if(e.newValues.hindx>=0){
             hCurrentId = $(e.newValues.hslides[e.newValues.hindx]).attr("id");            
-            if(e.newValues.vindx<0){            
-                history.pushState({hash:"#"+hCurrentId}, document.title, location.pathname+"#"+hCurrentId);
+            var pathname = location.pathname;
+            if(location.search){
+                pathname += location.search;
+            }
+            if(e.newValues.vindx<0){                
+                history.pushState({hash:pathname+"#"+hCurrentId}, 
+                                    document.title, 
+                                    pathname+"#"+hCurrentId);
             }else{
                 vCurrentId = $(e.newValues.vslides[e.newValues.vindx]).attr("id");
                 if(vCurrentId){                
                     history.pushState(
-                                {hash:location.pathname+"#"+hCurrentId+"__"+vCurrentId}, 
+                                //{hash:location.pathname+"#"+hCurrentId+"__"+vCurrentId}, 
+                                {hash:pathname+"#"+hCurrentId+"__"+vCurrentId}, 
                                 document.title, 
-                                location.pathname+"#"+hCurrentId+"__"+vCurrentId);
+                                pathname+"#"+hCurrentId+"__"+vCurrentId);
                 }else{
-                    history.pushState({hash:"#"+hCurrentId}, document.title, location.pathname+"#"+hCurrentId);
+                    history.pushState({hash:pathname+"#"+hCurrentId}, 
+                                        document.title, 
+                                        pathname+"#"+hCurrentId);
                 }
             }
             if(e.oldValues.hindx!=e.newValues.hindx){
@@ -250,9 +259,8 @@ IocSlider = function(){
         if(this.vindx>=0){
             $(this.vslides[this.vindx]).addClass("current").removeClass("rear").removeClass("front");
             $(this.vslides[this.vindx]).scrollTop( 0 );
-        }
-        
-        this._fireEvent('onSetCurrentSlide', e);
+            this._fireEvent('onSetCurrentSlide', e);
+        }                
     };
     
     this.incVIndx = function(vindx, toBack){
