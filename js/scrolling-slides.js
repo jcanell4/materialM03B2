@@ -1,13 +1,19 @@
+/*
+ * To relocate elements with existent attribute data-parent-selector as children of this 
+ * attribute value.
+ */
 $(document).ready(function(){
     $("[data-parent-selector]").each(function(){
         var parent = this.dataset.parentSelector;
         var element = $(this).detach();
         $(parent).append(element);        
     });
-    
-    
 });
 
+/*
+ * Captura les tecles fletxa-esq i fletxa-dreta per simular un click al botó
+ * prevArrow o nextArrow respectivament.
+ */
 $(document).keydown(function(e){
     switch(e.which){
         case 39:
@@ -29,19 +35,8 @@ $(window).scroll(function() {
     }
 });
 
-//$("#bottom-wrapper, .iocMainPanel .slides").click(function() {
-//    var currentId = $(".iocMainPanel .slides>section.current").attr("id");
-//    $(".navbar-fixed-top a").each(function(){
-//        var idInRef = this.href.split("#")[1];
-//        if (currentId == idInRef) {
-//            $(".navbar-fixed-top").find(".active").removeClass("active");
-//            $(this).parent().addClass("active");
-//        }
-//    });
-//});
-
 /* ----------------------------------------------------------- */
-/*  15. MOBILE MENU CLOSE 
+/*  MOBILE MENU CLOSE 
 /* ----------------------------------------------------------- */ 
 
 $('.navbar-nav').on('click', 'li a', function() {
@@ -49,7 +44,7 @@ $('.navbar-nav').on('click', 'li a', function() {
 });
 
 /* ----------------------------------------------------------- */
-/*  16. Toggle Menu
+/*  Toggle Menu
 /* ----------------------------------------------------------- */
 // Closes the sidebar menu
 $("#menu-close").click(function(e) {
@@ -63,6 +58,10 @@ $("#menu-toggle").click(function(e) {
     $("#sidebar-wrapper").toggleClass("active");
 });
 
+/*-----------------------------------*/
+/*  INFO PANEL
+ *-----------------------------------*/
+//Set function to close the info-panel on click button panel-close 
 $(".panel-close").click(function(e) {
     e.preventDefault();
     var parent = $(this).parent();
@@ -73,7 +72,9 @@ $(".panel-close").click(function(e) {
     });
 });
 
+//Set an extended function to jquery
 $.fn.extend({
+    //Opens the info-panel
     togglePanelOnClick: function () {
         this.toggleClass("hidden");
         $("#sidepanel-wrapper").toggleClass("active");
@@ -82,6 +83,8 @@ $.fn.extend({
     }
 });
 
+/*Object to manage the slider actions
+ */
 IocSlider = function(){
     this.hindx=-1;
     this.vindx=-1;
@@ -139,7 +142,7 @@ IocSlider = function(){
         }
     }
     
-    this.setVerticalSlides = function(last){
+    this._setVerticalSlides = function(last){
         var vSlides, cssClass, indx;
         
         if(this.hindx>=0){
@@ -157,14 +160,14 @@ IocSlider = function(){
                    var $vslides = $(this.vslides[i]);
                     $vslides.addClass(cssClass.add).removeClass(cssClass.remove);
                 }
-                this.setVIndx(indx);
+                this._setVIndx(indx);
             }else{
+                this._setVIndx(-1);
                 this.vslides = undefined;
-                this.setVIndx(-1);
             }
         }else{
             this.vslides = undefined;
-                this.setVIndx(-1);
+                this._setVIndx(-1);
         }
     };
 
@@ -213,6 +216,13 @@ IocSlider = function(){
                  newValues:{
                         hslides: this.hslides, hindx:hindx, 
                         vslides: this.vslides, vindx:this.vindx}};
+        this._setHIndx(hindx, toBack, vToBack);
+        e.newValues.vindx = this.vindx;
+        e.newValues.vslides= this.vslides;
+        this._fireEvent('onSetCurrentSlide', e);        
+    }
+    
+    this._setHIndx = function(hindx, toBack, vToBack){
         if(this.hindx>=0){
             if(toBack){
                 $(this.hslides[this.hindx]).addClass("front").removeClass("current");
@@ -231,9 +241,7 @@ IocSlider = function(){
         if(vToBack===undefined){
             vToBack = toBack;
         }
-        e.newValues.vindx = this.vindx;
-        this._fireEvent('onSetCurrentSlide', e);
-        this.setVerticalSlides(vToBack);
+        this._setVerticalSlides(vToBack);
     };
     
     this.incHIndx = function(hindx, toBack){
@@ -246,6 +254,11 @@ IocSlider = function(){
                         vslides: this.vslides, vindx:this.vindx}, 
                 newValues:{hslides: this.hslides, hindx:this.hindx, 
                         vslides: this.vslides, vindx:vindx}};
+        this._setVIndx(vindx, toBack);
+        this._fireEvent('onSetCurrentSlide', e);
+    }
+    
+    this._setVIndx = function(vindx, toBack){
         if(this.vindx>=0){
             if(toBack){
                 $(this.vslides[this.vindx]).addClass("front").removeClass("current");
@@ -259,8 +272,7 @@ IocSlider = function(){
         if(this.vindx>=0){
             $(this.vslides[this.vindx]).addClass("current").removeClass("rear").removeClass("front");
             $(this.vslides[this.vindx]).scrollTop( 0 );
-            this._fireEvent('onSetCurrentSlide', e);
-        }                
+        }     
     };
     
     this.incVIndx = function(vindx, toBack){
@@ -274,7 +286,7 @@ IocSlider = function(){
         }
         if(i<this.hslides.length){
             if(this.hindx!=i){
-                this.setVIndx(-1);
+                //this.setVIndx(-1);
                 this.setHIndx(i, i<this.hindx, false);
                 if(vTarget){
                     _setVerticalTargetIndx(vTarget);

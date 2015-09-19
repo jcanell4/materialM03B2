@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
     <meta name="author" content="Josep Cañellas i Alicia Vila">
-    <title>A407. UF2 Projecte II</title>
+    <title>A408. UF2 Projecte III</title>
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
@@ -106,7 +106,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Inici activitat A407 - UF2 Projecte II</h2>
+                                 <h2 >Inici activitat A408 - UF2 Projecte III</h2>
                              </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Normes i acords de grup -  Projecte II</h2>
+                                 <h2 >Repartiment d'especialitats -  Projecte II</h2>
                              </div>
                         </div>
                     </div>
@@ -164,7 +164,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Tasques a fer - Projecte II</h2>
+                                     <h2 >Tasques a fer - Projecte III</h2>
                                      <h3> Tasca 1 - A determinar ... </h3>
                                  </div>
                             </div>
@@ -177,15 +177,18 @@
                                     <p>Caldrà donar pistes interessants per guiar-los</p>
                                     <p>També caldrà aconsellar-los que facin activitats extra en cas que no sàìguen fer tal o qual cosa...</p>
                                     <p>
-                                   Es proposen:
-1)                                   obtenirParaulesALAtzar (fins arribar a un tope de lletres
+                                   Es proposen:</p>
+                                    <ul>
+                                        <li>eliminarLletresEncertades</li>
+                                        <li>obtenirParaulesALAtzar (fins arribar a un tope de lletres</li>
+                                        <li>quantesLletresDeParaulesValides (fins arribar a un tope de lletres</li>
+                                        <li>lletresDeParaulesAlDiposit</li>
+                                    </ul>
+                                    
+                                   
+                                   
 
-2) obtenirLletres d'un conjunt de paraules
-
-3) barrejarLletres d'una array de lletres.
-
-4) eliminarLletresEncertades
-                                   </P>
+                                   <p></P>
                                      
                                 </div> 
                             </div>
@@ -209,219 +212,7 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>[CANVIAR!]</p>
-                                    <p>Aquí s'explica una tasca en la que caldrà fer: disseny descendent, implementació d'una funció que resolgui el problema i joc de proves de la funció.</p>
-                                    <p>Caldrà donar pistes interessants per guiar-los</p>
-                                    <p>També caldrà aconsellar-los que facin activitats extra en cas que no sàìguen fer tal o qual cosa...</p>                                    
-                                    
-                  <!--              
-                  
-                  diverses funcions:    
-public class Diccionari {
-    public static final int MAXIM_LLETRES=30;
-    /*
-    Cal explicar que les intancies sense inicialitzar d'un array no tenen valor,
-    són igual a null.
-    */
-    public String[] obtenirParaulesALAtzar(String[] paraules, int totalLletres){
-        String[] paraulesObtingudes = new String[10];
-        int nParaulesObtingudes=0;
-        boolean quedenParaulesValides=true;
-        while(quedenParaulesValides && totalLletres>0){
-            int pos = obtenirPosParaulaALAtzar(paraules, totalLletres, paraulesObtingudes);
-            if(pos<0){
-                quedenParaulesValides=false;
-            }else{
-                paraulesObtingudes[nParaulesObtingudes]=paraules[pos];
-                totalLletres-=paraulesObtingudes[nParaulesObtingudes].length();
-                nParaulesObtingudes++;
-            }
-        }
-        
-        return redimensionaColleccioStrings(paraulesObtingudes, nParaulesObtingudes);
-        //També es pot usar Arrays.copyOfRange
-        //return Arrays.copyOfRange(paraulesObtingudes, 0, nParaulesObtingudes);
-    }
-    
-    public int obtenirPosParaulaALAtzar(String[] paraules, int midaMaxima, String[] ignorarEntrades){
-        int posRandom = naturalRandom(paraules.length);
-        int i=posRandom;
-        boolean volta=false;
-        
-        while(!volta && (paraules[i].length()>midaMaxima 
-                     || hiEs(paraules[i], ignorarEntrades))){            
-            i++;
-            if(i==paraules.length){
-                i=0;
-            }
-            volta = i==posRandom;
-        }
-        if(volta){
-            i=-1;
-        }
-        return i;
-    }
-    
-    
-       /**
-     * Obté una matriu amb els caracters que formen cada paraules. La matrui té
-     * un dimensio del NOMBRE DE PARULES DE LA LLISTA X MIDA DE CADA PARAULA
-     *
-     * @param paraules és la llista de paraules a endvinar
-     * @return la matriu de caràcters
-     */
-    public char[]obtenirLletres(String[] paraules, int maximLLetres) {
-        char[] ret = new char[maximLLetres];
-        int lletres=0;
-
-        for (int i = 0; i < paraules.length; i++) {
-            for (int j = 0; j < paraules[i].length(); j++) {
-                ret[lletres++] = paraules[i].charAt(j);
-            }
-        }
-        ret = redimensionaColleccioChars(ret, lletres);
-        return ret;
-    }
-    
-             /**
-     *
-     * @param lletres és matriu de lletres a barrejar
-     */
-    public void barrejarLletres(char[][] lletres) {
-        //Assignació per referancia perquè en una dada composta
-        //qualsevol modificació aquí repercutirà també fora 
-        for (int i = 0; i < lletres.length; i++) {
-            for (int j = 0; j < lletres[i].length; j++) {
-                //int ii = (int) (Math.random() * lletres.length);
-                int ii = naturalRandom(lletres.length);
-                //int jj = (int) (Math.random() * lletres[i].length);
-                int jj = naturalRandom(lletres[i].length);
-                //intercanviar
-                char aux = lletres[i][j];
-                lletres[i][j] = lletres[ii][jj];
-                lletres[ii][jj] = aux;
-            }
-        }
-    }
-
-    /**
-     * Comprova si les lletres de la paruala passada estan continngudes a la 
-     * llista de lletres passada per paràmetres
-     * @param paraula és paraula a cercar
-     * @param lletres és la llistra de lletres on cercar
-     * @return 
-     */
-    public boolean lesLletresHiSon(String paraula, char[][] lletres){
-        boolean ret=true;
-        int ind=0;
-        boolean[][] control = new boolean[lletres.length][lletres[0].length];
-        for(int posPar=0; posPar<paraula.length(); posPar++){
-            int i=0;
-            boolean trobat = false;
-            while(!trobat && i<lletres.length){
-                int j=0;
-                while(!trobat && j<lletres[i].length){
-                    trobat= paraula.charAt(posPar)==lletres[i][j]
-                                && !control[i][j];
-                    if(trobat){
-                        control[i][j]=true;
-                    }
-                    ++j;
-                }
-                ++i;
-            }
-            ret = ret && trobat;
-        }
-        return ret;
-    }   
-    
-    public void eliminarLletresEncertades(char[][] lletres, String paraula){
-        for(int iPar=0; iPar<paraula.length(); iPar++){
-            int i=0; 
-            boolean ret=false;
-            while(!ret && i<lletres.length){
-                int j=0;
-                while(!ret && j<lletres[i].length){
-                    if(lletres[i][j]==paraula.charAt(iPar)){
-                        lletres[i][j]=' ';
-                        ret=true;
-                    }else{
-                        ++j;
-                    }
-                }
-                ++i;
-            }
-        }
-    }
-    
-    /* Per passar a Utilitats */    
-    public String[] redimensionaColleccioStrings(String[] paraules, int mida){
-        String[] ret = new String[mida];
-        for(int i=0; i<mida && i<paraules.length; i++){
-            ret[i]=paraules[i];
-        }
-        return ret;
-    }
-    
-    /* Per passar a Utilitats */    
-    public char[] redimensionaColleccioChars(char[] lletres, int mida){
-        char[] ret = new char[mida];
-        for(int i=0; i<mida && i<lletres.length; i++){
-            ret[i]=lletres[i];
-        }
-        return ret;
-    }
-    
-    /**
-     * Comprova si la paruala passada per paràmetre es troba a la llista de 
-     * parules del segon paràmetre
-     * @param paraula és paraula a cercar
-     * @param paraules és la llistra on cercar
-     * @return 
-     */
-        public boolean hiEs(String paraula, String[] paraules){
-        boolean ret=false;
-        int ind=0;
-        while(!ret && ind<paraules.length){
-            ret= paraules[ind]!=null && paraules[ind].equalsIgnoreCase(paraula);
-            ++ind;
-        }
-        return ret;
-    }
-        
-    public int naturalRandom(int limitValue){
-        long nano = System.nanoTime();
-        int ret = (int) (nano%limitValue);
-        if(ret<0){
-            ret*=-1;
-        }
-        return ret;
-    }
-    
-          /**
-     * Comprova si la paruala passada per paràmetre es troba a la llista de 
-     * parules del segon paràmetre
-     * @param paraula és paraula a cercar
-     * @param paraules és la llistra on cercar
-     * @return 
-     */
-    public boolean cercaBinaria(String paraula, String[] paraules){
-        int mig;
-        int inici=0;
-        int fi=paraules.length;
-        while(inici<fi){
-            mig=(inici+fi)/2;
-            if(paraules[mig].compareTo(paraula)==0){
-                inici=fi=mig;
-            }else if(paraules[mig].compareTo(paraula)<0){
-                inici=mig+1;
-            }else{
-                fi=mig;
-            }
-        }
-        return inici<paraules.length && paraules[inici].equals(paraula);
-    }
-}
--->
+                                  
                                     
                                 </div> 
                             </div>
