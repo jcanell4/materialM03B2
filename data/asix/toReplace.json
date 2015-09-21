@@ -1,12 +1,12 @@
 {
     "defaultValues":{
-        "tgt":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3311#triaGrupTreball"},
-        "tge":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3311#triaGrupEspecialitat"},
-        "tgr":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3311#triagrupForumReduit"},
+        "tgt":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3228#triaGrupTreball"},
+        "tge":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3228#triaGrupEspecialitat"},
+        "tgr":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3228#triagrupForumReduit"},
         "fpr":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=268569"},
         "fgr":{"type":"html", "value":"<a href='http://ioc.xtec.cat/campus/mod/forum/view.php?id=268559' target='_blank'>fòrum reduït de discussió</a>"},
-        "fgt":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=0000\">fòrum del grup de treball</a>"},
-        "fge":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=0000\">fòrum de l'especialitat</a>"},
+        "fgt":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=268574\">fòrum del grup de treball</a>"},
+        "fge":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=268580\">fòrum de l'especialitat</a>"},
         "bll":{"type":"attr", "name":"href", "value":"bustiaLliurament"},
         "pst":{"type":"attr", "name":"href", "value":"docs/225XM03B2_Projecte_Enunciat_1516S1.odt"},
         "mat":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u3/a1/continguts.html#entrada_de_sequeencies_de_valors_per_teclat"},
