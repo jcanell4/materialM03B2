@@ -184,6 +184,66 @@
 
             <!--=========== BEGIN SECTION individuals ================-->    
             <section id="slc-individuals" class="vsections">
+                <!--=========== BEGIN SUBSECTION individuals0 ================-->    
+                <section id="slc-individuals0" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a fer - Projecte II</h2>
+                                     <h3> Anàlisi inicial de l'enunciat del joc de barrejar lletres </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Amb les tasques de l'activitat A404, podem donar per embastat el joc de <em>"Comença per ..."</em>. De moment l'aparcarem fins que calgui tronar-hi més endavant per lligar-ho tot.</p>
+                                    <p>Aquí ens centrarem específicament en el joc de <em>Barrejar lletres</em>. Rellegiu amb atenció l'enunciat i elaboreu mentalment una proposta esquemàtica del primer nivell de descomposició del joc. No detalleu massa, intenteu esquematitzar només amb 3 punts.</p>
+                                    <p>Probablement el vostre esquema s'assemblarà al següent:</p>
+                                    <div class="iocexample single em small">
+                                        <ol>
+                                            <li>Inicialitzar el joc</li>
+                                            <li>Jugar fins que el joc finalitzi</li>
+                                            <li>Comptabilitzar els punts i tornar</li>
+                                        </ol>
+                                    </div>
+                                    <p>És a dir, abans de començar a jugar, caldrà realitzar determinades accions per inicialitzar correctament el joc, com escollir les paraules a endevinar, extreure les seves lletres, etc. </p>
+                                    <p>Després de la inicialització, caldrà passar a la fase de joc, on de forma continua es demanarà al jugador que faci propostes per endevinar les paraules amagades i per cada proposta se n'avaluarà la seva validesa i en cas afirmatiu es calcularà entre d'altres, el nombre de punts aconseguits.</p>
+                                    <p>Finalment, un cop acabat el joc, es comptabilitzarà la puntuació final i es retornarà l'execució a la funció que l'hagi iniciat.</p>
+                                    <p>Arribats aquí seria convenient aprofundir una nivell més, descomposant almenys els punts 1 i 2.</p>
+                                    <p>Esquemàticament la vostra proposta hauria de semblar-se a la següent:</p>
+                                    <div class="iocexample single em  small">
+                                        <ol class="nestedCounter">
+                                            <li>Inicialitzar el joc
+                                                <ol>
+                                                    <li>Seleccionar a l'atzar un nombre variable de paraules que continguin entre totes exactament 30 lletres.</li>
+                                                    <li>Extreure les lletres i barrejar-ne l'ordre.</li>
+                                                    <li>Altres inicialitzacions que es detallaran més endavant.</li>
+                                                </ol>
+                                            </li>
+                                            <li>Jugar fins que el joc finalitzi
+                                                <ol>
+                                                    <li>Mostrar informació específica del torn que correspongui i demanar proposta al jugador.</li>
+                                                    <li>Validar que totes les lletres de la proposta del jugador es troben entre les que cal escollir.</li>
+                                                    <li>Si el punt 2.2 és cert, es calcularà el nombre de punts aconseguits i s'eliminaran les lletres de les paraules encertades.</li>
+                                                    <li>Verificar si s'ha de finalitzar el joc.</li>                                                    
+                                                </ol>
+                                            </li>
+                                            <li>Comtabilitzar els punts i tornar</li>
+                                        </ol>
+                                    </div>
+                                    <p>Farem servir aquesta anàlisi per proposar-vos a les següents tasques d'aquesta activitat i de l'activitat A408 que aprofundiu en la descomposició i implementeu algunes funcions que us resultaran útils per a la implementació el projecte final.</p>
+                                    <p>Deixarem per a més endevant tot el relacionat amb la interfície d'usuari, és a dir, amb l'intercanvi d'informació entre l'aplicació i el jugador. Aquí, volem que us concentreu només en els processos per gestionar el joc que no s'han de veure. Per exemple, sembla lògic que necessitarem un procés que ens permeti seleccionar, d'acord amb l'enunciat, les paraules a endevinar o una altre que extregui les lletres d'aquestes paraules, les barregi i les emmagatzemi barrejades en algun lloc, abans que es mostri cap missatge a l'usuari.</p>
+                                    <p>De forma semblant, durant el desenvolupament del joc, tal com es veu a l'esquema, caldrà determinar per cada proposta si les lletres que la composen són vàlides o calcular quants punts haurem de donar a la proposta, etc. </p>
+                                    <p>Segurament també caldrà portar un registre de les paraules que el jugador vagi endevinant o anar actualitzant les llestres que en cada moment restin disponibles, per tal de facilitar, quan sigui necessari, la presentació de la informació a l'usuari.</p>
+                                </div>                             
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals10 ================-->    
+
                 <!--=========== BEGIN SUBSECTION individuals10 ================-->    
                 <section id="slc-individuals10" class=" section">
                     <div class="container">
@@ -191,26 +251,18 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a fer - Projecte II</h2>
-                                     <h3> Tasca 1 - A determinar ... </h3>
+                                     <h3> Tasca 1 - Disseny descendent del proces que permeti obtenir les lletres a mostrar</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>[CANVIAR!]</p>
-                                    <p>Aquí s'explica la primera tasca en la que caldrà fer: disseny descendent, implementació d'una funció que resolgui el problema i joc de proves de la funció.</p>
-                                    <p>Caldrà donar pistes interessants per guiar-los</p>
-                                    <p>També caldrà aconsellar-los que facin activitats extra en cas que no sàìguen fer tal o qual cosa...</p>
-                                    
-                                    <p>Es proposa fer:</p>
-                                    <ul>
-                                        <li>obtenir les lletres barrejades d'un conjunt de paraules</li>
-                                    </ul>
-                                    <p>                                   
-                                    tasca 1 = disseny descendent</p><p>
-                                    tasca 2 = implementació
-                                    </p>
+                                    <p>Per raons de calendari del període, no seguirem l'ordre sequencial de l'equema descendent que s'ha començat a esbossar a la tasca anterior. Us proposem començar per una tasca relativament senzilla, el disseny d'un procés que permeti obtenir quines lletres caldrà mostrar al jugador per tal que pugui fer una proposta adient combinant-les.</p>
+                                    <p>Recordeu també que caldrà presentar les lletres, en un orde diferent a la sequència de caràcters determinada per les  paraules seleccionades, però que durant el transcurs del joc, s'ha de mantenir sempre el mateix ordre en els lletres que es mostrin a l'usuari. És dir les lletres només s'hauran de barrar al principi, just abans de começar el joc.</p>
+                                    <p>Com es pot suposar, caldrà emmagatzemar les lletres en algun sisterma de dades que permeti mantenir 30 lletres en un orde determitnat. Én la seguent tasca (la d'implementació) decidirem quin tipus de dada serà el més adient per aconsguir aquest objectiu. De moment aquí, ens referiem al conjunt de lletres que composen les paraules a endvinar com diposit de lletres o registre de lletres de la partida.</p>
+                                    <p>Fixeu-vos que el disseny que us proposem consistiria en continuar la descomposició del punt 1.2 inciada a la tasca anterior, el que hem enunciat com <em>Extreure les lletres i barrejar-ne l'ordre</em></p>
+                                    <p>Us demanem que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca1.odt">dissenyDescendentTasca1.odt</a>) i escriviu l'esquema que representi el disseny descendent d'aquest procés d'acord a com heu aprés en les activitats anteriors.</p>
                                 </div> 
                             </div>
                         </div>
@@ -225,7 +277,7 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a fer - Projecte II</h2>
-                                     <h3> Tasca 2 - Implementació de ...</h3>
+                                     <h3> Tasca 1 - Actualització de les lletres disponibles </h3>
                                  </div>
                             </div>
                         </div>
@@ -233,7 +285,34 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>[CANVIAR!]</p>
+                                    <p>Es proposa fer:</p>
+                                    <ul>
+                                        <li>T2: obtenir les lletres barrejades d'un conjunt de paraules (disseny descendent)</li>
+                                        <li>T3: obtenir les lletres barrejades d'un conjunt de paraules (implementació)</li>
+                                    </ul>
                                     <p>implementació de l'anterior.</p>                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals20 ================-->    
+
+                <!--=========== BEGIN SUBSECTION individuals30  ================-->    
+                <section id="slc-individuals30" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a fer - Projecte II</h2>
+                                     <h3> Tasca 3 - Actualització de les lletres disponibles </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>[CANVIAR!]</p>
                                 </div> 
                             </div>
                         </div>
