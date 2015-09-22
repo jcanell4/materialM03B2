@@ -230,13 +230,13 @@
                                                     <li>Verificar si s'ha de finalitzar el joc.</li>                                                    
                                                 </ol>
                                             </li>
-                                            <li>Comtabilitzar els punts i tornar</li>
+                                            <li>Comptabilitzar els punts i tornar</li>
                                         </ol>
                                     </div>
                                     <p>Farem servir aquesta anàlisi per proposar-vos a les següents tasques d'aquesta activitat i de l'activitat A408 que aprofundiu en la descomposició i implementeu algunes funcions que us resultaran útils per a la implementació el projecte final.</p>
-                                    <p>Deixarem per a més endevant tot el relacionat amb la interfície d'usuari, és a dir, amb l'intercanvi d'informació entre l'aplicació i el jugador. Aquí, volem que us concentreu només en els processos per gestionar el joc que no s'han de veure. Per exemple, sembla lògic que necessitarem un procés que ens permeti seleccionar, d'acord amb l'enunciat, les paraules a endevinar o una altre que extregui les lletres d'aquestes paraules, les barregi i les emmagatzemi barrejades en algun lloc, abans que es mostri cap missatge a l'usuari.</p>
+                                    <p>Deixarem per a més endavant tot el relacionat amb la interfície d'usuari, és a dir, amb l'intercanvi d'informació entre l'aplicació i el jugador. Aquí, volem que us concentreu només en els processos per gestionar el joc que no s'han de veure. Per exemple, sembla lògic que necessitarem un procés que ens permeti seleccionar, d'acord amb l'enunciat, les paraules a endevinar o una altre que extregui les lletres d'aquestes paraules, les barregi i les emmagatzemi barrejades en algun lloc, abans que es mostri cap missatge a l'usuari.</p>
                                     <p>De forma semblant, durant el desenvolupament del joc, tal com es veu a l'esquema, caldrà determinar per cada proposta si les lletres que la composen són vàlides o calcular quants punts haurem de donar a la proposta, etc. </p>
-                                    <p>Segurament també caldrà portar un registre de les paraules que el jugador vagi endevinant o anar actualitzant les llestres que en cada moment restin disponibles, per tal de facilitar, quan sigui necessari, la presentació de la informació a l'usuari.</p>
+                                    <p>Segurament també caldrà portar un registre de les paraules que el jugador vagi endevinant i anar actualitzant les lletres que en cada moment restin disponibles, per tal de facilitar, quan sigui necessari, la presentació de la informació a l'usuari.</p>
                                 </div>                             
                             </div>
                         </div>
@@ -258,11 +258,63 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Per raons de calendari del període, no seguirem l'ordre sequencial de l'equema descendent que s'ha començat a esbossar a la tasca anterior. Us proposem començar per una tasca relativament senzilla, el disseny d'un procés que permeti obtenir quines lletres caldrà mostrar al jugador per tal que pugui fer una proposta adient combinant-les.</p>
-                                    <p>Recordeu també que caldrà presentar les lletres, en un orde diferent a la sequència de caràcters determinada per les  paraules seleccionades, però que durant el transcurs del joc, s'ha de mantenir sempre el mateix ordre en els lletres que es mostrin a l'usuari. És dir les lletres només s'hauran de barrar al principi, just abans de começar el joc.</p>
-                                    <p>Com es pot suposar, caldrà emmagatzemar les lletres en algun sisterma de dades que permeti mantenir 30 lletres en un orde determitnat. Én la seguent tasca (la d'implementació) decidirem quin tipus de dada serà el més adient per aconsguir aquest objectiu. De moment aquí, ens referiem al conjunt de lletres que composen les paraules a endvinar com diposit de lletres o registre de lletres de la partida.</p>
-                                    <p>Fixeu-vos que el disseny que us proposem consistiria en continuar la descomposició del punt 1.2 inciada a la tasca anterior, el que hem enunciat com <em>Extreure les lletres i barrejar-ne l'ordre</em></p>
-                                    <p>Us demanem que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca1.odt">dissenyDescendentTasca1.odt</a>) i escriviu l'esquema que representi el disseny descendent d'aquest procés d'acord a com heu aprés en les activitats anteriors.</p>
+                                    <p>Per raons de calendari del període, no seguirem l'ordre seqüencial de l'esquema descendent que s'ha començat a esbossar a la tasca anterior. Us proposem començar per una tasca relativament senzilla, el disseny d'un procés que permeti obtenir quines lletres caldrà mostrar al jugador per tal que pugui fer propostes adients combinant-les.</p>
+                                    <p>Recordeu també que caldrà presentar les lletres, en un orde diferent a la seqüència de caràcters determinada per les  paraules seleccionades, però que durant el transcurs del joc, l'ordre establert inicialment s'ha de mantenir mentre duri la partida. És a dir, les lletres només s'hauran de barrejar un cop, al principi, just abans de començar el joc.</p>
+                                    <p>Com es pot suposar, caldrà emmagatzemar les lletres en algun sistema de dades que permeti mantenir les 30 lletres en un orde determinat. En la següent tasca (la d'implementació) decidirem quin tipus de dada serà el més adient per aconseguir aquest objectiu. De moment aquí, raons de clarificació, ens referirem al conjunt de lletres que composen les paraules a endevinar com <em>"diposit de lletres"</em> o <em>"registre de lletres"</em> de la partida.</p>
+                                    <p>Fixeu-vos que el disseny que us proposem consistiria en continuar la descomposició del punt 1.2 iniciada a la tasca anterior, el que hem enunciat com <em>1.2. Extreure les lletres i barrejar-ne l'ordre</em>.</p>
+                                    <p>Us demanem que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca1.odt">dissenyDescendentTasca1.odt</a>) i hi descomposeu aquest procés usant la tècnica del disseny descendent que ja coneixeu.  El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
+                                    <p>Tingueu en compte que aquest procés no ha de seleccionar les paraules, sinó que només ha d'extreure les lletres d'un conjunt de paraules seleccionades en un procés anterior. Consulteu el l'esquema general donat a l'<a href="#slc-individuals__slc-individuals0">apartat anterior </a>, la selecció de les paraules a endevinar es troba en el <em>punt 1.1</em></p>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Estigueu atents a les preposicions i conjuncions contingudes en un enunciat que cal descomposar doncs, poden donar-nos pistes sobre la descomposició. A l'enunciat del punt 1.2 podeu llegir la frase <em>"extreure les lletres i barrejar-ne l'ordre"</em> on hi descobrim la conjunció <em>i</em>. En aquesta mena de dissenys, les conjuncions solen indicar que es tracta de dues tasques d'un mateix nivell. Intenteu doncs fer servir aquesta pista per descobrir la primera descomposició.</p>
+                                    </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Els elements d'un conjunt de paraules, no són les lletres sinó les cadenes de text que representen les paraules. Per tant, si volem extreure les lletres d'un conjunt de paraules caldrà recorre totes les paraules del conjunt i per cada paraula trobar la manera d'extreure les seves lletres.</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Per poder decidir com es descompon l'acció de barrejar un conjunt de lletres, caldria imaginar un sistema que assegurés una barreja adequada. Intenteu inspirar-vos en la forma com es barreja un conjunt de cartes o les peces del dòmino o potser els trencaclosques amb les peces mòbils que cal anar desplaçant per aconseguir canviar el seu ordre.</p>
+                                        <p>Preneu, per exemple el cas del trencaclosques de peces mòbils, com aconseguiríeu canviar l'ordre de d'una peça? i de dues?</p>
+                                        <img src="images/Rompecabezas_deslizante.jpg">
+                                        <p>Quants cops caldria repetir el canvi d'ubicació tenint en compte que cada canvi implica només una peça?. Quan podríem considerar que el trencaclosques està ben barrejat?</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Seguint amb l'exemple del trencaclosques, quin seria l'equivalent a desplaçar una peça per el nostre diposit de lletres?  Tenint en compte que no es preveu que el diposit de lletres disposi de cap posició buida, seria possible equiparar el desplaçament d'una peça a un intercanvi en l'ordre de dues lletres?</p>
+                                    </div>
                                 </div> 
                             </div>
                         </div>
