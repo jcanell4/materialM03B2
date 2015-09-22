@@ -372,7 +372,8 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP2", "value":"bustiaLliurament"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A408_Uf2Projecte3.html?dam"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
+        "urlActivitatA403":{"selector":".urlActivitatA403", "type":"attr", "name":"href", "value":"../A403_funcions3.html?dam#slc-toDo__slc-toDo22"}
     },
     "A408": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A408_Uf2Projecte3.html?dam'>A408</a>"},

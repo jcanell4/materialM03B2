@@ -260,7 +260,7 @@
                                 <div class=bodySlide>
                                     <p>Per raons de calendari del període, no seguirem l'ordre seqüencial de l'esquema descendent que s'ha començat a esbossar a la tasca anterior. Us proposem començar per una tasca relativament senzilla, el disseny d'un procés que permeti obtenir quines lletres caldrà mostrar al jugador per tal que pugui fer propostes adients combinant-les.</p>
                                     <p>Recordeu també que caldrà presentar les lletres, en un orde diferent a la seqüència de caràcters determinada per les  paraules seleccionades, però que durant el transcurs del joc, l'ordre establert inicialment s'ha de mantenir mentre duri la partida. És a dir, les lletres només s'hauran de barrejar un cop, al principi, just abans de començar el joc.</p>
-                                    <p>Com es pot suposar, caldrà emmagatzemar les lletres en algun sistema de dades que permeti mantenir les 30 lletres en un orde determinat. En la següent tasca (la d'implementació) decidirem quin tipus de dada serà el més adient per aconseguir aquest objectiu. De moment aquí, raons de clarificació, ens referirem al conjunt de lletres que composen les paraules a endevinar com <em>"diposit de lletres"</em> o <em>"registre de lletres"</em> de la partida.</p>
+                                    <p>Com es pot suposar, caldrà emmagatzemar les lletres en algun sistema de dades que permeti mantenir les 30 lletres en un orde determinat. En la següent tasca (la d'implementació) decidirem quin tipus de dada serà el més adient per aconseguir aquest objectiu. De moment aquí, raons de clarificació, ens referirem al conjunt de lletres que composen les paraules a endevinar com <em>"dipòsit de lletres"</em> o <em>"registre de lletres"</em> de la partida.</p>
                                     <p>Fixeu-vos que el disseny que us proposem consistiria en continuar la descomposició del punt 1.2 iniciada a la tasca anterior, el que hem enunciat com <em>1.2. Extreure les lletres i barrejar-ne l'ordre</em>.</p>
                                     <p>Us demanem que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca1.odt">dissenyDescendentTasca1.odt</a>) i hi descomposeu aquest procés usant la tècnica del disseny descendent que ja coneixeu.  El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
                                     <p>Tingueu en compte que aquest procés no ha de seleccionar les paraules, sinó que només ha d'extreure les lletres d'un conjunt de paraules seleccionades en un procés anterior. Consulteu el l'esquema general donat a l'<a href="#slc-individuals__slc-individuals0">apartat anterior </a>, la selecció de les paraules a endevinar es troba en el <em>punt 1.1</em></p>
@@ -313,7 +313,7 @@
                                     </button>                                        
                                     <div id="slc-individuals10-clue4" class="iocClue hidden">
                                         <h2>Pista 4</h2>
-                                        <p>Seguint amb l'exemple del trencaclosques, quin seria l'equivalent a desplaçar una peça per el nostre diposit de lletres?  Tenint en compte que no es preveu que el diposit de lletres disposi de cap posició buida, seria possible equiparar el desplaçament d'una peça a un intercanvi en l'ordre de dues lletres?</p>
+                                        <p>Seguint amb l'exemple del trencaclosques, quin seria l'equivalent a desplaçar una peça per el nostre dipòsit de lletres?  Tenint en compte que no es preveu que el dipòsit de lletres disposi de cap posició buida, seria possible equiparar el desplaçament d'una peça a un intercanvi en l'ordre de dues lletres?</p>
                                     </div>
                                 </div> 
                             </div>
@@ -329,20 +329,111 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a fer - Projecte II</h2>
-                                     <h3> Tasca 1 - Actualització de les lletres disponibles </h3>
+                                     <h3> Tasca 2 - Implementació de la funció <em>obtenirLletresDesordenades</em> </h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-                                    <p>Es proposa fer:</p>
+                                    <p>En aquesta tasca se us demana que implementeu una funció anomenada <em>obtenirLletresDesordenades</em>. Es tracta de la implementació del disseny descendent realitzat a la tasca anterior.</p>
+                                    <p>Com ja s'ha comentat, la funció haurà d'extreure i emmagatzemar en un <em>"dipòsit"</em>, les lletres d'un conjunt de paraules, la suma de les quals representa un nombre determinat. Concretament l'enunciat del projecte ens indica que seran necessàries 30 lletres.</p>
+                                    <p>El conjunt de paraules es genera en procés anterior, per tant caldrà fer-lo arribar a la nostra funció per mitjà de paràmetres. A fi de simplificar, partirem dels següents supòsits:</p>
                                     <ul>
-                                        <li>T2: obtenir les lletres barrejades d'un conjunt de paraules (disseny descendent)</li>
-                                        <li>T3: obtenir les lletres barrejades d'un conjunt de paraules (implementació)</li>
+                                        <li>El conjunt de paraules vindrà representat per un array de cadenes de text.</li>
+                                        <li>No es coneix a priori el nombre de paraules contingudes dins l'array.</li>
+                                        <li>El nombre total de caràcters acumulats entre totes les paraules serà sempre el mateix i coincidirà amb el nombre esperat. 30 en el cas específic del projecte demanat. No serà necessari doncs fer cap comprovació sobre si el nombre de lletres de les paraules coincideix o no amb l'esperat.</li>
+                                        <li>El dipòsit de lletres es representarà per un array de caràcters. Decidiu vosaltres si preferiu que el dipòsit arribi ja creat i la funció nomé l'ompli adequadament o bé si preferiu que es crei dins la funció.</li>
+                                        <li>L'ordre de les lletres del dipòsit, un cop acabada l'execució de la funció, no ha de poder recordar cap de les paraules d'origen si es llegissin seqüencialment des de la posició 0 al final. Per això diem que el dipòsit conté les lletres desordenades.</li>
                                     </ul>
-                                    <p>implementació de l'anterior.</p>                                    
+                                    <p>Per a implementar la funció <em>obtenirLletresDesordenades</em>, seguiu el disseny que heu creat a la tasca 1.</p>
+                                    <p>Per dur a terme la implementació podeu crear tantes funcions com cregueu convenient, d'acord amb el vostre disseny i el que heu aprés fins ara. Feu servir paràmetres per passar informació entre funcions i recordeu que els arrays en passar-los via paràmetres, es passar sempre per referència!</p>
+                                    <p>A banda de la funció demanda, caldrà també que escriviu una funció anomenada <em>prova</em> que us permeti constatar el bon funcionament del que implementeu. No cal que la compliqueu massa. N'hi haurà prou de mostrar les lletres per la pantalla a fi de verificar visualment que l'execució és correcte i el resultat és l'esperat.</p>
+                                    <p>Per a fer aquesta prova podeu usar l'exemple de l'enunciat amb les paraules: <em>ABADESSA</em>, <em>IDOL</em>, <em>PLORAR</em>, <em>INCLOURE</em> i  <em>BATA</em>.</p>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1 - Funcions a crear durant la implementació</h2>
+                                        <p>No intentis implementar tot el codi en una única funció! Analitza i decideix quins dels punts del disseny descendent que has escrit a la tasca 1, podrien ser candidats a convertir-se en funció.</p>
+                                        <p>Recorda que si tenim una funció amb diversos objectius independents (com és el cas), és aconsellable descompondre la funció amb tantes altres com objectius tingui la primera. Així per exemple, si ens plantegéssim implementar un funció que sumi totes les compres mensuals d'un client i apliqui un descompte específic en funció de les compres realitzades, segurament seria bona idea descomposar la implementació en diverses funcions: una que sumi les compres d'un més d'un client, una altra que calculi el percentatge de descompte que li correspondria en base al total de compres fetes i una darrera que emmagatzemés el descompte en el client</p>
+                                        <p>Seguint aquesta lògica, analitza el disseny descendent i plantejat quantes funcions creus que necessitaràs.</p>
+                                    </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2 - On crear el dipòsit de lletres?</h2>
+                                        <p>El fet de decidir si vols treballar amb un dipòsit de lletres creat abans d'executar la funció <em>obtenirLletresDesordenades</em>, o bé crear-lo durant l'execució de la funció, no t'ha de suposar cap inconvenient. De fet ambdues solucions poden ser correctes. Tot i això, l'elecció d'una o altre solució, t'implicara adaptar la implementació a la solució escollida. Per exemple, si crees el dipòsit dins la funció caldrà que aquesta el retorni, per tal de poder-lo recollir i utilitzar a la funció des d'on es cridi. En canvi, si esculls l'alternativa, no caldrà que retornis cap dada, però hauràs de passar el dipòsit a través de paràmetre.</p>
+                                        <p>A més, en cas que decideixis passar el dipòsit per paràmetre, recorda que aquest s'ha de crear abans de fer la crida a la funció. Revisa la discussió al fòrum que vas mantenir durant <a class="urlActivitatA403">l'exercici 3 de l'activitat A403</a>.</p>
+                                        <p>L'ús d'arrays com a paràmetres no t'ha de suposar tampoc cap problema a l'hora de descomposar la implementació en diverses funcions. Recorda que la informació pot anar passant de  crida en crida fins arribar al lloc on sigui necessària i passar tot un array via paràmetre és totalment habitual.</p>
+                                        <p>Per si de cas, repassa el que has aprés a l'activitat A403 sobre el pas d'arrays a través de paràmetres! </p>
+                                    </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue3" class="iocClue hidden">
+                                        <h2>Pista 3 - Cóm obtenir el caràcter d'una cadena que es trobi en una posició determinada</h2>
+                                        <p>Recordeu que per obtenir el caràcter d'una cadena de text (String) situat a la posició <em>p</em>, fent servir el llenguatge JAVA' caldrà fer servir la funció específica dels Strings, anomenada charAt, la qual rep la posició desitjada per paràmetre i retorna el valor del caràcter trobat.</p>
+                                        <p>Així per exemple el següent codi assignarà a la variable <em>caracter</em> el valor del caràcter contingut a la posició 3 de la cadena "Hola". És a dir, el valor 'a', ja que en els Strings, igual com en els arrays es comptabilitza el valor 0 com a primera posició.</p>
+                                        <div class="iocexample single em">
+                                        <pre><code class="java">
+...
+int pos =3;
+char caracter;
+String cadena = "Hola";
+...
+carater = cadena.charAt(pos) //la variable caracter contindrà el valor 'a', doncs ocupa la posició 3.
+                                        </code></pre>
+                                        </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue4" class="iocClue hidden">
+                                        <h2>Pista 4 - Funció per obtenir valors aleatoris</h2>
+                                        <p>Malgrat que JAVA disposa d'utilitats per generar valors aleatoris, aquestes s'expliquen més endavant, quan s'introdueixi el concepte de biblioteques.</p>
+                                        <p>Tot i així, per tal d'aconseguir generar els valors aleatoris que necessitareu per barrejar les lletres del dipòsit, us proposarem d'implementar una senzilla funció que aconsegueix aquest objectiu sense haver de tenir més coneixements que els que teniu. Més endavant, quan aprengueu les utilitat pròpies de JAVA ja decidireu si voleu fer el canvi.</p>
+                                        <p>Abans d'entrar en el detall de la implementació, direm que un valor aleatori és en valor inesperat. És a dir, és un valor que no es pot predir.</p>
+                                        <p>La manca de predicció pot venir donada simplement per una manca d'informació per un desconeixement que ens impediria calcular el resultat, i malgrat que en aquest cas no es pot considerar estrictament aleatori s'hi assembla bastant. Això és el que fan els ordinadors per generar números aleatoris: calcular valors a partir d'informació interna que l'usuari desconeix i per tant és incapaç de predir.</p>
+                                        <p>Java disposa d'una funció que retorna la hora del sistema expressada en nanosegons. Cap esser humà pot és capaç de predir el temps en intervals de nanosegons, per això aquesta dada pot ser adequada per generar valors aleatoris.</p>
+                                        <p>Ara bé, l'expressió de la hora en nanosegons és una xifra molt, molt gran. Tant que no es pot expressar com un tipus de dada <em>int</em> sinó que és necessari fer servir un tipus <em>long</em>. Per contra generalment els valors que demanem solen se molt més petits. Per exemple nosaltres necessitarem valors compresos només entre 0 i 30. Per limitar valors grans i reduir-los, disposem de la operació matemàtica <em>%</em>. Recordeu que aquesta operació retorna el residu de dividir dos números i que el residu, serà un valor comprés entre 0 i el valor anterior al número divisor.</p>
+                                        <p>Així si tenim un número M, per gran que sigui, en aplicar M % 5, el valor obtingut serà un valor que oscil·larà entre 0 i 4. Com veieu no resulta pas difícil limitar un valor gran a un límit màxim.</p>
+                                        <p>Tot i així, tindrem encara un petit problema si no fem cap canvi. Resulta que en convertir un valor long  a tipus int, és possible que acabem obtenint números negatius. Si volem limitar el rang de valors generats a números positius, caldrà prevenir la possibilitat i convertir els valors negatius en positius.</p>
+                                        <div class="iocexample single em">
+                                        <pre><code class="java">
+    private int nanoRandom(int limitValue){
+        long nano = System.nanoTime(); //valor de la hora del sistema en nanosegons
+        int ret = (int) (nano%limitValue); //encavir el valor dins del rang demanat
+        if(ret&lt;0){    //converti valors negatius en positius
+            ret*=-1;
+        }
+        return ret;
+    }
+                                        </code></pre>
+                                        <p>Copieu aquest codi per obtenir una funció que generi valors aleatoris</p>
+                                        </div>
+
+                                    </div>
                                 </div> 
                             </div>
                         </div>
