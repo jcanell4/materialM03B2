@@ -288,9 +288,9 @@ IocSlider = function(){
             if(this.hindx!=i){
                 //this.setVIndx(-1);
                 this.setHIndx(i, i<this.hindx, false);
-                if(vTarget){
-                    _setVerticalTargetIndx(vTarget);
-                }
+            }
+            if(vTarget){
+                _setVerticalTargetIndx(vTarget);
             }
         }else{
             console.error("error slide not fount (" + hTarget.id +")");
