@@ -262,7 +262,7 @@
                                     <p>Recordeu també que caldrà presentar les lletres, en un orde diferent a la seqüència de caràcters determinada per les  paraules seleccionades, però que durant el transcurs del joc, l'ordre establert inicialment s'ha de mantenir mentre duri la partida. És a dir, les lletres només s'hauran de barrejar un cop, al principi, just abans de començar el joc.</p>
                                     <p>Com es pot suposar, caldrà emmagatzemar les lletres en algun sistema de dades que permeti mantenir les 30 lletres en un orde determinat. En la següent tasca (la d'implementació) decidirem quin tipus de dada serà el més adient per aconseguir aquest objectiu. De moment aquí, raons de clarificació, ens referirem al conjunt de lletres que composen les paraules a endevinar com <em>"dipòsit de lletres"</em> o <em>"registre de lletres"</em> de la partida.</p>
                                     <p>Fixeu-vos que el disseny que us proposem consistiria en continuar la descomposició del punt 1.2 iniciada a la tasca anterior, el que hem enunciat com <em>1.2. Extreure les lletres i barrejar-ne l'ordre</em>.</p>
-                                    <p>Us demanem que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca1.odt">dissenyDescendentTasca1.odt</a>) i hi descomposeu aquest procés usant la tècnica del disseny descendent que ja coneixeu.  El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
+                                    <p>Us demanem que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca1A407.odt">dissenyDescendentTasca1.odt</a>) i hi descomposeu aquest procés usant la tècnica del disseny descendent que ja coneixeu.  El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
                                     <p>Tingueu en compte que aquest procés no ha de seleccionar les paraules, sinó que només ha d'extreure les lletres d'un conjunt de paraules seleccionades en un procés anterior. Consulteu el l'esquema general donat a l'<a href="#slc-individuals__slc-individuals0">apartat anterior </a>, la selecció de les paraules a endevinar es troba en el <em>punt 1.1</em></p>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -430,9 +430,45 @@ carater = cadena.charAt(pos) //la variable caracter contindrà el valor 'a', don
         return ret;
     }
                                         </code></pre>
-                                        <p>Copieu aquest codi per obtenir una funció que generi valors aleatoris</p>
                                         </div>
-
+                                        <p>Copieu aquesta funció a la vostra implementació (el fitxer que esteu codificant) per poder fer-la servir. Un cop copiada podreu cridar-la des de qualsevol de les funcions que estigueu codificant. Per cridar-la caldrà passar-li el valor màxim (30 en el cas que ens ocupa) per paràmetre i recollir el valor retornat en una variable de tipus <em>int </em>. Per exemple:</p>
+                                        <div class="iocexample single em">
+                                        <pre><code class="java">
+...
+int valorAleatori;
+...
+valorAleatori = nanoRandom(10); //Aquí obtindrem un valor entre zero (inclòs) i 10 (no inclòs).
+...
+valorAleatori = nanoRandom(129); //En canvi aquí, obtindrem un valor entre zero (inclòs) 
+                                 //i 129 (no inclòs).
+...
+                                        </code></pre>
+                                        </div>
+                                    </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue5">
+                                        Pista 5
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue5" class="iocClue hidden">
+                                        <h2>Pista 5 - Funció prova</h2>
+                                        <p>Per tal de provar les funcions que implementeu, se us ha demanat que feu una petita prova creant una funció anomenada <em>prova</em> que cridareu des del <em>main</em>. Així podreu executar i provar el que escriviu.</p>
+                                        <p>Assegureu-vos que la col·lecció de paraules que passeu contingui exactament 30 lletres, ja que com que no es fa aquesta comprovació, si no fos així es produiria un error. A continuació us passem un tros de codi que conté inicialitzada un conjunt vàlid de paraules i també la crida des del <em>main</em>. Si copieu això, només haureu de completar la funció <em>prova</em> amb el que cregueu convenient.</p>
+                                        <pre><code class="java">
+    public static void main(String[] args) {
+        Tasca2 prg = new Tasca2();
+        prg.prova();
+    }
+    
+    public void prova() {        
+        String[] paraules = {"ABADESSA", "IDOL", "PLORAR", "INCLOURE", "BATA"};
+        //Escriviu aquí el codi de la funció prova que verifiqui el que heu implementat
+        //Useu la variable paraules per passar una conjunt de paraules amb 30 lletres.
+    }
+                                        </code></pre>
                                     </div>
                                 </div> 
                             </div>
@@ -448,20 +484,78 @@ carater = cadena.charAt(pos) //la variable caracter contindrà el valor 'a', don
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a fer - Projecte II</h2>
-                                     <h3> Tasca 3 - Actualització de les lletres disponibles </h3>
+                                     <h3> Tasca 3 - Disseny descendent de l'actualització de les lletres disponibles </h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+                                <!--
+                                    <p>La tercera tasca consisteix en implementar un funció que actualitzi el diposit de lletres a partir de les paraules que el jugador hagi endevinat en un torn. Recordeu que l'enunciat indica que després de cada proposta, cal trobar quines de les paraules entrades són valides i seguidament eliminar del diposit les lletres d'aquestes paraules per tal que es puguin tornar a escollir. </p>
+                                    <p>L'enunciat també indica, però que malgrat l'eliminació de lletres, les restants no canviaran mai de posicions, ja que la posició ocupada per una lletra eliminada se substituirà per una espai blanc.</p>
+                                    <p>Malgrat que poden haver moltes maneres de d'implementar això, segurament la més fàcil és la que, en realitat no fa cap eliminació física en el diposit, sinó que substitueix el valor de la lletra a eliminar, directament per un espai en blanc. Fer aquest substitució és equivalent a eliminar la lletra ja que en se substituït el seu valor real, no es podrà tornar a trobaren cap altra cerca, ni es visualitzarà a la pantalla de manera que el jugador no comptarà amb ella. A més, aquest sistema garanteix que la resta de lletres romandran sempre a la seva posició original.</p>
+                                    <p>Es tracta d'una funció molt senzilla i no es considera necessari que feu cap disseny descendent. Tot i així si trobeu alguna dificultat, i us trobeu més segurs generant un disseny descendent, feu sense dubtar.</p>
+                                    <p>La funció s'anomenarà <em>actualitzarDiposit</em> i haurà de rebre dos paràmetres, el diposit (array de caràcters) i el conjunt de paraules (array de cadenes de text) ja validades, és a dir només li arribaran les paraules de la proposta que siguin correctes i per tant caldrà eliminar sempre totes les lletres d'aquestes.</p>
+                                    <p>L'objectiu com ja s'ha dit, consisteix en modificar el diposit de lletres convertint les lletres coincidents en espais en blanc</p>
+                                     <!-- Button trigger pannel -->
+                                     <p>Us demanem que obriu el document de resposta d'aquesta tasca (<a href="docs/dissenyDescendentTasca3A407.odt">dissenyDescendentTasca1.odt</a>) i hi descomposeu aquest procés usant la tècnica del disseny descendent que ja coneixeu.  El resultat hauria de ser un esquema que representi la descomposició del procés de forma semblant als esquemes vistos a l'activitat A405.</p>
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue1" class="iocClue hidden">
+                                        <h2>Pista 1 - Retorn de la funció</h2>
+                                        <p>Tenint en compte que els arrays es passen sempre per referència, creus que ha la funció hauria de retornar algun valor? Actua en conseqüència.</p>
+                                    </div>
                                 </div> 
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION individuals20 ================-->    
+                <!--=========== END SUBSECTION individuals30 ================-->    
+
+                <!--=========== BEGIN SUBSECTION individuals40  ================-->    
+                <section id="slc-individuals40" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a fer - Projecte II</h2>
+                                     <h3> Tasca 4 - Implementació de l'actualització de les lletres disponibles </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>La tercera tasca consisteix en implementar un funció que actualitzi el diposit de lletres a partir de les paraules que el jugador hagi endevinat en un torn. Recordeu que l'enunciat indica que després de cada proposta, cal trobar quines de les paraules entrades són valides i seguidament eliminar del diposit les lletres d'aquestes paraules per tal que es puguin tornar a escollir. </p>
+                                    <p>L'enunciat també indica, però que malgrat l'eliminació de lletres, les restants no canviaran mai de posicions, ja que la posició ocupada per una lletra eliminada se substituirà per una espai blanc.</p>
+                                    <p>Malgrat que poden haver moltes maneres de d'implementar això, segurament la més fàcil és la que, en realitat no fa cap eliminació física en el diposit, sinó que substitueix el valor de la lletra a eliminar, directament per un espai en blanc. Fer aquest substitució és equivalent a eliminar la lletra ja que en se substituït el seu valor real, no es podrà tornar a trobaren cap altra cerca, ni es visualitzarà a la pantalla de manera que el jugador no comptarà amb ella. A més, aquest sistema garanteix que la resta de lletres romandran sempre a la seva posició original.</p>
+                                    <p>Es tracta d'una funció molt senzilla i no es considera necessari que feu cap disseny descendent. Tot i així si trobeu alguna dificultat, i us trobeu més segurs generant un disseny descendent, feu sense dubtar.</p>
+                                    <p>La funció s'anomenarà <em>actualitzarDiposit</em> i haurà de rebre dos paràmetres, el diposit (array de caràcters) i el conjunt de paraules (array de cadenes de text) ja validades, és a dir només li arribaran les paraules de la proposta que siguin correctes i per tant caldrà eliminar sempre totes les lletres d'aquestes.</p>
+                                    <p>L'objectiu com ja s'ha dit, consisteix en modificar el diposit de lletres convertint les lletres coincidents en espais en blanc</p>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue1" class="iocClue hidden">
+                                        <h2>Pista 1 - Retorn de la funció</h2>
+                                        <p>Tenint en compte que els arrays es passen sempre per referència, creus que ha la funció hauria de retornar algun valor? Actua en conseqüència.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals40 ================-->    
             </section>
             <!--=========== END SECTION individuals ================-->    
 
