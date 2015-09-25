@@ -325,8 +325,53 @@ void inici(){
                 </section>
                 <!--=========== END SUBSECTION Intercanvi d'informació. Àmbit de variables i ús de paràmetres ================-->        
 
-                <!--=========== BEGIN SUBSECTION Exemples ================-->    
+                <!--=========== BEGIN SUBSECTION Estructura d'una programa fent servir funcions ================-->    
                 <section id="slc-toKnow40" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal saber - Funcions</h2>
+                                     <h3 >Estructura d'un programa que fa servir diverses funcions</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Abans de continuar, cal presentar un canvi necessari en el format dels vostres programes quan es vol declarar altres funcions, a més de la principal (<em>main</em>).</p>
+                                    <p>Concretament, per les característiques del llenguatge Java, cal que el mètode principal tingui un format molt concret. En cas contrari, hi haurà un error de compilació en futures passes del procés. Tot el codi que normalment posaríeu dins el bloc d’instruccions del mètode principal, cal ubicar-lo en una funció <em>"secundària"</em>, que anomenaren <em>inici</em>. S'ha triat aquest nom per tal que us resulti clarificador, però podríem haver-li posat qualsvol altre nom.</p>
+                                    <p>Dins el mètode principal simplement s’invoca aquesta nova funció. De fet, no és imprescindible que conegueu els detalls dels motius pels quals és necessari fer aquest canvi. Simplement podeu usar el codi següent d’exemple com a plantilla per generar els vostres programes, tenint en compte que tot el codi que posaríeu normalment al mètode principal, ara anirà al mètode inici.</p>
+                                    <pre><code class="java">
+public class ProgramaX {
+  public static void main (String[] args) {
+    //Aquí cal usar el nom de la classe que esteu creant.
+    ProgramaX programa = new ProgramaX();
+    programa.inici();
+  }
+
+  public void inici() {
+    //Instruccions del mètode principal (problema general)
+    //...
+  }
+  
+  //Resta de mètodes
+  //...
+}
+                                    </code></pre>
+                                    <p>En usar aquest codi com a plantilla, noteu que a la línia següent caldria posar el nom de la classe que esteu editant, en lloc de ProgramaX:</p>
+                                    <pre><code class="java">
+ProgramaX programa = new ProgramaX();                                        
+                                    </code></pre>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Estructura d'un programa fent servir funcions ================-->        
+
+                <!--=========== BEGIN SUBSECTION Exemples ================-->    
+                <section id="slc-toKnow41" class=" section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -339,7 +384,7 @@ void inici(){
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En el següent exemple es mostra una aplicació sencera que demana 3 valors enters i cerca el valor màxim. L'aplicació està escrita usant 4 funcions: main i inici, a les que ja esteu habituats i a més s'afegeixen les funcions <em> peresentació</em> i <em>maxim</em>.</p>
+                                    <p>En el següent exemple es mostra una aplicació sencera que demana 3 valors enters i cerca el valor màxim. L'aplicació està escrita usant 4 funcions: <em>main</em> i <em>inici</em> (per exigències de JAVA) i a més, s'afegeixen les funcions <em> peresentació</em> i <em>maxim</em>.</p>
                                     <pre><code class="java">
 public class Exemple1 {
 
@@ -405,7 +450,8 @@ public class Exemple1 {
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION Exemples ================-->        
+                <!--=========== END SUBSECTION Exemples ================-->       
+                
                 <!--=========== BEGIN SUBSECTION Ampliació àmbit de les variables ================-->    
                 <section id="slc-toKnow50" class=" section">
                     <div class="container">
