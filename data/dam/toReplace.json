@@ -34,49 +34,57 @@
         "dataInici": {"type":"text", "value":"24/09/2015"},
         "dataFinal": {"type":"text", "value":"06/10/2015"},       
         "dataLimit": {"type":"text", "value":"16/10/2015"},
-        "bustiaLliurament":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271341"}
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P1</a>"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271341"}
     },        
     "RP2":{
         "dataInici": {"type":"text", "value":"07/10/2015"},
         "dataFinal": {"type":"text", "value":"21/10/2015"},       
         "dataLimit": {"type":"text", "value":"03/11/2015"},
-        "bustiaLliurament":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271801"}
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P2</a>"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271801"}
     },        
     "RP3":{
         "dataInici": {"type":"text", "value":"22/10/2015"},
         "dataFinal": {"type":"text", "value":"28/10/2015"},       
         "dataLimit": {"type":"text", "value":"09/11/2015"},
-        "bustiaLliurament":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271362"}
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P3</a>"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271362"}
     },        
     "RP4":{
         "dataInici": {"type":"text", "value":"29/10/2015"},
         "dataFinal": {"type":"text", "value":"09/11/2015"},       
         "dataLimit": {"type":"text", "value":"14/11/2015"},
-        "bustiaLliurament":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271823"}
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P4</a>"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271823"}
     },        
     "RP5":{
         "dataInici": {"type":"text", "value":"10/11/2015"},
         "dataFinal": {"type":"text", "value":"16/11/2015"},       
         "dataLimit": {"type":"text", "value":"20/11/2015"},
-        "bustiaLliurament":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271825"}
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P5</a>"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271825"}
     },        
     "RP6":{
         "dataInici": {"type":"text", "value":"17/11/2015"},
         "dataFinal": {"type":"text", "value":"24/11/2015"},       
         "dataLimit": {"type":"text", "value":"26/11/2015"},
-        "bustiaLliurament":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271830"}
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P6</a>"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271830"}
     },        
     "RP7":{
         "dataInici": {"type":"text", "value":"25/11/2015"},
         "dataFinal": {"type":"text", "value":"01/12/2015"},       
         "dataLimit": {"type":"text", "value":"01/12/2015"},
-        "bustiaLliurament":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271837"}
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P7</a>"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271837"}
     },        
     "RPM":{
         "dataInici": {"type":"text", "value":"02/12/2015"},
         "dataFinal": {"type":"text", "value":"22/12/2015"},       
         "dataLimit": {"type":"text", "value":"22/12/2015"},
-        "bustiaLliurament":{"type":"ref", "name":"RP7", "value":"bustiaLliurament"}       
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P7</a>"},
+        "bustiaLliuramentUrl":{"type":"ref", "name":"RP7", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271837"}       
     },         
     "A400": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='#'>A400</a>"},
@@ -292,6 +300,7 @@
         "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "forumGrupReduit":{"selector":".forumGrupReduit", "defaultValue":"fgr"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP1", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP1", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA401.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A402_funcions2.html?dam"},
         "triaForumReduit":{"selector":".triaForumReduit", "type":"ref", "name":"A400", "value":"A400idTGFR"}
@@ -306,6 +315,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP1", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP1", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA402.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A403_funcions3.html?dam"}
     },
@@ -319,6 +329,7 @@
         "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "forumGrupReduit":{"selector":".forumGrupReduit", "defaultValue":"fgr"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP1", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP1", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA403.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"projecte/A404_Uf2Projecte1.html?dam"}
     },
@@ -331,6 +342,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP1", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP1", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='../docs/TriaGrupA404.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A405_dissenyDescendent1.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
@@ -346,6 +358,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP2", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP2", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA405.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A406_errorsIDepuracio.html?dam"}
     },
@@ -358,6 +371,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP2", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP2", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"projecte/A407_Uf2Projecte2.html?dam"}
     },
@@ -370,6 +384,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GT"},{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP2", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP2", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A408_Uf2Projecte3.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
@@ -384,6 +399,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GT"},{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP3", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP3", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A501_ClassesBiblioteques.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -397,6 +413,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP4", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP4", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A502_ActivitatsEspecialistes.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -410,6 +427,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP4", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP4", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A503_Integracio1.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -423,6 +441,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP5", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP5", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A504_Implementacio1.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -436,6 +455,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP5", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP5", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A505_Integracio2.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -449,6 +469,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP6", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP6", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A506_Implementacio2.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -462,6 +483,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP6", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP6", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A507_Integracio3.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -475,6 +497,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP7", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A508_Implementacio3.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -488,6 +511,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP7", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A509_Integracio4.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -501,6 +525,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP7", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A5MI_PropostaIndividualMillora.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -514,6 +539,7 @@
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RPM", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RPM", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     }
