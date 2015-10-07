@@ -201,16 +201,16 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>En aquesta tasca us proposem fer l'anàlisi i la implementació del procés d'obtenir un nombre variable de paraules seleccionades a l'atzar, que continguin exactament 30 lletres en total.</p>
-                                    <p>En primer lloc, cal que dissenyeu la descomposició del procés, de forma esquemàtica, en el document <a href="docs/dissenyDescendentTasca1A408.odt">dissenyDescendentTasca1A408.odt</a> de forma similar a com heu fet els altres dissenys descendents.</p>
+                                    <p>En primer lloc, cal que dissenyeu la descomposició esquemàtica del procés en el document <a href="docs/dissenyDescendentTasca1A408.odt">dissenyDescendentTasca1A408.odt</a>, de forma similar a com heu fet els altres dissenys descendents.</p>
                                     <p>Per a fer aquest disseny, tingueu en compte les següents premisses:</p>
                                     <ol>
                                         <li>El conjunt d'on cal extreure les paraules a endevinar, que a mode de simplificació anomenem <em>diccionari</em>, ens el fa arribar l'empresa en format d'array on cada element és una paraula diferent.</li>
                                         <li>Cal assegurar que mai se selecciona un paraula més d'un cop. És a dir, hem de vigilar de no repetir paraules durant la selecció</li>
                                         <li>Cal assegurar que els procés d'extreure les paraules del diccionari és realment aleatori. És a dir, que obtinguem en tot moment resultats que no siguin previsibles.</li>
-                                        <li>Cal assegurar que el nombre de lletres corresponents a totes les paraules extretes és exactament 30. Això ha de ser sempre possible perquè el diccionari conté 3 paraules d'una sola lletra ('<em>a</em>', '<em>o</em>' i '<em>i</em>') i una diversitat prou acceptable de paraules de diferents mides (a partir de dos). Aquesta composició garanteix que sempre existeixi una combinació de paraules imprevisible,  d'exactament un nombre fix de lletres (30 en el nostre cas).</li>
+                                        <li>Caldrà aconseguir que el nombre de lletres corresponents a totes les paraules extretes sigui exactament 30. Donada l'elevada quantitat de paraules que conté el diccionari, i donat que aquestes presenten una distribució de mides prou diversa, suposarem que en tot moment és sempre possible obtenir una paraula o conjunt de paraules que amb independència de les paraules que ja hagin estat seleccionades donin com a resultat final, un conjunt de paraules que acumulin caràcters en total. És important fer aquesta suposició per simplificar el procés de selecció. Així, el procés consistiria només en anar seleccionant paraules que no sobrepassin mai la suma de 30 caràcters fins aconseguir exactament la xifra màgica.</li>
                                     </ol>
-                                    <p>Per posar fil a l'agulla consulteu les pistes 1, 2 i 3</p>
-                                                                         <!-- Button trigger pannel -->
+                                    <p>Per posar fil a l'agulla en relació al disseny, consulteu les pistes 1, 2 i 3</p>
+                                    <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
                                             data-parent-selector="#leftColumnPanel"
@@ -221,7 +221,7 @@
                                     <div id="slc-individuals10-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
                                         <p>No és una bona idea eliminar les paraules que es vagin seleccionant del diccionari, ja que a mida que anem jugant partides, el diccionari quedaria més i més reduït.</p>
-                                        <p>Caldrà doncs, fer servir una altre estratègia per assegurar que no repetirem més d'un cop qualsevol paraula ja seleccionada. L'estratègia podria passar per comparar cada extracció amb les paraules extretes fins el moment, de manera que si la paraula recent seleccionada no es troba entre les extretes, significarà que es es troba repetida i podria selecciona-se. Per contra si s'hagués trobat un còpia prèvia, caldria descarta-la i cercar-ne una altra.</p>
+                                        <p>Caldrà doncs, fer servir una altra estratègia per assegurar que no repetirem més d'un cop qualsevol paraula ja seleccionada. L'estratègia podria passar per comparar cada extracció amb les paraules extretes fins el moment, de manera que si la paraula recent seleccionada no es troba entre les extretes, significarà que podem escollir-la sense perill de repeticions. Per contra, si s'hagués trobat un còpia prèvia, caldria descarta-la i cercar-ne una altra.</p>
                                     </div>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -233,9 +233,9 @@
                                     </button>                                        
                                     <div id="slc-individuals10-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                                                                <p>La estratègia a usar en l'algoritme a dissenyar seria semblant a l'estratègia que fem servir quan hem de pagar un producte en  efectiu, en una màquina expenedora que requereix l'import exacte.</p>
-                                        <p>Intentem fer aquest exercici. Suposem però, que en comptes de cercar els diners a la cartera disposem d'una altra màquina (caixer) que ens va donant una moneda o un bitllet de valor desconegut cada cop que premem un botó.</p>
-                                        <p>Per poder pagar el preu del producte a la màquina expenedora, haurem d'anar prement el botó, seguint la següent seqüència temporal: si el valor aconseguit en prémer el botó del caixer, no sobrepassa el preu a pagar, agafarem la moneda (o bitllet) i l'introduirem a la màquina expenedora, la qual recalcularà el preu que resta per pagar el producte. Si el valor sobrepassa el preu a pagar, el retornarem al caixer i premerem de nou el botó. </p>
+                                        <p>La estratègia a usar en l'algoritme que hem de dissenyar, seria semblant a l'estratègia que fem servir quan hem de pagar un producte en  efectiu, en una màquina expenedora que requereix l'import exacte.</p>
+                                        <p>Per fer-ho encara més semblant al cas que ens ocupa, suposem que en comptes de cercar els diners a la cartera, disposem d'una altra màquina (caixer) que ens va donant una moneda o un bitllet de valor desconegut i aleatori, cada cop que premem un botó.</p>
+                                        <p>Per poder pagar el preu del producte a la màquina expenedora, haurem d'anar prement el botó del caixer, seguint la següent seqüència temporal: si el valor aconseguit en prémer el botó del caixer, no sobrepassa el valor a pagar, agafarem la moneda (o bitllet) i l'introduirem a la màquina expenedora, la qual recalcularà el valor que resta per pagar. Si el valor del que ens dona el caixer sobrepassa el que resta per pagar, el retornarem al caixer i premerem de nou el botó. </p>
                                         <p>Repetirem aquestes accions fins aconseguir pagar totalment el producte.</p>
                                     </div>
                                     <!-- Button trigger pannel -->
@@ -249,14 +249,58 @@
                                     <div id="slc-individuals10-clue3" class="iocClue hidden">
                                         <h2>Pista 3</h2>
                                         <p>És evident que si tenim un conjunt de valors que entre els seus elements n'hi ha que compleixen uns requisits i n'hi ha que no, resulta impossible endevinar si una element extret a l'atzar garantirà els requisits. De fet, la probabilitat que compleixi o no el requisit, depèn totalment de la proporció d'elements complidors dels requisits versus els no complidors. Així doncs, no és possible saber quants cops caldria extreure a l'atzar un element fins aconseguir acomplir els requisits; és més, a proporcions baixes les probabilitats d'aconseguir-ho són més aviat minses i es podria entrar un un bucle excessivament llarg. No podem doncs considerar que repetir una extracció a l'atzar fins aconseguir l'objectiu sigui una bona solució. Caldrà trobar una alternativa.</p>
-                                        <p>Partirem de la base que en realitzar una operació sobre un valor aleatori, malgrat es tracti d'una operació totalment predictible, el resultat serà en realitat impredictible doncs es desconeix quin serà el valor aleatori</p>
-                                        <p>També cal saber que donat un conjunt de valors, per gran que aquest sigui, la única manera de trobar algun valor concret consisteix en realitzar una cerca seqüencial analitzant tots els seus elements fins trobar el valor cercat.</p>
-                                        <p>Si apliqueu les dues premisses anteriors al problema d'obtenir paraules a l'atzar que compleixin uns requisits determinats podreu, idear una estratègia que us permeti trobar de forma segura i eficient una paraula que compleixi els requisits partint d'una cerca inicial a l'atzar</p>
+                                        <p>Partirem de la base que en realitzar una operació sobre un valor aleatori, malgrat que es tracti d'una operació totalment predictible, el resultat no serà posible predir-lo doncs es desconeix quin és el valor inicial (aleatori).</p>
+                                        <p>També cal saber que donat un conjunt de valors, per gran que aquest sigui, la única manera d'assegurar que hi trobarem un valor concret, consisteix en realitzar una cerca seqüencial analitzant tots els seus elements fins trobar el valor cercat.</p>
+                                        <p>Si apliqueu les dues premisses anteriors al problema d'obtenir paraules a l'atzar que compleixin uns requisits determinats podreu, idear una estratègia que us permeti trobar de forma segura i eficient una paraula que compleixi els requisits partint d'una cerca inicial a l'atzar i una acció que permeti un recorregut seqüencial, en cas que el valor inicial no compleixi els requisits, fins trobar un valor idoni.</p>
                                     </div>
 
-                                    <p>Un cop hagueu fet el disseny, caldrà codificar la implementació de la funció <em>obtenirParaulesALAtzar</em>. Tingueu en compte que el diccionari de paraules és una dada proporcionada per l'empresa i per tant generada fora de la funció que estem implementant. És a dir, que li ha d'arribar per paràmetre. A més, per tal de fer una funció una mica més genèrica, podem convenir que el nombre de lletres límit es passarà també a través de paràmetre i així podrem fàcilment modificar el nombre de lletres límit amb les que es vulgui treballar</p>
+                                    <p>Un cop hagueu fet el disseny, caldrà codificar la implementació de la funció <em>obtenirParaulesALAtzar</em>. Tingueu en compte que el diccionari de paraules és una dada proporcionada per l'empresa i per tant generada fora de la funció que estem implementant. És a dir, que li ha d'arribar per paràmetre. A més, per tal de fer una funció una mica més genèrica, podem convenir, que el nombre de lletres límit es passarà també a través de paràmetre i així, disposarem d'una forma fàcil de modificar i adaptar el nombre de lletres límit amb les que decidim jugar.</p>
                                     <p>La funció retornarà un array amb les paraules seleccionades, les quals hauran d'acumular el nombre de lletres límit passat per paràmetre.</p>
-                                    <p>Consulta les pistes 4, 5 i 6 per obtenir ajuda addicional.</p>
+                                    <p>Consulteu les pistes 4, 5 i 6 per obtenir ajuda addicional.</p>
+
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Recordeu que a l'activitat A407 heu fet servi la funció <em>nanoRandom</em> per obtenir valors numèrics a l'atzar. Recupereu-la i copieu-la aquí també per poder-la fer servir.</p>
+                                    </div>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue5">
+                                        Pista 5
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue5" class="iocClue hidden">
+                                        <h2>Pista 5</h2>
+                                        <p>Donat que no sabem la mida de l'array de paraules a seleccionar que acabarem retornant, ja que aquesta variarà en funció de la mida de les paraules seleccionades, no podrem dimensionar la variable que contingui l'array amb exactament la mida que agafarà finalment. Per evitar errors, caldrà dimensionar-la de forma temporal a una mida gran per tal  que mai ens quedem sense posicions i abans de fer el retorn, un cop sapiguem la mida final que prendrà l'array a retornar la redimensionem creant una versió definitiva de l'array a retornar.</p>
+                                        <p>Us proposem que feu una funció auxiliar que rebi una array de paraules de dimensió desconeguda i també la mida final a la que es desitja retalla l'array passat. La funció hauria de construir i crear un array de la mida indicada en el segon paràmetre i copiar-hi, element per element, les dades del vector original abans de retornar-lo</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue6">
+                                        Pista 6
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue6" class="iocClue hidden">
+                                        <h2>Pista 6</h2>
+                                        <p>Quan, a partir del disseny que hagueu escrit, decidiu fer una descomposició del procés en diverses funcions, plantegeu-vos que:</p> 
+                                        <ul>
+                                                <li>Un bucle amb poques línies és molt més entenedor que un bucle amb moltes.</li>
+                                                <li>Un una estructura (condicional o iterativa) és també més entenedora si conté amb instruccions simples, que si conté instruccions imbricades. L'ús de funcions permet convertir instruccions imbricades en crides simples.</li>
+                                        </ul>.
+                                        <p>Per exemple, per trobar si una paraula es troba ja repetida en les seleccionades prèviament, caldrà fer un bucle implementant una cerca seqüencial. imbricat en el  </p>                                        
+                                    </div>
+                                    
                                 </div> 
                             </div>
                         </div>
