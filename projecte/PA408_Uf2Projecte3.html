@@ -172,7 +172,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Abans de seguir endavant amb la implementació del joc <em>"Lletres barrejades"</em>, us demanem que refresqueu l'anàlisi inicial que vàrem fer a l'<a target="blank" href="PA407_Uf2Projecte2.html?dam#slc-individuals__slc-individuals0">activitat anterior (A407)</a> on es va començar el disseny descendent del joc.</p>
+                                    <p>Abans de seguir endavant amb la implementació del joc <em>"Lletres barrejades"</em>, us demanem que refresqueu l'anàlisi inicial que vàrem fer a l'<a target="blank" class="A407_analisi_inicial">activitat anterior (A407)</a> on es va començar el disseny descendent del joc.</p>
                                     <p>Per tal que us pugueu organitzar adequadament i degut a que la ponderació de les tasques d'aquesta activitat no tenen el mateix valor per a totes, us indicarem la ponderació aquí:</p>
                                     <ul>
                                         <li>Tasca 1, obtenció de paraules a endevinar (50%)</li>
@@ -254,10 +254,73 @@
                                         <p>Si apliqueu les dues premisses anteriors al problema d'obtenir paraules a l'atzar que compleixin uns requisits determinats podreu, idear una estratègia que us permeti trobar de forma segura i eficient una paraula que compleixi els requisits partint d'una cerca inicial a l'atzar i una acció que permeti un recorregut seqüencial, en cas que el valor inicial no compleixi els requisits, fins trobar un valor idoni.</p>
                                     </div>
 
-                                    <p>Un cop hagueu fet el disseny, caldrà codificar la implementació de la funció <em>obtenirParaulesALAtzar</em>. Tingueu en compte que el diccionari de paraules és una dada proporcionada per l'empresa i per tant generada fora de la funció que estem implementant. És a dir, que li ha d'arribar per paràmetre. A més, per tal de fer una funció una mica més genèrica, podem convenir, que el nombre de lletres límit es passarà també a través de paràmetre i així, disposarem d'una forma fàcil de modificar i adaptar el nombre de lletres límit amb les que decidim jugar.</p>
+                                    <p>Un cop hagueu fet el disseny, caldrà codificar la implementació de la funció <em>obtenirParaulesALAtzar</em>. Tingueu en compte que el diccionari de paraules és una dada proporcionada per l'empresa i per tant generada fora de la funció que estem implementant. És a dir, que li ha d'arribar per paràmetre. A més, per tal de fer una funció una mica més genèrica, podem convenir, que el nombre de lletres límit es passi també a través de paràmetre per si mai decidim que l'usuari pugui configurar amb quin nombre de lletres a escollir vol jugar.</p>
                                     <p>La funció retornarà un array amb les paraules seleccionades, les quals hauran d'acumular el nombre de lletres límit passat per paràmetre.</p>
                                     <p>Consulteu les pistes 4, 5 i 6 per obtenir ajuda addicional.</p>
-
+                                    <p>Podeu provar la vostra implementació, usant el codi que et facilitem a continuació:</p>
+                                    <pre><code class="java">
+public static void main(String[] args) {
+        Tasca1 prg = new Tasca1();
+        prg.prova();
+    }
+    
+    private void prova() {
+          String[] diccionari = {
+            "a","abadessa","abandonat","abarnegat","abat","abatussat","abissal","abnegat",
+            "abrainat","abruptesa","abscissa","absolut","abstreure","acabar","acampar",
+            "accent","acer","acerat","acid","aclamar","aclarir","aclarit","acrata",
+            "acrobacia","adagi","adaptar","adeptes","adequar","adequat","adeu","adherir",
+            "admetre","adonar","adormir","adscriure","adust","advers","advocat","afanar",
+            "afany","afavorir","afavorit","afebleix","afeblit","afectat","afectiu","afectuos",
+            "afegir","afer","afilar","afinar","afi","afligir","afligit","aflorar","afluent",
+            "afluixar","agafar","agalla","agata","agencia","agrair","agrait","agrari","agre",
+            "agregar","agror","aguila","ah","ahir","aigua","aiguat","aire","aixada","aixafar",
+            "aixecar","aixeta","aixella","aixi","aixo","aixovar","ajeure","ajornar",
+            "ajudar","ajupir","ajustar","ala","albada","albi","ale","alenar",
+            "alevi","alga","algid","algu","alie","alla","alli","allo","alma","alpi",
+            "altivesa","amagar","amanida","amanir","ambre","amorf","ample","ampliar",
+            "anar","anca","angoixa","anis","ansa","apagar","apagat","apercebre",
+            "apostata","arbre","aristòcrata","atreure","audiofon","autocrata",
+            "baixa","bali","bandol","barata","barbar","barrera","bassal","bata",
+            "benveure","benviure","bestraure","bobila","bossarrera","bravata","bufor",
+            "cabre","caixa","calabre","calibre","canelobre","cantata","carabassal","carrera",
+            "casal","caure","causa","celebre","censal","centaure","cercavila","circumscriure",
+            "clamar","clar","cloure","codol","colossal","columnata","comensal","commoure",
+            "complaure","concloure","condol","contramarc","contrapès","contreure",
+            "convilatà","conviure","corbata","correra","coure","creure","cuixa","culata",
+            "data","decaure","de","decebre","deixa","descloure","descriure","desfilar",
+            "deslliurat","desviure","detreure","deure","distreure","egagropila","embeure",
+            "emfasi","empes","entreploure","entreveure","errata","es","escandol","escarlata",
+            "escata","escaure","espes","excloure","extasi","extreure","fe","febre","fetge",
+            "fila","fluixa","fragata","frenopata","funebre","gaiata","gebre","glabre",
+            "gramofon","heretgia","hipotesi","homofon","horabaixa","i","idol","incloure",
+            "inscriure","jeure","licorera","lleure1","llibre","lliure","lúgubre","magnetofon",
+            "malveure","manobre","marbre","membre","microfon","minotaure","moure","nombre",
+            "o","olla","onda","onada","or","orca","orfebre","pagar","pagat","paper","paraula",
+            "pebre","piga","plaure","plorar","ploure","pobre","postdata","prescriure","preveure",
+            "promoure","prorrompre","proscriure","public","pulcre","pupitre","que","queixa","readmetre",
+            "recloure","regata","reixa","remoure","retreure","rivetaire","romandre","sabata","sabre",
+            "safata","salubre","serenata","sobreviure","sostreure","subscriure","tabac","tabal","tacar", 
+            "tacat","tacit","tacte","tactica","tactil","talar","tall","talla","tallar","talos", 
+            "talp","tambe","tampo","tanca","tanc","tapar","tapat","tapia","tarda","tasca", 
+            "tassa","taula","tauro","taxa","tebia","tecla","telefon","timbre","vaca","vacu", 
+            "vaga","vago","vall","vampir","vandal","vanova","vapor","vaquer","variar", 
+            "variat","vector","vedell","vegada","vei","veinal","veinat","vel","velada", 
+            "veler","vell","vena","vencer","vençut","venda","vendre","venial","venjar", 
+            "venjat","venosa","vent","ventar","ventre","verb","verd","veri","vers","veto", 
+            "veu","viure","vorera"
+        };
+        
+         String[] prova = obtenirParaulesALAtzar(diccionari, 30);
+         
+         for(int i=0; i&lt;prova.length; i++){
+             System.out.print(prova[i]);
+             System.out.print(", ");
+         }
+    }
+                                    </code></pre>
+                                    <p>On Tasca1 és el nom de la classe on s'ha codificat aquesta tasca. Copia el codi i enganxa'l al fitxer on hagis fet la implementació (Tasca1.java). Això et permetrà observar per pantalla el resultat de la funció <em>obtenirParaulesALAtzar</em> que hagis implementat, cada cop que executis l'aplicació. Verifica que la mida de l'array retornat sigui correcta i que el nombre de lletres sigui realment 30.</p>
+                                    <p>Per tal de facilitar l'extracció de lletres, s'ha eliminat els accents de les paraules del diccionari que se us facilita. El treball amb lletres accentuades presenta una dificultat més gran i s'estudia en altres mòduls més avançats.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -268,7 +331,7 @@
                                     </button>                                        
                                     <div id="slc-individuals10-clue4" class="iocClue hidden">
                                         <h2>Pista 4</h2>
-                                        <p>Recordeu que a l'activitat A407 heu fet servi la funció <em>nanoRandom</em> per obtenir valors numèrics a l'atzar. Recupereu-la i copieu-la aquí també per poder-la fer servir.</p>
+                                        <p>Recordeu que a <a target="_blank" class="A407_analisi_inicial">l'activitat A407</a> heu fet servir la funció <em>nanoRandom</em> per obtenir valors numèrics a l'atzar. Recupereu-la i copieu-la aquí, per poder-la fer servir en aquesta tasca.</p>
                                     </div>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -280,8 +343,8 @@
                                     </button>                                        
                                     <div id="slc-individuals10-clue5" class="iocClue hidden">
                                         <h2>Pista 5</h2>
-                                        <p>Donat que no sabem la mida de l'array de paraules a seleccionar que acabarem retornant, ja que aquesta variarà en funció de la mida de les paraules seleccionades, no podrem dimensionar la variable que contingui l'array amb exactament la mida que agafarà finalment. Per evitar errors, caldrà dimensionar-la de forma temporal a una mida gran per tal  que mai ens quedem sense posicions i abans de fer el retorn, un cop sapiguem la mida final que prendrà l'array a retornar la redimensionem creant una versió definitiva de l'array a retornar.</p>
-                                        <p>Us proposem que feu una funció auxiliar que rebi una array de paraules de dimensió desconeguda i també la mida final a la que es desitja retalla l'array passat. La funció hauria de construir i crear un array de la mida indicada en el segon paràmetre i copiar-hi, element per element, les dades del vector original abans de retornar-lo</p>
+                                        <p>Donat que no sabem la mida de l'array de paraules a seleccionar que acabarem retornant, ja que aquesta variarà en funció de la mida de les paraules seleccionades, no podrem dimensionar la variable que contingui l'array amb exactament la mida que agafarà finalment. Per evitar errors, caldrà dimensionar-la de forma temporal, a una mida gran per tal  que mai ens quedem sense posicions mentre duri la selecció. Abans de fer el retorn, un cop acabada la selecció, sabrem quantes paraules composen la selecció i abans de retornar-la podrem redimensionar-la creant una versió definitiva de l'array a retornar de la mida correcta.</p>
+                                        <p>Us proposem que feu una funció auxiliar que s'encarregui de la redimensió. Podria rebre per paràmetre, un array de paraules de dimensió desconeguda i també la mida final a la que es desitja retallar l'array passat. La funció hauria de crear un nou array de la mida indicada en el segon paràmetre i copiar-hi, element per element, les dades del vector original abans de retornar la nova col·lecció.</p>
                                     </div>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -297,11 +360,12 @@
                                         <ul>
                                                 <li>Un bucle amb poques línies és molt més entenedor que un bucle amb moltes.</li>
                                                 <li>Un una estructura (condicional o iterativa) és també més entenedora si conté amb instruccions simples, que si conté instruccions imbricades. L'ús de funcions permet convertir instruccions imbricades en crides simples.</li>
-                                        </ul>.
-                                        <p>Per exemple, per trobar si una paraula es troba ja repetida en les seleccionades prèviament, caldrà fer un bucle implementant una cerca seqüencial. imbricat en el  </p>                                        
+                                                <li>Quan la condició d'una estructura condicional o iterativa és complexa, també pot arribar a ser més entenedor simplificar-la implementant una funció.</li>
+                                        </ul>
+                                        <p>Per exemple, per trobar si una paraula es troba ja repetida en les seleccionades prèviament, caldrà fer una cerca seqüencial implementada mitjançant un bucle que recorri les paraules prèviament seleccionades. Aquesta iteració, però es trobarà imbricada en altres bucles. Per tan sembla aconsellable crear un funció que rebi la paraula a cercar i la col·lecció de paraules on comprovar si es troba repetida. Així en els bucles superiors podrem substituir l'estructura iterativa per una simple crida a la funció.</p>
+                                        <p>Hi ha altres exemples semblants que també demanarien fer funcions per simplificar i fer més entenedor el codi. Dona-hi voltes abans de començar a codificar...</p>
                                     </div>
-                                    
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -314,14 +378,14 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a fer - Projecte III</h2>
-                                     <h3> Tasca 2 - Implementació de ...</h3>
+                                     <h3> Tasca 2 - Implementació de la funció <em>lletresDeParaulesAlDiposit</em></h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>......</p>
+                                    <p>En aquesta tasca us proposem desenvolupar el punt 2.2 del disseny general que es va presentar a <a target="_blank" class="A407_analisi_inicial">l'activitat A407</a> </p>
                                   
                                     
                                 </div> 
