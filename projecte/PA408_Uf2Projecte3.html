@@ -156,8 +156,9 @@
                                     <li><b>Especialista en estructures de dades</b>:s'encarregarà de fer la proposta de l'estructura de dades requerida per implementar el projecte,  d'explicar-la a la resta de membres, de vetllar per la correcta utilització d'aquesta en els diferents mòduls, de planificar l'accés a les dades, i repartir les tasques d'implementació entre els seus companys. </li>
                                     <li><b>Especialista en la creació de biblioteques de programari</b>: estudiarà la implementació d'aplicacions des de la perspectiva de la construcció de codi estructurat i reutilitzable, organitzat en biblioteques. En aquest cas, s'encarregarà de fer un proposta per implementar una biblioteca que faciliti la implementació de la interfície d'usuari i també d'algunes utilitats específiques per tractar cadenes de text no contemplades a la classe String, d'explicar la funcionalitat  planificada i adaptar-la a les demandes de la resta d'especialistes, de vetllar per la correcta utilització de les biblioteques durant la implementació i de repartir les tasques d'implementació entre els seus companys. </li>                              
                                 </ul>
-                                <p>Un cop escollides les especialitats haureu de triar-la fent servir la utilitat de l'aula anomenada <b>TRIA ESPECIALITAT</b>, una vegada fet això s'activaran els fòrums d'especialistes necessaris per debatre i compartir experiències i activitats d'aprenentatge amb especialistes d'altres grups.
+                                <p>Un cop escollides les especialitats haureu de triar-la fent servir la utilitat de l'aula anomenada <b><a target="_blank" class="triaGrupEspecialitat">TRIA ESPECIALITAT</a></b>, una vegada fet això s'activaran els fòrums d'especialistes necessaris per debatre i compartir experiències i activitats d'aprenentatge amb especialistes d'altres grups.
                                <p>El <b>coordinador</b> haurà de fer la <b>convocatòria de la reunió</b>al grup de treball per debatre les diferents especialitats i escollir-ne una. Finalment, el secretari haurà d'obrir un fil de fòrum amb un nou tema <em>Acta A408-Especialitats</em> on especificarà el repartiment d'especialitats. Us demanem que sigueu rigurosos amb el nom del tema esmentat.</p> 
+                               <p>Cal destacar que el treball d'especialistes no començarà fins <em>l'activitat 502 al periode IV.</em></p>  
                             </div>
                         </div>
                     </div>
@@ -353,7 +354,11 @@ public static void main(String[] args) {
                                     <div id="slc-individuals10-clue5" class="iocClue hidden">
                                         <h2>Pista 5</h2>
                                         <p>Donat que no sabem la mida de l'array de paraules a seleccionar que acabarem retornant, ja que aquesta variarà en funció de la mida de les paraules seleccionades, no podrem dimensionar la variable que contingui l'array amb exactament la mida que agafarà finalment. Per evitar errors, caldrà dimensionar-la de forma temporal, a una mida gran per tal  que mai ens quedem sense posicions mentre duri la selecció. Abans de fer el retorn, un cop acabada la selecció, sabrem quantes paraules composen la selecció i abans de retornar-la podrem redimensionar-la creant una versió definitiva de l'array a retornar de la mida correcta.</p>
-                                        <p>Us proposem que feu una funció auxiliar que s'encarregui de la redimensió. Podria rebre per paràmetre, un array de paraules de dimensió desconeguda i també la mida final a la que es desitja retallar l'array passat. La funció hauria de crear un nou array de la mida indicada en el segon paràmetre i copiar-hi, element per element, les dades del vector original abans de retornar la nova col·lecció.</p>
+                                        <p>Us proposem que feu una funció auxiliar que s'encarregui de la redimensió. Podria rebre per paràmetre, un array original de dimensió major al nombre d'elements que hauria de contenir. També rebria la mida final a la que es desitja retallar l'array passat. La funció hauria de crear un nou array de la mida indicada en el segon paràmetre i copiar-hi, element per element, les dades del vector original abans de retornar la nova col·lecció.</p>
+                                        <div class="iocexample">
+                                            <p class="ioctitle">Per exemple:</p>
+                                            <p class="ioccontent">Si la funció rep com a paràmetres, l'array <em>{"element 1", "element 2", "element 3", -, -, -, -}</em> i el valor <em>3</em>, haurà de retornar un nou array dimensionat a només 3 elements: <em>{"element 1", "element 2", "element 3"}</em></p>
+                                        </div>
                                     </div>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -560,6 +565,7 @@ public static void main(String[] args) {
                                             <li>Per evitar errors, creeu una versió temporal de l'array de paraules vàlides de la mida màxima que podria prendre.</li>
                                             <li>En acabar l'anàlisi de totes les paraules, creeu la versió definitiva de l'array de paraules vàlides, doncs ja coneixereu el nombre de paraules que contindrà.</li>
                                         </ol>
+                                        <p>Igual que a la tasca 1, us proposem que implementeu una funció auxiliar que s'encarregui de redimensionar l'array definitiu. La funció podria rebre per paràmetre, un array de paraules de dimensió major al nombre d'elements que hauria de contenir. També rebria la mida final a la que es desitja retallar l'array passat. La funció hauria de crear un nou array de la mida indicada en el segon paràmetre i copiar-hi, element per element, les dades del vector original abans de retornar la nova col·lecció.</p>
                                     </div>
                                      <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -644,9 +650,11 @@ resultat = cadena1.equalsIgnoreCase(cadena4); //aquí resultat valdrà <em>false
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-                                <p>Aquí cal fer un petit resum del que han hagut d'aprendre i també caldria afegir les referencies on s'ha tractat el tema, ja sigui en activitats de l'AC com en activitats d'ajuda a questa última tasca.</p>
-                                <p>Finalment es dóna pas, si l'alumne considera que ha fet l'aprenentatge correctament a la següent <a class="toNextActivity">activitat</a>. En cas contrari se l'aconsella que repassi les activitats primer o si més no de forma simultània</p>
+                                <p>En aquest punt, cal fer una petita reflexió sobre el que hem anat aprenent respecte al que és la implementació d'una aplicació informàtica</p>
+										  <p>Al <em>bloc 1</em> vam aprendre com implementar un programa amb JAVA amb programació estructurada, és a dir, el programa estava format només per una funció principal.</p>
+											<p>A la primera part del <em>bloc 2</em> hem aprés que podem dividir un programa en subprogrames més petits i senzills de gestionar (<b>funcions</b>) amb una metodologia (<b>disseny descendent</b>) que permet descompondre un programa en nivells. En la pràctica, això han estat programes amb una única classe, una funció principal i diverses funcions.</p>
+											<p>A partir d'ara, seguirem aplicant tot el que hem aprés però introduirem els conceptes de <b>classes i biblioteques</b> que ens permetran dividir el codi en diferents fitxers relacionats.</p>
+                                <p>Si consideres que els conceptes de la primera part del bloc 2 ja estan assolits, pots passar a la següent <a class="toNextActivity">activitat</a>. En cas contrari, seria bo revisar les activitats realitzades fins ara.</p>
                             </div>
                         </div>
                     </div>

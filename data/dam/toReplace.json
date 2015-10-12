@@ -403,7 +403,8 @@
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A501_ClassesBiblioteques.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
-        "A407_analisi_inicial":{"selector":".A407_analisi_inicial", "type":"attr", "name":"href", "value":"A407_Uf2Projecte2.html?dam#slc-individuals__slc-individuals0"}
+        "A407_analisi_inicial":{"selector":".A407_analisi_inicial", "type":"attr", "name":"href", "value":"A407_Uf2Projecte2.html?dam#slc-individuals__slc-individuals0"},
+        "triaGrupEspecialitat":{"selector":".triaGrupEspecialitat", "defaultValue":"tge"}
     },
     "A501": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A501_ClassesBiblioteques.html?dam'>A501</a>"},

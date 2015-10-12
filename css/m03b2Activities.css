@@ -205,6 +205,7 @@
     margin: 1em auto;
     font-size: 75%;
     font-family: sans-serif;
+    margin-bottom: 2em !important;
 }
 
 .iocexample.small .ioccontent,
@@ -226,9 +227,17 @@
 
 .iocexample .ioccontent p.ioctitle,
 .ioctextl .ioccontent p.ioctitle {
-    margin-bottom: 2em !important;
-    font-size: 120%;
+    font-size: 90%;
     font-weight: bold;
+    width: 80%;
+    margin: 1em auto;
+}
+
+.iocexample p.ioctitle{
+    font-size: 90%;
+    font-weight: bold;
+    width: 80%;
+    margin: 1em auto;
 }
 
 .ioctext p,
