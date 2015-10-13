@@ -911,13 +911,13 @@ public class ExerciciDepuracio {
                 + "demana que introduïu un valor a cercar i finalment mostra "
                 + "per pantalla la posició dins la col·lecció on es troba el "
                 + "valor cercat.\n");
-        System.out.println("Introduïu la mida de la col·lecció d'enters");
+        System.out.println("Introduïu la mida de la col·lecció de números");
         midaColleccio = scanner.nextInt();
         
         colleccio = new double[midaColleccio];
         
         for(int i=0; i&lt;midaColleccio; i++){
-            System.out.print("\nIntrodueix l'enter de la posició "+i+": ");
+            System.out.print("\nIntrodueix el valor de la posició "+i+": ");
             colleccio[i]=scanner.nextDouble();
         }
         
