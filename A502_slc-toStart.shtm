@@ -1,0 +1,28 @@
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A502 - Especialistes de la modularització</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Abans d'iniciar les activitats, caldria clarificar que la figura d'especialista en disseny modular, tal com la dureu a la pràctica en aquest projecte, no té una correspondència directa en el món real, en el sí dels equips de desenvolupament. Segurament la figura que més s'hi aproxima seria la d'analista, però nosaltres posarem molt més èmfasi en la praxis que no pas en el disseny.</p> 
+                                <p>Possiblement l'única forma d'aprendre a fer un bon anàlisi i un bon disseny consisteix en fer una i altre vegada anàlisis i dissenys de tot allò que ens passi per davant. Només la pràctica ens farà experts. </p>
+                                <p>Es per això, que aquí, lluny de demanar-vos que feu un disseny impecable, el que pretenem és donar-vos eines per tal de:</p>
+                                <ul>
+                                        <li>Mostrar-vos totes les parts que solen intervenir en el desenvolupament d'una aplicació.</li>                                        
+                                        <li>Oferir-vos models de solució que us permetin ampliar la visió del que fins ara heu fet.</li>
+                                        <li>Fer-vos palès quines solen ser les principals dificultats que acostumem a trobar-nos quan decidim codificar un disseny.</li>
+                                </ul>
+                                <p>L'objectiu principal és que aneu edificant les bases que us permetin enfronta-vos a reptes cada cop més complexes, però sense oblidar el repte que teniu davant, acabar el projecte. De fet, es tracta de processos complementaris, doncs finalitzar el repte amb èxit us aportarà la part de coneixement que només s'adquireix amb l'experiència.</p>
+                                <p>És per això que aquesta activitat es troba dividida en dos blocs, un primer que girarà en torn a debats sobre qüestions i exercicis que dureu a terme en el vostre fòrum d'especialista i un segon que implicarà a realització de tasques individuals orientades al donar continuitat al projecte des de la vessant de la vostra espcialitat.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+

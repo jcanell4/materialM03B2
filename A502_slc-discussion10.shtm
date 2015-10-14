@@ -1,0 +1,37 @@
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Debat - Comú de totes les especialitats</h2>
+                                      <!-- Avantatges de la modularitat usant classes addicionals -->
+                                      <!--Criteris de modularització -->
+                                     <h3> Modularitat usant classes adicionals</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                <!-- Avantatges de la modularitat usant classes addicionals -->
+                                <h2>Supòsits de partida pel debat</h2>
+                                <p>A continuació us presentarem un seguit de casos que us ajudaran a il·lustrar quines poden ser les raons que dugin a plantejar la divisió modular d'una aplicació. Els casos contenen també, de forma implícita, quins criteris cal tenir en compte per tal d'aconseguir una divisió òptima que redueixi realment la complicació de la implementació. Intenteu descobrir-los</p>
+                                <p>
+                                
+                                
+                                
+                                 algunes de les avantatges de la modulartzació basada en classes adicionals. Us demanem que els llegiu i contesteu en el vostre <span class="forumEspecialitat"></span></p>
+                                    <p>A) Independència dels mòduls</p>
+                                    <p>A) simplificació complexitat</p>
+                                    <p>A) Facilita la modificació i el reemplaçament</p>
+                                    <p>b) divisió organitzativa de l'equip </p>
+                                    <p>c) dades</p>
+                                    <p>d) Minimització de l'error usant biblioteques </p>
+                                    <p>d) Font única per un mateix codi! </p>
+                                    <p>1 Explicita els avaantges</p>
+                                    <p>tenin en compte els avantatges expliciatats enumera quins criteris diries que cal tenir en compte a l'hora de plantejar-se la modularització </p>
+                                    <p>assamblatge</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+

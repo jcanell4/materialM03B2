@@ -117,8 +117,19 @@ function toReplaceOnLoad(url, id, onError){
         dataType: "json",
          method: "POST"
     }).done(function(data) {
-       var selector;
        var defaultValues = data["defaultValues"];
+       var fReplaceByFile = function(url, type, selector){
+            $.ajax({
+                url:url,
+                dataType: type,
+                async: false,
+                method: "POST"
+            }).done(function(value){                
+                $(selector)[type](value);
+            }).fail(function(){
+                $(selector)[type]("Error");
+            });
+       }
        var getValue = function(value, defaultValues, data){
            var ret;
            if(typeof value === "string"){
@@ -153,6 +164,10 @@ function toReplaceOnLoad(url, id, onError){
                    value += getValue(activity.value[i], defalutValues, data);
                }
                $(selector).text(value);
+           }else if(activity.type=="file/text"){
+               fReplaceByFile(activity.value, "text", selector);
+           }else if(activity.type=="file/html"){
+               fReplaceByFile(activity.value, "html", selector);
            }else if(activity.type=="text"){
                $(selector).text(activity.value);
            }else if(activity.type=="html"){

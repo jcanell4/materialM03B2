@@ -434,7 +434,26 @@
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP4", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A503_Integracio1.html?asix"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
+        "forumEspecialitat": {"selector":".forumEspecialitat", "defaultValue":"fge"}
+    },
+    "A502A": {
+        "slc-toStart":{"selector":"#slc-toStart", "type":"file/html", "value":"A502_slc-toStart.shtm" }, 
+        "slc-discussion10":{"selector":"#slc-discussion10", "type":"file/html", "value":"A502_slc-discussion10.shtm" },
+
+        "idActivitat": {"selector":".idActivitat", "type":"ref", "name":"A502","value":"idActivitat"},
+        "nomActivitat": {"selector":".nomActivitat", "type":"ref", "name":"A502","value":"nomActivitat"},
+        "lliurament": {"selector":".lliurament", "type":"ref", "name":"A502","value":"lliurament"},
+        "dataRecomanada": {"selector":".dataRecomanada", "type":"ref", "name":"A502","value":"dataRecomanada"},
+        "dataLimit": {"selector":".dataLimit", "type":"ref", "name":"A502","value":"dataLimit"},
+        "categoria": {"selector":".categoria", "type":"ref", "name":"A502","value":"categoria"},
+        "tipus": {"selector":".tipus", "type":"ref", "name":"A502","value":"tipus"},
+        "bustiaLliurament": {"selector":".bustiaLliurament", "type":"ref", "name":"A502","value":"bustiaLliurament"},
+        "bustiaLliuramentUrl": {"selector":".bustiaLliuramentUrl", "type":"ref", "name":"A502","value":"bustiaLliuramentUrl"},
+        "informeLliurament": {"selector":".informeLliurament", "type":"ref", "name":"A502","value":"informeLliurament"},
+        "toNextActivity": {"selector":".toNextActivity", "type":"ref", "name":"A502","value":"toNextActivity"},
+        "toProjectStatement": {"selector":".toProjectStatement", "type":"ref", "name":"A502","value":"toProjectStatement"},
+        "forumEspecialitat": {"selector":".forumEspecialitat", "type":"ref", "name":"A502","value":"forumEspecialitat"}
     },
     "A503": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A503_Integracio1.html?asix'>A503</a>"},
