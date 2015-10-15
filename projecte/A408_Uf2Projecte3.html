@@ -627,7 +627,7 @@ resultat = cadena1.equalsIgnoreCase(cadena4); //aquí resultat valdrà <em>false
                             <div class=bodySlide>
                                 <p>En aquesta <b>activitat 408</b> teniu que realitzar els següents lliuraments:</p>
                                 <ul>
-					<li><b>Tasques organitzatives</b>: Heu d'escriure les actes de les reunions al <a class="forumTreball">fòrum de treball</a>.</li>     
+					<li><b>Tasques organitzatives</b>: Heu d'escriure les actes de les reunions al <span class="forumTreball"></span>.</li>     
 					<li><b>Tasques individuals</b>: Cal que envieu els lliuraments corresponents a  la <span class="bustiaLliurament"></span>. </p> 
                                 <p> Es important lliurar aquestes activitats abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class='dataLimit'></strong></p>
 								<p>És molt important per avançar en el vostre aprenentatge i seguiment de la UF2 que feu aquests exercicis proposats i els lliureu. Teniu en compte que aquestes activitats formen part del desenvolupament del projecte i, si no les realitzeu, després serà més complicat fer la següent part del desenvolupament. Per altra banda, el professor també podrà avaluar l’evolució del vostre aprenentatge. A més, i molt important, les <b>tasques individuals</b> esmentades són <b>qualificables</b>.</p>
@@ -749,6 +749,15 @@ resultat = cadena1.equalsIgnoreCase(cadena4); //aquí resultat valdrà <em>false
 
     <!-- specific functionality for this activ¡ty-->
     <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A408");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+            
+        /*
         iocSlider = new IocSlider();
         
         $("[data-display-on-set-slide]").each(function(){
@@ -788,6 +797,7 @@ resultat = cadena1.equalsIgnoreCase(cadena4); //aquí resultat valdrà <em>false
         $(document).ready(function(){
             toReplaceOnLoad("../data/toReplace.json", "A408");
         });
+        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 

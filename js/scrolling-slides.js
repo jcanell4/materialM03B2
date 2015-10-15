@@ -1,77 +1,3 @@
-/*
- * To relocate elements with existent attribute data-parent-selector as children of this 
- * attribute value.
- */
-$(document).ready(function(){
-    $("[data-parent-selector]").each(function(){
-        var parent = this.dataset.parentSelector;
-        var element = $(this).detach();
-        $(parent).append(element);        
-    });
-});
-
-/*
- * Captura les tecles fletxa-esq i fletxa-dreta per simular un click al botó
- * prevArrow o nextArrow respectivament.
- */
-$(document).keydown(function(e){
-    switch(e.which){
-        case 39:
-             $("#nextArrow").click();
-             break;
-         case 37:
-             $("#prevArrow").click();
-             break;
-    }
-    return true;
-});
-
-//jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    }
-});
-
-/* ----------------------------------------------------------- */
-/*  MOBILE MENU CLOSE 
-/* ----------------------------------------------------------- */ 
-
-$('.navbar-nav').on('click', 'li a', function() {
-  $('.navbar-collapse').collapse('hide');
-});
-
-/* ----------------------------------------------------------- */
-/*  Toggle Menu
-/* ----------------------------------------------------------- */
-// Closes the sidebar menu
-$("#menu-close").click(function(e) {
-    e.preventDefault();
-    $("#sidebar-wrapper").toggleClass("active");
-});
-
-// Opens the sidebar menu
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#sidebar-wrapper").toggleClass("active");
-});
-
-/*-----------------------------------*/
-/*  INFO PANEL
- *-----------------------------------*/
-//Set function to close the info-panel on click button panel-close 
-$(".panel-close").click(function(e) {
-    e.preventDefault();
-    var parent = $(this).parent();
-    $(parent).removeClass("active");
-    $(parent).children("div").each(function() {
-    //$("#emptypanel-wrapper > div" ).each(function() {
-        $(this).addClass("hidden");
-    });
-});
-
 //Set an extended function to jquery
 $.fn.extend({
     //Opens the info-panel
@@ -86,6 +12,78 @@ $.fn.extend({
 /*Object to manage the slider actions
  */
 IocSlider = function(){
+    $(document).ready(function(){
+        $("[data-parent-selector]").each(function(){
+            var parent = this.dataset.parentSelector;
+            var element = $(this).detach();
+            $(parent).append(element);        
+        });
+    });
+
+    /*
+     * Captura les tecles fletxa-esq i fletxa-dreta per simular un click al botó
+     * prevArrow o nextArrow respectivament.
+     */
+    $(document).keydown(function(e){
+        switch(e.which){
+            case 39:
+                 $("#nextArrow").click();
+                 break;
+             case 37:
+                 $("#prevArrow").click();
+                 break;
+        }
+        return true;
+    });
+
+    //jQuery to collapse the navbar on scroll
+    $(window).scroll(function() {
+        if ($(".navbar").offset().top > 50) {
+            $(".navbar-fixed-top").addClass("top-nav-collapse");
+        } else {
+            $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        }
+    });
+
+    /* ----------------------------------------------------------- */
+    /*  MOBILE MENU CLOSE 
+    /* ----------------------------------------------------------- */ 
+
+    $('.navbar-nav').on('click', 'li a', function() {
+      $('.navbar-collapse').collapse('hide');
+    });
+
+    /* ----------------------------------------------------------- */
+    /*  Toggle Menu
+    /* ----------------------------------------------------------- */
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    /*-----------------------------------*/
+    /*  INFO PANEL
+     *-----------------------------------*/
+    //Set function to close the info-panel on click button panel-close 
+    $(".panel-close").click(function(e) {
+        e.preventDefault();
+        var parent = $(this).parent();
+        $(parent).removeClass("active");
+        $(parent).children("div").each(function() {
+        //$("#emptypanel-wrapper > div" ).each(function() {
+            $(this).addClass("hidden");
+        });
+    });
+
+
+    
     this.hindx=-1;
     this.vindx=-1;
     this.watchers={"onSetCurrentSlide":[function(e){

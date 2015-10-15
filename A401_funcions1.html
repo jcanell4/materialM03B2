@@ -1133,6 +1133,17 @@ public class IllegalitatsAmbitsVariables {
 
     <!-- specific functionality for this activ¡ty-->
     <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("data/toReplace.json", "A401");
+            var iocSlider = new IocSlider();
+            iocSlider.addJssorSlider("slider1_container");
+        
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+
+/*
         iocSlider = new IocSlider();
         iocSlider.addJssorSlider("slider1_container");
 
@@ -1173,6 +1184,7 @@ public class IllegalitatsAmbitsVariables {
         $(document).ready(function(){
             toReplaceOnLoad("data/toReplace.json", "A401");
         });
+        */
     </script>
 
 </body>

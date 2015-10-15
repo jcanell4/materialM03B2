@@ -1163,6 +1163,15 @@ public class ExerciciDepuracio {
 
     <!-- specific functionality for this activ¡ty-->
     <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("data/toReplace.json", "A406");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+
+        /*
         iocSlider = new IocSlider();
         
         $("[data-display-on-set-slide]").each(function(){
@@ -1202,6 +1211,7 @@ public class ExerciciDepuracio {
         $(document).ready(function(){
             toReplaceOnLoad("data/toReplace.json", "A406");
         });
+        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 

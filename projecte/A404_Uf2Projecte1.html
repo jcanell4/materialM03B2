@@ -550,6 +550,15 @@
 
     <!-- specific functionality for this activ¡ty-->
     <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A404");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+
+        /*
         iocSlider = new IocSlider();
         
         $("[data-display-on-set-slide]").each(function(){
@@ -589,6 +598,7 @@
         $(document).ready(function(){
             toReplaceOnLoad("../data/toReplace.json", "A404");
         });
+        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 

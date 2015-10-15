@@ -687,7 +687,7 @@ carater = cadena.charAt(pos) //la variable caracter contindrà el valor 'a', don
                             <div class=bodySlide>
                                 <p>En aquesta <b>activitat 407</b> teniu que realitzar els següents lliuraments:</p>
                                 <ul>
-					<li><b>Tasques organitzatives</b>: Heu d'escriure les actes de les reunions al <a class="forumTreball">fòrum de treball</a>.</li>     
+					<li><b>Tasques organitzatives</b>: Heu d'escriure les actes de les reunions al <span class="forumTreball"></span>.</li>     
 					<li><b>Tasques individuals</b>: Cal que envieu els lliuraments corresponents a  la <span class="bustiaLliurament"></span> . Heu de tenir en compte que aquesta bústia és multilliurament, per tant, si ja teniu fet algun enviament anterior no us preocupeu que no s’esborrarà.</p> 
                                 <p> Es recomana lliurar aquestes activitats abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class='dataLimit'></strong></p>
 								<p>És molt important per avançar en el vostre aprenentatge i seguiment de la UF2 que feu aquests exercicis proposats i els lliureu. Teniu en compte que aquestes activitats formen part del desenvolupament del projecte i, si no les realitzeu, després serà més complicat fer la següent part del desenvolupament. Per altra banda, el professor també podrà avaluar l’evolució del vostre aprenentatge. A més, i molt important, les <b>tasques individuals</b> esmentades són <b>qualificables</b>.</p>
@@ -807,6 +807,15 @@ carater = cadena.charAt(pos) //la variable caracter contindrà el valor 'a', don
 
     <!-- specific functionality for this activ¡ty-->
     <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A407");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+        
+        /*
         iocSlider = new IocSlider();
         
         $("[data-display-on-set-slide]").each(function(){
@@ -846,6 +855,7 @@ carater = cadena.charAt(pos) //la variable caracter contindrà el valor 'a', don
         $(document).ready(function(){
             toReplaceOnLoad("../data/toReplace.json", "A407");
         });
+        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 

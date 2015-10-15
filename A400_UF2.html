@@ -668,6 +668,16 @@ Recordeu que aquesta nota representa el 80% de la qualificació de l'avaluació 
 
     <!-- specific functionality for this activ¡ty-->
     <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("data/toReplace.json", "A400");
+            var iocSlider = new IocSlider();
+        
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+
+        /*
         iocSlider = new IocSlider();
 
         hljs.addLineNumbers();
@@ -676,6 +686,7 @@ Recordeu que aquesta nota representa el 80% de la qualificació de l'avaluació 
         $(document).ready(function(){
             toReplaceOnLoad("data/toReplace.json", "A400");
         });
+        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 

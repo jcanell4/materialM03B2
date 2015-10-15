@@ -804,6 +804,15 @@ void inicialitzarArray(int[] param){
 
     <!-- specific functionality for this activ¡ty-->
     <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("data/toReplace.json", "A403");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+        
+        /*
         iocSlider = new IocSlider();
         
         $("[data-display-on-set-slide]").each(function(){
@@ -843,6 +852,7 @@ void inicialitzarArray(int[] param){
         $(document).ready(function(){
             toReplaceOnLoad("data/toReplace.json", "A403");
         });
+        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 

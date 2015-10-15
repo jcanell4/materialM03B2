@@ -388,6 +388,7 @@
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A408_Uf2Projecte3.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
+        "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "urlActivitatA403":{"selector":".urlActivitatA403", "type":"attr", "name":"href", "value":"../A403_funcions3.html?dam#slc-toDo__slc-toDo22"}
     },
     "A408": {
@@ -404,6 +405,7 @@
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A501_ClassesBiblioteques.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
         "A407_analisi_inicial":{"selector":".A407_analisi_inicial", "type":"attr", "name":"href", "value":"A407_Uf2Projecte2.html?dam#slc-individuals__slc-individuals0"},
+        "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "triaGrupEspecialitat":{"selector":".triaGrupEspecialitat", "defaultValue":"tge"}
     },
     "A501": {
@@ -436,8 +438,7 @@
         "forumEspecialitat": {"selector":".forumEspecialitat", "defaultValue":"fge"}
     },
     "A502A": {
-        "slc-toStart":{"selector":"#slc-toStart", "type":"file/html", "value":"A502_slc-toStart.shtm" }, 
-        "slc-discussion10":{"selector":"#slc-discussion10", "type":"file/html", "value":"A502_slc-discussion10.shtm" },
+        "m03b2Common":{"selector":"#m03b2Common", "type":"file/html", "value":"A502_common.shtm" }, 
 
         "idActivitat": {"selector":".idActivitat", "type":"ref", "name":"A502","value":"idActivitat"},
         "nomActivitat": {"selector":".nomActivitat", "type":"ref", "name":"A502","value":"nomActivitat"},

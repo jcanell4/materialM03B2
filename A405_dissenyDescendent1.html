@@ -1239,6 +1239,15 @@ public class Exercici2DissenyDescendent {
 
     <!-- specific functionality for this activ¡ty-->
     <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("data/toReplace.json", "A405");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+        
+        /*
         iocSlider = new IocSlider();
         
         $("[data-display-on-set-slide]").each(function(){
@@ -1278,6 +1287,7 @@ public class Exercici2DissenyDescendent {
         $(document).ready(function(){
             toReplaceOnLoad("data/toReplace.json", "A405");
         });
+        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 
