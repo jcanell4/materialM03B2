@@ -466,3 +466,25 @@ ol.nestedCounter ol > li:before {
     font-size: 0.65em;
 }
 
+.frameBox li{
+    font-size: 1em;
+}
+
+.frameBox{
+    margin: 1em auto;
+    border: 1px solid #888;
+    padding: 15px;
+    background: #eee;
+}
+
+.frameBoxHeader{
+    text-align: left;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+
+.smallFont{
+    font-size: 75%;
+}

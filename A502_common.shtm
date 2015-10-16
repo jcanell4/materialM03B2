@@ -89,7 +89,7 @@
                                         <li>Fer-vos palès quines solen ser les principals dificultats que acostumem a trobar-nos quan decidim codificar un disseny.</li>
                                 </ul>
                                 <p>L'objectiu principal és que aneu edificant les bases que us permetin enfronta-vos a reptes cada cop més complexes, però sense oblidar el repte que teniu davant, acabar el projecte. De fet, es tracta de processos complementaris, doncs finalitzar el repte amb èxit us aportarà la part de coneixement que només s'adquireix amb l'experiència.</p>
-                                <p>És per això que aquesta activitat es troba dividida en dos blocs, un primer que girarà en torn a debats sobre qüestions i exercicis que dureu a terme en el vostre fòrum d'especialista i un segon que implicarà a realització de tasques individuals orientades al donar continuitat al projecte des de la vessant de la vostra espcialitat.</p>
+                                <p>És per això que aquesta activitat es troba dividida en dos blocs, un primer que girarà en torn a debats sobre qüestions i exercicis que dureu a terme en el vostre fòrum d'especialista i un segon que implicarà a realització de tasques individuals orientades al donar continuïtat al projecte des de la vessant de la vostra especialitat.</p>
                              </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                                      <h2 >Debat - Comú de totes les especialitats</h2>
                                       <!-- Avantatges de la modularitat usant classes addicionals -->
                                       <!--Criteris de modularització -->
-                                     <h3> Modularitat usant classes adicionals</h3>
+                                     <h3> Modularitat usant classes addicionals i paquets</h3>
                                  </div>
                             </div>
                         </div>
@@ -118,17 +118,129 @@
                                 <!-- Avantatges de la modularitat usant classes addicionals -->
                                 <h2>Supòsits de partida pel debat</h2>
                                 <p>La modularització basada en la segregació del codi en diversos fitxers i biblioteques, que en JAVA suposa la creació  de classes addicionals organitzades en paquets, ha representat per el desenvolupament d'aplicacions una gran avantatge ja que ha permès crear aplicacions molt més complexes del que seria possible sense ella.</p>
-                                <p>Tot i així, cal anar molt en compte a l'hora de definir els mòduls i dissenyar les biblioteques, ja que la divisió implicarà inevitablement incrementar el nombre de funcions, que quedaran dispersades en múltiples fitxers. Si fem divisions sense criteri, o fem servir un criteri erroni, correm el risc d'incrementar la complexitat en lloc de reduir-la. Cal anar doncs, molt en comte i ser curosos a l'hora d'establir criteris per definir cada mòdul.</p>
-                                <p>A continuació us presentarem un seguit de reflexions exemples i afirmacions que us ajudaran a centrar el debat. Començarem amb una reflexió sobre la reutilització del codi.</p>
-                                <div class="iocexample">
-                                    <p id="aaa" class="ioctitle">aaa</p>
-                                    <div class="ioccontent em">
-                                       <p> Segurament, un dels criteris que més avantatge ha suposat per el desenvolupament de programari, ha estat la reutilització del codi, perquè així s'aconsegueix codificar més ràpidament, cometent molts menys erros. És evident que per poder reutilitzar codi en diferents contextos (diferents parts d'un programa, diferents aplicacions, etc.), cal separar aquelles parts que es poden reutilitzar, de les que difícilment podran reutilitzar-se a cap altra context. </p>
-                                    </div>
+                                <p>Tot i així, cal anar molt en compte a l'hora de definir els mòduls i dissenyar les biblioteques, ja que la divisió implicarà inevitablement incrementar el nombre de funcions, que quedaran dispersades en múltiples fitxers. Si fem divisions sense criteri, o fem servir un criteri erroni, correm el risc d'incrementar la complexitat en lloc de reduir-la.</p>
+                                <p>A continuació us presentarem un seguit de reflexions exemples i afirmacions que us han de servir de base per crear una guia que serveixi de pauta per aconseguir dividir modularment el codi d'una aplicació tenint en compte tots aquells criteris que ens permetin assegurar que la divisió serà útil i reduirà la complexitat.</p>
+                                <h3 id="reutilitzacio" class="frameBoxHeader">Reutilització</h3>
+                                <div class="frameBox smallFont">
+                                    <p> Segurament, un dels criteris que més avantatge ha suposat per el desenvolupament de programari, ha estat la reutilització del codi, perquè així s'aconsegueix codificar més ràpidament, cometent molts menys erros. És evident que per poder reutilitzar codi en diferents contextos (diferents parts d'un programa, diferents aplicacions, etc.), cal separar aquelles parts que es poden reutilitzar, de les que difícilment podran reutilitzar-se a cap altra context. </p>
                                 </div>
-                                
-                                <p>  
-                                il·lustrar quines poden ser les raons que dugin a plantejar la divisió modular d'una aplicació. Els casos contenen també, de forma implícita, quins criteris cal tenir en compte per tal d'aconseguir una divisió òptima que redueixi realment la complicació de la implementació. Intenteu descobrir-los</p>
+                                <h3 id="agrupacio_tematica" class="frameBoxHeader">Agrupació temàtica</h3>
+                                <div class="frameBox smallFont">
+                                   <p>L'ús de funcions auxiliars de tercers durant la codificació d'una aplicació (és a dir, l'ús de funcions implementades per programadors diferents als que codificaran l'aplicació final) requereix d'un temps d'aprenentatge per tal que aquest últims entenguin quin ús es pot donar a cada funció i en quins contextos, o quina és la sintaxi (nom, paràmetres, casos d'error, etc) requerida en cada cas. Una bona documentació de les funcions resultarà imprescindible per dur a terme aquest aprenentatge.</p>
+                                   <p>Malgrat tot, si el nombre de funcions amb les que un programador ha de treballar és gran, el temps d'aprenentatge serà també elevat i les possibilitats d'equivocar-se seran també significatives, fins i tot tractant-se de funcions pròpies (implementades per un mateix), doncs la capacitat d'atenció i memòria de l'esser humà és força limitada. L'agrupació temàtica pot ajudar a localitzar les funcions i la seva documentació, reduint el ventall inicial. Pot també facilitar l'aprenentatge i reduir el nombre d'errades. Plantegeu-vos si per exemple, el fet de tenir totes les funcions matemàtiques que JAVA suporta, agrupades dins la classe Math, pot ajudar-vos a localitzar la funció que calcula el sinus d'un angle malgrat que inicialment no en coneguem ni el nom ni la sintaxi. Si fos necessari, degut a un nombre de funcions excessiu, es podria reduir la quantitat, seleccionant una temàtica més específica. Per exemple s'hagués pogut crear una classe per funcions trigonomètriques, una altra per funcions estadístiques, una altra per les aritmètiques i així successivament.</p>
+                                   <p>És més, usant adequadament els paquets, podríem crear una jerarquia de menor a major especificitat de forma que la localització de qualsevol element de la jerarquia (paquet, classe o funció) resulti trivial.</p>
+                                </div>
+                                <h3 id="organitzacio_estructural" class="frameBoxHeader">Organització estructural</h3>
+                                <div class="frameBox smallFont">
+                                    <p>La organització estructural fa referència a la divisió jeràrquica que les aplicacions grans solen tenir de forma intrínseca. Per il·lustrar-ho, farem una mica de <a href="#" data-toggle="tooltip"  data-html="true" data-original-title="La pràctica del <em>codi-ficció</em> és una eina de reflexió molt útil per l'aprenentatge. Intenteu-lo practicar sovint"><em>"codi-ficció"</em></a>. És a dir, prendrem de model una aplicació ben coneguda per nosaltres i intentarem deduir com la implementaríem fent servir els recursos i coneixements que tinguem en cada moment.</p>
+                                    <p>Val a dir gran part de la organització estructural esdevé a partir de l'anàlisi descendent. Com que ja sabeu com fer aquests anàlisis, entrarem ràpidament en matèria.</p>
+                                    <p>Sigui el nostre model un navegador qualsevol. Si hi donem alguna volta podem arribar a la conclusió que un navegador és una aplicació que permet carregar múltiples recursos i presentar-los a l'usuari seguint un conjunt de regles ben definides. Els recursos en realitat són dades que es troben en diversos formats ben identificats (html, imatges, vídeos, sons, json, javascript, css, etc.). Atenent aquest disseny, podem proposar segregar la funcionalitat del navegador en dos grans blocs, els processos usats per carregar els recursos d'allà on es trobin, i els encarregats de mostrar-los a l'usuari (habitualment s'anomenen processos de renderització). La càrrega dels recursos, a la vegada implica l'entrada de l'identificador del recurs, la localització de la font on es trobi, l'accés a la font i la obtenció de les dades del recurs. De forma semblant, mostrar els recursos a l'usuari implicaria analitzar el format de les dades del recurs, extreure'n les dades a mostrar i les regles de presentació que cal aplicar, seleccionar el dispositiu de sortida (pantalla, altaveus, etc.), recomposar les dades de forma que el dispositiu les entengui i enviar-les al dispositiu. Per tenir-ho ben clar, fem un esquema abans de continuar.</p>
+                                    <ol class="nestedCounter">
+                                       <li>Carrega de recursos
+                                            <ol>
+                                                <li>Entrada identificador del recurs</li>
+                                                <li>Obtenció del recurs
+                                                    <ol>
+                                                        <li>Localització de la font</li>
+                                                        <li>Petició del recurs a la font</li>
+                                                        <li>Recepció de les dades</li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>Renderització dels recursos
+                                            <ol>
+                                                <li>Anàlisi de les dades del recurs</li>
+                                                <li>Aplicar les regles de renderització d'acord amb les dades analitzades</li>
+                                                <li>Composar les dades en el format que el dispositiu requereix</li>
+                                                <li>Enviar les dades al dipositiu</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                    <p>L'esquema, a mode de disseny descendent, ens permet definir bona part de l'estructura. A partir d'aquí reflexionem que segurament, en funció del tipus de recurs, de si aquest es troba a en un servidor web o ftp o en el propi sistema de fitxers, etc, els processos a implementar hauran de ser molt diferents i serà necessari plantejar la separació de la funcionalitat, d'acord amb aquests paràmetres.</p>
+                                    <p>Decidim doncs, incorporar allà on sigui necessari un graó més de la jerarquia que ens ajudi a separar correctament les accions a realitzar segons la tipologia.</p>
+                                    <ol class="nestedCounter">
+                                       <li>Carrega de recursos
+                                            <ol>
+                                                <li>Entrada identificador del recurs</li>
+                                                <li>Obtenció del recurs
+                                                    <ol>
+                                                        <li>Petició
+                                                            <ol>
+                                                                <li>web
+                                                                    <ol>
+                                                                        <li>Localització de la font</li>
+                                                                        <li>Petició del recurs a la font</li>
+                                                                    </ol>
+                                                                </li>
+                                                                <li>ftp
+                                                                    <ol>
+                                                                        <li>Localització de la font</li>
+                                                                        <li>Petició del recurs a la font</li>
+                                                                    </ol>
+                                                                </li>
+                                                                <li>sistema de fitxers
+                                                                    <ol>
+                                                                        <li>Localització de la font</li>
+                                                                        <li>Petició del recurs a la font</li>
+                                                                    </ol>
+                                                                </li>
+                                                            </ol>
+                                                        </li>
+                                                        <li>Recepció de les dades
+                                                            <ol>
+                                                                <li>Recepció de dades en format html</li>
+                                                                <li>Recepció de dades en format css</li>
+                                                                <li>Recepció de dades en format jpeg</li>
+                                                                <li>...</li>
+                                                            </ol>
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>Renderització dels recursos
+                                            <ol>
+                                                <li>Renderització html
+                                                    <ol>
+                                                        <li>Anàlisi de les dades del recurs</li>
+                                                        <li>Aplicar les regles de renderització d'acord amb les dades analitzades</li>
+                                                        <li>Composar les dades en el format que el dispositiu requereix</li>
+                                                        <li>Enviar les dades al dipositiu</li>
+                                                    </ol>
+                                                </li>
+                                                <li>Renderització jpeg
+                                                    <ol>
+                                                        <li>Anàlisi de les dades del recurs</li>
+                                                        <li>Aplicar les regles de renderització d'acord amb les dades analitzades</li>
+                                                        <li>Composar les dades en el format que el dispositiu requereix</li>
+                                                        <li>Enviar les dades al dipositiu</li>
+                                                    </ol>
+                                                </li>
+                                                <li>Renderització mpeg
+                                                    <ol>
+                                                        <li>Anàlisi de les dades del recurs</li>
+                                                        <li>Aplicar les regles de renderització d'acord amb les dades analitzades</li>
+                                                        <li>Composar les dades en el format que el dispositiu requereix</li>
+                                                        <li>Enviar les dades al dipositiu</li>
+                                                    </ol>
+                                                </li>
+                                                <li>...</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                    <p>En traslladar aquesta estructura al llenguatge JAVA, podem intuir que caldrà representar-se mitjançant paquets i classes. Els paquets atorgaran la vessant jeràrquica i les classes la funcional.</p>
+                                    <p>Fixeu-vos que en una estructuració com aquesta, resulta relativament fàcil de localitzar una funcionalitat específica, seguint la lògica de la jerarquia. També resulta simple de repartir, perquè la jerarquia permet definir molt clarament què fa cada una de les parts i quines diferencies hi ha entre elles. En aquest sentit facilita el repartiment del treball en equip.</p>
+                                    <p>A més, una implementació que respecti aquest tipus d'estructura admet modificacions de forma senzilla, ja sigui per afegir nois tipus, com per canviar algun procés dels ja existents.</p>
+                                </div>
+                                <h3 id="interficie_control_tractament" class="frameBoxHeader">Interfície d'usuari control i tractament de dades</h3>
+                                <div class="frameBox smallFont">
+                                   <p>Un aspecte que avui dia cobra especial importància, és la divisió de la funcionalitat en tres grans blocs o categories: la categoria que agrupa la funcionalitat referia a l'intercanvi d'informació entre l'aplicació i l'usuari, el que es coneix com interfície d'usuari; la funcionalitat referida a la interpretació de les peticions de l'usuari, és a dir, la funcionalitat que a partir, de les entrades de l'usuari interpreta quina és la demanda i encamina el flux de l'execució a la consecució d'aquest objectiu i finalment la categoria que agrupa la funcionalitat encarregada de tractar les dades per tal d'obtenir els resultats esperats.</p>
+                                   <p>La gram majoria d'aplicacions que s'implementen actualment segueixen aquestes pautes, doncs això permet crear aplicacions que es poden adaptar molt ràpidament a diferents plataformes o dispositius. Avui és habitual trobar una mateixa aplicació adaptada al PC i al mòbil i també a la plataforma WEB. Els paquets integrats d'oficina (tractament de textos, fulls de càlcul, etc.) en són una exemple. L'aplicació Drive de Google és un versió WEB dels paquets integrats d'escriptori com libreoffice. A més existeixen versions versions per a mòbils i tablets.</p>
+                                   <p>La principal dificultat que presenta aquest tipus</p>
+                                </div>
+
+
                                 <p>
                                 
                                 
