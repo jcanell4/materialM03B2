@@ -237,7 +237,7 @@
                                 <div class="frameBox smallFont">
                                    <p>Un aspecte que avui dia cobra especial importància, és la divisió de la funcionalitat en tres grans blocs o categories: la categoria que agrupa la funcionalitat referia a l'intercanvi d'informació entre l'aplicació i l'usuari, el que es coneix com interfície d'usuari; la funcionalitat referida a la interpretació de les peticions de l'usuari, és a dir, la funcionalitat que a partir, de les entrades de l'usuari interpreta quina és la demanda i encamina el flux de l'execució a la consecució d'aquest objectiu i finalment la categoria que agrupa la funcionalitat encarregada de tractar les dades per tal d'obtenir els resultats esperats.</p>
                                    <p>La gram majoria d'aplicacions que s'implementen actualment segueixen aquestes pautes, doncs això permet crear aplicacions que es poden adaptar molt ràpidament a diferents plataformes o dispositius. Avui és habitual trobar una mateixa aplicació adaptada al PC i al mòbil i també a la plataforma WEB. Els paquets integrats d'oficina (tractament de textos, fulls de càlcul, etc.) en són una exemple. L'aplicació Drive de Google és un versió WEB dels paquets integrats d'escriptori com libreoffice. A més existeixen versions versions per a mòbils i tablets.</p>
-                                   <p>La principal dificultat que presenta aquest tipus</p>
+                                   <p>La principal dificultat que presenta aquest tipus de modularització és que habitualment quan programem, tendim a barrejar les tres categories en una mateixa funció i per tant cal fer una esforç per separar.</p>
                                 </div>
 
 
