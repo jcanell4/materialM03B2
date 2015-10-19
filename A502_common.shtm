@@ -214,7 +214,7 @@
                                         <p>Aquesta seria per dir-ho d'alguna manera l'arrel a partir de la qual començaríeu a penjar-hi classes i paquets més específics.</p>
                                     </div>
 
-                                    <h3 id="us_de_paquets_obligatoris" class="frameBoxHeader">Aïllament del codi reutilitzable</h3>
+                                    <h3 id="aillament_de_codi_reutilitzable" class="frameBoxHeader">Aïllament del codi reutilitzable</h3>
                                     <div class="frameBox smallFont">
                                         <p>És evident que si el que volem és poder reutilitzar funcions, no només cal adaptar les funcions fent que algunes d'elles siguin realment reusables, sinó que cal separar perfectament les funcions genèriques (reutilitzables) de les específiques (poc reutilitzables). L'ideal és agrupar les funcions genèriques en biblioteques (paquets i classes) per tal de poder-les passar en bloc d'un projecte a un altre.</p>
                                     </div>
@@ -321,7 +321,31 @@
                                             </li>
                                        </ul>
                                     </div>                               
-                                    <p>Fes les teves propostes al <a target="_blank" class="guiaModularitzacio">document compartit de GoogleDocs</a>. </p>
+                                    <h3 id="dades_i_gestors de dades" class="frameBoxHeader">Dades i gestors de dades</h3>
+                                    <div class="frameBox smallFont">
+                                        <p>Separar les dades i unificar-les en una estructura, és una bona solució per tenir un accés general a les dades des de qualsevol punt de l'aplicació peró evitant els inconvenients de les declaracions globals. Així, les dades quedarien sempre encapsulades en una estructura declarada com a variable local que caldria passar per paràmetre a les diferents funcions, però un cop rebut el paràmetre resulta fàcil tenir accés a qualsevol valor de l'estructura.</p>
+                                        <p>Tot i així, si l'estructura de dades presenta certa complexitat, pot resultar util per els programadors que no han dissenyat l'estructura disposar d'una classe que els faciliti l'accés. Aquesta classe actuaria com a gestor de les dades i permetria obtenir o assignar valors parcials a les dades sense necessitat de coneixer exactament l'estructura interna. Es a dir contindria funcions per facilitat l'accés a parts de l'estructura de les dades, tant per llegir els valors com per modificar-los.</p>
+                                    </div>
+                                    <h3 id="interficie_i_control" class="frameBoxHeader">Interfície d'usuari i control d'accions</h3>
+                                    <div class="frameBox smallFont">
+                                        <p>Una altra opció cada cop més usada consisteix en separar radicalment el codi destinat a mostrar informació i capturar entrades de l'usuari (el que habitualment es coneix com interfície d'usuari de l'aplicació) del que podriem dir, el tractament de les dades.</p>
+                                        <p>De fet, normalment es classifiquen les funcions en tres categories i s'agrupen segons aquestes. Les 3 categories són: interfície d'usuari, encarragada de l'intercanvi d'informació entre l'aplicació i l'usuari, control de les peticions, encarregada de gestionar cada una de les peticions del l'usuari a fi de reconduir el flux del programa per aconseguir resoldre amb èxit la demanda i una tercera categoria encarregada del tractament de les dades per a resoldre cada una de les demandes que l'aplicació permeti. </p>
+                                        <p>Els avantatges que això implica són:</p>
+                                        <ul>
+                                            <li>Augmentar la reusabilitat de les funcions</li>
+                                            <li>Peder sofisticar la interficie de l'usuari i el control de peticions sense afectar a l'essencia de l'aplicació (tractament de dades) que seguira treballant de la mateixa manera.</li>
+                                            <li>Permetre crear aplicacions identiques en diferents plataformes (WEB, local) o per diversos dispositius (PC, tablet, smartphone, etc.)</li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <p>Fes les teves propostes al <a target="_blank" class="guiaModularitzacio">document compartit de GoogleDocs</a>. No es tracat que repetiu els casos aquí exposats, sinó que el que se us demana és que feu entre tots una guia pràctica de modularització d'una palicació on quedi clar quins són els diferents passos a fer per dissenyar els mòduls que l'aplicació haurà de tenir. La guia ha de partir del moment zero, és a dir no ha de presuposar que hi ha res fet.</p>
+                                    <p>La hauria de ser esquemàtica i expressar-se en termes com: </p>
+                                    <ol class="nestedCounter">
+                                        <li>Escriure el disseny descendent de l'aplicació</li>
+                                        <li>Fer una primera organització dels paquest i classes que es necessitarien.</li>
+                                        <li>Buscar quines funcions necessitarien biblioteques genèriques i quines biblioteques caldrien</li>
+                                        <li>...</li>
+                                    </ol>
                                 </div> 
                             </div>
                         </div>

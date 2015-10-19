@@ -2,15 +2,15 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Què cal fer - Funcions</h2>
-                                     <h3> Exercici 3- Implementació de la resta de funcions i integració de tot el codi</h3>
+                                     <h2 >Debat 5 - Específic de l'especialitat</h2>
+                                     <h3> Planificació de pantalles i control</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>ddddddd</p>
+                                    <p>Seguim amb el plantejament iniciat en el debat 4. Una bona manera de planificar una aplicació, a més d'identificar la seva funcionalitat pròpia (el que em convingut en anomenar tractaments de dades) consisteix també en identificar quines informacions caldrà mostrar a l'usuari (pantalles) i quines opcions queden obertes a cada una d'aquestes pantalles </p>
                                 </div> 
                             </div>
                         </div>
