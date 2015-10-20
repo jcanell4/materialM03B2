@@ -2,15 +2,61 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Què cal fer - Funcions</h2>
-                                     <h3> Exercici 3- Implementació de la resta de funcions i integració de tot el codi</h3>
+                                     <h2 >Debat 4 - Específic de l'especialitat</h2>
+                                     <h3> Estructura de dades: interfície, control i tractament de dades</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>ddddddd</p>
+                                    <p>Com ja podeu intuir, escollir una bona organització de les dades, ben estructurades, de ràpid accés i fàcilment identificables, és clau en el desenvolupament de qualsevol aplicació. Ara bé, com la majoria de coses complexes, no hi ha una recepta que ens determini quina és la millor organització. És més, sovint no existeix una solució ideal sinó que les diverses solucions afavoreixen més uns aspectes en detriment d'un altres, i cal escollir, en funció de les prioritats de l'aplicació una solució prou eficient i adequada. De fet, l'experiència i el sentit comú tenen un pes molt gran en la presa de decisions, però és important no deixar-se endur per prejudicis ni suposicions i raonar lògicament les decisions preses, sobre tot quan es comença.</p>
+                                    <p>Abans de continuar, hauríem de preguntar-nos què és una estructura de dades i com es fa servir. En sí, el concepte és fàcil, però per usar-lo cal tenir ben clar el significat d'instància de l'estructura i conèixer unes regles bàsiques per no trobar-nos amb sorpreses. És el que intentarem explicar ara.</p>
+                                    <p class="iocimportant">Les estructures de dades són organitzacions més o menys complexes de dades, de tal forma que la seva organització ens configura un valor extra que ens ajuda a interpretar la informació que representen. Per exemple, hem de considerar una estructura de dades el conjunt de valors que poden identificar i representar una persona. Per exemple el seu nom, la seva edat, el seu DNI, les titulacions que posseeix, els treballs que ha realitzat, etc.</p>
+                                    <p>Els llenguatges de programació donen suport a les estructures de dades per mitjà dels tipus compostos de dades i concretament, el llenguatge JAVA, fa servir classes per definir els seus tipus de dades compostos.</p>
+                                    <p class="iocimportant">Els tipus de dades compostos (classe en el llenguatge JAVA) permeten definir com s'identifiquen i organitzen els valors entre sí. Com identificadors usarem noms conceptuals que ens ajudin a interpretar el que representen.</p>
+                                    <p>Per exemple, si haguéssim d'implementar una calculadora que hagués de fer les 4 operacions bàsiques entre dos números qualsevol, el tipus compost a fer servir podria ser:</p>
+                                    <pre><code class="java">
+package ioc.m03.uf2.funcions.a502;
+
+public class DadesCalculadora {
+    double operador1;
+    double operador2;
+    char operacio;    
+    double resultat;
+}
+                                    </code></pre>
+                                    <p>Fixeu-vos que els tipus compostos no són les dades pròpiament, sinó les variables de classe que contindran les dades. En altres paraules, són el que defineix quina forma han de tenir les dades, com han de ser, quins seran els identificadors dels valors i quina la organització interna.</p>
+                                    <p>I les dades? com hi afegim les dades? Abans d'explicar-ho m'agradaria remarcar que les dades no s'emmagatzemen a l'estructura. El llenguatges de programació només poden emmagatzemar dades a la memòria i és allà on aniran a parar les dades. Ara bé, per a què serveixen aleshores els tipus compostos? Doncs l'explicació que més s'hi aproxima és que actuen de plantilla. Així, els tipus compostos emmotllen la memòria per poder-hi emmagatzemar dades en la forma definida en cada tipus compost. En l'argot dels llenguatges de desenvolupament, en comptes de parlar d'emmotllar, es parla d'instanciar. De fet, les dades de la memòria són instancies d'algun tipus de dades (siguin o no compostos).</p>
+                                   <figure id ="figura_instanciacio" class="left">
+                                        <img width="464" src="images/activities/tipusCompostInstancia.png" alt="instanciació de tipus compostos">
+                                        <figcaption style="width: 510px; max-width: 75%;">
+                                            <span class="figuretitle">figura </span> Instanciació d'un tipus compost.                               
+                                        </figcaption>
+                                    </figure>
+                                    <p>Cada tipus compost pot instanciar múltiples dades a la memòria de forma simultània. Cada dada manté els seus propis valors.</p>
+                                    <p> A la pràctica, la instanciació es fa sobre una variable i es fa servir la paraula clau <em>new</em> seguida del tipus compost a instanciar amb els parèntesis d'execució:</p>
+                                    <pre><code class="java">
+DadesCalculadora operacio1 = new DadesCalculadora();
+DadesCalculadora operacio2 = new DadesCalculadora();
+                                    </code></pre>
+                                    <p>A partir d'una instancia de tipus compost (variable), podem accedir als seus elements per modificar o obtenir el seu valor escrivint després del nom de la variable, un punt seguit del nom de l'element. Exemple:</p>
+                                  <pre><code class="java">
+operacio1.operador1 = 5;
+operacio1.operador2 = 3;
+operacio1.operacio = '+';
+...
+if(operacio1.operacio == '+'){
+    operacio1.resultat = operacio1.operador1 + operacio1.operador2;
+}
+                                  </code></pre>
+                                    <p>En el llenguatge JAVA no és possible donar valors a una estructura si no s'ha creat la instancia del seu tipus compost. Si ho féssim obtindríem un error:</p>
+                                    <pre><code class="java">
+DadesCalculadora operacio2;
+
+operacio1.operador1 = 7; //Això dona error perquè no s'ha intanciat la variable: operacio2 = new DadesCalculadora()
+                                    </code></pre>
+                                    <p>El tipus compos</p>
                                 </div> 
                             </div>
                         </div>
