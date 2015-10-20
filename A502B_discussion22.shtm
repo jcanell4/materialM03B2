@@ -2,15 +2,41 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Què cal fer - Funcions</h2>
-                                     <h3> Exercici 3- Implementació de la resta de funcions i integració de tot el codi</h3>
+                                     <h2 >Debat 4 - Específic de l'especialitat</h2>
+                                     <h3> Estructura de dades: Disseny i implementació</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>ddddddd</p>
+                                    <p>Ara, us plantejarem un debat específic sobre estructura de dades l'objectiu del qual és que aprengeu una mica més a dissenyar estructures de dades i implementar-les en JAVA, prevenint els possibles problemes que se'n puguin derivar.</p>
+                                    <p>Per fer-ho, reprendrem l'exemple que us va servir com introducció del concepte de tipus compost. L'aplicacióm del joc de dames. Refesquem la memòria, es tracta d'un joc de taula on disposem de 24 fitxes (12 blanques i 12 negres) en un tauler de 8x8 caselles. El joc consisteix en que cada jugador per torns van movent una única fitxa cada cop, intentant menjar-se les de l'adversari. Es va convenir que per definir les dades del joc, era necessari representar el tauler de m anera que permeti indicar la posició de cada fitxa. També es volia portar el registre de quants torns s'han jugat per tal de saber quin és el jugador al que li ha de tocar moure en cada moment. Recordeu també que en un moment determinates va decidir mantenir algunes dades dels jugadors i per fer-ho es va optar per crear un segon tipos compost anomenat Jugador. L'estructures tenien la forma següent:</p>
+                                    <pre><code class="java">
+public class Jugador {    
+    String nom;
+    int partidesGuanyades;
+}
+                                  
+
+public class JocDames {    
+    static final int CASELLA_BUIDA = 0;
+    static final int FITXA_BLANCA = 1;
+    static final int FITXA_NEGRA = 2;
+
+    int[][] tauler = new int[8][8];
+    int torn;
+    Jugador jugadorBlanques;
+    Jugador jugadorNegres;        
+}                                        
+                                    </code></pre>
+                                    <p>Aturem-nos aquí per a fer un exercici de reflexió sobre el disseny de les dades. És importat no anar farcint l'estructura de dades superflues, perquè això pot arribar a ser contraproduent. Per exemple si la raó de mantenir dins l'estructura <em>JocDames</em> els dos jugadors fos el d'anar actualitzant el nombre de patrtides guanyades, tenint en compte que fins que no s'acabi la partida, no es podrà actualitzar i que l'estructura JocDames només tindria validesa mentre dura una partida, sembla que en aquest cas seria millor mantenir dues estructures separades i ananr actualitzant les partides dels jugadors cada cop que una partida finalitzi. </p>                                    
+                                    <p>En aquest escenari, potser el més assenyat seria disposar de dos tipus totalment independents que crearien les instancies just en el moment que fora necessari, i s'eliminarien quan deixessin de ser-ho. Aquest seria el cas de JocDama. De fet les intancies de JocDama només són necessaris quan comenci una partida i deixen de ser-ho en quan s'acabin</p>
+
+
+
+
+                                    <p>En aquest escenari, potser fins i tot, seria adequat plantejarnos si fora possible mantenir ambdós jugadors junts, potser en un array de jugadors de manera que   </p>
                                 </div> 
                             </div>
                         </div>
