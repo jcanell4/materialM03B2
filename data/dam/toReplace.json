@@ -467,6 +467,9 @@
     },
     "A502B": {
         "m03b2Common":{"selector":"#m03b2Common", "type":"file/html", "value":"A502_common.shtm" }, 
+        "discussion21":{"selector":"#slc-discussion21", "type":"file/html", "value":"A502B_discussion21.shtm" }, 
+        "discussion22":{"selector":"#slc-discussion22", "type":"file/html", "value":"A502B_discussion22.shtm" }, 
+        "toDo":{"selector":"#slc-toDo", "type":"file/html", "value":"A502B_individuals.shtm" }, 
 
         "idActivitat": {"selector":".idActivitat", "type":"ref", "name":"A502","value":"idActivitat"},
         "nomActivitat": {"selector":".nomActivitat", "type":"ref", "name":"A502","value":"nomActivitat"},
@@ -488,6 +491,9 @@
     },
     "A502C": {
         "m03b2Common":{"selector":"#m03b2Common", "type":"file/html", "value":"A502_common.shtm" }, 
+        "discussion21":{"selector":"#slc-discussion21", "type":"file/html", "value":"A502C_discussion21.shtm" }, 
+        "discussion22":{"selector":"#slc-discussion22", "type":"file/html", "value":"A502C_discussion22.shtm" }, 
+        "toDo":{"selector":"#slc-toDo", "type":"file/html", "value":"A502C_individuals.shtm" }, 
 
         "idActivitat": {"selector":".idActivitat", "type":"ref", "name":"A502","value":"idActivitat"},
         "nomActivitat": {"selector":".nomActivitat", "type":"ref", "name":"A502","value":"nomActivitat"},
