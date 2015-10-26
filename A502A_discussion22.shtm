@@ -108,10 +108,232 @@
                                      </table>
                                      <br/>
                                      <p>Com a norma general, podem establir que cada nucli serà una funció, i que les accions de cada nucli es correspondran també amb funcions que caldrà identificar. Les connexions acostumaran a ser crides, exceptuant si es tracta d'un retorn a un nucli anterior, com és el cas de <em>trucadaPerAgenda</em> o <em>trucadaDirecta</em> que en ambdós casos es retorna al <em>menuPrincipal</em> en acabar la trucada. En tractar-se de crides a funcions, els retorns són intrínsecs a la finalització de la crida.</p> 
-                                     <p>Les funcions caldrà organitzar-les en classes i les classes en paquets seguint el manual que heu realitzat amb els vostres companys. Per exemple:</p>
+                                     <p>Les funcions caldrà organitzar-les en classes i les classes en paquets seguint el manual que heu realitzat, en un debat anterior, amb els vostres companys. Per exemple aplicant el que s'ha explicat a l'aplicació de la gestió de trucades i mssatges via SMS, podriem dissenyar un esquelet semblant a:</p>
                                      <pre><code class="java">
+
+/*<strong style="background-color: yellow;">Fitxer ioc/m03/serveismb/GestorComunicacio.java </strong>*/
+package ioc.m03.serveismbl;
+
+public class GestorComunicacio {
+    /**
+     * Inicialitza l'aplicació, les dades, mostra el menu principal i 
+     * gestiona les crides segons la opció escollida
+     */
+    public void inici(){
+        //A CODIFICAR... mostrar menú i crida a controlPrincipal
+    }
+    
+    /**
+     * Selecciona la crida adequada en funció de la opció que arriba per paràmetre
+     * @param opcio és el selector per escollir la crida
+     * @param dades és l'estructura de dades iniicalitzada necessària per passar a les crides
+     * @return un booleà indicant si la opció passada implica la sortida de l'execució o no
+     */
+    public boolean controlOpcioPrincipal(char opcio /*, EstructuraDades dades*/){
+        boolean ret=false;
+        //A CODIFICAR... 
+        
+        return ret;
+    }
+    
+   /**
+    * Mostra el menú d'inci de la gestió de trucades i fa les crides 
+    * pertinents segons la opció escollida
+    * @param dades és l'estructura de dades iniicalitzada necessària per passar a les crides
+    */ 
+   public void iniciTrucades(/*EstructuraDades dades*/){
+        //A CODIFICAR... 
+   }
+   
+    /**
+     * Selecciona la crida adequada en funció de la opció que arriba per paràmetre
+     * @param opcio és el selector per escollir la crida
+     * @param dades és l'estructura de dades iniicalitzada necessària per passar a les crides
+     * @return un booleà indicant si la opció passada implica la sortida de l'execució o no
+     */
+    public boolean controlOpcioTrucades(char opcio /*, EstructuraDades dades*/){
+        boolean ret=false;
+        //A CODIFICAR... 
+        
+        return ret;
+    }
+    
+    /**
+     * Demana a l'usuari el número a marcar i fa la trucada. Seguidament 
+     * actualitzarà l'estadística de els dades
+     * @param dades és l'estructura de dades iniicalitzada necessària per 
+     * actualitzar l'estadística
+     */
+    public void trucarAmbMarcatgeDirecte(/*EstructuraDades dades*/){
+        //A CODIFICAR... 
+    }
+
+    /**
+     * Demana a l'usuari que seleccioni un contacta de la llista de contactes, 
+     * extreu el seu número i fa la trucada. Seguidament actualitzarà 
+     * l'estadística de els dades
+     * @param dades és l'estructura de dades inicialitzada necessària per 
+     * actualitzar l'estadística
+     */
+    public void trucarAmbLlistaDeContactes(/*EstructuraDades dades*/){
+        //A CODIFICAR... 
+        
+    }
+    
+    /**
+     * Demana a l'usuari que escrigui el missatge i un cop escrit, es demana també 
+     * el número a marcar i s'envia el text per SMS. Seguidament 
+     * actualitzarà l'estadística de els dades
+     * @param dades és l'estructura de dades inicialitzada necessària per 
+     * actualitzar l'estadística
+     */
+    public void enviarSmsAmbMarcatgeDirecte(/*EstructuraDades dades*/){
+        //A CODIFICAR... 
+    }
+
+    /**
+     * Demana a l'usuari que escrigui el missatge i un cop escrit, es demana a que se 
+     * seleccioni un contacte per extreure el número a marcar. Amb el text i 
+     * el número es fa l'enviament SMS. Seguidament actualitzarà l'estadística 
+     * de els dades
+     * @param dades és l'estructura de dades inicialitzada necessària per 
+     * actualitzar l'estadística i extreure la llista de contactes
+     */
+    public void enviarSmsAmbLlistaDeContactes(/*EstructuraDades dades*/){
+        //A CODIFICAR... 
+        
+    }
+    
+    /**
+     * Mostrar la llista dels contactes, demana que se seleccioni un i li extreu 
+     * el seu número de telèfon que serà utilitzat per realitzar la trucada
+     * @param dades és l'estructura de dades inicialitzada necessària per 
+     * extreure la llista de contactes
+     * @return 
+     */
+    public int seleccionarNumeroContacte(/*EstructuraDades dades*/){
+        int ret=0;
+        //A CODIFICAR... 
+        
+        return ret;        
+    }
+    
+    /**
+     * Realitza la trucada del número passat per paràmetre i retorna el número 
+     * de segons que ha durat.
+     * @param numero és el número de telèfon a marcar expressat en una array de chars
+     */
+    public int ferTrucada(char[] numero){
+        int ret=0;
+        //A CODIFICAR... 
+        
+        return ret;
+    }    
+    
+    /**
+     * Envia el missatge de text passat, al número indicat al primer paràmetre 
+     * via SMS. Retorna el nombre de missatges que han estat necessaris per 
+     * fer l'enviament.
+     * @param numero és el número de telèfon a marcar expressat en una array de chars
+     * @param text és el text a enviar
+     */
+    public int enviarSms(char[] numero, String text){
+        int ret=0;
+        //A CODIFICAR... 
+        
+        return ret;
+    }    
+    
+}
+                 
+/*<strong style="background-color: yellow;">Fitxer ioc/m03/serveismbl/Interficie.java </strong>*/
+package ioc.m03.serveismbl;
+
+public class Interficie {
+    
+    /**
+     * Mostra el menú principal i espera la seleció de l'usuari en format de char
+     * que es retornarà en finalitzar l'execució.
+     * @return opció seleccionada per l'usuari
+     */
+    public char menuInicial(){
+        char opcio = 0;
+        //A CODIFICAR... 
+        
+        return opcio;
+    }
+    
+    /**
+     * Mostra el menú específic de les trucades i s'espera la seleció de l'usuari en format de char
+     * que es retornarà en finalitzar l'execució.
+     * @return opció seleccionada per l'usuari
+     */
+    public char menuTrucades(){
+        char opcio = 0;
+        //A CODIFICAR... 
+        
+        return opcio;
+    }
+    
+    /**
+     * Demana que l'usuari escrigui el número de telèfon a marcar
+     * @return el número de telèfon
+     */
+    public char[] demanarNumeroTelefon(){
+        char[] ret = null;
+        //A CODIFICAR... 
+        
+        return ret;
+    }
+    
+    /**
+     * Mostra la llista de contactes i demana que se'n seleccioni un per posició.
+     * Es retorna la posició seleccionada
+     * @param dades és l'estructura de dades inicialitzada necessària per 
+     * extreure la llista de contactes
+     * @return 
+     */
+    public int demanarPosicioLlistaContactes(/*EstructuraDades dades*/){
+        int ret=0;
+        //A CODIFICAR... 
+        
+        return ret;        
+    }    
+
+    /**
+     * Mostra la llista de contactes.
+     * @param dades és l'estructura de dades inicialitzada necessària per 
+     * extreure la llista de contactes
+     */
+    public void mostrarLlistaContactes(/*EstructuraDades dades*/){
+        //A CODIFICAR... 
+        
+    }    
+    
+    /**
+     * Es demana a l'usuari que s'escrigui un missatge SMS per a ser enviat. 
+     * Un cop escrit es retorna el text.
+     * @return 
+     */
+    public String demanarMissatgeSms(){
+        String ret="";
+        //A CODIFICAR... 
+        
+        return ret;        
+    }
+}
                                          
                                      </code></pre>
+                                     <p>Analitzeu atentament el codi i contesteu els següents ítems en un debat amb els teus companys especialistes al<a target="_blank" class="forumEspecialitatUrl"> fòrum de la teva especialitat</a></p>
+                                     <div class="frameBox">
+                                      <h4>Ítems pel debat</h4>
+                                         <ol>
+                                            <li>A l'esquelet hi ha paràmetres tancats entre comentaris representant una estructura de dades. No és possible dissenyar-ho tot a l'hora. Quan planifiquem codi i resulta necessari usar parts que encara no estiguin dissenyades, creus que és preferible ignorar-les o especificar-les usant un comentaris? raoneu la resposta</li>
+                                            <li>Relaciona l'esquelet de classes i mètodes amb el mapa de nuclis de control indicant què correspondria a què. Creus que es pot establir una relació més o menys directa entre l'esquelet i el mapa?</li>
+                                            <li>Llegeix els comentaris en format javadoc de l'esquelet. Creus que sense aquest comentaris et resultaria igual de fàcil d'entendre l'esquelet i relacionar-lo amb el mapa de controls?.</li>
+                                            <li>Fixa't en els comentaris del javadoc. Creus que entre aquest, i el mapa de controls series capaç de crear el disseny descendent de l'aplicació? Si la resposta és afirmativa quina relació establiries entre el tres elements (esquelet, disseny descendent i mapa de controls)?</li>
+                                        </ol>
+                                    </div>
                                 </div> 
                             </div>
                         </div>

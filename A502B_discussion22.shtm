@@ -37,7 +37,7 @@
                                         
                                     </code></pre>
                                     <div class="frameBox">
-                                      <h4>Questions pel debat</h4>
+                                      <h4>Questions pel debat en el <a target="_blank" class="forumEspecialitatUrl">fòrum d'especialistes</a></h4>
                                          <ol>
                                             <li>Descriviu el comportament de les variables jugadorA i jugadorB en termes de la metàfora descrita més amunt.</li>
                                             <li>Definiu el significat d'instanciació en el sentit informàtic del terme.</li>
@@ -107,7 +107,7 @@ public class Debat52 {
 }
                                     </code></pre>
                                     <div class="frameBox">
-                                      <h4>Questions pel debat</h4>
+                                      <h4>Questions pel debat en el <a target="_blank" class="forumEspecialitatUrl">fòrum d'especialistes</a></h4>
                                          <ol>
                                             <li>Discutiu el comportament del codi i les raons per les quals es produeix aquest comportament i no un altre.</li>
                                         </ol>
@@ -160,7 +160,7 @@ public class GestorDadesCursa {
                                     <p>Noteu que a JAVA, tots els tipus simples (short, int, long, float, double, char, ...) s'inicialitzem sempre a zero i per tant no és necessari indicar-ho a la inicilització.</p>
                                     <p>Imagineu ara un nou exemple, volem representar una estructura per poder jugar a les 3 en ratlla, i decidim representar el tauler usant una matriu de 3x3 enters. Imagineu que decidim que les caselles buides les representarem per mitjà del valor -1 i les fitxers prendran el valor 0 o 1 segons siguin d'un o altra jugador.</p>
                                     <div class="frameBox">
-                                      <h4>Qüestions pel debat</h4>
+                                      <h4>Qüestions pel debat en el <a target="_blank" class="forumEspecialitatUrl">fòrum d'especialistes</a></h4>
                                          <ol class="nestedCounter">
                                             <li>Feu una proposta al fòrum d'especialistes d'un tipus compost anomenat <em>DadesPartida3EnRatlla</em> que suporti la representació del tauler de les 3 en ratlla i el control del torn per tal de poder implementar el joc.</li>
                                             <li>Feu també una segona proposta de la classe <em>GestorDades3EnRatlla</em>, que permeti:
