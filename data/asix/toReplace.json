@@ -463,7 +463,7 @@
         "pdfDocumentacio":{"selector":".pdfDocumentacio", "type":"ref", "name":"A502", "value":"pdfDocumentacio"},
         "forumEspecialitat": {"selector":".forumEspecialitat", "type":"ref", "name":"A502","value":"forumEspecialitat"},
         "forumEspecialitatUrl": {"selector":".forumEspecialitatUrl", "type":"ref", "name":"A502","value":"forumEspecialitatUrl"},
-        "nomEspecialitat": {"selector":".nomEspecialitat", "type":"text", "value":"Disseny aplicació"},
+        "nomEspecialitat": {"selector":".nomEspecialitat", "type":"text", "value":"disseny d'aplicacions"},
         "objectiusDebatEspecialistes": {"selector":".objectiusDebatEspecialistes", "type":"html", "value":"<p>L'objectiu principal del disseny és poder determinar quines classes i quins mètodes caldrà codificar per implementar l'aplicació que s'està dissenyant. La intencionalitat dels debats específics és la de donar-vos eines que us facilitin aquesta feina. Bàsicament per desglossar les classes i els seus mètodes necessitarem elaborar el disseny descendent. També ens ajudarem amb un esquema del control i de les pantalles previstes per implementar l'aplicació. El resultat final haurà de ser un esquelet de classes i mètodes ben documentats a punt de ser codificats.</p>"},
         "guiaModularitzacio":{"selector":".guiaModularitzacio", "type":"attr", "name":"href", "value":"https://docs.google.com/document/d/1FZY7s5_lBeUeAOzrweQiYsnIbDmDLk7bEvyiZr6UmGE/edit?usp=sharing"}
     },
@@ -488,7 +488,7 @@
         "toProjectStatement": {"selector":".toProjectStatement", "type":"ref", "name":"A502","value":"toProjectStatement"},
         "forumEspecialitat": {"selector":".forumEspecialitat", "type":"ref", "name":"A502","value":"forumEspecialitat"},
         "forumEspecialitatUrl": {"selector":".forumEspecialitatUrl", "type":"ref", "name":"A502","value":"forumEspecialitatUrl"},
-        "nomEspecialitat": {"selector":".nomEspecialitat", "type":"text", "value":"Estructura de Dades"},
+        "nomEspecialitat": {"selector":".nomEspecialitat", "type":"text", "value":"estructura de Dades"},
         "objectiusDebatEspecialistes": {"selector":".objectiusDebatEspecialistes", "type":"html", "value":"<p>La intenció d'aquest debats és doble. D'una banda, donar-vos criteris per poder prendre decisions a l'hora de fer un disseny d'estructura de dades. D'altra banda, prevenir-vos sobre els errors més habituals que els programadors novells acostumen a tenir a l'hora de codificar amb estructures de dades.</p>"},
         "guiaModularitzacio":{"selector":".guiaModularitzacio", "type":"attr", "name":"href", "value":"https://docs.google.com/document/d/1tWXMhHbiwWif-wYiLNqlGvUrmfyNxvh3aliAZ0MDAEM/edit?usp=sharing"}
     },
@@ -513,8 +513,8 @@
         "pdfDocumentacio":{"selector":".pdfDocumentacio", "type":"ref", "name":"A502", "value":"pdfDocumentacio"},
         "forumEspecialitat": {"selector":".forumEspecialitat", "type":"ref", "name":"A502","value":"forumEspecialitat"},
         "forumEspecialitatUrl": {"selector":".forumEspecialitatUrl", "type":"ref", "name":"A502","value":"forumEspecialitatUrl"},
-        "nomEspecialitat": {"selector":".nomEspecialitat", "type":"text", "value":"Biblioteques"},
-        "objectiusDebatEspecialistes": {"selector":".objectiusDebatEspecialistes", "type":"html", "value":"<p></p>"},
+        "nomEspecialitat": {"selector":".nomEspecialitat", "type":"text", "value":"biblioteques"},
+        "objectiusDebatEspecialistes": {"selector":".objectiusDebatEspecialistes", "type":"html", "value":"                                    <p>Crear biblioteques de programari reutilitzables requereix certa dosi d'abstracció ja que el disseny hauria de poder respondre a múltiples demandes i adaptar-se a diverses situacions.</p><p>No és senzill enfrontar-se al disseny de biblioteques. L'experiència ajuda, sens dubte, perquè amb aquesta recopilem informació de múltiples situacions que podrem valorar cada cop que ens afrontem a un disseny. Mentre tant, caldrà entrenar-nos, estudiar biblioteques existents per valorar alternatives, trobar trets funcionals comuns observant les aplicacions que fem servir habitualment i provar, provar i provar...  No tingueu por d'equivocar-vos, les solucions ideals no existeixen, però si les decisions preses són raonades, segur que trobarem solucions acceptables i adequades a les demandes de l'aplicació. Si més no, sempre podrem anar millorant-les.</p><p>Us proposem que discutiu en el fòrum de la vostre especialitat, els criteris que hauríeu de tenir en compte durant el disseny, quins riscos us trobareu durant una implementació i quines possibles solucions podríeu aplicar. També us demanarem que feu l'esforç suplementari de consultar biblioteques de JAVA i estudiar la funcionalitat que suporten. Finalment us demanarem també que feu el disseny funcional d'una biblioteca concreta.</p>"},
         "guiaModularitzacio":{"selector":".guiaModularitzacio", "type":"attr", "name":"href", "value":"https://docs.google.com/document/d/1OkJyXdbglfd0CBZ-2uba-UhmX0v0sIRb85CPfomOXZk/edit?usp=sharing"}
     },
     "A503": {

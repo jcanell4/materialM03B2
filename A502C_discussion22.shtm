@@ -2,15 +2,38 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Què cal fer - Funcions</h2>
-                                     <h3> Exercici 3- Implementació de la resta de funcions i integració de tot el codi</h3>
+                                     <h2 >Debat 5 - Biblioteques reusables</h2>
+                                     <h3> Biblioteques pròpies</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>ddddddd</p>
+                                    <p>Ara us plantegem debatre sobre la creació de biblioteques pròpies, concrétament sobre biblioteques per ajudar a crear interfícies d'usuari. Abans de començar amb al discussió cal clarificar que una biblioteca d'ajuda a la creació d'interfícies d'usuari, no és el mateix que un interfície d'usuari d'una aplicació. Aquestes darreres són molt específiques i es impossible reutilitzar-les. El que us estem demanant, és la creació d'eines (funcions) que ajudin a escriure qualsevol interfície de qualsevol aplicació més fàcilment i amb menys errors que no la féssim servir. Fer aquesta diferenciació és imprescindible per tenir un plantejament correcte durant el debat. </p>
+                                    <div class="frameBox">
+                                        <h4>Qüestions pel debat en el <a target="_blank" class="forumEspecialitatUrl">fòrum d'especialistes</a></h4>
+                                        <p>Coneixeu alguna aplicació que no faci servir interfícies d'usuari? Penseu en aplicacions basades en consola. Com interaccionen amb l'usuari? Quins trets comuns podríem destacar de totes elles? Serieu capaços d'identificar elements d'aquestes interfícies comuns a totes elles? Per exemple, Segur que moltes aplicacions donen a escollir a l'usuari la seva funcionalitat usant menús de text. Segur que en algun moment de l'execució serà necessari introduir un valor que caldrà validar o serà necessari d'informar d'un procediment fallit o mostrar unes dades sol·licitades o indicar a l'usuari que la seva petició s'ha realitzat amb èxit.  </p>
+                                                <p>Un aspecte molt important, a l'hora de definir interfícies d'usuari, és el de fer servir sempre formats semblants per presentar informació semblant, perquè l'ús d'un format específic ajuda a l'usuari a identificar el que se li diu i millora l'aprenentatge d'ús. Per exemple presentar els errors sempre de la mateixa manera, facilita la identificació que alguna cosa no va bé, i cal aturar-se a llegir per saber el que ha passat. </p>
+                                         <ol class="nestedCounter">                                         
+                                             <li>Escriviu al fòrum tipus d'informació susceptible de ser presentada de manera especial per tal que l'usuari la pugui identificar d'un cop d'ull.</li>
+                                            <li>Identifiqueu diversos tipus d'entrada de dades i enumereu-los al fòrum.
+                                                
+                                                <ol>
+                                                    <li>Retornarien algun valor? Quin?</li>
+                                                    <li>Com especifiquem els missatges a presentar a l'usuari fugint dels textos genèrics que no informen?</li>
+                                                    <li>Tingueu en que si algun requereix validació de dades, potser serà necessari mostrar algun missatge a l'usuari en cas de no passar la validació. Potser n'hi hagi prou amb una missatge genèric, o potser calguin missatges més precisos.</li>
+                                                    <li>Alguns potser necessitin disposar d'un valor per defecte per si l'usuari només accepta amb un [ENTRAR]</li>
+                                                </ol>
+                                            </li>
+                                            <li> 
+                                                
+</li>
+                                        </ol>
+                                        
+                                        <p>Podríem dissenyar elements de la biblioteca per cada un d'ells? Quin tractament caldria donar-los? Quins paràmetres haurien de rebre per tal de ser configurables i més flexibles?</p>
+                                                <p>Feu volar la imaginació i identifique tants elements com us sigui possible i poseu-los en comú al fòrum.</p>
+                                    </div>
                                 </div> 
                             </div>
                         </div>

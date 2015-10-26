@@ -2,20 +2,25 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Debat 4 - Específic de l'especialitat</h2>
-                                     <h3> Estructura d'una aplicació: interfície, control i tractament de dades</h3>
+                                     <h2 >Debat 4 - Biblioteques reusables</h2>
+                                     <h3> Biblioteques de tercers</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Si intentem fer una abstracció del que moltes aplicacions tenen en comú, potser arribem a la conclusió que les aplicacions es podrien definir com un conjunt de pantalles que es van succeint a partir de la interacció de l'usuari. La informació presentada a les pantalles dependrà de les dades de l'aplicació i de les entrades que l'usuari faci en cada moment. </p>
-                                    <p>Les pantalles són el que s'anomena interfície d'usuari i defineixen quina informació presentar i la forma com presentar-la. També defineixen l'entrada de dades de l'usuari, el tipus, la verificació d'errades, etc.</p>
-                                    <p>Les entrades de l'usuari permeten a l'aplicació saber que desitja l'usuari. Un cop indicada la voluntat d'aquest, l'aplicació haurà de disposar de la manera d'aconseguir obtenir el resultat esperat. Per exemple si l'aplicació fos una calculadora i l'usuari hagués fet la petició "5·4", la calculadora hauria de disposar de la capacitat de multiplicar dos números. A aquest tipus de capacitats les anomenarem tractament de dades. Totes les aplicacions contenen un nombre limitat de tractaments responent a la funcionalitat d'aquestes. Per exemple les calculadores ha de disposar de la capacitat de realitzar operacions matemàtiques i els editors de text, de la capacitat de marcar els diversos formats en el text, etc.</p>
-                                    <p>Ara bé, no seria possible obtenir cap resposta vàlida a les diferents peticions de l'usuari si no existís algun tipus de control que identifiqui la petició, n'extregui o demani les dades requerides i faci la crida adequada a la funció encarregada de resoldre la capacitat implicada a la petició. És a dir, seguint amb l'exemple de la calculadora, a més de capturar la demanda "5·4", de cridar la funció de multiplicar amb els paràmetres 5 i 4, seria necessari disposar d'alguna funció capaç d'entendre la petició, reconèixer la operació i els valors implicats i fer la crida a la funció multiplicar. Son funcions útils que controlen el flux i les crides internes. Per això se les acostuma a conèixer com <em>controls</em>.</p>
-                                    <p>Per simplificar la implementació dels controls, moltes aplicacions acostumen a organitzar la seva oferta de tractament de de dades, en menús. L'ús de menús tenen una doble missió. D'una banda són una forma fàcil d'evitar errades de l'usuari, dobles interpretacions o d'altres problemes derivats de la interpretació de les interaccions de l'usuari, perquè els menús limiten les possibles respostes de l'usuari. D'altra banda, permeten seqüenciar de forma molt ben estructurada la interacció amb l'usuari a fi de conduir el flux cap a la solució de la demanda, de man era que un cop identificat el tractament i les dades a tractar, només resti cridar la funció encarregada, esperar la resposta i escollir la pantalla on la que mostrar els resultats.</p>
-                                    <p>Observa la imatge que es presenta a continuació i contenta les preguntes que trobaras al peu en <a class="forumEspecialitatUrl"> el fòrum de la teva especialitat</a></p>
+                                    <p>Començarem el debat consultant altres biblioteques per conèixer-les i per observar-ne característiques.</p>
+                                    <div class="frameBox">
+                                        <h4>Qüestions pel debat en el <a target="_blank" class="forumEspecialitatUrl">fòrum d'especialistes</a></h4>
+                                         <ol class="nestedCounter">
+                                            <li>Doneu una ullada a la documentació de les classes de JAVA, Math, Random, String, Arrays, Scanner i Console. Creieu que els noms que donen als seus mètodes permeten intuir la seva funcionalitat?.</li>
+                                            <li>Tots ells són classes estàndards de JAVA, és a dir, incorporades dins el propi llenguatge. Mireu el seus paràmetres.  Creieu que seria aconsellable crear una biblioteca reutilitzable que fes servir com a paràmetres tipus compostos creats per donar resposta a una aplicació determinada? Per què? Quines limitacions d'ús tindria a l'hora d'intentar-la reutilitzar?</li>
+                                            <li>Quelcom semblant passaria amb les dades retornades. Com podeu concloure que seran els paràmetres (ja siguin d'entrada o de sortida) de les funcions d'una biblioteca reutilitzable?</li>
+                                            <li>Quines avantatges i desavantatges trobeu en crear biblioteques de mètodes <em>static</em> com Math o Arrays o biblioteques amb mètodes estàndard, com ara  String o Random? Quines diferencies creieu que hi ha entre elles per tal que els seus autors les hagin implementat d'una o altra manera?  </li>
+                                            <li>Consulteu l'API de JAVA de les classes indicades. Creieu que sense aquesta documentació sabríeu fer servir els seus mètodes adequadament? Creieu que una documentació adequada és imprescindible quan es crea unha nova biblioteca?</li>
+                                        </ol>
+                                    </div>
                                 </div> 
                             </div>
                         </div>
