@@ -207,19 +207,19 @@
                                     <p>A mida que treballem amb aplicacions cada cop més grans, no n'hi ha prou només en agrupar el codi en funcions, sinó que caldrà classificar les funcions en classes i les classes en paquets per tal de poder-les localitzar, memoritzar i utilitzar amb certa eficiència. A les persones ens costa menys treballar amb conceptes jeràrquics que no pas amb llistes llargues, malgrat que al final el nombre d'elements inclosos en ambdós (jerarquia o llista) sigui similar.</p>
                                     <p>A continuació us mostrem un conjunt de criteris que poden fer-se servir per organitzar el codi. Llegiu-los detingudament i en acabar, consensueu amb els vostres companys especialistes una guia esquemàtica que mostri la seqüencia d'accions i criteris a aplicar en cada pas, per tal de realitzar un procés de modularització amb èxit. Escriviu el document de forma compartida, col·laborant amb els companys especialistes. Trobareu un document preparat per a compartir a <a target="_blank" class="guiaModularitzacio">GoogleDocs</a>.</p>
                                     
-                                    <h3 id="us_de_paquets_obligatoris" class="frameBoxHeader">Ús de paquets obligatoris</h3>
+                                    <h4 id="us_de_paquets_obligatoris" class="frameBoxHeader">Ús de paquets obligatoris</h4>
                                     <div class="frameBox smallFont">
                                         <p>Per tal que sigui possible la reutilització de classes i funcions en múltiples aplicacions, serà necessari ubicar les classes sempre en algun paquet, per tal d'evitar la repetició de noms i facilitar-ne la localització.</p>
                                         <p>S'aconsella que les classes estiguin sempre ubicades en un seqüència de paquets que permetin identificar la organització, el departament i/o equip que les desenvolupa, així com el projecte en que s'han desenvolupat. Per exemple suposant que el vostre grup fos un equip de desenvolupament del IOC,  que fos el grup número 5 i que treballéssiu en un projecte per crear utilitats per a processar imatges, la seqüència mínima de paquets amb les que hauríeu de treballar seria: <em>ioc.m03b2.grup5.imatges</em></p>
                                         <p>Aquesta seria per dir-ho d'alguna manera l'arrel a partir de la qual començaríeu a penjar-hi classes i paquets més específics.</p>
                                     </div>
 
-                                    <h3 id="aillament_de_codi_reutilitzable" class="frameBoxHeader">Aïllament del codi reutilitzable</h3>
+                                    <h4 id="aillament_de_codi_reutilitzable" class="frameBoxHeader">Aïllament del codi reutilitzable</h4>
                                     <div class="frameBox smallFont">
                                         <p>És evident que si el que volem és poder reutilitzar funcions, no només cal adaptar les funcions fent que algunes d'elles siguin realment reusables, sinó que cal separar perfectament les funcions genèriques (reutilitzables) de les específiques (poc reutilitzables). L'ideal és agrupar les funcions genèriques en biblioteques (paquets i classes) per tal de poder-les passar en bloc d'un projecte a un altre.</p>
                                     </div>
 
-                                    <h3 id="agrupacio_tematica" class="frameBoxHeader">Agrupació temàtica</h3>
+                                    <h4 id="agrupacio_tematica" class="frameBoxHeader">Agrupació temàtica</h4>
                                     <div class="frameBox smallFont">
                                         <p>L'agrupació temàtica permet organitzar les funcions de forma jeràrquica aglutinant-les en categories cada cop més genèriques. Les funcions s'agregarien en classes i aquestes en paquets. Si fos necessari, es podrien establir també agrupacions de paquets, a fi d'anar estructurant la jerarquia. La profunditat d'aquesta dependrà del nombre de funcions que calgui organitzar. Si són poques, potser n'hi haurà prou en fer servir només classes per realitzar la classificació temàtica. És el que java fa en agrupar funcions a la classe Math, a la classe Arrays o a la classe String. Cada classe representa una categoria diferent.</p>
                                         <p>Ara bé, si consideréssim que una d'elles tingués a un nombre de funcions excessiu, es podria reduir la quantitat, seleccionant una temàtica més específica. Per exemple es podria crear una classe només per funcions trigonomètriques, una altra per funcions estadístiques, una altra per les aritmètiques i així successivament. Les tres classes podrien agrupar-se en una paquet específic anomenat <a href="#" data-toggle="tooltip" data-original-title="JAVA aconsella que els noms dels paquets s'escriguin totes les lletres en minúscules per tal de distingir-los dels noms de les classes"><em>math</em></a> per tal d'anar gestant una organització jeràrquica fàcil de manipular</p>
@@ -254,7 +254,7 @@
                                         </ul>
                                     </div>
                                     
-                                    <h3 id="organitzacio_estructural" class="frameBoxHeader">Organització estructural</h3>
+                                    <h4 id="organitzacio_estructural" class="frameBoxHeader">Organització estructural</h4>
                                     <div class="frameBox smallFont">
                                         <p>La organització estructural fa referència a la divisió jeràrquica que les aplicacions. Bàsicament es pot desprendre del propi disseny descendent.</p>
                                         <p>La principal dificultat amb la que ens trobarem quan haguem de fer una divisió d'aquestes característiques és que el disseny descendent evidencia la funcionalitat però no ens aporta informació de com agrupar-la en classes i paquets. Per tant, cal disposar d'indicadors que ens ajudin a valorar si estem fent una bona classificació.</p>
@@ -321,7 +321,7 @@
                                             </li>
                                        </ul>
                                     </div>                               
-                                    <h3 id="dades_i_gestors de dades" class="frameBoxHeader">Dades i gestors de dades</h3>
+                                    <h4 id="dades_i_gestors de dades" class="frameBoxHeader">Dades i gestors de dades</h4>
                                     <div class="frameBox smallFont">
                                         <p>Separar les dades i unificar-les en una estructura, és una bona solució per tenir un accés general a les dades des de qualsevol punt de l'aplicació peró evitant els inconvenients de les declaracions globals. Així, les dades quedarien sempre encapsulades en una estructura declarada com a variable local que caldria passar per paràmetre a les diferents funcions, però un cop rebut el paràmetre resulta fàcil tenir accés a qualsevol valor de l'estructura.</p>
                                         <p>Tot i així, si l'estructura de dades presenta certa complexitat, pot resultar util per els programadors que no han dissenyat l'estructura disposar d'una classe que els faciliti l'accés. Aquesta classe actuaria com a gestor de les dades i permetria obtenir o assignar valors parcials a les dades sense necessitat de coneixer exactament l'estructura interna. Es a dir contindria funcions per facilitat l'accés a parts de l'estructura de les dades, tant per llegir els valors com per modificar-los.</p>
@@ -429,8 +429,33 @@ public class CalculadoraDArees {
                 </section>
                 <!--=========== END SUBSECTION Debat 3 ================-->    
 
+              <!--=========== BEGIN SUBSECTION Debat esp ================-->    
+                <section id="slc-discussion2" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Debats específics de l'especialitat</h2>
+                                     <h3> Introducció</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="bodySlide">
+                                    <p>Ara, us plantejarem uns debats específics sobre <em><span class="nomEspecialitat"></span></em>. Vosaltres sereu els únic representants del vostre grup que fareu aquest debats. Per tant, és important que hi presteu especial atenció per poder traspassar els coneixements que hi adquiriu als vostres companys.</p>                
+                                     <div class="objectiusDebatEspecialistes">
+                                     </div>
+                                     <p>Passeu al primer debat i recordeu que per maximitzar l'aprenentatge en el temps que està definit el període i comptant les altres activitats a realitzar, caldria que feu almenys, una intervenció per període a l'inici de cada debat i una intervenció final a mode de síntesi intentant aconseguir el consens entre totes les intervencions. La intervenció de consens és bàsica per arribar a una conclusió i poder donar una explicació correcta als vostre companys de grup, que faran el mateix en els debats específics de les seves especialitats.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Debat esp ================-->
+
               <!--=========== BEGIN SUBSECTION Debat 4 ================-->    
-                <section id="slc-discussion21" class=" section">
+                <section id="slc-discussion21" class=" section">                    
                 </section>
                 <!--=========== END SUBSECTION Debat 4 ================-->
               <!--=========== BEGIN SUBSECTION Debat 5 ================-->    

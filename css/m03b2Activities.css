@@ -87,9 +87,19 @@
     text-align : justify;
 }
 
-.bodySlide h3, .bodySlide h4{
+.bodySlide h3{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.bodySlide h4{
     font-weight: bold;
     font-size: 1em;
+}
+
+.bodySlide h5{
+    font-weight: bold;
+    font-size: 0.8em;
 }
 
 .bodySlide table, .iocSolution table{

@@ -25,6 +25,20 @@ ActivityManager = function (){
         }
         
         $(document).ready(function(){
+            $('[data-ref-figure]').each(function(){
+                var idFigure = "#" + this.dataset.refFigure;
+                var text = $(idFigure).find(".figuretitle:after").text();
+                if(text){
+                    $(this).text(text);
+                }
+                /*
+                var spanNodeTitle = $(idFigure).find(".figuretitle");
+                if(spanNodeTitle.lenth>0){
+                    var text = spanNodeTitle.text();
+                    $(this).text(text);
+                }
+                */
+            });
             $('[data-toggle="tooltip"]').tooltip(); 
 
             $("[data-selector-to-set-class]").each(function(){

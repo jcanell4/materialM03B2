@@ -2,15 +2,116 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Debat 5 - Específic de l'especialitat</h2>
-                                     <h3> Planificació de pantalles i control</h3>
+                                     <h2 >Debat 5 - Disseny d'una aplicació</h2>
+                                     <h3> Seqüències dels punts de control de l'aplicació</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Seguim amb el plantejament iniciat en el debat 4. Una bona manera de planificar una aplicació, a més d'identificar la seva funcionalitat pròpia (el que em convingut en anomenar tractaments de dades) consisteix també en identificar quines informacions caldrà mostrar a l'usuari (pantalles) i quines opcions queden obertes a cada una d'aquestes pantalles </p>
+                                    <p>Un aspecte important a l'hora de dissenyar aplicacions és disposar d'una idea clara de les seqüències de control lògiques d'una aplicació. Entenem per controls o unitats de control d'una aplicació, aquelles parts d'una aplicació que constitueixen una unitat lògica en si mateixa i que permeten a l'usuari encaminar l'execució de l'aplicació fins aconseguir demanar el procés d'una determinada funcionalitat. En aquest sentit, podem dir que l'execució d'una aplicació es pot entendre com una seqüència de controls en que l'usuari va interaccionant amb l'aplicació.</p>
+                                    <p>A grans trets, distingirem dos tipus de nuclis de control, els que gestionen la navegació de l'usuari i faciliten que aquest indiqui exactament què vol (per exemple els menús), i els encarregats de resoldre una funcionalitat especifica, requerint dades a l'usuari, realitzant un tractament específic de les dades i presentant el resultat a l'usuari (per exemple, a la calculadora d'àrees vista amb anterioritat, un nucli de control de funcionalitat específica seria el càlcul de l'àrea d'una quadrat, o el d'un cercle, etc).</p>
+                                     <p>És possible dissenyar un mapa (esquema) de nuclis de control identificant per cada un d'ells, el tipus (<em>navegació</em> o <em>funcionalitat</em>), les accions a realitzar i les connexions que contempla amb altres nuclis de control en funció de la resposta de l'usuari o del càlcul realitzat.</p>
+                                     <p><strong>No es tracta</strong> de fer un disseny detallat de la interfície, ni una descripció acurada de les accions. En realitat es tracta només d'identificar els elements que cal tenir en compte en aquell nucli de control i les seves connexions. De fet, podem dir que el mapa d'unitats de control és tan sols una eina per descobrir l'estructura d'una aplicació i poder planificar l'esquelet de classes i mètodes que caldrà desenvolupar quan implementem l'aplicació.</p>
+                                     <figure id ="figura_pantalles" class="left">
+                                        <img width="464" src="images/activities/diagramaPantalles.png" alt="diagrama de seqüència de pantalles">
+                                        <figcaption style="width: 510px; max-width: 75%;">
+                                            <span class="figuretitle">figura </span> Instanciació d'un tipus compost.                               
+                                        </figcaption>
+                                    </figure>
+                                    <p>Imaginem que volem crear un mapa de nuclis de control d'una senzilla aplicació d'un smartphone, la qual ens permet escollir entre 3 tipus de serveis: realitzar trucades telefòniques, enviar missatges SMS o xatejar via whatsapp. Les dues primeres opcions, a més, ens permeten activar el servei (trucada o missatge SMS) indicant directament el número o bé seleccionant un contacte de l'agenda. El xat només deixa seleccionar contactes que siguin també usuaris de whatsapp. Per això disposa d'una agenda pròpia.</p>
+                                    <p>A la figura 1, veiem un diagrama del mapa de nuclis de control de l'aplicació on podem veure detallats 3 nuclis connectats entre si, corresponents a la seqüència que caldria realitzar per fer una trucada de telèfon marcant directament el número.</p>
+                                    <p>Els diagrames, són molt útils perquè permeten expressar tots els elements del mapa amb molt poques paraules. Tot i així es pot optar per esquemes més textuals o tabulars, si no es disposa de cap eina per dibuixar diagrames. Una bona opció seria un esquema en el que per cada nucli de control es definís:</p>
+                                    <ol>
+                                        <li>Id, o codi identificador del nucli</li>
+                                        <li>Accions a realitzar quan s'executi el nucli</li>
+                                        <li>Connexions amb altres nuclis</li>
+                                    </ol>
+                                    <p>Així per exemple, completant els nuclis necessaris per fer una trucada de l'aplicació anterior, podríem definir els nuclis amb la taula següent:</p>
+                                     <table border="1" cellspacing="0" cellpadding="1">
+                                        <caption>Mapa de nuclis de control</caption>
+                                         <tr>
+                                            <th>id</th>
+                                            <th>Accions</th>
+                                            <th>connexions</th>
+                                        </tr>
+                                         <tr>
+                                            <td>menuPrincipal</td>
+                                            <td>
+                                                <p>1) Escollir</p>
+                                                <ol type="a">
+                                                    <li>trucades</li>
+                                                    <li>missatges SMS</li>
+                                                    <li>whatsapp</li>
+                                                </ol>
+                                            </td>
+                                            <td>
+                                                <ul>
+                                                    <li>menuTrucades si s'escull a)</li>
+                                                    <li>menuMissatges si s'escull b)</li>
+                                                    <li>iniciWhatsapp si s'escull c)</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>menuTrucades</td>
+                                            <td>
+                                                <p>1) Escollir</p>
+                                                <ol type="a">
+                                                    <li>Seleccionar contacte</li>
+                                                    <li>Entrar número</li>
+                                                </ol>
+                                            </td>
+                                            <td>
+                                                <ul>
+                                                    <li>trucadaPerAgenda si s'escull a)</li>
+                                                    <li>trucadaDirecta si s'escull b)</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>trucadaPerAgenda</td>
+                                            <td>
+                                                <ol>
+                                                    <li>mostrar llista de contactes numerada</li>
+                                                    <li>entrar número identificador del contacte</li>
+                                                    <li>obtenir número de telèfon del contacte</li>
+                                                    <li>realitzar trucada </li>
+                                                </ol>
+                                            </td>
+                                            <td>
+                                                <ul>
+                                                    <li>menuPrincipal</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>trucadaDirecta</td>
+                                            <td>
+                                                <ol>
+                                                    <li>entrar número</li>
+                                                    <li>realitzar trucada </li>
+                                                </ol>
+                                            </td>
+                                            <td>
+                                                <ul>
+                                                    <li>menuPrincipal</li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>...</td>
+                                            <td>...</td>
+                                            <td>...</td>
+                                        </tr>
+                                     </table>
+                                     <br/>
+                                     <p>Com a norma general, podem establir que cada nucli serà una funció, i que les accions de cada nucli es correspondran també amb funcions que caldrà identificar. Les connexions acostumaran a ser crides, exceptuant si es tracta d'un retorn a un nucli anterior, com és el cas de <em>trucadaPerAgenda</em> o <em>trucadaDirecta</em> que en ambdós casos es retorna al <em>menuPrincipal</em> en acabar la trucada. En tractar-se de crides a funcions, els retorns són intrínsecs a la finalització de la crida.</p> 
+                                     <p>Les funcions caldrà organitzar-les en classes i les classes en paquets seguint el manual que heu realitzat amb els vostres companys. Per exemple:</p>
+                                     <pre><code class="java">
+                                         
+                                     </code></pre>
                                 </div> 
                             </div>
                         </div>

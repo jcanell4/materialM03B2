@@ -2,124 +2,37 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Projecte ??</h2>
-                                     <h3> Estructura de dades: introducció</h3>
+                                     <h2 >Debat 4 - Estructura de dades</h2>
+                                     <h3> Criteris per a dissenyar l'estructura de dades d'una aplicació</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>Com ja podeu intuir, escollir una bona organització de les dades, ben estructurades, de ràpid accés i fàcilment identificables, és clau en el desenvolupament de qualsevol aplicació. Ara bé, com la majoria de coses complexes, no hi ha una recepta que ens determini quina és la millor organització. És més, sovint no existeix una solució ideal sinó que les diverses solucions afavoreixen més uns aspectes en detriment d'un altres, i cal escollir, en funció de les prioritats de l'aplicació una solució prou eficient i adequada. De fet, l'experiència i el sentit comú tenen un pes molt gran en la presa de decisions, però és important no deixar-se endur per prejudicis ni suposicions i raonar lògicament les decisions preses, sobre tot quan es comença.</p>
-                                    <p>Abans de continuar, hauríem de preguntar-nos què és una estructura de dades i com es fa servir. En sí, el concepte és fàcil, però per usar-lo cal tenir ben clar el significat d'instància de l'estructura i conèixer unes regles bàsiques per no trobar-nos amb sorpreses. És el que intentarem explicar ara.</p>
-                                    <p class="iocimportant">Les estructures de dades són organitzacions més o menys complexes de dades, de tal forma que la seva organització ens configura un valor extra que ens ajuda a interpretar la informació que representen. Per exemple, hem de considerar una estructura de dades el conjunt de valors que poden identificar i representar una persona. Per exemple el seu nom, la seva edat, el seu DNI, les titulacions que posseeix, els treballs que ha realitzat, etc.</p>
-                                    <p>Els llenguatges de programació donen suport a les estructures de dades per mitjà dels tipus compostos de dades i concretament, el llenguatge JAVA, fa servir classes per definir els seus tipus de dades compostos.</p>
-                                    <p class="iocimportant">Els tipus de dades compostos (classe en el llenguatge JAVA) permeten definir com s'identifiquen i organitzen els valors entre sí. Com identificadors usarem noms conceptuals que ens ajudin a interpretar el que representen.</p>
-                                    <p>Per exemple, si haguéssim d'implementar una calculadora que hagués de fer les 4 operacions bàsiques entre dos números qualsevol, el tipus compost a fer servir podria ser:</p>
-                                    <pre><code class="java">
-package ioc.m03.uf2.funcions.a502;
-
-public class DadesCalculadora {
-    double operador1;
-    double operador2;
-    char operacio;    
-    double resultat;
-}
-                                    </code></pre>
-                                    <p>Fixeu-vos que els tipus compostos no són les dades pròpiament, sinó les variables de classe que contindran les dades. En altres paraules, són el que defineix quina forma han de tenir les dades, com han de ser, quins seran els identificadors dels valors i quina la organització interna.</p>
-                                    <p>I les dades? com hi afegim les dades? Abans d'explicar-ho m'agradaria remarcar que les dades no s'emmagatzemen a l'estructura. El llenguatges de programació només poden emmagatzemar dades a la memòria i és allà on aniran a parar les dades. Ara bé, per a què serveixen aleshores els tipus compostos? Doncs l'explicació que més s'hi aproxima és que actuen de plantilla. Així, els tipus compostos emmotllen la memòria per poder-hi emmagatzemar dades en la forma definida en cada tipus compost. En l'argot dels llenguatges de desenvolupament, en comptes de parlar d'emmotllar, es parla d'instanciar. De fet, les dades de la memòria són instancies d'algun tipus de dades (siguin o no compostos).</p>
-                                   <figure id ="figura_instanciacio" class="left">
-                                        <img width="464" src="images/activities/tipusCompostInstancia.png" alt="instanciació de tipus compostos">
-                                        <figcaption style="width: 510px; max-width: 75%;">
-                                            <span class="figuretitle">figura </span> Instanciació d'un tipus compost.                               
-                                        </figcaption>
-                                    </figure>
-                                    <p>Cada tipus compost pot instanciar múltiples dades a la memòria de forma simultània. Cada dada manté els seus propis valors.</p>
-                                    <p> A la pràctica, la instanciació es fa sobre una variable i es fa servir la paraula clau <em>new</em> seguida del tipus compost a instanciar amb els parèntesis d'execució:</p>
-                                    <pre><code class="java">
-DadesCalculadora operacio1 = new DadesCalculadora();
-DadesCalculadora operacio2 = new DadesCalculadora();
-                                    </code></pre>
-                                    <p>A partir d'una instancia de tipus compost (variable), podem accedir als seus elements per modificar o obtenir el seu valor escrivint després del nom de la variable, un punt seguit del nom de l'element. Exemple:</p>
-                                  <pre><code class="java">
-operacio1.operador1 = 5;
-operacio1.operador2 = 3;
-operacio1.operacio = '+';
-...
-if(operacio1.operacio == '+'){
-    operacio1.resultat = operacio1.operador1 + operacio1.operador2;
-}
-                                  </code></pre>
-                                    <p>En el llenguatge JAVA no és possible donar valors a una estructura si no s'ha creat la instancia del seu tipus compost. Si ho féssim obtindríem un error:</p>
-                                    <pre><code class="java">
-DadesCalculadora operacio2;
-
-//La instrucció següent dona error perquè no s'ha intanciat la variable: 
-//          operacio2 = new DadesCalculadora()
-operacio2.operador1 = 7; 
-                                    </code></pre>
-                                    <p>La organització dels tipus compostos pot arrivar a ser força complexa segons les dades que hagi de contenir. En aquest sentit és habitual organitzar les dades de forma jeràrquica per tal d'evitar una gran llista d'atributs difícilment gestionable. Tenim diverses formes d'organitzar aquesta jerarquia. Per exemple introduïnt arrays, aconseguim que un conjunt de dades depengui d'una altre. Clarifiquem-ho amb un exemple. Imaginem que volem fer una aplicacióp per jugar al joc de les dames i ens proposem crear un tipus compost per representar el joc. Recordeu que es tracta d'un joc de taula on disposem 24 fitxes (12 blanques i 12 negres) en un tauler de 8x8 caselles. Recordeu també que el joc consisteix en que cada jugador per torns van movent una única fitxa intentant mengar-se les de l'adversari. Per definir les dades del joc, necessitarem representar el tauler on indicarem la posició de cada fitxa, però també caldrà indicar quants torns s'ha jugat per tal de saber quin serà el jugador al que li ha de tocar moure (si el valor és parell li tocaria al jugador que jugui amb les fitxes blanques i si és senar amb el que jugui amb les negres: </p>
-                                    <pre><code class="java">
-public class JocDames {    
-    static final int CASELLA_BUIDA = 0;
-    static final int FITXA_BLANCA = 1;
-    static final int FITXA_NEGRA = 2;
-
-    int[][] tauler = new int[8][8];
-    int torn;
-}
-                                        
-                                    </code></pre>
-                                    <p>Com vaieu, dins la propia definicó podem optar per inicialitzar les dades de tipus Array, però també podriem optar per deixar-ho fins el moment en que creem al instancia:</p>
-                                    <pre><code class="java">
-public class JocDames {    
-    static final int CASELLA_BUIDA = 0;
-    static final int FITXA_BLANCA = 1;
-    static final int FITXA_NEGRA = 2;
-
-    int[][] tauler;
-    int torn;
-}
-                                        
-                                    </code></pre>
-                                    <p>En el cas que ens ocupa, sembla correcte crear la matriu ja inicialitzada perquè sabem que el gtaules serà sempre de 8x8. Ara si el joc permatés jugar amb taulers de diferents mides, no hi hauria més remei que inicialitzar-la a <em>posteriori</em>, un cop coneguem la seva dimensió. </p>
-                                    <p>Una altre forma de representar la organització jeràrquica consistiria en inclure tipus compostos dins la pròpia definició. Imaginem que desitgem disposar d'informació extra referent a cada jugador del joc de dames. Per exemple el seu nom i el nombre de partides que ha guanyat. Com que són dos els jugadors, podriem pensar en una solució com ara:</p>
-                                    <pre><code class="java">
-public class JocDames {    
-    static final int CASELLA_BUIDA = 0;
-    static final int FITXA_BLANCA = 1;
-    static final int FITXA_NEGRA = 2;
-
-    int[][] tauler = new int[8][8];
-    int torn;
-    
-    String nomJugador1;
-    int partidesGuanyades1
-    String nomJugador2;
-    int partidesGuanyades2;
-}
-                                        
-                                    </code></pre>
-                                    <p>Però convindreu amb mi que tantes variables poden despistar una mica. Hi ha una forma de reduir el nombre de variables usant una jerarquia. Per fer-ho podem crear un tipus nou anomenat Jugador en el que hi definirem les dades que representin un jugador:</p>
-                                    <pre><code class="java">
-public class Jugador {    
-    String nom;
-    int partidesGuanyades;
-}
-                                    </code></pre>
-                                    <p>A partir d'aquí podem fer servir aquest nou tipus de dada compost dins dl tipuis JocDames:</p>
-                                    <pre><code class="java">
-public class JocDames {    
-    static final int CASELLA_BUIDA = 0;
-    static final int FITXA_BLANCA = 1;
-    static final int FITXA_NEGRA = 2;
-
-    int[][] tauler = new int[8][8];
-    int torn;
-    Jugador jugadorBlanques;
-    Jugador jugadorNegres;    
-}                                        
-                                    </code></pre>
+                                <div class="bodySlide">
+                                    <p>Començarem pels criteris de disseny. La primera regla que cal tenir present, és que dissenyar no és una ciència exacta i sovint un mateix problema pot presentar molt diverses solucions. Com a norma general direm que un disseny és correcte si compleix uns criteris mínims que analitzarem més endavant. La segona cosa important és que durant el disseny, l'estructura pot canviar molt des de que es comença fins que es dóna per finalitzat. Podem dir que el disseny no és immutable ni immediat. Només a partir de la reflexió podrem aconseguir un bon disseny.</p>
+                                    <p class="iocimportant">Un criteri fonamental és que les estructures de dades continguin tota la informació necessària per a executar l'aplicació.</p>
+                                    <p> Per tant, podem dir que hem fet un bon disseny si per cada una de les funcionalitats de l'aplicació que calgui implementar, existeix una manera d'obtenir la informació necessària a partir de les dades emmagatzemades a l'estructura.</p>
+                                    <p>Per descobrir quina funcionalitat cal implementar, ens remetrem al disseny descendent. Per cada punt, caldrà reflexionar sobre quina informació serà requerida. Per lògica, en els nivells superiors del disseny es preveu més quantitat d'informació que als nivells inferiors. De fet l'arrel hauria de reunir (si més no en teoria, ja veurem més endavant que no sempre és així) la màxima informació doncs concentre la informació de totes i cada una de les branques del disseny. És per això, que metodològicament, és preferible iniciar l'anàlisi en els nivells més profunds i anar pujant gradualment fins arribar a l'arrel.</p>
+                                    <p class="iocimportant">Un altre criteri, també bàsic, és que la informació dins de l'estructura ha d'esta ben organitzada. Entenem per informació organitzada, l'estructura que es dona a les dades per tal de facilitar la seva interpretació i mantenir la seva independència sense perdre la seva interrelació.</p>
+                                    <p>En aquest cas és el sentit comú el que ens ha de guiar. Si en algun moment dubtem entre dues opcions, escollirem la que considerem que es pot interpretar de forma més clara i més explicita. A més caldrà cercar a les dades una forma adient. Probablement no n'hi ha prou agrupant les dades linealment, a mode de llista. Si recordeu l'exemple del joc de dames vist a l'activitat A501, constatareu que els enters que identifiquen si les caselles del tauler estan buides o contenen una fitxa han d'estar disposats d'alguna forma que s'intueixi que entre tots conformen una entitat més gran (el tauler). Això s'aconsegueix fent servir una matriu, perquè aquest tipus de dades organitza el seus elements en files i columnes de manera similar a com ho fa una tauler d'escacs.</p>
+                                    <div class="frameBox">
+                                        <h4>Questions pel debat</h4>
+                                         <ol>
+                                            <li>Discuteix amb els teus companys com hauria de ser l'estructura de dades que permetés jugar al  típic joc de les mines. No cal mantenir cap dada del jugador. Únicament les dades relatives a la partida, des de que comença fins que acaba. L'aplicació per tant ha de poder localitzar les mines, senyalitzar-les, destapar una casella a petició del jugador, o saber distingir quan cal acabar el joc i si s'ha guanyat a s'ha perdut.</li>
+                                            <li>Busca, amb els teus companys especialistes, una forma de representar el alumnes del IOC, organitzats en aules. Pensa que un mateix alumne pot estar a diverses aules a la vegada</li>
+                                        </ol>
+                                    </div>
+                                    
+                                    <p>Han d'estar totes les dades gestionades per una aplicació, dins una gran estructura? És evident que la resposta és no, perquè hi ha informació d'ús exclusivament local d'una funció que no té sentit mantenir en una estructura externa. Per tant, a l'hora de dissenyar l'estructura només haurem de tenir en compte la informació que sobrepassi l'àmbit d'una funció. A vegades, però mentre es va fent el disseny encara no es té clar quins funcions caldrà implementar. Recordeu però que el disseny no és immutable. Hem d'estar preparats per anar canviant i modificant l'estructura al llarg de la implementació. És l'avantatge de treballar amb una estructura, si un element no es fa servir mai, es pot eliminar sense que això repercuteixi en la implementació.</p>
+                                    <p>Ara bé, pot tenir una aplicació diverses estructures independents? Per respondre aquesta pregunta, reprendrem l'exemple del joc de dames que heu vist a l'activitat A501. Si l'execució de l'aplicació només permet jugar una única partida, de manera que en acabar el joc, es finalitzi també l'execució de l'aplicació, l'estructura dissenyada serà suficient per albergar-hi totes les dades necessàries i per tant serà una estructura única. La opció més lògica, però és que l'aplicació permeti jugar més d'una partida i que els jugadors vagin acumulant els punts entre partida i partida. En aquest cas potser sigui aconsellable crear i destruir l'estructura que permet jugar partides (JocDames) cada cop que en comencem i n'acabem una, però mantinguem els jugadors durant tota l'execució de l'aplicació per comptabilitzar els punts guanyats després de cada partida.</p>
+                                    <div class="frameBox">
+                                        <h4>Questions pel debat</h4>
+                                         <ol>
+                                            <li>En el fòrum d'especialistes, discutiu quines estructures serien adients per mantenir les dades tal com s'ha indicat.</li>
+                                            <li>Creieu que es tracta de dues estructures independents? Cal que entengueu per independents que no es contenen i per tant poden crear-se de forma independent, malgrat que entre elles puguin compartir dades.</li>
+                                        </ol>
+                                    </div>
                                 </div> 
                             </div>
                         </div>

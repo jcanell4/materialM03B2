@@ -2,41 +2,176 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Debat 4 - Específic de l'especialitat</h2>
-                                     <h3> Estructura de dades: Disseny i implementació</h3>
+                                     <h2 >Debat 5 - Estructura de dades</h2>
+                                     <h3>Aclariments i errors habituals treballant amb estructures de dades</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>Ara, us plantejarem un debat específic sobre estructura de dades l'objectiu del qual és que aprengeu una mica més a dissenyar estructures de dades i implementar-les en JAVA, prevenint els possibles problemes que se'n puguin derivar.</p>
-                                    <p>Per fer-ho, reprendrem l'exemple que us va servir com introducció del concepte de tipus compost. L'aplicacióm del joc de dames. Refesquem la memòria, es tracta d'un joc de taula on disposem de 24 fitxes (12 blanques i 12 negres) en un tauler de 8x8 caselles. El joc consisteix en que cada jugador per torns van movent una única fitxa cada cop, intentant menjar-se les de l'adversari. Es va convenir que per definir les dades del joc, era necessari representar el tauler de m anera que permeti indicar la posició de cada fitxa. També es volia portar el registre de quants torns s'han jugat per tal de saber quin és el jugador al que li ha de tocar moure en cada moment. Recordeu també que en un moment determinates va decidir mantenir algunes dades dels jugadors i per fer-ho es va optar per crear un segon tipos compost anomenat Jugador. L'estructures tenien la forma següent:</p>
+                                <div class="bodySlide">
+                                    <h4>Sobre la instanciació de tipus compostos</h4>
+                                    <p>Si haguéssim de fer una metàfora per explicar el significat de la instanciació i les implicacions que aquesta comporta, triaríem la construcció d'un armari a partir dels planols que ens mostren com cal muntar-lo. Els plànols serien els tipus de dades, la definició de l'estructura, mentre que la construcció pròpiament dita, de l'armari d'acord amb les instruccions dels plànols, seria realment la instanciació. El llenguatge JAVA té la instrucció <em>new</em> per executar la construcció.</p>
+                                    <p>Seguim amb la metàfora. Un cop realitzada la construcció, l'armari estarà buit, però preparat per emmagatzemar coses. Si no l'haguéssim construït, no hi podríem emmagatzemar res, perquè només tindríem els plànols, però l'armari no hi seria. És el que passa quan declarem una variable d'un tipus compost però no construïm la instància. La declaració de la variable seria equivalent a buscar-li lloc a l'armari, però si no el construïm, només tindrem un lloc buit.</p>
+                                    <p>Creeu un projecte i creeu dues classes: el tipus composts <em>DadesJugador</em> i la classe principal anomenada <em>Debat51</em>. Escriviu a cada classe el seu corresponent codi com s'indica a continuació:</p>
                                     <pre><code class="java">
-public class Jugador {    
-    String nom;
-    int partidesGuanyades;
-}
-                                  
+    public class DadesJugador {    
+        String nom;
+        int partidesGuanyades;
+    }
+                                    
+    public class Debat51 {
+        public static void main(String[] args) {
+            Debat51 prog = new Debat51();
+            prog.inici();
+        }
 
-public class JocDames {    
-    static final int CASELLA_BUIDA = 0;
-    static final int FITXA_BLANCA = 1;
-    static final int FITXA_NEGRA = 2;
-
-    int[][] tauler = new int[8][8];
-    int torn;
-    Jugador jugadorBlanques;
-    Jugador jugadorNegres;        
-}                                        
+        private void inici() {
+           DadesJugador jugadorA = new DadesJugador();
+           DadesJugador juagadorB;
+           
+           jugadorA.nom = "Sara";
+           jugadorB.nom = "Francesc";
+        }
+    }
+                                        
                                     </code></pre>
-                                    <p>Aturem-nos aquí per a fer un exercici de reflexió sobre el disseny de les dades. És importat no anar farcint l'estructura de dades superflues, perquè això pot arribar a ser contraproduent. Per exemple si la raó de mantenir dins l'estructura <em>JocDames</em> els dos jugadors fos el d'anar actualitzant el nombre de patrtides guanyades, tenint en compte que fins que no s'acabi la partida, no es podrà actualitzar i que l'estructura JocDames només tindria validesa mentre dura una partida, sembla que en aquest cas seria millor mantenir dues estructures separades i ananr actualitzant les partides dels jugadors cada cop que una partida finalitzi. </p>                                    
-                                    <p>En aquest escenari, potser el més assenyat seria disposar de dos tipus totalment independents que crearien les instancies just en el moment que fora necessari, i s'eliminarien quan deixessin de ser-ho. Aquest seria el cas de JocDama. De fet les intancies de JocDama només són necessaris quan comenci una partida i deixen de ser-ho en quan s'acabin</p>
+                                    <div class="frameBox">
+                                      <h4>Questions pel debat</h4>
+                                         <ol>
+                                            <li>Descriviu el comportament de les variables jugadorA i jugadorB en termes de la metàfora descrita més amunt.</li>
+                                            <li>Definiu el significat d'instanciació en el sentit informàtic del terme.</li>
+                                        </ol>
+                                    </div>
+                                    <h5>Diferències entre instanciar un tipus compost o una classe que només conté codi</h5>
+                                    <p>La diferència essencial entre ambdues classes és que les instancies dels tipus compostos serviran per emmagatzemar dades, mentre que les instancies de classes que només contenen codi, no emmagatzemen res. Seguint amb la metàfora anterior, si les estructures de dades fossin armaris, per guardar roba per exemple, les classes de codi serien electrodomèstics que la processen, posem per cas una planxa.</p>
+                                    <p>Si tinguéssim al capacitat de construir armaris i planxes amb només l'acció de picar els dits, podríem construir una planxa cada cop que en tinguéssim necessitat, només per mandra de no cercar alguna de les ja construïdes, sense  detriment de la nostra feina (exceptuant el malbaratament del medi ambient que causaríem), perquè aconseguíem planxar la roba desitjada de forma molt eficient. Ara bé, a ningú se li acudiria construir armaris quan passéssim pel costat d'una planxa i ens agafés el rampell de deixar la roba impecable, perquè els armaris construïts estarien buits i no ens quedaríem sense poder planxar. No tindríem més remei que agafar la planxa i desplaçar-nos a l'armari més proper.</p>
+                                    <p>Quelcom semblant passa amb les estructures de dades i amb les classes que contenen codi. Les primeres no es poden anar creant lleugerament si no volem perdre dades pel camí. Les segones en canvi, són com les planxes.</p>
+                                    <p>Analitzeu el codi que us posem a continuació. Carregueu en el mateix projecte de Netbeans on abans heu codificat les classes <em>DadesJugador</em> i <em>Debat51</em> per poder executar-lo i comprovar què és el que passa.</p>
+                                    <pre><code class="java">
+/*Fitxer ioc.m03.uf2.ImpresoraJugador.java*/
+package ioc.m03.uf2;
 
+public class ImpresoraJugador {
+    public void imprimirNom(DadesJugador jugador) {
+        System.out.print("Nom del jugador:");
+        System.out.println(jugador.nom);
+    }
 
+    public void imprimirGuanyades(DadesJugador jugador) {
+        System.out.print("Partides guanyades del jugador:");
+        System.out.println(jugador.partidesGuanyades);        
+    }
+}
 
+/*Fitxer ioc.m03.uf2.Debat52.java*/
+package ioc.m03.uf2;
 
-                                    <p>En aquest escenari, potser fins i tot, seria adequat plantejarnos si fora possible mantenir ambdós jugadors junts, potser en un array de jugadors de manera que   </p>
+public class Debat52 {
+   public static void main(String[] args) {
+        Debat52 prog = new Debat52();
+        prog.inici();
+    }
+
+    private void inici() {
+       DadesJugador jugador = new DadesJugador();
+       
+       jugador.nom = "Sara";
+       jugador.partidesGuanyades=10;
+       
+       processaImprimirNom(jugador);
+
+       processaImprimirGuanyades();
+       
+       ImpresoraJugador impressora = new ImpresoraJugador();
+       ProcessarImprimirTot(impressora, jugador);
+
+    }    
+
+    private void processaImprimirNom(DadesJugador jugador) {
+        ImpresoraJugador impressora = new ImpresoraJugador();
+        impressora.imprimirNom(jugador);
+    }
+
+    private void processaImprimirGuanyades() {
+        ImpresoraJugador impressora = new ImpresoraJugador();
+        DadesJugador jugador = new DadesJugador();
+        impressora.imprimirGuanyades(jugador);
+    }
+
+    private void ProcessarImprimirTot(ImpresoraJugador impressora, 
+                                        DadesJugador jugador) {
+        impressora.imprimirNom(jugador);
+        impressora.imprimirGuanyades(jugador);
+    }
+}
+                                    </code></pre>
+                                    <div class="frameBox">
+                                      <h4>Questions pel debat</h4>
+                                         <ol>
+                                            <li>Discutiu el comportament del codi i les raons per les quals es produeix aquest comportament i no un altre.</li>
+                                        </ol>
+                                    </div>
+                                    <h4>Coherència a les dades</h4>
+                                    <p>Mantenir les dades juntes i organitzades, no garanteix però, la coherència interna d'aquestes. La organització de les dades juga un paper molt important, però quan implementem  aplicacions usant estructures de dades, serà també important vetllar per la coherència de les mateixes. Tenir un disseny de dades amb una estructura impecable, amb contingut incoherent vindria a ser com redactar una frase sintàcticament ben escrita però semànticament sense sentit ("la casa caminava lentament" és un exemple de frase ben construïda sintàcticament, però semànticament errònia).</p>
+                                    <p>Malauradament, els errors deguts a a una incoherència interna en les dades d'una estructura són molt comuns i cal trobar maneres d'evitar-los. Ja sabem que no disposem de cap vareta màgica per trobar la solució, però sempre que codifiquem ens hauríem d'imposar trobar maneres d'evitar la incoherència o si més no de reduir-ne la possibilitat.</p>
+                                    <p>Les incoherències solen produir-se perquè sovint una acció sobre les dades pot implicar canvis en diversos elements de l'estructura. Si durant la codificació ens oblidem de fer algun dels canvis necessaris, ens trobarem davant d'un error realment difícil de detectar.</p>
+                                    <p>Hi ha una manera d'evitar aquest tipus d'errades. Consisteix en detectar les operacions d'alt nivell realitzades sobre l'estructura, aquelles que en realitzar-les cal fer més d'un canvi en diferents elements i crear una funció encarregada de fer l'acció de forma sempre complerta.</p>
+                                    <p>Imaginem que hem de gestionar una estructura que contingui una llista variable de dades. Per exemple, imaginem que hem de codificar el registre de corredors d'una cursa. El nombre de corredors que s'inscriuran és impossible de saber a priori. En aquest casos se sol optar per una estructura contenint una llista (array) de capacitat màxima (el nombre màxim d'inscripcions que creim que mai se superarà) i s'hi afegeix, a l'estructura, un indicador auxiliar per saber en tot moment quina és la ocupació real d'inscrits a la cursa.</p>
+                                    <pre><code class="java">
+package ioc.m03.uf2;
+
+public class DadesCursa {
+    public String[] corredors;
+    public int inscrits;
+}
+                                    </code></pre>
+                                    <p>Com es pot suposar, cada cop que fem una inscripció, cal afegir el nom del corredor a una posició lliure de l'array <em>corredors</em> i cal actualitzar el valor de l'element <em>inscrits</em>. També caldria fer quelcom semblant per donar de baixa un inscrit, etc.</p>
+                                    <p>Per gestionar aquestes accions sense errades, decidim crear una classe específica, anomenada <em>GestorDadesCursa</em>, encarregada d'implementar accions d'alt nivell sobre instancies del tipus compost <em>DadesCursa</em>:</p>
+                                    <pre><code class="java">
+package ioc.m03.uf2;
+
+public class GestorDadesCursa {
+    
+    public void inscripcioCorredor(DadesCursa dades, String corredor){
+        dades.corredors[dades.inscrits]=corredor;
+        dades.inscrits++;
+    }
+    
+    public void baixaCorredor(DadesCursa dades, int posicio){
+        for(int i=posicio; i&lt;dades.corredors.length-1; i++){
+            dades.corredors[i]=dades.corredors[i+1];
+        }
+        dades.inscrits--;
+    }
+}
+                                    </code></pre>
+                                    <p>D'aquesta manera, si a la implementació de l'aplicació es fa servir sempre la funció del gestor, les dades seran sempre coherents.</p>
+                                     <h5>Inicialització d'instàncies</h5>
+                                    <p>Algunes vegades, abans de fer servir una instancia de tipus compost serà necessari inicialitzar-la per tal que les seves dades siguin coherents, o s'ajustin al que s'espera.</p>
+                                    <p>Per exemple, en el cas anterior de la gestió d'inscripcions a curses, necessitarem diemsionar l'array de corredors a la mida màxima abans de començar a treballar. COm que la mida màxima dependrà del renom que tingui la cursa, es pot optar per deixar la dimensió configurable en el moment de començar. Podem encarregar al gestor de dades <em>GestorDadesCursa</em> l'acció de crear i d'inicialitzar una instancia dimensionada a una mida especificada des de paràmetre:</p>
+                                    <pre><code class="java">
+    public DadesCursa crearDadesCursa(int dimensio){
+        DadesCursa dades = new DadesCursa();
+        dades.corredors=new String[dimensio];
+        return dades;
+    }
+                                    </code></pre>
+                                    <p>Noteu que a JAVA, tots els tipus simples (short, int, long, float, double, char, ...) s'inicialitzem sempre a zero i per tant no és necessari indicar-ho a la inicilització.</p>
+                                    <p>Imagineu ara un nou exemple, volem representar una estructura per poder jugar a les 3 en ratlla, i decidim representar el tauler usant una matriu de 3x3 enters. Imagineu que decidim que les caselles buides les representarem per mitjà del valor -1 i les fitxers prendran el valor 0 o 1 segons siguin d'un o altra jugador.</p>
+                                    <div class="frameBox">
+                                      <h4>Qüestions pel debat</h4>
+                                         <ol class="nestedCounter">
+                                            <li>Feu una proposta al fòrum d'especialistes d'un tipus compost anomenat <em>DadesPartida3EnRatlla</em> que suporti la representació del tauler de les 3 en ratlla i el control del torn per tal de poder implementar el joc.</li>
+                                            <li>Feu també una segona proposta de la classe <em>GestorDades3EnRatlla</em>, que permeti:
+                                                <ol>
+                                                    <li>Crear i inicialitzar una instancia de <em>DadesPartida3EnRatlla</em></li>
+                                                    <li>Col·locar una fitxa en una posició buida del tauler identificada pel la posició de la fila i la posició de la columna.</li>
+                                                    <li>Moure una fitxa existent a una posició buida del tauler. Tant la fitxa com la nova posició s'identificaran a través de la posició de la fila i de la columna.</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </div>
                                 </div> 
                             </div>
                         </div>

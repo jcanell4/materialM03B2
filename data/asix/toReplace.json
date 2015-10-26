@@ -464,6 +464,7 @@
         "forumEspecialitat": {"selector":".forumEspecialitat", "type":"ref", "name":"A502","value":"forumEspecialitat"},
         "forumEspecialitatUrl": {"selector":".forumEspecialitatUrl", "type":"ref", "name":"A502","value":"forumEspecialitatUrl"},
         "nomEspecialitat": {"selector":".nomEspecialitat", "type":"text", "value":"Disseny aplicació"},
+        "objectiusDebatEspecialistes": {"selector":".objectiusDebatEspecialistes", "type":"html", "value":"<p>L'objectiu principal del disseny és poder determinar quines classes i quins mètodes caldrà codificar per implementar l'aplicació que s'està dissenyant. La intencionalitat dels debats específics és la de donar-vos eines que us facilitin aquesta feina. Bàsicament per desglossar les classes i els seus mètodes necessitarem elaborar el disseny descendent. També ens ajudarem amb un esquema del control i de les pantalles previstes per implementar l'aplicació. El resultat final haurà de ser un esquelet de classes i mètodes ben documentats a punt de ser codificats.</p>"},
         "guiaModularitzacio":{"selector":".guiaModularitzacio", "type":"attr", "name":"href", "value":"https://docs.google.com/document/d/1FZY7s5_lBeUeAOzrweQiYsnIbDmDLk7bEvyiZr6UmGE/edit?usp=sharing"}
     },
     "A502B": {
@@ -488,6 +489,7 @@
         "forumEspecialitat": {"selector":".forumEspecialitat", "type":"ref", "name":"A502","value":"forumEspecialitat"},
         "forumEspecialitatUrl": {"selector":".forumEspecialitatUrl", "type":"ref", "name":"A502","value":"forumEspecialitatUrl"},
         "nomEspecialitat": {"selector":".nomEspecialitat", "type":"text", "value":"Estructura de Dades"},
+        "objectiusDebatEspecialistes": {"selector":".objectiusDebatEspecialistes", "type":"html", "value":"<p>La intenció d'aquest debats és doble. D'una banda, donar-vos criteris per poder prendre decisions a l'hora de fer un disseny d'estructura de dades. D'altra banda, prevenir-vos sobre els errors més habituals que els programadors novells acostumen a tenir a l'hora de codificar amb estructures de dades.</p>"},
         "guiaModularitzacio":{"selector":".guiaModularitzacio", "type":"attr", "name":"href", "value":"https://docs.google.com/document/d/1tWXMhHbiwWif-wYiLNqlGvUrmfyNxvh3aliAZ0MDAEM/edit?usp=sharing"}
     },
     "A502C": {
@@ -512,6 +514,7 @@
         "forumEspecialitat": {"selector":".forumEspecialitat", "type":"ref", "name":"A502","value":"forumEspecialitat"},
         "forumEspecialitatUrl": {"selector":".forumEspecialitatUrl", "type":"ref", "name":"A502","value":"forumEspecialitatUrl"},
         "nomEspecialitat": {"selector":".nomEspecialitat", "type":"text", "value":"Biblioteques"},
+        "objectiusDebatEspecialistes": {"selector":".objectiusDebatEspecialistes", "type":"html", "value":"<p></p>"},
         "guiaModularitzacio":{"selector":".guiaModularitzacio", "type":"attr", "name":"href", "value":"https://docs.google.com/document/d/1OkJyXdbglfd0CBZ-2uba-UhmX0v0sIRb85CPfomOXZk/edit?usp=sharing"}
     },
     "A503": {
