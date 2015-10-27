@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	 <meta name="author" content="Alicia" >    
+	 <meta name="author" content="Alícia Vila" >    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenentatge per introduir els conceptes de classe, biblioteques i tipus composts">
     
@@ -167,16 +167,19 @@
 				El cas de biblioteques i tipus composts, els tractarem en apartats posteriors.</p>
 				<p>Per exemple, tot i que no ens cal conèixer el codi sencer, la classe <code>Scanner</code> ha estat desenvolupada dins d’un fitxer anomenat <code>Scanner.java</code>, i una part del seu codi és:</p>
 				<pre><code class="java">
-				public class Scanner {
-				//Altres declaracions (constants, vars. globals...) ...
-					public String nextLine() {
-						//Codi del mètode ...
-						}
-					public int nextInt() {
-						//Codi del mètode ...
-						}
-					//Altres mètodes ...
-					}
+public class Scanner {
+    //Altres declaracions (constants, vars. globals...) ...
+	
+	public String nextLine() {
+		//Codi del mètode ...
+	}
+	
+	public int nextInt() {
+		//Codi del mètode ...
+	}
+	
+	//Altres mètodes ...
+}
 				</code></pre>
                                 </div>
                             </div>
@@ -214,66 +217,66 @@
 				</ul>
                <p>Un exemple de programa fent servir aquestes classes addicionals o creades pel propi usuari, seria el següent: </p>                                 
    				<pre><code class="java">
-   				public class RegistreNotes {
-				
-						public static void main(String[] args) {
-							RegistreNotes programa = new RegistreNotes();
-							programa.inici();
-						}
+public class RegistreNotes {
 
-						public void inici() {
-							double[] notes = {2.0, 5.5, 7.25, 3.0, 9.5, 8.25, 7.0, 7.5};
-				
-						//Per cridar els mètodes cal inicialitzar la classe que els conté				
-						CalculsArrayReals calculador = new CalculsArrayReals();
+	public static void main(String[] args) {
+		RegistreNotes programa = new RegistreNotes();
+		programa.inici();
+	}
 
-					//Un cop fet, cal cridar-los usant com a prefix l'identificador
-						double max = calculador.calcularMaxim(notes);
-						double min = calculador.calcularMinim(notes);
-						double mitjana = calculador.calcularMitjana(notes);
-						System.out.println("La nota màxima és " + max + ".");
-						System.out.println("La nota mínima és " + min + ".");
-						System.out.println("La mitjana de les notes és " + mitjana + ".");
-						}
-					}
+	public void inici() {
+		double[] notes = {2.0, 5.5, 7.25, 3.0, 9.5, 8.25, 7.0, 7.5};
+
+	//Per cridar els mètodes cal inicialitzar la classe que els conté				
+	CalculsArrayReals calculador = new CalculsArrayReals();
+
+    //Un cop fet, cal cridar-los usant com a prefix l'identificador
+	double max = calculador.calcularMaxim(notes);
+	double min = calculador.calcularMinim(notes);
+	double mitjana = calculador.calcularMitjana(notes);
+	System.out.println("La nota màxima és " + max + ".");
+	System.out.println("La nota mínima és " + min + ".");
+	System.out.println("La mitjana de les notes és " + mitjana + ".");
+	}
+}
             </code></pre>
 				<p>On la classe <em>CalculsArrayReals()</em> està definida en altre fitxer:</p>
 				<pre><code class="java">
-					public class CalculsArrayReals {
-					public double calcularMaxim(double[] array) {
-						double max = array[0];
-						for (int i = 1; i < array.length; i++) {
-							if (max < array[i]) {
-								max = array[i];
-								}
-								}
-						return max;
-						}
-					public double calcularMinim(double[] array) {
-						double min = array[0];
-						for (int i = 1; i < array.length; i++) {
-						if (min > array[i]) {
-						min = array[i];
-						}
-						}
-							return min;
-						}
-					public double calcularMitjana(double[] array) {
-						double suma = 0;
-						for (int i = 0; i < array.length; i++) {
-						suma = suma + array[i];
-						}
-					return suma/array.length;
-					}
-					}
+public class CalculsArrayReals {
+	public double calcularMaxim(double[] array) {
+		double max = array[0];
+		for (int i = 1; i &lt; array.length; i++) {
+			if (max &lt; array[i]) {
+				max = array[i];
+			}
+		}
+    	return max;
+	}
+	public double calcularMinim(double[] array) {
+		double min = array[0];
+		for (int i = 1; i &lt; array.length; i++) {
+    		if (min &gt; array[i]) {
+        		min = array[i];
+    		}
+		}
+		return min;
+	}
+	public double calcularMitjana(double[] array) {
+		double suma = 0;
+		for (int i = 0; i &lt; array.length; i++) {
+    		suma = suma + array[i];
+		}
+    	return suma/array.length;
+	}
+}
 				</code></pre>
 				<p>És molt important tenir en compte com es realitza la <b>invocació o crida de mètodes</b> que no estan implementats en el mateix fitxer. 
 				Primer cal un pas previ d’inicialització, a partir del qual es permet la invocació dels mètodes externs. 
 				En dur a terme aquest procés, s’assigna un identificador a partir del qual és possible invocar els mètodes d’aquella classe, usant-lo com a prefix a la invocació. 
 				Sense aquest pas previ, és impossible invocar mètodes escrits a altres classes. La sintaxi per fer-ho és la següent:</p>
-					<p class="iocimportant"><code>                                      
-					 <p>NomClasse identificador = new NomClasse();
-					identificador.nomMetode(parametres);</code></p>
+					<pre><code class="java">                                      
+NomClasse identificador = new NomClasse();
+identificador.nomMetode(parametres);</code></pre>
 					
 					<p>En nomenclatura JAVA, el procés d’inicialització s’anomena formalment <b>instanciació</b> de la classe.
                El comportament de la invocació del mètode és idèntica a quan es fa sobre un mètode escrit a la mateixa classe. 
@@ -304,12 +307,12 @@
                                     <p>Una vegada tenim clar com organitzar els mètodes dins de classes diferenciades, d’acord a algun criteri d’ordenació o de reutilització de codi en el futur, ens trobem en què per a programes amb un cert grau de dificultat, pugui ser convenient disposar d’un mecanisme que permeti organitzar conjunts de classes dins d’un programa, de la mateixa manera que una classe organitza un conjunt de mètodes. 
                                     Això permet aplicar modularitat a conjunts de classes en bloc, en lloc de fer-ho a nivell individual, i també fer-les més fàcils de localitzar, gestionar i reaprofitar, si és el cas.</p> 
                                     <p class="iocimportant">Una biblioteca de classes, o <b>package</b> en Java, és un conjunt de classes vinculades entre elles d’acord a algun criteri temàtic o d’organització del seu codi i que permet organitzar aquestes classes jeràrquicament.</p> 
-                                    <p>Per assignar un conjunt de classes a un <em>package</em> cal triar un identificador i, per fer que una classe hi pertanyi, a la primera línia del seu fitxer amb el codi font s'escriurà la sentència següent:</p>
-                                    <p class="iocimportant"><code> package identificadorPackage;</code></p>  
-                                    <p>Cal destacar que l'identificador sempre ha d'anar a la primera línia de text, fins i tot abans de la declaració de classe (<code>public class…</code>). Per altra banda, cal tenir en compte que <em>package</em> no és pròpiament un fitxer de classes a editar, sinó que serà definit per totes les classes que es declaren com a part d'ell.</p>
-                                    <p>Per definir els <em>package</em> cal seguir un estàndard de notació: minúscula i paraules separades per punts que fan referència a la ubicació, per exemple:
-                                    <p><code>package ioc.m03.uf2.funcions.a501;</code></p>  
-                                    <p>Totes les classes de JAVA pertanyen a algun <em>package</em>. En cas de no incloure cap sentència import, es considera que aquella classe pertany a un <em>package</em> especial anomenat per defecte (<code>default package</code>).</p> 
+                                    <p>Per assignar una classe a un <em>package</em> cal escriure a la primera línia del seu fitxer de codi la sentència següent:</p>
+                                    <pre><code> package identificadorPackage;</code></pre>  
+                                    <p>Totes les classes que comparteixin el mateix identificador de package pertanyeran al mateix package.</p>
+                                    
+                                    <p>Per definir l'identificador dels <em>package</em> cal seguir un estàndard de notació: minúscula i paraules separades per punts que fan referència a la ubicació, per exemple:
+                                    <pre><code>package ioc.m03.uf2.funcions.a501;</code></pre>  
                                     <p>Per fer servir correctament els <em>package</em> ens cal conèixer les següents restriccions:</p>
 												<ul>                                    
                                     	<li>Donada una classe, aquesta únicament pot pertànyer a un <em>package</em>. No és possible usar més d’una vegada la sentència <em>package</em> en el codi font d’una classe. </li>
@@ -337,7 +340,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                <p>Ara veurem com fer la implementació de les biblioteques de classes que, en el fons, no és més que un mecanisme per odrenar les classes d'un programa. 
+                                <p>Ara veurem com fer la implementació de les biblioteques de classes que, en el fons, no és més que un mecanisme per organitzar les classes d'un programa. 
                                 Cal recordar que els criteris usats per dividir conjunts de classes en biblioteques diferents solen ser:</p>
 									<ul>
 										<li>Un programa complet, una jerarquia de packages.</li>
@@ -346,7 +349,9 @@
 									</ul>
                                <p>Fins ara, quan volíem referir-nos a una classe, senzillament fèiem servir el seu nom. Donat que tota classe pertany a un <em>package</em> és convenient nomenar la classe seguint un estàndard. 
                                Així, direm que el <b>nom qualificat</b> d’una classe és la combinació de l’identificador del seu <em>package</em> junt amb el seu nom, separats per un punt. Per exemple, 
-                              <p> <code>A501.apartat1.exemples.RegistreNotes</code></p>
+                              <pre> <code>
+A501.apartat1.exemples.RegistreNotes
+                               </code></pre>
                                <p>Amb un nom qualificat queda totalment clar a quin <em>package</em> pertany la classe. Això és útil ja que des del codi d’una classe que pertany a un <em>package</em> concret, només es poden usar directament classes amb què comparteixi el mateix nom de <em>package</em>. 
                                     Si s’usa una classe d’un de diferent, el compilador donarà un error, dient que no la reconeix. 
                                    <p> Per establir un mecanisme per indicar quina classe exactament s'està usant, JAVA ofereix tres maneres:</p>
@@ -936,22 +941,19 @@ També resulta molt útil per verificar que les dades a introduir seran sempre v
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En aquesta tasca heu de crear l'estructura de dades que està composta de dues estructures més les dades d'una partida, la que estigui jugant, i les dades dels jugador.</p>
-                                    <p>---figura C54---- </p>
-                   
-                                    <p>Abans de començar a codificar pensa quines dades necessitarem emmagatzemar per gestionar el joc com ara:
+                                    <p>En aquesta tasca heu de crear l'estructura de dades del joc anterior. Abans de començar a codificar penseu quins elements tenim i quines dades necessitarem emmagatzemar per gestionar el joc.
+                                    El joc quedarà determinat per les dades referents als jugadors i a la partida però necessitem conèixer-ne altres com:                 
 <ul>
-<li>Les cartes acumulades (punts aleatoris) en cada ronda durant una partida. 
-Es tracta d'un vector d'enters amb els punts de cada jugador corresponents a la partida que s'estigui jugant.</li>
+<li>Les cartes acumulades (punts aleatoris) en cada ronda durant una partida. Es tracta d'un vector d'enters amb els punts de cada jugador corresponents a la partida que s'estigui jugant.</li>
 <li>Un comptador de rondes de la partida actual</li>
-<li>Un comptador de jugadors que passin de 21 punts.</li> 
+<li>Un comptador de jugadors que passin de 21 punts</li>
+<li>A les dades dels jugadors disposarem només dos vectors. En un hi emmagatzemarem el nom de cada jugador i a l'altre els punts finals obtinguts després de cada partida.</li> 
 </ul>
-<p>A les dades dels jugadors disposarem només dos vectors. En un hi emmagatzemarem el nom de cada jugador i a l'altre els punts finals obtinguts després de cada partida.                                    
-                                    </p>
                                     <p>Un cop codificada l'estructura de dades contesta les següents preguntes en el <a href="#" data-toggle="tooltip" data-original-title="Recordeu que per poder accedir al fòrum reduït cal que us hi inscriviu a través de la utilitat Tria grup de fòrum reduït (TGFR)>"><span class='forumGrupReduit'></span></a>. Es tracta de discutir breument entre vosaltres intentant arribar a una conclusió final:</p>
                                     <ol>
                                         <li>Quantes estructures de dades heu creat i de quin tipus? Quin tipus d'accés els heu atorgat als elements de les classes?</li>
-                                        <li></li>
+                                        <li>Creeu que és convenient definir un paquet? Com el definiríeu?</li>
+                                        <li>Quina de les biblioteques de classes pròpia de JAVA us caldria importar? Per què? </li>
                                     </ol>
                                         <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
@@ -961,11 +963,11 @@ Es tracta d'un vector d'enters amb els punts de cada jugador corresponents a la 
                                         Solució Estructura de dades
                                     </button>
                                     <div id="slc-toDo20-solution" class="iocSolution hidden">
-                                        
                                     <pre><code class="java">
-
 package ioc.jocdel21.dades;
+
 import java.util.Arrays;
+
 public class DadesJugadors {
     public String[] nomsJugadors;
     public int[] puntsJoc;
@@ -973,7 +975,6 @@ public class DadesJugadors {
 
 public class DadesPartida {
     public int[] puntsPartida;
-    
     public int quantsPassen=0;
     public int rondaActual=0;
 }
@@ -982,9 +983,7 @@ public class DadesJoc {
     public DadesJugadors dadesJugadors;
     public DadesPartida dadesPartida;
 }
-
-                                    </code></pre>                         
-                                        
+                                    </code></pre>                          
                                     </div>
                                 </div> 
                             </div>
@@ -1173,8 +1172,6 @@ public class EntradaSortida {
         System.out.println();
         return demanarOpcio();
     }
-
-
                                         </code></pre>
                                     </div>
                                     </div>

@@ -86,7 +86,7 @@
                                 <ul>
                                         <li>Mostrar-vos totes les parts que solen intervenir en el desenvolupament d'una aplicació.</li>                                        
                                         <li>Oferir-vos models de solució que us permetin ampliar la visió del que fins ara heu fet.</li>
-                                        <li>Fer-vos palès quines solen ser les principals dificultats que acostumem a trobar-nos quan decidim codificar un disseny.</li>
+                                        <li>Fer palès de quines solen ser les principals dificultats que acostumem a trobar-nos quan decidim codificar un disseny.</li>
                                 </ul>
                                 <p>L'objectiu principal és que aneu edificant les bases que us permetin enfronta-vos a reptes cada cop més complexes, però sense oblidar el repte que teniu davant, acabar el projecte. De fet, es tracta de processos complementaris, doncs finalitzar el repte amb èxit us aportarà la part de coneixement que només s'adquireix amb l'experiència.</p>
                                 <p>És per això que aquesta activitat es troba dividida en dos blocs, un primer que girarà en torn a debats sobre qüestions i exercicis que dureu a terme en el vostre fòrum d'especialista i un segon que implicarà a realització de tasques individuals orientades al donar continuïtat al projecte des de la vessant de la vostra especialitat.</p>
@@ -115,8 +115,8 @@
                                 <div class=bodySlide>
                                     <p>La modularització basada en la segregació del codi en diversos fitxers i biblioteques, que en JAVA suposa la creació  de classes addicionals organitzades en paquets, ha representat per el desenvolupament d'aplicacions una gran avantatge ja que ha permès crear aplicacions molt més complexes del que seria possible sense ella.</p>
                                     <p>Tot i així, cal anar molt en compte a l'hora de definir els mòduls i dissenyar les biblioteques, ja que la divisió implicarà inevitablement incrementar el nombre de funcions, que quedaran dispersades en múltiples fitxers. Si fem divisions sense criteri, o fem servir un criteri erroni, correm el risc d'incrementar la complexitat en lloc de reduir-la.</p>
-                                    <p>A continuació us presentarem un seguit de debats que us ajudaran a centrar l'atenció en els elements importants que cal tenir en compte a l'hora d'encarar un disseny modular. Els tres primers es realitzaran simultàniament en cada fòrum de les 3 especialitats, perquè representen els conceptes bàsics que caldria de tenir clars amb independència de l'especialitat assignada. A més, haureu de participar també en 2 debats específics de la vostra especialitat (<span class="nomEspecialitat"></span>).</p>
-                                    <p>Se us demana que per cada debat realitzeu al menys 2 intervencions. Una inicial per exposar el vostre punt de vista en llegir el supòsit del debat i una final a mode de conclusió tenint en compte les intervencions de tots els companys.</p>
+                                    <p>A continuació us presentarem un seguit de debats que us ajudaran a centrar l'atenció en els elements importants que cal tenir en compte a l'hora d'encarar un disseny modular. EL primer versarà sobre la documentació del codi fent servir la utilitat de Java anomenada Javadoc. Es tracta d'un debat comú a tots els especialistes perquè la documentació de les classes resulta imprescindible en totes les especialitats. La resta de debats (2 més) seran propis de la vostra espcialitat (<span class="nomEspecialitat"></span>).</p>
+                                    <p>Us aconsellem que per cada debat realitzeu al menys 2 intervencions. Una inicial per exposar el vostre punt de vista en llegir el supòsit del debat i una final a mode de conclusió tenint en compte les intervencions de tots els companys.</p>
                                 </div>
                             </div>
                         </div>
@@ -126,235 +126,6 @@
                 
                 <!--=========== BEGIN SUBSECTION Debat 1 ================-->    
                 <section id="slc-discussion11" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Debat 1 - Comú de totes les especialitats</h2>
-                                     <h3> La reutilització </h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p> Segurament, un dels criteris que més avantatge ha suposat per el desenvolupament de programari, ha estat la reutilització del codi, perquè així s'aconsegueix codificar més ràpidament, cometent molts menys erros. És evident que per poder reutilitzar codi en diferents contextos (diferents parts d'un programa, diferents aplicacions, etc.), cal separar aquelles parts que es poden reutilitzar, de les que difícilment podran reutilitzar-se a cap altra context. </p>
-                                    <p>Ara bé, cal assenyalar que crear biblioteques de funcions reutilitzables no és trivial, ja que requereix d'un esforç d'abstracció important per tal d'aïllar el que és inevitablement específic d'una aplicació, del que es pot generalitzar afegint-hi paràmetres. Si no hi parem gaire atenció, tindrem tendència a barrejar-ho tot i ens resultarà impossible trobar entre el nostre codi cap funció genèrica.</p>
-                                    <p>Per exemple, és habitual, en programadors poc experimentats, barrejar en una mateixa funció la demanda de dades a l'usuari, el tractament d'aquestes i la mostra del resultat. Penseu però que generalment, les demandes de dades a l'usuari i la mostra de resultats per pantalla, són realment processos molt específics i lligats  a l'aplicació en la que s'han desenvolupat. Això els converteix realment en processos difícilment reutilitzables. Per contra, els tractaments que reben les dades solen ser processos altament reutilitzables si aconseguim parametritzar-los amb una mica d'habilitat.</p>
-                                    <p>A continuació se us presenta la funció <em>trobarTemperaturaMinima</em>, la qual permet trobar el valor mínim d'un conjunt de temperatures introduïdes per l'usuari. Fixeu-vos però que la funció no compleix els requisits indicats per poder ser considerada reutilitzable, ja que només es podria fer servir en algun context que calgués trobar la temperatura mínima d'una conjunt de temperatures donades per l'usuari. És a dir exclusivament l'actual!</p>
-                                    <p>Tal com està codificada la funció no serviria per trobar les temperatures mínimes emmagatzemades en el disc dur, en comptes de demanar-les a l'usuari, ni molt menys per trobar el valor mínim de quelcom que no fossin temperatures, ni permetria emmagatzemar el valor mínim en el disc dur, o enviar-lo a un servidor, en comptes de mostrar-lo per pantalla, ja que la petició de dades, el càlcul del resultat i la mostra d'aquest formen un tot indivisible.</p>
-                                    <p>Es demana que recodifiqueu la funció, dividint-la, de manera que agrupeu una part del codi en almenys una funció realment reutilitzable (poden ser més si ho desitgeu). Acompanyeu la codificació amb una raonament que justifiqui la divisió realitzada i penge-ho al <span class=forumEspecialitat></span> en <em><strong><span class=nomEspecialitat></span></strong></em>.</p>
-                                    <p>També es demana que reflexioneu en <a target=_blank class="forumEspecialitatUrl">el fòrum </a> si les noves funcions substituirien totalment la funció <em>trobarTemperaturaMinima</em> de manera que caldria eliminar-la del codi, o si per contra, les noves funcions, necessitarien encara de la funció <em>trobarTemperaturaMinima</em> adaptada a la crida d'aquestes.</p>
-                                    <pre><code class="java linenumbers">
-        public void trobarTemperaturaMinima(){
-            float[] temperatures;
-            int posMin;
-            
-            System.out.println("Quantes temperatures vols omplir?");
-            int mida = scanner.nextInt();
-            temperatures = new float[mida];
-            
-            System.out.println("Entra el valor de les temperatures");
-            for(int i=0; i&lt;temperatures.length; i++){
-                System.out.println("Temperatura " + (i+1) + ": ");
-                temperatures[i]=scanner.nextFloat();
-            }
-
-            posMin=0;
-            for(int i=1; i&lt;temperatures.length; i++){
-                if(temperatures[posMin]&gt;temperatures[i]){
-                    posMin=i;
-                }
-            }
-            System.out.println("La Temperatura mínima és: " +  temperatures[posMin]);
-        }
-                                     </code></pre>
-                                     <p>Un cop hagis penjat la teva proposta estigues atent a les respostes del teus companys, per tal de poder fer una darrera intervenció de consens.</p>
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-discussion11" 
-                                            data-selector-clue="#slc-discussion11-clue1">
-                                        Pista
-                                    </button>                                        
-                                    <div id="slc-discussion11-clue1" class="iocClue hidden">
-                                        <h2>Pista</h2>
-                                        <p>Identifica la part del codi destinada a preguntar a l'usuari els valors de les temperatures, la part del codi destinada a mostrar el resultat i la part del codi destinada a cercar el valor mínim.</p>
-                                        <p>Creus que hi ha diferencia entre cercar la temperatura mínima, la nota mínima, el menor temps, o el menor consum de carburant? Si no hi ha diferencia, podríem idear una un procés comú a tots ells. Quines dades necessitaria el procés? Quin seria el resultat del procés?</p>
-                                    </div>                                    
-                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION Debat 1 ================-->    
-                
-                <!--=========== BEGIN SUBSECTION Debat 2 ================-->    
-                <section id="slc-discussion12" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Debat 2 - Comú de totes les especialitats</h2>
-                                     <h3> Guia per modularitzar usant classes addicionals i paquets</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>A mida que treballem amb aplicacions cada cop més grans, no n'hi ha prou només en agrupar el codi en funcions, sinó que caldrà classificar les funcions en classes i les classes en paquets per tal de poder-les localitzar, memoritzar i utilitzar amb certa eficiència. A les persones ens costa menys treballar amb conceptes jeràrquics que no pas amb llistes llargues, malgrat que al final el nombre d'elements inclosos en ambdós (jerarquia o llista) sigui similar.</p>
-                                    <p>A continuació us mostrem un conjunt de criteris que poden fer-se servir per organitzar el codi. Llegiu-los detingudament i en acabar, consensueu amb els vostres companys especialistes una guia esquemàtica que mostri la seqüencia d'accions i criteris a aplicar en cada pas, per tal de realitzar un procés de modularització amb èxit. Escriviu el document de forma compartida, col·laborant amb els companys especialistes. Trobareu un document preparat per a compartir a <a target="_blank" class="guiaModularitzacio">GoogleDocs</a>.</p>
-                                    
-                                    <h4 id="us_de_paquets_obligatoris" class="frameBoxHeader">Ús de paquets obligatoris</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>Per tal que sigui possible la reutilització de classes i funcions en múltiples aplicacions, serà necessari ubicar les classes sempre en algun paquet, per tal d'evitar la repetició de noms i facilitar-ne la localització.</p>
-                                        <p>S'aconsella que les classes estiguin sempre ubicades en un seqüència de paquets que permetin identificar la organització, el departament i/o equip que les desenvolupa, així com el projecte en que s'han desenvolupat. Per exemple suposant que el vostre grup fos un equip de desenvolupament del IOC,  que fos el grup número 5 i que treballéssiu en un projecte per crear utilitats per a processar imatges, la seqüència mínima de paquets amb les que hauríeu de treballar seria: <em>ioc.m03b2.grup5.imatges</em></p>
-                                        <p>Aquesta seria per dir-ho d'alguna manera l'arrel a partir de la qual començaríeu a penjar-hi classes i paquets més específics.</p>
-                                    </div>
-
-                                    <h4 id="aillament_de_codi_reutilitzable" class="frameBoxHeader">Aïllament del codi reutilitzable</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>És evident que si el que volem és poder reutilitzar funcions, no només cal adaptar les funcions fent que algunes d'elles siguin realment reusables, sinó que cal separar perfectament les funcions genèriques (reutilitzables) de les específiques (poc reutilitzables). L'ideal és agrupar les funcions genèriques en biblioteques (paquets i classes) per tal de poder-les passar en bloc d'un projecte a un altre.</p>
-                                    </div>
-
-                                    <h4 id="agrupacio_tematica" class="frameBoxHeader">Agrupació temàtica</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>L'agrupació temàtica permet organitzar les funcions de forma jeràrquica aglutinant-les en categories cada cop més genèriques. Les funcions s'agregarien en classes i aquestes en paquets. Si fos necessari, es podrien establir també agrupacions de paquets, a fi d'anar estructurant la jerarquia. La profunditat d'aquesta dependrà del nombre de funcions que calgui organitzar. Si són poques, potser n'hi haurà prou en fer servir només classes per realitzar la classificació temàtica. És el que java fa en agrupar funcions a la classe Math, a la classe Arrays o a la classe String. Cada classe representa una categoria diferent.</p>
-                                        <p>Ara bé, si consideréssim que una d'elles tingués a un nombre de funcions excessiu, es podria reduir la quantitat, seleccionant una temàtica més específica. Per exemple es podria crear una classe només per funcions trigonomètriques, una altra per funcions estadístiques, una altra per les aritmètiques i així successivament. Les tres classes podrien agrupar-se en una paquet específic anomenat <a href="#" data-toggle="tooltip" data-original-title="JAVA aconsella que els noms dels paquets s'escriguin totes les lletres en minúscules per tal de distingir-los dels noms de les classes"><em>math</em></a> per tal d'anar gestant una organització jeràrquica fàcil de manipular</p>
-                                        <p>Per exemple, suposant que el nostre paquet arrel fos <em>ioc.m03b2.grup5.utilitats</em>, l'estructura quedaria de la següent manera:</p>
-                                        <ul>
-                                            <li>ioc
-                                                <ul>
-                                                    <li>m03b2
-                                                       <ul>
-                                                           <li>grup5
-                                                               <ul>
-                                                                   <li>utilitats
-                                                                       <ul>
-                                                                           <li>String</li>
-                                                                           <li>Arrays</li>
-                                                                           <li>math
-                                                                                <ul>
-                                                                                    <li>Trigonometriques</li>
-                                                                                    <li>Estadistiques</li>
-                                                                                    <li>Aritmetiques</li>
-                                                                                    <li>...</li>
-                                                                                </ul>
-                                                                           </li>
-                                                                       </ul>
-                                                                   </li>
-                                                               </ul>
-                                                           </li>
-                                                       </ul>
-                                                   </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <h4 id="organitzacio_estructural" class="frameBoxHeader">Organització estructural</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>La organització estructural fa referència a la divisió jeràrquica que les aplicacions. Bàsicament es pot desprendre del propi disseny descendent.</p>
-                                        <p>La principal dificultat amb la que ens trobarem quan haguem de fer una divisió d'aquestes característiques és que el disseny descendent evidencia la funcionalitat però no ens aporta informació de com agrupar-la en classes i paquets. Per tant, cal disposar d'indicadors que ens ajudin a valorar si estem fent una bona classificació.</p>
-                                        <p>Un indicador fonamental és la mida de la classe. Desconfieu d'aquelles agrupacions que donin com a resultat classes amb molt poques funcions. Resulta difícil establir un nombre correcta de funcions que hauria de tenir una classe, però és evident que generalment n''ha de tenir més d'una, més de dos i segurament més de tres. De forma semblant, cal desconfiar també de les classes que aglutinin moltes funcions i caldria plantejar-nos si fos possible, alguna divisió que en reduís el nombre.</p>
-                                        <p>Un segon indicador que també hauríem de tenir en compte, consisteix poder explicar la funcionalitat d'una classes de forma clara i més o menys breu. Per tant caldrà també desconfiar d'aquelles classes, que per explicar el que fan hem de matisar excessivament o elaborar una llista de coses que fan, perquè probablement ens trobem davant d'una classe excessivament específica i per això ens cal matisar tant el seu paper (el primer cas) o  que aglutina funcions poc o gens relacionades entre elles (el segon cas).</p>
-                                        <p>Per il·lustrar-ho, farem una mica de <a href="#" data-toggle="tooltip"  data-html="true" data-original-title="La pràctica del <em>codi-ficció</em> és una eina de reflexió molt útil per l'aprenentatge. Intenteu-lo practicar sovint"><em>"codi-ficció"</em></a>. És a dir, prendrem de model una aplicació ben coneguda per nosaltres i intentarem deduir com la implementaríem fent servir els recursos i coneixements que tinguem en cada moment.</p>
-                                        <p>Sigui per exemple, el nostre model, un lector de documents amb format com ara els documents pdf. Si voléssim crear una aplicació que llegís i mostres per pantalla fitxers contenint  documents amb format, caldria analitzar quina és la seva funcionalitat a partir del seu disseny descendent</p>
-                                        <p>Per simplificar-ho ens plantejarem la implementació d'una aplicació simple, que únicament s'encarregui de localitzar un document al sistema de fitxers, llegir-lo, analitzar-ne el seu contingut i mostrar-lo per pantalla d'acord amb les regles de format que disposi. Un possible esquema de disseny podria ser:</p>
-                                        
-                                       <ol class="nestedCounter">
-                                          <li>Localització del document
-                                                <ol>
-                                                    <li>Entrada de la ruta de directoris si l'usuari coneix la ruta sensera</li>
-                                                    <li>Navegació per sistema de fitxers fins localitzar el fitxer desitjat
-                                                        <ol>
-                                                            <li>Mostrar el contingut d'un directori com a directori actual</li>
-                                                            <li>Seleccionar un element del directori actual</li>
-                                                            <li>...</li>
-                                                        </ol>
-                                                    </li>
-                                                </ol>
-                                            </li>
-                                           <li>Càrrega del contingut del document
-                                                <ol>
-                                                    <li>Obertura del fitxer</li>
-                                                    <li>Càrrega en memòria del contingut</li>
-                                                    <li>...</li>
-                                                </ol>
-                                            </li>
-                                            <li><a href="#" data-toggle="tooltip" data-original-title="En argot informàtic s'anomena rederització al procés d'analitzar dades amb format i plasmar en la pantalla una visualització d'aquestes seguint les indicacions del format">Renderització del contingut</a>
-                                                <ol>
-                                                    <li>Anàlisi del contingut per aplicar les regles de renderització segons el format</li>
-                                                    <li>Donar les instruccions pertinents al dispositiu (pantalla) per visualitzar el contingut</li>
-                                                </ol>
-                                            </li>
-                                        </ol>
-                                        <p>Tenint en compte els criteris de mida i descripció indicats més amunt, probablement obtindríem entre 3 i 4 classes. En primer lloc trobarem la classe encarregada de localitzar el document, que podem anomenar <em>SelectorDocument</em>. Podríem sentir ganes de dividir aquesta en dos, una pel cas d'entrada de la ruta i una altre pel cas de navegació a través de l'arbre de directoris, però segurament el nombre de funcions que contindria el primer cas seria tant minúscul que aconsellaria agrupar-ho tot en una única classe.</p>
-                                        <p>En segon lloc planificaríem la implementació de la classe encarregada de la càrrega del contingut del fitxer a la memòria de l'aplicació. Es pot anomenat <em>CarregadorDocument</em></p>
-                                        <p>Finalment, serà necessari planificar la implementació de la classe encarregada de la renderització que anomenaríem <em>Render</em>. Cal clarificar però, que en funció de la complexitat del format, potser seria adequat dividir la classe en dos, per tal de reduir-ne la seva mida. En aquest cas planificaríem la creació de la classe <em>AnalitzadorDocument</em> i <em>GestorPantalla</em>, les quals estarien agrupades en un paquet anomenat <em>render</em>. Paquets i classes (incloent els paquets arrel) podrien quedar així:</p>
-                                       <ul>
-                                            <li>ioc
-                                                <ul>
-                                                   <li>m03b2
-                                                       <ul>
-                                                           <li>grup5
-                                                               <ul>
-                                                                   <li>lector
-                                                                       <ul>
-                                                                          <li>SelectorDocument</li>
-                                                                          <li>CarregadorDocument</li>
-                                                                          <li>render
-                                                                              <ul>
-                                                                                  <li>AnalitzadorDocument</li>
-                                                                                  <li>GestorPantalla</li>
-                                                                              </ul>
-                                                                          </li>
-                                                                       </ul>
-                                                                   </li>
-                                                               </ul>
-                                                           </li>
-                                                       </ul>
-                                                   </li>
-                                                </ul>
-                                            </li>
-                                       </ul>
-                                    </div>                               
-                                    <h4 id="dades_i_gestors de dades" class="frameBoxHeader">Dades i gestors de dades</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>Separar les dades i unificar-les en una estructura, és una bona solució per tenir un accés general a les dades des de qualsevol punt de l'aplicació peró evitant els inconvenients de les declaracions globals. Així, les dades quedarien sempre encapsulades en una estructura declarada com a variable local que caldria passar per paràmetre a les diferents funcions, però un cop rebut el paràmetre resulta fàcil tenir accés a qualsevol valor de l'estructura.</p>
-                                        <p>Tot i així, si l'estructura de dades presenta certa complexitat, pot resultar util per els programadors que no han dissenyat l'estructura disposar d'una classe que els faciliti l'accés. Aquesta classe actuaria com a gestor de les dades i permetria obtenir o assignar valors parcials a les dades sense necessitat de coneixer exactament l'estructura interna. Es a dir contindria funcions per facilitat l'accés a parts de l'estructura de les dades, tant per llegir els valors com per modificar-los.</p>
-                                    </div>
-                                    <h3 id="interficie_i_control" class="frameBoxHeader">Interfície d'usuari i control d'accions</h3>
-                                    <div class="frameBox smallFont">
-                                        <p>Una altra opció cada cop més usada consisteix en separar radicalment el codi destinat a mostrar informació i capturar entrades de l'usuari (el que habitualment es coneix com interfície d'usuari de l'aplicació) del que podriem dir, el tractament de les dades.</p>
-                                        <p>De fet, normalment es classifiquen les funcions en tres categories i s'agrupen segons aquestes. Les 3 categories són: interfície d'usuari, encarragada de l'intercanvi d'informació entre l'aplicació i l'usuari, control de les peticions, encarregada de gestionar cada una de les peticions del l'usuari a fi de reconduir el flux del programa per aconseguir resoldre amb èxit la demanda i una tercera categoria encarregada del tractament de les dades per a resoldre cada una de les demandes que l'aplicació permeti. </p>
-                                        <p>Els avantatges que això implica són:</p>
-                                        <ul>
-                                            <li>Augmentar la reusabilitat de les funcions</li>
-                                            <li>Peder sofisticar la interficie de l'usuari i el control de peticions sense afectar a l'essencia de l'aplicació (tractament de dades) que seguira treballant de la mateixa manera.</li>
-                                            <li>Permetre crear aplicacions identiques en diferents plataformes (WEB, local) o per diversos dispositius (PC, tablet, smartphone, etc.)</li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <p>Fes les teves propostes al <a target="_blank" class="guiaModularitzacio">document compartit de GoogleDocs</a>. No es tracat que repetiu els casos aquí exposats, sinó que el que se us demana és que feu entre tots una guia pràctica de modularització d'una palicació on quedi clar quins són els diferents passos a fer per dissenyar els mòduls que l'aplicació haurà de tenir. La guia ha de partir del moment zero, és a dir no ha de presuposar que hi ha res fet.</p>
-                                    <p>La hauria de ser esquemàtica i expressar-se en termes com: </p>
-                                    <ol class="nestedCounter">
-                                        <li>Escriure el disseny descendent de l'aplicació</li>
-                                        <li>Fer una primera organització dels paquest i classes que es necessitarien.</li>
-                                        <li>Buscar quines funcions necessitarien biblioteques genèriques i quines biblioteques caldrien</li>
-                                        <li>...</li>
-                                    </ol>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION Debat 2 ================-->    
-                
-                <!--=========== BEGIN SUBSECTION Debat 3 ================-->    
-                <section id="slc-discussion13" class=" section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -483,6 +254,8 @@ public class CalculadoraDArees {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
+                            
+                            En acabar aquesta activitat haureu de penjar l'informe a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la informació als teus companys.
                                 <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
                                 <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
                             </div>
