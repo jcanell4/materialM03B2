@@ -1,0 +1,94 @@
+                <!--=========== BEGIN SUBSECTION Aplicació 1 ================-->    
+                <section id="slc-toDo10" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer -  Estructura de dades</h2>
+                                     <h3> Resum activitats de debat</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquesta tasca consistirà en escriure el breu resum del que heu aprés a les activitats de debat, fent especial èmfasi en les tasques específiques de la vostra especialitat ja que serà part que els vostres companys desconeixeran. Si ho creieu convenient, complementeu l'explicació amb diagrames, imatges, exemples, etc.  </p>
+                                    <p>Escriviu el resum a <span class="informeLliurament"></span> on hi trobareu un apartat específic per escriure el resum. En acabar haureu de penjar-lo a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la informació als teus companys.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Aplicació 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exercici 1 ================-->    
+                <section id="slc-toDo21" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer -  Estructura de dades</h2>
+                                     <h3> Disseny descendent</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquesta tasca consistirà en escriure el disseny descendent complert del projecte a desenvolupar. Podeu fer servir el format esquemàtic com s'ha vingut fent en anteriors ocasions.</p>
+                                    <p>Recordeu que a les activitats <a class="A407Url" target="_blank">A407</a> i <a class="A408Url" target="_blank">A408</a> ja s'ha desenvolupat bona part del disseny. Recopileu cada una de les parts desenvolupades, ajunteu-les en un únic document i complimenteu el que falti.</p>
+                                    <p>Escriviu el resultat obtingut a l'apartat de documentació de <span class="informeLliurament"></span> que haureu de penjar a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la tasca als teus companys.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 1 ================-->    
+
+                <!--=========== BEGIN SUBSECTION Exercici 2 ================-->    
+                <section id="slc-toDo22" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer -  Estructura de dades</h2>
+                                     <h3> Disseny de l'estructura de dades</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquesta tasca consistirà en dissenyar l'estructura de dades del projecte a partir del disseny descendent elaborat. Escriviu l'estructura en un fitxer java d'un projecte de Netbeans.</p>
+                                    <p>Tal com heu aprés, comenceu el disseny de dades per baix, en ordre invers a com heu fet el disseny descendent. Documenteu les classes usant la sintaxi Javadoc.</p>
+                                    <p>A banda del codi, escriviu a l'apartat de documentació de <span class="informeLliurament"></span> una referència a als fitxers java (o la carpeta arrel) que permeti localitzar el codi JAVA. En acabar totes les tasques d'aquesta activitat, haureu de penjar l'informe a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la tasca als companys.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 2 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exercici 3 ================-->    
+                <section id="slc-toDo23" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer -  Estructura de dades</h2>
+                                     <h3>Gestor de dades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Finalment se us demana que escriviu una classes JAVA per gestionar, almenys la inicialització de de les instàncies. Valoreu si és convenient afegir-hi altres funcionalitat que asseguirn la coherència interna de les dades. Documenteu les classes usant la sintaxi Javadoc.</p>
+                                    <p>A banda del codi, escriviu a l'apartat de documentació de <span class="informeLliurament"></span> una referència a als fitxers java (o la carpeta arrel) que permeti localitzar el codi JAVA. En acabar totes les tasques d'aquesta activitat, haureu de penjar l'informe a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la tasca als companys.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Exercici 3 ================-->
+

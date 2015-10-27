@@ -18,7 +18,7 @@
                                             <li>Tots ells són classes estàndards de JAVA, és a dir, incorporades dins el propi llenguatge. Mireu el seus paràmetres.  Creieu que seria aconsellable crear una biblioteca reutilitzable que fes servir com a paràmetres tipus compostos creats per donar resposta a una aplicació determinada? Per què? Quines limitacions d'ús tindria a l'hora d'intentar-la reutilitzar?</li>
                                             <li>Quelcom semblant passaria amb les dades retornades. Com podeu concloure que seran els paràmetres (ja siguin d'entrada o de sortida) de les funcions d'una biblioteca reutilitzable?</li>
                                             <li>Quines avantatges i desavantatges trobeu en crear biblioteques de mètodes <em>static</em> com Math o Arrays o biblioteques amb mètodes estàndard, com ara  String o Random? Quines diferencies creieu que hi ha entre elles per tal que els seus autors les hagin implementat d'una o altra manera?  </li>
-                                            <li>Consulteu l'API de JAVA de les classes indicades. Creieu que sense aquesta documentació sabríeu fer servir els seus mètodes adequadament? Creieu que una documentació adequada és imprescindible quan es crea unha nova biblioteca?</li>
+                                            <li>Consulteu l'API de JAVA de les classes indicades. Creieu que sense aquesta documentació sabríeu fer servir els seus mètodes adequadament? Creieu que una documentació adequada és imprescindible quan es crea una nova biblioteca?</li>
                                         </ol>
                                     </div>
                                 </div> 
