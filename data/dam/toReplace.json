@@ -424,7 +424,7 @@
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A502": {
-        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A502_ActivitatsEspecialistes.html?dam'>A502</a>"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<div class='dropdown'><a id='a502menu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>A502</a><ul class='dropdown-menu' aria-labelledby='a502menu'><li><a href='A502A_ActivitatsEspecialistes.html?dam'>Disseny modular</a></li><li><a href='A502B_ActivitatsEspecialistes.html?dam'>Estructures de dades</a></li><li><a href='A502C_ActivitatsEspecialistes.html?dam'>Biblioteques</a></li></ul>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A502 Activitats Especialistes"},
         "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FE"},{"defaultValue":"Ll_B"}]},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"06/11/2015"},

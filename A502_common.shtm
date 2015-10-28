@@ -130,7 +130,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Debat 3 - Comú de totes les especialitats</h2>
+                                     <h2 >Debat 1 - Comú de totes les especialitats</h2>
                                      <h3> Ús del JAVADOC</h3>
                                  </div>
                             </div>
@@ -254,9 +254,9 @@ public class CalculadoraDArees {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                            
-                            En acabar aquesta activitat haureu de penjar l'informe a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la informació als teus companys.
-                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>Les tasques de debat quedaran recollides en els fòrums i en el resum que se us ha demanat que plasmeu al l'informe de lliurament.</p>
+                                <p>Les tasques individuals us fan omplir també l'informe amb documentació útil pel projecte, que haureu d'empaquetar junt amb el codi que hagueu generat, en un fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> a fi de presentar la informació als teus companys.</p>
+                                <p>Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
                                 <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
                             </div>
                         </div>

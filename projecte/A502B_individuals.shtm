@@ -13,7 +13,7 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>Aquesta tasca consistirà en escriure el breu resum del que heu aprés a les activitats de debat, fent especial èmfasi en les tasques específiques de la vostra especialitat ja que serà part que els vostres companys desconeixeran. Si ho creieu convenient, complementeu l'explicació amb diagrames, imatges, exemples, etc.  </p>
-                                    <p>Escriviu el resum a <span class="informeLliurament"></span> on hi trobareu un apartat específic per escriure el resum. En acabar haureu de penjar-lo a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la informació als teus companys.</p>
+                                    <p>Escriviu el resum a <span class="informeLliurament"></span> on hi trobareu un apartat específic per escriure el resum. </p>
                                 </div> 
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 <div class=bodySlide>
                                     <p>Aquesta tasca consistirà en escriure el disseny descendent complert del projecte a desenvolupar. Podeu fer servir el format esquemàtic com s'ha vingut fent en anteriors ocasions.</p>
                                     <p>Recordeu que a les activitats <a class="A407Url" target="_blank">A407</a> i <a class="A408Url" target="_blank">A408</a> ja s'ha desenvolupat bona part del disseny. Recopileu cada una de les parts desenvolupades, ajunteu-les en un únic document i complimenteu el que falti.</p>
-                                    <p>Escriviu el resultat obtingut a l'apartat de documentació de <span class="informeLliurament"></span> que haureu de penjar a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la tasca als teus companys.</p>
+                                    <p>Escriviu el resum a <span class="informeLliurament"></span> on hi trobareu un apartat específic per escriure el resum. </p>
                                 </div> 
                             </div>
                         </div>
@@ -60,8 +60,8 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>Aquesta tasca consistirà en dissenyar l'estructura de dades del projecte a partir del disseny descendent elaborat. Escriviu l'estructura en un fitxer java d'un projecte de Netbeans.</p>
-                                    <p>Tal com heu aprés, comenceu el disseny de dades per baix, en ordre invers a com heu fet el disseny descendent. Documenteu les classes usant la sintaxi Javadoc.</p>
-                                    <p>A banda del codi, escriviu a l'apartat de documentació de <span class="informeLliurament"></span> una referència a als fitxers java (o la carpeta arrel) que permeti localitzar el codi JAVA. En acabar totes les tasques d'aquesta activitat, haureu de penjar l'informe a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la tasca als companys.</p>
+                                    <p>Tal com heu aprés, comenceu el disseny de dades per baix, en ordre invers a com heu fet el disseny descendent. Assegureu-vos que a cada nivell del disseny descendent, l'estructura conté totes aquelles dades necessàries per poder treballar, ja sigui llegint dades o modificant-les. Recordeu però que les dades temporals no cal incloure-les a l'estructura. Doneu noms a les classes i a les variables que siguin prou significatius com per deduir la seva utilitat. Malgrat tot, documenteu els tipus compostos usant la sintaxi Javadoc.</p>
+                                    <p>A banda del codi, escriviu a l'apartat de documentació de <span class="informeLliurament"></span> una referència a als fitxers java (o la carpeta arrel) que permeti localitzar el codi JAVA.</p>
                                 </div> 
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Finalment se us demana que escriviu una classes JAVA per gestionar, almenys la inicialització de de les instàncies. Valoreu si és convenient afegir-hi altres funcionalitat que asseguirn la coherència interna de les dades. Documenteu les classes usant la sintaxi Javadoc.</p>
+                                    <p>Finalment se us demana que escriviu una classes JAVA per gestionar, almenys la inicialització de de les instàncies. Valoreu si és convenient afegir-hi altres funcionalitat que assegurin la coherència interna de les dades. Recordeu declarar com a public tots aquells elements dels tipus compostos als que calgui accedir de forma directa sense la intermediació del gestor de dades. Per contra, aquells elements als que només s'accedeixi usant el gestor, se'ls pot treure el prefix de <em>public</em> de manera que només les classes del propi paquet (el gestor) hi tinguin accés.</p>
                                     <p>A banda del codi, escriviu a l'apartat de documentació de <span class="informeLliurament"></span> una referència a als fitxers java (o la carpeta arrel) que permeti localitzar el codi JAVA. En acabar totes les tasques d'aquesta activitat, haureu de penjar l'informe a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la tasca als companys.</p>
                                 </div> 
                             </div>
