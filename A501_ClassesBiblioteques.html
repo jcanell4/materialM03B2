@@ -204,10 +204,15 @@ public class Scanner {
                                 <div class=bodySlide>
                                     <p>Per a realitzar un programa modular en JAVA cal definir un criteri per distribuir els mètodes en diferents classes i, aquestes, en diferents fitxers. 
                                     És important tenir en compte que sempre ha d'haver-hi una classe principal (<code>Main class</code>) que és la que disposa d'un mètode principal declarat al seu codi i que suposa el punt d'inici de l'execució del programa.</p>
-				<p>Per tal d'executar un programa modular en JAVA, només cal executar aquesta classe principal. A partir d’aquí, l’execució de les diferents instruccions segueix el flux de control habitual, partint del mètode principal d’aquesta classe.</p>
-				<p>Figura 1.1. dels materials?</p>
+				<p>Per tal d'executar un programa modular en JAVA, només cal executar aquesta classe principal. A partir d’aquí, l’execució de les diferents instruccions segueix el flux de control habitual (figura 1), partint del mètode principal d’aquesta classe.</p>
+				<figure id ="figura_flux" class="left">
+                    <img width="464" src="images/activities/ic10m3u5_02.png" alt="flux de control en un programa amb classes addicionals">
+                    <figcaption style="width: 510px; max-width: 75%;">
+                        <span class="figuretitle">figura </span> Flux de control en un programa modular.                               
+                    </figcaption>
+                </figure>
 				<p>Cal destacar, que a la classe principal hi ha d’haver tant el mètode <code>main</code> com el mètode <code>inici</code>. Cap dels dos és necessari a la resta de classes.</p>
-				<p>En un programa modular, podem definir classes addicionals (que no són la classe principal) nosaltres mateix o bé altres desenvolupadors per requeriments del programa. 
+				<p>En un programa modular, podem definir <b>classes addicionals</b> (que no són la classe principal) nosaltres mateix o bé altres desenvolupadors per requeriments del programa. 
 				En tots els casos, les classes estaran declarades i codificades en fitxers <em>.java</em> per separat. L'objectiu principal que tindran aquests tipus de classes seran la de repositoris de mètodes.</p>
 				<p>Abans de començar a implementar les classes, cal raonar en quins casos ens pot interessar dividir els mètodes d’un programa entre diferents classes. Entre altres, podeu pensar en els següents:</p>
 				<ul>
@@ -304,10 +309,13 @@ identificador.nomMetode(parametres);</code></pre>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Una vegada tenim clar com organitzar els mètodes dins de classes diferenciades, d’acord a algun criteri d’ordenació o de reutilització de codi en el futur, ens trobem en què per a programes amb un cert grau de dificultat, pugui ser convenient disposar d’un mecanisme que permeti organitzar conjunts de classes dins d’un programa, de la mateixa manera que una classe organitza un conjunt de mètodes. 
-                                    Això permet aplicar modularitat a conjunts de classes en bloc, en lloc de fer-ho a nivell individual, i també fer-les més fàcils de localitzar, gestionar i reaprofitar, si és el cas.</p> 
+                                    <p>Una vegada tenim clar com organitzar els mètodes dins de classes diferenciades, d’acord a algun criteri d’ordenació o de reutilització de codi en el futur, 
+                                    ens trobem en què per a programes amb un cert grau de dificultat, pugui ser convenient disposar d’un mecanisme que permeti organitzar conjunts de classes dins d’un programa, de la mateixa manera que una classe organitza un conjunt de mètodes. 
+                                    Això permetria aplicar modularitat a conjunts de classes en bloc, en lloc de fer-ho a nivell individual, i també fer-les més fàcils de localitzar, gestionar i reaprofitar, si és el cas.</p> 
+												
                                     <p class="iocimportant">Una biblioteca de classes, o <b>package</b> en Java, és un conjunt de classes vinculades entre elles d’acord a algun criteri temàtic o d’organització del seu codi i que permet organitzar aquestes classes jeràrquicament.</p> 
-                                    <p>Per assignar una classe a un <em>package</em> cal escriure a la primera línia del seu fitxer de codi la sentència següent:</p>
+                                    <p>Així, un package, no és més que un directori de classes. 
+                                    Per assignar una classe a un <em>package</em> cal escriure a la primera línia del seu fitxer de codi la sentència següent:</p>
                                     <pre><code> package identificadorPackage;</code></pre>  
                                     <p>Totes les classes que comparteixin el mateix identificador de package pertanyeran al mateix package.</p>
                                     
@@ -318,7 +326,12 @@ identificador.nomMetode(parametres);</code></pre>
                                     	<li>Donada una classe, aquesta únicament pot pertànyer a un <em>package</em>. No és possible usar més d’una vegada la sentència <em>package</em> en el codi font d’una classe. </li>
                                     	<li>Donat un <em>package</em>, a dintre seu mai hi poden haver dues classes amb el mateix nom.</li>                        
 												</ul>
-												<p></p>												
+												 <p>A l'hora d'implementar, cal establir un criteri per decidir quan ens interessa dividir conjunts de classes en biblioteques diferents:</p>
+										<ul>
+										<li>Un programa complet, una jerarquia de packages.</li>
+										<li>Molts programes petits, una jerarquia de packages.</li>
+										<li>Un conjunt de classes sense un programa principal, un package.</li>
+										</ul>												
 												</div>
                             </div>
                         </div>
@@ -333,31 +346,29 @@ identificador.nomMetode(parametres);</code></pre>
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Què cal saber - Classes, biblioteques i tipus composts</h2>
-                                     <h3 >Biblioteques de classes: ús de paquets</h3>
+                                     <h3 >Biblioteques de classes: Implementació de classes que pertanyen a paquets</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class=bodySlide>
-                                <p>Ara veurem com fer la implementació de les biblioteques de classes que, en el fons, no és més que un mecanisme per organitzar les classes d'un programa. 
-                                Cal recordar que els criteris usats per dividir conjunts de classes en biblioteques diferents solen ser:</p>
-									<ul>
-										<li>Un programa complet, una jerarquia de packages.</li>
-										<li>Molts programes petits, una jerarquia de packages.</li>
-										<li>Un conjunt de classes sense un programa principal, un package.</li>
-									</ul>
-                               <p>Fins ara, quan volíem referir-nos a una classe, senzillament fèiem servir el seu nom. Donat que tota classe pertany a un <em>package</em> és convenient nomenar la classe seguint un estàndard. 
+                                <div class=bodySlide>                              
+                               <p>Fins ara, quan volíem referir-nos a una classe, senzillament fèiem servir el seu nom. 
+                               En el moment, en que tenim classes que pertanyen a un determinat package, i volem accedir a classes que pertanyen a altre paquet, hem d'establir uns mecanismes d'accés.  
+                               Donat que tota classe pertany a un <em>package</em> és convenient nomenar la classe seguint un estàndard. 
                                Així, direm que el <b>nom qualificat</b> d’una classe és la combinació de l’identificador del seu <em>package</em> junt amb el seu nom, separats per un punt. Per exemple, 
                               <pre> <code>
 A501.apartat1.exemples.RegistreNotes
                                </code></pre>
-                               <p>Amb un nom qualificat queda totalment clar a quin <em>package</em> pertany la classe. Això és útil ja que des del codi d’una classe que pertany a un <em>package</em> concret, només es poden usar directament classes amb què comparteixi el mateix nom de <em>package</em>. 
-                                    Si s’usa una classe d’un de diferent, el compilador donarà un error, dient que no la reconeix. 
-                                   <p> Per establir un mecanisme per indicar quina classe exactament s'està usant, JAVA ofereix tres maneres:</p>
+                               <p>Amb un nom qualificat queda totalment clar a quin <em>package</em> pertany la classe. 
+                               Això és útil ja que des del codi d’una classe que pertany a un <em>package</em> concret, 
+                               només es poden usar directament classes amb què comparteixi el mateix nom de <em>package</em>. 
+                               Però què ocorre si volem accedir a una classe que està a altre package diferent?
+                               Si s'accedeix a una classe d’un package diferent, el compilador donarà un error, dient que no la reconeix. 
+                               <p>En aquests casos, per indicar quina classe exactament s'està usant, JAVA ofereix tres opcions:</p>
 									<ul>
 										<li>Inicialització usant el nom qualificat: usar el nom qualificat per referir-se a la seva inicialització</li>                                                                                
-                                                                                <li>
+                                                                              
 													<pre><code class="java">
 package ioc.m03.uf2.funcions.a501
 
@@ -374,39 +385,40 @@ public class CalculsArrayReals {
 ...
 }
 													</code></pre> 
-                                                                                </li>
+                                                                              
 													<li>Importació explícita: s'ha d'importar prèviament a la capçalera del fitxer de codi font (<code>import</code>), entre la declaració del <code>package</code> i la declaració <code>public class….</code></li>
-                                                                                                        <li>
+                                                                                                       
 													<pre><code class="java">													
-													package ioc.m03.uf2.funcions.a501
-													//Cal importar la classe "CalculsArrayReals", ja que és d'un altre package
-													import utilitats.arrays.CalculsArrayReals;
-													public class RegistreNotes {
-													//Codi
-													...
-													}
-													package utilitats.arrays;
-													//No s'usa cap classe fora d'aquest package, no s'importa res
-													public class CalculsArrayReals {
-													//Codi
-													...
-													}		
+package ioc.m03.uf2.funcions.a501
+//Cal importar la classe "CalculsArrayReals", ja que és d'un altre package
+import utilitats.arrays.CalculsArrayReals;
+public class RegistreNotes {
+//Codi
+...
+}
+package utilitats.arrays;
+//No s'usa cap classe fora d'aquest package, no s'importa res
+public class CalculsArrayReals {
+//Codi
+...
+}		
 													</code></pre> 
-                                                                                                        </li>
-													<li>Importació general: es fa servir quan es volen usar moltes classes del mateix <code>package</code> i importar-les una a una es fa pesat. Es tracta d’usar un asterisc, “*”, en lloc del nom de la classe en el nom qualificat. Aquest fa de comodí i equival a dir “absolutament totes les classes del package”.</li>
-                                                                                                        <li>
+                                                                                                      
+													<li>Importació general: es fa servir quan es volen usar moltes classes del mateix <code>package</code> i importar-les una a una es fa pesat. Es tracta d’usar un asterisc, “*”, en lloc del nom de la classe en el nom qualificat. 
+													Aquest fa de comodí i equival a dir “absolutament totes les classes del package”.</li>                                                                                                       
 													<pre><code class="java">	
-													package ioc.m03.uf2.funcions.a501;
-													//S'importarien totes les classes del package utilitats.arrays
-													import utilitats.arrays.*;
-													public class RegistreNotes {
-													//Codi
-													...
-													}		
+package ioc.m03.uf2.funcions.a501;
+//S'importarien totes les classes del package utilitats.arrays
+import utilitats.arrays.*;
+public class RegistreNotes {
+//Codi
+...
+}		
 												</code></pre>	
-                                                                                                        </li>
 												</ul> 
-												<p>Per norma general, és aconsellable usar la importació explícita, ja que així a l’inici del vostre codi font sempre disposareu d’una llista detallada de quines classes d’altres biblioteques esteu usant.</p>                                                          
+												<p>Per norma general, és aconsellable usar la importació explícita, 
+												ja que així a l’inici del vostre codi font sempre disposareu d’una llista detallada de quines classes d’altres biblioteques esteu usant.</p> 
+												<p>Una vegada es té clar com referenciar les classes que pertanyin a un determinat paquet, cal treballar amb elles com hem fet fins ara.</p>                                                     
                                 </div>
                             </div>
                         </div>
@@ -471,15 +483,15 @@ public class RealsAleatoris {
                                      <p>Algunes classes de Java tenen una particularitat, i és que a l’hora d’inicialitzar-les cal especificar un conjunt d’informació addicional en forma de <b>paràmetres</b>.                                      
 												 <p>Fins al moment, s’ha dit que per inicialitzar una classe per tal de poder invocar els mètodes que ofereix calia fer:</p>
 												  <pre><code class="java">
-												  NomClasse identificador = new NomClasse();
+NomClasse identificador = new NomClasse();
 												  </code></pre>   
 												 <p>Però hi ha casos en què, per inicialitzar correctament la classe, cal afegir un conjunt de valors entre els parèntesis, de manera idèntica a com es faria en invocar un mètode. Si no es posen aquests paràmetres quan pertoca, hi haurà un error de compilació.</p>                       
 													<pre><code class="java">
-												 NomClasse identificador = new NomClasse(paràmetres);
+NomClasse identificador = new NomClasse(paràmetres);
 												  </code></pre>   
 												  <p>Per exemple, la classe <em>Scanner</em>. Per inicialitzar-la correctament li cal un paràmetre indicant quin sistema d’entrada ha de processar:</p>
 												  <pre><code class="java">
-												Scanner lector = new Scanner(System.in);
+Scanner lector = new Scanner(System.in);
 												  </code></pre>   
 												  <p>Per veure si cal o no incloure un paràmetre en inicialitzar una classe, caldrà cercar-lo a la seva documentació. Concretament, a l’apartat anomenat resum de constructors (<em>Constructor Summary</em>) indica la sintaxi de la part dreta de la inicialització.</p>                       
                                 </div>
@@ -508,11 +520,11 @@ public class RealsAleatoris {
                                     sense haver d' inicialitzar la seva classe. S’identifiquen perquè a la documentació apareixen marcats amb la paraula clau <code>static</code>. </p>
 												<p>Per invocar aquests mètodes, la sintaxi correcta és posar com a prefix el nom de la classe directament. A part d’això, el seu comportament és idèntic a qualsevol altre mètode. És a dir: </p>                                    
                                     <pre><code class="java">
-													NomClasse.nomMetode(paràmetres);
+NomClasse.nomMetode(paràmetres);
                                     </code></pre>   
                                     <p>Per exemple, donat el mètode estàtic <code>sqrt</code> definit a la classe <code>Math</code>: </p>
                                        <pre><code class="java">
-													double resultat = Math.sqrt(36);
+double resultat = Math.sqrt(36);
                                     </code></pre> 
                                     <p>A continuació veurem els mètodes estàtics d'algunes de les classes més importants:</p>
                                     <ul>
@@ -590,18 +602,15 @@ System.out.println(array[i]);
                                 <p>Com ja heu anat veient amb l'experiència que porteu programant, quan implementem una aplicació gran, la quantitat de dades es multiplica. 
                                 Sortosament, ja hem vist que podem fer servir arrays per agrupar dades. Ara bé, no totes les dades es poden emmagatzemar en arrays, i necessitarem cercar altra solució, com definir altre tipus de variable o definir-ne moltes.  
                                 En aquests casos, l'ús de variables globals està totalment desaconsellat perquè treballar amb moltes variables a l'hora que podria comportar molts errors a més de la poca eficiència que suposa definir un nombre desmesurat de variables. 
-                                Malgrat tot, l'alternativa de treballar amb variables locals no és menys arriscada ja que sovint, en els processos de nivell alt sobretot (ens referim al nivell dins el disseny descendent), podem arribar a necessitar moltes variables i pot ser realment tediós haver-les de passar per paràmetres i per descomptat, en el fons també una font d'errors.
+                                Malgrat tot, l'alternativa de treballar amb variables locals no és menys arriscada ja que sovint, en els processos de nivell alt sobretot, podem arribar a necessitar moltes variables i pot ser realment tediós haver-les de passar per paràmetres i per descomptat, en el fons també una font d'errors.
                                 Per pal·liar això, molts llenguatges de programació permeten la creació d'<b>estructures de dades</b>. 
-                                Es tracta d'una forma d'agrupar les dades, mantenint-les organitzades. 
-                                L'estructura de dades ens ha de permetre mantenir juntes totes les dades que treballin a l'hora i es necessitin unes a altres.
+                                Es tracta d'una forma d'agrupar dades de diferent tipus que fan referència a un mateix concepte, mantenint-les organitzades. 
                                 L'estructura de dades ideal per una aplicació gran, és una estructura jeràrquica que permeti obtenir subconjunts de dades coherents escollint el tros adequat de la jerarquia. Quan parlem d'estructura jeràrquica ens referim a algun sistema en que unes dades s'englobin dins d'altres formant un arbre.</p>
-										  <p>---estructura arbre</p> 	
+										 
 										<p>Seleccionar la jerarquia correcta no sempre es senzill. Si l'aplicació es petita, és possible agrupar totes les dades en un sol bloc, o crear un número reduït de blocs independents.
-										Internament, cada bloc tindrà un un conjunt de dades de diversos tipus. És a dir a diferencia dels vectors o les matrius un bloc de dades pot estar composat de dades de diversos tipus (enters, cadenes, vectors,...) per tal d'aconseguir la jerarquia desitjada.</p>	                                
-                                    <p>Com ja podeu intuir, escollir una bona organització de les dades, ben estructurades, de ràpid accés i fàcilment identificables, és clau en el desenvolupament de qualsevol aplicació. Ara bé, com la majoria de coses complexes, no hi ha una recepta que ens determini quina és la millor organització. 
-                                    És més, sovint no existeix una solució ideal sinó que les diverses solucions afavoreixen més uns aspectes en detriment d'un altres, i cal escollir, en funció de les prioritats de l'aplicació una solució prou eficient i adequada. De fet, l'experiència i el sentit comú tenen un pes molt gran en la presa de decisions, 
-                                    però és important no deixar-se endur per prejudicis ni suposicions i raonar lògicament les decisions preses, sobre tot quan es comença.
-												Abans de continuar, hauríem de preguntar-nos què és una estructura de dades i com es fa servir. En sí, el concepte és fàcil, però per usar-lo cal tenir ben clar el significat d'instància de l'estructura i conèixer unes regles bàsiques per no trobar-nos amb sorpreses. És el que intentarem explicar ara.</p>
+										Internament, cada bloc tindrà un un conjunt de dades de diversos tipus, és a dir, un bloc de dades pot estar composat de dades de diversos tipus (enters, cadenes, vectors,...) per tal d'aconseguir la jerarquia desitjada.</p>	                                
+                                   
+												El concepte d'estructura de dades és senzill, però per usar-lo cal tenir ben clar el significat d'instància de l'estructura i conèixer unes regles bàsiques.</p>
 												<p class="iocimportant">Les estructures de dades són organitzacions més o menys complexes de dades, de tal forma que la seva organització ens configura un valor extra que ens ajuda a interpretar la informació que representen. Per exemple, hem de considerar una estructura de dades el conjunt de valors que poden identificar i representar una persona. Per exemple el seu nom, la seva edat, el seu DNI, les titulacions que posseeix, els treballs que ha realitzat, etc.</p>
 												<p>Els llenguatges de programació donen suport a les estructures de dades per mitjà dels tipus compostos de dades i concretament, el llenguatge JAVA, fa servir classes per definir els seus tipus de dades compostos.</p>
 												<p class="iocimportant">Els tipus de dades compostos (classe en el llenguatge JAVA) permeten definir com s'identifiquen i organitzen els valors entre sí. Com identificadors usarem noms conceptuals que ens ajudin a interpretar el que representen.</p>
@@ -619,14 +628,20 @@ public class DadesCalculadora {
 }
                                          </code></pre>
                                     </div>
+                                    <figure id ="figura_instanciacio" class="left">
+                                        <img width="464" src="images/activities/tipusCompostInstancia.png" alt="instanciació de tipus compostos">
+                                        <figcaption style="width: 510px; max-width: 75%;">
+                                            <span class="figuretitle">figura </span> Instanciació d'un tipus compost.                               
+                                        </figcaption>
+                                    </figure>
                                     <p>Fixeu-vos que els tipus compostos no són les dades pròpiament, sinó les variables de classe que contindran les dades. En altres paraules, són el que defineix quina forma han de tenir les dades, com han de ser, quins seran els identificadors dels valors i quina la organització interna.
-I les dades? com hi afegim les dades? Abans d'explicar-ho m'agradaria remarcar que les dades no s'emmagatzemen a l'estructura. El llenguatges de programació només poden emmagatzemar dades a la memòria i és allà on aniran a parar les dades. Ara bé, per a què serveixen aleshores els tipus compostos? Doncs l'explicació que més s'hi aproxima és que actuen de plantilla. Així, els tipus compostos emmotllen la memòria per poder-hi emmagatzemar dades en la forma definida en cada tipus compost. En l'argot dels llenguatges de desenvolupament, en comptes de parlar d'emmotllar, es parla d'instanciar. De fet, les dades de la memòria són instancies d'algun tipus de dades (siguin o no compostos).</p>
+I les dades? com hi afegim les dades? Abans d'explicar-ho m'agradaria remarcar que les dades no s'emmagatzemen a l'estructura. El llenguatges de programació només poden emmagatzemar dades a la memòria i és allà on aniran a parar les dades. Ara bé, per a què serveixen aleshores els tipus compostos? Doncs l'explicació que més s'hi aproxima és que actuen de plantilla. Així, els tipus compostos emmotllen la memòria per poder-hi emmagatzemar dades en la forma definida en cada tipus compost. En l'argot dels llenguatges de desenvolupament, en comptes de parlar d'emmotllar, es parla d'instanciar (figura 1). De fet, les dades de la memòria són instancies d'algun tipus de dades (siguin o no compostos).</p>
 <p>Cada tipus compost pot instanciar múltiples dades a la memòria de forma simultània. Cada dada manté els seus propis valors.
-A la pràctica, la instanciació es fa sobre una variable i es fa servir la paraula clau new seguida del tipus compost a instanciar amb els parèntesis d'execució:</p>
+A la pràctica, la instanciació es fa sobre una variable i es fa servir la paraula clau <em>new</em> seguida del tipus compost a instanciar amb els parèntesis d'execució:</p>
                                     <div class="iocexample">
                                          <pre><code class="java">
-                                          DadesCalculadora operacio1 = new DadesCalculadora();
-														DadesCalculadora operacio2 = new DadesCalculadora();
+DadesCalculadora operacio1 = new DadesCalculadora();
+DadesCalculadora operacio2 = new DadesCalculadora();
                                          </code></pre>
                                     </div>
                                     
@@ -642,7 +657,6 @@ if(operacio1.operacio == '+'){
 } 
                                          </code></pre>
                                     </div>
-                                    <p>---figura 1---</p>
                                     <p>En el llenguatge JAVA no és possible donar valors a una estructura si no s'ha creat la instancia del seu tipus compost. Si ho féssim obtindríem un error:</p>
  												<div class="iocexample">
                                          <pre><code class="java">
@@ -657,9 +671,9 @@ Aquesta classe caldria situar-la al mateix paquet que l'estructura de dades i co
 També resulta molt útil per verificar que les dades a introduir seran sempre vàlides. Es tracta doncs d'una opció força aconsellable. </p>
                                     <p>Els elements d'una classe tenen diferents tipus d'accessos: </p>
                                     <ul>
-                                        <li><code>public</code>: qualsevol altra classe té accés a l'element estigui o no al mateix paquet </li>
-                                        <li><code>private</code>: l'accés a l'element està restringit a la pròpia classe, és a dir, no es pot accedir des d' altres classes</li>
-                                        <li><code>friendly (protected)</code>: l'element de la classe només potser utilitzat des de classes que estiguin al mateix paquet que la classe en la que es defineix l'element </li> 
+                                        <li><em>public</em>: qualsevol altra classe té accés a l'element estigui o no al mateix paquet </li>
+                                        <li><em>private</em>: l'accés a l'element està restringit a la pròpia classe, és a dir, no es pot accedir des d' altres classes. Aquest tipus d'accés es fa servir més endavant quan feu programació orientada a objectes. </li>
+                                        <li><em>per defecte (sense tipus d'accés)</em>: l'element de la classe només potser utilitzat des de classes que estiguin al mateix paquet que la classe en la que es defineix l'element </li> 
                                     </ul>
                                 </div>
                             </div>
@@ -668,228 +682,164 @@ També resulta molt útil per verificar que les dades a introduir seran sempre v
                 </section>
                 <!--=========== END SUBSECTION Estructures de dades: Tipus composts ================-->  
                 
-                 <!--=========== BEGIN SUBSECTION Tipus composts: Cas pràctic ================-->    
-                <section id="slc-toKnow50" class=" section">
+               <!--=========== BEGIN SUBSECTION Guia modularitzar ================-->    
+                <section id="slc-discussion12" class=" section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Què cal saber - Classes i biblioteques</h2>
-                                     <h3 >Tipus composts: Cas pràctic </h3>
+                                     <h2 >Què cal saber - Classes, biblioteques i tipus composts</h2>
+                                     <h3> Guia per modularitzar usant classes addicionals i paquets</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                <p>Per tal d'entendre com gestionar aquestes classes treballarem el següent cas pràctic.
-                                <p>Imaginem una aplicació per jugar al senzill joc de les dames.  
-                                Recordeu que es juga amb un tauler de 10x10 caselles, que juguen 2 jugadors i que cada jugador disposa de 12 fitxes de diferent color que cal disposar a certes caselles del tauler. 
-                                Imaginem que l'aplicació vol identificar el nom dels dos jugadors i també el nombre de partides guanyades. </p> 	
-										  <p>Si decidim representar el tauler com una matriu de valors numèrics, en el que el valor zero representi les caselles buides, el valor u, 
-										  representi les fitxes blanques i el valor dos, les negres; podríem crear la següent especificació per donar resposta a les necessitats de l'aplicació:</p>
-												
-				
-                                    <div class="iocexample">
-                                         
-                                    <pre><code class="java">
-                                            public class JocDames {    
-    int CASELLA_BUIDA = 0;
-    int FITXA_BLANCA = 1;
-    int FITXA_NEGRA = 2;
-
-    int[][] tauler = new int[8][8];
-    int torn;
-    Jugador jugadorBlanques;
-    Jugador jugadorNegres;
-}
-
-
-public class Jugador {    
-    String nom;
-    int partidesGuanyades;
-}
-                                         </code></pre>
+                                    <p>A mida que treballem amb aplicacions cada cop més grans, no n'hi ha prou només en agrupar el codi en funcions, sinó que caldrà classificar les funcions en classes i les classes en paquets per tal de poder-les localitzar, memoritzar i utilitzar amb certa eficiència. 
+                                    A les persones ens costa menys treballar amb conceptes jeràrquics que no pas amb llistes llargues, malgrat que al final el nombre d'elements inclosos en ambdós (jerarquia o llista) sigui similar.
+                                    A continuació us mostrem un conjunt de criteris que poden fer-se servir per organitzar el codi. </p>
+                                    
+                                    <h4 id="us_de_paquets_obligatoris" class="frameBoxHeader">Ús de paquets obligatoris</h4>
+                                    <div class="frameBox smallFont">
+                                        <p>Per tal que sigui possible la reutilització de classes i funcions en múltiples aplicacions, serà necessari ubicar les classes sempre en algun paquet, per tal d'evitar la repetició de noms i facilitar-ne la localització.</p>
+                                        <p>S'aconsella que les classes estiguin sempre ubicades en un seqüència de paquets que permetin identificar la organització, el departament i/o equip que les desenvolupa, així com el projecte en que s'han desenvolupat. Per exemple suposant que el vostre grup fos un equip de desenvolupament del IOC,  que fos el grup número 5 i que treballéssiu en un projecte per crear utilitats per a processar imatges, la seqüència mínima de paquets amb les que hauríeu de treballar seria: <em>ioc.m03b2.grup5.imatges</em></p>
+                                        <p>Aquesta seria per dir-ho d'alguna manera l'arrel a partir de la qual començaríeu a penjar-hi classes i paquets més específics.</p>
                                     </div>
-                                    <p>La classe JocDames contindria les dades que permeten identificar un moment determinat de la  partida que s'estigui jugant (la posició de les fitxes, el torn del jugador que li toqui tirar i les dades especifiques de cada un d'aquest agrupades com estructura Jugador). 
-                                    Serà la classe Jugador, l'encarregada  de mantenir les dades específiques referents a un jugador (el nom i les partides guanyades).
-												Cal deixar clar, però que l'especificació només indica la composició de les dades. 
-												Per poder-es fer servir, caldrà declarar variables indicant el nom de l'estructura a usar, de forma semblant com s'indiquen el tipus de dades.                                    
-                                    </p>
-                                    <p><b>Declaració / Inicialització</b></p>
-                                    <p>En JAVA les variables que representen Estructures de dades es declaren:</p>
-                                   
-                                    <div class="iocexample">
-                                         <pre><code class="java">
-                                          NomEstructuraDeDades identificadorVariable;
-                                         </code></pre>
+
+                                    <h4 id="aillament_de_codi_reutilitzable" class="frameBoxHeader">Aïllament del codi reutilitzable</h4>
+                                    <div class="frameBox smallFont">
+                                        <p>És evident que si el que volem és poder reutilitzar funcions, no només cal adaptar les funcions fent que algunes d'elles siguin realment reusables, sinó que cal separar perfectament les funcions genèriques (reutilitzables) de les específiques (poc reutilitzables). L'ideal és agrupar les funcions genèriques en biblioteques (paquets i classes) per tal de poder-les passar en bloc d'un projecte a un altre.</p>
+                                    </div>
+
+                                    <h4 id="agrupacio_tematica" class="frameBoxHeader">Agrupació temàtica</h4>
+                                    <div class="frameBox smallFont">
+                                        <p>L'agrupació temàtica permet organitzar les funcions de forma jeràrquica aglutinant-les en categories cada cop més genèriques. Les funcions s'agregarien en classes i aquestes en paquets. Si fos necessari, es podrien establir també agrupacions de paquets, a fi d'anar estructurant la jerarquia. La profunditat d'aquesta dependrà del nombre de funcions que calgui organitzar. Si són poques, potser n'hi haurà prou en fer servir només classes per realitzar la classificació temàtica. És el que java fa en agrupar funcions a la classe Math, a la classe Arrays o a la classe String. Cada classe representa una categoria diferent.</p>
+                                        <p>Ara bé, si consideréssim que una d'elles tingués a un nombre de funcions excessiu, es podria reduir la quantitat, seleccionant una temàtica més específica. Per exemple es podria crear una classe només per funcions trigonomètriques, una altra per funcions estadístiques, una altra per les aritmètiques i així successivament. Les tres classes podrien agrupar-se en una paquet específic anomenat <a href="#" data-toggle="tooltip" data-original-title="JAVA aconsella que els noms dels paquets s'escriguin totes les lletres en minúscules per tal de distingir-los dels noms de les classes"><em>math</em></a> per tal d'anar gestant una organització jeràrquica fàcil de manipular</p>
+                                        <p>Per exemple, suposant que el nostre paquet arrel fos <em>ioc.m03b2.grup5.utilitats</em>, l'estructura quedaria de la següent manera:</p>
+                                        <ul>
+                                            <li>ioc
+                                                <ul>
+                                                    <li>m03b2
+                                                       <ul>
+                                                           <li>grup5
+                                                               <ul>
+                                                                   <li>utilitats
+                                                                       <ul>
+                                                                           <li>String</li>
+                                                                           <li>Arrays</li>
+                                                                           <li>math
+                                                                                <ul>
+                                                                                    <li>Trigonometriques</li>
+                                                                                    <li>Estadistiques</li>
+                                                                                    <li>Aritmetiques</li>
+                                                                                    <li>...</li>
+                                                                                </ul>
+                                                                           </li>
+                                                                       </ul>
+                                                                   </li>
+                                                               </ul>
+                                                           </li>
+                                                       </ul>
+                                                   </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
                                     </div>
                                     
-                                    <p>També és important recordar que abans de fer servir una variable d'algun tipus d'estructura de dades cal haver-la inicialitzat. 
-                                    Si no es fa, a l'intentar usar-la obtindrem un error que aturarà l'execució. 
-                                    La raó per al que cal inicialitzar les variables té a veure amb la gestió de la memòria, com hem explicat anteriorment. 
-                                    És possible inicialitzar les variables des de la pròpia declaració: </p>
-                                    <div class="iocexample">
-                                         <pre><code class="java">
-                                          NomEstructuraDeDades identificadorVariable = new NomEstructuraDeDades ();
-} 
-                                         </code></pre>
+                                    <h4 id="organitzacio_estructural" class="frameBoxHeader">Organització estructural</h4>
+                                    <div class="frameBox smallFont">
+                                        <p>La organització estructural fa referència a la divisió jeràrquica que les aplicacions. Bàsicament es pot desprendre del propi disseny descendent.</p>
+                                        <p>La principal dificultat amb la que ens trobarem quan haguem de fer una divisió d'aquestes característiques és que el disseny descendent evidencia la funcionalitat però no ens aporta informació de com agrupar-la en classes i paquets. Per tant, cal disposar d'indicadors que ens ajudin a valorar si estem fent una bona classificació.</p>
+                                        <p>Un indicador fonamental és la mida de la classe. Desconfieu d'aquelles agrupacions que donin com a resultat classes amb molt poques funcions. Resulta difícil establir un nombre correcta de funcions que hauria de tenir una classe, però és evident que generalment n''ha de tenir més d'una, més de dos i segurament més de tres. De forma semblant, cal desconfiar també de les classes que aglutinin moltes funcions i caldria plantejar-nos si fos possible, alguna divisió que en reduís el nombre.</p>
+                                        <p>Un segon indicador que també hauríem de tenir en compte, consisteix poder explicar la funcionalitat d'una classes de forma clara i més o menys breu. Per tant caldrà també desconfiar d'aquelles classes, que per explicar el que fan hem de matisar excessivament o elaborar una llista de coses que fan, perquè probablement ens trobem davant d'una classe excessivament específica i per això ens cal matisar tant el seu paper (el primer cas) o  que aglutina funcions poc o gens relacionades entre elles (el segon cas).</p>
+                                        <p>Per il·lustrar-ho, farem una mica de <a href="#" data-toggle="tooltip"  data-html="true" data-original-title="La pràctica del <em>codi-ficció</em> és una eina de reflexió molt útil per l'aprenentatge. Intenteu-lo practicar sovint"><em>"codi-ficció"</em></a>. És a dir, prendrem de model una aplicació ben coneguda per nosaltres i intentarem deduir com la implementaríem fent servir els recursos i coneixements que tinguem en cada moment.</p>
+                                        <p>Sigui per exemple, el nostre model, un lector de documents amb format com ara els documents pdf. Si voléssim crear una aplicació que llegís i mostres per pantalla fitxers contenint  documents amb format, caldria analitzar quina és la seva funcionalitat a partir del seu disseny descendent</p>
+                                        <p>Per simplificar-ho ens plantejarem la implementació d'una aplicació simple, que únicament s'encarregui de localitzar un document al sistema de fitxers, llegir-lo, analitzar-ne el seu contingut i mostrar-lo per pantalla d'acord amb les regles de format que disposi. Un possible esquema de disseny podria ser:</p>
+                                        
+                                       <ol class="nestedCounter">
+                                          <li>Localització del document
+                                                <ol>
+                                                    <li>Entrada de la ruta de directoris si l'usuari coneix la ruta sensera</li>
+                                                    <li>Navegació per sistema de fitxers fins localitzar el fitxer desitjat
+                                                        <ol>
+                                                            <li>Mostrar el contingut d'un directori com a directori actual</li>
+                                                            <li>Seleccionar un element del directori actual</li>
+                                                            <li>...</li>
+                                                        </ol>
+                                                    </li>
+                                                </ol>
+                                            </li>
+                                           <li>Càrrega del contingut del document
+                                                <ol>
+                                                    <li>Obertura del fitxer</li>
+                                                    <li>Càrrega en memòria del contingut</li>
+                                                    <li>...</li>
+                                                </ol>
+                                            </li>
+                                            <li><a href="#" data-toggle="tooltip" data-original-title="En argot informàtic s'anomena rederització al procés d'analitzar dades amb format i plasmar en la pantalla una visualització d'aquestes seguint les indicacions del format">Renderització del contingut</a>
+                                                <ol>
+                                                    <li>Anàlisi del contingut per aplicar les regles de renderització segons el format</li>
+                                                    <li>Donar les instruccions pertinents al dispositiu (pantalla) per visualitzar el contingut</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                        <p>Tenint en compte els criteris de mida i descripció indicats més amunt, probablement obtindríem entre 3 i 4 classes. En primer lloc trobarem la classe encarregada de localitzar el document, que podem anomenar <em>SelectorDocument</em>. Podríem sentir ganes de dividir aquesta en dos, una pel cas d'entrada de la ruta i una altre pel cas de navegació a través de l'arbre de directoris, però segurament el nombre de funcions que contindria el primer cas seria tant minúscul que aconsellaria agrupar-ho tot en una única classe.</p>
+                                        <p>En segon lloc planificaríem la implementació de la classe encarregada de la càrrega del contingut del fitxer a la memòria de l'aplicació. Es pot anomenat <em>CarregadorDocument</em></p>
+                                        <p>Finalment, serà necessari planificar la implementació de la classe encarregada de la renderització que anomenaríem <em>Render</em>. Cal clarificar però, que en funció de la complexitat del format, potser seria adequat dividir la classe en dos, per tal de reduir-ne la seva mida. En aquest cas planificaríem la creació de la classe <em>AnalitzadorDocument</em> i <em>GestorPantalla</em>, les quals estarien agrupades en un paquet anomenat <em>render</em>. Paquets i classes (incloent els paquets arrel) podrien quedar així:</p>
+                                       <ul>
+                                            <li>ioc
+                                                <ul>
+                                                   <li>m03b2
+                                                       <ul>
+                                                           <li>grup5
+                                                               <ul>
+                                                                   <li>lector
+                                                                       <ul>
+                                                                          <li>SelectorDocument</li>
+                                                                          <li>CarregadorDocument</li>
+                                                                          <li>render
+                                                                              <ul>
+                                                                                  <li>AnalitzadorDocument</li>
+                                                                                  <li>GestorPantalla</li>
+                                                                              </ul>
+                                                                          </li>
+                                                                       </ul>
+                                                                   </li>
+                                                               </ul>
+                                                           </li>
+                                                       </ul>
+                                                   </li>
+                                                </ul>
+                                            </li>
+                                       </ul>
+                                    </div>                               
+                                    <h4 id="dades_i_gestors de dades" class="frameBoxHeader">Dades i gestors de dades</h4>
+                                    <div class="frameBox smallFont">
+                                        <p>Separar les dades i unificar-les en una estructura, és una bona solució per tenir un accés general a les dades des de qualsevol punt de l'aplicació peró evitant els inconvenients de les declaracions globals. Així, les dades quedarien sempre encapsulades en una estructura declarada com a variable local que caldria passar per paràmetre a les diferents funcions, però un cop rebut el paràmetre resulta fàcil tenir accés a qualsevol valor de l'estructura.</p>
+                                        <p>Tot i així, si l'estructura de dades presenta certa complexitat, pot resultar util per els programadors que no han dissenyat l'estructura disposar d'una classe que els faciliti l'accés. Aquesta classe actuaria com a gestor de les dades i permetria obtenir o assignar valors parcials a les dades sense necessitat de coneixer exactament l'estructura interna. Es a dir contindria funcions per facilitat l'accés a parts de l'estructura de les dades, tant per llegir els valors com per modificar-los.</p>
                                     </div>
-                                    <p>En cas que l'estructura especificada contingui elements que siguin a la vegada altres estructures, com l'exemple del joc de dames,
-                                     caldrà també inicialitzar els elements interns. En aquest cas es podrà fer també a la mateixa especificació: </p>
- 												<div class="iocexample">
-                                         <pre><code class="java">
-															public class JocDames {    
-    int CASELLA_BUIDA = 0;
-    int FITXA_BLANCA = 1;
-    int FITXA_NEGRA = 2;
-
-    int[][] tauler = new int[8][8];
-    int torn;
-    Jugador jugadorBlanques = new Jugador();
-    Jugador jugadorNegres = new Jugador();
-}
-												</code></pre>
-												<p>O bé: </p>
-												<div class="iocexample">
-                                         <pre><code class="java">
-															JocDames joc;
-                              ...
-	
-		public static void main(String[] args){
-			//Abans d'inicialitzar el elemnts jugadorBlanques i jugadorNegres cal incialitzar joc
-			...
-			//inicialització en diferit	
-			joc = new JocDames();
-			//Ja es possible inicialitzar els elements interns
-			...
-			joc.jugadorBlanques = new Jugador();
-			joc.jugadorNegres = new Jugador();
-			// a partir d'aquí ja queda tot inicialitzat.
-												</code></pre>
-												
-                                    </div>                                   
-                                    <p>Altra qüestió important que hem de tenir en compte a l'hora de treballar amb estructures de dades és l'accés a un element de l'estructura des d'una classe que es trobi fora del paquet on es declara l'estructura.
-                                     Així, una opció seria declarar públics els elements de l'estructura. Si posem la paraula <code>public</code> davant de la declaració de cada element, a l'especificació, els elements seran accessibles des de qualsevol classe, comparteixin o no paquet amb l'estructura de dades.
-Una altre forma força útil de aconseguir l'accés, sense necessitat de declarar públics els elements de l'estructura, seria usant un classe extra que permeti l'accés  i funcioni com una biblioteca específica d'una estructura de dades. 
-Aquesta classe caldria situar-la al mateix paquet que l'estructura de dades i contindria mètodes per accedir al valor de les dades de l'estructura o per modificar-lo. 
-També resulta molt útil per verificar que les dades a introduir seran sempre vàlides. Es tracta doncs d'una opció força aconsellable. </p>
-                                    <p>Els elements d'una classe tenen diferents tipus d'accessos: </p>
-                                    <ul>
-                                        <li><code>public</code>: qualsevol altra classe té accés a l'element estigui o no al mateix paquet </li>
-                                        <li><code>private</code>: l'accés a l'element està restringit a la pròpia classe, és a dir, no es pot accedir des d' altres classes</li>
-                                        <li><code>friendly (protected)</code>: l'element de la classe només potser utilitzat des de classes que estiguin al mateix paquet que la classe en la que es defineix l'element </li> 
-                                    </ul>
-                                      <p><b>Modificació/Accés als elements</b></p>
-                                      <p>Per accedir als elements d'una estructura de dades, després del nom de la variable concatenarem un punt seguit del nom de l'element on desitgem accedir o manipular.  </p>
-                                <div class="iocexample">
-                                         <pre><code class="java">      
-	 public class Aplicacio {
-    JocDames joc;
-
-    public static void main(String[] args){
-        Aplicacio aplicacio = new Aplicacio();
-        aplicacio.inici();
-    }
-
-    void inici(){
-        joc = new JocDames();
-        joc.jugadorBlanques = new Jugador();
-	     joc.jugadorNegres = new Jugador();
-
-        //Exemples d'assignació i lectura dels valors        
-        joc.jugadorBlanques.nom = demanarNomJugador(joc.FITXA_BLANCA);
-        joc.jugadorNegres.nom = demanarNomJugador(joc.FITXA_NEGRA);
-         //Netejar el tauler
-        for(int i=0; i&lt;joc.tauler.length; i++){
-            for(int j=0; j&lt;joc.tauler[i].length; j++){
-                joc.tauler[i][j]=joc.CASELLA_BUIDA;
-            }
-        }
-
-        //col·locar blanques
-        for(int i=0; i<3; i++){
-            for(int j=0; j&lt;joc.tauler[i].length; j++){
-                //Les fitxes es col·loque a les caselles negres. 
-                //A les files parelles les caseles negres estan a 
-                //posicions parelles. A les files senars, les 
-                //caselles engres estan en posicions senars.
-                if(i%2==j%2){
-                    joc.tauler[i][j]=joc.FITXA_BLANCA;
-                }
-            }
-        }
-        //col·locar negres a la banda contraria del tauler
-        for(int i=7; i>4; i--){
-            for(int j=0; j&lt;joc.tauler[i].length; j++){
-                //Les fitxes es col·loque a les caselles negres. 
-                //A les files parelles les caseles negres estan a 
-                //posicions parelles. A les files sanars, les 
-                //caselles engres estan en posicions sanars.
-                if(i%2==j%2){
-                    joc.tauler[i][j]=joc.FITXA_NEGRA;
-                }
-            }
-        }
-        
-        //Exemple de sortida de dades
-        System.out.println(" MARCADOR ACTUAL");
-        System.out.println("-----------------");
-        System.out.println();
-        System.out.println(String.format("%-20s%20s",
-                            "Jugador", 
-                            "partides guanyades"));
-                             System.out.println("--------------------------------"
-                         + "--------------------------------");
-        
-        System.out.println(String.format(
-                            "%-20s%20s",
-                            joc.jugadorBlanques.nom, 
-                            joc.jugadorBlanques.partidesGuanyades));
-        System.out.println(String.format(
-                            "%-20s%20s",
-                            joc.jugadorNegres.nom, 
-                            joc.jugadorNegres.partidesGuanyades));
-        
-        System.out.println();
-        
-}
-									</code></pre></div>			
-							<p>És important explicar que l'exemple que acabem de veure, només funcionarà si la classe Aplicació es troba en el mateix paquet que les classes  JocDames i Jugador. 
-							Si situem la classe Aplicació en un paquet diferent, encara que iniciem la variable joc, no podrem accedir a cap dels seus elements.</p>					
-                     <p><b>Manipulació d'instàncies</b></p>
-                     <p>L'exemple que acabem de veure, sota la tipologia de l'estructura de dades de jugador mantenim les dades de dos jugadors de forma independent. 
-                     Cal doncs que quedi clar que les dades no s'emmagatzemen a l'estructura (especificació) directament, sinó que en realitat es fa un còpia de l'estructura en memòria i és en aquella copia on es guarden les dades. </p>                              
-							<p>----Figura memoria C53---</p>   
-							<p>És a dir gràcies a això la nostra aplicació pot disposar de múltiples dades referides a un mateixa estructura. 
-							Cada una d'aquestes còpies s'anomena <b>instància</b>. Així diem que les instàncies són independents i no interfereixin entre elles.</p>
-						 <div class="iocexample">
-                   <pre><code class="java">
-		public class Aplicacio {	
-			public void prova() {
-        Jugador jBlanques = new Jugador();
-        Jugador jNegres = new Jugador();
-        
-        jBlanques.nom="Maria";
-        jBlanques.partidesGuanyades=5;
-
-        jNegres.nom="Joan";
-        jNegres.partidesGuanyades=2;
-
-        printJugador(jBlanques);
-        printJugador(jNegres); 
-        }  
-        
-        </code></pre>
-												</div>
-                             <p>A continuació, trobareu les tasques que heu de realitzar i que van adreçades a reforçar els conceptes que hem treballat. </p>
-                                </div>
+                                    <h3 id="interficie_i_control" class="frameBoxHeader">Interfície d'usuari i control d'accions</h3>
+                                    <div class="frameBox smallFont">
+                                        <p>Una altra opció cada cop més usada consisteix en separar radicalment el codi destinat a mostrar informació i capturar entrades de l'usuari (el que habitualment es coneix com interfície d'usuari de l'aplicació) del que podriem dir, el tractament de les dades.</p>
+                                        <p>De fet, normalment es classifiquen les funcions en tres categories i s'agrupen segons aquestes. Les 3 categories són: interfície d'usuari, encarragada de l'intercanvi d'informació entre l'aplicació i l'usuari, control de les peticions, encarregada de gestionar cada una de les peticions del l'usuari a fi de reconduir el flux del programa per aconseguir resoldre amb èxit la demanda i una tercera categoria encarregada del tractament de les dades per a resoldre cada una de les demandes que l'aplicació permeti. </p>
+                                        <p>Els avantatges que això implica són:</p>
+                                        <ul>
+                                            <li>Augmentar la reusabilitat de les funcions</li>
+                                            <li>Peder sofisticar la interficie de l'usuari i el control de peticions sense afectar a l'essencia de l'aplicació (tractament de dades) que seguira treballant de la mateixa manera.</li>
+                                            <li>Permetre crear aplicacions identiques en diferents plataformes (WEB, local) o per diversos dispositius (PC, tablet, smartphone, etc.)</li>
+                                            
+                                        </ul>
+                                    </div>
+                                    
+                                </div> 
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION Tipus composts: Cas pràctic ================-->     
-            </section>
+                 </section>
+                <!--=========== END SUBSECTION Guia modularitzar ================-->        
+          
             <!--=========== END SECTION toknow ================-->    
 
             <!--=========== BEGIN SECTION toDo ================-->    
@@ -900,7 +850,7 @@ També resulta molt útil per verificar que les dades a introduir seran sempre v
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Què cal fer - Classes i biblioteques</h2>
+                                     <h2 >Què cal fer - Classes, biblioteques i tipus composts</h2>
                                      <h3 >Descripció general</h3>
                                  </div>
                             </div>
@@ -908,114 +858,167 @@ També resulta molt útil per verificar que les dades a introduir seran sempre v
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En aquesta secció se us proposa fer 2 exercicis basats en el joc de cartes, blackjack. Per guiar-vos a resoldre'ls us donarem algunes pistes que us serviran d'ajuda. A continuació s'explica l'enunciat.</p>
-                                    <p>Per tal que pugueu veure diverses formes d'implementar aplicacions usant estructures de dades i pugueu valorar avantatges i desavantatges de cada una, us presentem diverses versions d'una aplicació senzilla. 
-                                    Es tracta d'una versió simplificada del joc del 21 o Blackjack. En aquesta aplicació no es juga amb cartes sinó que s'atorguen punts  (entre 1 i 11 cada cop) de forma aleatòria.
-												Les regles són senzilles. Poden jugar un nombre indeterminat de jugadors. Jugaran tantes partides com tinguin ganes fins que decideixin sortir. 
-												Guanyarà aquell que més punts hagi acumulat en les successives partides jugades. 
-												Al final de cada partida els jugadors podran aconseguir 30, 10, 5 o 0 punts segons quines cartes (punts aconseguits aleatòriament) tingui.
-												Els jugadors que tinguin cartes (punts aconseguits aleatòriament) que sobrepassin el valor de 21, no obtindran puntuació. 
-												La resta de jugadors que no passin sumaran 5 punts a excepció dels que hagi tret la puntuació màxima que acumularà 10 punts si aquesta no és 21 o 15 punts si coincideix exactament amb 21.
-												Una partida consisteix en 4 rondes. Per cada ronda, es preguntarà a cada jugador, amb un valor de les seves cartes inferior o igual a 21, si vol que el sistema li assigni una carta (nombre de punts aleatoris entre 1 i 11). 
-												Si el jugador contesta afirmativament es generarà el valor i s'acumularà al valor que el jugador hagi aconseguit en altres rondes.</p>
-												<p>A continuació us detallem els exercicis a realitzar.</p>
+                                    <p>En aquesta secció se us proposa fer 2 tasques per debatre al <span class="forumGrupReduit"></span>  , 
+                                    que pretenen fer-vos reflexionar sobre els conceptes apresos en relació a les classes, biblioteques i tipus composts. Cada debat es troba en un apartat diferent. Passeu al següent per iniciar el primer debat.
+                                     </p>
 												         
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION EXAMPLE  ================-->    
+                <!--=========== END SUBSECTION Descripció dels exercicis  ================-->    
                 
-                <!--=========== BEGIN SUBSECTION Exercici 1 ================-->    
-                <section id="slc-toDo20" class=" section">
+  					<!--=========== BEGIN SUBSECTION Debat 1 ================-->    
+                <section id="slc-discussion11" class=" section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Què cal fer - Biblioteques i classes</h2>
-                                     <h3 >Exercici 1 - Definició de l'estructura de dades</h3>
+                                     <h2 >Què cal fer? Classes, biblioteques i tipus composts</h2>
+                                     <h3> Debat 1. La reutilització </h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En aquesta tasca heu de crear l'estructura de dades del joc anterior. Abans de començar a codificar penseu quins elements tenim i quines dades necessitarem emmagatzemar per gestionar el joc.
-                                    El joc quedarà determinat per les dades referents als jugadors i a la partida però necessitem conèixer-ne altres com:                 
-<ul>
-<li>Les cartes acumulades (punts aleatoris) en cada ronda durant una partida. Es tracta d'un vector d'enters amb els punts de cada jugador corresponents a la partida que s'estigui jugant.</li>
-<li>Un comptador de rondes de la partida actual</li>
-<li>Un comptador de jugadors que passin de 21 punts</li>
-<li>A les dades dels jugadors disposarem només dos vectors. En un hi emmagatzemarem el nom de cada jugador i a l'altre els punts finals obtinguts després de cada partida.</li> 
-</ul>
-                                    <p>Un cop codificada l'estructura de dades contesta les següents preguntes en el <a href="#" data-toggle="tooltip" data-original-title="Recordeu que per poder accedir al fòrum reduït cal que us hi inscriviu a través de la utilitat Tria grup de fòrum reduït (TGFR)>"><span class='forumGrupReduit'></span></a>. Es tracta de discutir breument entre vosaltres intentant arribar a una conclusió final:</p>
-                                    <ol>
-                                        <li>Quantes estructures de dades heu creat i de quin tipus? Quin tipus d'accés els heu atorgat als elements de les classes?</li>
-                                        <li>Creeu que és convenient definir un paquet? Com el definiríeu?</li>
-                                        <li>Quina de les biblioteques de classes pròpia de JAVA us caldria importar? Per què? </li>
-                                    </ol>
-                                        <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
+                                    <p> Segurament, un dels criteris que més avantatge ha suposat per el desenvolupament de programari, ha estat la reutilització del codi, perquè així s'aconsegueix codificar més ràpidament, cometent molts menys erros. És evident que per poder reutilitzar codi en diferents contextos (diferents parts d'un programa, diferents aplicacions, etc.), cal separar aquelles parts que es poden reutilitzar, de les que difícilment podran reutilitzar-se a cap altra context. </p>
+                                    <p>Ara bé, cal assenyalar que crear biblioteques de funcions reutilitzables no és trivial, ja que requereix d'un esforç d'abstracció important per tal d'aïllar el que és inevitablement específic d'una aplicació, del que es pot generalitzar afegint-hi paràmetres. Si no hi parem gaire atenció, tindrem tendència a barrejar-ho tot i ens resultarà impossible trobar entre el nostre codi cap funció genèrica.</p>
+                                    <p>Per exemple, és habitual, en programadors poc experimentats, barrejar en una mateixa funció la demanda de dades a l'usuari, el tractament d'aquestes i la mostra del resultat. Penseu però que generalment, les demandes de dades a l'usuari i la mostra de resultats per pantalla, són realment processos molt específics i lligats  a l'aplicació en la que s'han desenvolupat. Això els converteix realment en processos difícilment reutilitzables. Per contra, els tractaments que reben les dades solen ser processos altament reutilitzables si aconseguim parametritzar-los amb una mica d'habilitat.</p>
+                                    <p>A continuació se us presenta la funció <em>trobarTemperaturaMinima</em>, la qual permet trobar el valor mínim d'un conjunt de temperatures introduïdes per l'usuari. Fixeu-vos però que la funció no compleix els requisits indicats per poder ser considerada reutilitzable, ja que només es podria fer servir en algun context que calgués trobar la temperatura mínima d'una conjunt de temperatures donades per l'usuari. És a dir exclusivament l'actual!</p>
+                                    <p>Tal com està codificada la funció no serviria per trobar les temperatures mínimes emmagatzemades en el disc dur, en comptes de demanar-les a l'usuari, ni molt menys per trobar el valor mínim de quelcom que no fossin temperatures, ni permetria emmagatzemar el valor mínim en el disc dur, o enviar-lo a un servidor, en comptes de mostrar-lo per pantalla, ja que la petició de dades, el càlcul del resultat i la mostra d'aquest formen un tot indivisible.</p>
+                                    <pre><code class="java linenumbers">
+public void trobarTemperaturaMinima(){
+float[] temperatures;
+int posMin;            
+System.out.println("Quantes temperatures vols omplir?");
+int mida = scanner.nextInt();
+temperatures = new float[mida];
+            
+System.out.println("Entra el valor de les temperatures");
+for(int i=0; i&lt;temperatures.length; i++){
+System.out.println("Temperatura " + (i+1) + ": ");
+temperatures[i]=scanner.nextFloat();
+     }
+
+       posMin=0;
+            for(int i=1; i&lt;temperatures.length; i++){
+                if(temperatures[posMin]&gt;temperatures[i]){
+                    posMin=i;
+                }
+            }
+            System.out.println("La Temperatura mínima és: " +  temperatures[posMin]);
+        }
+                                     </code></pre>
+                                     <p>Es demana que recodifiqueu la funció, dividint-la, de manera que agrupeu una part del codi en almenys una funció realment reutilitzable (poden ser més si ho desitgeu). 
+                                     Acompanyeu la codificació amb un raonament que justifiqui la divisió realitzada i pengeu-ho al <span class="forumGrupReduit">forum grup reduit</span>.</p>
+                                    <p>També es demana que reflexioneu en el fòrum, si les noves funcions substituirien totalment la funció <em>trobarTemperaturaMinima</em> de manera que caldria eliminar-la del codi, o si per contra, les noves funcions, necessitarien encara de la funció <em>trobarTemperaturaMinima</em> adaptada a la crida d'aquestes.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
                                             data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-toDo20" 
-                                            data-selector-solution="#slc-toDo20-solution">
-                                        Solució Estructura de dades
-                                    </button>
-                                    <div id="slc-toDo20-solution" class="iocSolution hidden">
-                                    <pre><code class="java">
-package ioc.jocdel21.dades;
-
-import java.util.Arrays;
-
-public class DadesJugadors {
-    public String[] nomsJugadors;
-    public int[] puntsJoc;
-}
-
-public class DadesPartida {
-    public int[] puntsPartida;
-    public int quantsPassen=0;
-    public int rondaActual=0;
-}
-
-public class DadesJoc {
-    public DadesJugadors dadesJugadors;
-    public DadesPartida dadesPartida;
-}
-                                    </code></pre>                          
-                                    </div>
-                                </div> 
+                                            data-display-on-set-slide="slc-discussion11" 
+                                            data-selector-clue="#slc-discussion11-clue1">
+                                        Pista
+                                    </button>                                        
+                                    <div id="slc-discussion11-clue1" class="iocClue hidden">
+                                        <h2>Pista</h2>
+                                        <p>Identifica la part del codi destinada a preguntar a l'usuari els valors de les temperatures, la part del codi destinada a mostrar el resultat i la part del codi destinada a cercar el valor mínim.</p>
+                                        <p>Creus que hi ha diferencia entre cercar la temperatura mínima, la nota mínima, el menor temps, o el menor consum de carburant? Si no hi ha diferencia, podríem idear una un procés comú a tots ells. Quines dades necessitaria el procés? Quin seria el resultat del procés?</p>
+                                    </div>                                    
+                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION Exercici 1 ================-->    
+                <!--=========== END SUBSECTION Debat 1 ================-->     
 
-                <!--=========== BEGIN SUBSECTION Exercici 2 ================-->    
+                <!--=========== BEGIN SUBSECTION Debat 2 ================-->    
                 <section id="slc-toDo30" class=" section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Què cal fer - Classes i biblioteques</h2>
-                                     <h3 >Exercici 2- Interfície del programa</h3>
+                                     <h2 >Què cal fer - Classes, biblioteques i tipus composts</h2>
+                                     <h3 >Debat 2- Tipus composts </h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En aquesta tasca se us demana fer la interfície del programa per tal de demanar i mostrar les dades necessàries per realitzar una partida.
-                                    <p>A l'hora de crear una interfície haurem de tenir en compte els següents requisits:</p>
-                                    <ul>
-													<li>Una funció, <i>demanarQuantsJugadors</i>, per enregistrar el nombre de jugadors.</li>
-													<li>Una funció, <i>demanarJugador</i>, que permeti enregistrar el nom del jugador.</li> 
-													<li>Una funció, <i>demanarSiVolPunts</i> que necessitarà dos paràmetres, el nom i els punts del jugador </li>
-													<li>Les funcions: <i>mostrarResultatRonda</i>,<i>mostrarPuntsPartida</i>, <i>mostrarPuntsJoc</i>, que necessitaran com a paràmetres les dades dels jugadors i els punts adients a cada funció.</li>
-													<li>Altres funcions de format, com per exemple, la funció <i>menu</i>.</li>                                   
-                                    </ul>   
-                                    <p>Discutiu al  <a href="#" data-toggle="tooltip" data-original-title="Recordeu que per poder accedir al fòrum reduït cal que us hi inscriviu a través de la utilitat Tria grup de fòrum reduït (TGFR)>"><span class='forumGrupReduit'></span></a>, les possibles funcions que podeu definir</p>
+                                <p>Imaginem una aplicació per jugar al senzill joc de les dames.  
+                                Recordeu que es juga amb un tauler de 10x10 caselles, que juguen 2 jugadors i que cada jugador disposa de 12 fitxes de diferent color que cal disposar a certes caselles del tauler. 
+                                Imaginem que l'aplicació vol identificar el nom dels dos jugadors i també el nombre de partides guanyades. </p> 	
+										  <p>Si decidim representar el tauler com una matriu de valors numèrics, en el que el valor zero representi les caselles buides, el valor u, 
+										  representi les fitxes blanques i el valor dos, les negres; podríem crear la següent especificació per donar resposta a les necessitats de l'aplicació:</p>
+										 <div class="iocexample">                                  
+                                    <pre><code class="java">
+public class DadesJocDames {    
+    int CASELLA_BUIDA = 0;
+    int FITXA_BLANCA = 1;
+    int FITXA_NEGRA = 2;
+
+    int[][] tauler = new int[10][10];
+    int torn;
+    Jugador jugadorBlanques;
+    Jugador jugadorNegres;
+}
+
+public class Jugador {    
+    String nom;
+    int partidesGuanyades;
+}
+                                    </code></pre>
+                                    </div>
+                                    <p>La classe DadesJocDames contindria les dades que permeten identificar un moment determinat de la  partida que s'estigui jugant (la posició de les fitxes, el torn del jugador que li toqui tirar i les dades especifiques de cada un d'aquest agrupades com estructura Jugador). 
+                                    Serà la classe Jugador, l'encarregada  de mantenir les dades específiques referents a un jugador (el nom i les partides guanyades).</p>
+                                                                        <p>
+												Cal deixar clar, però que l'especificació només indica la composició de les dades. 
+												Per poder-es fer servir, caldrà declarar variables indicant el nom de l'estructura a usar, de forma semblant com s'indiquen el tipus de dades.                                    
+                                    </p>
+
+                                    <div class="frameBox">
+                                        <h4>Questions pel debat en el <span class="forumGrupReduit"></span></h4>
+                                         <ol>
+                                            <li>Creieu que l'estructura de dades DadesJocDames respon als requisits de l'aplicació?</li>
+                                            <li>Com inicialitzaries les dades de l'estructura?</li>
+                                        </ol>
+                                    </div>
+                        <p>Per accedir als elements d'una estructura de dades, després del nom de la variable concatenarem un punt seguit del nom de l'element on desitgem accedir o manipular.  </p>
+                                <div class="iocexample">
+                                         <pre><code class="java">      
+ public class Aplicacio {
+    DadesJocDames joc;
+
+    public static void main(String[] args){
+        Aplicacio aplicacio = new Aplicacio();
+        aplicacio.inici();
+    }
+
+    void inici(){
+        joc = new DadesJocDames();
+        joc.jugadorBlanques = new Jugador();
+	     joc.jugadorNegres = new Jugador();
+
+        //Exemples d'assignació i lectura dels valors        
+        joc.jugadorBlanques.nom = demanarNomJugador(joc.FITXA_BLANCA);
+        joc.jugadorNegres.nom = demanarNomJugador(joc.FITXA_NEGRA);
+        ...
+    }
+    
+    ...
+}
+        </code></pre>
+        <p>Aquest exemple que acabem de veure, només funcionarà si la classe Aplicació es troba en el mateix paquet que les classes  DadesJocDames i Jugador. 
+			</p>
+			<div class="frameBox">
+                                        <h4>Questions pel debat en el <span class="forumGrupReduit"></span></h4>
+                                         <ol>
+                                            <li>Si situem la classe Aplicació en un paquet diferent, encara que iniciem la variable joc, no podrem accedir a cap dels seus elements. Què haurem de fer en aquest cas?</li>
+                                        </ol>
+                                    </div>
                                     
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -1023,157 +1026,74 @@ public class DadesJoc {
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-toDo30" 
                                             data-selector-clue="#slc-toDo30-clue1">
-                                        Pista 1 - Interfície
+                                        Pista
                                     </button>                                        
                                     <div id="slc-toDo30-clue1" class="iocClue hidden">
-                                        <h2>Pista 1</h2>
-                                        <p>Fixeu-vos els diferents tipus de funcions que s'han definir segons el seu retorn, per exemple, les funcions corresponents a mostrar informació per pantalla són de tipus 'void'.
-                                         </p>                       
+                                        <h2>Pista</h2>
+                                         <p>En JAVA les variables que representen Estructures de dades es declaren:</p>
+                                   
+                                    <div class="iocexample">
+                                         <pre><code class="java">
+                                          NomEstructuraDeDades identificadorVariable;
+                                         </code></pre>
+                                    </div>
+                                    
+                                    <p>Abans de fer servir una variable d'algun tipus d'estructura de dades cal haver-la inicialitzat. 
+                                    Si no es fa, a l'intentar usar-la obtindrem un error que aturarà l'execució. 
+                                   
+                                    És possible inicialitzar les variables des de la pròpia declaració: </p>
+                                    <div class="iocexample">
+                                         <pre><code class="java">
+                                          NomEstructuraDeDades identificadorVariable = new NomEstructuraDeDades ();
+} 
+                                         </code></pre>
+                                    </div>                       
                                           
                                         
                                     </div>
                                     <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-toDo30" 
-                                            data-selector-clue="#slc-toDo30-clue2">
-                                       Solució Interfície
+                                            data-selector-solution="#slc-toDo30-solution">
+                                       Solució
                                     </button>                                        
-                                    <div id="slc-toDo30-clue2" class="iocClue hidden">
-                                        <h2>Solució Interfície</h2>
-                                       <p>La proposta de solució serà: </p>
-                                       <div class="iocexample">
-                                        <pre><code class="java linenumbers">
-package ioc.jocdel21.interficie;
+                                    <div id="slc-toDo30-solution" class="iocSolution hidden">
+                                        <h2>Solució </h2>
+                                      <div class="iocexample">
+                                         <pre><code class="java">
+public class DadesJocDames {    
+    int CASELLA_BUIDA = 0;
+    int FITXA_BLANCA = 1;
+    int FITXA_NEGRA = 2;
 
-import java.util.Scanner;
-
-public class EntradaSortida {
-    Scanner scanner = new Scanner(System.in);
-    
-    public void mostrarTitolPrincipal() {
-        System.out.println("+==================================+");
-        System.out.println("+            JOC DEL 21            +");
-        System.out.println("+==================================+");
-    }
-    
-    public void mostrarSubtitolConfiguracioIncial(){
-        System.out.println("+ Pantalla de configuraciÃ³ inicial +");
-        System.out.println("+----------------------------------+");
-        System.out.println();
-    }
-    
-    public void mostrarSubtitolMenuIncial(){
-        System.out.println("+           MenÃº inicial           +");
-        System.out.println("+----------------------------------+");
-        System.out.println();
-    }
-    
-    public int demanarQuantsJugadors(){
-        int ret;
-        System.out.println("Quant jugadors sou?");
-        ret = entrarEnter();
-        return ret;
-    }
-    
-    public String demanarJugador(int i){
-        String ret;
-        System.out.print("Entre el nom del juagador (");
-        System.out.print(i);
-        System.out.println("):");
-        ret = scanner.nextLine();
-        return ret;
-    }
-    
-    public void espaiarVertical() {
-        for(int i=0; i<5; i++){
-            System.out.println();
-        }
-    }
-    
-    public boolean demanarSiVolPunts(String nom, int puntsJugador){
-        boolean volPunts;
-        System.out.println();
-        System.out.print("Es el torn de ");
-        System.out.println(nom);
-        System.out.print("Arar tens ");
-        System.out.print(puntsJugador);
-        System.out.println(" punts. Has de decidir si vols demanar-ne mÃ©s. En cas "
-                + "afirmatiu els sistema \nt'atorgarÃ  entre 1 i 11 punts de forma"
-                + " aleatÃ²ria. Recorda que si acumules mÃ©s de 21 punts perdrÃ s.\n"
-                + "Vols punts? (S/n)");
-        volPunts = entrarSiNo("s");;
-
-        return volPunts;
-    }
-
-
-    public void mostrarResultatRonda(int[] puntsRonda, String[] nomsJugadors){
-        System.out.println();
-        System.out.println("---------------------------------------------------");
-        System.out.println("        Resultats desprÃ©s d'aquesta ronda          ");
-        System.out.println("---------------------------------------------------");
-        System.out.println("      JUGADOR                            PUNTS     ");
-        System.out.println("---------------------------------------------------");
-        for(int i=0; i&lt;puntsRonda.length; i++){
-            String nom = nomsJugadors[i];
-            int punts = puntsRonda[i];
-            System.out.println(String.format("%-30s %15d", nom, punts));
-        }
-    }
-
-    public void mostrarPuntsPartida(int[] puntsPartida, 
-                                    String[] nomsJugadors, 
-                                    int[] punts) {
-        System.out.println();
-        System.out.println("***************************************************");
-        System.out.println("        Punts aconseguits en aquesta partida       ");
-        System.out.println("***************************************************");
-        System.out.println("      JUGADOR            PUNTS PARTIDA   PUNTUACIÃ“ ");
-        System.out.println("---------------------------------------------------");
-        for(int i=0; i&lt;nomsJugadors.length; i++){
-            String nom = nomsJugadors[i];
-            int p = puntsPartida[i];
-            int pf = punts[i];
-            System.out.println(String.format("%-30s %6d %10d", nom, p, pf));
-        }    
-    }
-    
-    public void mostrarPuntsJoc(String[] nomsJugadors, int[] puntsJoc) {
-        System.out.println();
-        System.out.println("***************************************************");
-        System.out.println("                  Punts aconseguits                ");
-        System.out.println("***************************************************");
-        System.out.println("      JUGADOR                            PUNTS     ");
-        System.out.println("---------------------------------------------------");
-        for(int i=0; i&lt;nomsJugadors.length; i++){
-            String nom = nomsJugadors[i];
-            int punts = puntsJoc[i];
-            System.out.println(
-                String.format("%-30s %15d", nom, punts)
-            );
-        }    
-    }
-    
-    public boolean confirmarSortida() {
-        boolean resp;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Segur que voleu sortir? premeu [s/N] i seguidament [ENTRAR]");
-        resp = entrarSiNo("n");
-        return resp;
-    }
-
-    public int menuInicial() {
-        System.out.println();
-        System.out.println("1.- Jugar partida");
-        System.out.println("2.- ClassificaciÃ³");
-        System.out.println("0.- Sortir");
-        System.out.println();
-        return demanarOpcio();
-    }
-                                        </code></pre>
-                                    </div>
+    int[][] tauler = new int[10][10];
+    int torn;
+    Jugador jugadorBlanques = new Jugador();
+    Jugador jugadorNegres = new Jugador();
+}
+												</code></pre>
+												<p>O bé: </p>
+												<div class="iocexample">
+                                         <pre><code class="java">
+		DadesJocDames joc;
+        
+        ...
+	
+		public static void main(String[] args){
+			//Abans d'inicialitzar el elemnts jugadorBlanques i jugadorNegres cal incialitzar joc
+			...
+			//inicialització en diferit	
+			joc = new DadesJocDames();
+			//Ja es possible inicialitzar els elements interns
+			...
+			joc.jugadorBlanques = new Jugador();
+			joc.jugadorNegres = new Jugador();
+			// a partir d'aquí ja queda tot inicialitzat.
+			...
+		}
+		...
+												</code></pre>
                                     </div>
                                    
 
@@ -1183,71 +1103,6 @@ public class EntradaSortida {
                     </div>
                 </section>
                 <!--=========== END SUBSECTION Exercici 2 ================-->   
-                
-                <!--=========== BEGIN SUBSECTION Exercici 3 ================-->    
-                <section id="slc-toDo30" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Què cal fer - Classes i biblioteques</h2>
-                                     <h3 >Exercici 2- Interfície del programa</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>En aquesta tasca se us demana fer la interfície del programa per tal de demanar i mostrar les dades necessàries per realitzar una partida.
-                                    <p>A l'hora de crear una interfície haurem de tenir en compte els següents requisits:</p>
-                                    <ul>
-													<li>Una funció, <i>demanarQuantsJugadors</i>, per enregistrar el nombre de jugadors.</li>
-													<li>Una funció, <i>demanarJugador</i>, que permeti enregistrar el nom del jugador.</li> 
-													<li>Una funció, <i>demanarSiVolPunts</i> que necessitarà dos paràmetres, el nom i els punts del jugador </li>
-													<li>Les funcions: <i>mostrarResultatRonda</i>,<i>mostrarPuntsPartida</i>, <i>mostrarPuntsJoc</i>, que necessitaran com a paràmetres les dades dels jugadors i els punts adients a cada funció.</li>
-													<li>Altres funcions de format, com per exemple, la funció <i>menu</i>.</li>                                   
-                                    </ul>   
-                                    <p>Discutiu al  <a href="#" data-toggle="tooltip" data-original-title="Recordeu que per poder accedir al fòrum reduït cal que us hi inscriviu a través de la utilitat Tria grup de fòrum reduït (TGFR)>"><span class='forumGrupReduit'></span></a>, les possibles funcions que podeu definir</p>
-                                    
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-toDo30" 
-                                            data-selector-clue="#slc-toDo30-clue1">
-                                        Pista 1 - Interfície
-                                    </button>                                        
-                                    <div id="slc-toDo30-clue1" class="iocClue hidden">
-                                        <h2>Pista 1</h2>
-                                        <p>Fixeu-vos els diferents tipus de funcions que s'han definir segons el seu retorn, per exemple, les funcions corresponents a mostrar informació per pantalla són de tipus 'void'.
-                                         </p>                       
-                                          
-                                        
-                                    </div>
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-toDo30" 
-                                            data-selector-clue="#slc-toDo30-clue2">
-                                       Solució Interfície
-                                    </button>                                        
-                                    <div id="slc-toDo30-clue2" class="iocClue hidden">
-                                        <h2>Solució Interfície</h2>
-                                       <p>La proposta de solució serà: </p>
-                                       <div class="iocexample">
-                                        <pre><code class="java linenumbers">
-
-                                        </code></pre>
-                                    </div>
-                                    </div>                                 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION Exercici 3 ================-->    
-                
             </section>
             <!--=========== END SECTION toDo ================-->    
 
@@ -1257,21 +1112,22 @@ public class EntradaSortida {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament - Classes i biblioteques</h2>
+                                 <h2 >Lliurament - Classes, biblioteques i tipus composts</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
-                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
-                            </div>
+                                <p>En aquesta A501 se us demana que participeu als debats proposats al <span class="forumGrupReduit"></span>. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important pel vostre aprenentatge que participeu en els debats proposats. També és important pel professor doncs pot avaluar l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                            </  div>
                         </div>
                     </div>
                 </div>
             </section>
             <!--=========== END SECTION toDelivery ================-->    
+            
             <!--=========== BEGIN SECTION toContinue ================-->    
             <section id="slc-toContinue">
                 <div class="container">
@@ -1286,7 +1142,7 @@ public class EntradaSortida {
                         <div class="col-lg-12">
                             <div class=bodySlide>
                                 <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                                <p>Passeu a la següent <span class="toNextActivity"></span></p>
                             </div>
                         </div>
                     </div>

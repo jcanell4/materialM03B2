@@ -2,14 +2,14 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Debat 5 - Biblioteques reusables</h2>
+                                     <h2 >Debat 3 - Biblioteques reusables</h2>
                                      <h3> Biblioteques pròpies</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class=bodySlide>
+                                <div class="bodySlide">
                                     <p>Ara us plantegem debatre sobre la creació de biblioteques pròpies, concrétament sobre biblioteques per ajudar a crear interfícies d'usuari. Abans de començar amb al discussió cal clarificar que una biblioteca d'ajuda a la creació d'interfícies d'usuari, no és el mateix que un interfície d'usuari d'una aplicació. Aquestes darreres són molt específiques i es impossible reutilitzar-les. El que us estem demanant, és la creació d'eines (funcions) que ajudin a escriure qualsevol interfície de qualsevol aplicació més fàcilment i amb menys errors que no la féssim servir. Fer aquesta diferenciació és imprescindible per tenir un plantejament correcte durant el debat. </p>
                                     <div class="frameBox">
                                         <h4>Qüestions pel debat en el <a target="_blank" class="forumEspecialitatUrl">fòrum d'especialistes</a></h4>

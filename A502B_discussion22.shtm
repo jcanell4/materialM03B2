@@ -2,7 +2,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Debat 5 - Estructura de dades</h2>
+                                     <h2 >Debat 3 - Estructura de dades</h2>
                                      <h3>Aclariments i errors habituals treballant amb estructures de dades</h3>
                                  </div>
                             </div>
@@ -40,7 +40,7 @@
                                       <h4>Questions pel debat en el <a target="_blank" class="forumEspecialitatUrl">fòrum d'especialistes</a></h4>
                                          <ol>
                                             <li>Descriviu el comportament de les variables jugadorA i jugadorB en termes de la metàfora descrita més amunt.</li>
-                                            <li>Definiu el significat d'instanciació en el sentit informàtic del terme.</li>
+                                            <!--li>Definiu el significat d'instanciació en el sentit informàtic del terme.</li-->
                                         </ol>
                                     </div>
                                     <h5>Diferències entre instanciar un tipus compost o una classe que només conté codi</h5>
@@ -84,7 +84,7 @@ public class Debat52 {
        processaImprimirGuanyades();
        
        ImpresoraJugador impressora = new ImpresoraJugador();
-       ProcessarImprimirTot(impressora, jugador);
+       processarImprimirTot(impressora, jugador);
 
     }    
 
@@ -99,7 +99,7 @@ public class Debat52 {
         impressora.imprimirGuanyades(jugador);
     }
 
-    private void ProcessarImprimirTot(ImpresoraJugador impressora, 
+    private void processarImprimirTot(ImpresoraJugador impressora, 
                                         DadesJugador jugador) {
         impressora.imprimirNom(jugador);
         impressora.imprimirGuanyades(jugador);
@@ -109,7 +109,7 @@ public class Debat52 {
                                     <div class="frameBox">
                                       <h4>Questions pel debat en el <a target="_blank" class="forumEspecialitatUrl">fòrum d'especialistes</a></h4>
                                          <ol>
-                                            <li>Discutiu el comportament del codi i les raons per les quals es produeix aquest comportament i no un altre.</li>
+                                            <li>Discutiu el comportament de les funcions <em>processaImprimirNom</em>, <em>processaImprimirGuanyades</em> i <em>processarImprimirTot</em> en relació a com han estat codifciades i proposa solucions per solucionar possibles errors.</li>
                                         </ol>
                                     </div>
                                     <h4>Coherència a les dades</h4>
@@ -165,9 +165,8 @@ public class GestorDadesCursa {
                                             <li>Feu una proposta al fòrum d'especialistes d'un tipus compost anomenat <em>DadesPartida3EnRatlla</em> que suporti la representació del tauler de les 3 en ratlla i el control del torn per tal de poder implementar el joc.</li>
                                             <li>Feu també una segona proposta de la classe <em>GestorDades3EnRatlla</em>, que permeti:
                                                 <ol>
-                                                    <li>Crear i inicialitzar una instancia de <em>DadesPartida3EnRatlla</em></li>
-                                                    <li>Col·locar una fitxa en una posició buida del tauler identificada pel la posició de la fila i la posició de la columna.</li>
-                                                    <li>Moure una fitxa existent a una posició buida del tauler. Tant la fitxa com la nova posició s'identificaran a través de la posició de la fila i de la columna.</li>
+                                                    <li>Crear i inicialitzar una instancia de <em>DadesPartida3EnRatlla</em> en el que el tauler es trobi buit.</li>
+                                                    <li>Col·locar una fitxa en una posició buida del tauler identificada pel la posició de la fila i la posició de la columna. Aquesta acció només es podrà dur a terme si la casella seleccionada està buida. Si ja està plena no es col·locarà la fitxa. Podeu fer que la funció encarregada retorni cert o fals en funció de si s'ha consegut col·locar la fitxa o no. Amb aquesta restricció evitarem que desapareguin fitxes ja col·locades al tauler.</li>
                                                 </ol>
                                             </li>
                                         </ol>

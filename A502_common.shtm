@@ -115,7 +115,7 @@
                                 <div class=bodySlide>
                                     <p>La modularització basada en la segregació del codi en diversos fitxers i biblioteques, que en JAVA suposa la creació  de classes addicionals organitzades en paquets, ha representat per el desenvolupament d'aplicacions una gran avantatge ja que ha permès crear aplicacions molt més complexes del que seria possible sense ella.</p>
                                     <p>Tot i així, cal anar molt en compte a l'hora de definir els mòduls i dissenyar les biblioteques, ja que la divisió implicarà inevitablement incrementar el nombre de funcions, que quedaran dispersades en múltiples fitxers. Si fem divisions sense criteri, o fem servir un criteri erroni, correm el risc d'incrementar la complexitat en lloc de reduir-la.</p>
-                                    <p>A continuació us presentarem un seguit de debats que us ajudaran a centrar l'atenció en els elements importants que cal tenir en compte a l'hora d'encarar un disseny modular. EL primer versarà sobre la documentació del codi fent servir la utilitat de Java anomenada Javadoc. Es tracta d'un debat comú a tots els especialistes perquè la documentació de les classes resulta imprescindible en totes les especialitats. La resta de debats (2 més) seran propis de la vostra espcialitat (<span class="nomEspecialitat"></span>).</p>
+                                    <p>A continuació us presentarem un seguit de debats que us ajudaran a centrar l'atenció en els elements importants que cal tenir en compte a l'hora d'encarar un disseny modular. El primer versarà sobre la documentació del codi fent servir la utilitat de Java anomenada Javadoc. Es tracta d'un debat comú a tots els especialistes perquè la documentació de les classes resulta imprescindible en totes les especialitats. La resta de debats (2 més) seran propis de la vostra especialitat (<span class="nomEspecialitat"></span>).</p>
                                     <p>Us aconsellem que per cada debat realitzeu al menys 2 intervencions. Una inicial per exposar el vostre punt de vista en llegir el supòsit del debat i una final a mode de conclusió tenint en compte les intervencions de tots els companys.</p>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Debat 3 - Comú de totes les especialitats</h2>
+                                     <h2 >Debat 1 - Comú de totes les especialitats</h2>
                                      <h3> Ús del JAVADOC</h3>
                                  </div>
                             </div>
@@ -247,16 +247,16 @@ public class CalculadoraDArees {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament - Funcions</h2>
+                                 <h2 >Lliurament - Activitats Especialistes</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                            
-                            En acabar aquesta activitat haureu de penjar l'informe a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> per presentar la informació als teus companys.
-                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>Les tasques de debat quedaran recollides en els fòrums i en el resum que se us ha demanat que plasmeu al l'informe de lliurament.</p>
+                                <p>Les tasques individuals us fan omplir també l'informe amb documentació útil pel projecte, que haureu d'empaquetar junt amb el codi que hagueu generat, en un fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span> per tal que sigui corregit i també al <span class="forumTreball"></span> a fi de presentar la informació als teus companys.</p>
+                                <p>Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
                                 <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
                             </div>
                         </div>
