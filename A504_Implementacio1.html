@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
     <meta name="author" content="Josep Cañellas i Alicia Vila ">
-    <title>A503. Reunió d'integració I</title>
+    <title>A504. Implementació I</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
@@ -80,8 +80,7 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
                           <li class="active"><a href="#slc-toStart">Inici</a></li> 
-                          <li><a href="#slc-integracio">Intengració</a></li>
-                          <li><a href="#slc-planificacio">Planificació</a></li>
+                          <li><a href="#slc-integracio">Guia d'implementació</a></li>
                           <li><a href="#slc-toDelivery">Lliurament</a></li> 
                           <li><a href="#slc-toContinue">Com continuar</a></li> 
                         </ul>           
@@ -103,7 +102,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Inici activitat A503 - Integració I</h2>
+                                 <h2 >Inici activitat A504 - Implementació I</h2>
                              </div>
                         </div>
                     </div>
@@ -111,11 +110,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>Aquesta és la primera activitat d'integració. L'activitat consisteix en dur a terme una reunió per tal d'aconseguir integrar tota la feina realitzada de forma individual, en un únic projecte, fer els canvis pertinents per tal d'aconseguir coherencia i compatibilitat de totes les parts i fer la planificació de les tasques individuals del següent període.</p>
-                                <p>La reunió doncs estarà dividia en dos blocs, el bloc d'integració i el bloc de planificació. En els següents apartats teniu les instruccions per guiar cadascun dels blocs.</p>
-                                <p>El coordinador del grup convocarà un reunió, així que tots els informes de l'activitat A502 s'hagin publicat en el fòrum de grup. És responsabilitat del coordinador, vetllar per a complir els objectius del període en que us trobeu i en darrer terme, per a finalitzar el projecte amb èxit. Per tant, haurà de procurar que tothom lliuri l'informe puntualment per tal de poder finalitzar el període sense retards i en cas que no sigui possible avaluar els possibles riscos, comunicant-ho a la resta de membres i si fos necessari al professor de l'aula per tal de poder reconduir situacions complicades amb el mínim perjudici possible.</p>
-                                <p>Cal que abans d'iniciar la reunió cada membre del grup s'hagi llegit l'informe dels seus companys i prepari una bateria de preguntes amb les clarificacions que consideri necessàries. L'objectiu final, ha de ser que tothom entengui la feina realitzada pels seus companys i el paper que aquesta juga en la globalitat  del projecte.</p>
-                                <p>Com és habitual, en finalitzar ambdós blocs de la reunió, el vigent secretari haurà de realitzar l'acta de la reunió i escriure-la en un fil del fòrum anomenat <em>A503 Acta d'integració I</em>.</p>
+                                <p>Tota aquesta activitat és de caire individual. Cada membre del grup haurà d'anar implementant la part de codi que s'ha acordat. Malgrat tot, si durant la implementació us surten dubtes o dificultats, consulteu al fòrum, el vostre especialista en biblioteques o d'estructura de dades, intentaran ajudar-vos cercant amb vosaltres alguna solució.</p>
+                                <p>El coordinador haurà de vetllar per el compliment dels terminis, a fi de poder realitzar la següent reunió d'integració sense retards. També serà l'encarregat de centralitzar la recollida del codi, a mida que aneu acabant la implementació. Abans d'iniciar la segona reunió d'integració, el coordinador hauria d'unificar tot el codi en el projecte (de netbeans) comú.</p>
+                                <p>D'altra banda, el paper dels especialistes, en aquesta activitat, serà d'assessorament, i consulta tècnica. Cal que els especialistes ajudin als seus companys en aquells dubtes que tinguin referides a continguts propis d'una especialitat. En cas que l'especialista no sàpiga com ajudar, a la vegada podrà traslladar el dubte al seu fòrum d'especialitat, per veure si algú pot aportar la solució.</p>
+                                <p>Per descomptat, sempre podeu consultar al professor.</p>
                              </div>
                         </div>
                     </div>
@@ -123,85 +121,34 @@
             </section>
             <!--=========== END SECTION toStart ================-->    
 
-            <!--=========== BEGIN SECTION integracio ================-->    
-            <section id="slc-integracio" class="section">
+            <!--=========== BEGIN SECTION implementacio ================-->    
+            <section id="slc-implementacio" class="section">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Integració I- integració</h2>
+                                 <h2 >Implementació I- Guia d'implementació</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>La integració ha de tenir dos objectius finals:</p>
-                                <ul>
-                                    <li>La creació d'un projecte de Netbeans on ajuntar i adaptar els esquelets que cada un de vosaltres ha realitzat com especialista a l'activitat A502, a fi d'aconseguir un projecte únic i preparat per començar la següent fase d'implementació.</li>
-                                    <li>La comprensió, per part de tots els membres, del codi final del projecte a fi de poder-se encarregar de forma individual del que li correspongui del següent període d'implementació.</li>
-                                    
-                                </ul>
-                                <p>Per tal de fer més eficient la reunió,es demana que cada un dels membres hagi llegit els informes de la resta i hagi preparat una bateria de preguntes a fi de clarificar els dubtes que li hagin pogut sorgir en fer la lectura. A més, seguint les indicacions de la taula situada a l'apartat d'avaluació dels informes llegits, cal que feu l'avaluació d'un d'ells (el que us toqui ser avaluador), el complimenteu i el retorneu a l'autor per tal que el pugui lliurar a la bśutia de lliuraments</p>
-                                <p>Durant la reunió cada un de vosaltres ha de vetllar i assegurar-se que els demés membres entenen l'esquelet presentat i el paper que juga en la globalitat del projecte. Concretament l'especialista en disseny modular ha de procurar que quedin ben clares:</p>
-                                <ul>
-                                    <li>La seqüencialitat del seu disseny plasmada en el mapa de punts de control.</li>
-                                    <li>La coherència de la informació i dels paràmetres en cada funció de l'esquelet. Concretament caldrà:
-                                        <ul>
-                                            <li>Adaptar el paràmetres que representaven una estructura de dades, a les estructures reals codificades per l'especialista d'estructures.</li>
-                                            <li>Assegurar que la informació continguda a l'estructura és la que es va suposar quan es va realitzar l'esquelet. En cas que no fos així caldrà consensuar la millor solució entre tots.</li>
-                                        </ul>
-                                    </li>
-                                    <li>La raó de la divisió de classes i paquets a fi que tothom tingui molt clar de què s'encarrega cada classe i quin és l'objectiu de cada funció. Per aconseguir-ho, pot ajudar-se del seu javadoc.</li>
-                                </ul>
-                                
-                                <p>L'especialista d'Estructura de dades, per la seva banda haurà d'assegurar que que tots entenen:</p>
-                                <ul>
-                                    <li>El perquè de l'estructura. Quin paper juga cada element de l'estructura en referència a la informació que l'aplicació necessita</li>
-                                    <li>Com accedir a l'estructura. És a dir, en quins casos es pot accedir directament als elements de l'estructura i en quins caldrà usar el gestor de dades per assegurar la coherència interna.</li>
-                                    <li>Deixar clar on s'ha d'instanciar l'estructura (o estructures) de dades de l'aplicació i quantes instancies calen.</li>
-                                    <li>Assegurar que la informació planificada (cada un dels ítems de l'estructura) arribarà allà on es va preveure durant el disseny i per tant existeix una funció en l'esquelet de l'especialista del disseny modular que fa el que es va preveure malgrat es desconeixia encara la funció. A més, caldrà assegurar que des del punt on s'instanciarà l'estructura de dades, existeix un seqüencia de crides amb el pas de paràmetres adient a fi de fer arribar la instancia correctament inicialitzada a les funcions on realment siguin necessàries (seqüència de pas de paràmetres).</li>
-                                </ul>
-                                
-                                <p>Finalment, l'especialista de biblioteques també vetllarà per deixar clara la seva visió:</p>
-                                <ul>
-                                    <li>Necessitat de crear interfícies amb certa estandardització: Quins elements podem identificar en una interfície de consola?</li>
-                                    <li>Utilitat de les funcions de les biblioteques que heu planificat. Quan i com es poden fer servir. Segur que el javadoc us serà útil en aquest cas.</li>
-                                </ul>
-                                <p>Al final d'aquesta sessió cal deixar constància dels canvis que requerirà el codi per tal de fer-se compatible (reanomenament de paràmetres, paquets i funcions, fusió/divisió de classes o paquets, re-ubicació de classes en paquets i de funcions en classes diferents a les previstes, etc). En cas que els canvis siguin molt petits es podria optar per realitzar-los durant la reunió, però en tot cas malgrat es posposin per tenir-los en compte durant la planificació, cal deixar constància escrita els canvis a realitzar</p>
-                                
-                                
+                                <p>La qualitat d'una aplicació depèn en gran mesura de que els seus mètodes estiguin ben implementats, es comportin correctament, no amaguin errors, etc. Procureu que la implementació segueixi els criteris de qualitat descrits a continuació:</p>
+                                <ol>
+                                    <li>Utilitzeu noms significatius de variables i mètodes a fi que en llegir-los es pugui interpretar la seva funcionalitat.</li>
+                                    <li>Eviteu de fer servir valors literals. En el seu lloc useu constants amb noms significatius.</li>
+                                    <li>Indeteu el codi.</li>
+                                    <li>Eviteu escriure mètodes monolítics excessivament grans. Dividiu-los en mètodes extres malgrat no estiguessin planificats. Procureu escriure codi que sigui fàcil de llegir.</li>
+                                    <li>Useu comentaris clarificadors quan sigui necessari, però no en excés.</li>
+                                </ol>
+                                <p>Per cada funció implementada caldrà definir i codificar un joc de proves per tal de verificar el bon comportament  de la funció. Per tal que el joc de proves no embruti el codi final de l'aplicació, creeu una classe específica anomenada Test on realitzareu totes les proves. Així serà fàcil d'eliminar, quan es lliuri el codi al coordinador.</p>
                             </div> 
                         </div>
                     </div>
                 </div>
             </section>
-            <!--=========== END SECTION integracio ================-->    
-
-            <!--=========== BEGIN SECTION planificacio ================-->    
-            <section id="slc-planificacio" class="section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class= "headSlide">
-                                 <h2 >Integració I- planificació</h2>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class=bodySlide>
-                                <p>El bloc de planificació consisteix en avaluar la feina a fer durant el següent període i repartir-la equitativament entre tots els membres.</p>
-                                <p>El nou coordinador assumirà la creació del projecte de netbeans afegint tot el codi amb els canvis acordats en el bloc anterior. A banda d'això, durant el proper període està previst de codificar les funcions planificades per l'especialista de <em>biblioteques</em> i també las del gestor de l'estructura de dades, planificades per l'especialista en <em>estructura de dades</em>.</p>
-                                <p>En general les funcions de biblioteques reutilitzables i dels gestors de dades són peces de codi molt independents que probablement podran implementar-se per separat de forma completa. És important començar la implementació per les peces de codi més independents perquè això facilitarà la codificació de funcions que hagin de fer crides a les primeres, doncs podran ser funcionals (faran el que han de fer i per tant es podran provar) des de la primera línia de codi.</p>
-                                <p>Tot i així, de vegades, podem trobar-nos que certes funcions de les biblioteques reutilitzables han de cridar altres funcions de biblioteques que s'estaran implementant a l'hora. En cas que això succeeixi, si fos possible, a l'hora de fer el repartiment intenteu atorgar a una mateixa persona les funcions dependents de manera per tal de reduir el problema. Si no fos possible, degut a que la càrrega de feina quedés molt descompensada, podreu dur a terme la implementació de les funcions dependent fent servir l'esquelet, ja que podreu fer crides sense que això doni error. El problema d'aquesta alternativa és que obliga a tornar a fer proves un cop s'implementi la funció cridada per verificar el bon funcionament real.</p>
-                                <p>Feu el repartiment de tal manera que la càrrega de feina quedi ben equilibrada, comptant també la feina extra del coordinador que haurà de fer immediatament després d'aquesta reunió, per tal de facilitar la feina dels altres assegurant que tothom parteix de la mateixa versió inicial i evitar així posteriors problemes d'incompatibilitat.</p>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--=========== END SECTION planificació ================-->    
+            <!--=========== END SECTION implementacio ================-->    
 
             <!--=========== BEGIN SECTION toDelivery ================-->    
             <section id="slc-toDelivery">
@@ -209,7 +156,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament - Integració I</h2>
+                                 <h2 >Lliurament - Funcions</h2>
                              </div>
                         </div>
                     </div>
@@ -336,7 +283,7 @@
         $(document).ready(function(){
             var activityManager = new ActivityManager();
             
-            activityManager.init("data/toReplace.json", "A503");
+            activityManager.init("data/toReplace.json", "A504");
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
         });

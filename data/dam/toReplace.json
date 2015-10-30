@@ -531,8 +531,8 @@
         "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP4", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
-        "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP5", "value":"bustiaLliurament"},
-        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP5", "value":"bustiaLliuramentUrl"},
+        "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP4", "value":"bustiaLliurament"},
+        "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP4", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A504_Implementacio1.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
