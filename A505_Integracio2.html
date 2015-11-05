@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
     <meta name="author" content="Josep Cañellas i Alicia Vila ">
-    <title>A504. Implementació I</title>
+    <title>A505. Reunió d'integració II</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
@@ -80,7 +80,8 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
                           <li class="active"><a href="#slc-toStart">Inici</a></li> 
-                          <li><a href="#slc-implementacio">Guia d'implementació</a></li>
+                          <li><a href="#slc-integracio">Intengració</a></li>
+                          <li><a href="#slc-planificacio">Planificació</a></li>
                           <li><a href="#slc-toDelivery">Lliurament</a></li> 
                           <li><a href="#slc-toContinue">Com continuar</a></li> 
                         </ul>           
@@ -102,7 +103,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Inici activitat A504 - Implementació I</h2>
+                                 <h2 >Inici activitat A505 - Integració II</h2>
                              </div>
                         </div>
                     </div>
@@ -110,10 +111,11 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>Tota aquesta activitat és de caire individual. Cada membre del grup haurà d'anar implementant la part de codi que s'ha acordat. Malgrat tot, si durant la implementació us surten dubtes o dificultats, consulteu al fòrum, el vostre especialista en biblioteques o d'estructura de dades, intentaran ajudar-vos cercant amb vosaltres alguna solució.</p>
-                                <p>El coordinador haurà de vetllar per el compliment dels terminis, a fi de poder realitzar la següent reunió d'integració sense retards. També serà l'encarregat de centralitzar la recollida del codi, a mida que aneu acabant la implementació. Abans d'iniciar la segona reunió d'integració, el coordinador hauria d'unificar tot el codi en el projecte (de netbeans) comú.</p>
-                                <p>D'altra banda, el paper dels especialistes, en aquesta activitat, serà d'assessorament, i consulta tècnica. Cal que els especialistes ajudin als seus companys en aquells dubtes que tinguin referides a continguts propis d'una especialitat. En cas que l'especialista no sàpiga com ajudar, a la vegada podrà traslladar el dubte al seu fòrum d'especialitat, per veure si algú pot aportar la solució.</p>
-                                <p>Per descomptat, sempre podeu consultar al professor.</p>
+                                <p>Aquesta és la segona activitat d'integració. Consisteix en dur a terme una reunió per tal d'aconseguir integrar tota la feina realitzada de forma individual, en un únic projecte de netbeans, fer els canvis pertinents per tal d'aconseguir coherencia i compatibilitat de totes les parts i fer la planificació de les tasques individuals del següent període.</p>
+                                <p>La reunió estarà dividia en dos blocs, el bloc d'integració i el bloc de planificació. En els següents apartats teniu les instruccions per guiar cadascun dels blocs.</p>
+                                <p>El coordinador del grup convocarà un reunió, tant bon punt, tota la codificació de l'activitat A504 s'hagin publicat en el fòrum de grup. La reunió es convocarà a suficient temps per tal que cada membre del grup pugui omplir <span class="informeLliurament"></span> corresponent a l'avaluaució del codi d'un altre membre del grup d'acord amb la taula que figura a l'informe mateix.</p> 
+                                 <p>És responsabilitat del coordinador, vetllar per a complir els objectius del període en que us trobeu i en darrer terme, per a finalitzar el projecte amb èxit. Per tant, haurà de procurar que tothom lliuri el codi i ompli l'informe d'avaluació puntualment per tal de poder finalitzar el període sense retards i en cas que no sigui possible valorar els possibles riscos, comunicant-ho a la resta de membres i si fos necessari al professor de l'aula per tal de poder reconduir situacions complicades amb el mínim perjudici possible.</p>
+                                <p>Com és habitual, en finalitzar ambdós blocs de la reunió, el vigent secretari haurà de realitzar l'acta de la reunió i escriure-la en un fil del fòrum anomenat <em>A505 Acta d'integració II</em>.</p>
                              </div>
                         </div>
                     </div>
@@ -121,74 +123,54 @@
             </section>
             <!--=========== END SECTION toStart ================-->    
 
-            <!--=========== BEGIN SECTION implementacio ================-->    
-            <section id="slc-implementacio" class="section">
+            <!--=========== BEGIN SECTION integracio ================-->    
+            <section id="slc-integracio" class="section">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Implementació I- Guia d'implementació</h2>
+                                 <h2 >Integració II- integració</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>La qualitat d'una aplicació depèn en gran mesura de que els seus mètodes estiguin ben implementats, es comportin correctament, no amaguin errors, etc. Procureu que la implementació segueixi els criteris de qualitat descrits a continuació:</p>
-                                <ol>
-                                    <li>Utilitzeu noms significatius de variables i mètodes a fi que en llegir-los es pugui interpretar la seva funcionalitat.</li>
-                                    <li>Eviteu de fer servir valors literals. En el seu lloc useu constants amb noms significatius.</li>
-                                    <li>Indeteu el codi.</li>
-                                    <li>Eviteu escriure mètodes monolítics excessivament grans. Dividiu-los en mètodes extres malgrat no estiguessin planificats. Procureu escriure codi que sigui fàcil de llegir.</li>
-                                    <li>Useu comentaris clarificadors quan sigui necessari, però no en excés.</li>
-                                </ol>
-                                <p>Per cada funció implementada caldrà definir i codificar un joc de proves per tal de verificar el bon comportament  de la funció. Per tal que el joc de proves no embruti el codi final de l'aplicació, creeu una classe específica anomenada Test on realitzareu totes les proves. Així serà fàcil d'eliminar, quan es lliuri el codi al coordinador.</p>
-                                <!-- Button trigger pannel -->
-                                <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                        data-toggle="button"
-                                        data-parent-selector="#leftColumnPanel"
-                                        data-display-on-set-slide="slc-implementacio" 
-                                        data-selector-clue="#slc-implementacio-clue1">
-                                    Pista 1
-                                </button>                                        
-                                <div id="slc-implementacio-clue1" class="iocClue hidden">
-                                    <h2>Pista 1</h2>
-                                    <p>Per fer que les funcions siguin reutilitzables cal parametritzar-les a fi que puguin cridar-se en cada situació, usant valors diferents.</p>
-                                    <p>Java és un llenguatge <em>tipat</em>, això significa que cal indicar sempre el tipus de dades dels paràmetres de les funcions a la declaració d'aquesta, i no és possible fer una crida a la funció usant tipus de dades diferents als declarats. És per això, que quan desenvolupem funcions de biblioteques reutilitzables, caldria tenir en compte que si fem servir sempre tipus de dades estàndards reconeguts per JAVA: (boolean, short, int, long, float, double, String o arrays de qualsevol dels tipus anteriors), resultarà més fàcil de reutilitzar en múltiples aplicacions, que si usem tipus compostos de dades, específics.</p>
-                                </div>                                    
-                                <!-- Button trigger pannel -->
-                                <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                        data-toggle="button"
-                                        data-parent-selector="#leftColumnPanel"
-                                        data-display-on-set-slide="slc-implementacio" 
-                                        data-selector-clue="#slc-implementacio-clue2">
-                                    Pista 2
-                                </button>                                        
-                                <div id="slc-implementacio-clue2" class="iocClue hidden">
-                                    <h2>Pista 2</h2>
-                                    <p>Respecte a la biblioteca reutilitzable d'interfícies d'usuari basades en consola, cal clarificar que no es tracta d'escriure funcions per generar la interfície del projecte que esteu desenvolupant, sinó que les funcions que heu de desenvolupar són funcions reutilitzables que ajudin a crear qualsevol interfície d'usuari basada en consola, i en conseqüència us facilitin la creació (més endavant) de la interfície del projecte.</p>
-                                    <p>Les funcions d'una biblioteca reusable d'interfícies d'usuari, han de permetre estandarditzar la forma de mostrar o demanar informació a l'usuari, segons el tipus d'informació de la que es tracti. A les interfície basada en consola, emulant els terminals d'entrada i sortida estàndard, cal utilitzar les característiques textuals per definir els elements distintius que identifiquin un o altre tipus d'informació.   Així per exemple podem decidir que sempre mostrarem els títols de les pantalles de les nostres aplicacions en majúscules i rodejat d'una seqüència de caràcters '*' a mode de marc vorejant el text del títol.</p>
-                                    <p>Aquesta decisió obliga a afegir codi extra a les nostres aplicacions per aconseguir aquesta normalització. Ara bé si aconseguim encapsular tot aquest codi extra en una funció reutilitzable, aconseguirem crear aplicacions que mostraran la informació correctament estandarditzades (d'acord a l'estil de la nostra companyia) sense haver invertir gaire temps, ja que n'hi haurà prou en cridar la funció de la biblioteca reusable adequada i passar-li el valor concret dels paràmetres requerits.</p>
-                                </div>                                    
-                                <!-- Button trigger pannel -->
-                                <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                        data-toggle="button"
-                                        data-parent-selector="#leftColumnPanel"
-                                        data-display-on-set-slide="slc-implementacio" 
-                                        data-selector-clue="#slc-implementacio-clue3">
-                                    Pista 3
-                                </button>                                        
-                                <div id="slc-implementacio-clue3" class="iocClue hidden">
-                                    <h2>Pista 3</h2>
-                                    <p>La implementació de funcions del gestor de dades, per contra, requereixen passar per paràmetres el tipus de dades compost específic de l'aplicació, per tal que pugui ser manipulat.</p>
-                                    <p>En cas d'implementar un funció d'inicialització del tipus compost, pot optar-se per crear la instància a inicialitzar dins la pròpia funció i retornar-la degudament inciialitzada o bé per crear la instància fora i passar-la com a paràmetre a la funció d'inicialització per tal que pugui manipular els seus elements donant-los un valor coherent per poder-lo fer servir de forma immediata.</p>
-                                </div>                                    
+                                <h4 >Avaluació del codi implementat</h4>
+                                <p>Feu servir els diferents informes d'avalució elaborats per cada un de vosaltres, com a base per discutir i consensuar si caldrà fer alguna modificació abans de procedir a unificar tot el codi en un únic projecte. Per prendre aquesta decisió cal que tingueu en compte si anaeu bé de temps. EN cas afirmatiu si ho creieu convenient podeu dedicar una petita part del nou període a implementar les millores detectades durant l'avaluacó. En cas de no disposar de temps suficient, pot ser preferible de centrar-vos només en aquelles errades que no funcionin, deixant de banda altres criteri de qualitat, tot i sent conscient que això repercutirà en la nota final.</p>
+                                <h4>Correcció dels errors i/o millores proposades</h4>
+                                <p>Procureu ser eficients. Cerqueu una solució ràpida al errors, sobre tot si no disopseu de massa temps. L'objectiu principal és aconseguir que totes les funcions de la biblioteca i del gestor de dades funcionin correctament.</p>
+                                <p>Un cop ho aconseguiu, ajunteu tot el codi en un únic projecte de netbeans. D'això se n'encarregarà el coordinador, el qual retornarà el projecte unificat a la resta de membres per tal que tots parteixin d'una mateixa versió durant la següent fase d'implementació.</p>
                             </div> 
                         </div>
                     </div>
                 </div>
             </section>
-            <!--=========== END SECTION implementacio ================-->    
+            <!--=========== END SECTION integracio ================-->    
+
+            <!--=========== BEGIN SECTION planificacio ================-->    
+            <section id="slc-planificacio" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Integració II- planificació</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>El bloc de planificació consisteix en avaluar la feina a fer durant el següent període i repartir-la equitativament entre tots els membres.</p>
+                                <p>Durant la següent fase d'implementació caldrà que implementeu totes i cada una de les pantalles de l'aplicació. No cal que les pantalles siguin funcionals. És a dir no cal que permetin jugar realment. Només cal que implementeu la part visible de l'aplicació (missatges, menús, indicacions, mostra d'informació, entrada de dades, etc.) </p>
+                                <p>De moment no us preocupeu encara per les funcions del joc que permetran jugar. Ja les implementareu en la darrera fase. Aquí, per aconseguir fer proves, i passar per totes les pantalles que estigueu implementant, inventeu-vos les dades i usau valors fixes en el codi simulant les respostes del joc per tal de poder observar el comportament de les pantalles en funció dels diferents valors.</p>
+                                <p>Feu el repartiment de tal manera que la càrrega de feina quedi ben equilibrada.</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION planificació ================-->    
 
             <!--=========== BEGIN SECTION toDelivery ================-->    
             <section id="slc-toDelivery">
@@ -196,14 +178,14 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament - Funcions</h2>
+                                 <h2 >Lliurament - Integració II</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>El codi implementat en aquesta activitat, s'haurà d'empaquetar junt en un fitxer ZIP que penjareu al <span class="forumTreball">fòrum del grup de treball</span> a fi que els vostres companys i el professor responsable de l'aula hi tinguin accés.</p>
+                                <p>De forma similar a l'anterior activitat d'integració, caldrà empaquetar en format zip, el vostre informe degudament avaluat, junt amb una copia de l'informe en el que hagueu estat avaluador i lliurar-lo a la <span class="bustiaLliurament"></span>.</p>
                                 <p>És molt important seguir el calendari establert a fi de facilitar la feina de l'equip i evitar retards que puguin comportar conseqüències negatives. Per tant, procureu  lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
                             </div>
                         </div>
@@ -323,7 +305,7 @@
         $(document).ready(function(){
             var activityManager = new ActivityManager();
             
-            activityManager.init("data/toReplace.json", "A504");
+            activityManager.init("data/toReplace.json", "A505");
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
         });

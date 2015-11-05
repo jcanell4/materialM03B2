@@ -561,7 +561,7 @@
         "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP5", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
-        "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP6", "value":"bustiaLliurament"},
+        "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP5", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP6", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
