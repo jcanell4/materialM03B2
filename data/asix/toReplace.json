@@ -564,7 +564,7 @@
         "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP5", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP6", "value":"bustiaLliuramentUrl"},
-        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
+        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA505.odt'> l'informe </a>"},
         "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A506_Implementacio2.html?asix"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
