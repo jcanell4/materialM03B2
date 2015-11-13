@@ -146,7 +146,6 @@
                                     <li>La interfície ha de proveir de sistemes d'ajuda que permetin oferir explicacions més extenses quan la informació visible no aporti tota la informació que l'usuari pugui requerir.</li>
 				    <li>La interfície ha de ser tolerant a errades de l'usuari. Cal tenir present que els usuaris no sempre faran el que se'ls demana, ja sigui per equivocació o per simple curiositat. En qualsevol cas, la interfície no s'ha de penjar mai per acció de l'usuari. Cal assegurar sempre que es recullen exactament el tipus i el nombre de dades previstes. </li>
                                 </ol>
-                                
                                 <!-- Button trigger pannel -->
                                 <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                         data-toggle="button"
@@ -157,8 +156,8 @@
                                 </button>                                        
                                 <div id="slc-implementacio-clue1" class="iocClue hidden">
                                     <h2>Pista 1</h2>
-                                    <p>Per fer que les funcions siguin reutilitzables cal parametritzar-les a fi que puguin cridar-se en cada situació, usant valors diferents.</p>
-                                    <p>Java és un llenguatge <em>tipat</em>, això significa que cal indicar sempre el tipus de dades dels paràmetres de les funcions a la declaració d'aquesta, i no és possible fer una crida a la funció usant tipus de dades diferents als declarats. És per això, que quan desenvolupem funcions de biblioteques reutilitzables, caldria tenir en compte que si fem servir sempre tipus de dades estàndards reconeguts per JAVA: (boolean, short, int, long, float, double, String o arrays de qualsevol dels tipus anteriors), resultarà més fàcil de reutilitzar en múltiples aplicacions, que si usem tipus compostos de dades, específics.</p>
+                                    <p>Per fer la integració cenyiu-vos a les vostres pantalles, no intenteu fer vosaltres sols tot el programa. Si durant el disseny heu pres la precaució de definir unha única funció per accedir a cada pantalla, us resultarà molt fàcil fer-ho, ha que quan hàgiu de passar a una latre pantalla n'hi haurà prou en fer la crida a la funció que que hi accedeixi.</p>
+                                   <p>No cal que la funció faci res, només caldria tenirla definida amb un codi buit a l'interior. Com a màxim, si voleu verificar que les crides es fan a la funció correcta, podeu escriure-hi (en el cos de la funció) un <em>System.out.println</em> amb un missatge clarificador que us permeti verificar el bon funcionament del vostre codi. </p>
                                 </div>                                    
                                 <!-- Button trigger pannel -->
                                 <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -169,10 +168,32 @@
                                     Pista 2
                                 </button>                                        
                                 <div id="slc-implementacio-clue2" class="iocClue hidden">
-                                    <h2>Pista 2</h2>
-                                    <p>Respecte a la biblioteca reutilitzable d'interfícies d'usuari basades en consola, cal clarificar que no es tracta d'escriure funcions per generar la interfície del projecte que esteu desenvolupant, sinó que les funcions que heu de desenvolupar són funcions reutilitzables que ajudin a crear qualsevol interfície d'usuari basada en consola, i en conseqüència us facilitin la creació (més endavant) de la interfície del projecte.</p>
-                                    <p>Les funcions d'una biblioteca reusable d'interfícies d'usuari, han de permetre estandarditzar la forma de mostrar o demanar informació a l'usuari, segons el tipus d'informació de la que es tracti. A les interfície basada en consola, emulant els terminals d'entrada i sortida estàndard, cal utilitzar les característiques textuals per definir els elements distintius que identifiquin un o altre tipus d'informació.   Així per exemple podem decidir que sempre mostrarem els títols de les pantalles de les nostres aplicacions en majúscules i rodejat d'una seqüència de caràcters '*' a mode de marc vorejant el text del títol.</p>
-                                    <p>Aquesta decisió obliga a afegir codi extra a les nostres aplicacions per aconseguir aquesta normalització. Ara bé si aconseguim encapsular tot aquest codi extra en una funció reutilitzable, aconseguirem crear aplicacions que mostraran la informació correctament estandarditzades (d'acord a l'estil de la nostra companyia) sense haver invertir gaire temps, ja que n'hi haurà prou en cridar la funció de la biblioteca reusable adequada i passar-li el valor concret dels paràmetres requerits.</p>
+                                    <h2>Pista 1</h2>
+                                    <p>Feu servir les funcions de la biblioteca genèrica per crear les interfícies de cada pantalla, anireu molt més ràpid i tindreu menys errors si feu servir la funció genèrica passant els paràmetres oportuns. Normalment una pantalla tindrà el seu títol (i potser subtítol), que informarà a l'usuari de la pantalla on es troba, també tindrà una part central on se succeiran els controls (missatges i peticions de dades) que la pantalla necessiti i opcionalment mostrarà abans de finalitzar, un missatge indicant quin ha estat el resultat de la acció realitzada. El missatge final només tindrà sentit si no l'acció demanada finalitza, de manera que s'informi a l'usuari si s'ha aconseguit acabar amb èxit o bé s'ha produït algun error.  Per exemple en cas que la pantalla fos un menú, no caldria informar del resultat perquè encara no el coneixeríem. En realitat, el menú només serveix per dirigir l'execució al lloc correcte.</p>
+                                    <p>Ara bé, si en comptes de gestionar un menú volem implementar una pantalla que demani als usuaris les dades d'un client per poder-lo donar d'alta, hauriem d'assegurar d'informar a l'usuari de la pantalla on es troba (títol o potser subtítol), fer la seqüència de demanda de dades necessàries i finalment informar a l'usuari si s'ha aconseguit donar d'alta el client o s'ha trobat algun problema. </p>
+                                    <p>No intenteu implementar una pantalla en una única funció, dividiu el codi en tantes parts com calgui per tal de facilitar la interpretació de la funció. Veiem un exemple clarificador de la funció que afegiria clients:</p>
+                                    <pre><code class="java">
+ public void afegirClient(DadesConcurs dadesConcurs){
+    String dni;
+    String nom;
+    String cognoms;
+    String telefon;
+    int result;
+
+    mostrarTitolAfegirClient();
+    
+    dni = demanarDni();
+    nom = demanarNom();
+    cognoms = demanarCognoms();
+    telefon = demanarTelefon();
+
+    result = afegirClient(dadesConcurs, dni, nom, cognoms, telefon);
+
+    mostrarResultatAfegirPatrticipant(result);
+}
+                                            
+                                    </code></pre>
+                                    <p>Fixeu-vos que s'ha creat una funció concreta per cada part de la pantalla (títol, controls, resultat). Serà en la implementació d'aquestes funcions auxiliars que usarem les funcions genèriques de la biblioteca implementada a l'activitat anterior ( la de ajuda a la creació d'interfícies). </p>
                                 </div>                                    
                                 <!-- Button trigger pannel -->
                                 <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -183,9 +204,34 @@
                                     Pista 3
                                 </button>                                        
                                 <div id="slc-implementacio-clue3" class="iocClue hidden">
-                                    <h2>Pista 3</h2>
-                                    <p>La implementació de funcions del gestor de dades, per contra, requereixen passar per paràmetres el tipus de dades compost específic de l'aplicació, per tal que pugui ser manipulat.</p>
-                                    <p>En cas d'implementar un funció d'inicialització del tipus compost, pot optar-se per crear la instància a inicialitzar dins la pròpia funció i retornar-la degudament inciialitzada o bé per crear la instància fora i passar-la com a paràmetre a la funció d'inicialització per tal que pugui manipular els seus elements donant-los un valor coherent per poder-lo fer servir de forma immediata.</p>
+                                    <h2>Pista 2</h2>
+<p>Si feu el comentat a la pista anterior, us quedarà un codi molt simple en cada funció de manera que serà realment fàcil realitzar modificacions en una funció sense haver de tocar obligatòriament la resta. </p>
+<p>Per exemple, si inicialment fem la funció <em>demanarCognoms</em> sense prendre la precaució de verificar l'entrada de l'usuari, però el client ens ho havia demanat:</p>
+                                    <pre><code class="java">
+                                    
+private String demanarCognoms(){
+        String valor;
+        BibliotecaInterficeUsuari intUsuari = new BibliotecaInterficeUsuari();
+        valor = intUsuari.entrarCadena("Introdueix els cognoms del concursant i prem [ENTRAR]\n");
+        return valor;
+    }                                    </code></pre>
+                                    <p>Resultarà molt fàcil afegir modificacions sense necessitat de canviar cap altre codi que el que es trobi estrictament dins la funció a modificar:</p>
+                                    <pre><code class="java">
+                                    
+private String demanarCognoms(){
+        String valor;
+        boolean ok=false;
+        BibliotecaInterficeUsuari intUsuari = new BibliotecaInterficeUsuari();
+        do{
+            valor = intUsuari.entrarCadena("Introdueix els cognoms del concursant i prem [ENTRAR]\n");
+            ok = gestorDades.verificarCognoms(valor);
+            if(!ok){
+                intUsuari.printError("No pots deixar els cognoms buits");
+            }
+        }while(!ok);
+        return valor;
+    }                                    
+                                    </code></pre>
                                 </div>                                    
                             </div> 
                         </div>
@@ -200,7 +246,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament - Implementació I</h2>
+                                 <h2 >Lliurament - Implementació II</h2>
                              </div>
                         </div>
                     </div>
