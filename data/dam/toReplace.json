@@ -5,7 +5,7 @@
         "tgr":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3311#triagrupForumReduit"},
         "fpr":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271350"},
         "fgr":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271340\">fòrum reduït de discussió</a>"},
-        "fgt":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271340\">fòrum del grup de treball</a>"},
+        "fgt":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271355\">fòrum del grup de treball</a>"},
         "fge":{"type":"html", "value":"<a target='_blank' class='forumEspecialitatUrl' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271361\">fòrum de l'especialitat</a>"},
         "fgeUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271361"},
         "bll":{"type":"attr", "name":"href", "value":"bustiaLliurament"},
