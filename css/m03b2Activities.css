@@ -121,6 +121,11 @@
     padding: 0 5px;
 }
 
+.left th,
+.left td{
+    text-align: left;
+}
+
 .bodySlide .jssorTitle{
     font-family: "Arial", sans-serif, "swiss";
     font-size: 3.5em;

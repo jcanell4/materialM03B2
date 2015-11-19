@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
     <meta name="author" content="Josep Cañellas i Alicia Vila ">
-    <title>A507. Reunió d'integració III</title>
+    <title>A508. Implementació III</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
@@ -80,8 +80,7 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
                           <li class="active"><a href="#slc-toStart">Inici</a></li> 
-                          <li><a href="#slc-integracio">Integració</a></li>
-                          <li><a href="#slc-planificacio">Planificació</a></li>
+                          <li><a href="#slc-implementacio">Guia d'implementació</a></li>
                           <li><a href="#slc-toDelivery">Lliurament</a></li> 
                           <li><a href="#slc-toContinue">Com continuar</a></li> 
                         </ul>           
@@ -103,7 +102,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Inici activitat A507 - Integració III</h2>
+                                 <h2 >Inici activitat A508 - Implementació III</h2>
                              </div>
                         </div>
                     </div>
@@ -111,11 +110,16 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>En aquesta activitat, la tercera d'integració, com ja és habitual, haureu de fer un reunió on inicialment caldrà avaluar el codi fet, integrar-lo en un únic projecte i finalment planificar el darrer període d'implementació. En els següents apartats teniu les instruccions per guiar la activitat.</p>
-                                <p>Abans que res, el coordinador del grup convocarà un reunió, tant bon punt, tota la codificació de l'activitat A506 s'hagin publicat en el fòrum de grup. La reunió es convocarà amb suficient temps per tal que cada membre del grup pugui omplir <span class="informeLliurament"></span> corresponent a l'avaluació del codi d'un altre membre del grup d'acord amb la taula que figura a l'informe mateix.</p> 
-                                 <p>És responsabilitat del coordinador, vetllar per a complir els objectius del període en que us trobeu i en darrer terme, per a finalitzar el projecte amb èxit. Per tant, haurà de procurar que tothom lliuri el codi i ompli l'informe d'avaluació puntualment per tal de poder finalitzar el període sense retards i en cas que no sigui possible valorar els possibles riscos, comunicant-ho a la resta de membres i si fos necessari al professor de l'aula per tal de poder reconduir situacions complicades amb el mínim perjudici possible.</p>
-                                 <p>Tingueu en compte que la integració d'aquesta part ja us resultarà una mica més complicada que la anterior, doncs la dependencia entre cada una de les parts resulta més gran i per tant caldrà assegurar que les funcions cridades rebin exactament els paràmetres requerits, que aquests contenen la informació correcta, etc. Per tant no apureu la convocatòria de la reunió, sigueu previsosr i destinueu-hi prou temps.</p>
-                                <p>Com és habitual, en finalitzar ambdós blocs de la reunió, el vigent secretari haurà de realitzar l'acta de la reunió i escriure-la en un fil del fòrum anomenat <em>A507 Acta d'integració III</em>.</p>
+                                <p>De nou una activitat d'implementació individual en la que haureu de codificar el que se us hagi assignat a la darrera reunió d'integració. Bàsicament la codificació consistirà en dos tipus de feines:</p>
+                                <ul>
+                                    <li>Adaptar les funcions ja escrites a la primera part del projecte (activitats A404, A407 i A408) als formats de dades usats en la vostra aplicació.</li>
+                                    <li>Crear noves funcions que permetin executar correctament tota l'aplicació a partir de la interfície d'usuari que heu escrit a les activitats A506 i A507</li>
+                                </ul>
+     			<p>Seguiu les indicacions de l'apartat de la guia d'implementació per aconseguir una implementació de qualitat tenint en compte els criteris indicats.</p>
+				<p>Si durant la implementació us surten dubtes o dificultats, consulteu al fòrum, el vostre especialista en modularització i biblioteques, intentaran ajudar-vos cercant amb vosaltres alguna solució.</p>
+                                <p>El coordinador haurà de vetllar per el compliment dels terminis, a fi de poder realitzar la següent reunió d'integració sense retards.</p>
+                                <p>Com a l'anterior implementació, el paper dels especialistes serà d'assessorament, i consulta tècnica. Cal que els especialistes ajudin als seus companys en aquells dubtes que tinguin, referits a continguts propis d'una especialitat. En cas que l'especialista no sàpiga com ajudar, a la vegada podrà traslladar el dubte al seu fòrum d'especialitat, per veure si algú pot aportar la solució.</p>
+                                <p>Per descomptat, sempre podeu consultar al professor.</p>
                              </div>
                         </div>
                     </div>
@@ -123,64 +127,97 @@
             </section>
             <!--=========== END SECTION toStart ================-->    
 
-            <!--=========== BEGIN SECTION integracio ================-->    
-            <section id="slc-integracio" class="section">
+            <!--=========== BEGIN SECTION implementacio ================-->    
+            <section id="slc-implementacio" class="section">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Integració III- integració</h2>
+                                 <h2 >Implementació III- Guia d'implementació</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <h4 >Avaluació del codi implementat</h4>
-                                <p>Feu servir els diferents informes d'avaluació elaborats per cada un de vosaltres, com a base per discutir i consensuar si caldrà fer alguna modificació abans de procedir a unificar tot el codi en un únic projecte. Degut a la complexitat que el projecta anirà adquirint, potser seria preferible encarregar la integració a l'especialista de modularització que és qui ha fet el disseny de les pantalles.</p>
-                                <p>Assegureu-vos que tot compila i que totes les funcions rebran les dades adequades. En cas de no disposar de temps suficient, centrar-vos només en aquelles errades que no funcionin, deixant de banda altres criteri de qualitat, tot i sent conscient que això repercutirà en la nota final.</p>
-                                <h4>Correcció dels errors i/o millores proposades</h4>
-                                <p>Procureu ser eficients. Cerqueu una solució ràpida als errors, sobretot si no disposeu de massa temps. L'objectiu principal és aconseguir que la navegabilitat entre pantalles de l'aplicació.</p>
-                                <p>Un cop ho aconseguiu, ajunteu tot el codi en un únic projecte de Netbeans. D'això se'n pot encarregar l'especialista de modularització, el qual retornarà el projecte unificat a la resta de membres per tal que tots parteixin d'una mateixa versió durant la següent fase d'implementació.</p>
-                                <p>Es tracta només d'una suggerència. La responsabilitat d'encarregar la la integració de totes les parts és en darrer terme vostra i per tant podeu escollir qui cregueu més convenient.</p>
+                                <p>La codificació d'aquesta part implica d'una banda adaptar el codi que que ja vàreu escriure a les activitats A404, A407 i A408 per tal d'adaptar les crides a aquestes funcions. El problema és que es tracta de funcions que reben tipus de paràmetres senzills, però a la vostra aplicació la informació està continguda a una estructura de dades. Per tant haureu de llegir la instància abans d'extreure la informació i fer la crida amb les dades correctes.</p>
+                                <p>En cas d'aquelles funcions que calgui implementar el codi totalment, us aconsellem que dissenyeu un petit equema descendent per ajudar-vos a veure el que cal implementar.</p>
+                                <p>També us exposem els criteris generals de qualitat d'una aplicació com la que esteu implementant. Es tracta dels criteris que usarem a l'hora d'avaluar el projecte globalment. Intenteu doncs, tenir-los en compte mentre aneu codificant.</p>
+                                <table border="1" cellspacing="0" cellpadding="1">
+                                    <caption style="text-align:center"><strong>Criteris de qualitat per l'avaluació de lliurament final</strong></caption>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th colspan="3">Nivell de qualitat</th>                                        
+                                        </tr>
+                                        <tr>
+                                            <th >Criteri</th>
+                                            <th  width="34%">Qualificació màxima (100%)</th>
+                                            <th  width="27%">Qualificació mitjana (50%)</th>
+                                            <th  width="27%">Qualificació deficient (0%)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="left">
+                                        <tr>
+                                            <td>Correctesa <br/> (2,5 punts)</td>
+                                            <td>El programa realitza totes les funcionalitats demanades a l'enunciat de forma correcta d'acord amb el pla de proves previst.</td>
+                                            <td>Funcionen totes les funcionalitats excepte una o dues.</td>
+                                            <td>L'aplicació falla en més de dos casos.</td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td>Robustesa <br/> (1,5 punt)</td>
+                                            <td>L'aplicació funciona sense bloquejar-se i controlant els possibles erros que puguin esdevenir.</td>
+                                            <td>Es bloqueja en alguna ocasió o bé acaba sobtadament  a causa d'algun  error no controlat (no més de dos casos).</td>
+                                            <td>L'aplicació es queda bloquejada o finalitza sobtadament amb freqüència.</td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td>Codi modular i ben  estructurat <br/> (1.5 punts)</td>
+                                            <td>El codi es troba distribuït en mètodes de classes i les classes en paquets  que responen a criteris lògics evidents o bé descrits a la documentació.<br/>
+    El codi no es concentra  en pocs mètodes o en poques classes sinó que es troba ben distribuït i segmentat en nivells de profunditat raonables per la mida de l'aplicació que ajuda a fer el seguiment del flux. <br/>
+    Hi ha una separació estructural de les classes i mètodes responsables de l'intercanvi d'informació amb l'usuari d'aquelles classes i mètodes encarregats de calcular i processar. 
+    Les estructures de dades ajuden a mantenir les dades agrupades i ben identificades al llarg del codi.</td>
+                                            <td>El codi està estructurat però no hi ha paquets o hi ha classes que concentren bona part del codi. No sempre són evidents els criteris de separació del codi en classes i paquets ni hi ha informació a la documentació. Ocasionalment es barreja codi encarregat de calcular i processar les dades amb l'encarregat d'intercanviar informació amb l'usuari. <br/>
+    No sempre es fan servir les estructures de dades i de vegades les dades resten disperses. </td>
+                                            <td>Hi ha mètodes monolítics que són els responsables d'una part important de la funcionalitat.<br/> 
+    No hi ha criteris identificables de les raons usades per separar el codi en mètodes o classes.<br/>   
+    Es difícil de preveure les conseqüències de modificar alguna part del codi.<br/>
+    Les captures de teclat i les sortides per pantalla es barregen amb la resta processament en gairebé tot el codi.<br/>
+    Quasi mai es fan servir estructures de dades., treballant amb un nombre gran de variables disperses.
+    </td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td>Codi llegible <br/> (1.5 punts)</td>
+                                            <td>Es fan servir constants de forma habitual en lloc de valors literals.<br/>
+    Els noms de les classes, dels mètodes i les variables són descriptius de manera que és molt intuïtiu saber per a què es fan servir.<br/>
+    El codi està  ben indentat.<br/>
+    Les estructures de dades ajuden a interpretar el flux de les dades durant l'execució.</td>
+                                            <td>Es fan servir poques constants. <br/>
+    Costa deduir la utilització de mètodes i variables a partir dels seus noms. <br/>
+    El codi no està sempre ben indentat.
+    </td>
+                                            <td>Mai o quasi bé mai, es fan servir constants.<br/>
+    Costa deduir la utilització de mètodes i variables a partir dels seus noms.<br/>
+    No se segueix un criteri fix a l'hora de nombrar variables mètodes i classes. <br/>
+    Sovint el codi està mal indentat.</td>
+                                        </tr>  
+                                         <tr>
+                                            <td>Interfície Amigable  <br/> (1.5 punt)</td>
+                                            <td>L'usuari sempre sap on es troba i com sortir o tronar a la pantalla anterior.<br/>
+    Sempre es deixa clar el que l'usuari ha de fer en cada moment.<br/>
+    Les accions que l'usuari ha de fer són intuïtives o fàcils de deduir.</td>
+                                            <td>No resulta fàcil saber en quina pantalla es troba l'usuari.<br/>
+    <br/>
+    Malgrat que hi ha missatges orientadors per l'usuari, aquest no sempre clarifiquen el que s'espera que l'usuari faci.</td>
+                                            <td>No hi ha missatges o els missatges que es mostren no expliquen el que l'usuari ha de fer, cosa que provoca que sovint aquest s'equivoqui.</td>
+                                        </tr>  
+                                    </tbody>                                      
+                                </table>
                             </div> 
                         </div>
                     </div>
                 </div>
             </section>
-            <!--=========== END SECTION integracio ================-->    
-
-            <!--=========== BEGIN SECTION planificacio ================-->    
-            <section id="slc-planificacio" class="section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class= "headSlide">
-                                 <h2 >Integració III- planificació</h2>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class=bodySlide>
-                                <p>De nou, la planificació consistirà en avaluar la feina a fer durant el següent període i repartir-la equitativament entre tots els membres.</p>
-                                <p>Durant la següent fase d'implementació caldrà finalitzar el projecte. Per aconseguir-ho caldrà:</p>
-					<ul>
-					  <li>Adaptar les funcions codificades a les activitats A404, A047 i A408</li> 
-					  <li>Implementar les poques funcions que encara restin per fer</li>
-					  <li>Incorporar totes les funcions en el seu lloc dins el projecte per tal de fer funcional tot el que s'ha fet fins ara.</li>
-					</ul>           
-
-                    <p>L'adaptació de les funcions que ja teniu fetes, consistirà nomes en adaptar el paràmetres que arribin fent els canvis pertinents per extreure les dades senzilles que necessitin de l'estructura de dades de l'aplicació que serà com anirem traslladant la informació de funció en funció (trobareu més informació a les activitats del següent període).
-</p>
-                                <p>La implementació de les noves funcions no caldrà adaptar-la perquè ja coneixereu l'estructura de dades i per tant, la podeu fer servir directament.</p>
-                                <p>Feu el repartiment de tal manera que la càrrega de feina quedi ben equilibrada.</p>
-                            </div> 
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--=========== END SECTION planificació ================-->    
+            <!--=========== END SECTION implementacio ================-->    
 
             <!--=========== BEGIN SECTION toDelivery ================-->    
             <section id="slc-toDelivery">
@@ -188,14 +225,14 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament - Integració III</h2>
+                                 <h2 >Lliurament - Implementació III</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>De forma similar a l'anterior activitat d'integració, caldrà empaquetar en format zip, <span class="informeLliurament"></span> que us han avaluat i aquell en el que hagueu estat l'avaluador, i lliurar-lo a la <span class="bustiaLliurament"></span>.</p>
+                                <p>El codi implementat en aquesta activitat, s'haurà d'empaquetar junt en un fitxer ZIP que penjareu al <span class="forumTreball">fòrum del grup de treball</span> a fi que els vostres companys i el professor responsable de l'aula hi tinguin accés.</p>
                                 <p>És molt important seguir el calendari establert a fi de facilitar la feina de l'equip i evitar retards que puguin comportar conseqüències negatives. Per tant, procureu  lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
                             </div>
                         </div>
@@ -315,7 +352,7 @@
         $(document).ready(function(){
             var activityManager = new ActivityManager();
             
-            activityManager.init("data/toReplace.json", "A507");
+            activityManager.init("data/toReplace.json", "A508");
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
         });

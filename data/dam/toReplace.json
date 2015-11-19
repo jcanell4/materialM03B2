@@ -5,7 +5,7 @@
         "tgr":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3311#triagrupForumReduit"},
         "fpr":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271350"},
         "fgr":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271340\">fòrum reduït de discussió</a>"},
-        "fgt":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271340\">fòrum del grup de treball</a>"},
+        "fgt":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271355\">fòrum del grup de treball</a>"},
         "fge":{"type":"html", "value":"<a target='_blank' class='forumEspecialitatUrl' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271361\">fòrum de l'especialitat</a>"},
         "fgeUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271361"},
         "bll":{"type":"attr", "name":"href", "value":"bustiaLliurament"},
@@ -578,7 +578,6 @@
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP6", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP6", "value":"bustiaLliuramentUrl"},
-        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A507_Integracio3.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -593,7 +592,7 @@
         "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP7", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
-        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
+        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/Informe507.odt'> l'informe </a>"},
         "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A508_Implementacio3.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -608,7 +607,6 @@
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP7", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
-        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
         "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A509_Integracio4.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
@@ -623,7 +621,7 @@
         "tipus": {"selector":".tipus", "defaultValue":"Tip_GT"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP7", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
-        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
+        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA509.odt'> l'informe </a>"},
         "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A5MI_PropostaIndividualMillora.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
