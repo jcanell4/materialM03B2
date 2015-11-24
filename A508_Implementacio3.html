@@ -141,7 +141,7 @@
                         <div class="col-lg-12">
                             <div class=bodySlide>
                                 <p>La codificació d'aquesta part implica d'una banda adaptar el codi que que ja vàreu escriure a les activitats A404, A407 i A408 per tal d'adaptar les crides a aquestes funcions. El problema és que es tracta de funcions que reben tipus de paràmetres senzills, però a la vostra aplicació la informació està continguda a una estructura de dades. Per tant haureu de llegir la instància abans d'extreure la informació i fer la crida amb les dades correctes.</p>
-                                <p>En cas d'aquelles funcions que calgui implementar el codi totalment, us aconsellem que dissenyeu un petit equema descendent per ajudar-vos a veure el que cal implementar.</p>
+                                <p>En cas d'aquelles funcions que calgui implementar el codi totalment, us aconsellem que dissenyeu un petit esquema descendent per ajudar-vos a veure el que cal implementar.</p>
                                 <p>També us exposem els criteris generals de qualitat d'una aplicació com la que esteu implementant. Es tracta dels criteris que usarem a l'hora d'avaluar el projecte globalment. Intenteu doncs, tenir-los en compte mentre aneu codificant.</p>
                                 <table border="1" cellspacing="0" cellpadding="1">
                                     <caption style="text-align:center"><strong>Criteris de qualitat per l'avaluació de lliurament final</strong></caption>
@@ -174,16 +174,16 @@
                                             <td>Codi modular i ben  estructurat <br/> (1.5 punts)</td>
                                             <td>El codi es troba distribuït en mètodes de classes i les classes en paquets  que responen a criteris lògics evidents o bé descrits a la documentació.<br/>
     El codi no es concentra  en pocs mètodes o en poques classes sinó que es troba ben distribuït i segmentat en nivells de profunditat raonables per la mida de l'aplicació que ajuda a fer el seguiment del flux. <br/>
-    Hi ha una separació estructural de les classes i mètodes responsables de l'intercanvi d'informació amb l'usuari d'aquelles classes i mètodes encarregats de calcular i processar. 
-    Les estructures de dades ajuden a mantenir les dades agrupades i ben identificades al llarg del codi.</td>
+    Hi ha una separació estructural de les classes i mètodes responsables de l'intercanvi d'informació amb l'usuari d'aquelles classes i mètodes encarregats de calcular i processar. <br/>
+    Les estructures de dades ajuden a mantenir les dades agrupades i ben identificades al llarg del codi.<br/>
+    Es fa un ús correcte de les variables globals</td>
                                             <td>El codi està estructurat però no hi ha paquets o hi ha classes que concentren bona part del codi. No sempre són evidents els criteris de separació del codi en classes i paquets ni hi ha informació a la documentació. Ocasionalment es barreja codi encarregat de calcular i processar les dades amb l'encarregat d'intercanviar informació amb l'usuari. <br/>
-    No sempre es fan servir les estructures de dades i de vegades les dades resten disperses. </td>
+    No sempre es fan servir les estructures de dades i de vegades les dades resten disperses.<br/>
+    En ocasions s'utilitzen més variables globals de les necessàries.</td>
                                             <td>Hi ha mètodes monolítics que són els responsables d'una part important de la funcionalitat.<br/> 
-    No hi ha criteris identificables de les raons usades per separar el codi en mètodes o classes.<br/>   
-    Es difícil de preveure les conseqüències de modificar alguna part del codi.<br/>
-    Les captures de teclat i les sortides per pantalla es barregen amb la resta processament en gairebé tot el codi.<br/>
-    Quasi mai es fan servir estructures de dades., treballant amb un nombre gran de variables disperses.
-    </td>
+    No hi ha criteris identificables de les raons usades per separar el codi en mètodes o classes. Es difícil de preveure les conseqüències de modificar alguna part del codi. Les captures de teclat i les sortides per pantalla es barregen amb la resta processament en gairebé tot el codi.<br/>
+    Quasi mai es fan servir estructures de dades., treballant amb un nombre gran de variables disperses.<br/>
+    Es fan servir variables globals sense cap criteri </td>
                                         </tr>                                    
                                         <tr>
                                             <td>Codi llegible <br/> (1.5 punts)</td>
