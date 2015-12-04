@@ -82,10 +82,10 @@
     },        
     "RPM":{
         "dataInici": {"type":"text", "value":"02/12/2015"},
-        "dataFinal": {"type":"text", "value":"22/12/2015"},       
-        "dataLimit": {"type":"text", "value":"22/12/2015"},
-        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P7</a>"},
-        "bustiaLliuramentUrl":{"type":"ref", "name":"RP7", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271837"}       
+        "dataFinal": {"type":"text", "value":"08/01/2015"},       
+        "dataLimit": {"type":"text", "value":"08/01/2015"},
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament PM</a>"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=000000"}       
     },         
     "A400": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='#'>A400</a>"},
@@ -627,16 +627,16 @@
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
     },
     "A5MI": {
-        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A5M1_PropostaIndividualMillora.html?dam'>A5MI</a>"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A5MI_PropostaIndividualMillora.html?dam'>A5MI</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A5M1 Proposta individual de millora"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"text", "value":"22/12/2015"},
         "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RPM", "value":"dataLimit"},
-        "categoria": {"selector":".categoria", "defaultValue":"Cat_Q"},
+        "categoria": {"selector":".categoria", "defaultValue":"Cat_MI"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RPM", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RPM", "value":"bustiaLliuramentUrl"},
-        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA5MI.odt'> l'informe </a>"},
+        "grQualitat":{"selector":".grQualitat", "type":"attr", "name":"href", "value":"A508_Implementacio3.html?dam#slc-implementacio"}
     }
 }
