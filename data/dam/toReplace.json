@@ -83,7 +83,7 @@
     "RPM":{
         "dataInici": {"type":"text", "value":"02/12/2015"},
         "dataFinal": {"type":"text", "value":"08/01/2015"},       
-        "dataLimit": {"type":"text", "value":"08/01/2015"},
+        "dataLimit": {"type":"text", "value":"08/01/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament PM</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=278345"}       
     },         
