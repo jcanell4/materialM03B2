@@ -112,8 +112,8 @@
                              <div class=bodySlide>
                                 <p>Aquesta és la darrera activitat destinada específicament a funcions. Aquí aprendreu a fer servir arrays a les funcions. Els arrays són un tipus de dada compost i no es comporten exactament igual que els tipus de dades bàsics com els números, els caràcters o el text. Podrem utilitzar-los de forma semblant als altres tipus, això si, però caldrà tenir en compte algunes consideracions, sobretot si els fem servir de paràmetres d'entrada.</p>
                                 <p>Un cop més se us faran propostes que demandaran una resposta activa. Concretament, se us proposaran exercicis de codificació i també discussions al fòrum. Aquestes us han de permetre extreure les conclusions que us portaran a l'aprenentatge. </p>
-                                <p>Aneu a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em> on trobareu detallades les propostes.</p>
-                                <p>A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions</p> 
+                                <p>Aneu a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em>, on trobareu detallades les propostes.</p>
+                                <p>A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions.</p> 
                                  <p>Finalment, a l'apartat <em><a href="#slc-toContinue">Com continuar</a></em>, us redirigirà a la següent activitat. </p> 
                              </div>
                         </div>
@@ -138,18 +138,18 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Els arrays són un tipus de dada compost. Com sabeu, un array referencia tota una col·lecció de dades, i disposa de mecanismes per accedir i manipular els seus elements. La gran avantatge dels arrays és que amb una única variable podem accedir a multitud de dades. De fet, són també un mecanisme per reduir la complexitat. Es mantenen el nombre de dades, però s'aconsegueix reduir el nombre de variables cosa que facilita la implementació del programador.</p>
+                                    <p>Els arrays són un tipus de dada compost. Com sabeu, un array referencia tota una col·lecció de dades, i disposa de mecanismes per accedir i manipular els seus elements. El gran avantatge dels arrays és que amb una única variable podem accedir a multitud de dades. De fet, són també un mecanisme per reduir la complexitat. Es mantenen el nombre de dades, però s'aconsegueix reduir el nombre de variables cosa que facilita la implementació del programador.</p>
                                     <p>De forma semblant a l'ús d'arrays per mitjà de variables, és possible fer servir paràmetres de funcions que referenciïn també arrays, de manera que sigui possible accedir a tots els seus elements utilitzant només un únic paràmetre</p>
-                                    <p>En aquest primer exercici se us proposa que practiqueu a crear funcions que rebin arrays. Concretament us proposem que feu tres funcions que rebin arrays de tipus <em>double</em>.</p>
+                                    <p>En aquest primer exercici se us proposa que practiqueu a crear funcions on rebin arrays. Concretament us proposem que feu tres funcions a les que rebin arrays de tipus <em>double</em>.</p>
                                     <p>La primera s'anomenarà <em>valorMitjà</em> i calcularà el valor mitjà de la col·lecció de <em>doubles</em> que li arribi a través d'un paràmetre de tipus array. La funció haurà de retornar el valor calculat</p>
                                     <p>La segona funció s'anomenarà <em>valorMinim</em> i en aquest cas, cercarà el valor mínim de tots els <em>doubles</em> que arribin per paràmetre. Per tant la funció retornarà un double amb el valor mínim trobat</p>
-                                    <p>La darrera funció s'anomenarà posicioMaxim. Es tracta d'una funció que tindrà per objectiu trobar el valor màxim dins l'array que li arribi per paràmetres, però en comptes de retornar el valor, el que retornarà és la posició de l'array on es trobi l'element amb el valor màxim. Retornar la posició en comptes del valor pot tenir certes avantatges; sovint cal treballar amb diversos arrays relacionats a través de la posició, per exemple per emmagatzemar les notes i els noms dels alumnes cal fer servir dos arrays perquè les dades son de tipus diferent. En un array de cadenes de text hi guardarem els noms dels alumnes i en un altre de doubles les seves notes. Ambdós arrays els mantindrem relacionats per posició. És a dir, el primer alumne tindrà la primera nota, el segon la segona nota i així successivament. Saber la posició d'un element especific d'un dels arrays suposa també disposar del valor corresponent de l'array realcionat. És per això que quan programen amb arrays pot ser preferible treballar sempre amb les posicions i fer el canvi només quan sigui necessari.</p>
+                                    <p>La darrera funció s'anomenarà posicioMaxim. Es tracta d'una funció que tindrà per objectiu trobar el valor màxim dins l'array que li arribi per paràmetres, però en comptes de retornar el valor, el que retornarà és la posició de l'array on es trobi l'element amb el valor màxim. Retornar la posició en comptes del valor pot tenir certes avantatges; sovint cal treballar amb diversos arrays relacionats a través de la posició, per exemple per emmagatzemar les notes i els noms dels alumnes. En aquest cas caldrà fer servir dos arrays perquè les dades son de tipus diferent. En un array de cadenes de text hi guardarem els noms dels alumnes i en un altre de doubles les seves notes. Ambdós arrays els mantindrem relacionats per posició. És a dir, el primer alumne tindrà la primera nota, el segon, la segona nota i així successivament. Saber la posició d'un element especific d'un dels arrays suposa també disposar del valor corresponent de l'array realcionat. És per això que quan programen amb arrays pot ser preferible treballar amb les posicions i obtenir el valor només quan sigui necessari.</p>
                                     
                                     <p>Per tal de provar que us funcionen les vostres codificacions, us facilitem la funció <em>inici</em> i <em>main</em>:</p>
                                     <pre><code class="java">
  public static void main(String[] args) {
-    //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
-    FuncionsIArrays prg = new FuncionsIArrays(); 
+    //adapteu la instanciació del programa d'acord amb el nom del fitxer (i nom de la classe) on treballeu.
+    FuncionsIArrays prg = new FuncionsIArrays();  //canvieu FuncionsIArrays pel nom del vostre fitxer.
     prg.inici();
 }
     
@@ -191,7 +191,15 @@ private void inici(){
                                     </button>                                        
                                     <div id="slc-toDo10-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <p>Quan hagueu de trobar el valor mínim, no doneu mai, per defecte, cap valor per predeterminat a la variable que hagi de prendre el valor mínim. Ja que per gran que li doneu, sempre podrien haver valors coincidents a la col·lecció. EL millor és inicialitzar la variable amb el valor de la posició zero de la col·lecció i iniciar les comparacions a partir d'aquesta posició. </p>
+                                        <p>Recordeu de declarar correctament les 3 funcions que heu de codificar, cal assegurar que rebin un array com a paràmetre i que retornin un valor double. Per exemple:</p>
+                                         <pre><code class="java">
+...
+
+double valorMitja(double[] valors){
+   ...
+}
+...
+                                         </code></pre>
                                     </div>                                    
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -203,6 +211,19 @@ private void inici(){
                                     </button>                                        
                                     <div id="slc-toDo10-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
+                                        <p>Quan hagueu de trobar el valor mínim, no doneu mai, per defecte, cap valor predeterminat a la variable que hagi de prendre el valor mínim. Ja que per gran que assigneu el valor, sempre podrien haver valors coincidents a la col·lecció. EL millor és inicialitzar la variable amb el valor de la posició zero de la col·lecció i iniciar les comparacions a partir d'aquesta posició. </p>
+                                    </div> 
+
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo10" 
+                                            data-selector-clue="#slc-toDo10-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo10-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
                                         <p>Per trobar la posició del valor màxim, inicieu per defecte amb la posició zero, la variable que guardi la posició del valor màxim i que useu per anar-la comparant amb la resta.</p>
                                     </div>                                    
                                     <!-- Button trigger modal -->
@@ -301,9 +322,9 @@ public class FuncionsIArrays {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>La proposta que us fem aquí pretén generar una discussió per tal que arribeu a la conclusió de quin és el comportament específic dels arrays com a paràmetres d'entrada i en conseqüència quines precaucions hauríeu prendre durant la codificació de funcions que usin paràmetres de tipus <em>array</em>.</p>
+                                    <p>La proposta que us fem aquí pretén generar una discussió per tal que arribeu a la conclusió de quin és el comportament específic dels arrays com a paràmetres d'entrada i en conseqüència quines precaucions haureu de prendre durant la codificació de funcions que usin paràmetres de tipus <em>array</em>.</p>
                                     <p>Abans de començar la discussió us demanarem que analitzeu el codi que aneu trobant, doncs us ajudarà a centrar el debat i deduir les conclusions.</p>
-                                    <p>En primer lloc ens preguntarem què passa si modifiquem el valor d'una paràmetre de tipus bàsic. Caldria estendre la pregunta tant a nivell intern de la funció que rep el paràmetre com de la variable utilitzada a la crida. És a dir, caldria preguntar-nos, què passa amb el valor d'una variable utilitzada com a paràmetre en una crida d'una funció que en invocar-se canvia el valors del paràmetre?. Anem a deduir-ho amb un exemple. Genereu un projecte de Netbeans i copieu-hi en un fitxer anomenat <em>FuncionsIArrays</em> el següent codi:</p>
+                                    <p>En primer lloc ens preguntarem què passa si modifiquem el valor d'un paràmetre de tipus bàsic. Caldria estendre la pregunta tant a nivell intern de la funció que rep el paràmetre com de la variable utilitzada a la crida. És a dir, caldria preguntar-nos, què passa amb el valor d'una variable que enviem com a paràmetre en cridar una funció, la qual en invocar-se, canvia el valors del paràmetre rebut?. Anem a deduir-ho amb un exemple. Genereu un projecte de Netbeans i copieu-hi en un fitxer anomenat <em>FuncionsIArrays</em> el següent codi:</p>
                                     <pre><code class="java linenumbers">
 
 
@@ -424,7 +445,7 @@ public class FuncionsIArrays {
     }
 }
                                     </code></pre>
-                                    <p>Fixeu-vos que per ajudar-nos a mostrar per pantalla el contingut d'una array d'enters, sense repetir codi, hem, creat una funció anomenada <em>printIntArray</em>. Un cop clarificat això, passeu a copiar-lo de nou al vostre projecte i executeu-lo. Intenteu contestar a la mateixes preguntes que abans, però adaptades a les noves variables i paràmetres.</p>
+                                    <p>Fixeu-vos que per ajudar-nos a mostrar per pantalla el contingut d'un array d'enters, sense repetir codi, hem, creat una funció anomenada <em>printIntArray</em>. Un cop clarificat això, passeu a copiar-lo de nou al vostre projecte i executeu-lo. Intenteu contestar a la mateixes preguntes que abans, però adaptades a les noves variables i paràmetres.</p>
                                     <p>Quin valor prenen els elements de la variable <em>varArray</em> abans i després de cridar la funció <em>canviarValorElementsParametreArray</em>? Hi han hagut canvis?.</p>
                                     <p>Analitzeu també els canvis realitzats dins la funció <em>canviarValorElementsParametreArray</em> als elements del paràmetre rebut. Quina relació hi ha entre els canvis de la variable <em>varArray</em> i el paràmetre <em>param</em>?.</p>
                                     <p>Compareu aquest resultat amb el de la variable <em>varEnter</em> i la funció <em>canviarValorParametreInt</em>.</p>
@@ -592,7 +613,7 @@ public class FuncionsIArrays {
                                     <pre><code class="java">
 var2Array  = varArray;
                                     </code></pre>
-                                    <p>Ara bé, les funcions a més de retornar arrays arribats a través d paràmetres també poden instanciar nous arrays, donar-los valors i retornar-los. És aper això que aquest tipus de funcions s'utilitzen molt per inicialitzar arrays amb valors per defecte o per crear instàncies d'arrays dels que inicialment desconeixíem la seva mida.</p>
+                                    <p>Ara bé, les funcions, a més de retornar arrays arribats a través de paràmetres, també poden instanciar nous arrays, donar-los valors i retornar-los. Així, és habitual fer servir funcions per inicialitzar arrays amb valors per defecte o per crear instàncies d'arrays dels que desconeixem la seva mida en el moment de codificar, però que durant l'execució sigui possible calcular-la.</p>
                                     <pre><code class="java linenumbers">
 public class FuncionsIArrays {
     public static void main(String[] args) {
@@ -665,6 +686,17 @@ void inicialitzarArray(int[] param){
 }
                                     </code></pre>
                                     <p>Apliqueu el que heu aprés i codifiqueu un petit programa que pregunti a l'usuari de quina mida necessita un array de cadenes de text i seguidament inicialitzi una variable de la mida indicada i l'ompli de cadenes buides. Per inicialitzar l'array, creeu una funció d'inicialització. Feu servir el fòrum per plantejar els dubtes que us vagin sortint.</p>
+                                      <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo22" 
+                                            data-selector-solution="#slc-toDo22-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo22-solution" class="iocSolution hidden">
+                                        <p>Aquest exercici no té una solució oficial, per això és important que useu el fòrum per verificar les conclusions a les que arribeu.</p>
+                                        <p>Tot i així, heu d'estar tranquils, perquè el professor de l'aula vigilarà el fòrum i en cas que observi conclusions errònies reconduirà ràpidament la discussió.</p>
+                                    </div>
                                 </div> 
                             </div>
                         </div>

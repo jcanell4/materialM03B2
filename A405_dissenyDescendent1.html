@@ -117,7 +117,7 @@
                                 <figure>
                                     <img width="464" src="images/activities/ic10m3u4_02.png" alt="esquema disseny descendent">
                                 </figure>
-                                <p>Un punt important a tenir en compte en aplicar aquesta descomposició és que cadascun dels subproblemes no es genera arbitràriament, sinó que es planteja com un objectiu parcial, amb entitat pròpia, per resoldre el seu problema de nivell superior.Un cop assolits tots aquests objectius parcials, es considera resolt el total. És a dir, entre nivells no s'estableix una relació de seqüencialitat com als diagrames de flux, sinó de composició: la solució del nivell superior es composa de les solucions dels nivells inferiors.</p>
+                                <p>Un punt important a tenir en compte en aplicar aquesta descomposició és que cadascun dels subproblemes no es genera arbitràriament, sinó que es planteja com un objectiu parcial a l'hora de resoldre el problema de nivell superior que s'està descomponent. Un cop assolits tots aquests objectius parcials, es considera resolt tot el problema. És a dir, entre nivells no s'estableix una relació de seqüencialitat com als diagrames de flux, sinó de composició: la solució del nivell superior implica les solucions dels nivells inferiors.</p>
                              </div>
                         </div>
                     </div>
@@ -148,14 +148,14 @@
                                     </figcaption>
                                 </figure>
                                     <p>El disseny descendent és una metodologia d'anàlisi genèrica que pot aplicar-se a qualsevol disciplina, no només a la programació d'aplicacions. Les receptes de cuina ens serviran com exemple clarificador per aprofundir una mica més en aquesta tècnica, que malauradament requereix de certa experiència per poder-se expressar en la seva màxima potència. És per això que haureu de fer un esforç important i posar en pràctica la metodologia tant sovint com pugueu. No us limiteu a la programació. Us serà útil en qualsevol àmbit.</p>
-                                    <p>Tornem a les receptes de cuina. Imaginem que haguem d'explicar una recepte de cuina com la de la <em>figura lateral</em>. Per tal que ens serveixi com exemple clarificador, hem suposat que fregir, bullir o saltar són tasques complexes que cal descompondre.</p>
+                                    <p>Tornem a les receptes de cuina. Imaginem que hem d'explicar una recepte de cuina com la de la <em>figura lateral</em>. Per tal que ens serveixi com exemple clarificador, hem suposat que fregir, bullir o saltar són tasques complexes que cal descompondre.</p>
                                     <p>Ens plantegem què és el primer que hem de fer per poder començar a cuinar el plat: probablement recopilar els ingredients, comprant-los o buscant-los a la despesa. Per simplificar no entrarem en aquest detalls i ho resumirem amb el nom de recopilar. Com que estem aplicant disseny descendent, aturarem aquí el detall dels ingredients que caldrà obtenir. Ja hi tornarem en el següent nivell. Alguns ingredients necessitaran preparació que caldrà fer abans d'iniciar la cocció. Identifiquem doncs la tasca de preparar ingredients. Seguidament caldrà coure'ls, després integrar-ho tot (ho identificarem com a preparació final) i per últim caldrà servir-ho. </p>
                                     <p>Fixeu-vos que de moment, tot el nostre esforç ha anat centrat només a trobar grans tasques que ens ajudin a seqüenciar les nostres accions sense perdre'ns en els detalls.</p>
                                     <p>Arribats a aquí, ja podem iniciar el segon nivell de descomposició ara agafarem totes les descomposicions de primer nivell i repetirem l'anàlisi per cada una d'elles. Ja podem detallar els ingredients o explicar quins cal preparar i com. En aquest cas, la cocció la dividirem en dos grans blocs, la salsa i els espaguetis...</p>
-                                    <p>Observeu a la figura com poc a poc anem aconseguit una relació jeràrquica (esquemàtica) dels diferents nivells que anem explorant i detallant.</p>
+                                    <p>Observeu a la figura, com poc a poc anem aconseguit una relació jeràrquica (esquemàtica) dels diferents nivells que anem explorant i detallant.</p>
                                     <p>No existeix un nivell màxim en el que cal aturar-nos. Tot dependrà del nostre coneixement culinari. Si som novells, caldrà explorar molts nivells, però a mida que anem adquirint coneixements i confiança, podrem aturar-nos abans.</p>
-                                    <p>Cal insistir que la seqüencialitat només es dona dins d'un mateix nivell, però mai des d'un nivell superior als inferiors. En aquest cas, la relació és de composició: per a fregir el bacon i reservar cal, preparar la paella, coure el bacon i reservar-lo un cop cuit.</p>
-                                    <p> Potser una manera de visualitzar millor això esquemàticament, és la representació de cada nivell de descomposició,  com a un contenidor. En la següent imatge us mostrem com el mateix disseny descendent de la recepte de cuina que hem vist organitzat en forma de contenidors.</p>
+                                    <p>Cal insistir que la seqüencialitat només es dona dins d'un mateix nivell, però mai des d'un nivell superior als inferiors. En aquest cas, la relació és sempre de composició: per a fregir el bacon i reservar, cal preparar la paella, coure el bacon i reservar-lo un cop cuit.</p>
+                                    <p> Potser una manera de visualitzar això esquemàticament, és la representació de cada nivell de descomposició,  com a un contenidor. En la següent imatge us mostrem com el mateix disseny descendent de la recepte de cuina que hem vist organitzat en forma de contenidors.</p>
                                     <figure id ="figura_receptaDeCuina2">
                                         <img width="464" src="images/activities/ReceptaDeCuina2.png" alt="recepte de cuina vista com a contenidors">
                                         <figcaption style="width: 429px; max-width: 75%;">
@@ -184,9 +184,9 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>En aquest cas l'exemple serà una aplicació que haurà de trobar quants números amb un nombre mínim de dígits estan continguts en una cadena de caràcters. Tant la cadena com el nombre de dígits mínim ens els proporciona l'usuari.</p>
-                                    <p>Per exemple, si l'usuari entrés la cadena: “L'any 1992 vaig començar a estudiar informàtica durant 4 anys. El 1997 vaig iniciar 3 projectes. 2 d'aquest van durar fins el 2001. El tercer encara dura. Estic a punt de vendre'l per 100.000€ .” i demanés el nombre de números que conté de 3 o més dígits, l'aplicació hauria d'indicar que hi ha 4 números que compleixen la condició.</p>
-                                    <p>Com veieu es tracta d'una peita aplicació sencera amb un algoritme que comença a presentar certa dificultat. Passem a fer l'anàlisi. Comencem per descompondre el primer nivell.</p>
-                                    <p>Ja que és una aplicació que requereix la intervenció de l'usuari, potser seria bo clarificar abans de res, el que s'espera de l'usuari i també informar del que l'aplicació acabarà fent. Probablement, n'hi haurà prou amb una missatge inicial. que podem titular com a <em>presentació de l'aplicació</em>.</p>
+                                    <p>Per exemple, si l'usuari entrés la cadena: <em>“L'any 1992 vaig començar a estudiar informàtica durant 4 anys. El 1997 vaig iniciar 3 projectes. 2 d'aquest van durar fins el 2001. El tercer encara dura. Estic a punt de vendre'l per 100.000€.” </em>i demanés el nombre de números de 3 o més dígits que la frase conté, l'aplicació hauria d'indicar que hi ha 4 números que compleixen la condició.</p>
+                                    <p>Com veieu es tracta d'una petita aplicació sencera amb un algoritme que comença a presentar certa dificultat. Passem a fer l'anàlisi. Comencem per descompondre el primer nivell.</p>
+                                    <p>Ja que és una aplicació que requereix la intervenció de l'usuari, potser seria bo abans de res, clarificar el que s'espera de l'usuari i informar-lo del que l'aplicació acabarà fent. Probablement, n'hi haurà prou amb una missatge inicial que podem titular com a <em>presentació de l'aplicació</em>.</p>
                                     <p>Un cop informat l'usuari, podrem començar a demanar-li tot allò que necessitem: la cadena de text i el nombre mínim de dígits.</p>
                                     <p>Amb les dades entrades, caldrà analitzar tota la cadena, buscant número per número i comptant els seus dígits. Només el comptabilitzarem si compleix les condicions del nombre de dígits mínim. </p>
                                     <p>Un cop fet l'anàlisi caldrà mostrar el resultat per la pantalla i finalitzar l'aplicació.</p>
@@ -200,8 +200,9 @@
                                             <li>Mostrar per pantalla el resultat</li>
                                         </ol>
                                     </div>
-                                    <p>Segur que exceptuant el punt 4, la resta no representaria cap problema a l'hora de codificar-los. Per tant podem decidir finalitzar la descomposició dels ítems 1, 2 ,3 i 5. Anem a centrar-nos en el 4.</p>
-                                    <p>Ara el problema es focalitza en trobar la manera d'analitzar tota la cadena entrada, buscant número per número, comptant els seus dígits i comptabilitzant només aquells números que compleixin les condicions del nombre de dígits mínim. Si hem de comptar el nombre de números, necessitarem disposar d'un comptador que caldrà anar incrementat a mida que trobem el que satisfaci la cerca. La cerca l'aplicarem sobre la cadena. Per tant caldrà començar a analitzar-la pel començament i acabar pel final. Cal adonar-se que abans de començar l'anàlisi de la cadena caldria posar el comptador a zero i situar-nos a l'inici de la cadena.</p>
+                                    <p>Segur que exceptuant el punt 4, la resta no representaria cap problema a l'hora de codificar-los. Per tant podem decidir finalitzar la descomposició dels ítems 1, 2, 3 i 5. Anem a centrar-nos en el 4.</p>
+                                    <p>Ara el problema es focalitza en trobar la manera d'analitzar tota la cadena entrada, buscant un per un, tots els valors numèrics, comptant els seus dígits i comptabilitzant només aquells números que compleixin les condicions del nombre de dígits mínim. </p>
+                                    <p>Si hem de comptar el nombre de números, necessitarem disposar d'un comptador que caldrà anar incrementat a mida que trobem valors que satisfacin la condició imposada. La cerca l'aplicarem sobre la cadena. Per tant caldrà començar a analitzar-la pel començament i acabar pel final. Cal adonar-se que abans de començar l'anàlisi de la cadena caldria posar el comptador a zero i situar-nos a l'inici de la cadena.</p>
                                     <p>Incloent el segon nivell la descomposició es podria enunciar així:</p>
                                     <div class="iocexample  single em  small">
                                          <ol class="nestedCounter">
@@ -244,7 +245,7 @@
                                     </div>
                                     <p>Ja estem arribant al final. De fet amb certa experiència podríem deixar-ho aquí, però en tractar-se d'un exemple, descompondrem encara un nivell més els punts 4.3.1 i 4.3.2.</p>
                                     <p>Trobar el següent número a partir d'una posició podria simplement indicar, que caldria anar avançant de posició fins trobar un caràcter que fos un dígit. Ara bé, això només seria cert si assegurem que la posició actual es troba fora d'un número. Per tant haurem d'assegurar aquest requeriment.</p>
-                                    <p>Comptar dígits hauria de comptar els dígits que hi ha entre l'inici del número i el seu final (primera posició en que s'acabin els caràcters numèrics i comencin els no numèrics)</p>
+                                    <p>La acció de comptar dígits hauria simplement de comptar els dígits (caràcters numèrics) que hi ha entre l'inici del número i el seu final (primera posició en que s'acabin els caràcters numèrics i comencin els no numèrics)</p>
                                     <div class="iocexample single em small">
                                          <ol class="nestedCounter">
                                             <li>Presentació de l'aplicació</li>
@@ -376,7 +377,7 @@ public class Exemple2DissenyDescendent {
     }
 }
                                     </code></pre>
-                                    <p>La funció <em>presentarAplicacio</em> només a mostrar un missatge per pantalla. No necessita rebre cap dada i no genera dades noves (no té retorn).</p>
+                                    <p>La funció <em>presentarAplicacio</em> només ha de mostrar un missatge per pantalla. No necessita rebre cap dada i no genera dades noves (no té retorn).</p>
                                     <pre><code class="java">
                                     
 
@@ -409,7 +410,7 @@ public class Exemple2DissenyDescendent {
 
 }
                                     </code></pre>
-                                    <p>Ens adonem que caldrà emmagatzemar la cadena que demanem a l'usuari (mitjançant la funció <em>demanarFrase</em>) per poder-la analitzar a la funció <em>comptarNumeros</em>. Igual que el nombre de dígits mínim. Decidim declarar les variables d'àmbit local de la funció <em>inici</em> i anar-les passant per paràmetre a mida que les altres funcions necessitin les dades.</p>
+                                    <p>En passar al següent problema, ens adonem que caldrà emmagatzemar la cadena que demanem a l'usuari (mitjançant la funció <em>demanarFrase</em>) per tal de poder-la analitzar a la funció <em>comptarNumeros</em>. De forma similar, també caldrà guardar el nombre de dígits mínim. Decidim declarar les variables d'àmbit local de la funció <em>inici</em> i anar-les passant per paràmetre a mida que les altres funcions necessitin les dades.</p>
                                     <pre><code class="java">
                                     
 
@@ -806,14 +807,14 @@ public class Exemple2DissenyDescendent {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Sovint passa, que un cop acabat un disseny descendent, si el rellegim ens adonem que es pot millorar. D'això s'anomena refinament. </p>
+                                    <p>Sovint passa, que un cop acabat un disseny descendent, si el rellegim ens adonem que es pot millorar. D'això, s'anomena refinament. </p>
                                     <p>De vegades ens adonem que hem subdividit massa o massa poc. Això queda palès en la mida de les funcions. Si detectem funcions excessivament llargues caldrà plantejar-nos la possibilitat de no haver dividit suficientment el disseny. Si són massa curtes pot indicar el contrari. Tot i això, a vegades ens pot interessar, en pro de la claredat del codi, mantenir funcions curtes si amb el seu nom ens informa del que fan.</p>
                                     <p>El nombre de nivells també pot ser un indicador. Caldria tenir en compte que el nombre de nivells hauria d'augmentar en funció de la complexitat del problema. Si això no ens passa, caldria sospitar que no ho hem acabat de fer del tot bé.</p>
                                     <p>També és possible que detectem una manca de reutilització de les funcions. Quan el nostre codi estigui ple de funcions massa particulars de manera que no sigui possible reutilitzar-ne cap, ens ha de fer pensar que potser el disseny no ha estat del tot encertat i caldria repensar com incrementar la reutilització.</p>
                                     <p>D'altres vegades ens adonem que no ho hem controlat tot, que hem deixat algun error latent i es clar, la seva aparició només es cosa de temps.</p>
-                                    <p> A <a href="#slc-exemples__slc-exemples30">La implementació de l'exemple 2</a> s'ha detectat que la funció <em>demanarNumDigits</em>, només funciona si l'usuari escriu correctament un valor enter, però si s'equivoca, i prem <em>[ENTRAR]</em> sense haver entrar cap número obtindrem un error.</p>
-                                    <p>Es tracta d'un problema molt típic, de qualsevol aplicació que requereixi entrades numèriques i se soluciona fent una comprovació prèvia del que l'usuari està escrivint. No cal fer una lectura del teclat, n'hi ha prou sabent si el que s'escriu és o no un enter. En cas afirmatiu es passaria a la lectura, però en cas negatiu, caldria recordar que el que l'aplicació espera és un enter i no altre tipus de dada.</p>
-                                    <p> EL més aconsellable seria crear un funció genèrica que es pugui reutilitzar en qualsevol context i parametritzar-la adequadament en el cas que ens ocupa. Ja heu fet una funció com aquesta a l'activitat <a href="A402_funcions2.html#slc-toDo__slc-toDo21">A402</a> per a doubles. Aquí us demanarem que escriviu una funció anomenada <em>entrarUnEnter</em> que rebi un missatge explicatiu per mostrar a l'usuari i esperi fins que l'usuari escrigui un valor enter fent la comprovació d'error esmentada. La funció retornarà l'enter entrat des de teclat.</p> 
+                                    <p> A <a href="#slc-exemples__slc-exemples30">La implementació de l'exemple 2</a> s'ha detectat que la funció <em>demanarNumDigits</em>, només funciona si l'usuari escriu correctament un valor enter, però si s'equivoca, i prem <em>[ENTRAR]</em> sense haver escrit cap número, obtindrem un error.</p>
+                                    <p>Es tracta d'un problema molt típic, de qualsevol aplicació que requereixi entrades numèriques i se soluciona fent una comprovació prèvia del que l'usuari està escrivint. No cal fer una lectura del teclat, n'hi ha prou sabent si el que s'escriu és o no un enter. En cas afirmatiu es passaria a la lectura, però en cas negatiu, caldria recordar que es tractat d'una introducció no vàlida i que s'espera és un valor enter.</p>
+                                    <p> El més aconsellable seria crear un funció genèrica que es pugui reutilitzar en qualsevol context i parametritzar-la adequadament en el cas que ens ocupa. Ja heu fet una funció com aquesta a l'activitat <a href="A402_funcions2.html#slc-toDo__slc-toDo21">A402</a> per a doubles. Aquí us demanarem que escriviu una funció anomenada <em>entrarUnEnter</em> que rebi un missatge explicatiu per mostrar a l'usuari i esperi fins que l'usuari escrigui un valor enter, fent la comprovació d'error esmentada. La funció retornarà l'enter entrat des de teclat.</p> 
                                     <p>A banda de la funció <em>entrarUnEnter</em>, també us demanem que modifiqueu la funció <em>demanarNumDigits</em> per tal que faci servir la nova utilitat. Feu la modificació a la funció <em>demanarNumDigits</em> i no a la funció <em>inici</em>, perquè així es manté la informació intrínseca derivada del seu nom i el codi resulta més fàcil de llegir.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
@@ -878,7 +879,7 @@ public class Exemple2DissenyDescendent {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Feu el disseny descendent i la implementació d'un programa que doni a l'usuari l'oportunitat d'endevinar un nombre de l'1 al 100 (prefixat en el programa) en un nombre màxim d'intents limitat. Inicialment s'explicaran les regles del joc i es demanarà a l'usuari en quants intents creu que  serà capaç d'endevinar el valor. A cada intent s'avisarà al jugador si s'ha passat, s'ha quedat curt o l'ha encertat. El programa s'acabarà quan s'arribi al nombre màxim d'intents  o quan s'encerti el número.</p>
+                                    <p>Feu el disseny descendent i la implementació d'un programa que doni a l'usuari l'oportunitat d'endevinar un nombre de l'1 al 100 (prefixat en el programa) en un nombre màxim d'intents. Inicialment s'explicaran les regles del joc i es demanarà a l'usuari en quants intents creu que  serà capaç d'endevinar el valor. A cada intent s'avisarà al jugador si s'ha passat, s'ha quedat curt o l'ha encertat. El programa s'acabarà quan s'arribi al nombre màxim d'intents  o quan s'encerti el número.</p>
                                     <p>Tractant-se del primer disseny que has de fer, aconsellem que intentis obtenir almenys, 3 nivells de profunditat. Això et forçarà a donar voltes i cercar alternatives.</p>
 
                                     <button type="button" class="btn btn-warning btn-lg btn-3d toggle-off" 
@@ -944,8 +945,8 @@ public class Exemple2DissenyDescendent {
                                     </button>                                        
                                     <div id="slc-toDo20-clue3" class="iocClue hidden">
                                         <h2>Pista 3</h2>
-                                        <p>Comença pels nivells superiors. Segur que tots ells es corresponen amb una funció. Declara-la sense massa detalls, ja decidiràs si cal parametritzar, les variables a declarar, etc. De moment n'hi ha prou amb declarar el nom.</p>
-                                        <p>Repeteix la operació per la resta de nivells tot plantejant-te quins són candidats a constituir-se en funció i quins no. <strong>Recorda! En cas de dubte es preferible crear funcions de més que no pas de menys!</strong></p>
+                                        <p>Per implementar el disseny que hagis dissenyat, comença pels nivells superiors. Segur que tots ells es corresponen amb una funció. Declara-les sense massa detalls, ja decidiràs més endavant si cal parametritzar, les variables a declarar, etc. De moment n'hi ha prou amb posar-li el nom.</p>
+                                        <p>Repeteix la operació per la resta de nivells tot plantejant-te quins són candidats a codificar-se en funció i quins no. <strong>Recorda! En cas de dubte es preferible crear funcions de més, que no pas de menys!</strong></p>
                                     </div>                                    
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-3d toggle-off" 
@@ -1008,13 +1009,13 @@ public class Exercici2DissenyDescendent {
         System.out.println(
                 "---------------------------------------------------------------");
         System.out.println(
-                "Aquesta aplicació et permet jugar a endeveninar un número de \n"
+                "Aquesta aplicació et permet jugar a endevinar un número de \n"
               + "l'1 al 100.");
         System.out.println(
                 "Quants intents creus que necessitaràs per endevinar el número? \n"
-              + "Molts? Pocs? Posa tu el límit i després comprovarem si n'éts \n"
+              + "Molts? Pocs? Posa tu el límit i després comprovarem si n'ets \n"
               + "capaç. Cada cop que proposis un nou intent, et diré si t'has \n"
-              + "quedat curt, si t'has passat io si l'has endevinat.");
+              + "quedat curt, si t'has passat o si l'has endevinat.");
         System.out.println(
                 "---------------------------------------------------------------");
     }

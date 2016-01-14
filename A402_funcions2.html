@@ -138,12 +138,12 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Ja heu vist, en activitats anteriors, que les funcions encapsulen, delimiten o simplement agrupen codi que pot executar-se amb una simple invocació del nom de la funció. També hem vist que les crides, en Java, cal fer-les des d'una funció. Aquestes característiques són bàsiques perquè ens permetran estructurar i organitzar acuradament els programes, modularitzar o dividir blocs de codi de forma que es puguin tractar amb un alt grau independència entre ells. A més, les funcions ens ajudaran també a no repetir codi i reutilitzar el que ja es troba escrit.</p>
-                                    <p>Anem a veure-ho. Us proposem crear una aplicació que permeti calcular l'àrea de diferents figures planes com ara els triangles, els quadrats, els rectangles o els cercles. L'aplicació en iniciar-se informarà a l'usuari del que podrà fer i mostrarà per pantalla un menú que que permeti escollir la figura plana de la que es vol calcular l'àrea. Un cop feta la selecció, el programa demanarà les dades pertinents, calcularà l'àrea i mostrarà els resultats per la pantalla.</p>
-                                    <p> Sabent això, ens proposem modularitzar tant com siguem capaços l'aplicació. Ens adonem que cada àrea de cada figura ha de rebre un tractament independent i per tant ens proposem crear un mòdul diferent per cada càlcul, com si d'una aplicació diferent es tractés. És a dir, crearem un implementació específica per cada figura que demani a l'usuari les dades adequades per calcular-ne l'àrea, realitzi el càlcul amb la fórmula correcta i mostri el resultat per la pantalla. Ara bé, en comptes d'implementar-ho en aplicacions diferents (diferents fitxers que continguin el seu <em>main</em> i la seva funció <em>inici</em>), realitzarem la implementació encapsulada en un funció que anomenarem <strong><em>modulCalculAreaX</em></strong>, on <em>X</em> serà el nom de la figura: <em>triangle</em>, <em>quadrat</em>, ...</p> 
-                                    <p>Encapsular-ho tot en una funció, no significa pas que tot el codi s'hagi d'escriure en una única funció, sinó que la crida a la funció que encapsula, ha de ser suficient per executar tot el necessari per obtenir el que s'espera de la funció. En el nostre cas: la petició de dades, el càlcul de l'àrea i la mostra del resultat calculat. Per descomptat, podrem usar tantes funcions com creiem necessari durant la implementació.</p>
-                                    <p>De fet, fa temps que no toquem la geometria i tenim les fórmules de les àrees un mica rovellades. Per sort un amic matemàtic s'ens ha brindat per ajudar-nos.</p>
-                                    <p>A banda dels mòduls per calcular les diferents àrees, cal que ens adonem que d'acord amb l'enunciat, l'aplicació ha de mostrar un missatge inicial a mode de presentació i un menú que permeti escollir quin dels mòdul caldrà executar. Els diferents mòduls demanaran a l'usuari la mida de les figures a les que s'hagi de calcular l'àrea i també hauran de mostrar els resultats obtinguts. Ens estem referint a la forma com l'aplicació es comunicarà amb l'usuari, tant per demanar-li informació com per mostrar-li. Les funcions també ens poden servir de gran ajuda per estandarditzar la forma de mostrar missatges o demanar informació. A més si les implementem amb paràmetres aconseguirem reutilitzar la mateixa funció en diferents situacions.</p>
+                                    <p>Ja heu vist, en activitats anteriors, que les funcions encapsulen, delimiten o simplement agrupen codi que pot executar-se amb una simple invocació del nom de la funció. També hem vist que les crides, en Java, cal fer-les des d'una funció. Aquestes característiques són bàsiques perquè ens permetran estructurar i organitzar acuradament els programes, modularitzar o dividir blocs de codi, de forma que es puguin tractar amb un alt grau independència entre ells. A més, les funcions ens ajudaran també a no repetir codi i reutilitzar el que ja es troba escrit.</p>
+                                    <p>Anem a veure-ho. Us proposem crear una aplicació que permeti calcular l'àrea de diferents figures planes com ara els triangles, els quadrats, els rectangles o els cercles. L'aplicació en iniciar-se informarà a l'usuari del que podrà fer i mostrarà per pantalla un menú que permeti escollir la figura plana de la que es vol calcular l'àrea. Un cop feta la selecció, el programa demanarà les dades pertinents, calcularà l'àrea i mostrarà els resultats per la pantalla.</p>
+                                    <p> Sabent això, ens proposem modularitzar l'aplicació tant com siguem capaços. Ens adonem que cada àrea de cada figura ha de rebre un tractament diferent i per tant ens proposem crear un mòdul diferent per cada càlcul, com si d'una aplicació diferent es tractés. És a dir, crearem un implementació específica per cada figura que demani a l'usuari les dades adequades per calcular-ne l'àrea, realitzi el càlcul amb la fórmula correcta i mostri el resultat per la pantalla. Ara bé, en comptes d'implementar-ho en aplicacions diferents (diferents fitxers que continguin el seu <em>main</em> i la seva funció <em>inici</em>), realitzarem la implementació encapsulada en un funció que anomenarem <strong><em>modulCalculAreaX</em></strong>, on <em>X</em> serà el nom de la figura: <em>triangle</em>, <em>quadrat</em>, ...</p> 
+                                    <p>Encapsular-ho tot en una funció, no significa pas que tot el codi s'hagi d'escriure en una única funció, sinó que la crida a la funció que encapsula, ha de ser suficient per executar tot el necessari per obtenir el que s'espera de la funció. En el nostre cas: la petició de dades, el càlcul de l'àrea i la mostra del resultat calculat.</p>
+                                    <p> Per descomptat, podrem usar tantes funcions com creiem necessari durant la implementació. De fet, com que fa temps que no toquem la geometria i tenim les fórmules de les àrees un mica rovellades, necessitarem refrescar-les. Per sort un amic matemàtic s'ens ha brindat per ajudar-nos. Li demanarem que ens escrigui cada fórmula en una funció diferent, a fi que esn resulti fàcil identificar-les sense haver de recordar a quina figura correspon cada una d'elles.</p>
+                                    <p>A banda de les funcions per calcular les diferents àrees, cal que ens adonem que d'acord amb l'enunciat, l'aplicació ha de mostrar un missatge inicial a mode de presentació i un menú que permeti escollir quin dels mòdul caldrà executar. Els diferents mòduls demanaran a l'usuari la mida de les figures a les que s'hagi de calcular l'àrea i també hauran de mostrar els resultats obtinguts. Ens estem referint a la forma com l'aplicació es comunicarà amb l'usuari, tant per demanar-li informació com per mostrar-la. <strong>Les funcions també ens poden servir de gran ajuda per estandarditzar la forma de mostrar missatges o demanar informació</strong>. A més, si les implementem amb paràmetres aconseguirem reutilitzar la mateixa funció en diferents situacions.</p>
                                     <p>Per tal que us resulti més fàcil, seguidament se us plantegen 3 exercicis, la realització dels quals us permetrà acabar implementant l'aplicació plantejada. Passeu a la següent pàgina per començar la implementació</p>
                                 </div> 
                             </div>
@@ -168,11 +168,11 @@
                                 <div class=bodySlide>
                                     <p>Com ja s'ha comentat, és important separar el codi dedicat a l'intercanvi d'informació  entre l'usuari i l'aplicació (interfície d'usuari) de la resta. Les interfícies d'usuari són probablement de les utilitats que més ràpidament canvien. Es poden crear interfícies d'usuari utilitzant codi HTML, fent servir les utilitats gràfiques dels sistemes operatius o bé les utilitats de consola (teclat i pantalla) tal com fem nosaltres. Si mantenim ben separat el codi de la interfície, ens resultarà força senzill convertir per exemple una aplicació de consola en una aplicació WEB.</p>
                                     <p>Les utilitats de consola de Java (<em>System.in</em> i <em>System.out</em>), són tan simples que sovint, en implementar un programa cal repetir una i altre vegada instruccions força similars. Per exemple, la majoria de vegades que desitgem que l'usuari ens entri dades a través del teclat, li escrivim un missatge explicatiu, indicant què esperem de l'usuari. Per la calculadora d'àrees caldrà demanar diverses vegades que l'usuari entri les mides de les figures. Depenent de les figures, caldrà demanar la mesura de l'alçada, d'un costat o bé del radi, però en definitiva, al marge del contingut del missatge, l'usuari acabarà sempre entrant un valor double per teclat.</p>
-                                    <p><strong>Us demanarem que implementeu una funció anomenada <em>entrarUnNumero</em></strong>, que rebi una cadena de text per paràmetre. La funció mostrarà el text per pantalla a mode de missatge explicatiu i esperarà que l'usuari escrigui un valor double. Per tal de prevenir errors, la funció comprovarà que l'usuari entri realment un valor numèric. En cas que no for així, caldrà repetir la petició aclarint a l'usuari que esprem que entri un valor numèric. Quan l'usuari hagi entrar un valor correcte, la funció el retornarà i finalitzarà l'execució. Recordeu que la utilitat Scanner, després de retornar un valor numèric (double, enter, etc.) és necessari invocar el mètode <em>nextLine</em> del mateix <em>Scanner</em> per tal de netejar el retorn de carro del <em>buffer</em> del teclat i evitar comportaments inesperats a les crides posteriors.</p>
+                                    <p><strong>Us demanarem que implementeu una funció anomenada <em>entrarUnNumero</em></strong>, que rebi una cadena de text per paràmetre. La funció mostrarà el text per pantalla a mode de missatge explicatiu i esperarà que l'usuari escrigui un valor double. Per tal de prevenir errors, la funció comprovarà que l'usuari entri realment un valor numèric. En cas que no sigui així, caldrà repetir la petició aclarint a l'usuari que esprem que entri un valor numèric. Quan l'usuari hagi entrat un valor correcte, la funció el retornarà a la instrucció que hagi fet la crida. Recordeu que la utilitat Scanner, després de retornar un valor numèric (double, enter, etc.) és necessari invocar el mètode <em>nextLine</em> del mateix <em>Scanner</em> per tal de netejar el retorn de carro del <em>buffer</em> del teclat i evitar comportaments inesperats a les crides posteriors.</p>
                                     <p>De forma semblant a la funció anterior, la calculadora d'àrees necessitarà també una funció que permeti mostrar el resultat calculat per la pantalla indicant quina és la figura, i quina l'àrea. <strong>Se us demana </strong>doncs<strong> que implementeu una funció anomenada <em>mostrarResultat</em></strong> que rebi per paràmetre el nom de la figura i el valor de l'àrea. La funció mostrarà un missatge semblant a:</p>
                                     <div class="iocexample"><pre>
         ---------------------------------------------------
-            L'area del cercle demanat val: 25.3278
+            L'àrea del cercle demanat val: 25.3278
         ---------------------------------------------------
                                     </pre></div>
                                     <p>La funció <em>mostrarResultat</em> no retorna cap valor.</p>
@@ -250,7 +250,9 @@ if(cadetna.length()>0){
 
 //...
                                         </code></pre>
-                                        <p>Generalment els menús no avisen mai de si la opció escollida forma part de les opcions o no. En cas de no coincidir amb cap opció, s'acostuma simplement a tornar a mostrar el menú sense comentaris</p>
+                                        <p>Generalment els menús no avisen mai de si la opció escollida forma part de les opcions o no. En cas de no coincidir amb cap opció, s'acostuma simplement a tornar a mostrar el menú sense comentaris.</p>
+                                        <br />
+                                        
                                     </div>                                    
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
@@ -309,7 +311,7 @@ public class InterficieUsuariCalculadoraArees {
     private void mostrarResultat(String figura, double resultat){
         System.out.println();
         System.out.println("---------------------------------------------------");
-        System.out.print("L'area del ");
+        System.out.print("L'àrea del ");
         System.out.print(figura);
         System.out.print(" val: ");
         System.out.println(resultat);
@@ -371,19 +373,17 @@ public class InterficieUsuariCalculadoraArees {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>El nostre amic matemàtic ens ha passat el fórmules de les àrees:</p>
+                                    <p>El nostre amic matemàtic ens ha passat les fórmules de les àrees:</p>
                                     <ul>
                                         <li>Àrea triangle = base * alçada / 2</li>
                                         <li>Àrea quadrat = costat<sup>2</sup> </li>
                                         <li>Àrea rectangle = base * alçada</li>
                                         <li>Àrea cercle = PI * radi<sup>2</sup>, on PI = 3.14159265</li>
                                     </ul>
-                                    
-                                    <p>Volem crear una funció per cada àrea, així ens resultarà molt fàcil fer-les servir sense haver de consultar ni recordar quina fórmula correspon a cada figura.</p>
-                                    <p>Crea les funcions <em>calcularAreaTriangle</em>, <em>calcularAreaQuadrat</em>, <em>calcularAreaRectangle</em>, <em>calcularAreaCercle</em>. Pensa quins paràmetres hauran de rebre. Recorda també que hauran de retornar l'àrea calculada amb les fórmules de l'amic matemàtic. </p>
+                                    <p>Fa temps que no ens barallem amb aquestes fórmules i ens costa recordar-les. Per evitar possibles errades decidim crear una funció per cada àrea i posar-li un nom suggeridor, així ens resultarà molt fàcil fer-les servir sense haver de consultar ni recordar quina fórmula correspon a cada figura.</p>
+                                    <p>Seguint doncs aquestes indicacions, et demanem que codifiquis les funcions <em>calcularAreaTriangle</em>, <em>calcularAreaQuadrat</em>, <em>calcularAreaRectangle</em>, <em>calcularAreaCercle</em>. Pensa quins paràmetres hauran de rebre. Recorda també que hauran de retornar l'àrea calculada amb les fórmules de l'amic matemàtic. </p>
                                     <p>Usant les funcions de l'exercici anterior i les que acabes d'implementar aquí, codifica els 4 mòduls (<em>modulCalculAreaTriangle</em>, <em>modulCalculAreaQuadrat</em>, <em>modulCalculAreaRectangle</em> i <em>modulCalculAreaCercle</em>). Cada mòdul ha de ser una funció que es pugui invocar de manera totalment independent als altres.</p>
                                     <p>No oblidis comprovar que tot funciona correctament!</p>
-
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -395,6 +395,18 @@ public class InterficieUsuariCalculadoraArees {
                                     <div id="slc-toDo22-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
                                         <p>Recorda que el quadrat d'un número <em>n</em>, pot expressar-se també com: <em>n*n</em></p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo22" 
+                                            data-selector-clue="#slc-toDo22-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo22-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Recorda que per tal que els mòduls siguin independents, caldrà que la funció demani les dades a l'usuari, faci el càlcul de l'àrea corresponent i mostri el resultat per la pantalla</p>
                                     </div>
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
@@ -539,7 +551,7 @@ public class ModulsCalculadoraDArees {
                                 <div class=bodySlide>
                                     <p>En aquest darrer exercici ens disposarem a acabar la implementació de tota l'aplicació. De fet només queda per codificar la instrucció d'iteració que gestioni el menú i la instrucció de selecció que ens permeti invocar la opció seleccionada per l'usuari.</p>
                                     <p>Podeu implementar la instrucció iterativa a la funció inici.</p>
-                                    <p>També seria aconsellable que la instrucció de selecció l'encapsuléssiu en una funció</p>
+                                    <p>També seria aconsellable que la instrucció de selecció l'encapsuléssiu en una funció.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"

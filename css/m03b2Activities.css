@@ -504,3 +504,26 @@ ol.nestedCounter ol > li:before {
 .smallFont{
     font-size: 75%;
 }
+
+div.box{
+    border: 1px solid black;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding-left: 5px;
+    padding-bottom:2%;
+    font-family: 'Verdana', sans-serif, "Monospace";
+    font-size:0.9em;
+}
+
+.box div.inbox{
+    border: 1px solid black;
+    left: 10px;
+    top: 10px;
+    transform: translate(10px, 10px);   
+    -webkit-transform: translate(10px, 10px); 
+    width:90%;
+    padding-left: 5px;
+    padding-bottom:2%;
+    font-family: 'Verdana', sans-serif, "Monospace";
+}

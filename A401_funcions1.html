@@ -229,7 +229,7 @@
                                     <p>La declaració de mètodes es pot dur a terme en qualsevol lloc del fitxer font sempre que sigui entre les claus que identifiquen l’inici i fi de fitxer <code>(public class NomClasse { … })</code> i fora del bloc d’instruccions del mètode principal, o qualsevol altre mètode.</p>
                                     <p>La declaració dels mètodes no n'executa el seu contingut. Per executar el codi d'un mètode, cal invocar els seu nom seguit de dos parèntesis, que són els signes que identifiquen les funcions i les distingeixen de les variables. La invocació de mètodes s'anomena també crida. Vegem-ne un exemple</p>
                                     <pre><code class="java">
-    public void init(){
+    public void inici(){
         //...
         nomMetode();
         //...
@@ -240,7 +240,7 @@
         //...
     }
                                     </code></pre>                         
-                                    <p>A l'exemple anterior es fa una crida al mètode <em>nomMetode</em> com a part de les instruccions del mètode <em>inici</em>. Recordeu que fins ara, fèiem servir el mètode inici per escriure tota la nostra aplicació. De fet, estàvem  declarant un mètode sense saber-ho.</p>
+                                    <p>A l'exemple anterior es fa una crida al mètode <em>nomMetode</em> com a part de les instruccions del mètode <em>inici</em>.</p>
                                 </div>
                             </div>
                         </div>
@@ -265,11 +265,11 @@
                                     <p>Una de les principals raons de ser de les funcions, és <strong>minimitzar la complexitat</strong> de les implementacions reduint el nombre de línies de codi que un programador ha de tenir en compte a l'hora de fer una programa.</p>
                                     <p>Les funcions permeten construir noves instruccions cada cop més complexes, que es poden usar per implementar grans aplicacions escrivint un menor número de línies.</p> 
                                     <p class="iocimportant">És per això que diem que les <strong>funcions encapsulen o amaguen el codi que contenen</strong>.</p>
-                                    <p>Certament, no és necessari conèixer el codi intern d'una funció per poder-la fer servir, només caldrà saber en prou detall, què és el que la funció fa i com i quan cal fer-la servir.</p> 
+                                    <p>Certament, no és necessari conèixer el codi intern d'una funció per poder-la fer servir, només cal saber en prou detall, què és el que la funció fa i com i quan cal fer-la servir.</p> 
                                     <p>Gràcies a les funcions, és possible fer implementacions eficients en equip i reduir al mateix temps el nombre d'errors generats durant la codificació.</p>
                                     <p>A més de reduir la complexitat, les funcions també eviten la repetició de codi de forma innecessària. ja que les instruccions d'una funció només s'escriuen una única vegada.</p>
                                     <p>Això ens obliga a dissenyar de forma acurada les funcions, intentat, sempre que es pugui escriure mètodes genèrics que puguin reutilitzar-se en diferents situacions.</p>
-                                    <p>Malauradament, això pot acabar incrementant el nombre final de línies usades o fins i tot, acabar generant una implementació globalment més complexa, però des del punt de vista de la implementació que cada programador acabarà fent, la complexitat es redueix sempre i per tant surt a compte l'ús de funcions</p>                                    
+                                    <p>Malauradament, això pot acabar incrementant el nombre final de línies usades o fins i tot, acabar generant una implementació globalment més complexa, però des del punt de vista de la implementació que cada programador acabarà fent, la complexitat es redueix sempre i per tant surt a compte l'ús de funcions.</p>                                    
                                 </div>
                             </div>
                         </div>
@@ -293,8 +293,8 @@
                                 <div class=bodySlide>
                                     <p>Si les funcions encapsulen codi, quan un programador en fa servir una, no hauria de preocupar-se de quines variables fa servir internament, ni de quines variables es manipulen internament.</p>
                                     <p>Això obliga al llenguatge a treballar amb el que s'anomena <strong><em>àmbit de les variables</em></strong>. Entenem per àmbit de les variables, que en la identificació de les mateixes no només intervé el seu <em>nom</em>, sinó també el <em>lloc</em> on han estat declarades (per exemple dins una funció). D'aquesta manera és possible utilitzar el mateix nom de variables en funcions diferents sense que es produeixi cap mena d'interferència. De fet, durant l'execució seran tractades sempre com variables diferents.</p>
-                                    <p>Si això és així, el llenguatge haurà de disposar de mecanismes per intercanviar informació entre diferents funcions, ja que sovint poden complementar-se i treballar en cadena. El mecanisme previst pel llenguatge Java és la declaració de <strong><em>paràmetres</em></strong> (entrada) i del <em><strong>resultat</strong></em> obtingut en executar la funció (sortida), per tal d'aprofitar el resultat obtingut en altres llocs del codi.</p>
-                                    <p>La declaració de paràmetres s'afegeix a la declaració de la funció indicant el tipus de dada i un nom que els identifiqui. el resultat retornat, també es declara indicant el tipus de dada retornada. Així la declaració bàsica d'una funció quedaria de la marera següent:</p>
+                                    <p>Si això és així, el llenguatge haurà de disposar de mecanismes per intercanviar informació entre diferents funcions, ja que sovint poden complementar-se i treballar en cadena. El mecanisme previst pel llenguatge Java és la declaració de <strong><em>paràmetres</em></strong> (entrada) i del <em><strong>resultat</strong></em> obtingut en executar la funció (sortida), per tal d'aprofitar aquest resultat en altres llocs del codi.</p>
+                                    <p>La declaració de paràmetres s'afegeix a la declaració de la funció indicant el tipus de dada i un nom que els identifiqui. El resultat retornat, també es declara indicant el tipus de dada retornada. Així la declaració bàsica d'una funció quedaria de la marera següent:</p>
                                     
                                     <pre><code class="java">
 tipusDadaRetorn nomFuncio(tipusParam1 nomParam, ..., tipusParamN nomParamN){
@@ -304,7 +304,7 @@ tipusDadaRetorn nomFuncio(tipusParam1 nomParam, ..., tipusParamN nomParamN){
 }
                                     </code></pre>                         
                                     <p>Fixeu-vos que d'acord amb aquest mecanisme les funcions només poden retornar un únic valor. Més endavant estudiarem com canviar aquesta limitació.</p>
-                                    <p>Òbviament la forma anterior de declarar funcions continua vigent.En realitat aquest nou mecanisme és una extensió de l'anterior de manera que el tipus <em>void</em> significa que la funció no retorna cap dada i l'absència de paràmetres declarat entre els parèntesis implica que la funció no necessita cap entrada de dades.</p>
+                                    <p>Òbviament la forma anterior de declarar funcions continua vigent. En realitat aquest nou mecanisme és una extensió de l'anterior de manera que el tipus <em>void</em> significa que la funció no retorna cap dada i l'absència de paràmetres declarats entre els parèntesis implica que la funció no necessita cap entrada de dades.</p>
                                     <p>El mecanisme per invocar mètodes que declaren paràmetres, també canvia lleugerament, doncs a la crida caldrà especificar els valors d'entrada mitjançant una expressió del llenguatge i quan calgui recollir el valor retornat dins una variable per tal que no es perdi el resultat retornat:</p>
                                     <pre><code class="java">
 void inici(){
@@ -340,7 +340,7 @@ void inici(){
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>Abans de continuar, cal presentar un canvi necessari en el format dels vostres programes quan es vol declarar altres funcions, a més de la principal (<em>main</em>).</p>
-                                    <p>Concretament, per les característiques del llenguatge Java, cal que el mètode principal tingui un format molt concret. En cas contrari, hi haurà un error de compilació en futures passes del procés. Tot el codi que normalment posaríeu dins el bloc d’instruccions del mètode principal, cal ubicar-lo en una funció <em>"secundària"</em>, que anomenaren <em>inici</em>. S'ha triat aquest nom per tal que us resulti clarificador, però podríem haver-li posat qualsvol altre nom.</p>
+                                    <p>Concretament, per les característiques del llenguatge Java, cal que el mètode principal tingui un format molt concret. En cas contrari, hi haurà un error de compilació en futures passes del procés. Tot el codi que normalment posaríeu dins el bloc d’instruccions del mètode principal, cal ubicar-lo en una funció <em>"secundària"</em>, que anomenaren <em>inici</em>. S'ha triat aquest nom per tal que us resulti clarificador, però podríem haver-li posat qualsevol altre nom.</p>
                                     <p>Dins el mètode principal simplement s’invoca aquesta nova funció. De fet, no és imprescindible que conegueu els detalls dels motius pels quals és necessari fer aquest canvi. Simplement podeu usar el codi següent d’exemple com a plantilla per generar els vostres programes, tenint en compte que tot el codi que posaríeu normalment al mètode principal, ara anirà al mètode inici.</p>
                                     <pre><code class="java">
 public class ProgramaX {
@@ -428,11 +428,11 @@ public class Exemple1 {
     }
     
     //declaració de la funció maxim. A la declaració s'indica que requereix 
-    //qe se li passin per paràmetres dos números  enters i que el resultat 
+    //que se li passin per paràmetres dos números  enters i que el resultat 
     //retornat serà també un valor enter.
     int maxim(int x, int y) {
         int ret;
-        ret = (x < y) ? y : x;
+        ret = (x &lt; y) ? y : x;
         return ret;
     }
 
@@ -503,7 +503,7 @@ public class Exemple1 {
                                          </code></pre>
                                     </div>
                                     <p>en la que totes els funcions estan contingudes entre dues claus. </p>
-                                    <p>Efectivament Java permet declarar variables de l'àmbit fitxer, declarant les variables en el mateix nivell que es declaren les funcions. Sovint aquest àmbit se sol anomenar global perquè una variable així declarada serà vàlida per ser usada des de qualsevol mètode. </p>
+                                    <p>Efectivament, Java permet declarar variables de l'àmbit fitxer, declarant les variables en el mateix nivell que es declaren les funcions. Sovint aquest àmbit se sol anomenar global perquè una variable així declarada serà vàlida per ser usada des de qualsevol mètode. </p>
                                     <div class="iocexample">
                                          <pre><code class="java">
                                             public class nomDelFitxer{
@@ -687,7 +687,7 @@ public class DiesDelMes {
     }
 
     /**
-     * Mostra per pantalla un missatge indicant el més (en format numèric) que 
+     * Mostra per pantalla un missatge indicant el mes (en format numèric) que 
      * s'ha demanat i el nombre de dies calculat. La funció rep ambdós valors 
      * a mostrar com a paràmetres i no retorna res.
      */
@@ -830,7 +830,38 @@ public class AccessibilitatVariables {
                                     <div id="slc-toDo30-clue3" class="iocClue hidden">
                                         <h2>Pista 3</h2>
                                         <p>Fes un esquema dels blocs de codi de l'aplicació a analitzar, representant-los com un rectangle. Situa dins de cada rectangle les variables declarades dins i els blocs de codi continguts, de manera que et sigui fàcil veure quins blocs contenen d'altres i a quin bloc pertanyen les variables declarades.</p>
-                                        <p>Situa ara dins del bloc on es realitza la invocació, les línies amb errors. Intenta relacionar la ubicació de les línies d'error amb la ubicació de les variables contingudes a la intrucció</p>
+                                        <p>Per exemple:</p>
+                                        <div class="box">
+                                                Bloc de la funcio X
+                                                <br />
+                                                Variables: v1, v2, v3
+                                                <br />
+                                                <div class="inbox">
+                                                        Bloc de la funció X1
+                                                        <br />
+                                                        Variables v11, v12
+                                                        <br />
+                                                        <div class="inbox">
+                                                                Bloc de la comanda if(...)
+                                                                <br />
+                                                                Variable v111, v112, v113
+                                                        </div>
+                                                </div>
+                                                <br />
+                                                <div class="inbox">
+                                                        Bloc de la funció X2
+                                                        <br />
+                                                        Variables v21, v22
+                                                        <br />
+                                                        <div class="inbox">
+                                                                Bloc de la comanda while(...)
+                                                                <br />
+                                                                Variable v121, v122, v123
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <br />
+                                        <p>Un cop hagis fet l'esquema, situa dins del bloc on es realitza la invocació, les línies amb errors. Intenta relacionar la ubicació de les línies d'error amb la ubicació de les variables contingudes a la intrucció</p>
                                          
                                     </div>
 
@@ -986,8 +1017,8 @@ public class IllegalitatsAmbitsVariables {
                                     <ol>
                                         <li>L'afirmació és falsa. Java no permet declarar un paràmetre d'una funció i una variable local de la mateixa usant el mateix nom, doncs no hi ha manera de distingir-les en invocar-les. De fet l'àmbit dels paràmetres i el de les variables locals de funció són idèntics</li>
                                         <li>L'afirmació és certa.</li>
-                                        <li>L'afirmació és falsa. Java permet declarar paràmetres amb el mateix nom que les variables globals. De fet,  les restriccions dels paràmetres són les mateixes que les de les variables locals de funció i per tant en aquest cas, en cas d'anomenar-se igual, el paràmetre tindria prioritat sobre la variable global</li>
-                                        <li>L'afirmació és parcialment certa, ja que Java permet declarar variables amb el mateix nom si pertanyen a blocs diferents malgrat que un estigui contingut dins l'altre sempre i quant la variable del més gran es trobi declarar posteriorment al bloc menor, ja que en sortir del bloc menor la variable deixa d'existir i per tant es poden tornar a declarar.</li>
+                                        <li>L'afirmació és falsa. Java permet declarar paràmetres amb el mateix nom que les variables globals. De fet,  les restriccions dels paràmetres són les mateixes que les de les variables locals de funció i per tant, en cas d'anomenar-se igual, el paràmetre tindria prioritat sobre la variable global</li>
+                                        <li>L'afirmació és parcialment certa, ja que Java permet declarar variables amb el mateix nom si pertanyen a blocs diferents malgrat que un estigui contingut dins l'altre sempre i quant la variable del més gran es trobi declarar posteriorment al bloc menor, ja que en sortir del bloc menor la seva variable deixa d'existir i és possible fer una declaració nova amb el mateix nom.</li>
                                         <li>L'afirmació és certa.</li>
                                     </ol>
                                     </div>
@@ -1142,49 +1173,6 @@ public class IllegalitatsAmbitsVariables {
         
             activityManager.updateDisplayButtons(iocSlider);
         });
-
-/*
-        iocSlider = new IocSlider();
-        iocSlider.addJssorSlider("slider1_container");
-
-        $("[data-display-on-set-slide]").each(function(){
-            var slide;
-            var self = this;
-            var slideId = this.dataset.displayOnSetSlide; 
-            iocSlider.watch("onSetCurrentSlide", function(e){
-                var slide;
-                var oldSlide =e.oldValues.vindx!=-1
-                                    ?e.oldValues.vslides[e.oldValues.vindx]
-                                    :e.oldValues.hslides[e.oldValues.hindx];
-                if($(oldSlide).attr("id")===slideId){
-                   $(self).hide();
-                   if($(self).hasClass("active")){
-                        $(self).click();
-                   }
-                }
-                slide = this.hasVerticalSlides()
-                                    ?this.vslides[this.vindx]
-                                    :this.hslides[this.hindx];
-                if($(slide).attr("id")===slideId){
-                   $(self).show();
-                }
-            });
-    
-            slide = iocSlider.hasVerticalSlides()
-                                ?iocSlider.vslides[iocSlider.vindx]
-                                :iocSlider.hslides[iocSlider.hindx];
-            if($(slide).attr("id")===slideId){
-               $(this).show();
-            }
-        });
-
-        hljs.addLineNumbers();
-        hljs.initHighlightingOnLoad();
-        
-        $(document).ready(function(){
-            toReplaceOnLoad("data/toReplace.json", "A401");
-        });
-        */
     </script>
 
 </body>
