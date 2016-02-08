@@ -49,7 +49,8 @@ IocSlider = function(){
     /*  MOBILE MENU CLOSE 
     /* ----------------------------------------------------------- */ 
 
-    $('.navbar-nav').on('click', 'li a', function() {
+    //$('.navbar-nav').on('click', 'li a', function() {
+    $("#top-menu").find("li > a").click(function() {
       $('.navbar-collapse').collapse('hide');
     });
 

@@ -114,13 +114,12 @@
                         <div class="col-lg-12">
                              <div class=bodySlide>
                                  <p>Tal i com hem vist a l'aplicar el disseny descendent i l'ús de funcions, els programes resulten molt més llegibles i fàcils d'escalar i localitzar errors si els dividim en parts, que no si fem l'aplicació amb el codi tot seguit a la funció principal.</p>
-				<p>No obstant, a mesura que el programa es fa més gran i complex, necessitem distribuir encara més la informació i, en ocasions, re aprofitar parts de codi d'uns programes a altres. Així doncs, ara anem més enllà i el que farem serà agrupar diferents funcions o mètodes que facin referència a un mateix tema en el que s'anomenen <b>mòduls</b>. 
-				A JAVA aquests mòduls són equivalents al concepte de <b>classe</b>. Per tant, el que definirem a partir d'ara serà un programa dividit en diverses classes interrelacionades i organitzades, en ocasions, en diferents fitxers.</p>
-				<p>De la mateixa manera, podrem organitzar grups de classes vinculades entre elles que s'anomenaran <b>biblioteques de classes</b> o <em><b>packages</b></em> en JAVA.</p> 
-				<p>Per últim, també veurem que en moltes ocasions els tipus d'estructures de dades que coneixem fins ara (variables simples, arrays,...) no són suficients per representar les dades d'un programa. 
-				Per això, definirem el que s'anomenen <b>tipus composts</b> com a agrupació de dades de diferents tipus i veurem com es gestionen en JAVA. 
+				<p>No obstant, a mesura que el programa es fa més gran i complex, necessitem distribuir encara més la informació i, en ocasions, re-aprofitar parts de codi d'uns programes a altres. Així doncs, ara anem més enllà i el que farem serà agrupar diferents funcions o mètodes que facin referència a un mateix tema en el que se sol anomenar <b>mòduls</b>. 
+				A JAVA aquests mòduls són equivalents al concepte de <b>classe</b>. Per tant, el que definirem a partir d'ara serà un programa dividit en diverses classes interrelacionades i organitzades en diferents fitxers.</p>
+				<p>Per últim, també veurem que en moltes ocasions els tipus de dades que coneixem fins ara (variables simples, arrays,...) no són suficients per representar les dades d'un programa. 
+				Per això, definirem el que s'anomenen <b>tipus composts</b> com una agrupació de dades de diferents tipus i veurem com es gestionen en JAVA. 
                                  <p>Aquesta activitat us permetrà aprendre com implementar i fer servir <em>classes, biblioteques i tipus composts</em>, de manera que us serveixi de pràctica per posteriors implementacions del projecte.</p>
-                                 <p>En primer lloc haureu de llegir l'apartat <em><a href="#slc-toKnow">Què cal saber</a></em>. Allà, se us explicaran els coneixements bàsics que cal saber per implementar classes, biblioteques i tipus composts. </p>
+                                 <p>En primer lloc haureu de llegir l'apartat <em><a href="#slc-toKnow">Què cal saber</a></em>. Allà, se us explicaran els coneixements bàsics que necessitareu per dur a tyerme l'activitat. </p>
                                  <p>Després caldrà que feu els exercicis que se us demana a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em>. Es tracta d'un conjunt d'exercicis que us ajudaran a consolidar l'aprenentatge dels conceptes explicats.</p>
                                  <p>A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions</p> 
                                  <p>Finalment, a l'apartat <em><a href="#slc-toContinue">Com continuar</a></em>, us redirigirà a la següent activitat. </p> 
@@ -295,137 +294,6 @@ identificador.nomMetode(parametres);</code></pre>
                 </section>
                 <!--=========== END SUBSECTION programa modular ================-->    
                 
-                <!--=========== BEGIN SUBSECTION Biblioteques de classes: paquets ================-->    
-                <section id="slc-toKnow30" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Què cal saber - Classes, biblioteques i tipus composts</h2>
-                                     <h3 >Biblioteques de classes: packages</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>Una vegada tenim clar com organitzar els mètodes dins de classes diferenciades, d’acord a algun criteri d’ordenació o de reutilització de codi en el futur, 
-                                    ens trobem en què per a programes amb un cert grau de dificultat, pugui ser convenient disposar d’un mecanisme que permeti organitzar conjunts de classes dins d’un programa, de la mateixa manera que una classe organitza un conjunt de mètodes. 
-                                    Això permetria aplicar modularitat a conjunts de classes en bloc, en lloc de fer-ho a nivell individual, i també fer-les més fàcils de localitzar, gestionar i reaprofitar, si és el cas.</p> 
-												
-                                    <p class="iocimportant">Una biblioteca de classes, o <b>package</b> en Java, és un conjunt de classes vinculades entre elles d’acord a algun criteri temàtic o d’organització del seu codi i que permet organitzar aquestes classes jeràrquicament.</p> 
-                                    <p>Així, un package, no és més que un directori de classes. 
-                                    Per assignar una classe a un <em>package</em> cal escriure a la primera línia del seu fitxer de codi la sentència següent:</p>
-                                    <pre><code> package identificadorPackage;</code></pre>  
-                                    <p>Totes les classes que comparteixin el mateix identificador de package pertanyeran al mateix package.</p>
-                                    
-                                    <p>Per definir l'identificador dels <em>package</em> cal seguir un estàndard de notació: minúscula i paraules separades per punts que fan referència a la ubicació, per exemple:
-                                    <pre><code>package ioc.m03.uf2.funcions.a501;</code></pre>  
-                                    <p>Per fer servir correctament els <em>package</em> ens cal conèixer les següents restriccions:</p>
-												<ul>                                    
-                                    	<li>Donada una classe, aquesta únicament pot pertànyer a un <em>package</em>. No és possible usar més d’una vegada la sentència <em>package</em> en el codi font d’una classe. </li>
-                                    	<li>Donat un <em>package</em>, a dintre seu mai hi poden haver dues classes amb el mateix nom.</li>                        
-												</ul>
-												 <p>A l'hora d'implementar, cal establir un criteri per decidir quan ens interessa dividir conjunts de classes en biblioteques diferents:</p>
-										<ul>
-										<li>Un programa complet, una jerarquia de packages.</li>
-										<li>Molts programes petits, una jerarquia de packages.</li>
-										<li>Un conjunt de classes sense un programa principal, un package.</li>
-										</ul>												
-												</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION Biblioteques de classes: paquets ================-->    
-
-                <!--=========== BEGIN SUBSECTION Biblioteques de classes: ús de paquets ================-->    
-                <section id="slc-toKnow35" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Què cal saber - Classes, biblioteques i tipus composts</h2>
-                                     <h3 >Biblioteques de classes: Implementació de classes que pertanyen a paquets</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>                              
-                               <p>Fins ara, quan volíem referir-nos a una classe, senzillament fèiem servir el seu nom. 
-                               En el moment, en que tenim classes que pertanyen a un determinat package, i volem accedir a classes que pertanyen a altre paquet, hem d'establir uns mecanismes d'accés.  
-                               Donat que tota classe pertany a un <em>package</em> és convenient nomenar la classe seguint un estàndard. 
-                               Així, direm que el <b>nom qualificat</b> d’una classe és la combinació de l’identificador del seu <em>package</em> junt amb el seu nom, separats per un punt. Per exemple, 
-                              <pre> <code>
-A501.apartat1.exemples.RegistreNotes
-                               </code></pre>
-                               <p>Amb un nom qualificat queda totalment clar a quin <em>package</em> pertany la classe. 
-                               Això és útil ja que des del codi d’una classe que pertany a un <em>package</em> concret, 
-                               només es poden usar directament classes amb què comparteixi el mateix nom de <em>package</em>. 
-                               Però què ocorre si volem accedir a una classe que està a altre package diferent?
-                               Si s'accedeix a una classe d’un package diferent, el compilador donarà un error, dient que no la reconeix. 
-                               <p>En aquests casos, per indicar quina classe exactament s'està usant, JAVA ofereix tres opcions:</p>
-									<ul>
-										<li>Inicialització usant el nom qualificat: usar el nom qualificat per referir-se a la seva inicialització</li>                                                                                
-                                                                              
-													<pre><code class="java">
-package ioc.m03.uf2.funcions.a501
-
-public class RegistreNotes {
-...
-//Ús del nom qualificat per accedir a una classe d'un altre package
-utilitats.arrays.CalculsArrayReals calculador = new utilitats.arrays.CalculsArrayReals();
-...
-}
-
-package utilitats.arrays;
-public class CalculsArrayReals {			
-//Codi
-...
-}
-													</code></pre> 
-                                                                              
-													<li>Importació explícita: s'ha d'importar prèviament a la capçalera del fitxer de codi font (<code>import</code>), entre la declaració del <code>package</code> i la declaració <code>public class….</code></li>
-                                                                                                       
-													<pre><code class="java">													
-package ioc.m03.uf2.funcions.a501
-//Cal importar la classe "CalculsArrayReals", ja que és d'un altre package
-import utilitats.arrays.CalculsArrayReals;
-public class RegistreNotes {
-//Codi
-...
-}
-package utilitats.arrays;
-//No s'usa cap classe fora d'aquest package, no s'importa res
-public class CalculsArrayReals {
-//Codi
-...
-}		
-													</code></pre> 
-                                                                                                      
-													<li>Importació general: es fa servir quan es volen usar moltes classes del mateix <code>package</code> i importar-les una a una es fa pesat. Es tracta d’usar un asterisc, “*”, en lloc del nom de la classe en el nom qualificat. 
-													Aquest fa de comodí i equival a dir “absolutament totes les classes del package”.</li>                                                                                                       
-													<pre><code class="java">	
-package ioc.m03.uf2.funcions.a501;
-//S'importarien totes les classes del package utilitats.arrays
-import utilitats.arrays.*;
-public class RegistreNotes {
-//Codi
-...
-}		
-												</code></pre>	
-												</ul> 
-												<p>Per norma general, és aconsellable usar la importació explícita, 
-												ja que així a l’inici del vostre codi font sempre disposareu d’una llista detallada de quines classes d’altres biblioteques esteu usant.</p> 
-												<p>Una vegada es té clar com referenciar les classes que pertanyin a un determinat paquet, cal treballar amb elles com hem fet fins ara.</p>                                                     
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION Biblioteques de classes: ús de paquets ================-->        
-
                 <!--=========== BEGIN SUBSECTION Biblioteques de JAVA: API ================-->    
                 <section id="slc-toKnow40" class=" section">
                     <div class="container">
@@ -440,11 +308,9 @@ public class RegistreNotes {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Per crear programes modulars no és necessari crear cadascun dels mòduls que formen part del programa. Sovint els llenguatges de programació incorporen 
-                                    biblioteques de mòduls auxiliars que ja han estat completament desenvolupats. Aquests mòduls auxiliars ofereixen funcionalitats que van més enllà del que permet la seva sintaxi estrictament
-                                    o incorporant l’opció d’executar blocs de codi que resolen tasques que es consideren de propòsit general i que poden ser d’utilitat en una àmplia gamma de programes.</p>
-                                    En el cas del llenguatge Java, el seu kit de desenvolupament (JDK) incorpora un quantiós repositori de classes, organitzats en diferents packages d’acord a la seva temàtica, que poden ser accedides lliurement en realitzar qualsevol programa. 
-                                    Aquest repositori és el que s’anomena l’<b>API</b> de JAVA. 
+                                <!-- cal veure com introduir el concepte de paquet sense incidir-hi gaire. Potser amb un quadre que s'obre en passar per damunt o com una clarificació dins el text: els paquets permeten organitzar les classes per facilitar-ne la seva localització de forma similar a com els sistemes de fitxers organitzen els arxius fent servir directoris. -->
+                                    <p>Per crear programes modulars no és necessari crear cadascun dels mòduls que formen part del programa. Sovint els llenguatges de programació incorporen biblioteques de mòduls auxiliars que ja han estat completament desenvolupats. Aquests mòduls auxiliars ofereixen funcionalitats que van més enllà del que permet la seva sintaxi estrictament o incorporant l’opció d’executar blocs de codi que resolen tasques que es consideren de propòsit general i que poden ser d’utilitat en una àmplia gamma de programes.</p>
+                                    <p>En el cas del llenguatge Java, el seu kit de desenvolupament (JDK) incorpora un quantiós repositori de classes, organitzats en diferents packages <!-- Referenciar el concepte de paquet aquí --> d’acord a la seva temàtica, que poden ser accedides lliurement en realitzar qualsevol programa. Aquest repositori és el que s’anomena l’<b>API</b> de JAVA. </p>
                                     <p>La documentació de l’API de JAVA ofereix un enorme repertori de classes que contenen mètodes amb funcionalitats molt diverses.</p>
                                     <p>Els <em>packages</em> que contenen les classes més usuals són:
 												<ul>
@@ -515,9 +381,8 @@ Scanner lector = new Scanner(System.in);
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En general, per poder invocar mètodes d’una classe cal inicialitzar-la prèviament. 
-                                    Ara bé, d’entre tots els mètodes proporcionats dins de les classes disponibles a l’API de Java, hi ha un petit subconjunt que s'anomenen <b>mètodes estàtics</b> que poden ser invocats
-                                    sense haver d' inicialitzar la seva classe. S’identifiquen perquè a la documentació apareixen marcats amb la paraula clau <code>static</code>. </p>
+                                    <p>En general, per poder invocar mètodes d’una classe cal inicialitzar-la prèviament fent servir la sentència <em>new</em>. 
+                                    Ara bé, d’entre tots els mètodes proporcionats dins de les classes disponibles a l’API de Java, hi ha un petit subconjunt que s'anomenen <b>mètodes estàtics</b> que poden ser invocats sense haver d' inicialitzar la seva classe. S’identifiquen perquè a la documentació apareixen marcats amb la paraula clau <code>static</code>. </p>
 												<p>Per invocar aquests mètodes, la sintaxi correcta és posar com a prefix el nom de la classe directament. A part d’això, el seu comportament és idèntic a qualsevol altre mètode. És a dir: </p>                                    
                                     <pre><code class="java">
 NomClasse.nomMetode(paràmetres);
@@ -533,22 +398,23 @@ double resultat = Math.sqrt(36);
  <pre><code class="java">												
 package ioc.m03.uf2.funcions.a501;
 import java.util.Random;
+
 public class ArrodonirReal {
-public static void main(String[] args) {
-ArrodonirReal programa = new ArrodonirReal();
-programa.inici();
-}
-public void inici() {
-//Inicialització de Random
-Random rnd = new Random();
-//Ús per generar un real entre 0 i 1
-double valor = rnd.nextDouble();
-System.out.println("El valor real generat és " + valor);
-//Ús del mètode estàtic. No cal inicialitzar res, es pot usar directament.
-//No cal importar-la, ja que pertany a java.lang
-long arrodonit = Math.round(valor);
-System.out.println("El valor arrodonit és " + arrodonit);
-}
+    public static void main(String[] args) {
+        ArrodonirReal programa = new ArrodonirReal();
+        programa.inici();
+    }
+    public void inici() {
+        //Inicialització de Random
+        Random rnd = new Random();
+        //Ús per generar un real entre 0 i 1
+        double valor = rnd.nextDouble();
+        System.out.println("El valor real generat és " + valor);
+        //Ús del mètode estàtic. No cal inicialitzar res, es pot usar directament.
+        //No cal importar-la, ja que pertany a java.lang
+        long arrodonit = Math.round(valor);
+        System.out.println("El valor arrodonit és " + arrodonit);
+    }
 }
 </code></pre>  
 												</li> 
@@ -559,19 +425,20 @@ System.out.println("El valor arrodonit és " + arrodonit);
 <pre><code class="java">												
 package ioc.m03.uf2.funcions.a501
 import java.util.Arrays;
+
 public class OrdenaArrayText {
-public static void main (String[] args) {
-OrdenaArrayText programa = new OrdenaArrayText();
-programa.inici();
-}
-public void inici() {
-String[] array = {"Un", "Dos", "Tres", "Quatre", "Cinc"};
-Arrays.sort(array);
-System.out.println("Els elements ordenats són:");
-for (int i = 0; i < array.length; i++) {
-System.out.println(array[i]);
-}
-}
+    public static void main (String[] args) {
+        OrdenaArrayText programa = new OrdenaArrayText();
+        programa.inici();
+    }
+    public void inici() {
+        String[] array = {"Un", "Dos", "Tres", "Quatre", "Cinc"};
+        Arrays.sort(array);
+        System.out.println("Els elements ordenats són:");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
 }	
 </code></pre> 
 											
@@ -663,7 +530,9 @@ if(operacio1.operacio == '+'){
 DadesCalculadora operacio2;
 operacio1.operador1 = 7; //Això dona error perquè no s'ha instanciat la variable: operacio2 = new DadesCalculadora() 
 												</code></pre>
-                                    </div>                                   
+                                    </div> 
+                                    
+                                    <!-- NO                                  
                                     <p>Altra qüestió important que hem de tenir en compte a l'hora de treballar amb estructures de dades és l'accés a un element de l'estructura des d'una classe que es trobi fora del paquet on es declara l'estructura.
                                      Així, una opció seria declarar públics els elements de l'estructura. Si posem la paraula <code>public</code> davant de la declaració de cada element, a l'especificació, els elements seran accessibles des de qualsevol classe, comparteixin o no paquet amb l'estructura de dades.
 Una altre forma força útil de aconseguir l'accés, sense necessitat de declarar públics els elements de l'estructura, seria usant un classe extra que permeti l'accés  i funcioni com una biblioteca específica d'una estructura de dades. 
@@ -675,171 +544,14 @@ També resulta molt útil per verificar que les dades a introduir seran sempre v
                                         <li><em>private</em>: l'accés a l'element està restringit a la pròpia classe, és a dir, no es pot accedir des d' altres classes. Aquest tipus d'accés es fa servir més endavant quan feu programació orientada a objectes. </li>
                                         <li><em>per defecte (sense tipus d'accés)</em>: l'element de la classe només potser utilitzat des de classes que estiguin al mateix paquet que la classe en la que es defineix l'element </li> 
                                     </ul>
+                                    -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <!--=========== END SUBSECTION Estructures de dades: Tipus composts ================-->  
-                
-               <!--=========== BEGIN SUBSECTION Guia modularitzar ================-->    
-                <section id="slc-discussion12" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Què cal saber - Classes, biblioteques i tipus composts</h2>
-                                     <h3> Guia per modularitzar usant classes addicionals i paquets</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>A mida que treballem amb aplicacions cada cop més grans, no n'hi ha prou només en agrupar el codi en funcions, sinó que caldrà classificar les funcions en classes i les classes en paquets per tal de poder-les localitzar, memoritzar i utilitzar amb certa eficiència. 
-                                    A les persones ens costa menys treballar amb conceptes jeràrquics que no pas amb llistes llargues, malgrat que al final el nombre d'elements inclosos en ambdós (jerarquia o llista) sigui similar.
-                                    A continuació us mostrem un conjunt de criteris que poden fer-se servir per organitzar el codi. </p>
-                                    
-                                    <h4 id="us_de_paquets_obligatoris" class="frameBoxHeader">Ús de paquets obligatoris</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>Per tal que sigui possible la reutilització de classes i funcions en múltiples aplicacions, serà necessari ubicar les classes sempre en algun paquet, per tal d'evitar la repetició de noms i facilitar-ne la localització.</p>
-                                        <p>S'aconsella que les classes estiguin sempre ubicades en un seqüència de paquets que permetin identificar la organització, el departament i/o equip que les desenvolupa, així com el projecte en que s'han desenvolupat. Per exemple suposant que el vostre grup fos un equip de desenvolupament del IOC,  que fos el grup número 5 i que treballéssiu en un projecte per crear utilitats per a processar imatges, la seqüència mínima de paquets amb les que hauríeu de treballar seria: <em>ioc.m03b2.grup5.imatges</em></p>
-                                        <p>Aquesta seria per dir-ho d'alguna manera l'arrel a partir de la qual començaríeu a penjar-hi classes i paquets més específics.</p>
-                                    </div>
-
-                                    <h4 id="aillament_de_codi_reutilitzable" class="frameBoxHeader">Aïllament del codi reutilitzable</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>És evident que si el que volem és poder reutilitzar funcions, no només cal adaptar les funcions fent que algunes d'elles siguin realment reusables, sinó que cal separar perfectament les funcions genèriques (reutilitzables) de les específiques (poc reutilitzables). L'ideal és agrupar les funcions genèriques en biblioteques (paquets i classes) per tal de poder-les passar en bloc d'un projecte a un altre.</p>
-                                    </div>
-
-                                    <h4 id="agrupacio_tematica" class="frameBoxHeader">Agrupació temàtica</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>L'agrupació temàtica permet organitzar les funcions de forma jeràrquica aglutinant-les en categories cada cop més genèriques. Les funcions s'agregarien en classes i aquestes en paquets. Si fos necessari, es podrien establir també agrupacions de paquets, a fi d'anar estructurant la jerarquia. La profunditat d'aquesta dependrà del nombre de funcions que calgui organitzar. Si són poques, potser n'hi haurà prou en fer servir només classes per realitzar la classificació temàtica. És el que java fa en agrupar funcions a la classe Math, a la classe Arrays o a la classe String. Cada classe representa una categoria diferent.</p>
-                                        <p>Ara bé, si consideréssim que una d'elles tingués a un nombre de funcions excessiu, es podria reduir la quantitat, seleccionant una temàtica més específica. Per exemple es podria crear una classe només per funcions trigonomètriques, una altra per funcions estadístiques, una altra per les aritmètiques i així successivament. Les tres classes podrien agrupar-se en una paquet específic anomenat <a href="#" data-toggle="tooltip" data-original-title="JAVA aconsella que els noms dels paquets s'escriguin totes les lletres en minúscules per tal de distingir-los dels noms de les classes"><em>math</em></a> per tal d'anar gestant una organització jeràrquica fàcil de manipular</p>
-                                        <p>Per exemple, suposant que el nostre paquet arrel fos <em>ioc.m03b2.grup5.utilitats</em>, l'estructura quedaria de la següent manera:</p>
-                                        <ul>
-                                            <li>ioc
-                                                <ul>
-                                                    <li>m03b2
-                                                       <ul>
-                                                           <li>grup5
-                                                               <ul>
-                                                                   <li>utilitats
-                                                                       <ul>
-                                                                           <li>String</li>
-                                                                           <li>Arrays</li>
-                                                                           <li>math
-                                                                                <ul>
-                                                                                    <li>Trigonometriques</li>
-                                                                                    <li>Estadistiques</li>
-                                                                                    <li>Aritmetiques</li>
-                                                                                    <li>...</li>
-                                                                                </ul>
-                                                                           </li>
-                                                                       </ul>
-                                                                   </li>
-                                                               </ul>
-                                                           </li>
-                                                       </ul>
-                                                   </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <h4 id="organitzacio_estructural" class="frameBoxHeader">Organització estructural</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>La organització estructural fa referència a la divisió jeràrquica que les aplicacions. Bàsicament es pot desprendre del propi disseny descendent.</p>
-                                        <p>La principal dificultat amb la que ens trobarem quan haguem de fer una divisió d'aquestes característiques és que el disseny descendent evidencia la funcionalitat però no ens aporta informació de com agrupar-la en classes i paquets. Per tant, cal disposar d'indicadors que ens ajudin a valorar si estem fent una bona classificació.</p>
-                                        <p>Un indicador fonamental és la mida de la classe. Desconfieu d'aquelles agrupacions que donin com a resultat classes amb molt poques funcions. Resulta difícil establir un nombre correcta de funcions que hauria de tenir una classe, però és evident que generalment n''ha de tenir més d'una, més de dos i segurament més de tres. De forma semblant, cal desconfiar també de les classes que aglutinin moltes funcions i caldria plantejar-nos si fos possible, alguna divisió que en reduís el nombre.</p>
-                                        <p>Un segon indicador que també hauríem de tenir en compte, consisteix poder explicar la funcionalitat d'una classes de forma clara i més o menys breu. Per tant caldrà també desconfiar d'aquelles classes, que per explicar el que fan hem de matisar excessivament o elaborar una llista de coses que fan, perquè probablement ens trobem davant d'una classe excessivament específica i per això ens cal matisar tant el seu paper (el primer cas) o  que aglutina funcions poc o gens relacionades entre elles (el segon cas).</p>
-                                        <p>Per il·lustrar-ho, farem una mica de <a href="#" data-toggle="tooltip"  data-html="true" data-original-title="La pràctica del <em>codi-ficció</em> és una eina de reflexió molt útil per l'aprenentatge. Intenteu-lo practicar sovint"><em>"codi-ficció"</em></a>. És a dir, prendrem de model una aplicació ben coneguda per nosaltres i intentarem deduir com la implementaríem fent servir els recursos i coneixements que tinguem en cada moment.</p>
-                                        <p>Sigui per exemple, el nostre model, un lector de documents amb format com ara els documents pdf. Si voléssim crear una aplicació que llegís i mostres per pantalla fitxers contenint  documents amb format, caldria analitzar quina és la seva funcionalitat a partir del seu disseny descendent</p>
-                                        <p>Per simplificar-ho ens plantejarem la implementació d'una aplicació simple, que únicament s'encarregui de localitzar un document al sistema de fitxers, llegir-lo, analitzar-ne el seu contingut i mostrar-lo per pantalla d'acord amb les regles de format que disposi. Un possible esquema de disseny podria ser:</p>
-                                        
-                                       <ol class="nestedCounter">
-                                          <li>Localització del document
-                                                <ol>
-                                                    <li>Entrada de la ruta de directoris si l'usuari coneix la ruta sensera</li>
-                                                    <li>Navegació per sistema de fitxers fins localitzar el fitxer desitjat
-                                                        <ol>
-                                                            <li>Mostrar el contingut d'un directori com a directori actual</li>
-                                                            <li>Seleccionar un element del directori actual</li>
-                                                            <li>...</li>
-                                                        </ol>
-                                                    </li>
-                                                </ol>
-                                            </li>
-                                           <li>Càrrega del contingut del document
-                                                <ol>
-                                                    <li>Obertura del fitxer</li>
-                                                    <li>Càrrega en memòria del contingut</li>
-                                                    <li>...</li>
-                                                </ol>
-                                            </li>
-                                            <li><a href="#" data-toggle="tooltip" data-original-title="En argot informàtic s'anomena rederització al procés d'analitzar dades amb format i plasmar en la pantalla una visualització d'aquestes seguint les indicacions del format">Renderització del contingut</a>
-                                                <ol>
-                                                    <li>Anàlisi del contingut per aplicar les regles de renderització segons el format</li>
-                                                    <li>Donar les instruccions pertinents al dispositiu (pantalla) per visualitzar el contingut</li>
-                                                </ol>
-                                            </li>
-                                        </ol>
-                                        <p>Tenint en compte els criteris de mida i descripció indicats més amunt, probablement obtindríem entre 3 i 4 classes. En primer lloc trobarem la classe encarregada de localitzar el document, que podem anomenar <em>SelectorDocument</em>. Podríem sentir ganes de dividir aquesta en dos, una pel cas d'entrada de la ruta i una altre pel cas de navegació a través de l'arbre de directoris, però segurament el nombre de funcions que contindria el primer cas seria tant minúscul que aconsellaria agrupar-ho tot en una única classe.</p>
-                                        <p>En segon lloc planificaríem la implementació de la classe encarregada de la càrrega del contingut del fitxer a la memòria de l'aplicació. Es pot anomenat <em>CarregadorDocument</em></p>
-                                        <p>Finalment, serà necessari planificar la implementació de la classe encarregada de la renderització que anomenaríem <em>Render</em>. Cal clarificar però, que en funció de la complexitat del format, potser seria adequat dividir la classe en dos, per tal de reduir-ne la seva mida. En aquest cas planificaríem la creació de la classe <em>AnalitzadorDocument</em> i <em>GestorPantalla</em>, les quals estarien agrupades en un paquet anomenat <em>render</em>. Paquets i classes (incloent els paquets arrel) podrien quedar així:</p>
-                                       <ul>
-                                            <li>ioc
-                                                <ul>
-                                                   <li>m03b2
-                                                       <ul>
-                                                           <li>grup5
-                                                               <ul>
-                                                                   <li>lector
-                                                                       <ul>
-                                                                          <li>SelectorDocument</li>
-                                                                          <li>CarregadorDocument</li>
-                                                                          <li>render
-                                                                              <ul>
-                                                                                  <li>AnalitzadorDocument</li>
-                                                                                  <li>GestorPantalla</li>
-                                                                              </ul>
-                                                                          </li>
-                                                                       </ul>
-                                                                   </li>
-                                                               </ul>
-                                                           </li>
-                                                       </ul>
-                                                   </li>
-                                                </ul>
-                                            </li>
-                                       </ul>
-                                    </div>                               
-                                    <h4 id="dades_i_gestors de dades" class="frameBoxHeader">Dades i gestors de dades</h4>
-                                    <div class="frameBox smallFont">
-                                        <p>Separar les dades i unificar-les en una estructura, és una bona solució per tenir un accés general a les dades des de qualsevol punt de l'aplicació peró evitant els inconvenients de les declaracions globals. Així, les dades quedarien sempre encapsulades en una estructura declarada com a variable local que caldria passar per paràmetre a les diferents funcions, però un cop rebut el paràmetre resulta fàcil tenir accés a qualsevol valor de l'estructura.</p>
-                                        <p>Tot i així, si l'estructura de dades presenta certa complexitat, pot resultar util per els programadors que no han dissenyat l'estructura disposar d'una classe que els faciliti l'accés. Aquesta classe actuaria com a gestor de les dades i permetria obtenir o assignar valors parcials a les dades sense necessitat de coneixer exactament l'estructura interna. Es a dir contindria funcions per facilitat l'accés a parts de l'estructura de les dades, tant per llegir els valors com per modificar-los.</p>
-                                    </div>
-                                    <h3 id="interficie_i_control" class="frameBoxHeader">Interfície d'usuari i control d'accions</h3>
-                                    <div class="frameBox smallFont">
-                                        <p>Una altra opció cada cop més usada consisteix en separar radicalment el codi destinat a mostrar informació i capturar entrades de l'usuari (el que habitualment es coneix com interfície d'usuari de l'aplicació) del que podriem dir, el tractament de les dades.</p>
-                                        <p>De fet, normalment es classifiquen les funcions en tres categories i s'agrupen segons aquestes. Les 3 categories són: interfície d'usuari, encarragada de l'intercanvi d'informació entre l'aplicació i l'usuari, control de les peticions, encarregada de gestionar cada una de les peticions del l'usuari a fi de reconduir el flux del programa per aconseguir resoldre amb èxit la demanda i una tercera categoria encarregada del tractament de les dades per a resoldre cada una de les demandes que l'aplicació permeti. </p>
-                                        <p>Els avantatges que això implica són:</p>
-                                        <ul>
-                                            <li>Augmentar la reusabilitat de les funcions</li>
-                                            <li>Peder sofisticar la interficie de l'usuari i el control de peticions sense afectar a l'essencia de l'aplicació (tractament de dades) que seguira treballant de la mateixa manera.</li>
-                                            <li>Permetre crear aplicacions identiques en diferents plataformes (WEB, local) o per diversos dispositius (PC, tablet, smartphone, etc.)</li>
-                                            
-                                        </ul>
-                                    </div>
-                                    
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                 </section>
-                <!--=========== END SUBSECTION Guia modularitzar ================-->        
-          
+            </section>                             
             <!--=========== END SECTION toknow ================-->    
 
             <!--=========== BEGIN SECTION toDo ================-->    
