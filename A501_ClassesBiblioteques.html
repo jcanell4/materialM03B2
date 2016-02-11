@@ -31,6 +31,17 @@
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
 <body id="page-top">
+ <span id="svgContainerId">
+     <svg id="svgId" width="0" height="0" >
+         <path
+            id="pathId"
+            d="M0 0"         
+            stroke="#539ad7" 
+            fill="none" 
+            stroke-width="8px";
+        />    
+    </svg>
+</span> 
 <!-- Navigation hidden panel -->
     <aside>
         <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
@@ -113,7 +124,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                 <p>Tal i com hem vist a l'aplicar el disseny descendent i l'ús de funcions, els programes resulten molt més llegibles i fàcils d'escalar i localitzar errors si els dividim en parts, que no si fem l'aplicació amb el codi tot seguit a la funció principal.</p>
+                                 <p>Tal i com hem vist a l'aplicar el disseny descendent i l'ús de funcions, els programes resulten molt més llegibles, fàcils d'escalar i de localitzar errors si els dividim en parts, que no si fem l'aplicació, escrivint el codi tot seguit a la funció principal.</p>
 				<p>No obstant, a mesura que el programa es fa més gran i complex, necessitem distribuir encara més la informació i, en ocasions, re-aprofitar parts de codi d'uns programes a altres. Així doncs, ara anem més enllà i el que farem serà agrupar diferents funcions o mètodes que facin referència a un mateix tema en el que se sol anomenar <b>mòduls</b>. 
 				A JAVA aquests mòduls són equivalents al concepte de <b>classe</b>. Per tant, el que definirem a partir d'ara serà un programa dividit en diverses classes interrelacionades i organitzades en diferents fitxers.</p>
 				<p>Per últim, també veurem que en moltes ocasions els tipus de dades que coneixem fins ara (variables simples, arrays,...) no són suficients per representar les dades d'un programa. 
@@ -159,10 +170,10 @@
                                     <p>L'ús que fem de les classes és:</p>
 				<ul>
 					<li><b>Programa en JAVA</b>: Els fitxers dels programes, pròpiament, són classes (<code>public class…</code>). En aplicar disseny descendent, el seu codi queda distribuït en un mètode principal (<code>main</code>), que indica el seu punt d’inici, junt amb diferents mètodes addicionals que poden ser cridats directament.</li>
-					<li><b>Repositori de mètodes o biblioteques</b>: Correspondrien a un conjunt de mètodes definits pel propi usuari o bé pel propi llenguatge JAVA. Per exemple, la classe <code>Scanner</code>, que ofereix un repertori de mètodes per controlar la lectura de dades des del teclat (<code>nextLine()</code>, <code>nextInt()</code>, <code>hasNextFloat()</code>, etc.). </li>
+					<li><b>Repositori de funcions o biblioteques</b>: Correspondrien a un conjunt de funcions definides per l'usuari o bé pel propi llenguatge JAVA. Per exemple, la classe <code>Scanner</code>, que ofereix un repertori de mètodes per controlar la lectura de dades des del teclat (<code>nextLine()</code>, <code>nextInt()</code>, <code>hasNextFloat()</code>, etc.). </li>
 					<li><b>Tipus compost</b>: Aquest mateix terme s’ha usat com a sinònim de tipus compost. Per exemple, la classe <code>String</code>, utilitzada per referir-se a cadenes de text dins de JAVA. Els tipus compostos de JAVA permeten manipular dades complexes mitjançant la crida de mètodes (<code>charAt(…)</code>,<code>indexof(…)</code>, etc.).</li>
 				</ul>
-				<p>Cal destacar que els tres casos anteriors tenen característiques comunes, totes les classes estan formades per mètodes i la diferència està en el context en el que s'usen i la manera d'invocar als seus mètodes.
+				<p>Cal destacar que els tres casos anteriors tenen característiques comunes, doncs tots ells són classes amb variables o mètodes. La diferència està en el context en el que s'usen i la manera d'invocar el seu contingut.
 				El cas de biblioteques i tipus composts, els tractarem en apartats posteriors.</p>
 				<p>Per exemple, tot i que no ens cal conèixer el codi sencer, la classe <code>Scanner</code> ha estat desenvolupada dins d’un fitxer anomenat <code>Scanner.java</code>, i una part del seu codi és:</p>
 				<pre><code class="java">
@@ -308,9 +319,17 @@ identificador.nomMetode(parametres);</code></pre>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                <!-- cal veure com introduir el concepte de paquet sense incidir-hi gaire. Potser amb un quadre que s'obre en passar per damunt o com una clarificació dins el text: els paquets permeten organitzar les classes per facilitar-ne la seva localització de forma similar a com els sistemes de fitxers organitzen els arxius fent servir directoris. -->
                                     <p>Per crear programes modulars no és necessari crear cadascun dels mòduls que formen part del programa. Sovint els llenguatges de programació incorporen biblioteques de mòduls auxiliars que ja han estat completament desenvolupats. Aquests mòduls auxiliars ofereixen funcionalitats que van més enllà del que permet la seva sintaxi estrictament o incorporant l’opció d’executar blocs de codi que resolen tasques que es consideren de propòsit general i que poden ser d’utilitat en una àmplia gamma de programes.</p>
-                                    <p>En el cas del llenguatge Java, el seu kit de desenvolupament (JDK) incorpora un quantiós repositori de classes, organitzats en diferents packages <!-- Referenciar el concepte de paquet aquí --> d’acord a la seva temàtica, que poden ser accedides lliurement en realitzar qualsevol programa. Aquest repositori és el que s’anomena l’<b>API</b> de JAVA. </p>
+                                    <div class="iocnoteOpener">
+                                        <a href='#' role="button" data-toggle='tooltip' role= "tooltip" title="Què són els paquets o packages?" data-target="queSonPaquets" data-note-by="paquets">
+                                            <img src="images/nota2.png" alt="nota sobre paquets" style="width: 100%;"/>
+                                        </a>
+                                        
+                                            <span id="queSonPaquets" class="iocnoteSlidePane toggle-off">
+                                                Els paquets organitzen les classes de <em>Java</em> de forma equivalent a com els directoris organitzen el fitxers d'un sistema informàtic. En aquest sentit, direm que els paquets poden contenir classes i també altres paquest. De forma semblant als fitxers, les classes es poden anomenar de forma absoluta (nom complert), indicant tota la jerarquia de paquest on està continguda o bé de forma relativa (nom curt), indicant només el nom de la classe. Per poder fer servir una classe d'un biblioteca de tercers cal importar-la indicant el seu nom complert (forma absoluta). Un cop importada es pot fer servir el nom curt (forma relativa). A diferencia dels directoris del sistema de fitxers, els paquets de Java se separen entre ells fent servir <em>un punt </em>com a símbol separador.   
+                                            </span>
+                                    </div>
+                                    <p>En el cas del llenguatge Java, el seu kit de desenvolupament (JDK) incorpora un quantiós repositori de classes, organitzats en diferents <em><span id=paquets>paquets</span> (packages)</em>  d’acord a la seva temàtica, que poden ser accedides lliurement en realitzar qualsevol programa. Aquest repositori és el que s’anomena l’<b>API</b> de JAVA. </p>
                                     <p>La documentació de l’API de JAVA ofereix un enorme repertori de classes que contenen mètodes amb funcionalitats molt diverses.</p>
                                     <p>Els <em>packages</em> que contenen les classes més usuals són:
 												<ul>

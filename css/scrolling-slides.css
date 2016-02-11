@@ -369,6 +369,15 @@ hr.small {
     display:none;
 }
 
+.toolTipContainer{
+/*    position: relative;
+    overflow: visible;*/
+    position: absolute;
+    top: 100px;
+    left: -150px;
+    font-size: 12px;    
+}
+
 @media(min-width:767px) {
     .navbar {
         padding: 2px 0;

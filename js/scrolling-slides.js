@@ -83,8 +83,6 @@ IocSlider = function(){
         });
     });
 
-
-    
     this.hindx=-1;
     this.vindx=-1;
     this.watchers={"onSetCurrentSlide":[function(e){

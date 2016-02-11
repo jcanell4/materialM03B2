@@ -16,6 +16,104 @@ if(hljs){
     console.log("No existeix hljs");
 }
 
+$(".iocnoteOpener a").hover(function(e) {
+    var svgc = new SvgConnector();
+    var target = $("#"+this.dataset.target);
+    var noteBy = $("#"+this.dataset.noteBy);
+    var svgContainerId = $("#svgContainerId");
+    
+    target.addClass("top").removeClass("toggle-off").fadeTo(500,1);
+    
+    var pathCoord = svgc.calculatePathCoord(svgContainerId, target, noteBy);
+    while(pathCoord.endY - pathCoord.startY < 20){
+        target.offset({top:target.offset().top+10, left:target.offset().left});
+        pathCoord = svgc.calculatePathCoord(svgContainerId, target, noteBy);
+    }
+    
+    svgc.drawPath($("#svgId"), $("#pathId")
+                        , pathCoord.startX, pathCoord.startY
+                        , pathCoord.endX, pathCoord.endY);
+    
+    svgContainerId.addClass("top").removeClass("toggle-off").fadeTo(500,1);
+                                    
+}, function(e){
+    $("#"+this.dataset.target).fadeTo(500,0).addClass("toggle-off").removeClass("top");
+    $("#svgContainerId").fadeTo(500,0).addClass("toggle-off").removeClass("top");
+});
+
+SvgConnector = function(){
+    this.calculatePathCoord = function(svgContainer, startElem, endElem){
+        var ret = {};
+        
+        // if first element is lower than the second, swap!
+        if(startElem.offset().top > endElem.offset().top){
+            var temp = startElem;
+            startElem = endElem;
+            endElem = temp;
+        }
+
+        // get (top, left) corner coordinates of the svg container   
+        var svgTop  = svgContainer.offset().top;
+        var svgLeft = svgContainer.offset().left;
+
+        // get (top, left) coordinates for the two elements
+        var startCoord = startElem.offset();
+        var endCoord   = endElem.offset();
+
+        // calculate path's start (x,y)  coords
+        // we want the x coordinate to visually result in the element's mid point
+        ret.startX = startCoord.left + 0.5*startElem.outerWidth() - svgLeft;    // x = left offset + 0.5*width - svg's left offset
+        ret.startY = startCoord.top  + startElem.outerHeight() - svgTop;        // y = top offset + height - svg's top offset
+
+            // calculate path's end (x,y) coords
+        ret.endX = endCoord.left + 0.5*endElem.outerWidth() - svgLeft;
+        ret.endY = endCoord.top  - svgTop;
+        
+        return ret;
+    }
+
+    this.drawPath = function(svg, path, startX, startY, endX, endY) {
+        // get the path's stroke width (if one wanted to be  really precize, one could use half the stroke size)
+        var stroke =  parseFloat(path.attr("stroke-width"));
+        // check if the svg is big enough to draw the path, if not, set heigh/width
+        if (svg.attr("height") <  endY)                 svg.attr("height", endY);
+        if (svg.attr("width" ) < (startX + stroke) )    svg.attr("width", (startX + stroke));
+        if (svg.attr("width" ) < (endX   + stroke) )    svg.attr("width", (endX   + stroke));
+
+        var deltaX = (endX - startX) * 0.15;
+        var deltaY = (endY - startY) * 0.15;
+        // for further calculations which ever is the shortest distance
+        var delta  =  deltaY < this.absolute(deltaX) ? deltaY : this.absolute(deltaX);
+
+        // set sweep-flag (counter/clock-wise)
+        // if start element is closer to the left edge,
+        // draw the first arc counter-clockwise, and the second one clock-wise
+        var arc1 = 0; var arc2 = 1;
+        if (startX > endX) {
+            arc1 = 1;
+            arc2 = 0;
+        }
+        // draw tha pipe-like path
+        // 1. move a bit down, 2. arch,  3. move a bit to the right, 4.arch, 5. move down to the end 
+        path.attr("d",  "M"  + startX + " " + startY +
+                        " V" + (startY + delta) +
+                        " A" + delta + " " +  delta + " 0 0 " + arc1 + " " + (startX + delta*this.signum(deltaX)) + " " + (startY + 2*delta) +
+                        " H" + (endX - delta*this.signum(deltaX)) + 
+                        " A" + delta + " " +  delta + " 0 0 " + arc2 + " " + endX + " " + (startY + 3*delta) +
+                        " V" + endY );
+    };
+    
+    this.signum = function(x) {
+        return (x < 0) ? -1 : 1;
+    };
+    
+    this.absolute = function(x) {
+        return (x < 0) ? -x : x;
+    }
+}
+
+
+    
 ActivityManager = function (){
     this.init = function(replaceParams, id, async, onError){
         if(id){

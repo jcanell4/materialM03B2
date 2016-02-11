@@ -280,18 +280,42 @@
 
 .iocnoteOpener{
     float:right;
-    margin:-10px -50px 0px 0px;
+    margin: 0px -90px 0px 0px;
     border-radius:0;
     opacity:1;
+    width:30px;
+    height:40px;
+    position: relative;
 }
 
 .iocnoteSlidePane{
-    height: 500px;
-    width: 100%;
-    float: left;
-    padding-left: 5%;
-    background:#eee;
+    position: absolute;
+/*    z-index: 10;*/
+    border-radius:10px;
+    /*border-color: #f99b15;*/
+    border-color: #539ad7;
+    border-bottom-width: 4px;
+    border-style: solid;
+    right: 0px;
+    top: 50px;
+    padding: 3px;
+    /*background: #EEE8AA;*/
+    background: #d0eded;
     opacity:0;
+    font-size: 12px;  
+    width: 700%;
+    text-align: justify;
+}
+
+#svgContainerId{
+    position: fixed;
+    overflow: visible;
+    top: 0px;
+    /*left: -100px;*/
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    
 }
 
 .iocModalSolution .modal-header{
