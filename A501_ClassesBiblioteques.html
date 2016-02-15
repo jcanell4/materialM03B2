@@ -665,14 +665,37 @@ temperatures[i]=scanner.nextFloat();
                 </section>
                 <!--=========== END SUBSECTION Debat 1 ================-->     
 
-                <!--=========== BEGIN SUBSECTION Debat 2 ================-->    
+  					<!--=========== BEGIN SUBSECTION Debat 2 ================-->    
+                <section id="slc-discussion20" class=" section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer? Classes, biblioteques i tipus composts</h2>
+                                     <h3> Debat 2. Biblioteques</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquí us proposem crear una biblioteca específica de tractament de cadenes que afegeixi funcionalitat extra a les funcions pròpies de la classe String. A fi de practicar el que heu anat descobrint, en aquesta activitat, us proposem la creació d'una biblioteca d'utilitats que no precisi la inicialització de la classe. És a dir que faci servir mètodes estàtics.</p>
+                                    <p>Concretament us proposem que feu 3 funcions </p>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Debat 2 ================-->     
+
+                <!--=========== BEGIN SUBSECTION Debat 3 ================-->    
                 <section id="slc-toDo30" class=" section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Què cal fer - Classes, biblioteques i tipus composts</h2>
-                                     <h3 >Debat 2- Tipus composts </h3>
+                                     <h3 >Debat 3- Tipus composts </h3>
                                  </div>
                             </div>
                         </div>
@@ -989,49 +1012,6 @@ public class DadesJocDames {
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
         });
-
-        /*    
-        iocSlider = new IocSlider();
-        iocSlider.addJssorSlider("slider1_container");
-
-        $("[data-display-on-set-slide]").each(function(){
-            var slide;
-            var self = this;
-            var slideId = this.dataset.displayOnSetSlide; 
-            iocSlider.watch("onSetCurrentSlide", function(e){
-                var slide;
-                var oldSlide =e.oldValues.vindx!=-1
-                                    ?e.oldValues.vslides[e.oldValues.vindx]
-                                    :e.oldValues.hslides[e.oldValues.hindx];
-                if($(oldSlide).attr("id")===slideId){
-                   $(self).hide();
-                   if($(self).hasClass("active")){
-                        $(self).click();
-                   }
-                }
-                slide = this.hasVerticalSlides()
-                                    ?this.vslides[this.vindx]
-                                    :this.hslides[this.hindx];
-                if($(slide).attr("id")===slideId){
-                   $(self).show();
-                }
-            });
-    
-            slide = iocSlider.hasVerticalSlides()
-                                ?iocSlider.vslides[iocSlider.vindx]
-                                :iocSlider.hslides[iocSlider.hindx];
-            if($(slide).attr("id")===slideId){
-               $(this).show();
-            }
-        });
-
-        hljs.addLineNumbers();
-        hljs.initHighlightingOnLoad();
-        
-        $(document).ready(function(){
-            toReplaceOnLoad("data/toReplace.json", "A501");
-        });
-        */
     </script>
 
 </body>
