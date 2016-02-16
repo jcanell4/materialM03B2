@@ -485,18 +485,12 @@ public class OrdenaArrayText {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                <p>Com ja heu anat veient amb l'experiència que porteu programant, quan implementem una aplicació gran, la quantitat de dades es multiplica. 
-                                Sortosament, ja hem vist que podem fer servir arrays per agrupar dades. Ara bé, no totes les dades es poden emmagatzemar en arrays, i necessitarem cercar altra solució, com definir altre tipus de variable o definir-ne moltes.  
-                                En aquests casos, l'ús de variables globals està totalment desaconsellat perquè treballar amb moltes variables a l'hora que podria comportar molts errors a més de la poca eficiència que suposa definir un nombre desmesurat de variables. 
-                                Malgrat tot, l'alternativa de treballar amb variables locals no és menys arriscada ja que sovint, en els processos de nivell alt sobretot, podem arribar a necessitar moltes variables i pot ser realment tediós haver-les de passar per paràmetres i per descomptat, en el fons també una font d'errors.
-                                Per pal·liar això, molts llenguatges de programació permeten la creació d'<b>estructures de dades</b>. 
-                                Es tracta d'una forma d'agrupar dades de diferent tipus que fan referència a un mateix concepte, mantenint-les organitzades. 
-                                L'estructura de dades ideal per una aplicació gran, és una estructura jeràrquica que permeti obtenir subconjunts de dades coherents escollint el tros adequat de la jerarquia. Quan parlem d'estructura jeràrquica ens referim a algun sistema en que unes dades s'englobin dins d'altres formant un arbre.</p>
-										 
-										<p>Seleccionar la jerarquia correcta no sempre es senzill. Si l'aplicació es petita, és possible agrupar totes les dades en un sol bloc, o crear un número reduït de blocs independents.
-										Internament, cada bloc tindrà un un conjunt de dades de diversos tipus, és a dir, un bloc de dades pot estar composat de dades de diversos tipus (enters, cadenes, vectors,...) per tal d'aconseguir la jerarquia desitjada.</p>	                                
-                                   
-												El concepte d'estructura de dades és senzill, però per usar-lo cal tenir ben clar el significat d'instància de l'estructura i conèixer unes regles bàsiques.</p>
+                                <p>Com ja heu anat veient amb l'experiència que porteu programant, quan implementem una aplicació gran, la quantitat de dades es multiplica. En aquests casos, l'ús de variables globals està totalment desaconsellat perquè treballar amb moltes variables a l'hora pot comportar molts errors, a més de la poca eficiència que suposa definir un nombre desmesurat de variables.</p>
+                                <p>Malgrat tot, l'alternativa de treballar amb variables locals no és menys arriscada ja que sovint, en els processos de nivell alt podem arribar a necessitar moltes variables i pot ser realment tediós haver-les de passar per paràmetres i per descomptat, en el fons no deixa de ser també una font d'errors.</p>
+                                <p>Sortosament, ja hem vist que podem fer servir arrays per agrupar dades. Ara bé, no totes les dades es poden emmagatzemar en arrays, i ni que així fos, una aplicació gran podria necessitar també un nombre gran d'arrays. Caldrà doncs, cercar altra solució que ens permeti agrupar dades amb independència del seu tipus. </p>
+                                <p>La majoria de llenguatges de programació permeten la creació d'<b>estructures de dades</b> per poder pal·liar el problema de la disgregació de dades. Es tracta d'una forma d'agrupar dades de diferent tipus fent servir una única variable.</p>
+                                <p>L'estructura de dades ideal per aplicacions grans ja que permet organitzar les dades de forma jeràrquica i obtenir subconjunts de dades coherents escollint el tros adequat de la jerarquia. Quan parlem d'estructura jeràrquica ens referim a algun sistema en que unes dades s'englobin dins d'altres formant un arbre. Per tal que això sigui possible, cal procurar agrupar les dades relacionades sota un mateix concepte.</p>
+                                <p>Seleccionar la jerarquia correcta no sempre es senzill. Si l'aplicació es petita, és possible agrupar totes les dades en un sol bloc, o crear un número reduït de blocs independents. Internament, cada bloc tindrà un un conjunt de dades de diversos tipus (enters, cadenes, arrays,...) però organitzades de forma que siguin conceptualment coherents.</p>
 												<p class="iocimportant">Les estructures de dades són organitzacions més o menys complexes de dades, de tal forma que la seva organització ens configura un valor extra que ens ajuda a interpretar la informació que representen. Per exemple, hem de considerar una estructura de dades el conjunt de valors que poden identificar i representar una persona. Per exemple el seu nom, la seva edat, el seu DNI, les titulacions que posseeix, els treballs que ha realitzat, etc.</p>
 												<p>Els llenguatges de programació donen suport a les estructures de dades per mitjà dels tipus compostos de dades i concretament, el llenguatge JAVA, fa servir classes per definir els seus tipus de dades compostos.</p>
 												<p class="iocimportant">Els tipus de dades compostos (classe en el llenguatge JAVA) permeten definir com s'identifiquen i organitzen els valors entre sí. Com identificadors usarem noms conceptuals que ens ajudin a interpretar el que representen.</p>
@@ -520,19 +514,15 @@ public class DadesCalculadora {
                                             <span class="figuretitle">figura </span> Instanciació d'un tipus compost.                               
                                         </figcaption>
                                     </figure>
-                                    <p>Fixeu-vos que els tipus compostos no són les dades pròpiament, sinó les variables de classe que contindran les dades. En altres paraules, són el que defineix quina forma han de tenir les dades, com han de ser, quins seran els identificadors dels valors i quina la organització interna.
-I les dades? com hi afegim les dades? Abans d'explicar-ho m'agradaria remarcar que les dades no s'emmagatzemen a l'estructura. El llenguatges de programació només poden emmagatzemar dades a la memòria i és allà on aniran a parar les dades. Ara bé, per a què serveixen aleshores els tipus compostos? Doncs l'explicació que més s'hi aproxima és que actuen de plantilla. Així, els tipus compostos emmotllen la memòria per poder-hi emmagatzemar dades en la forma definida en cada tipus compost. En l'argot dels llenguatges de desenvolupament, en comptes de parlar d'emmotllar, es parla d'instanciar (figura 1). De fet, les dades de la memòria són instancies d'algun tipus de dades (siguin o no compostos).</p>
+                                    <p>Fixeu-vos que els tipus compostos no són les dades pròpiament. En realitat els tipus compostos són el que defineix quina forma han de tenir les dades, de quins tipus ha de ser, quins seran els identificadors dels diferents valors i quina la organització interna. Ara bé, i les dades? com hi afegim les dades? Abans d'explicar-ho m'agradaria remarcar que les dades no s'emmagatzemen a l'estructura. El llenguatges de programació només poden emmagatzemar dades a la memòria i és allà on aniran a parar les dades. Així doncs, per a què serveixen aleshores els tipus compostos? Doncs l'explicació que més s'hi aproxima és que actuen de plantilla. Així, els tipus compostos emmotllen la memòria per poder-hi emmagatzemar dades en la forma definida en cada tipus compost. En l'argot dels llenguatges de desenvolupament, en comptes de parlar d'emmotllar, es parla d'instanciar (figura 1). De fet, les dades de la memòria són instancies d'algun tipus de dades (siguin o no compostos).</p>
 <p>Cada tipus compost pot instanciar múltiples dades a la memòria de forma simultània. Cada dada manté els seus propis valors.
 A la pràctica, la instanciació es fa sobre una variable i es fa servir la paraula clau <em>new</em> seguida del tipus compost a instanciar amb els parèntesis d'execució:</p>
-                                    <div class="iocexample">
                                          <pre><code class="java">
 DadesCalculadora operacio1 = new DadesCalculadora();
 DadesCalculadora operacio2 = new DadesCalculadora();
                                          </code></pre>
-                                    </div>
                                     
                                     <p> A partir d'una instancia de tipus compost (variable), podem accedir als seus elements per modificar o obtenir el seu valor escrivint després del nom de la variable, un punt seguit del nom de l'element. Exemple:</p>
-                                    <div class="iocexample">
                                          <pre><code class="java">
 operacio1.operador1 = 5;
 operacio1.operador2 = 3;
@@ -542,28 +532,11 @@ if(operacio1.operacio == '+'){
     operacio1.resultat = operacio1.operador1 + operacio1.operador2;
 } 
                                          </code></pre>
-                                    </div>
                                     <p>En el llenguatge JAVA no és possible donar valors a una estructura si no s'ha creat la instancia del seu tipus compost. Si ho féssim obtindríem un error:</p>
- 												<div class="iocexample">
                                          <pre><code class="java">
 DadesCalculadora operacio2;
 operacio1.operador1 = 7; //Això dona error perquè no s'ha instanciat la variable: operacio2 = new DadesCalculadora() 
 												</code></pre>
-                                    </div> 
-                                    
-                                    <!-- NO                                  
-                                    <p>Altra qüestió important que hem de tenir en compte a l'hora de treballar amb estructures de dades és l'accés a un element de l'estructura des d'una classe que es trobi fora del paquet on es declara l'estructura.
-                                     Així, una opció seria declarar públics els elements de l'estructura. Si posem la paraula <code>public</code> davant de la declaració de cada element, a l'especificació, els elements seran accessibles des de qualsevol classe, comparteixin o no paquet amb l'estructura de dades.
-Una altre forma força útil de aconseguir l'accés, sense necessitat de declarar públics els elements de l'estructura, seria usant un classe extra que permeti l'accés  i funcioni com una biblioteca específica d'una estructura de dades. 
-Aquesta classe caldria situar-la al mateix paquet que l'estructura de dades i contindria mètodes per accedir al valor de les dades de l'estructura o per modificar-lo. 
-També resulta molt útil per verificar que les dades a introduir seran sempre vàlides. Es tracta doncs d'una opció força aconsellable. </p>
-                                    <p>Els elements d'una classe tenen diferents tipus d'accessos: </p>
-                                    <ul>
-                                        <li><em>public</em>: qualsevol altra classe té accés a l'element estigui o no al mateix paquet </li>
-                                        <li><em>private</em>: l'accés a l'element està restringit a la pròpia classe, és a dir, no es pot accedir des d' altres classes. Aquest tipus d'accés es fa servir més endavant quan feu programació orientada a objectes. </li>
-                                        <li><em>per defecte (sense tipus d'accés)</em>: l'element de la classe només potser utilitzat des de classes que estiguin al mateix paquet que la classe en la que es defineix l'element </li> 
-                                    </ul>
-                                    -->
                                 </div>
                             </div>
                         </div>
@@ -589,7 +562,7 @@ També resulta molt útil per verificar que les dades a introduir seran sempre v
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En aquesta secció se us proposa fer 2 tasques per debatre al <span class="forumGrupReduit"></span>  , 
+                                    <p>En aquesta secció se us proposa fer 2 tasques per debatre al <span class="forumDeDiscussio"></span>  , 
                                     que pretenen fer-vos reflexionar sobre els conceptes apresos en relació a les classes, biblioteques i tipus composts. Cada debat es troba en un apartat diferent. Passeu al següent per iniciar el primer debat.
                                      </p>
 												         
@@ -614,7 +587,7 @@ També resulta molt útil per verificar que les dades a introduir seran sempre v
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p> Segurament, un dels criteris que més avantatge ha suposat per el desenvolupament de programari, ha estat la reutilització del codi, perquè així s'aconsegueix codificar més ràpidament, cometent molts menys erros. És evident que per poder reutilitzar codi en diferents contextos (diferents parts d'un programa, diferents aplicacions, etc.), cal separar aquelles parts que es poden reutilitzar, de les que difícilment podran reutilitzar-se a cap altra context. </p>
+                                    <p> Segurament, un dels criteris que més avantatge ha suposat per el desenvolupament de programari, ha estat la reutilització del codi, perquè així s'aconsegueix codificar més ràpidament i es cometent molts menys erros. És evident que per poder reutilitzar codi en diferents contextos (diferents parts d'un programa, diferents aplicacions, etc.), cal separar aquelles parts que es poden reutilitzar, de les que difícilment podran reutilitzar-se a cap altra context. </p>
                                     <p>Ara bé, cal assenyalar que crear biblioteques de funcions reutilitzables no és trivial, ja que requereix d'un esforç d'abstracció important per tal d'aïllar el que és inevitablement específic d'una aplicació, del que es pot generalitzar afegint-hi paràmetres. Si no hi parem gaire atenció, tindrem tendència a barrejar-ho tot i ens resultarà impossible trobar entre el nostre codi cap funció genèrica.</p>
                                     <p>Per exemple, és habitual, en programadors poc experimentats, barrejar en una mateixa funció la demanda de dades a l'usuari, el tractament d'aquestes i la mostra del resultat. Penseu però que generalment, les demandes de dades a l'usuari i la mostra de resultats per pantalla, són realment processos molt específics i lligats  a l'aplicació en la que s'han desenvolupat. Això els converteix realment en processos difícilment reutilitzables. Per contra, els tractaments que reben les dades solen ser processos altament reutilitzables si aconseguim parametritzar-los amb una mica d'habilitat.</p>
                                     <p>A continuació se us presenta la funció <em>trobarTemperaturaMinima</em>, la qual permet trobar el valor mínim d'un conjunt de temperatures introduïdes per l'usuari. Fixeu-vos però que la funció no compleix els requisits indicats per poder ser considerada reutilitzable, ja que només es podria fer servir en algun context que calgués trobar la temperatura mínima d'una conjunt de temperatures donades per l'usuari. És a dir exclusivament l'actual!</p>
@@ -642,21 +615,35 @@ temperatures[i]=scanner.nextFloat();
             System.out.println("La Temperatura mínima és: " +  temperatures[posMin]);
         }
                                      </code></pre>
-                                     <p>Es demana que recodifiqueu la funció, dividint-la, de manera que agrupeu una part del codi en almenys una funció realment reutilitzable (poden ser més si ho desitgeu). 
-                                     Acompanyeu la codificació amb un raonament que justifiqui la divisió realitzada i pengeu-ho al <span class="forumGrupReduit">forum grup reduit</span>.</p>
+                                     <p>Es demana que recodifiqueu la funció, dividint-la, de manera que agrupeu una part del codi en almenys una funció realment reutilitzable, poden ser més si ho creieu oportú (consulteu la pista 2 si us interessa). Acompanyeu la codificació amb un raonament que justifiqui la divisió realitzada i pengeu-ho al <span class="forumDeDiscussio">forum de discussió</span>.</p>
                                     <p>També es demana que reflexioneu en el fòrum, si les noves funcions substituirien totalment la funció <em>trobarTemperaturaMinima</em> de manera que caldria eliminar-la del codi, o si per contra, les noves funcions, necessitarien encara de la funció <em>trobarTemperaturaMinima</em> adaptada a la crida d'aquestes.</p>
+                                     <p>Finalment se us demana que escolliu el codi que algun dels vostres companys hagi penjat en el fòrum. Intenteu que sigui ben diferent al que vosaltres hagueu penjat. Compareu ambdós codis (el vostre i el del company escollit) seguint les indicacions de l'informe de comparació d'aquesta activitat. Reserveu l'informe de comparació per fer el lliurament a la bústia de lliuraments.</p>
+
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-discussion11" 
                                             data-selector-clue="#slc-discussion11-clue1">
-                                        Pista
+                                        Pista 1
                                     </button>                                        
                                     <div id="slc-discussion11-clue1" class="iocClue hidden">
-                                        <h2>Pista</h2>
+                                        <h2>Pista 1</h2>
                                         <p>Identifica la part del codi destinada a preguntar a l'usuari els valors de les temperatures, la part del codi destinada a mostrar el resultat i la part del codi destinada a cercar el valor mínim.</p>
                                         <p>Creus que hi ha diferencia entre cercar la temperatura mínima, la nota mínima, el menor temps, o el menor consum de carburant? Si no hi ha diferencia, podríem idear una un procés comú a tots ells. Quines dades necessitaria el procés? Quin seria el resultat del procés?</p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-discussion11" 
+                                            data-selector-clue="#slc-discussion11-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-discussion11-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Una altre aspecte a destacar de la reutilització i les biblioteques de funcions consisteix en l'aïllament o encapsulació de blocs de codi intercanviables, de manera que sigui possible evitar que una modificació pugui produir errades en multitud de llocs del programa.</p>
+                                        <p>Per exemple en el cas que ens ocupa la font que proporciona els valors de les temperatures a tractat, és el mateix usuari, però no té perquè ser sempre així. De fet, sembla lògic que els valors de les temperatures puguin estar emmagatzemats en un fitxer o arribar a través d'Internet, etc. Si disposéssim d'una funció anomenada <em>obtenirValorsTemperatura</em> que retorni el conjunt de temperatures a analitzar amb independència d'on s'aconsegueixin, seria possible alternar la font origen de les dades sense tocar més codi que el que es troba dins d'aquesta funció, de manera que asseguraríem que la resta de programa funcionaria perfectament sigui quina sigui la funció d'obtenir les temperatures que finalment utilitzéssim.</p>
                                     </div>                                    
                                  </div>
                             </div>
@@ -672,7 +659,7 @@ temperatures[i]=scanner.nextFloat();
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Què cal fer? Classes, biblioteques i tipus composts</h2>
-                                     <h3> Debat 2. Biblioteques</h3>
+                                     <h3> Tasca 2. Biblioteques</h3>
                                  </div>
                             </div>
                         </div>
@@ -680,7 +667,208 @@ temperatures[i]=scanner.nextFloat();
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>Aquí us proposem crear una biblioteca específica de tractament de cadenes que afegeixi funcionalitat extra a les funcions pròpies de la classe String. A fi de practicar el que heu anat descobrint, en aquesta activitat, us proposem la creació d'una biblioteca d'utilitats que no precisi la inicialització de la classe. És a dir que faci servir mètodes estàtics.</p>
-                                    <p>Concretament us proposem que feu 3 funcions </p>
+                                    <p>Concretament us proposem que codifiqueu 3 funcions en una classe anomenada Strings:</p>
+                                    <ul>
+                                        <li>La funció <em>retallarFinsMida</em>. Aquesta funció està pensada per evitar que una cadena sobrepassi una mida màxima. La funció rep una cadena de caràcters i un valor numèric que representa la mida màxima de la cadena a partir de la qual començarà a retallar-se. Si la cadena passada no sobrepassa la mida màxima, la funció retornarà exactament la mateixa cadena rebuda. Per contra, si la cadena sobrepassa la mida, es retallarà de manera que en concatenar-hi pres punts esdevingui una cadena de exactament la mida màxima. Així imaginem que fem la següent crida:
+                                        <pre><code class="java">
+String retorn = Strings.retallarFinsMida("Cadena llarga que caldrà retallar", 17);
+                                        </code></pre>
+                                        La variable <em>retorn</em> valdrà "<em><code>Cadena llarga ...</code></em>" que és el valor retornat per la funció. És a dir, la cadena original retallada a 14 caràcters + els 3 punts finals.
+                                        </li>
+                                        <li><p>La funció <em>farcirFinsMida</em>, la qual rebrà també una cadena de caràcter i un valor numèric que indicarà la mida mínima a la que ha de retornar la cadena original. És a dir si la cadena fa una mida superior o igual a la mínima es retronarà exactament el valor original, però si no arriba a la mida mínima caldrà afegir caràcters [ESPAI] per la dreta de la cadena fins aconseguir una cadena de la mida mínima. Per exemple:</p>
+                                        <pre><code class="java">
+String retorn = Strings.farcirFinsMida("Curt", 10);
+                                        </code></pre>
+                                        <p>fa que s'emmagatzemi a la variable <em>retorn</em> el valor "<em><code>Curt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></em>". És a dir, la cadena original + 6 espais.</p>
+                                        <p>Opcionalment i de forma totalment voluntària, podeu incorporar més paràmetres a la funció per tal de poder escollir el caràcter de farciment i també la localització del mateix, de manera que sigui possible decidir quin caràcter es farà servir de farciment i si aquest es farà pel cantó esquerra o pel cantó dret de la cadena original.</p>
+                                        </li>
+                                        <li>La funció <em>midaExacta</em> que rebrà una cadena i un valor numèric i retornarà una cadena d'exactament la mida indicada pel valor del segon paràmetre. En cas que la cadena tingui la mida indicada es retornarà exactament el valor original, si fos més petita es farciria amb tants caràcters com fos necessari per aconseguir la mida indicada. Per contra si la cadena sobrepassés la mida desitjada, aquesta es retornaria retallada i es concatenarien 3 punts de forma que la mida resultant fos la mida exacta.   
+                                        </li>
+                                    </ul>
+                                    <p>A més de les funcions de la classe Strings, feu també una classe anomenada Tasca2 que us permeti provar el bon funcionament de les tres funcions anteriors.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-discussion20" 
+                                            data-selector-clue="#slc-discussion20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-discussion20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Recordeu que en la operació + sobre cadenes de caràcters permet concatenar qualsevol valor de qualsevol tipus. Només cal que el primer element de la suma sigui una cadena per tal que el llenguatge converteixi la resta de valors en cadenes i els concateni un darrera l'altre.</p>
+                                        <p>Recordeu també que la classe String (la pròpia de java), ja disposa d'una utilitat anomenada <em>substring</em> que permet retallar cadenes. Trobareu informació de com fer servir aquest mètode consultant <a target=_blank" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-">l'API de la classe String</a>. Tot i això les vostres funcions hauran d'afegir 3 punts quan els calgui retallar cadenes.</p>
+                                        <p>D'altra banda haureu de tenir en compte que la classe String no disposa de cap utilitat específica per farcir cadenes. Per aconseguir-ho, podeu anar afegint reiteradament els caràcters de farciment fins aconseguir la mida desitjada.</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-discussion20" 
+                                            data-selector-clue="#slc-discussion20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-discussion20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Intenteu escriure les funcions reutilitzant tant codi com pugueu. Si durant la codificació us adoneu que repetiu seqüències de codi molt semblants, plantegeu-vos que potser és possible encapsular el codi en una única funció i fer les crides pertinents quan calgui.</p>
+                                    </div>  
+<!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-discussion20" 
+                                            data-selector-solution="#slc-discussion20-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-discussion20-solution" class="iocSolution hidden">
+                                    <p>Classe Strings:</p>
+                                        <pre><code class="java">
+public class Strings {
+    /**
+     * Genera i retorna una nova cadena a partir de la cadena passada al primer 
+     * paràmetre i el caracter de farciment del segon paràmetre. En cas que la 
+     * cadena tingui una mida menor al valor absolut del tercer paràmetre, es genera 
+     * una nova cadena concatenant tants caracters de farciment com sigui 
+     * necessàri. Si el tercer paràmetre és un valor positiu es farcirà la 
+     * cadena per la dreta. Si és un valor negatiu es farcira per l'esquerra.
+     * @param cadena és la cadena base per la que es comença la cadena nova.
+     * @param farciment és el caràcter de farciment per omplir la nova cadena 
+     * fins adquiri la mida demanada
+     * @param mida és la mida de la que es disitja la nova cadena.
+     * @return la nova cadena generada
+     */
+    public static String farcirFinsMida(String cadena, char farciment, int mida){
+        int midaActual = cadena.length();
+        boolean esquerra = mida &lt; 0;
+        
+        mida = Math.abs(mida);
+        
+        while(midaActual&lt;mida){
+            if(esquerra){
+                cadena = farciment + cadena;
+            }else{
+                cadena += farciment;
+            }
+            midaActual++;
+        }
+        return cadena;
+    }      
+
+    /**
+     * Retorna una cadena generada a partir de la cadena passada en el primer 
+     * paràmetre. En cas que la cadena superi la mida del valor del segon 
+     * paràmetre, aquesta es retallarà de manera que en concatenar-hi pres punts 
+     * esdevingui una cadena de la mida exacta indicada en el segon paràmetre.
+     * @param cadena és la cadena base per la que es retallarà si cal.
+     * @param mida és la mida de la que es desitja la nova cadena.
+     * @return la nova cadena generada
+     */
+    public static String retallarFinsMida(String cadena, int mida){
+        int midaActual = cadena.length();
+        
+        if(midaActual&gt;mida){
+            cadena = cadena.substring(0, mida-3);
+            cadena += "...";
+        }
+        return cadena;
+    }      
+
+    /**
+     * Retorna una cadena generada a partir de la cadena passada en el primer 
+     * paràmetre. En cas que la cadena superi la mida del valor del tercer
+     * paràmetre (mida), aquesta es retallarà de manera que en concatenar-hi 
+     * tres punts esdevingui una cadena de la mida exacta indicada per mida.
+     * En cas que la cadena tingui una mida menor al valor de mida, es genera 
+     * una nova cadena concatenant tants caràcters de farciment com sigui 
+     * necessari.
+     * @param cadena és la cadena base per la que es retallarà si cal.
+     * @param mida és la mida de la que es desitja la nova cadena.
+     * @return la nova cadena generada
+     */
+    public static String midaExacta(String cadena, char farciment, int mida){
+        int midaActual = cadena.length();
+        int midaAbs = Math.abs(mida);
+        
+        if(midaActual&gt;Math.abs(midaAbs)){
+            cadena = retallarFinsMida(cadena, midaAbs);
+        }else{
+            cadena = farcirFinsMida(cadena, farciment, mida);
+        }
+        return cadena;
+    }      
+}
+                                        </code></pre>                         
+                                        <p>Classe Tasca2 de prova:</p>
+                                        <pre><code class="java">
+public class Tasca2 {
+
+    public static void main(String[] args) {
+        Tasca2 prg = new Tasca2();
+        
+        prg.prova();
+    }
+
+    private void prova() {
+        String retorn;
+        retorn = Strings.retallarFinsMida("Mira com es retalla aquesta frase tan llarga", 12);
+        System.out.println("Strings.retallarFinsMida(\"Mira com es retalla aquesta frase tan llarga\", 12) = "
+                                                                                     + retorn);
+        System.out.println(retorn.length()&gt;12?"Error":"Correcte");
+        System.out.println("");
+
+        retorn = Strings.retallarFinsMida("Cadena original", 20);
+        System.out.println("Strings.retallarFinsMida(\"Cadena original\", 20) = " + retorn);
+        System.out.println(retorn.length()&gt;20?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.farcirFinsMida("Cargol", '-', 35);
+        System.out.println("Strings.farcirFinsMida(\"Cargol\", '-', 35) = " + retorn);
+        System.out.println(retorn.length()&lt;35?"Error":"Correcte");
+        System.out.println("");
+
+        retorn = Strings.farcirFinsMida("25", '0', -6);
+        System.out.println("Strings.farcirFinsMida(\"25\", '0', -6) = " + retorn);
+        System.out.println(retorn.length()&lt;6?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.farcirFinsMida("78025", '0', -4);
+        System.out.println("Strings.farcirFinsMida(\"78025\", '0', -4) = " + retorn);
+        System.out.println(retorn.length()&lt;4?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.farcirFinsMida("Igual", '0', -4);
+        System.out.println("Strings.farcirFinsMida(\"Igual\", '0', 4) = " + retorn);
+        System.out.println(retorn.length()&lt;4?"Error":"Correcte");
+        System.out.println("");
+
+        retorn = Strings.midaExacta("Frase de prova", '.', 14);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '.', 14) = " + retorn);
+        System.out.println(retorn.length()!=14?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.midaExacta("Frase de prova", '_', 20);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '_', 20) = " + retorn);
+        System.out.println(retorn.length()!=20?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.midaExacta("Frase de prova", '_', -20);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '_', -20) = " + retorn);
+        System.out.println(retorn.length()!=20?"Error":"Correcte");
+        System.out.println("");
+        
+        retorn = Strings.midaExacta("Frase de prova", '_', 5);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '_', 5) = " + retorn);                
+        System.out.println(retorn.length()!=5?"Error":"Correcte");
+        System.out.println("");
+
+        retorn = Strings.midaExacta("Frase de prova", '_', -5);
+        System.out.println("Strings.midaExacta(\"Frase de prova\", '_', -5) = " + retorn);                
+        System.out.println(retorn.length()!=5?"Error":"Correcte");
+        System.out.println("");
+    }
+    
+}
+                                        </code></pre>
+                                    </div>                                    
                                  </div>
                             </div>
                         </div>
@@ -734,7 +922,7 @@ public class Jugador {
                                     </p>
 
                                     <div class="frameBox">
-                                        <h4>Questions pel debat en el <span class="forumGrupReduit"></span></h4>
+                                        <h4>Questions pel debat en el <span class="forumDeDiscussio"></span></h4>
                                          <ol>
                                             <li>Creieu que l'estructura de dades DadesJocDames respon als requisits de l'aplicació?</li>
                                             <li>Com inicialitzaries les dades de l'estructura?</li>
@@ -768,7 +956,7 @@ public class Jugador {
         <p>Aquest exemple que acabem de veure, només funcionarà si la classe Aplicació es troba en el mateix paquet que les classes  DadesJocDames i Jugador. 
 			</p>
 			<div class="frameBox">
-                                        <h4>Questions pel debat en el <span class="forumGrupReduit"></span></h4>
+                                        <h4>Questions pel debat en el <span class="forumDeDiscussio"></span></h4>
                                          <ol>
                                             <li>Si situem la classe Aplicació en un paquet diferent, encara que iniciem la variable joc, no podrem accedir a cap dels seus elements. Què haurem de fer en aquest cas?</li>
                                         </ol>
@@ -873,7 +1061,7 @@ public class DadesJocDames {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>En aquesta A501 se us demana que participeu als debats proposats al <span class="forumGrupReduit"></span>. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>En aquesta A501 se us demana que participeu als debats proposats al <span class="forumDeDiscussio"></span>. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
                                 <p>És molt important pel vostre aprenentatge que participeu en els debats proposats. També és important pel professor doncs pot avaluar l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
                             </  div>
                         </div>
