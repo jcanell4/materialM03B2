@@ -454,7 +454,7 @@ public class OrdenaArrayText {
         String[] array = {"Un", "Dos", "Tres", "Quatre", "Cinc"};
         Arrays.sort(array);
         System.out.println("Els elements ordenats són:");
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i &lt; array.length; i++) {
             System.out.println(array[i]);
         }
     }
@@ -463,7 +463,22 @@ public class OrdenaArrayText {
 											
 												</li>                                 
                                     </ul>      
-                                    <p>Hi ha moltes més classes que podeu consultar per tal de conèixer com funcionen aquests mètodes estàtics. </p>              
+                                    <p>De forma semblant a com s'han codificat les classes de l'API que tenen mètodes estàtics, nosaltres podem també caracteritzar d'estàtiques les nostres funcions. N'hi ha prou de posar la paraula clau <em>static</em> just després del modificador <em>public</em>, però davant de la resta de la declaració de la funció, de forma idèntica a com hem declarat fins ara el mètode <em>main</em> de la nostra classe principal. Per exemple:</p>              
+                                    <pre><code class="java">
+public class ClasseExemple{
+
+    public static funcioEstatica1(/* Declaració normal de paràmetres si s'escau */){
+        /* Codi de la funció */
+        ...
+    }
+    
+    public static funcioEstatica2(...
+        ...
+    }
+    
+    ...
+}
+                                    </code></pre>
                                 </div>
                             </div>
                         </div>
@@ -580,7 +595,7 @@ operacio1.operador1 = 7; //Això dona error perquè no s'ha instanciat la variab
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Què cal fer? Classes, biblioteques i tipus composts</h2>
-                                     <h3> Debat 1. La reutilització </h3>
+                                     <h3> Tasca 1. Debat sobre la reutilització </h3>
                                  </div>
                             </div>
                         </div>
@@ -659,7 +674,7 @@ temperatures[i]=scanner.nextFloat();
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Què cal fer? Classes, biblioteques i tipus composts</h2>
-                                     <h3> Tasca 2. Biblioteques</h3>
+                                     <h3> Tasca 2. Codificació de Biblioteques de funcions estàtiques</h3>
                                  </div>
                             </div>
                         </div>
@@ -712,7 +727,7 @@ String retorn = Strings.farcirFinsMida("Curt", 10);
                                         <h2>Pista 2</h2>
                                         <p>Intenteu escriure les funcions reutilitzant tant codi com pugueu. Si durant la codificació us adoneu que repetiu seqüències de codi molt semblants, plantegeu-vos que potser és possible encapsular el codi en una única funció i fer les crides pertinents quan calgui.</p>
                                     </div>  
-<!-- Button trigger modal -->
+                                    <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-discussion20" 
@@ -882,8 +897,8 @@ public class Tasca2 {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 >Què cal fer - Classes, biblioteques i tipus composts</h2>
-                                     <h3 >Debat 3- Tipus composts </h3>
+                                     <h2 >Què cal fer - Classes, biblioteques i tipus compostos</h2>
+                                     <h3 >Tasca 3- Debat sobre els Tipus compostos </h3>
                                  </div>
                             </div>
                         </div>
@@ -893,16 +908,39 @@ public class Tasca2 {
                                 <p>Imaginem una aplicació per jugar al senzill joc de les dames.  
                                 Recordeu que es juga amb un tauler de 10x10 caselles, que juguen 2 jugadors i que cada jugador disposa de 12 fitxes de diferent color que cal disposar a certes caselles del tauler. 
                                 Imaginem que l'aplicació vol identificar el nom dels dos jugadors i també el nombre de partides guanyades. </p> 	
-										  <p>Si decidim representar el tauler com una matriu de valors numèrics, en el que el valor zero representi les caselles buides, el valor u, 
-										  representi les fitxes blanques i el valor dos, les negres; podríem crear la següent especificació per donar resposta a les necessitats de l'aplicació:</p>
-										 <div class="iocexample">                                  
-                                    <pre><code class="java">
+						    	<p>Si decidim representar el tauler com una matriu de valors numèrics, en el que el valor -1 representi les caselles buides, el valor 0, representi les fitxes blanques i el valor 2, les negres; podríem crear les següents especificacions per donar resposta a les necessitats de l'aplicació:</p>
+								<div class="iocexample">        
+                                    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                       <tr>
+                                           <td>                                    
+                                               <p>Opció 1)</p>                                  
+                                               <pre><code class="java">
 public class DadesJocDames {    
-    int CASELLA_BUIDA = 0;
-    int FITXA_BLANCA = 1;
-    int FITXA_NEGRA = 2;
+    int FITXA_BLANCA = 0;
+    int FITXA_NEGRA = 1;
+    int CASELLA_BUIDA = -1;
 
-    int[][] tauler = new int[10][10];
+    int[][] tauler = 
+                new int[10][10];
+    int torn;
+    String[] nomJugadors = 
+                  new String[2];
+    int[] victoriesPerJugador = 
+                     new int[2];
+}
+    
+                                               </code></pre>
+                                           </td>                                                
+                                           <td>  
+                                               <p>Opció 2)</p>                                  
+                                               <pre><code class="java">
+public class DadesJocDames {    
+    int FITXA_BLANCA = 0;
+    int FITXA_NEGRA = 1;
+    int CASELLA_BUIDA = -1;
+
+    int[][] tauler = 
+               new int[10][10];
     int torn;
     Jugador jugadorBlanques;
     Jugador jugadorNegres;
@@ -912,56 +950,47 @@ public class Jugador {
     String nom;
     int partidesGuanyades;
 }
-                                    </code></pre>
-                                    </div>
-                                    <p>La classe DadesJocDames contindria les dades que permeten identificar un moment determinat de la  partida que s'estigui jugant (la posició de les fitxes, el torn del jugador que li toqui tirar i les dades especifiques de cada un d'aquest agrupades com estructura Jugador). 
-                                    Serà la classe Jugador, l'encarregada  de mantenir les dades específiques referents a un jugador (el nom i les partides guanyades).</p>
-                                                                        <p>
-												Cal deixar clar, però que l'especificació només indica la composició de les dades. 
-												Per poder-es fer servir, caldrà declarar variables indicant el nom de l'estructura a usar, de forma semblant com s'indiquen el tipus de dades.                                    
-                                    </p>
+                                               </code></pre>
+                                           </td>
+                                           <td>  
+                                               <p>Opció 3)</p>                                  
+                                               <pre><code class="java">
+public class DadesJocDames {    
+    int FITXA_BLANCA = 0;
+    int FITXA_NEGRA = 1;
+    int CASELLA_BUIDA = -1;
 
-                                    <div class="frameBox">
-                                        <h4>Questions pel debat en el <span class="forumDeDiscussio"></span></h4>
-                                         <ol>
-                                            <li>Creieu que l'estructura de dades DadesJocDames respon als requisits de l'aplicació?</li>
-                                            <li>Com inicialitzaries les dades de l'estructura?</li>
-                                        </ol>
-                                    </div>
-                        <p>Per accedir als elements d'una estructura de dades, després del nom de la variable concatenarem un punt seguit del nom de l'element on desitgem accedir o manipular.  </p>
-                                <div class="iocexample">
-                                         <pre><code class="java">      
- public class Aplicacio {
-    DadesJocDames joc;
-
-    public static void main(String[] args){
-        Aplicacio aplicacio = new Aplicacio();
-        aplicacio.inici();
-    }
-
-    void inici(){
-        joc = new DadesJocDames();
-        joc.jugadorBlanques = new Jugador();
-	     joc.jugadorNegres = new Jugador();
-
-        //Exemples d'assignació i lectura dels valors        
-        joc.jugadorBlanques.nom = demanarNomJugador(joc.FITXA_BLANCA);
-        joc.jugadorNegres.nom = demanarNomJugador(joc.FITXA_NEGRA);
-        ...
-    }
-    
-    ...
+    int[][] tauler = 
+               new int[10][10];
+    int torn;
+    Jugador[] jugadors = 
+                new Jugador[2];
 }
-        </code></pre>
-        <p>Aquest exemple que acabem de veure, només funcionarà si la classe Aplicació es troba en el mateix paquet que les classes  DadesJocDames i Jugador. 
-			</p>
-			<div class="frameBox">
-                                        <h4>Questions pel debat en el <span class="forumDeDiscussio"></span></h4>
-                                         <ol>
-                                            <li>Si situem la classe Aplicació en un paquet diferent, encara que iniciem la variable joc, no podrem accedir a cap dels seus elements. Què haurem de fer en aquest cas?</li>
-                                        </ol>
-                                    </div>
-                                    
+
+public class Jugador {    
+    String nom;
+    int partidesGuanyades;
+}
+                                               </code></pre>
+                                           </td>
+
+                                       </tr>
+                                   </table>                          
+                               </div>
+                               <p>En cada una de les opcions, la classe <em>DadesJocDames</em> és l'estructura de dades que permetria identificar un moment determinat de la  partida que s'estigui jugant, com la posició de les fitxes, el torn del jugador que li toqui tirar o les dades especifiques de cada jugador (el seu nom i les partides que porta guanyades).</p>
+                               <p>A la opció 2 i 3, la classe Jugador és l'encarregada  de mantenir les dades específiques referents a un jugador (el nom i les partides guanyades), mentre que a la opció 1 aquestes dades es troben repartides en dos arrays: <em>nomJugadors</em> i  <em>victoriesPerJugador</em>. La opció 3 es diferencia de la 2 en que els dos jugadors s'inclouen en un array de dues posicions en lloc de fer servir dos variables.</p>
+                                <p>Et demanem que comparis les tres opcions i discuteixis al fòrum les següents preguntes sobre les estructures:</p>
+                                <div class="frameBox">
+                                    <h4>Qüestions pel debat en el <span class="forumDeDiscussio"></span></h4>
+                                     <ol>
+                                        <li>Creieu que les 3 estructures de dades DadesJocDames responen als requisits de l'aplicació?</li>
+                                        <li>Quines avantatges i inconvenients creieu que tenen cada una d'elles?</li>
+                                        <li>Quina instrucció utilitzaries per declarar una variable del tipus <em>DadesJocDames</em> i poder-la començar a fer servir, amb independència de quina sigui la opció utilitzada a la declaració?</li>
+                                        <li>A les opcions 2 i 3, es fa servir una tipus compost (<em>Jugador</em>) dintre de l'estructura principal. En tractar-se d'un tipus compost, caldrà també inicialitzar-lo en algun moment. Com ho faríes per cada opció?</li>
+                                        <li>A banda de les inicialitzacions del tipus compostos Jugador, les tres opcions requeriran d'un petit procés d'inicialització que asseguri que abans de començar les dades seran coherents. És a dir, el taules es trobi buit i els comptadors de partides guanyades de cada jugador es trobi a zero. Com implementaries aquest procés?</li>
+                                        <li>Imagina que disposes d'una funció anomenada <em>demanarNomJugador</em> que demana a l'usuari que introdueix el seu nom i un cop escrit el retorni. Com assignaries el nom retornat a una variable del tipus <em>DadesJocDames</em>, anomenada <em>joc</em>? Contempla la solució per cada una de les 3 opcions?</li>
+                                    </ol>
+                                </div>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -972,73 +1001,122 @@ public class Jugador {
                                     </button>                                        
                                     <div id="slc-toDo30-clue1" class="iocClue hidden">
                                         <h2>Pista</h2>
-                                         <p>En JAVA les variables que representen Estructures de dades es declaren:</p>
+                                        <ol>
+                                            <li>Per valorar si una estructura respon als requeriments d'una aplicació cal analitzar diverses situacions i valorar si és capaç d'emmagatzemar i recuperar tota la inforció requerida. En el cas que ens ocupa cal assegurar en cada moment la posició de les fitxes, el torn del jugador, el nom de cada un d'ells i el comptador de partides guanyades per saber qui d'ambdós acabarà guanyant.</li>
+                                            <li>Per valorar avantatges i inconvenients d'una estructura cal analitzar si està més o menys estructurada (hi ha jerarquia o bé es tracta les variables internes s'acumulen dins el contenidor sense un ordre clar.). També cal analitzar si son fàcils de fer servir, per això es poden mirar si els noms estan encertats si la jerarquia facilita recordar el nom i la seva utilitat, etc. Tingueu en compte que en general cal trobar un equilibri entre les estructures excessivament jerarquitzades (fàcils de dividir i mantenir agrupades, de recordar, etc, però per contra incrementen la complexitat ja que calen més inicialitzacions, cal escriure més, etc.) i les dades disperses (que són àgils de fer servir en nombre reduït, però requereixin de molta atenció si el nombre creix). </li>
+                                            <li><p>Recordeu que en JAVA les variables que representen Estructures de dades es declaren:</p>
                                    
                                     <div class="iocexample">
                                          <pre><code class="java">
-                                          NomEstructuraDeDades identificadorVariable;
+NomEstructuraDeDades identificadorVariable;
                                          </code></pre>
                                     </div>
                                     
-                                    <p>Abans de fer servir una variable d'algun tipus d'estructura de dades cal haver-la inicialitzat. 
-                                    Si no es fa, a l'intentar usar-la obtindrem un error que aturarà l'execució. 
-                                   
-                                    És possible inicialitzar les variables des de la pròpia declaració: </p>
+                                    <p>I que abans de fer servir una variable d'algun tipus d'estructura de dades cal haver-la inicialitzat. 
+                                    Si no es fa, a l'intentar usar-la obtindrem un error que aturarà l'execució. És possible inicialitzar les variables des de la pròpia declaració: </p>
                                     <div class="iocexample">
                                          <pre><code class="java">
-                                          NomEstructuraDeDades identificadorVariable = new NomEstructuraDeDades ();
-} 
+NomEstructuraDeDades identificadorVariable = new NomEstructuraDeDades ();
                                          </code></pre>
-                                    </div>                       
-                                          
-                                        
-                                    </div>
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-toDo30" 
-                                            data-selector-solution="#slc-toDo30-solution">
-                                       Solució
-                                    </button>                                        
-                                    <div id="slc-toDo30-solution" class="iocSolution hidden">
-                                        <h2>Solució </h2>
-                                      <div class="iocexample">
+                                    </div> 
+                                    <p>O bé després que s'hagin declarat:</p>
+                                    <div class="iocexample">
                                          <pre><code class="java">
-public class DadesJocDames {    
-    int CASELLA_BUIDA = 0;
-    int FITXA_BLANCA = 1;
-    int FITXA_NEGRA = 2;
+NomEstructuraDeDades identificadorVariable; 
 
-    int[][] tauler = new int[10][10];
+...
+
+identificadorVariable = new NomEstructuraDeDades ();
+                                         </code></pre>
+                                    </div> 
+                                    <p>Però mai es poden fer servir abans d'haver-se inicialitzat</p>
+                                     </li>
+                                     <li><p>Es poden inicialitzar dins la mateixa estructura: </p>
+                                                                         <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                       <tr>
+                                           <td>                                    
+                                               <p>Opció 2)</p>                                  
+                                               <pre><code class="java">
+public class DadesJocDames {    
+    int FITXA_BLANCA = 0;
+    int FITXA_NEGRA = 1;
+    int CASELLA_BUIDA = -1;
+
+    int[][] tauler = 
+               new int[10][10];
     int torn;
     Jugador jugadorBlanques = new Jugador();
     Jugador jugadorNegres = new Jugador();
 }
-												</code></pre>
-												<p>O bé: </p>
-												<div class="iocexample">
-                                         <pre><code class="java">
-		DadesJocDames joc;
-        
-        ...
-	
-		public static void main(String[] args){
-			//Abans d'inicialitzar el elemnts jugadorBlanques i jugadorNegres cal incialitzar joc
-			...
-			//inicialització en diferit	
-			joc = new DadesJocDames();
-			//Ja es possible inicialitzar els elements interns
-			...
-			joc.jugadorBlanques = new Jugador();
-			joc.jugadorNegres = new Jugador();
-			// a partir d'aquí ja queda tot inicialitzat.
-			...
-		}
-		...
-												</code></pre>
-                                    </div>
-                                   
+                                              </code></pre>
+                                           </td>
+                                           <td>  
+                                               <p>Opció 3)</p>                                  
+                                               <pre><code class="java">
+public class DadesJocDames {    
+    int FITXA_BLANCA = 0;
+    int FITXA_NEGRA = 1;
+    int CASELLA_BUIDA = -1;
 
+    int[][] tauler = 
+               new int[10][10];
+    int torn;
+    Jugador[] jugadors = {new Jugador(), new Jugador()};
+}
+
+                                               </code></pre>
+                                           </td>
+
+                                       </tr>
+                                   </table>                          
+
+<p>O bé en  el codi, abans de començar-les a fer servir: </p>
+                                                                         <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                       <tr>
+                                           <td>                                    
+                                               <p>Opció 2)</p>                                  
+                                               <pre><code class="java">
+
+DadesJocDames joc = new DadesJocDames();
+
+joc.jugadorBlanques = new Jugador();
+
+
+                                              </code></pre>
+                                           </td>
+                                           <td>  
+                                               <p>Opció 3)</p>                                  
+                                               <pre><code class="java">
+DadesJocDames joc = new DadesJocDames();
+
+joc.jugadors[joc.FITXA_BANCA] = new Jugador();
+
+                                               </code></pre>
+                                           </td>
+
+                                       </tr>
+                                   </table>                          
+
+                                     </li>
+                                     <li>Cal fer un bucle que ompli la matriu <em>tauler</em> de valors -1 que ens indica casella buida. En Java els comptadors no cal inicialitzar-los ja que qualsevol declaració numèrica el llenguatge l'inicialitza a zero.</li>
+                                     <li>
+                                               <pre><code class="java">
+//Exemples d'assignació i lectura dels valors        
+//OPCIÓ 2
+joc.jugadorBlanques.nom = demanarNomJugador();
+...
+
+//OPCIÓ 1
+joc.jugador[joc.FITXA_NEGRE] = demanarNomJugador();
+
+//OPCIÓ 3
+joc.jugador[joc.FITXA_NEGRE].nom = demanarNomJugador();
+
+
+                                               </code></pre>
+                                     </li>
+                                        </ol>
+                                    </div>
                                 </div>
                             </div>
                         </div>
