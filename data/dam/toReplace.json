@@ -27,39 +27,39 @@
         "Tip_GR":{"type":"text", "value":"GR"}
     },
     "RP0":{
-        "dataInici": {"type":"text", "value":"18/02/2016"},
-        "dataFinal": {"type":"text", "value":"18/02/2016"}        
+        "dataInici": {"type":"text", "value":"22/02/2016"},
+        "dataFinal": {"type":"text", "value":"22/02/2016"}        
     },        
     "RP1":{
-        "dataInici": {"type":"text", "value":"19/02/2016"},
-        "dataFinal": {"type":"text", "value":"24/02/2016"},       
+        "dataInici": {"type":"text", "value":"22/02/2016"},
+        "dataFinal": {"type":"text", "value":"27/02/2016"},       
         "dataLimit": {"type":"text", "value":"01/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P1</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271341"}
     },        
     "RP2":{
-        "dataInici": {"type":"text", "value":"25/02/2016"},
-        "dataFinal": {"type":"text", "value":"02/03/2016"},       
+        "dataInici": {"type":"text", "value":"28/02/2016"},
+        "dataFinal": {"type":"text", "value":"05/03/2016"},       
         "dataLimit": {"type":"text", "value":"07/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P2</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271801"}
     },        
     "RP3":{
-        "dataInici": {"type":"text", "value":"03/03/2016"},
-        "dataFinal": {"type":"text", "value":"09/03/2016"},       
+        "dataInici": {"type":"text", "value":"06/03/2016"},
+        "dataFinal": {"type":"text", "value":"11/03/2016"},       
         "dataLimit": {"type":"text", "value":"13/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P3</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271362"}
     },        
     "RP4":{
-        "dataInici": {"type":"text", "value":"10/03/2016"},
-        "dataFinal": {"type":"text", "value":"16/03/2016"},       
+        "dataInici": {"type":"text", "value":"12/03/2016"},
+        "dataFinal": {"type":"text", "value":"17/03/2016"},       
         "dataLimit": {"type":"text", "value":"19/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P4</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271823"}
     },        
     "RP5":{
-        "dataInici": {"type":"text", "value":"17/03/2016"},
+        "dataInici": {"type":"text", "value":"18/03/2016"},
         "dataFinal": {"type":"text", "value":"28/03/2016"},       
         "dataLimit": {"type":"text", "value":"31/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P5</a>"},
