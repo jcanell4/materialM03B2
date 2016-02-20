@@ -1,15 +1,14 @@
 {
     "defaultValues":{
         "targetBlank":{"type":"attr", "name":"target", "value":"_blank"},
-        "fpr":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271350"},
-        "fgr":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271340\">fòrum reduït de discussió</a>"},
-        "fgrUrl":{"type":"attr", "name":"href", "value":"href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271340"},
-        "fgt":{"type":"html", "value":"<a target='_blank' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271355\">fòrum del grup de treball</a>"},
-        "fge":{"type":"html", "value":"<a target='_blank' class='forumEspecialitatUrl' href=\"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271361\">fòrum de l'especialitat</a>"},
-        "fgeUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=271361"},
-        "bll":{"type":"attr", "name":"href", "value":"bustiaLliurament"},
-        "pst":{"type":"attr", "name":"href", "value":"docs/225XM03B2_Projecte_Enunciat.odt"},
-        "mat":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u3/a1/continguts.html#entrada_de_sequeencies_de_valors_per_teclat"},
+        "forumPrincipalUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317893"},
+        "forumPrincipal":{"type":"html", "value":"<a target='_blank' class='forumPrincipalUrl' href=\"#\">fòrum generalde l'aula</a>"},
+        "taulerUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317892"},
+        "tauler":{"type":"html", "value":"<a target='_blank' class='taulerUrl' href=\"#\">Tauler de l'aula</a>"},
+        "enunciatProjecteUrl":{"type":"attr", "name":"href", "value":"docs/225XM03B2_Projecte_Enunciat.odt"},
+        "enunciatProjecte":{"type":"html", "value":"<a class='enunciatProjecteUrl' href=\"#\">enunciat del projecte</a>"},
+        "matEntradaPerteclatUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/materials/FP/Materials/IC_S_INF/INF_IC_S_M03/web/html/WebContent/u3/a1/continguts.html#entrada_de_sequeencies_de_valors_per_teclat"},
+        "midaGrupCol":{"type":"text", "value":"15"},
         "Ll_TG":{"type":"text", "value":"TG"},
         "Ll_TE":{"type":"text", "value":"TE"},
         "Ll_F":{"type":"text", "value":"F"},
@@ -24,7 +23,8 @@
         "Tip_I":{"type":"text", "value":"I"},
         "Tip_GG":{"type":"text", "value":"GG"},
         "Tip_GT":{"type":"text", "value":"GT"},
-        "Tip_GR":{"type":"text", "value":"GR"}
+        "Tip_GR":{"type":"text", "value":"GR"},
+        "noData":{"type":"text", "value":"--"}
     },
     "RP0":{
         "dataInici": {"type":"text", "value":"22/02/2016"},
@@ -35,63 +35,79 @@
         "dataFinal": {"type":"text", "value":"27/02/2016"},       
         "dataLimit": {"type":"text", "value":"01/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P1</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271341"}
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317914"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumPrincipalUrl' href=\"#\">fòrum de discussió del període I</a>"},
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317910"}
     },        
     "RP2":{
         "dataInici": {"type":"text", "value":"28/02/2016"},
         "dataFinal": {"type":"text", "value":"05/03/2016"},       
         "dataLimit": {"type":"text", "value":"07/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P2</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271801"}
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317919"},        
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període II</a>"},
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317902"},
+        "triaGrupCol":{"type":"html", "value":"<a class='triaGrupColUrl' target='_blank'>aplicatiu per triar grup de col·laboració</a>"},
+        "triaGrupColUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3735#triaGrupCol"}
     },        
     "RP3":{
         "dataInici": {"type":"text", "value":"06/03/2016"},
         "dataFinal": {"type":"text", "value":"11/03/2016"},       
         "dataLimit": {"type":"text", "value":"13/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P3</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271362"}
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317925"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període III</a>"},
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317901"}
     },        
     "RP4":{
         "dataInici": {"type":"text", "value":"12/03/2016"},
         "dataFinal": {"type":"text", "value":"17/03/2016"},       
         "dataLimit": {"type":"text", "value":"19/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P4</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271823"}
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317934"}
     },        
     "RP5":{
         "dataInici": {"type":"text", "value":"18/03/2016"},
         "dataFinal": {"type":"text", "value":"28/03/2016"},       
         "dataLimit": {"type":"text", "value":"31/03/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P5</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271825"}
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317937"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període V</a>"},
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317933"}
     },        
     "RP6":{
         "dataInici": {"type":"text", "value":"29/03/2016"},
         "dataFinal": {"type":"text", "value":"04/04/2016"},       
         "dataLimit": {"type":"text", "value":"06/04/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P6</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271830"}
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317940"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període VI</a>"},
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=322347"}
     },        
     "RP7":{
         "dataInici": {"type":"text", "value":"05/04/2016"},
         "dataFinal": {"type":"text", "value":"13/04/2016"},       
         "dataLimit": {"type":"text", "value":"15/04/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P7</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271837"}
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317943"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període VII</a>"},
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=322352"}
     },        
     "RP8":{
         "dataInici": {"type":"text", "value":"14/04/2016"},
         "dataFinal": {"type":"text", "value":"24/04/2016"},       
         "dataLimit": {"type":"text", "value":"24/04/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P8</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=271837"}
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=322221"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període VIII</a>"},
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=322355"}
     },        
     "RPM":{
         "dataInici": {"type":"text", "value":"25/04/2016"},
         "dataFinal": {"type":"text", "value":"15/05/2016"},       
         "dataLimit": {"type":"text", "value":"15/05/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament PM</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=278345"}       
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317945"}       
     },         
     "A400": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='#'>A400</a>"},
@@ -132,6 +148,14 @@
 
         "A400p2I":{"selector":"#A400p2I", "type":"ref", "name":"RP2", "value":"dataInici"},
         "A400p2F":{"selector":"#A400p2F", "type":"ref", "name":"RP2", "value":"dataFinal"},
+
+        "A400idTGC":{"selector":"#A400idTGC", "type":"ref", "name":"TGC", "value":"idActivitat"},
+        "A400naTGC":{"selector":"#A400naTGC", "type":"ref", "name":"TGC", "value":"nomActivitat"},
+        "A400llTGC":{"selector":"#A400llTGC",  "type":"ref", "name":"TGC", "value":"lliurament"},
+        "A400drTGC":{"selector":"#A400drTGC",  "type":"ref", "name":"TGC", "value":"dataRecomanada"},
+        "A400dlTGC":{"selector":"#A400dlTGC",  "type":"ref", "name":"TGC", "value":"dataLimit"},
+        "A400caTGC":{"selector":"#A400caTGC", "type":"ref", "name":"TGC", "value":"categoria"},
+        "A400tipTGC":{"selector":"#A400tipTGC", "type":"ref", "name":"TGC", "value":"tipus"},
 
         "A400idA403":{"selector":"#A400idA403", "type":"ref", "name":"A403", "value":"idActivitat"},
         "A400naA403":{"selector":"#A400naA403", "type":"ref", "name":"A403", "value":"nomActivitat"},
@@ -250,8 +274,8 @@
         "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP1", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
-        "forumDeDiscussio":{"selector":".forumDeDiscussio", "defaultValue":"fgr"},
-        "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "defaultValue":"fgrUrl"},
+        "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP1", "value":"forumDeDiscussio"},
+        "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP1", "value":"forumDeDiscussioUrl"},
         "targetBlank":{"selector":".targetBlank", "defaultValue":"targetBlank"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP1", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP1", "value":"bustiaLliuramentUrl"},
@@ -262,7 +286,7 @@
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A402_funcions2.html?dam'>A402</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A402 Funcions II"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
-        "materialsM03U3":{"selector":".materialsM03U3", "defaultValue":"mat"},
+        "materialsM03U3":{"selector":".materialsM03U3", "defaultValue":"matEntradaPerteclatUrl"},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"ref", "name":"RP1", "value":"dataFinal"},
         "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP1", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
@@ -270,6 +294,20 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP1", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP1", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA402.odt'> l'informe </a>"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"TGC_UF2.html?dam"}
+    },
+    "TGC": {
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='TGC_UF2.html?dam'>TGC</a>"},
+        "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"TCG Triar el grup de col·laboració"},
+        "lliurament": {"selector":".lliurament", "defaultValue":"noData"},
+        "dataRecomanada":{"selector":".dataRecomanada", "type":"ref", "name":"RP2", "value":"dataInici"},
+        "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"defaultValues", "value":"noData"},
+        "triaGrupCol":{"selector":".triaGrupCol", "type":"ref", "name":"RP2", "value":"triaGrupCol"},
+        "triaGrupColUrl":{"selector":".triaGrupColUrl", "type":"ref", "name":"RP2", "value":"triaGrupColUrl"},
+        "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
+        "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
+        "midaGrupCol": {"selector":".midaGrupCol", "defaultValue":"midaGrupCol"},
+        "periode": {"selector":".periode", "type":"text", "value":"període II"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A403_funcions3.html?dam"}
     },
     "A403": {
@@ -280,7 +318,8 @@
         "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP2", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
-        "forumDeDiscussio":{"selector":".forumDeDiscussio", "defaultValue":"fgr"},
+        "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP2", "value":"forumDeDiscussio"},
+        "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP2", "value":"forumDeDiscussioUrl"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP2", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP2", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA403.odt'> l'informe </a>"},
@@ -297,9 +336,9 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP2", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP2", "value":"bustiaLliuramentUrl"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A405_dissenyDescendent1.html?dam"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
-        "forumPresentacio":{"selector":".forumPresentacio", "defaultValue":"fpr"},
-        "triaGrupTreball":{"selector":".triaGrupTreball", "defaultValue":"tgt"}
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"},
+        "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP2", "value":"forumDeDiscussio"},
+        "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP2", "value":"forumDeDiscussioUrl"}
     },
     "A405": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A405_dissenyDescendent1.html?dam'>A405</a>"},
@@ -309,7 +348,8 @@
         "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP3", "value":"dataLimit"},
         "categoria": {"selector":".categoria", "defaultValue":"Cat_NQ"},
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
-        "forumDeDiscussio":{"selector":".forumDeDiscussio", "defaultValue":"fgr"},
+        "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP3", "value":"forumDeDiscussio"},
+        "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP3", "value":"forumDeDiscussioUrl"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP3", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP3", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA405.odt'> l'informe </a>"},
@@ -340,9 +380,10 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP5", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP5", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA407.odt'> l'informe </a>"},
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A501_ClassesBiblioteques.html?dam"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
-        "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A501_ClassesBiblioteques.html?dam"},
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"},
+        "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP5", "value":"forumDeDiscussio"},
+        "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP5", "value":"forumDeDiscussioUrl"},
         "urlActivitatA403":{"selector":".urlActivitatA403", "type":"attr", "name":"href", "value":"../A403_funcions3.html?dam#slc-toDo__slc-toDo22"}
     },
     "A501": {
@@ -355,10 +396,11 @@
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP6", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP6", "value":"bustiaLliuramentUrl"},
-        "forumDeDiscussio":{"selector":".forumDeDiscussio", "defaultValue":"fgr"},
+        "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP6", "value":"forumDeDiscussio"},
+        "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP6", "value":"forumDeDiscussioUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA501.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A502_AnalisiIPlanificacio.html?dam"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"}
     },
     "A502": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A501_AnalisiIPlanificacio.html?dam'>A502</a>"},
@@ -372,11 +414,10 @@
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='projecte/docs/informePlanificacio.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A503_Implementacio1.html?dam"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"},
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"},
         "pdfDocumentacio":{"selector":".pdfDocumentacio", "type":"attr", "name":"href", "value":"docs/documentacio.pdf"},
-        "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
-        "forumEspecialitat": {"selector":".forumEspecialitat", "defaultValue":"fge"},
-        "forumEspecialitatUrl": {"selector":".forumEspecialitatUrl", "defaultValue":"fgeUrl"}
+        "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP7", "value":"forumDeDiscussio"},
+        "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP7", "value":"forumDeDiscussioUrl"}
     },
     "A503": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A503_Implementacio1.html?dam'>A503</a>"},
@@ -391,7 +432,7 @@
         "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/Informe503.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A504_Implementacio2.html?dam"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"}
     },
     "A504": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A504_Implementacio2.html?dam'>A504</a>"},
@@ -406,7 +447,7 @@
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA504.odt'> l'informe </a>"},
         "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A505_Implementacio3.html?dam"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"}
     },
     "A505": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A505_Implementacio3.html?dam'>A505</a>"},
@@ -421,7 +462,7 @@
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA505.odt'> l'informe </a>"},
         "forumTreball":{"selector":".forumTreball", "defaultValue":"fgt"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A5MI_PropostaIndividualMillora.html?dam"},
-        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"pst"}
+        "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"}
     },
     "A5MI": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A5MI_PropostaIndividualMillora.html?dam'>A5MI</a>"},

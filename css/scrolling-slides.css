@@ -407,10 +407,11 @@ hr.small {
     .nextSection{
         right: 5px;
     }
-#menu-toggle {
-    z-index: 999;
-    position: fixed;
-/*    top: 0;*/
-    right: 5px;
-}
+
+    #menu-toggle {
+        z-index: 999;
+        position: fixed;
+    /*    top: 0;*/
+        right: 5px;
+    }
 }

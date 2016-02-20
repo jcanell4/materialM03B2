@@ -17,24 +17,28 @@ if(hljs){
 }
 
 $(".iocnoteOpener a").hover(function(e) {
-    var svgc = new SvgConnector();
-    var target = $("#"+this.dataset.target);
-    var noteBy = $("#"+this.dataset.noteBy);
-    var svgContainerId = $("#svgContainerId");
+    var $svgc = new SvgConnector();
+    var $target = $("#"+this.dataset.target);
+    var $noteBy = $("#"+this.dataset.noteBy);
+    var $svgContainer = $("#svgContainerId");
+    var bcolor = $(".iocnoteSlidePane").css("border-color");
+    var $path = $("#pathId");
+    var $svg = $("#svgId");
     
-    target.addClass("top").removeClass("toggle-off").fadeTo(500,1);
+    $target.addClass("top").removeClass("toggle-off").fadeTo(500,1);
     
-    var pathCoord = svgc.calculatePathCoord(svgContainerId, target, noteBy);
+    var pathCoord = $svgc.calculatePathCoord($svgContainer, $target, $noteBy);
     while(pathCoord.endY - pathCoord.startY < 20){
-        target.offset({top:target.offset().top+10, left:target.offset().left});
-        pathCoord = svgc.calculatePathCoord(svgContainerId, target, noteBy);
+        $target.offset({top:$target.offset().top+10, left:$target.offset().left});
+        pathCoord = $svgc.calculatePathCoord($svgContainer, $target, $noteBy);
     }
     
-    svgc.drawPath($("#svgId"), $("#pathId")
-                        , pathCoord.startX, pathCoord.startY
-                        , pathCoord.endX, pathCoord.endY);
+    $path.attr("stroke", bcolor);
     
-    svgContainerId.addClass("top").removeClass("toggle-off").fadeTo(500,1);
+    $svgc.drawPath($svg, $path , pathCoord.startX, pathCoord.startY
+                                        , pathCoord.endX, pathCoord.endY);
+    
+    $svgContainer.addClass("top").removeClass("toggle-off").fadeTo(500,1);
                                     
 }, function(e){
     $("#"+this.dataset.target).fadeTo(500,0).addClass("toggle-off").removeClass("top");
@@ -309,11 +313,14 @@ ActivityManager = function (){
                return ret;
            };
            var fReplaceData = function(selector, activity, defalutValues) {
+               if(!activity){
+                   return;
+               }
                if(activity.defaultValue){
                    activity = defaultValues[activity.defaultValue];
-               }
-               if(activity.type == "ref"){
-                   var refActivity = data[activity.name][activity.value];
+                   fReplaceData(selector, activity, defalutValues);
+               }else if(activity.type == "ref"){
+                    var refActivity = data[activity.name][activity.value];
                     fReplaceData(selector, refActivity, defalutValues);
                }else if(activity.type=="arrayText"){
                    var value = "";
@@ -336,13 +343,13 @@ ActivityManager = function (){
                }else if(activity.type=="attr"){
                    $(selector).attr(activity.name, activity.value);
                }           
-           };
-           var activities = data[id];    
-           for(var i in activities){
-               var activity = activities[i];
-               var selector = activity.selector;
-               fReplaceData(selector, activity, defaultValues);
-           }
+            };
+            var activities = data[id];    
+            for(var i in activities){
+                var activity = activities[i];
+                var selector = activity.selector;
+                fReplaceData(selector, activity, defaultValues);
+            }
         }).fail(onError);    
     };
 };
