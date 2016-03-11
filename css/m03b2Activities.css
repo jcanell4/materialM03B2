@@ -427,14 +427,17 @@ figure.left{
     top: 0px; 
     left: 0px; 
     float:left;
-    margin-right:20px
+    margin-right:20px;
+    text-align: left;
+}
+
+.figscope{
+    counter-increment: cfigure;
 }
 
 figcaption {
     display: block;
-    counter-increment: cfigure;
     margin: 0 auto 0.1em;
-    text-align: left;
     font-size: 0.8em;
     padding-top: 5px;
 }
@@ -443,12 +446,12 @@ figcaption .figuretitle {
     font-weight: bold;
 }
 
-figcaption .figuretitle:after {
-    content: " " counter(cfigure) ". ";
+.figscope .figuretitle:after {
+    content: " "counter(cfigure) ". ";
 }
 
-.figref span:after {
-    content: " "counter(cfigure+1);
+.figscope .figref:after {
+    content: " "counter(cfigure);
 }
 
 .footfigure {
@@ -471,6 +474,30 @@ ol.nestedCounter ol > li {
 ol.nestedCounter ol > li:before {
     content: counters(item, ".") ". ";
     margin-left: -20px;
+}
+
+.vsections{
+    counter-reset: debat;
+    counter-reset: tasca;
+    counter-reset: cfigure;
+}
+
+section.debat,
+.debat.section{
+    counter-increment: debat;
+}
+
+section.tasca,
+.tasca.section{
+    counter-increment: tasca;
+}
+
+.debat .debatTitle:after{
+     content: " "counter(debat);
+}
+
+.tasca .tascaTitle:after{
+     content: " "counter(tasca);
 }
 
 #sidepanel-wrapper hr{

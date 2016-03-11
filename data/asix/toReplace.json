@@ -397,7 +397,7 @@
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"}
     },
     "A502": {
-        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A501_AnalisiIPlanificacio.html?asix'>A502</a>"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A502_AnalisiIPlanificacio.html?asix'>A502</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A502 Anàlisi i Planificació"},
         "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FD"},{"defaultValue":"Ll_B"}]},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"ref", "name":"RP7", "value":"dataFinal"},

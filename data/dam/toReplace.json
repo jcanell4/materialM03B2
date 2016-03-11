@@ -361,10 +361,10 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP4", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP4", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"projecte/A407_Uf2Projecte2.html?dam"}
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"projecte/A407_Uf2Projecte2Dam.html?dam"}
     },
     "A407": {
-        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A407_Uf2Projecte2.html?dam'>A407</a>"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A407_Uf2Projecte2Dam.html?dam'>A407</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A407 Projecte II"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"ref", "name":"RP5", "value":"dataFinal"},
@@ -397,7 +397,7 @@
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"}
     },
     "A502": {
-        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A501_AnalisiIPlanificacio.html?dam'>A502</a>"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A502_AnalisiIPlanificacio.html?dam'>A502</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A502 Anàlisi i Planificació"},
         "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FD"},{"defaultValue":"Ll_B"}]},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"ref", "name":"RP7", "value":"dataFinal"},

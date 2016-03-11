@@ -16,7 +16,7 @@
                                      <p><strong>No es tracta</strong> de fer un disseny detallat de la interfície, ni una descripció acurada de les accions. En realitat es tracta només d'identificar els elements que cal tenir en compte en aquell nucli de control i les seves connexions. De fet, podem dir que el mapa d'unitats de control és tan sols una eina per descobrir l'estructura d'una aplicació i poder planificar l'esquelet de classes i mètodes que caldrà desenvolupar quan implementem l'aplicació.</p>
                                      <figure id ="figura_pantalles" class="left">
                                         <img width="464" src="images/activities/diagramaPantalles.png" alt="diagrama de seqüència de pantalles">
-                                        <figcaption style="width: 510px; max-width: 75%;">
+                                        <figcaption class="figscope" style="width: 510px; max-width: 75%;">
                                             <span class="figuretitle">figura </span> Instanciació d'un tipus compost.                               
                                         </figcaption>
                                     </figure>
