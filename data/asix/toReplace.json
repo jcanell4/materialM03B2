@@ -373,12 +373,13 @@
         "tipus": {"selector":".tipus", "defaultValue":"Tip_I"},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP5", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP5", "value":"bustiaLliuramentUrl"},
-        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA407.odt'> l'informe </a>"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A501_ClassesBiblioteques.html?asix"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"},
         "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP5", "value":"forumDeDiscussio"},
         "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP5", "value":"forumDeDiscussioUrl"},
-        "urlActivitatA403":{"selector":".urlActivitatA403", "type":"attr", "name":"href", "value":"../A403_funcions3.html?asix#slc-toDo__slc-toDo22"}
+        "urlActivitatA403":{"selector":".urlActivitatA403", "type":"attr", "name":"href", "value":"../A403_funcions3.html?asix#slc-toDo__slc-toDo22"},
+        "respostaTasca2":{"selector":".respostaTasca2", "type":"html", "value":"<a href='docs/dissenyDescendentTasca2A407.odt'>dissenyDescendentTasca2A407.odt</a>"},     
+        "respostaTasca4":{"selector":".respostaTasca4", "type":"html", "value":"<a href='docs/dissenyDescendentTasca4A407.odt'>dissenyDescendentTasca4A407.odt</a>"}     
     },
     "A501": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A501_ClassesBiblioteques.html?asix'>A501</a>"},
