@@ -361,10 +361,10 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP4", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP4", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA406.odt'> l'informe </a>"},
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"projecte/A407_Uf2Projecte2.html?asix"}
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"projecte/A407_Uf2Projecte2Asix.html?asix"}
     },
     "A407": {
-        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A407_Uf2Projecte2.html?asix'>A407</a>"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A407_Uf2Projecte2Asix.html?asix'>A407</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A407 Projecte II"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"ref", "name":"RP5", "value":"dataFinal"},
