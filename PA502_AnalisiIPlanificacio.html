@@ -178,18 +178,21 @@
                                              <figure id ="figura_pantalles">
                                                 <img src="images/activities/fluxControl.png" alt="Control"/>
                                                 <figcaption >
-                                                    <span class="figuretitle">figura </span> Instanciació d'un tipus compost.                               
+                                                    <span class="figuretitle">figura </span> Esquema simplificat del flux d'execució d'una aplicació.                               
                                                 </figcaption>
                                             </figure>
                                             
                                         </div>
-                                        <ol>
-                                            <li>Observa la imatge (<span class="figref">figura</span>). Què diries que representa?</li>
-                                            <li>Quin dels elements indicats en el text consideres que està pintat de color verd?</li>
-                                            <li>Podria, l'element de color blau, ser un menú de selecció?</li>
-                                            <li>Quina d'ambdues figures de color blau fosc seria el control?</li>
-                                            <li>Hi ha aplicacions que necessiten molts menús i sovint, uns imbricats dins d'altres (menús, submenús, ...). Creus que aquest tipus d'aplicacions respondrien també a l'esquema de la figura? Indica quins canvis creus que caldria afegir-hi si no fos així.</li>
-                                        </ol>
+                                        <div class="frameBox">
+                                            <h4>Ítems pel debat al <span class="forumDeDiscussio"></span></h4>
+                                            <ol>
+                                                <li>Observa la imatge (<a href="figura_pantalles" class="figref">figura</a>). Què diries que representa?</li>
+                                                <li>Quin dels elements indicats en el text consideres que està pintat de color verd?</li>
+                                                <li>Podria, l'element de color blau, ser un menú de selecció?</li>
+                                                <li>Quina d'ambdues figures de color blau fosc seria el control?</li>
+                                                <li>Hi ha aplicacions que necessiten molts menús i sovint, uns imbricats dins d'altres (menús, submenús, ...). Creus que aquest tipus d'aplicacions respondrien també a l'esquema de la figura? Indica quins canvis creus que caldria afegir-hi si no fos així.</li>
+                                            </ol>
+                                        </div>
                                     </div>
                                 </div> 
                             </div>
@@ -204,14 +207,59 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
-                                     <h3> Seqüències dels punts de control de l'aplicació</h3>
+                                     <h3> Aplicacions, mòduls tasques i accions</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    
+                                    <p>Abans d'entrar en el disseny concret d'una aplicació convindria reflexionar sobre certs elements presents a la majoria d'aplicacions i que ens poden ajudar a descompondre els primers nivells del disseny. Si féssim una anàlisi de la majoria d'aplicacions de certa entitat, ens adonaríem que sovint la seva funcionalitat es trobar organitzada per blocs més o menys amplis anomenats també mòduls. La principal característica dels mòduls és que aglutinen diverses tasques que guarden entre elles certa relació comuna. Per exemple, en una aplicació de gestió bancaria es podria considerar un mòdul, tota aquella funcionalitat relacionada amb les dades específiques dels clients: altes de clients, baixes, consulta, etc. També es podria considerar un mòdul la funcionalitat relacionada amb les transaccions econòmiques: consulta de moviments, realització de transferències, abonament en efectiu, pagament de taló, etc.</p>
+                                     <p class="iocimportant">Entenem per <strong>mòdul</strong> una agrupació de diverses tasques que presenta algun nexe comú.</p>
+                                     <p>Si analitzéssim els mòduls, ens adonaríem que aquests se solen descompondre, o bé en mòduls més petits o bé, en darrer terme, en unitats funcionals i especifiques que anomenarem tasques. Les tasques són una unitat funcional perquè responen a un fi específic amb sentit propi. Per exemple, seguint amb l'aplicació de gestió bancària, es podria considerar una tasca, donar d'alta un client, o bé consultar les seves dades o modificar-les. També seria una tasca la consulta de saldo o dels moviments d'un compte corrent, la demanda d'un abonament en efectiu o bé la realització d'una transferencia.</p>
+                                     <p class="iocimportant">Entenem per <strong>tasca</strong> una seqüència organitzada d'accions dirigides a aconseguir un fi o meta ben definit.</p>
+                                     <p>Per aconseguir dur a terme un tasca caldrà realitzar un conjunt més o menys ampli d'accions destinades a satisfer el fi de la tasca. Les accions són processos, operacions o tractaments que modifiquen o canvien el sistema.</p>
+                                     <p class="iocimportant">Entenem per <strong>acció</strong> allò que pot comportar canvis en un sistema.</p>
+                                     <div class="figscope">
+                                         <p>Així, direm que les aplicacions es descomponen en mòduls, que els mòduls contenent taques i que les tasques són una seqüència d'accions:</p>
+                                         <figure id ="descomposicioAplicacions">
+                                            <img src="images/activities/descomposicioAplicacions.png" alt="descomposició d'aplicacions">
+                                            <figcaption style="width: 510px; max-width: 75%;">
+                                                <span class="figuretitle">figura </span> Descomposició d'aplicacions.                               
+                                            </figcaption>
+                                        </figure>
+                                          <div class="frameBox">
+                                            <h4>Ítems pel debat al <span class="forumDeDiscussio"></span></h4>
+                                            <p>Fixa't que l'esquema de la <a href="#descomposicioAplicacions" class="figref">figura</a> presenta certa similitud amb un disseny descendent.</p>
+                                            <ol>
+                                                <li>Discuteix al fòrum quines equivalències creus que es poden establir entre ambdós esquemes: el disseny descendent i el presentat a la <a href="#descomposicioAplicacions" class="figref">figura</a>. </li>
+                                                <li>Pensa en una aplicació de gestió de facturació d'una empresa. Quins mòduls creus que tindria?</li>
+                                                <li>I si fos una aplicació de gestió d'un hospital?. Indica en el fòrum un possible mòdul. Intenta no repetir els mòduls indicats pels teus companys.</li>
+                                            </ol>
+                                        </div>
+                                     </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Debat 2 ================-->
+                <!--=========== BEGIN SUBSECTION Debat 3 ================-->    
+                <section id="slc-discussion23" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
+                                     <h3> ??????</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                     
+                                     
                                 
                                     <p>Un aspecte important a l'hora de dissenyar aplicacions és disposar d'una idea clara de les seqüències de control lògiques d'una aplicació. Entenem per controls o unitats de control d'una aplicació, aquelles parts d'una aplicació que constitueixen una unitat lògica en si mateixa i que permeten a l'usuari encaminar l'execució de l'aplicació fins aconseguir demanar el procés d'una determinada funcionalitat. En aquest sentit, podem dir que l'execució d'una aplicació es pot entendre com una seqüència de controls en que l'usuari va interaccionant amb l'aplicació.</p>
                                     <p>A grans trets, distingirem dos tipus de nuclis de control, els que gestionen la navegació de l'usuari i faciliten que aquest indiqui exactament què vol (per exemple els menús), i els encarregats de resoldre una funcionalitat especifica, requerint dades a l'usuari, realitzant un tractament específic de les dades i presentant el resultat a l'usuari (per exemple, a la calculadora d'àrees vista amb anterioritat, un nucli de control de funcionalitat específica seria el càlcul de l'àrea d'una quadrat, o el d'un cercle, etc).</p>
