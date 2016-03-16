@@ -217,8 +217,10 @@
                                     <p>La descomposició de les tasques en canvi, no presenta la mateixa independència, sinó que contràriament, les accions que les composen s'han d'executar en un ordre determinat i no és possible escollir les accions a executar, perquè la tasca en realitat forma un tot indivisible, amb un inici i un final. Per exemple, seguint amb l'aplicació de banca per Internet, la consulta de saldo implica la demanda del compte del que volem fer la consulta, posteriorment, el compte entrar serà verificat i si es reconeix com a propi, es cercarà el saldo a les dades del sistema i es mostrarà a la pantalla del nostre dispositiu. No és possible realitzar la tasca canviant l'ordre de les accions o saltant-se alguna d'elles. És per això que diem que les tasques formen un tot indivisible.</p>
                                     <div class="frameBox">
                                         <h4>Ítems pel debat al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Imagina una calculadora que permetés realitzar operacions bàsiques, càlculs estadístics i operacions amb matrius.</p>
                                         <ol>
-                                            <li>.</li>
+                                            <li>Indica si creus que l'aplicació tindria mòduls i quins creu que serien.</li>
+                                            <li>Indica una possible tasca i enumera quines podrien ser les seves accions.</li>
                                         </ol>
                                     </div>
                                 </div> 
@@ -226,7 +228,7 @@
                         </div>
                     </div>                
                 </section>
-                <!--=========== END SUBSECTION Debat 2 ================-->
+                <!--=========== END SUBSECTION Debat 4 ================-->
               <!--=========== BEGIN SUBSECTION Debat 1 ================-->    
                 <section id="slc-discussion21" class="debat section">                    
                     <div class="container">
@@ -281,14 +283,100 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
-                                     <h3>Implementació del patró bàsic del disseny descendent</h3>
+                                     <h3>Esquema d'implementació del patró bàsic del disseny descendent</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                     
+                                    <p>El disseny descendent té com objectiu facilitar la implementació. Per tal de facilitar el trasllat del de l'esquema descendent al codi, convindrà establir algunes etapes intermèdies.</p>
+                                    <p>Per exemple, pot ser convenient definir un esquema on es pugui reflectir la correspondència entre les diferents opcions incloses a l'aplicació i els mòduls. També entre les opcions dels mòduls i les tasques implicades. I també entre les tasques i la seqüència d'accions.</p>
+                                    <p>Imaginem que volem crear aquest esquema per tal de poder implementar una senzilla aplicació de mòbil, la qual ens permet escollir entre 3 tipus de serveis: realitzar trucades telefòniques, enviar missatges SMS o xatejar via whatsapp. Les dues primeres opcions, a més, ens permeten activar el servei (trucada o missatge SMS) indicant directament el número o bé seleccionant un dels contactes de l'agenda. El xat només deixa seleccionar contactes que siguin també usuaris de whatsapp. Per això disposa d'una agenda pròpia.</p>
+                                    <div class="tablescope">
+                                        <p>A la <span class="tableref">taula </span> trobeu l'esquema de l'aplicació en el format indicat:</p>
+                                        <table border="1" cellspacing="0" cellpadding="1">
+                                            <caption>Esquema de mòduls i tasques de l'aplicació</caption>
+                                             <tr>
+                                                <th>id</th>
+                                                <th>Accions</th>
+                                                <th>connexions</th>
+                                            </tr>
+                                             <tr>
+                                                <td>menuPrincipal</td>
+                                                <td>
+                                                    <p>1) Escollir</p>
+                                                    <ol type="a">
+                                                        <li>trucades</li>
+                                                        <li>missatges SMS</li>
+                                                        <li>whatsapp</li>
+                                                    </ol>
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>menuTrucades si s'escull a)</li>
+                                                        <li>menuMissatges si s'escull b)</li>
+                                                        <li>iniciWhatsapp si s'escull c)</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td>menuTrucades</td>
+                                                <td>
+                                                    <p>1) Escollir</p>
+                                                    <ol type="a">
+                                                        <li>Seleccionar contacte</li>
+                                                        <li>Entrar número</li>
+                                                    </ol>
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>trucadaPerAgenda si s'escull a)</li>
+                                                        <li>trucadaDirecta si s'escull b)</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td>trucadaPerAgenda</td>
+                                                <td>
+                                                    <ol>
+                                                        <li>mostrar llista de contactes numerada</li>
+                                                        <li>entrar número identificador del contacte</li>
+                                                        <li>obtenir número de telèfon del contacte</li>
+                                                        <li>realitzar trucada </li>
+                                                    </ol>
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>menuPrincipal</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td>trucadaDirecta</td>
+                                                <td>
+                                                    <ol>
+                                                        <li>entrar número</li>
+                                                        <li>realitzar trucada </li>
+                                                    </ol>
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>menuPrincipal</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td>...</td>
+                                                <td>...</td>
+                                                <td>...</td>
+                                            </tr>
+                                         </table>
+                                         <div class="tablecaption" style="width: 800px; max-width: 75%;">
+                                            <span class="tabletitle">taula</span>Esquema de detall dels mòduls i tasques de l'aplicació de mòbils que serveix com exemple il·lustrador.
+                                         </div>
+                                         <br/>
+                                    </div>
                                      
                                 
                                     <p>Un aspecte important a l'hora de dissenyar aplicacions és disposar d'una idea clara de les seqüències de control lògiques d'una aplicació. Entenem per controls o unitats de control d'una aplicació, aquelles parts d'una aplicació que constitueixen una unitat lògica en si mateixa i que permeten a l'usuari encaminar l'execució de l'aplicació fins aconseguir demanar el procés d'una determinada funcionalitat. En aquest sentit, podem dir que l'execució d'una aplicació es pot entendre com una seqüència de controls en que l'usuari va interaccionant amb l'aplicació.</p>
