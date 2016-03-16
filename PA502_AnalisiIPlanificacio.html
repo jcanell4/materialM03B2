@@ -145,14 +145,88 @@
                                 <div class=bodySlide>
                                     <p>La modularització es basa en la segregació del codi en diversos fitxers i biblioteques. En JAVA, això suposa la creació  de múltiples classes addicionals. cada classe s'escriu en un fitxer propi.</p>
                                     <p>La modularització ha representat per el desenvolupament d'aplicacions una gran avantatge ja que ha permès crear aplicacions molt més complexes del que seria possible sense ella. Tot i així, cal anar molt en compte a l'hora de definir els mòduls i dissenyar les biblioteques, ja que la divisió implicarà inevitablement incrementar el nombre de funcions, que quedaran dispersades en múltiples fitxers. Si fem divisions sense criteri, o fem servir un criteri erroni, correm el risc d'incrementar la complexitat en lloc de reduir-la.</p>
-                                    <p>A continuació us presentarem un seguit de debats que us ajudaran a centrar l'atenció en els elements importants que cal tenir en compte a l'hora d'encarar un disseny modular. Us aconsellem que per cada debat realitzeu al menys 2 intervencions. Una inicial per exposar el vostre punt de vista en llegir el supòsit del debat i una final a mode de conclusió tenint en compte les intervencions de tots els companys.</p>
+                                    <p>A continuació us presentarem un seguit de debats que us ajudaran a centrar l'atenció en els elements importants que cal tenir en compte a l'hora d'encarar un disseny modular.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <!--=========== END SUBSECTION Debat 0 ================-->    
-                
+                <!--=========== BEGIN SUBSECTION Debat 2 ================-->    
+                <section id="slc-discussion22" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
+                                     <h3> Aplicacions, mòduls tasques i accions</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Abans d'entrar en el disseny concret d'una aplicació convindria reflexionar sobre certs elements presents a la majoria d'aplicacions i que ens poden ajudar a descompondre els primers nivells del disseny. Si féssim una anàlisi de la majoria d'aplicacions de certa entitat, ens adonaríem que sovint la seva funcionalitat es trobar organitzada per blocs més o menys amplis anomenats també mòduls. La principal característica dels mòduls és que aglutinen diverses tasques que guarden entre elles certa relació comuna. Per exemple, en una aplicació de gestió bancaria es podria considerar un mòdul, tota aquella funcionalitat relacionada amb les dades específiques dels clients: altes de clients, baixes, consulta, etc. També es podria considerar un mòdul la funcionalitat relacionada amb les transaccions econòmiques: consulta de moviments, realització de transferències, abonament en efectiu, pagament de taló, etc.</p>
+                                     <p class="iocimportant">Entenem per <strong>mòdul</strong> una agrupació de diverses tasques que presenta algun nexe comú.</p>
+                                     <p>Si analitzéssim els mòduls, ens adonaríem que aquests se solen descompondre, o bé en mòduls més petits o bé, en darrer terme, en unitats funcionals i especifiques que anomenarem tasques. Les tasques són una unitat funcional perquè responen a un fi específic amb sentit propi. Per exemple, seguint amb l'aplicació de gestió bancària, es podria considerar una tasca, donar d'alta un client, o bé consultar les seves dades o modificar-les. També seria una tasca la consulta de saldo o dels moviments d'un compte corrent, la demanda d'un abonament en efectiu o bé la realització d'una transferencia.</p>
+                                     <p class="iocimportant">Entenem per <strong>tasca</strong> una seqüència organitzada d'accions dirigides a aconseguir un fi o meta ben definit.</p>
+                                     <p>Per aconseguir dur a terme un tasca caldrà realitzar un conjunt més o menys ampli d'accions destinades a satisfer el fi de la tasca. Les accions són processos, operacions o tractaments que modifiquen o canvien el sistema.</p>
+                                     <p class="iocimportant">Entenem per <strong>acció</strong> allò que pot comportar canvis en un sistema.</p>
+                                     <div class="figscope">
+                                         <p>Així, direm que les aplicacions es descomponen en mòduls, que els mòduls contenent taques i que les tasques són una seqüència d'accions:</p>
+                                         <figure id ="descomposicioAplicacions">
+                                            <img src="images/activities/descomposicioAplicacions.png" alt="descomposició d'aplicacions">
+                                            <figcaption style="width: 510px; max-width: 75%;">
+                                                <span class="figuretitle">figura </span> Descomposició d'aplicacions.                               
+                                            </figcaption>
+                                         </figure>
+                                         <p>El disseny descendent podria continuar més enllà de les accions, sobre tot si es tracta d'accions complexes. Malgrat tot si les accions són senzilles probablement en tindrem prou arribat fins aquest nivell. Com ja s'ha comentat depen, dependrà molt de la nostra experiència i de la complexitat de l'algoritme a resoldre.</p>
+                                         <div class="frameBox">
+                                            <h4>Ítems pel debat al <span class="forumDeDiscussio"></span></h4>
+                                            <p>Fixa't que l'esquema de la <a href="#descomposicioAplicacions" class="figref">figura</a> presenta certa similitud amb un disseny descendent.</p>
+                                            <ol>
+                                                <li>Discuteix al fòrum quines equivalències creus que es poden establir entre ambdós esquemes: el disseny descendent i el presentat a la <a href="#descomposicioAplicacions" class="figref">figura</a>. </li>
+                                                <li>Pensa en una aplicació de gestió de facturació d'una empresa. Quins mòduls creus que tindria?</li>
+                                                <li>I si fos una aplicació de gestió d'un hospital?. Indica en el fòrum un possible mòdul. Intenta no repetir els mòduls indicats pels teus companys.</li>
+                                            </ol>
+                                        </div>
+                                     </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Debat 2 ================-->
+                <!--=========== BEGIN SUBSECTION Debat 4 ================-->    
+                <section id="slc-discussion24" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
+                                     <h3> Característiques dels elements base del disseny descendent d'aplicacions </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Sense que es tracti d'una regla fixa, en general les aplicacions estaran compostes de diversos mòduls i els mòduls de diverses tasques. Tant els mòduls com les tasques presenten certa independència entre ells. És a dir, hi ha poca dependència entre el mòduls o entre les tasques d'un mateix mòdul. Això significa, que generalment no hi ha un ordre específic d'execució dels mòduls o les tasques i fins i tot, que no és necessari executar tots els mòduls o tasques quan s'entra a l'aplicació, sinó que pot dependre dels interessos de l'usuari.</p>
+                                    <p>Per exemple, Imagineu l'aplicació de banca per Internet. Podem fer una gestió específica, posem per cas consultar el nostre saldo, sense necessitat de realitzar la resta (canviar les nostres dades personals, fer una transferència, bloquejar targeta, ...). A més, podem realitzar les gestions en l'ordre que més ens convingui, així podem fer una transferència primer i després consultar el saldo o bé consultar primer el saldo i fer després la transferència. Això és així gràcies a la independència entre mòduls i entre tasques.</p>
+                                    <p>Per regla general, les aplicacions disposen d'un menú de selecció inicial que permet a l'usuari escollir amb quin dels mòduls desitja treballar. Se sol conèixer com a menú principal o opcions inicials. Els mòduls permeten també escollir entre diverses tasques i de forma semblant a les aplicacions aquesta selecció acostuma a gestionar-se a través d'un menú específic del mòdul.</p>
+                                    <p>La descomposició de les tasques en canvi, no presenta la mateixa independència, sinó que contràriament, les accions que les composen s'han d'executar en un ordre determinat i no és possible escollir les accions a executar, perquè la tasca en realitat forma un tot indivisible, amb un inici i un final. Per exemple, seguint amb l'aplicació de banca per Internet, la consulta de saldo implica la demanda del compte del que volem fer la consulta, posteriorment, el compte entrar serà verificat i si es reconeix com a propi, es cercarà el saldo a les dades del sistema i es mostrarà a la pantalla del nostre dispositiu. No és possible realitzar la tasca canviant l'ordre de les accions o saltant-se alguna d'elles. És per això que diem que les tasques formen un tot indivisible.</p>
+                                    <div class="frameBox">
+                                        <h4>Ítems pel debat al <span class="forumDeDiscussio"></span></h4>
+                                        <ol>
+                                            <li>.</li>
+                                        </ol>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Debat 2 ================-->
               <!--=========== BEGIN SUBSECTION Debat 1 ================-->    
                 <section id="slc-discussion21" class="debat section">                    
                     <div class="container">
@@ -200,50 +274,6 @@
                     </div>                
                 </section>
                 <!--=========== END SUBSECTION Debat 1 ================-->
-                <!--=========== BEGIN SUBSECTION Debat 2 ================-->    
-                <section id="slc-discussion22" class="debat section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
-                                     <h3> Aplicacions, mòduls tasques i accions</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>Abans d'entrar en el disseny concret d'una aplicació convindria reflexionar sobre certs elements presents a la majoria d'aplicacions i que ens poden ajudar a descompondre els primers nivells del disseny. Si féssim una anàlisi de la majoria d'aplicacions de certa entitat, ens adonaríem que sovint la seva funcionalitat es trobar organitzada per blocs més o menys amplis anomenats també mòduls. La principal característica dels mòduls és que aglutinen diverses tasques que guarden entre elles certa relació comuna. Per exemple, en una aplicació de gestió bancaria es podria considerar un mòdul, tota aquella funcionalitat relacionada amb les dades específiques dels clients: altes de clients, baixes, consulta, etc. També es podria considerar un mòdul la funcionalitat relacionada amb les transaccions econòmiques: consulta de moviments, realització de transferències, abonament en efectiu, pagament de taló, etc.</p>
-                                     <p class="iocimportant">Entenem per <strong>mòdul</strong> una agrupació de diverses tasques que presenta algun nexe comú.</p>
-                                     <p>Si analitzéssim els mòduls, ens adonaríem que aquests se solen descompondre, o bé en mòduls més petits o bé, en darrer terme, en unitats funcionals i especifiques que anomenarem tasques. Les tasques són una unitat funcional perquè responen a un fi específic amb sentit propi. Per exemple, seguint amb l'aplicació de gestió bancària, es podria considerar una tasca, donar d'alta un client, o bé consultar les seves dades o modificar-les. També seria una tasca la consulta de saldo o dels moviments d'un compte corrent, la demanda d'un abonament en efectiu o bé la realització d'una transferencia.</p>
-                                     <p class="iocimportant">Entenem per <strong>tasca</strong> una seqüència organitzada d'accions dirigides a aconseguir un fi o meta ben definit.</p>
-                                     <p>Per aconseguir dur a terme un tasca caldrà realitzar un conjunt més o menys ampli d'accions destinades a satisfer el fi de la tasca. Les accions són processos, operacions o tractaments que modifiquen o canvien el sistema.</p>
-                                     <p class="iocimportant">Entenem per <strong>acció</strong> allò que pot comportar canvis en un sistema.</p>
-                                     <div class="figscope">
-                                         <p>Així, direm que les aplicacions es descomponen en mòduls, que els mòduls contenent taques i que les tasques són una seqüència d'accions:</p>
-                                         <figure id ="descomposicioAplicacions">
-                                            <img src="images/activities/descomposicioAplicacions.png" alt="descomposició d'aplicacions">
-                                            <figcaption style="width: 510px; max-width: 75%;">
-                                                <span class="figuretitle">figura </span> Descomposició d'aplicacions.                               
-                                            </figcaption>
-                                        </figure>
-                                          <div class="frameBox">
-                                            <h4>Ítems pel debat al <span class="forumDeDiscussio"></span></h4>
-                                            <p>Fixa't que l'esquema de la <a href="#descomposicioAplicacions" class="figref">figura</a> presenta certa similitud amb un disseny descendent.</p>
-                                            <ol>
-                                                <li>Discuteix al fòrum quines equivalències creus que es poden establir entre ambdós esquemes: el disseny descendent i el presentat a la <a href="#descomposicioAplicacions" class="figref">figura</a>. </li>
-                                                <li>Pensa en una aplicació de gestió de facturació d'una empresa. Quins mòduls creus que tindria?</li>
-                                                <li>I si fos una aplicació de gestió d'un hospital?. Indica en el fòrum un possible mòdul. Intenta no repetir els mòduls indicats pels teus companys.</li>
-                                            </ol>
-                                        </div>
-                                     </div>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>                
-                </section>
-                <!--=========== END SUBSECTION Debat 2 ================-->
                 <!--=========== BEGIN SUBSECTION Debat 3 ================-->    
                 <section id="slc-discussion23" class="debat section">
                     <div class="container">
@@ -251,7 +281,7 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
-                                     <h3> ??????</h3>
+                                     <h3>Implementació del patró bàsic del disseny descendent</h3>
                                  </div>
                             </div>
                         </div>
