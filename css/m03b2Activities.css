@@ -459,6 +459,32 @@ figcaption .figuretitle {
     text-align: right;
 }
 
+.tablescope{
+    counter-increment: ctable;
+}
+
+.tablescope caption {
+    caption-side: bottom;
+    padding-top: 5px;
+}
+
+caption .tabletitle {
+    font-weight: bold;
+}
+
+.tablescope .tabletitle:after {
+    content: " "counter(ctable) ". ";
+}
+
+.tablescope .tableref:after {
+    content: " "counter(ctable);
+}
+
+.foottable {
+    margin: -0.7em auto 0;
+    text-align: right;
+}
+
 ol {
     counter-reset: item;
 }
@@ -480,6 +506,7 @@ ol.nestedCounter ol > li:before {
     counter-reset: debat;
     counter-reset: tasca;
     counter-reset: cfigure;
+    counter-reset: ctable;
 }
 
 section.debat,

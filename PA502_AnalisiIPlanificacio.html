@@ -146,12 +146,61 @@
                                     <p>La modularització es basa en la segregació del codi en diversos fitxers i biblioteques. En JAVA, això suposa la creació  de múltiples classes addicionals. cada classe s'escriu en un fitxer propi.</p>
                                     <p>La modularització ha representat per el desenvolupament d'aplicacions una gran avantatge ja que ha permès crear aplicacions molt més complexes del que seria possible sense ella. Tot i així, cal anar molt en compte a l'hora de definir els mòduls i dissenyar les biblioteques, ja que la divisió implicarà inevitablement incrementar el nombre de funcions, que quedaran dispersades en múltiples fitxers. Si fem divisions sense criteri, o fem servir un criteri erroni, correm el risc d'incrementar la complexitat en lloc de reduir-la.</p>
                                     <p>A continuació us presentarem un seguit de debats que us ajudaran a centrar l'atenció en els elements importants que cal tenir en compte a l'hora d'encarar un disseny modular.</p>
+                                    <p>En tots els casos es tracta d'un debat per fer-vos reflexionar i prendre consciència de tots els elements que caldria tenir en compte a l'hora de fer la planificació. No és necessari que arribeu a consens ni que discutiu en detall solucions oposades. La intenció dels debats és la d'oferir punts de vista diversos i alternatius que us puguin servir d'elements de reflexió abans de decidir com serà la planificació definitiva del vostre projecte.</p>
+                                    <p>Tot i així, el que si és important és la vostra participació, ni que només sigui per exposar les vostres opinions i idees.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <!--=========== END SUBSECTION Debat 0 ================-->    
+              <!--=========== BEGIN SUBSECTION Debat 1 ================-->    
+                <section id="slc-discussion21" class="debat section">                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
+                                     <h3> Interfície, control i tractament de dades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Si intentem fer una abstracció del que moltes aplicacions tenen en comú, potser arribem a la conclusió que les aplicacions es podrien definir com un conjunt de pantalles que es van succeint a partir de la interacció de l'usuari. La informació presentada a les pantalles dependrà de les dades de l'aplicació i de les entrades que l'usuari faci en cada moment. Les pantalles són el que s'anomena <em>interfície d'usuari</em> i defineixen quina informació s'ha de presentar i la forma com presentar-la. També defineixen l'entrada de dades de l'usuari, el tipus, la verificació d'errades, etc.</p>
+                                    <p>Les entrades de l'usuari permeten a l'aplicació saber el que aquest desitja i actuar en conseqüència a fi de mostrar el resultat esperat.En certa forma es tracta d'un diàleg entre l'aplicació i l'usuari. Com en tot diàleg, és indispensables que els interlocutors s'entenguin. L'usuari, si vol veure satisfetes les seves aspiracions, haurà de demanar només allò que l'aplicació pugui oferir-li i haurà d'indicar-ho de la manera concreta com la màquina esperi la informació. Sovint per evitar errades i facilitar el diàleg, les aplicacions presenten les seves opcions en forma de menús a fi de limitar les demandes de l'usuari a aquelles que l'aplicació sàpiga resoldre. El menús, però no són la única forma d'entrada de dades, ja que habitualment es necessita l'entrada de text lliure, de comandes o operacions específiques, etc. </p>
+                                    <p>Un cop l'aplicació disposi de la informació adient en el format correcte, podrà disposar-se a realitzar les operacions necessàries per retornar el resultat demanat per l'usuari. Sovint però, les aplicacions no es programen per resoldre una única tasca sinó que dins la informació que l'usuari aporti, hi haurà d'haver indicada quina és la tasca demanada a fi que es facin les operacions necessàries per resoldre aquella tasca i no una altra. Per exemple si l'aplicació fos una calculadora estadística i l'usuari hagués demanat de calcular una <em>mitjana</em>, la calculadora hauria de poder reconèixer la demanda i un cop identificada la tasca, requerir els valors sobre els que realitzar el càlcul i executar les operacions necessàries per obtenir el valor mig dels números introduïts.</p>
+                                    <p>El procés de reconeixement de la tasca se sol anomenar <em>control</em>, en referència a que la màquina pren el control de la situació <em>decidint</em> la seqüencia d'operacions a realitzar. Òbviament és una presa de decisió "humana", l'aplicació només decidirà d'acord a com se l'hagi programat.</p>
+                                    <p>Les tasques impliquen sovint un nova demanada de dades, ja que generalment, aquestes són tant dependents de la tasca a realitzar que seria massa complex demanar-les abans. A més de la demanda de dades específiques, la tasca sol implicar també la realització d'una seqüència d'operacions a realitzar sobre les dades a fi d'aconseguir el resultat requerit. Les operacions realitzades sobre la informació, s'anomenen tractament de dades. Un cop obtingut el resultat, caldrà mostrar-lo a l'usuari i esperar que aquest torni a fer una nova petició.</p>
+                                    <p>Observa la imatge que es presenta a continuació, relaciona el diagrama amb el que acabes de llegir i contesta les preguntes que trobaràs tot seguit al <span class="forumDeDiscussio"> el fòrum de discussió</span>. Les preguntes són per facilitar-vos el debat i la reflexió.</p>
+                                    <div class="figscope">
+                                        <div >
+                                             <figure id ="figura_pantalles">
+                                                <img src="images/activities/fluxControl.png" alt="Control"/>
+                                                <figcaption >
+                                                    <span class="figuretitle">figura </span> Esquema simplificat del flux d'execució d'una aplicació.                               
+                                                </figcaption>
+                                            </figure>
+                                            
+                                        </div>
+                                        <div class="frameBox">
+                                            <h4>Qüestions pel debat al <span class="forumDeDiscussio"></span></h4>
+                                            <ol>
+                                                <li>Observa la imatge (<a href="figura_pantalles" class="figref">figura</a>). Què diries que representa?</li>
+                                                <li>Quin dels elements indicats en el text consideres que està pintat de color verd?</li>
+                                                <li>Podria, l'element de color blau, ser un menú de selecció?</li>
+                                                <li>Quina d'ambdues figures de color blau fosc seria el control?</li>
+                                                <li>Hi ha aplicacions que necessiten molts menús i sovint, uns imbricats dins d'altres (menús, submenús, ...). Creus que aquest tipus d'aplicacions respondrien també a l'esquema de la figura? Indica quins canvis creus que caldria afegir-hi si no fos així.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Debat 1 ================-->
                 <!--=========== BEGIN SUBSECTION Debat 2 ================-->    
                 <section id="slc-discussion22" class="debat section">
                     <div class="container">
@@ -180,9 +229,9 @@
                                                 <span class="figuretitle">figura </span> Descomposició d'aplicacions.                               
                                             </figcaption>
                                          </figure>
-                                         <p>El disseny descendent podria continuar més enllà de les accions, sobre tot si es tracta d'accions complexes. Malgrat tot si les accions són senzilles probablement en tindrem prou arribat fins aquest nivell. Com ja s'ha comentat depen, dependrà molt de la nostra experiència i de la complexitat de l'algoritme a resoldre.</p>
+                                         <p>El disseny descendent podria continuar més enllà de les accions, sobre tot si es tracta d'accions complexes. Malgrat tot si les accions són senzilles probablement en tindrem prou arribat fins aquest nivell. Com ja s'ha comentat, dependrà molt de la nostra experiència i de la complexitat de l'algoritme a resoldre.</p>
                                          <div class="frameBox">
-                                            <h4>Ítems pel debat al <span class="forumDeDiscussio"></span></h4>
+                                            <h4>Qüestions pel debat al <span class="forumDeDiscussio"></span></h4>
                                             <p>Fixa't que l'esquema de la <a href="#descomposicioAplicacions" class="figref">figura</a> presenta certa similitud amb un disseny descendent.</p>
                                             <ol>
                                                 <li>Discuteix al fòrum quines equivalències creus que es poden establir entre ambdós esquemes: el disseny descendent i el presentat a la <a href="#descomposicioAplicacions" class="figref">figura</a>. </li>
@@ -216,9 +265,11 @@
                                     <p>Per regla general, les aplicacions disposen d'un menú de selecció inicial que permet a l'usuari escollir amb quin dels mòduls desitja treballar. Se sol conèixer com a menú principal o opcions inicials. Els mòduls permeten també escollir entre diverses tasques i de forma semblant a les aplicacions aquesta selecció acostuma a gestionar-se a través d'un menú específic del mòdul.</p>
                                     <p>La descomposició de les tasques en canvi, no presenta la mateixa independència, sinó que contràriament, les accions que les composen s'han d'executar en un ordre determinat i no és possible escollir les accions a executar, perquè la tasca en realitat forma un tot indivisible, amb un inici i un final. Per exemple, seguint amb l'aplicació de banca per Internet, la consulta de saldo implica la demanda del compte del que volem fer la consulta, posteriorment, el compte entrar serà verificat i si es reconeix com a propi, es cercarà el saldo a les dades del sistema i es mostrarà a la pantalla del nostre dispositiu. No és possible realitzar la tasca canviant l'ordre de les accions o saltant-se alguna d'elles. És per això que diem que les tasques formen un tot indivisible.</p>
                                     <div class="frameBox">
-                                        <h4>Ítems pel debat al <span class="forumDeDiscussio"></span></h4>
+                                        <h4>Qüestions pel debat al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Imagina una calculadora que permetés realitzar operacions bàsiques, càlculs estadístics i operacions amb matrius.</p>
                                         <ol>
-                                            <li>.</li>
+                                            <li>Indica si creus que l'aplicació tindria mòduls i quins creu que serien.</li>
+                                            <li>Indica una possible tasca i enumera quines podrien ser les seves accions.</li>
                                         </ol>
                                     </div>
                                 </div> 
@@ -226,54 +277,7 @@
                         </div>
                     </div>                
                 </section>
-                <!--=========== END SUBSECTION Debat 2 ================-->
-              <!--=========== BEGIN SUBSECTION Debat 1 ================-->    
-                <section id="slc-discussion21" class="debat section">                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
-                                     <h3> Interfície, control i tractament de dades</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>Si intentem fer una abstracció del que moltes aplicacions tenen en comú, potser arribem a la conclusió que les aplicacions es podrien definir com un conjunt de pantalles que es van succeint a partir de la interacció de l'usuari. La informació presentada a les pantalles dependrà de les dades de l'aplicació i de les entrades que l'usuari faci en cada moment. Les pantalles són el que s'anomena <em>interfície d'usuari</em> i defineixen quina informació s'ha de presentar i la forma com presentar-la. També defineixen l'entrada de dades de l'usuari, el tipus, la verificació d'errades, etc.</p>
-                                    <p>Les entrades de l'usuari permeten a l'aplicació saber el que aquest desitja i actuar en conseqüència a fi de mostrar el resultat esperat.En certa forma es tracta d'un diàleg entre l'aplicació i l'usuari. Com en tot diàleg, és indispensables que els interlocutors s'entenguin. L'usuari, si vol veure satisfetes les seves aspiracions, haurà de demanar només allò que l'aplicació pugui oferir-li i haurà d'indicar-ho de la manera concreta com la màquina esperi la informació. Sovint per evitar errades i facilitar el diàleg, les aplicacions presenten les seves opcions en forma de menús a fi de limitar les demandes de l'usuari a aquelles que l'aplicació sàpiga resoldre. El menús, però no són la única forma d'entrada de dades, ja que habitualment es necessita l'entrada de text lliure, de comandes o operacions específiques, etc. </p>
-                                    <p>Un cop l'aplicació disposi de la informació adient en el format correcte, podrà disposar-se a realitzar les operacions necessàries per retornar el resultat demanat per l'usuari. Sovint però, les aplicacions no es programen per resoldre una única tasca sinó que dins la informació que l'usuari aporti, hi haurà d'haver indicada quina és la tasca demanada a fi que es facin les operacions necessàries per resoldre aquella tasca i no una altra. Per exemple si l'aplicació fos una calculadora estadística i l'usuari hagués demanat de calcular una <em>mitjana</em>, la calculadora hauria de poder reconèixer la demanda i un cop identificada la tasca, requerir els valors sobre els que realitzar el càlcul i executar les operacions necessàries per obtenir el valor mig dels números introduïts.</p>
-                                    <p>El procés de reconeixement de la tasca se sol anomenar <em>control</em>, en referència a que la màquina pren el control de la situació <em>decidint</em> la seqüencia d'operacions a realitzar. Òbviament és una presa de decisió "humana", l'aplicació només decidirà d'acord a com se l'hagi programat.</p>
-                                    <p>Les tasques impliquen sovint un nova demanada de dades, ja que generalment, aquestes són tant dependents de la tasca a realitzar que seria massa complex demanar-les abans. A més de la demanda de dades específiques, la tasca sol implicar també la realització d'una seqüència d'operacions a realitzar sobre les dades a fi d'aconseguir el resultat requerit. Les operacions realitzades sobre la informació, s'anomenen tractament de dades. Un cop obtingut el resultat, caldrà mostrar-lo a l'usuari i esperar que aquest torni a fer una nova petició.</p>
-                                    <p>Observa la imatge que es presenta a continuació, relaciona el diagrama amb el que acabes de llegir i contesta les preguntes que trobaràs tot seguit al <span class="forumDeDiscussio"> el fòrum de discussió</span>. Les preguntes són per facilitar-vos el debat i la reflexió.</p>
-                                    <div class="figscope">
-                                        <div >
-                                             <figure id ="figura_pantalles">
-                                                <img src="images/activities/fluxControl.png" alt="Control"/>
-                                                <figcaption >
-                                                    <span class="figuretitle">figura </span> Esquema simplificat del flux d'execució d'una aplicació.                               
-                                                </figcaption>
-                                            </figure>
-                                            
-                                        </div>
-                                        <div class="frameBox">
-                                            <h4>Ítems pel debat al <span class="forumDeDiscussio"></span></h4>
-                                            <ol>
-                                                <li>Observa la imatge (<a href="figura_pantalles" class="figref">figura</a>). Què diries que representa?</li>
-                                                <li>Quin dels elements indicats en el text consideres que està pintat de color verd?</li>
-                                                <li>Podria, l'element de color blau, ser un menú de selecció?</li>
-                                                <li>Quina d'ambdues figures de color blau fosc seria el control?</li>
-                                                <li>Hi ha aplicacions que necessiten molts menús i sovint, uns imbricats dins d'altres (menús, submenús, ...). Creus que aquest tipus d'aplicacions respondrien també a l'esquema de la figura? Indica quins canvis creus que caldria afegir-hi si no fos així.</li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>                
-                </section>
-                <!--=========== END SUBSECTION Debat 1 ================-->
+                <!--=========== END SUBSECTION Debat 4 ================-->
                 <!--=========== BEGIN SUBSECTION Debat 3 ================-->    
                 <section id="slc-discussion23" class="debat section">
                     <div class="container">
@@ -281,121 +285,143 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
-                                     <h3>Implementació del patró bàsic del disseny descendent</h3>
+                                     <h3>Esquema d'implementació del patró bàsic del disseny descendent</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                     
-                                     
-                                
-                                    <p>Un aspecte important a l'hora de dissenyar aplicacions és disposar d'una idea clara de les seqüències de control lògiques d'una aplicació. Entenem per controls o unitats de control d'una aplicació, aquelles parts d'una aplicació que constitueixen una unitat lògica en si mateixa i que permeten a l'usuari encaminar l'execució de l'aplicació fins aconseguir demanar el procés d'una determinada funcionalitat. En aquest sentit, podem dir que l'execució d'una aplicació es pot entendre com una seqüència de controls en que l'usuari va interaccionant amb l'aplicació.</p>
-                                    <p>A grans trets, distingirem dos tipus de nuclis de control, els que gestionen la navegació de l'usuari i faciliten que aquest indiqui exactament què vol (per exemple els menús), i els encarregats de resoldre una funcionalitat especifica, requerint dades a l'usuari, realitzant un tractament específic de les dades i presentant el resultat a l'usuari (per exemple, a la calculadora d'àrees vista amb anterioritat, un nucli de control de funcionalitat específica seria el càlcul de l'àrea d'una quadrat, o el d'un cercle, etc).</p>
-                                     <p>És possible dissenyar un mapa (esquema) de nuclis de control identificant per cada un d'ells, el tipus (<em>navegació</em> o <em>funcionalitat</em>), les accions a realitzar i les connexions que contempla amb altres nuclis de control en funció de la resposta de l'usuari o del càlcul realitzat.</p>
-                                     <p><strong>No es tracta</strong> de fer un disseny detallat de la interfície, ni una descripció acurada de les accions. En realitat es tracta només d'identificar els elements que cal tenir en compte en aquell nucli de control i les seves connexions. De fet, podem dir que el mapa d'unitats de control és tan sols una eina per descobrir l'estructura d'una aplicació i poder planificar l'esquelet de classes i mètodes que caldrà desenvolupar quan implementem l'aplicació.</p>
-                                     <figure id ="figura_pantalles" class="left">
-                                        <img width="464" src="images/activities/diagramaPantalles.png" alt="diagrama de seqüència de pantalles">
-                                        <figcaption class="figscope" style="width: 510px; max-width: 75%;">
-                                            <span class="figuretitle">figura </span> Instanciació d'un tipus compost.                               
-                                        </figcaption>
-                                    </figure>
-                                    <p>Imaginem que volem crear un mapa de nuclis de control d'una senzilla aplicació d'un smartphone, la qual ens permet escollir entre 3 tipus de serveis: realitzar trucades telefòniques, enviar missatges SMS o xatejar via whatsapp. Les dues primeres opcions, a més, ens permeten activar el servei (trucada o missatge SMS) indicant directament el número o bé seleccionant un contacte de l'agenda. El xat només deixa seleccionar contactes que siguin també usuaris de whatsapp. Per això disposa d'una agenda pròpia.</p>
-                                    <p>A la figura 1, veiem un diagrama del mapa de nuclis de control de l'aplicació on podem veure detallats 3 nuclis connectats entre si, corresponents a la seqüència que caldria realitzar per fer una trucada de telèfon marcant directament el número.</p>
-                                    <p>Els diagrames, són molt útils perquè permeten expressar tots els elements del mapa amb molt poques paraules. Tot i així es pot optar per esquemes més textuals o tabulars, si no es disposa de cap eina per dibuixar diagrames. Una bona opció seria un esquema en el que per cada nucli de control es definís:</p>
-                                    <ol>
-                                        <li>Id, o codi identificador del nucli</li>
-                                        <li>Accions a realitzar quan s'executi el nucli</li>
-                                        <li>Connexions amb altres nuclis</li>
-                                    </ol>
-                                    <p>Així per exemple, completant els nuclis necessaris per fer una trucada de l'aplicació anterior, podríem definir els nuclis amb la taula següent:</p>
-                                     <table border="1" cellspacing="0" cellpadding="1">
-                                        <caption>Mapa de nuclis de control</caption>
-                                         <tr>
-                                            <th>id</th>
-                                            <th>Accions</th>
-                                            <th>connexions</th>
-                                        </tr>
-                                         <tr>
-                                            <td>menuPrincipal</td>
-                                            <td>
-                                                <p>1) Escollir</p>
-                                                <ol type="a">
-                                                    <li>trucades</li>
-                                                    <li>missatges SMS</li>
-                                                    <li>whatsapp</li>
-                                                </ol>
-                                            </td>
-                                            <td>
-                                                <ul>
-                                                    <li>menuTrucades si s'escull a)</li>
-                                                    <li>menuMissatges si s'escull b)</li>
-                                                    <li>iniciWhatsapp si s'escull c)</li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                         <tr>
-                                            <td>menuTrucades</td>
-                                            <td>
-                                                <p>1) Escollir</p>
-                                                <ol type="a">
-                                                    <li>Seleccionar contacte</li>
-                                                    <li>Entrar número</li>
-                                                </ol>
-                                            </td>
-                                            <td>
-                                                <ul>
-                                                    <li>trucadaPerAgenda si s'escull a)</li>
-                                                    <li>trucadaDirecta si s'escull b)</li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                         <tr>
-                                            <td>trucadaPerAgenda</td>
-                                            <td>
-                                                <ol>
-                                                    <li>mostrar llista de contactes numerada</li>
-                                                    <li>entrar número identificador del contacte</li>
-                                                    <li>obtenir número de telèfon del contacte</li>
-                                                    <li>realitzar trucada </li>
-                                                </ol>
-                                            </td>
-                                            <td>
-                                                <ul>
-                                                    <li>menuPrincipal</li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                         <tr>
-                                            <td>trucadaDirecta</td>
-                                            <td>
-                                                <ol>
-                                                    <li>entrar número</li>
-                                                    <li>realitzar trucada </li>
-                                                </ol>
-                                            </td>
-                                            <td>
-                                                <ul>
-                                                    <li>menuPrincipal</li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                         <tr>
-                                            <td>...</td>
-                                            <td>...</td>
-                                            <td>...</td>
-                                        </tr>
-                                     </table>
-                                     <br/>
-                                     <p>Com a norma general, podem establir que cada nucli serà una funció, i que les accions de cada nucli es correspondran també amb funcions que caldrà identificar. Les connexions acostumaran a ser crides, exceptuant si es tracta d'un retorn a un nucli anterior, com és el cas de <em>trucadaPerAgenda</em> o <em>trucadaDirecta</em> que en ambdós casos es retorna al <em>menuPrincipal</em> en acabar la trucada. En tractar-se de crides a funcions, els retorns són intrínsecs a la finalització de la crida.</p> 
-                                     <p>Les funcions caldrà organitzar-les en classes i les classes en paquets seguint el manual que heu realitzat, en un debat anterior, amb els vostres companys. Per exemple aplicant el que s'ha explicat a l'aplicació de la gestió de trucades i mssatges via SMS, podriem dissenyar un esquelet semblant a:</p>
+                                    <p>El disseny descendent té com objectiu facilitar la implementació. Per tal de facilitar el trasllat del de l'esquema descendent al codi, convindrà establir algunes etapes intermèdies.</p>
+                                    <p>Per exemple, pot ser convenient definir un esquema on es pugui reflectir la correspondència entre les diferents opcions incloses a l'aplicació i els mòduls. També entre les opcions dels mòduls i les tasques implicades. I també entre les tasques i la seqüència d'accions.</p>
+                                    <div class="tablescope">
+                                         <p>Imaginem que volem crear aquest esquema per tal de poder implementar una senzilla aplicació de mòbil, la qual ens permet escollir entre 3 tipus de serveis: realitzar trucades telefòniques, enviar missatges SMS o xatejar via whatsapp. Les dues primeres opcions, a més, ens permeten activar el servei (trucada o missatge SMS) indicant directament el número o bé seleccionant un dels contactes de l'agenda. El xat només deixa seleccionar contactes que siguin també usuaris de whatsapp. Per això disposa d'una agenda pròpia. A la <a href="#tableEsquMod"><span class="tableref">taula </span></a> trobeu l'esquema de l'aplicació en el format indicat. Es tracta d'un esquema incomplert, ja que alguns dels ítems ha estat substituïts per interrogants.</p>
+                                         <table id="tableEsquMod" border="1" cellspacing="0" cellpadding="1">
+                                             <tr> 
+                                                <td rowspan="5"> <!--[1-5][1] -->
+                                                    <p><strong>Aplicació de comunicació per a mòbils</strong></p>
+                                                    <p>Opcions:</p>
+                                                    <ul>
+                                                        <li>1. trucada</li>
+                                                        <li>2. sms</li>
+                                                        <li>3. whatsApp</li>
+                                                    </ul>
+                                                </td>
+                                                <td rowspan="2"> <!--[1-2][2] (op 1)-->
+                                                    <p><strong>1. Mòdul de trucades</strong></p>
+                                                    <p>Opcions:</p>
+                                                    <ul>
+                                                        <li>1.1 Seleccionar contacte a l'agenda </li>
+                                                        <li>1.2 Entrar número</li>
+                                                    </ul>
+                                                </td>
+                                                <td> <!--[1][3] (op. 1.1) -->
+                                                    <p><em>1.1. Tasca per realitzar trucada via agenda</em></p>
+                                                </td>
+                                                <td> <!--[1][4] -->
+                                                    <ul>
+                                                        <li>Seleccionar un contacte de la llista de contactes</li>
+                                                        <li>obtenir número de telèfon del contacte seleccionat</li>
+                                                        <li>realitzar trucada </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> <!--[2][3] (op. 1.2) -->
+                                                    <p><em>1.2 ???</em></p>
+                                                </td>
+                                                <td> <!--[2][4] -->
+                                                    <ul>
+                                                        <li>Demanar número</li>
+                                                        <li>realitzar trucada </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2"> <!--[3-4][2] (opc 2 ))-->
+                                                    <p><strong>2. ???</p>
+                                                </td>
+                                                <td> <!--[3][3]  (opc. 2.1)-->
+                                                    <p><em>2.1 ???</em></p>
+                                                </td>
+                                                <td> <!--[3]4] -->
+                                                    <ul>
+                                                        <li>Seleccionar un contacte de la llista de contactes</li>
+                                                        <li>obtenir número de telèfon del contacte seleccionat</li>
+                                                        <li>Demanar text del missatge </li>
+                                                        <li>enviar missatge</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td> <!--[4][3] (op 2.2) -->
+                                                    <p><em>2.2. Tasca per enviar SMS via agenda</em></p>
+                                                </td>
+                                                <td> <!--[4]4] -->
+                                                    <ul>
+                                                        <li>???</li>
+                                                        <li>??? </li>
+                                                        <li>???</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td colspan ="2" > <!--[5][2-3] (op 3)-->
+                                                    <p><em>3.  Tasca per enviar WhatsApps</em></p>
+                                                </td>
+                                                <td> <!--[5][4]-->
+                                                    <ul>
+                                                        <li>Seleccionar un contacte de la llista de contactes de WhatsApp</li>
+                                                        <li>Carregar el xat del contacte seleccionat</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                             <caption>
+                                                <span class="tabletitle">taula</span>Esquema de detall dels mòduls i tasques de l'aplicació de mòbils que serveix com exemple il·lustrador.
+                                             </caption>
+                                         </table>
+                                         <br/>
+                                     </div>
+                                     <p>Com podeu veure, es tracta d'un esquema que us pot ajudar a tenir una visió global de l'aplicació i visualitzar amb més claredat quins mòduls, quines tasques i en darrer terme quines classes i quines funcions caldrà implementar.</p>                                
+                                     <p>En aquest tipus d'esquema <strong>no és necessari</strong> fer un disseny detallat dels menús, ni una descripció acurada de les accions. En realitat es tracta només d'identificar els elements que cal tenir en compte a cada ítem, a fi de descobrir l'estructura d'una aplicació i poder planificar l'esquelet de classes i mètodes que caldrà desenvolupar quan implementem l'aplicació.</p>
+                                     <div class="frameBox">
+                                        <h4>Questions pel debat al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Feu una proposta de l'esquema complert, canviant els interrogants pels ítems adequats, al fòrum de discusió</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Debat 3 ================-->
+                <!--=========== BEGIN SUBSECTION Debat 5 ================-->    
+                <section id="slc-discussion25" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Debat</span> - Disseny d'una aplicació</h2>
+                                     <h3>Implementació d'un esquelet de classes</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                        <p>La implementació d'una aplicació, no es pot abordar sense perdre de vista la globalitat. Els esquemes vistos fins ara ens ajuden a aconseguir-ho. Tot i així, convé mantenir la tendència fins i tot quan comencem a escriure el codi.</p>
+                                        <p>Us proposem que abans de començar a codificar, usem els esquemes anteriors per escriure l'esquelet de classes i funcions. Es tracta de crear les principals classes (fitxers) que tindrà l'aplicació i de declarar en elles les seves funcions sense el codi a executar. És a dir només s'ha d'indicar el nom, el retorn i si es coneixen els paràmetres a utilitzar.</p>
+                                        <p>Com a norma general l'aplicació contindrà almenys una classe  per iniciar l'aplicació i mostrar el menú principal. En general, és aconsellable crear una classe per a cada mòdul. A més, cal recordar també que probablement tinguem altres classes (biblioteques i tractament de dades) que caldrà abordar a a mida que comencem a implementar els nivells inferiors.</p>
+                                        <p>Els mòduls contindran almenys una funció per cada tasca i probablement també per acció. La classe principal, la de l'aplicació, contindrà com a mínim, les funcions necessàries per inicialitzar l'aplicació, gestionar el menú principal i la sortida de l'aplicació.</p>
+                                        <p>Els menús intermedis, els de cada mòdul, poden implementar-se, o bé en el seu propi mòdul o bé a l'aplicació general, depenent del nombre de mòduls pot ser més clarificador mantenir el menú dins de la classe  pròpia del mòdul.</p>
+                                        <p>És possible que posteriorment, durant la codificació, ens adonem que alguna de les accions necessita poc codi i que no val la pena declarar-la com a funció. Ja l'¡eliminarem  quan això passi. De moment és preferible pecar en excés que no pas en defecte. Per tant el nostre esquelet contindrà tantes classes com mòduls tingui l'aplicació més una (la principal) i tantes funcions com tasques i accions calgui desenvolupar.</p>
+                                        <p>Seguint les indicacions que deveu haver extret del primer debat, és important separar la presentació del menú i la demanda de l'opció a l'usuari, del control posterior i execució de la tasca corresponent. En conseqüència, les classes que continguin menús, a més de les funcions corresponents a les tasques i accions, contindran també una funció per mostrar el menú i demanar una opció a l'usuari i, una funció de control per tractar la opció seleccionada i executar la tasca adequada.</p>
+                                     <p>Veiem com quedaria l'exemple de l'aplicació de la gestió de trucades i missatges via SMS, aplicant el que s'ha explicat:</p>
                                      <pre><code class="java">
 
-/*<strong style="background-color: yellow;">Fitxer ioc/m03/serveismb/GestorComunicacio.java </strong>*/
+/*<strong style="background-color: yellow;">Fitxer ioc/m03/serveismb/AplicacioComunicacio.java </strong>*/
 package ioc.m03.serveismbl;
 
-public class GestorComunicacio {
+public class AplicacioComunicacio {
     /**
      * Inicialitza l'aplicació, les dades, mostra el menu principal i 
      * gestiona les crides segons la opció escollida
@@ -403,12 +429,24 @@ public class GestorComunicacio {
     public void inici(){
         //A CODIFICAR... mostrar menú i crida a controlPrincipal
     }
+
+    /**
+     * Mostra el menú principal i espera la seleció de l'usuari en format de char
+     * que es retornarà en finalitzar l'execució.
+     * @return opció seleccionada per l'usuari
+     */
+    public char menuInicial(){
+        char opcio = 0;
+        //A CODIFICAR... 
+        
+        return opcio;
+    }
     
     /**
      * Selecciona la crida adequada en funció de la opció que arriba per paràmetre
-     * @param opcio és el selector per escollir la crida
+     * @param opcio és el selector per escollir la tasca
      * @param dades és l'estructura de dades iniicalitzada necessària per passar a les crides
-     * @return un booleà indicant si la opció passada implica la sortida de l'execució o no
+     * @return un booleà indicant si la opció passada implica la sortida de l'aplicació o no
      */
     public boolean controlOpcioPrincipal(char opcio /*, EstructuraDades dades*/){
         boolean ret=false;
@@ -417,7 +455,29 @@ public class GestorComunicacio {
         return ret;
     }
     
-   /**
+/**
+     * Verifica si l'usuari vol sortir. En cas afirmatiu prepara la sortida.
+     */
+    public boolean sortir(){
+        boolean ret=false;
+        //A CODIFICAR... 
+
+        return ret;
+    }    
+    
+    public void enviarWhatsApp(/*EstructuraDades dades*/){
+        //A CODIFICAR... 
+        
+    }
+    
+    //Detallar funcions per a les accions d'enviar WhatsApp.
+}
+                 
+/*<strong style="background-color: yellow;">Fitxer ioc/m03/serveismbl/ModulTrucades.java </strong>*/
+package ioc.m03.serveismbl;
+
+public class ModulTrucades {
+    /**
     * Mostra el menú d'inci de la gestió de trucades i fa les crides 
     * pertinents segons la opció escollida
     * @param dades és l'estructura de dades iniicalitzada necessària per passar a les crides
@@ -426,6 +486,18 @@ public class GestorComunicacio {
         //A CODIFICAR... 
    }
    
+    /**
+     * Mostra el menú específic de les trucades i s'espera la seleció de l'usuari en format de char
+     * que es retornarà en finalitzar l'execució.
+     * @return opció seleccionada per l'usuari
+     */
+    public char menuTrucades(){
+        char opcio = 0;
+        //A CODIFICAR... 
+        
+        return opcio;
+    }
+    
     /**
      * Selecciona la crida adequada en funció de la opció que arriba per paràmetre
      * @param opcio és el selector per escollir la crida
@@ -437,7 +509,8 @@ public class GestorComunicacio {
         //A CODIFICAR... 
         
         return ret;
-    }
+    }    
+    
     
     /**
      * Demana a l'usuari el número a marcar i fa la trucada. Seguidament 
@@ -462,6 +535,88 @@ public class GestorComunicacio {
     }
     
     /**
+     * Mostrar la llista dels contactes, demana que se seleccioni un i li extreu 
+     * el seu número de telèfon que serà utilitzat per realitzar la trucada
+     * @param dades és l'estructura de dades inicialitzada necessària per 
+     * extreure la llista de contactes
+     * @return número de telèfon del contacte eleccionat
+     */
+    public char[] seleccionarNumeroContacte(/*EstructuraDades dades*/){
+        char[]  ret=null;
+        //A CODIFICAR... 
+        
+        return ret;        
+    }
+        
+    
+    /**
+     * Demana que l'usuari escrigui el número de telèfon a marcar
+     * @return el número de telèfon
+     */
+    public char[] demanarNumeroTelefon(){
+        char[] ret = null;
+        //A CODIFICAR... 
+        
+        return ret;
+    }    
+    
+    /**
+     * Realitza la trucada del número passat per paràmetre i retorna el número 
+     * de segons que ha durat.
+     * @param numero és el número de telèfon a marcar expressat en una array de chars
+     */
+    public int ferTrucada(char[] numero){
+        int ret=0;
+        //A CODIFICAR... 
+        
+        return ret;
+    }    
+    
+    //Falten les funcions de les accions que permetin seleccionar un contacta. 
+    //Fer disseny descendent.
+}
+
+/*<strong style="background-color: yellow;">Fitxer ioc/m03/serveismbl/ModulSms.java </strong>*/
+package ioc.m03.serveismbl;
+
+public class ModulSms {
+    /**
+    * Mostra el menú d'inci de la gestió de SMS i fa les crides 
+    * pertinents segons la opció escollida
+    * @param dades és l'estructura de dades iniicalitzada necessària per passar a les crides
+    */ 
+   public void iniciSms(/*EstructuraDades dades*/){
+        //A CODIFICAR... 
+   }
+   
+    /**
+     * Mostra el menú específic de les trucades i s'espera la seleció de l'usuari en format de char
+     * que es retornarà en finalitzar l'execució.
+     * @return opció seleccionada per l'usuari
+     */
+    public char menuSms(){
+        char opcio = 0;
+        //A CODIFICAR... 
+        
+        return opcio;
+    }
+    
+    /**
+     * Selecciona la crida adequada en funció de la opció que arriba per paràmetre
+     * @param opcio és el selector per escollir la crida
+     * @param dades és l'estructura de dades iniicalitzada necessària per passar a les crides
+     * @return un booleà indicant si la opció passada implica la sortida de l'execució o no
+     */
+    public boolean controlOpcioSms(char opcio /*, EstructuraDades dades*/){
+        boolean ret=false;
+        //A CODIFICAR... 
+        
+        return ret;
+    }    
+    
+    
+    
+    /**
      * Demana a l'usuari que escrigui el missatge i un cop escrit, es demana també 
      * el número a marcar i s'envia el text per SMS. Seguidament 
      * actualitzarà l'estadística de els dades
@@ -483,78 +638,22 @@ public class GestorComunicacio {
     public void enviarSmsAmbLlistaDeContactes(/*EstructuraDades dades*/){
         //A CODIFICAR... 
         
-    }
-    
+    }    
+
     /**
      * Mostrar la llista dels contactes, demana que se seleccioni un i li extreu 
      * el seu número de telèfon que serà utilitzat per realitzar la trucada
      * @param dades és l'estructura de dades inicialitzada necessària per 
      * extreure la llista de contactes
-     * @return 
+     * @return número de telèfon del contacte eleccionat
      */
-    public int seleccionarNumeroContacte(/*EstructuraDades dades*/){
-        int ret=0;
+    public char[] seleccionarNumeroContacte(/*EstructuraDades dades*/){
+        char[]  ret=null;
         //A CODIFICAR... 
         
         return ret;        
     }
-    
-    /**
-     * Realitza la trucada del número passat per paràmetre i retorna el número 
-     * de segons que ha durat.
-     * @param numero és el número de telèfon a marcar expressat en una array de chars
-     */
-    public int ferTrucada(char[] numero){
-        int ret=0;
-        //A CODIFICAR... 
         
-        return ret;
-    }    
-    
-    /**
-     * Envia el missatge de text passat, al número indicat al primer paràmetre 
-     * via SMS. Retorna el nombre de missatges que han estat necessaris per 
-     * fer l'enviament.
-     * @param numero és el número de telèfon a marcar expressat en una array de chars
-     * @param text és el text a enviar
-     */
-    public int enviarSms(char[] numero, String text){
-        int ret=0;
-        //A CODIFICAR... 
-        
-        return ret;
-    }    
-    
-}
-                 
-/*<strong style="background-color: yellow;">Fitxer ioc/m03/serveismbl/Interficie.java </strong>*/
-package ioc.m03.serveismbl;
-
-public class Interficie {
-    
-    /**
-     * Mostra el menú principal i espera la seleció de l'usuari en format de char
-     * que es retornarà en finalitzar l'execució.
-     * @return opció seleccionada per l'usuari
-     */
-    public char menuInicial(){
-        char opcio = 0;
-        //A CODIFICAR... 
-        
-        return opcio;
-    }
-    
-    /**
-     * Mostra el menú específic de les trucades i s'espera la seleció de l'usuari en format de char
-     * que es retornarà en finalitzar l'execució.
-     * @return opció seleccionada per l'usuari
-     */
-    public char menuTrucades(){
-        char opcio = 0;
-        //A CODIFICAR... 
-        
-        return opcio;
-    }
     
     /**
      * Demana que l'usuari escrigui el número de telèfon a marcar
@@ -565,36 +664,12 @@ public class Interficie {
         //A CODIFICAR... 
         
         return ret;
-    }
-    
-    /**
-     * Mostra la llista de contactes i demana que se'n seleccioni un per posició.
-     * Es retorna la posició seleccionada
-     * @param dades és l'estructura de dades inicialitzada necessària per 
-     * extreure la llista de contactes
-     * @return 
-     */
-    public int demanarPosicioLlistaContactes(/*EstructuraDades dades*/){
-        int ret=0;
-        //A CODIFICAR... 
-        
-        return ret;        
-    }    
-
-    /**
-     * Mostra la llista de contactes.
-     * @param dades és l'estructura de dades inicialitzada necessària per 
-     * extreure la llista de contactes
-     */
-    public void mostrarLlistaContactes(/*EstructuraDades dades*/){
-        //A CODIFICAR... 
-        
     }    
     
     /**
      * Es demana a l'usuari que s'escrigui un missatge SMS per a ser enviat. 
      * Un cop escrit es retorna el text.
-     * @return 
+     * @return el text
      */
     public String demanarMissatgeSms(){
         String ret="";
@@ -602,17 +677,33 @@ public class Interficie {
         
         return ret;        
     }
+
+    /**
+     * Envia el missatge passat per paràmetre al número de mòbil passat en el primer paràmetre via 
+     * SMS i retorna la quantitat d'enviaments que ha calgut per poder enviar tot el text.
+     * @param numero és el número de telèfon a marcar expressat en una array de chars
+     * @param missatge és el text a enviar via SMS.
+     * @return nombre d'enviaments SMS que han calgut per enviar tot el text.
+     */
+    public int enviarMissatge(char[] numero, String missatge){
+        int ret=0;
+        //A CODIFICAR... 
+        
+        return ret;
+    }    
+    
+    //Falten les funcions de les accions que permetin seleccionar un contacta. 
+    //Fer disseny descendent.
 }
-                                         
+
                                      </code></pre>
-                                     <p>Analitzeu atentament el codi i contesteu els següents ítems en un debat amb els teus companys especialistes al<a target="_blank" class="forumEspecialitatUrl"> fòrum de la teva especialitat</a></p>
+                                     <p>Analitzeu atentament el codi i contesteu els següents ítems en un debat amb els teus companys especialistes al <span class="forumDeDiscussio"> fòrum de la teva especialitat</span></p>
                                      <div class="frameBox">
-                                      <h4>Ítems pel debat</h4>
+                                        <h4>Questions pel debat al <span class="forumDeDiscussio"></span></h4>
                                          <ol>
-                                            <li>A l'esquelet hi ha paràmetres tancats entre comentaris representant una estructura de dades. No és possible dissenyar-ho tot a l'hora. Quan planifiquem codi i resulta necessari usar parts que encara no estiguin dissenyades, creus que és preferible ignorar-les o especificar-les usant un comentaris? raoneu la resposta</li>
-                                            <li>Relaciona l'esquelet de classes i mètodes amb el mapa de nuclis de control indicant què correspondria a què. Creus que es pot establir una relació més o menys directa entre l'esquelet i el mapa?</li>
-                                            <li>Llegeix els comentaris en format javadoc de l'esquelet. Creus que sense aquest comentaris et resultaria igual de fàcil d'entendre l'esquelet i relacionar-lo amb el mapa de controls?.</li>
-                                            <li>Fixa't en els comentaris del javadoc. Creus que entre aquest, i el mapa de controls series capaç de crear el disseny descendent de l'aplicació? Si la resposta és afirmativa quina relació establiries entre el tres elements (esquelet, disseny descendent i mapa de controls)?</li>
+                                            <li>Segur que analitzant el codi, us adoneu que en ambdós mòduls hi ha funcions repetides. Què podríem fer per evitar la repetició?</li>
+                                            <li>A l'esquelet hi ha paràmetres tancats entre comentaris representant una estructura de dades. Estem a l'inici del disseny i encara no sabem com detallarem l'estructura de dades. Quan planifiquem codi i resulta necessari usar parts que encara no estiguin dissenyades, creus que és preferible ignorar-les o especificar-les usant un comentaris? raoneu la resposta</li>
+                                            <li>Relaciona l'esquelet de classes i mètodes amb l'esquema de mòduls i tasques del debat anterior.</li>
                                         </ol>
                                     </div>
                                 </div> 
@@ -626,7 +717,23 @@ public class Interficie {
             <!--=========== END SECTION discussion ================-->    
 
             <!--=========== BEGIN SECTION toDo ================-->    
-            <section id="slc-toDo" class="vsections">
+            <section id="slc-toDo">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Implementació - Codificació de l'esquelet de classes i funcions de l'aplicació</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Seguint els consells que heu extret dels debats, implementeu l'esquelet de l'aplicació i mòduls del projecte CicliCat. Per aconseguir-ho amb èxit, feu prèviament el disseny descendent i l'esquema de mòduls i taques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!--=========== END SECTION toDo ================-->    
 
