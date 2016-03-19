@@ -408,6 +408,7 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP7", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='projecte/docs/informePlanificacio.odt'> l'informe </a>"},
+        "toDo":{"selector":"#slc-toDo", "type":"file/html", "value":"projecte/A502_implementacio.shtm" },         
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A503_Implementacio1.html?asix"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"},
         "pdfDocumentacio":{"selector":".pdfDocumentacio", "type":"attr", "name":"href", "value":"docs/documentacio.pdf"},
