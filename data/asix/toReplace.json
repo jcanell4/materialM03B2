@@ -407,7 +407,7 @@
         "tipus": {"selector":".tipus", "type":"arrayText", "value":[{"defaultValue":"Tip_GR"},{"defaultValue":"Tip_I"}]},
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP7", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
-        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='projecte/docs/informePlanificacio.odt'> l'informe </a>"},
+        "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA502.odt'>informe </a>"},
         "toDo":{"selector":"#slc-toDo", "type":"file/html", "value":"projecte/A502_implementacio.shtm" },         
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A503_Implementacio1.html?asix"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"},
