@@ -265,8 +265,8 @@
     margin-bottom: 0.5em;    
 }
 
-.ioctextl img,.iocexample img {
-    max-width: 100%;
+.iocClue img, .ioctextl img,.iocexample img {
+    max-width: 90%;
 }
 
 .iocnote {
@@ -393,10 +393,11 @@
 .iocClue{
     font-family: Verdana,"Times New Roman",serif;
     color: #1C335C;
-    padding: 15px;
+    /*padding: 15px;*/
+    padding: 10px 10% 10px 5%;
     border: 1px solid #999;
-    width: 100%;
-    height: 100%;
+    /*width: 92%;*/
+    height: 98%;
     overflow: auto;
     font-size: 1.25em;
     text-align: justify;
