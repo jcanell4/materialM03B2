@@ -393,8 +393,7 @@
 .iocClue{
     font-family: Verdana,"Times New Roman",serif;
     color: #1C335C;
-    /*padding: 15px;*/
-    padding: 10px 10% 10px 5%;
+    padding: 10px 10% 40px 5%;
     border: 1px solid #999;
     /*width: 92%;*/
     height: 98%;
