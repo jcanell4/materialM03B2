@@ -409,6 +409,20 @@
     text-align: center;
 }
 
+.iocClue h4{
+    color: #080F8E;
+    font-size: 1.5em;
+    font-weight: 1.25em;
+    text-align: center;
+}
+
+.iocClue h5{
+    color: #080F8E;
+    font-size: 1em;
+    font-weight: 1.25em;
+    text-align: center;
+}
+
 /*
 .iocClue p{
     font-weight: 1em;

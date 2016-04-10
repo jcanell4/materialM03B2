@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
     <meta name="author" content="Josep Cañellas i Alicia Vila ">
-    <title>A504. Implementació I</title>
+    <title>A504. Implementació II</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
@@ -44,6 +44,9 @@
                     <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
                 </li>
                 <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
                     <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
                 </li>
                 <li>
@@ -62,7 +65,7 @@
     </aside>
     <!--=========== BEGIN HEADER SECTION ================-->
      <header id="header">
-         <!-- BEGIN TOP MENU -->
+         <!-- BEGIN MENU -->
         <div class="menu_area">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
                 <!-- LOGO -->
@@ -80,7 +83,8 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
                           <li class="active"><a href="#slc-toStart">Inici</a></li> 
-                          <li><a href="#slc-implementacio">Guia d'implementació</a></li>
+                          <li><a href="#slc-discussion">Fòrums</a></li>
+                          <li><a href="#slc-toDo">Implementació</a></li>
                           <li><a href="#slc-toDelivery">Lliurament</a></li> 
                           <li><a href="#slc-toContinue">Com continuar</a></li> 
                         </ul>           
@@ -88,7 +92,7 @@
                 </div>     
             </nav>  
         </div>
-        <!-- END TOP MENU -->
+        <!-- END MENU -->
    </header>
     <!--=========== END HEADER SECTION ================-->
     
@@ -102,7 +106,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Inici activitat A504 - Implementació I</h2>
+                                 <h2 >Inici activitat A504 - Implementació II</h2>
                              </div>
                         </div>
                     </div>
@@ -110,101 +114,206 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>Tota aquesta activitat és de caire individual. Cada membre del grup haurà d'anar implementant la part de codi que s'ha acordat. Malgrat tot, si durant la implementació us surten dubtes o dificultats, consulteu al fòrum, el vostre especialista en biblioteques o d'estructura de dades, intentaran ajudar-vos cercant amb vosaltres alguna solució.</p>
-                                <p>El coordinador haurà de vetllar per el compliment dels terminis, a fi de poder realitzar la següent reunió d'integració sense retards.</p>
-                                <p>D'altra banda, el paper dels especialistes, en aquesta activitat, serà d'assessorament, i consulta tècnica. Cal que els especialistes ajudin als seus companys en aquells dubtes que tinguin referides a continguts propis d'una especialitat. En cas que l'especialista no sàpiga com ajudar, a la vegada podrà traslladar el dubte al seu fòrum d'especialitat, per veure si algú pot aportar la solució.</p>
-                                <p>Per descomptat, sempre podeu consultar al professor.</p>
-                             </div>
+                                <p>Finalment, ha arribat l'hora d'implementar l'esquelet de classes i funcions que vàreu fer a l'activitat A502. Seguint l'esquema bàsic del disseny descendent que se us va proposar, com a mínim hauríeu de tenir descompost el projecte en mòduls i tasques. Alguns potser us heu aventurar en definir també les accions. Sigui com sigui, aquí us voldríem fer notar la importància que té a les aplicacions, una bona interfície d'usuari.</p>
+                                <p>És per això que, abans de començar la implementació us proposem que reflexioneu amb els vostres companys, en el <span class="forumDeDiscussio">fòrum de discussió del període</span>, les qüestions que us anirem proposant a la secció <em>fòrums</em>. És important que feu aquestes reflexions abans de començar a implementar, ja que intenten donar-vos una visió de com implementar les interfícies de les aplicacions, així com de les principals característiques que qualsevol interfície hauria de complir.</p>
+                                <p>A la secció <em>Implementació</em>, trobareu alguns consells per realitzar la part de les funcions i classes del projecte que se us demana d'implementar en aquesta activitat.</p>
+                     </div>
                         </div>
                     </div>
                 </div>
             </section>
             <!--=========== END SECTION toStart ================-->    
-
-            <!--=========== BEGIN SECTION implementacio ================-->    
-            <section id="slc-implementacio" class="section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class= "headSlide">
-                                 <h2 >Implementació I- Guia d'implementació</h2>
-                             </div>
+            <!--=========== BEGIN SECTION discussion ================-->    
+            <section id="slc-discussion" class="vsections">
+                <!--=========== BEGIN SUBSECTION Fòrum 1 ================-->    
+                <section id="slc-discussion0" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
+                                     <h3 >Tasques: unitats de processament</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Les aplicacions són procediments que tracten i manipulen dades (inicials), a fi d'obtenir resultats i informació (dades finals) a partir d'aquests tractaments. És a dir, podem suposar que les aplicacions necessiten un conjunt de dades inicials a les quals se les processa de diferents formes i s'obtenen un resultats o dades finals. Les dades inicials solen demanar-se als usuaris, però no sempre és així. De fet, les dades podrien obtenir-se també des de bases de dades, fitxers, Internet, etc.  Com és natural, segons l'origen de dades, caldrà disposar de diferents procediments que les obtinguin. Si l'origen prové de l'usuari caldrà implementar alguna forma demanar les dades a la pantalla i recollir-les a partir del teclat o els dispositius d'entrada adients (ratolí, etc.). En canvi si l'origen fos un fitxer, el que caldria seria implementar procediments de lectura del mateix. El que volem dir amb això, és que si volem crear aplicacions versàtils que es puguin adaptar fàcilment a diferents orígens de dades sense haver de refer l'aplicació de dalt a baix, resulta molt i molt important mantenir ben separats els procediments destinats a obtenir les dades i emmagatzemar-les a la memòria de l'ordinador, dels procediments destinats a fer-ne el tractament i obtenir els resultats i també d'aquells que permetin a l'usuari veure els resultats (no podem suposar que l'usuari només pot veure els resultats per la pantalla, potser es necessitin imprimir o bolcar-los en un fitxer per recuperar-los posteriorment, etc.)</p>
+                                    <p>En general, les aplicacions classifiquen les seqüències indicades, de demanda de dades, tractament i mostra de resultats, en tasques. És a dir les tasques són, per dir-ho d'alguna forma unitats de procediment complertes on a partir d'unes dades inicials, es fan un seguit de tractaments i s'obtenen uns resultats que s'emmagatzemaran o es mostraran a l'usuari d'alguna manera. L'obtenció de dades, els tractaments de les mateixes i la mostra dels resultats són les accions en que es descompon la tasca. Recordeu els esquemes que vàreu veure a l'activitat A502 on es podia entreveure la composició de les tasques:</p>
+                                    <figure id ="descomposicioAplicacions">
+                                        <img src="images/activities/descomposicioAplicacions.png" alt="descomposició d'aplicacions">
+                                        <figcaption style="width: 510px; max-width: 75%;">
+                                            <span class="figuretitle">figura </span> Descomposició d'aplicacions.                               
+                                        </figcaption>
+                                     </figure>
+                                    <p>I el fet que les tasques necessiten una entrada de dades inicial, uns tractaments i una mostra dels resultats.</p>
+                                     <figure id ="figura_pantalles">
+                                        <img src="images/activities/fluxControl.png" alt="Control"/>
+                                        <figcaption >
+                                            <span class="figuretitle">figura </span> Esquema simplificat del flux d'execució d'una aplicació.                               
+                                        </figcaption>
+                                    </figure>
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Per què creus que quan parlem de tasques, parlem d'unitats complertes de processament?.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class=bodySlide>
-                                <p>La qualitat d'una aplicació depèn en gran mesura de que els seus mètodes estiguin ben implementats, es comportin correctament, no amaguin errors, etc. Procureu que la implementació segueixi els criteris de qualitat descrits a continuació:</p>
-                                <ol>
-                                    <li>Utilitzeu noms significatius de variables i mètodes a fi que en llegir-los es pugui interpretar la seva funcionalitat.</li>
-                                    <li>Eviteu de fer servir valors literals. En el seu lloc useu constants amb noms significatius.</li>
-                                    <li>Indeteu el codi.</li>
-                                    <li>Eviteu escriure mètodes monolítics excessivament grans. Dividiu-los en mètodes extres malgrat no estiguessin planificats. Procureu escriure codi que sigui fàcil de llegir.</li>
-                                    <li>Useu comentaris clarificadors quan sigui necessari, però no en excés.</li>
-                                </ol>
-                                <p>Per cada funció implementada caldrà definir i codificar un joc de proves per tal de verificar el bon comportament  de la funció. Per tal que el joc de proves no embruti el codi final de l'aplicació, creeu una classe específica anomenada Test on realitzareu totes les proves. Així serà fàcil d'eliminar, quan es lliuri el codi al coordinador.</p>
-                                <!-- Button trigger pannel -->
-                                <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                        data-toggle="button"
-                                        data-parent-selector="#leftColumnPanel"
-                                        data-display-on-set-slide="slc-implementacio" 
-                                        data-selector-clue="#slc-implementacio-clue1">
-                                    Pista 1
-                                </button>                                        
-                                <div id="slc-implementacio-clue1" class="iocClue hidden">
-                                    <h2>Pista 1</h2>
-                                    <p>Per fer que les funcions siguin reutilitzables cal parametritzar-les a fi que puguin cridar-se en cada situació, usant valors diferents.</p>
-                                    <p>Java és un llenguatge <em>tipat</em>, això significa que cal indicar sempre el tipus de dades dels paràmetres de les funcions a la declaració d'aquesta, i no és possible fer una crida a la funció usant tipus de dades diferents als declarats. És per això, que quan desenvolupem funcions de biblioteques reutilitzables, caldria tenir en compte que si fem servir sempre tipus de dades estàndards reconeguts per JAVA: (boolean, short, int, long, float, double, String o arrays de qualsevol dels tipus anteriors), resultarà més fàcil de reutilitzar en múltiples aplicacions, que si usem tipus compostos de dades, específics.</p>
-                                </div>                                    
-                                <!-- Button trigger pannel -->
-                                <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                        data-toggle="button"
-                                        data-parent-selector="#leftColumnPanel"
-                                        data-display-on-set-slide="slc-implementacio" 
-                                        data-selector-clue="#slc-implementacio-clue2">
-                                    Pista 2
-                                </button>                                        
-                                <div id="slc-implementacio-clue2" class="iocClue hidden">
-                                    <h2>Pista 2</h2>
-                                    <p>Respecte a la biblioteca reutilitzable d'interfícies d'usuari basades en consola, cal clarificar que no es tracta d'escriure funcions per generar la interfície del projecte que esteu desenvolupant, sinó que les funcions que heu de desenvolupar són funcions reutilitzables que ajudin a crear qualsevol interfície d'usuari basada en consola, i en conseqüència us facilitin la creació (més endavant) de la interfície del projecte.</p>
-                                    <p>Les funcions d'una biblioteca reusable d'interfícies d'usuari, han de permetre estandarditzar la forma de mostrar o demanar informació a l'usuari, segons el tipus d'informació de la que es tracti. A les interfície basada en consola, emulant els terminals d'entrada i sortida estàndard, cal utilitzar les característiques textuals per definir els elements distintius que identifiquin un o altre tipus d'informació.   Així per exemple podem decidir que sempre mostrarem els títols de les pantalles de les nostres aplicacions en majúscules i rodejat d'una seqüència de caràcters '*' a mode de marc vorejant el text del títol.</p>
-                                    <p>Aquesta decisió obliga a afegir codi extra a les nostres aplicacions per aconseguir aquesta normalització. Ara bé si aconseguim encapsular tot aquest codi extra en una funció reutilitzable, aconseguirem crear aplicacions que mostraran la informació correctament estandarditzades (d'acord a l'estil de la nostra companyia) sense haver invertir gaire temps, ja que n'hi haurà prou en cridar la funció de la biblioteca reusable adequada i passar-li el valor concret dels paràmetres requerits.</p>
-                                </div>                                    
-                                <!-- Button trigger pannel -->
-                                <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                        data-toggle="button"
-                                        data-parent-selector="#leftColumnPanel"
-                                        data-display-on-set-slide="slc-implementacio" 
-                                        data-selector-clue="#slc-implementacio-clue3">
-                                    Pista 3
-                                </button>                                        
-                                <div id="slc-implementacio-clue3" class="iocClue hidden">
-                                    <h2>Pista 3</h2>
-                                    <p>La implementació de funcions del gestor de dades, per contra, requereixen passar per paràmetres el tipus de dades compost específic de l'aplicació, per tal que pugui ser manipulat.</p>
-                                    <p>En cas d'implementar un funció d'inicialització del tipus compost, pot optar-se per crear la instància a inicialitzar dins la pròpia funció i retornar-la degudament inciialitzada o bé per crear la instància fora i passar-la com a paràmetre a la funció d'inicialització per tal que pugui manipular els seus elements donant-los un valor coherent per poder-lo fer servir de forma immediata.</p>
-                                </div>                                    
-                            </div> 
+                </section>
+                <!--=========== END SUBSECTION Fòrum 1 ================-->    
+              <!--=========== BEGIN SUBSECTION Fòrum 2 ================-->    
+                <section id="slc-discussion21" class="debat section">                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
+                                     <h3> Mantenir les entrades i sortides de dades en funcions específiques</h3>
+                                 </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>A l'hora de descompondre les tasques, intenteu evitar la barreja de funcions de demanda o sortida de dades amb funcions de tractament. Si ho feu, els vostres programes seran més fàcils de llegir, de modificar i aconseguireu reutilitzar codi més fàcilment. Probablement caldrà escriure algunes línies de codi, de més, però a els avantatges obtinguts s'ho valdran.</p>
+                                    <p>Els avantatges de separar així el codi són diversos. Un dels més importants, té a veure amb la reutilització del codi. Al fòrum anterior ja hem vist que les aplicacions no sempre han de tenir un mateix origen o sortida de dades, fins i tot suposant que l'origen de les dades fos sempre la interpel·lació de l'usuari, la proliferació que avui dia hi ha de plataformes (mòbils, WEB, d'interfícies gràfiques, de consola, etc.) fa molt difícil reutilitzar el codi dissenyat específicament per una d'aquestes plataformes. És més, les interpel·lacions als usuaris, solen estar acompanyades de textos molt contextualitzats i per tant, de difícil reutilització en altres contextos.</p>
+                                    <p>Per contra, les accions de tractament, si es configuren bé, podran reutilitzar-se en múltiples contextos i amb independència del tipus d'entrada o sortida que acabem implementant o de la plataforma finalment usada. Per exemple, si una tasca calcula la temperatura mínima o mitjana o ... i prenem la precaució de independitzar la demanda i sortida de dades del propi càlcul, adaptar la tasca a diferents plataformes o formes d'obtenció de dades (fitxers, Internet), consistirà només en reescriure les funcions específiques d'entrada i sortida, però podrem deixar intactes les de tractament i càlcul de resultats.</p>
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <p>
+                                            Què creus que a la pràctica pot significar implementar una funció descontextualitzada?.<br/>
+                                            Indica com es podria aconseguir.
+                                        </p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Fòrum 2 ================-->
+                <!--=========== BEGIN SUBSECTION Fòrum 3 ================-->    
+                <section id="slc-discussion22" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
+                                     <h3>Estandardització d'interfícies i ús de biblioteques reusables</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Si com acabem de veure, les funcions que implementen interfícies d'usuari estan molt contextualitzades i són realment difícils de reutilitzar, per què a l'activitat A503 us vàrem demanar que intentéssiu crear una biblioteca genèrica que ajudés a implementar interfícies d'usuari basades en consola? Què és el que determina el context d'una funció?.</p>
+                                   <p>Efectivament, són els missatges i al informació de sortida la que dóna la contextualització. Per tant si que ha de ser possible implementar funcions genèriques per permetin crear interfícies d'usuari, sempre i quan les descontextualitzem eliminant els textos i la informació específica de la implementació, però permeten que aquesta arribi a través de paràmetres.</p>
+                                   <p>De fet, si cerqueu una mica, us adonareu que JAVA i la majoria de llenguatges d'alt nivell, disposen de moltes biblioteques genèriques per a poder crear interfícies gràfiques. Això és així, perquè la complexitat requerida a les interfícies gràfiques és gran i no surt rentable implementar les des de zero.</p>
+                                   <p>Malgrat les interfícies basades en consola presenten sempre una complexitat molt menor, ens pot resultar eficient i útil implementar també biblioteques genèriques que ajudin a estandarditzar les pantalles de la nostra aplicació de forma que totes segueixin un patró similar, tant a l'hora de controlar errors,  de mostrar informació,  de seqüenciar les peticions múltiples, de mostra de determinats resultats, etc.</p>
+                                   <p>L'estandardització, resulta clau per reduir la corba d'aprenentatge que els usuaris necessiten per aprendre una  aplicació nova.</p> 
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Creus que de forma semblant al que passa amb els usuaris, els programadors, els pot resultar també més fàcil d'implementar les interfícies d'una aplicació si aquestes es torben altament estandarditzades? Relaciona-ho amb el fet que l'estandardització redueix el grau de llibertat a l'hora de d'implementar les interfícies i en el fet de l'ús de biblioteques genèriques</p>
+                                    </div>
+                                </div>          
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Fòrum 3 ================-->
+                <!--=========== BEGIN SUBSECTION Fòrum 4 ================-->    
+                <section id="slc-discussion24" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
+                                     <h3>Criteris de qualitat de les interfícies d'usuari</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Avui en dia, una bona interfície d'usuari ha de complir un seguit de criteris de qualitat. No n'hi ha prou en estandarditzar la interfície, sinó que cal estandarditzar-la seguint els criteris de qualitat comunament acceptats. Veiem-ne els principals</p>
+                                    <ul>
+                                        <li>És important que l'usuari no es perdi mai durant la navegació. Això significa que a totes les pantalles de l'aplicació hi hauria d'haver informació que indiqui a l'usuari a quin mòdul o quina tasca es troba.</li>
+                                        <li>L'Usuari ha de tenir sempre clar el que ha de fer. És a dir la pantalla ha de donar una informació clara i precisa de les accions que l'usuari pot fer. Les informacions ambigües són contraproduents i les llargues també.</li>
+                                        <li>La interfície ha de ser tot l'intuïtiva que sigui possible. És a dir l'usuari hauria d'endevinar el que ha de fer sense necessitat de llegir-se el manual.</li>
+                                        <li>La interfície ha d'estar estandarditzada. És a dir, cal que les demandes i presentacions d'informació segueixin  un patró similar d'acord amb la seva funcionalitat, tipus de dades, etc.</li>
+                                        <li>La interfície ha de ser tolerant a errades de l'usuari. Cal tenir present que els usuaris no sempre faran el que se'ls demana, ja sigui per equivocació o per simple curiositat. En qualsevol cas, la interfície no s'ha de penjar mai per acció de l'usuari; i també cal assegurar sempre que es recullen exactament el tipus i el nombre de dades previstes. </li>
+                                    </ul>
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Valoreu els criteris de qualitat exposats més amunt</p>
+                                    </div>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Fòrum 4 ================-->
+                <!--=========== BEGIN SUBSECTION Fòrum 5 ================>    
+                <section id="slc-discussion25" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
+                                     <h3>Criteris de qualitat de les interfícies d'usuari</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Avui en dia, una bona interfície d'usuari ha de complir un seguit de criteris de qualitat. No n'hi ha prou en estandarditzar la interfície, sinó que cal estandarditzar-la seguint els criteris de qualitat comunament acceptats. Veiem-ne els principals</p>
+                                    <ul>
+                                        <li>És important que l'usuari no es perdi mai durant la navegació. Això significa que a totes les pantalles de l'aplicació hi hauria d'haver informació que indiqui a l'usuari a quin mòdul o quina tasca es troba.</li>
+                                        <li>L'Usuari ha de tenir sempre clar el que ha de fer. És a dir la pantalla ha de donar una informació clara i precisa de les accions que l'usuari pot fer. Les informacions ambigües són contraproduents i les llargues també.</li>
+                                        <li>La interfície ha de ser tot l'intuïtiva que sigui possible. És a dir l'usuari hauria d'endevinar el que ha de fer sense necessitat de llegir-se el manual.</li>
+                                        <li>La interfície ha d'estar estandarditzada. És a dir, cal que les demandes i presentacions d'informació segueixin  un patró similar d'acord amb la seva funcionalitat, tipus de dades, etc.</li>
+                                        <li>La interfície ha de ser tolerant a errades de l'usuari. Cal tenir present que els usuaris no sempre faran el que se'ls demana, ja sigui per equivocació o per simple curiositat. En qualsevol cas, la interfície no s'ha de penjar mai per acció de l'usuari; i també cal assegurar sempre que es recullen exactament el tipus i el nombre de dades previstes. </li>
+                                    </ul>
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Valoreu els criteris de qualitat exposats més amunt</p>
+                                    </div>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Fòrum 5 ================-->
             </section>
-            <!--=========== END SECTION implementacio ================-->    
+            <!--=========== END SECTION discussion ================-->    
+            
+            <!--=========== BEGIN SECTION implementació ================-->    
+            <section id="slc-toDo" class="vsections">
 
+            </section>
+            <!--=========== END SECTION implementació ================-->    
             <!--=========== BEGIN SECTION toDelivery ================-->    
             <section id="slc-toDelivery">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament - Implementació I</h2>
+                                 <h2 >Lliurament -Implementació II</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>El codi implementat en aquesta activitat, s'haurà d'empaquetar junt en un fitxer ZIP que penjareu al <span class="forumTreball">fòrum del grup de treball</span> a fi que els vostres companys i el professor responsable de l'aula hi tinguin accés.</p>
-                                <p>És molt important seguir el calendari establert a fi de facilitar la feina de l'equip i evitar retards que puguin comportar conseqüències negatives. Per tant, procureu  lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>Baixa't l'<span class="informeLliurament"></span> d'aquesta activitat i omple'l. Ens interessa la teva opinió sobre l'activitat. A l'informe, trobaràs també una graella d'autoavaluació que t'ajudarà a veure si has seguit els criteris que qualitat exposats en seccions anteriors i en quin grau ho has fet. Fer un examen d'autoavaluació ajuda a ser conscient de les errades comeses i acostuma a prevenir la reiteració de les mateixes en accions futures.</p>
+                                <p>Lliura l'informe a la bústia de lliuraments d'aquest període. Per aquesta activitat, només cal que enviïs l'informe. Malgrat tot, si ho creus necessari, pots enviar més d'un fitxer empaquetant-los tots junts en un fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span>.</p>
+                                <p>Es recomana acabar i lliurar aquesta activitat abans de la data límit: <strong class="dataLimit"></strong>. Recorda però, que encara falta fer la darrera activitat que també té com a data límit el dia <strong class="dataLimit"></strong></p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, ja que el professor podrà valorar l'evolució del projecte a més del codi que haureu de lliurar al final. </p>
                             </div>
                         </div>
                     </div>
@@ -217,7 +326,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Com continuar</h2>
+                                 <h2 >Com continuar - Implementació II</h2>
                              </div>
                         </div>
                     </div>
@@ -323,52 +432,11 @@
         $(document).ready(function(){
             var activityManager = new ActivityManager();
             
-            activityManager.init("data/toReplace.json", "A504");
+            activityManager.init("data/toReplace.json", "A504", false);
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
         });
         
-        /*
-        iocSlider = new IocSlider();
-        
-        $("[data-display-on-set-slide]").each(function(){
-            var slide;
-            var self = this;
-            var slideId = this.dataset.displayOnSetSlide; 
-            iocSlider.watch("onSetCurrentSlide", function(e){
-                var slide;
-                var oldSlide =e.oldValues.vindx!=-1
-                                    ?e.oldValues.vslides[e.oldValues.vindx]
-                                    :e.oldValues.hslides[e.oldValues.hindx];
-                if($(oldSlide).attr("id")===slideId){
-                   $(self).hide();
-                   if($(self).hasClass("active")){
-                        $(self).click();
-                   }
-                }
-                slide = this.hasVerticalSlides()
-                                    ?this.vslides[this.vindx]
-                                    :this.hslides[this.hindx];
-                if($(slide).attr("id")===slideId){
-                   $(self).show();
-                }
-            });
-    
-            slide = iocSlider.hasVerticalSlides()
-                                ?iocSlider.vslides[iocSlider.vindx]
-                                :iocSlider.hslides[iocSlider.hindx];
-            if($(slide).attr("id")===slideId){
-               $(this).show();
-            }
-        });
-
-        hljs.addLineNumbers();
-        hljs.initHighlightingOnLoad();
-        
-        $(document).ready(function(){
-            toReplaceOnLoad("data/toReplace.json", "A403");
-        });
-        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 
