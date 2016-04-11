@@ -440,13 +440,13 @@
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP8", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA504.odt'> l'informe </a>"},
         "toDo":{"selector":"#slc-toDo", "type":"file/html", "value":"projecte/A504_implementacio.shtm" },         
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A505_Implementacio3.html?dam"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"projecte/A505_Implementacio3.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"},
         "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP8", "value":"forumDeDiscussio"},
         "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP8", "value":"forumDeDiscussioUrl"}
     },
     "A505": {
-        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A505_Implementacio3.html?dam'>A505</a>"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A505_Implementacio3.html?dam'>A505</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A505 Implementació III"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"ref", "name":"RP8", "value":"dataFinal"},
@@ -456,7 +456,7 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP8", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP8", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA505.odt'> l'informe </a>"},
-        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A5MI_PropostaIndividualMillora.html?dam"},
+        "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"../A5MI_PropostaIndividualMillora.html?dam"},
         "toProjectStatement":{"selector":".toProjectStatement", "defaultValue":"enunciatProjecteUrl"}
     },
     "A5MI": {
