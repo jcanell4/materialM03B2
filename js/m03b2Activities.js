@@ -212,6 +212,7 @@ ActivityManager = function (){
                         emptyPanel.append(clue);
                         emptyPanel.addClass("active");
                         emptyPanel.css("width", ""+($(document).width()-100)+"px");
+                        emptyPanel.css("width", "90%");
                         $(this).attr("title", "Prem per tornar a l'activitat")
                     }
                 });

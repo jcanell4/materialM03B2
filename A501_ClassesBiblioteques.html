@@ -544,7 +544,7 @@ if(operacio1.operacio == '+'){
                                     <p>En el llenguatge JAVA no és possible donar valors a una estructura si no s'ha creat la instancia del seu tipus compost. Si ho féssim obtindríem un error:</p>
                                          <pre><code class="java">
 DadesCalculadora operacio2;
-operacio1.operador1 = 7; //Això dona error perquè no s'ha instanciat la variable: operacio2 = new DadesCalculadora() 
+operacio2.operador1 = 7; //Això dona error perquè no s'ha instanciat la variable: operacio2 = new DadesCalculadora() 
 												</code></pre>
                                 </div>
                             </div>
@@ -976,9 +976,10 @@ public class Jugador {
                                     <h4>Qüestions pel debat en el <span class="forumDeDiscussio"></span></h4>
                                      <ol>
                                         <li>Creieu que les 3 estructures de dades DadesJocDames responen als requisits de l'aplicació?</li>
-                                        <li>Quines avantatges i inconvenients creieu que tenen cada una d'elles?</li>
                                         <li>Quina instrucció utilitzaries per declarar una variable del tipus <em>DadesJocDames</em> i poder-la començar a fer servir, amb independència de quina sigui la opció utilitzada a la declaració?</li>
-                                        <li>A les opcions 2 i 3, es fa servir una tipus compost (<em>Jugador</em>) dintre de l'estructura principal. En tractar-se d'un tipus compost, caldrà també inicialitzar-lo en algun moment. Com ho faríes per cada opció?</li>
+                                        <li>Per què creieu que a l'opció <em>1</em> no s'han unificat en un únic array els noms dels jugadors i les victòries aconseguides? L'array nomJugadors té una capacitat de dos elements, igual que victoriesPerJugador. Hi ha alguna raó que forci aquesta característica? Com es relacionen els elements d'ambdós arrays?</li>
+                                        <li>A les opcions 2 i 3, es fa servir una tipus compost (<em>Jugador</em>) dintre de l'estructura principal. Això permet unificar dades de diferents tipus. Ara bé, en tractar-se d'un tipus compost, caldrà també inicialitzar-lo en algun moment. Com ho faries per cada opció?</li>
+                                        <li>A vegades en estructures senzilles, l'ús de tipus compostos interns (com el de Jugador dins de DadesJocDames), pot resultat una mica farragós d'inicialitzar i usar. Cal valorar sempre quines avantatges i inconvenients comporten totes les opcions per poder fer una correcta. Quines avantatges i quins inconvenients creus que presenta cada una de les opcions?</li>
                                         <li>A banda de les inicialitzacions del tipus compostos Jugador, les tres opcions requeriran d'un petit procés d'inicialització que asseguri que abans de començar les dades seran coherents. És a dir, el taules es trobi buit i els comptadors de partides guanyades de cada jugador es trobi a zero. Com implementaries aquest procés?</li>
                                         <li>Imagina que disposes d'una funció anomenada <em>demanarNomJugador</em> que demana a l'usuari que introdueix el seu nom i un cop escrit el retorni. Com assignaries el nom retornat a una variable del tipus <em>DadesJocDames</em>, anomenada <em>joc</em>? Contempla la solució per cada una de les 3 opcions?</li>
                                     </ol>

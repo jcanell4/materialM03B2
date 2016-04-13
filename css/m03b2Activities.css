@@ -265,8 +265,8 @@
     margin-bottom: 0.5em;    
 }
 
-.ioctextl img,.iocexample img {
-    max-width: 100%;
+.iocClue img, .ioctextl img,.iocexample img {
+    max-width: 90%;
 }
 
 .iocnote {
@@ -393,10 +393,10 @@
 .iocClue{
     font-family: Verdana,"Times New Roman",serif;
     color: #1C335C;
-    padding: 15px;
+    padding: 10px 10% 40px 5%;
     border: 1px solid #999;
-    width: 100%;
-    height: 100%;
+    /*width: 92%;*/
+    height: 98%;
     overflow: auto;
     font-size: 1.25em;
     text-align: justify;
@@ -406,6 +406,20 @@
     color: #080F8E;
     font-size: 2em;
     font-weight: 1.5em;
+    text-align: center;
+}
+
+.iocClue h4{
+    color: #080F8E;
+    font-size: 1.5em;
+    font-weight: 1.25em;
+    text-align: center;
+}
+
+.iocClue h5{
+    color: #080F8E;
+    font-size: 1em;
+    font-weight: 1.25em;
     text-align: center;
 }
 
@@ -463,14 +477,12 @@ figcaption .figuretitle {
     counter-increment: ctable;
 }
 
-.tablecaption {
-    display: block;
-    margin: 0 auto 0.1em;
-    font-size: 0.8em;
+.tablescope caption {
+    caption-side: bottom;
     padding-top: 5px;
 }
 
-.tablecaption .tabletitle {
+caption .tabletitle {
     font-weight: bold;
 }
 
