@@ -446,7 +446,7 @@
         "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP8", "value":"forumDeDiscussioUrl"}        
     },
     "A505": {
-        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A505_Implementacio3.html?asix'>A505</a>"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='projecte/A505_Implementacio3ASX.html?asix'>A505</a>"},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A505 Implementació III"},
         "lliurament": {"selector":".lliurament", "defaultValue":"Ll_B"},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"ref", "name":"RP8", "value":"dataFinal"},
