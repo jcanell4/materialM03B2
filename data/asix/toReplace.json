@@ -470,6 +470,6 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RPM", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RPM", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA5MI.odt'> l'informe </a>"},
-        "grQualitat":{"selector":".grQualitat", "type":"attr", "name":"href", "value":"A508_Implementacio3.html?asix#slc-implementacio"}
+        "grQualitat":{"selector":".grQualitat", "type":"attr", "name":"href", "value":"A505_Implementacio3.html?asix#slc-toDo__slc-toDo7"}
     }
 }
