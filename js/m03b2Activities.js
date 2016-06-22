@@ -304,7 +304,16 @@ ActivityManager = function (){
                    if(value.defaultValue){
                        value = defaultValues[value.defaultValue];
                    }
-                   if(value.type=="ref"){
+                   if(value.type=="arrayText"){
+                       ret = "";
+                        if(value.value.length>0){
+                            ret = getValue(value.value[0], defaultValues, data);
+                        }
+                        for(var i=1; i<value.value.length; i++){
+                            ret += ("separator" in value)?value.separator:"/";
+                            ret += getValue(value.value[i], defaultValues, data);
+                        }
+                   }else if(value.type=="ref"){
                        value = data[value.name][value.value].value;
                        ret = getValue(value, defaultValues, data);
                    }else if(value.type=="text"){
@@ -320,29 +329,57 @@ ActivityManager = function (){
                if(activity.defaultValue){
                    activity = defaultValues[activity.defaultValue];
                    fReplaceData(selector, activity, defalutValues);
-               }else if(activity.type == "ref"){
+               }else if(activity.type === "ref"){
                     var refActivity = data[activity.name][activity.value];
                     fReplaceData(selector, refActivity, defalutValues);
-               }else if(activity.type=="arrayText"){
-                   var value = "";
-                   if(activity.value.length>0){
-                       value = getValue(activity.value[0], defalutValues, data);
+               }else if(activity.type==="arrayText"){
+                   var value = getValue(activity, defalutValues, data);
+                   $(selector).text(value);
+               }else if(activity.type==="file/text"){
+                   var value;
+                   if(typeof activity.value === "string"){
+                       value = activity.value;
+                   }else{
+                       value = getValue(activity.value, defalutValues, data);
                    }
-                   for(var i=1; i<activity.value.length; i++){
-                       value += "/";
-                       value += getValue(activity.value[i], defalutValues, data);
+                   fReplaceByFile(value, "text", selector);
+               }else if(activity.type==="file/html"){
+                   var value;
+                   if(typeof activity.value === "string"){
+                       value = activity.value;
+                   }else{
+                       value = getValue(activity.value, defalutValues, data);
+                   }
+                   fReplaceByFile(value, "html", selector);
+               }else if(activity.type==="text"){
+                   var value;
+                   if(typeof activity.value === "string"){
+                       value = activity.value;
+                   }else{
+                       value = getValue(activity.value, defalutValues, data);
                    }
                    $(selector).text(value);
-               }else if(activity.type=="file/text"){
-                   fReplaceByFile(activity.value, "text", selector);
-               }else if(activity.type=="file/html"){
-                   fReplaceByFile(activity.value, "html", selector);
-               }else if(activity.type=="text"){
-                   $(selector).text(activity.value);
                }else if(activity.type=="html"){
-                   $(selector).html(activity.value);
+                   var value;
+                   if(typeof activity.value === "string"){
+                       value = activity.value;
+                   }else{
+                       value = getValue(activity.value, defalutValues, data);
+                   }
+                   $(selector).html(value);
                }else if(activity.type=="attr"){
-                   $(selector).attr(activity.name, activity.value);
+                   var value, name;
+                   if(typeof activity.value === "string"){
+                       value = activity.value;
+                   }else{
+                       value = getValue(activity.value, defalutValues, data);
+                   }
+                   if(typeof activity.name === "string"){
+                       name = activity.name;
+                   }else{
+                       name = getValue(activity.name, defalutValues, data);
+                   }
+                   $(selector).attr(name, value);
                }           
             };
             var activities = data[id];    

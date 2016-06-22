@@ -14,6 +14,9 @@ jssor_slider1_starter = function (containerId) {
     _CaptionTransitions["WAVE|L"] = { $Duration: 1500, x: 0.6, y: 0.3, $Easing: { $Left: $JssorEasing$.$EaseLinear, $Top: $JssorEasing$.$EaseInWave }, $Opacity: 2, $Round: { $Top: 2.5} };
     _CaptionTransitions["MCLIP|B"] = { $Duration: 900, $Clip: 8, $Move: true, $Easing: $JssorEasing$.$EaseOutExpo };
     _CaptionTransitions["L-*|B"] = {$Duration:1200,x:0.7,$Rotate:-0.5,$Easing:{$Left:$JssorEasing$.$EaseInCubic,$Opacity:$JssorEasing$.$EaseInQuad,$Rotate:$JssorEasing$.$EaseInBack},$Opacity:2,$During:{$Left:[0.2,0.8]}};
+    _CaptionTransitions["RTT|360"] = {$Duration:2000,$Rotate:1,$Easing:{$Opacity:$JssorEasing$.$EaseLinear,$Rotate:$JssorEasing$.$EaseInQuad},$Opacity:2};
+    _CaptionTransitions["R-CROSS"] = {$Duration:2000,x:-1,$Easing:$JssorEasing$.EaseInOutSine,$Opacity:1};
+    _CaptionTransitions["L-CROSS"] = {$Duration:2000,x:1,$Easing:$JssorEasing$.EaseInOutSine,$Opacity:1};
     var options = {
         $SlideDuration: 400,
         $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
@@ -22,7 +25,7 @@ jssor_slider1_starter = function (containerId) {
             $Class: $JssorCaptionSlider$,                   //[Required] Class to create instance to animate caption
             $CaptionTransitions: _CaptionTransitions,       //[Required] An array of caption transitions to play caption, see caption transition section at jssor slideshow transition builder
             $PlayInMode: 1,                                 //[Optional] 0 None (no play), 1 Chain (goes after main slide), 3 Chain Flatten (goes after main slide and flatten all caption animations), default value is 1
-            $PlayOutMode:3                                 //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
+            $PlayOutMode:1                                 //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
         }
     };
 

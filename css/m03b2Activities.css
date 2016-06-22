@@ -70,6 +70,35 @@
     text-align: left;
 }
 
+.sidepanel{
+    padding-left: 50px;
+    font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+    font-size: 1.2em;
+    color: #888;  
+}
+
+.sidepanel.hidden{
+    padding-left: 0px;
+    font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+    font-size: 1.2em;
+    color: #888;  
+}
+
+.sidepanel h2{
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.sidepanel h3{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.sidepanel h4{
+    font-weight: bold;
+    font-size: 1em;
+}
+
 .bodySlide {
     padding-top: 20px;
     font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
