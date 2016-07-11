@@ -1,6 +1,8 @@
 jssor_slider1_starter = function (containerId) {
     
     var _CaptionTransitions = [];
+    _CaptionTransitions["L+"] = { $Duration: 900, x: 0.5, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 3,$During:{$Left:[0.25, 0.75]}};
+    _CaptionTransitions["B+"] = { $Duration: 900, y: -0.5, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 3,$During:{$Top:[0.25, 0.75]}};
     _CaptionTransitions["L"] = { $Duration: 800, x: 0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
     _CaptionTransitions["R"] = { $Duration: 800, x: -0.6, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
     _CaptionTransitions["T"] = { $Duration: 800, y: 0.6, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $Opacity: 2 };
@@ -17,6 +19,13 @@ jssor_slider1_starter = function (containerId) {
     _CaptionTransitions["RTT|360"] = {$Duration:2000,$Rotate:1,$Easing:{$Opacity:$JssorEasing$.$EaseLinear,$Rotate:$JssorEasing$.$EaseInQuad},$Opacity:2};
     _CaptionTransitions["R-CROSS"] = {$Duration:2000,x:-1,$Easing:$JssorEasing$.EaseInOutSine,$Opacity:1};
     _CaptionTransitions["L-CROSS"] = {$Duration:2000,x:1,$Easing:$JssorEasing$.EaseInOutSine,$Opacity:1};
+    _CaptionTransitions["ZML|T"] = {$Duration:1000,y:0.6,$Zoom:11,$Easing:{$Top:$JssorEasing$.$EaseInCubic,$Zoom:$JssorEasing$.$EaseInCubic},$Opacity:2};
+    _CaptionTransitions["ZML|IE|BR"] = {$Duration:1200,x:-0.6,y:-0.6,$Zoom:8,$Easing:{$Left:$JssorEasing$.$EaseInCubic,$Top:$JssorEasing$.$EaseInCubic,$Zoom:$JssorEasing$.$EaseInElastic},$Opacity:2};
+    _CaptionTransitions["ZM*JDN|LB"] = {$Duration:1200,x:0.8,y:-0.5,$Zoom:11,$Easing:{$Left:$JssorEasing$.$EaseLinear,$Top:$JssorEasing$.$EaseOutCubic,$Zoom:$JssorEasing$.$EaseInCubic},$Opacity:2,$During:{$Top:[0,0.5]}};
+    _CaptionTransitions["ZM*JDN|RB*"] = {$Duration:1200,x:-0.6,y:-0.6,$Zoom:11,$Easing:{$Left:$JssorEasing$.$EaseInWave,$Top:$JssorEasing$.$EaseInJump,$Zoom:$JssorEasing$.$EaseInCubic},$Opacity:2,$During:{$Top:[0,0.5]},$Round:{$Left:0.3,$Top:0.75}};
+    _CaptionTransitions["RTT*WV*J3|RT"] = {$Duration:1200,x:-0.6,y:0.6,$Zoom:11,$Rotate:-1,$Easing:{$Left:$JssorEasing$.$EaseInSine,$Top:$JssorEasing$.$EaseOutJump,$Zoom:$JssorEasing$.$EaseInCubic},$Opacity:2,$Round:{$Top:0.5,$Rotate:0.5}};
+    _CaptionTransitions["B*CLIP"] = {$Duration:1200,y:-0.6,$Clip:3,$Easing:$JssorEasing$.$EaseInCubic,$Opacity:2};
+    _CaptionTransitions["T*CLIP"] = {$Duration:1200,y:0.6,$Clip:3,$Easing:$JssorEasing$.$EaseInCubic,$Opacity:2};
     var options = {
         $SlideDuration: 400,
         $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false

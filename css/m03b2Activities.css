@@ -472,6 +472,17 @@ figure.left{
     float:left;
     margin-right:20px;
     text-align: left;
+    clear: none;
+}
+
+figure.right{
+    position: relative; 
+    top: 0px; 
+    right: 0px; 
+    float:right;
+    margin-left: 20px;
+    text-align: left;
+    clear: none;
 }
 
 .figscope{
