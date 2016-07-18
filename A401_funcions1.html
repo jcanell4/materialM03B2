@@ -214,10 +214,9 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Un cop donada la definició, convé que us adoneu que, encara que sense saber-ho, heu estat usant funcions des de que vàreu començar aquest mòdul en el bloc 1. Això és així perquè el llenguatge <em>Java</em> obliga a escriure totes les instruccions dins d'alguna funció. No és possible escriure codi fora de les funcions, el llenguatge no sabria interpretar-lo. És per això que Java estableix fins i tot, el nom de la funció <em>main</em>, com una forma d'identificar el codi que cal executar en primer lloc mantenint a l'hora la premissa de contenir tot el codi executable dins d'alguna funció.</p>
+                                    <p>Un cop donada la definició, convé que us adoneu que, encara que sense saber-ho, heu estat usant funcions des de que vàreu començar aquest mòdul en el bloc 1. Això és així perquè el llenguatge <em>Java</em> obliga a escriure totes les instruccions dins d'alguna funció. No és possible escriure codi fora de les funcions, el llenguatge no sabria interpretar-lo. És per això que Java estableix el nom de la funció <em>main</em>, com una forma d'identificar el codi que cal executar en primer lloc, en iniciar un programa. D'aquesta manera JAVA aconsegueix localitzar on es troba l'inici de les aplicacions, a l'hora que manté la premissa de contenir tot el codi executable dins d'alguna funció.</p>
 
-                                    <p>Val a dir que en el llenguatge Java, les funcions  s'anomenen mètodes. Segur que la paraula us sona més, però a efectes pràctics, els podeu considerar el mateix.</p>
-                                    <p>El llenguatge <em>Java</em> disposa de mecanismes per definir el contingut dels mètodes, es coneixen amb el nom genèric de <em>declaració de mètodes</em> i permeten informar al llenguatge del codi que quedarà agrupat dins d'un mètode i de com s'intercanvia la informació generada dins i fora del mètode.</p>
+                                    <p>Val a dir que en el llenguatge Java, les funcions  s'anomenen mètodes. Segur que la paraula us sona més, però a efectes pràctics, els podeu considerar el mateix. El llenguatge <em>Java</em> disposa de mecanismes per definir el contingut dels mètodes, es coneixen amb el nom genèric de <em>declaració de mètodes</em> i permeten informar al llenguatge del codi que quedarà agrupat dins d'un mètode i de com s'intercanvia la informació generada dins i fora d'aquest.</p>
                                     <p>La declaració bàsica d’un mètode es fa usant la sintaxi que es mostra tot seguit:</p>                                 
                                     
                                     <pre><code class="java">
@@ -227,11 +226,11 @@
     }
                                     </code></pre>                         
                                     <p>La declaració de mètodes es pot dur a terme en qualsevol lloc del fitxer font sempre que sigui entre les claus que identifiquen l’inici i fi de fitxer <code>(public class NomClasse { … })</code> i fora del bloc d’instruccions del mètode principal, o qualsevol altre mètode.</p>
-                                    <p>La declaració dels mètodes no n'executa el seu contingut. Per executar el codi d'un mètode, cal invocar els seu nom seguit de dos parèntesis, que són els signes que identifiquen les funcions i les distingeixen de les variables. La invocació de mètodes s'anomena també crida. Vegem-ne un exemple</p>
+                                    <p>La declaració dels mètodes no executa el seu contingut. Per executar el codi d'un mètode, cal invocar els seu nom seguit de dos parèntesis, que són els signes que identifiquen les funcions i les distingeixen de les variables. La invocació de mètodes s'anomena també crida. Vegem-ne un exemple</p>
                                     <pre><code class="java">
     public void inici(){
         //...
-        nomMetode();
+        nomMetode(); //aquesta és la instrucció de crida que executarà el codi contingut a la funció "<em>nomMetode</em>"
         //...
     }
 
@@ -262,14 +261,14 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Una de les principals raons de ser de les funcions, és <strong>minimitzar la complexitat</strong> de les implementacions reduint el nombre de línies de codi que un programador ha de tenir en compte a l'hora de fer una programa.</p>
+                                    <p>Una de les principals raons de ser de les funcions, és <strong>minimitzar la complexitat</strong> de les implementacions reduint el nombre de línies de codi que un programador ha de tenir en compte, a l'hora de fer una programa.</p>
                                     <p>Les funcions permeten construir noves instruccions cada cop més complexes, que es poden usar per implementar grans aplicacions escrivint un menor número de línies.</p> 
                                     <p class="iocimportant">És per això que diem que les <strong>funcions encapsulen o amaguen el codi que contenen</strong>.</p>
-                                    <p>Certament, no és necessari conèixer el codi intern d'una funció per poder-la fer servir, només cal saber en prou detall, què és el que la funció fa i com i quan cal fer-la servir.</p> 
-                                    <p>Gràcies a les funcions, és possible fer implementacions eficients en equip i reduir al mateix temps el nombre d'errors generats durant la codificació.</p>
-                                    <p>A més de reduir la complexitat, les funcions també eviten la repetició de codi de forma innecessària. ja que les instruccions d'una funció només s'escriuen una única vegada.</p>
-                                    <p>Això ens obliga a dissenyar de forma acurada les funcions, intentat, sempre que es pugui escriure mètodes genèrics que puguin reutilitzar-se en diferents situacions.</p>
-                                    <p>Malauradament, això pot acabar incrementant el nombre final de línies usades o fins i tot, acabar generant una implementació globalment més complexa, però des del punt de vista de la implementació que cada programador acabarà fent, la complexitat es redueix sempre i per tant surt a compte l'ús de funcions.</p>                                    
+                                    <p>Certament, no és necessari conèixer el codi intern d'una funció per poder-la fer servir, només cal saber què és el que la funció fa i com i quan cal fer-la servir.</p> 
+                                    <p>Gràcies a les funcions, és possible fer implementacions eficients en equip i reduir al mateix temps, el nombre d'errors generats durant la codificació.</p>
+                                    <p>A més de reduir la complexitat, les funcions també eviten la repetició de codi de forma innecessària, ja que les instruccions d'una funció només s'escriuen una única vegada.</p>
+                                    <p>Això ens obliga a dissenyar de forma acurada les funcions, intentat, sempre que es pugui, escriure mètodes genèrics que puguin reutilitzar-se en diferents situacions.</p>
+                                    <p>Malauradament, això pot acabar incrementant el nombre final de línies usades o fins i tot, acabar generant una implementació globalment més complexa. Però des del punt de vista de la implementació que cada programador acabarà fent, la complexitat es redueix sempre i per tant surt a compte l'ús de funcions.</p>                                    
                                 </div>
                             </div>
                         </div>
@@ -305,7 +304,7 @@ tipusDadaRetorn nomFuncio(tipusParam1 nomParam, ..., tipusParamN nomParamN){
                                     </code></pre>                         
                                     <p>Fixeu-vos que d'acord amb aquest mecanisme les funcions només poden retornar un únic valor. Més endavant estudiarem com canviar aquesta limitació.</p>
                                     <p>Òbviament la forma anterior de declarar funcions continua vigent. En realitat aquest nou mecanisme és una extensió de l'anterior de manera que el tipus <em>void</em> significa que la funció no retorna cap dada i l'absència de paràmetres declarats entre els parèntesis implica que la funció no necessita cap entrada de dades.</p>
-                                    <p>El mecanisme per invocar mètodes que declaren paràmetres, també canvia lleugerament, doncs a la crida caldrà especificar els valors d'entrada mitjançant una expressió del llenguatge i quan calgui recollir el valor retornat dins una variable per tal que no es perdi el resultat retornat:</p>
+                                    <p>El mecanisme per invocar mètodes que declaren paràmetres, també canvia lleugerament, doncs a la crida caldrà especificar els valors d'entrada mitjançant una expressió del llenguatge. Si hi ha retorn (tipus diferent a <em>void</em>), caldrà recollir el valor retornat dins una variable per tal que no es perdi el resultat retornat. Usarem l'assignació per passar el valor retornat a la variable escollida i correctament declarada:</p>
                                     <pre><code class="java">
 void inici(){
     /*declaració d'una variable del mateix tipus de retorn per recollir el resultat*/
@@ -339,8 +338,8 @@ void inici(){
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Abans de continuar, cal presentar un canvi necessari en el format dels vostres programes quan es vol declarar altres funcions, a més de la principal (<em>main</em>).</p>
-                                    <p>Concretament, per les característiques del llenguatge Java, cal que el mètode principal tingui un format molt concret. En cas contrari, hi haurà un error de compilació en futures passes del procés. Tot el codi que normalment posaríeu dins el bloc d’instruccions del mètode principal, cal ubicar-lo en una funció <em>"secundària"</em>, que anomenaren <em>inici</em>. S'ha triat aquest nom per tal que us resulti clarificador, però podríem haver-li posat qualsevol altre nom.</p>
+                                    <p>Abans de continuar, cal presentar un canvi necessari en el format dels vostres programes quan es vol declarar altres funcions, a més de la principal (<em>main</em>). Concretament, per les característiques del llenguatge Java, cal que el mètode principal tingui un format molt concret. En cas contrari, hi haurà un error de compilació en futures passes del procés.</p>
+                                    <p>Tot el codi que normalment posaríeu dins el bloc d’instruccions del mètode principal, cal ubicar-lo en una funció <em>"secundària"</em>, que anomenaren <em>inici</em>. S'ha triat aquest nom per tal que us resulti clarificador, però podríem haver-li posat qualsevol altre nom.</p>
                                     <p>Dins el mètode principal simplement s’invoca aquesta nova funció. De fet, no és imprescindible que conegueu els detalls dels motius pels quals és necessari fer aquest canvi. Simplement podeu usar el codi següent d’exemple com a plantilla per generar els vostres programes, tenint en compte que tot el codi que posaríeu normalment al mètode principal, ara anirà al mètode inici.</p>
                                     <pre><code class="java">
 public class ProgramaX {
@@ -558,8 +557,8 @@ public class Exemple1 {
                                 <div class=bodySlide>
                                     <p>En aquesta secció se us proposa fer 3 exercicis. El primer consisteix en implementar una senzilla aplicació fent servir funcions per tal de facilitar-vos l'assimilació del concepte i el seu ús per implementar programes. Es tracta d'un exercici amb solució. Consulteu-la per tal de comparar-la amb la vostra i analitzeu-ne les diferències si n'hi ha.</p>
                                     <p>Al final del primer exercici, un cop hagueu fet la implementació i hagueu consultat la solució, se us demana que contesteu algunes <a class="forumDeDiscussioUrl targetBlank" href="#" data-toggle="tooltip" data-original-title="Les discussions als fòrums us permeten reflexionar sobre el que heu aprés i assimilar millor el contingut. Participeu-hi!">preguntes al <span class='forumDeDiscussio'></span></a>. </p>
-                                    <p>El segon exercici us permetrà ampliar una mica més sobre l'ús de funcions i la declaració de variables. Allà us proposaran que mantingueu una petita discussió al <span class='forumDeDiscussio'></span> per tal de deduir les condicions d'accessibilitat a una variable en funció de l'àmbit on ha estat declarada.</p>
-                                    <p>El darrer exercici, el fareu individualment. Es tracta de valorar si les afirmacions que se us donen són certes o falses. Per a fer la valoració caldrà que analitzau el codi que se us donarà.</p>
+                                    <p>El segon exercici us permetrà ampliar una mica més sobre l'ús de funcions i la declaració de variables. Allà us proposaran que mantingueu un petit debat al <span class='forumDeDiscussio'></span>, per tal de deduir les condicions d'accessibilitat a una variable en funció de l'àmbit on ha estat declarada.</p>
+                                    <p>El darrer exercici, el fareu individualment. Es tracta de valorar si les afirmacions que se us donen són certes o falses. Per a fer la valoració caldrà que analitzeu el codi que se us donarà.</p>
                                     
                                 </div>
                             </div>
@@ -586,13 +585,16 @@ public class Exemple1 {
                                     <p>Anomeneu a una de les funcions <em>demanarMes</em>. Es tracta d'una funció que ha de informar a l'usuari que escrigui per teclat un nombre que representi un dels dotze mesos de l'any, que esperi la resposta de l'usuari i retorni el valor entrat.</p>
                                     <p>Una segona funció que anomenarem <em>calcularDiesQueTeElMes</em>, haurà de calcular quants dies té el més indicat per l'usuari.</p>
                                     <p>Finalment, una funció anomenada <em>mostrarDiesDelMes</em>, traurà per la pantalla un missatge en que s'indiqui el nombre de dies que té el mes escollit. El missatge podria ser semblant al següent: </p>
-                                    <div class="iocexample"><div class="ioccontent"><p>T'informem que el més 4 conté 30 dies</p></div></div>
+                                    <div class="iocexample"><div class="ioccontent"><p>T'informem que el mes 4 conté 30 dies</p></div></div>
                                     <p>Abans de començar a codificar pensa quines funcions necessitaran paràmetres i quines no, o quines retornaran alguna cosa. Recorda que cal declarar els paràmetres i els retorns de dades.</p>
                                     <p>Un cop codificat l'exercici contesta les següents preguntes en el <span class='forumDeDiscussio'></span>. Es tracta de discutir breument entre vosaltres intentant arribar a una conclusió final:</p>
-                                    <ol>
-                                        <li>Creieu que les funcions que heu creat les podríeu utilitzar en algun altre context (una altre aplicació)? Quina funció resultaria més fàcil de reutilitzar?</li>
-                                        <li>Imagineu que la funció <em>calcularDiesQueTeElMes</em>, a més de realitzar el càlcul, mostrés per pantalla el resultat. Creieu que seria igual de reutilitzable? Raoneu breument la resposta</li>
-                                    </ol>
+                                    <div class="frameBox">
+                                        <h4>Qüestions pel <span class="forumDeDiscussio"></span></h4>
+                                        <ol>
+                                            <li>Creieu que les funcions que heu creat les podríeu utilitzar en algun altre context (una altre aplicació)? Quina funció resultaria més fàcil de reutilitzar?</li>
+                                            <li>Imagineu que la funció <em>calcularDiesQueTeElMes</em>, a més de realitzar el càlcul, mostrés per pantalla el resultat. Creieu que seria igual de reutilitzable? Raoneu breument la resposta</li>
+                                        </ol>
+                                    </div>
                                         <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
                                             data-parent-selector="#leftColumnPanel"
@@ -888,7 +890,7 @@ public class AccessibilitatVariables {
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>Java pretén ser un llenguatge que facilita la creació d'aplicacions robustes i amb pocs errors. Bona part d'això es recolza en polítiques restrictives que intenten evitar l'error humà.</p>
-                                    <p>La declaració de variables de diferents àmbits amb una mateix nom pot suposar una font d'errors important. Per això Java no permet declarar variables d'un mateix nom malgrat que siguin de diferent àmbit. Es tracta però d'una restricció que per raons històriques i d'usabilitat contempla diverses excepcions que cal conèixer.</p>
+                                    <p>La declaració de variables amb un mateix nom pot suposar una font d'errors important. Per això Java no permet declarar variables d'un mateix nom en un mateix àmbit. Fins i tot, en alguns casos la limitació s'estén malgrat que siguin de diferent àmbit. Es tracta però d'una restricció que per raons històriques i d'usabilitat contempla diverses excepcions que cal conèixer.</p>
                                     <p>A continuació se us mostra un codi amb diverses situacions en que es declaren variables de diferent àmbit amb el mateix nom. Copieu-lo al Netbeans i analitzeu quins són els casos que donen error i quins no. Seguidament comenteu les línies d'error i executeu el codi per tal de veure el comportament dels casos sense error.</p>
                                     <pre> <code class="java"> 
 
@@ -1004,7 +1006,7 @@ public class IllegalitatsAmbitsVariables {
                                     <ol>
                                         <li>És possible declarar un paràmetre d'una funció i una variable local de la mateixa, usant el mateix nom, perquè els paràmetres es troben en una àmbit diferent al de les variables locals</li>
                                         <li>Java no imposa restriccions a l'hora de permetre declarar variables locals que tinguin el mateix nom que variables globals, ja que en una invocació, la variable local tindria sempre prioritat sobre la global</li>
-                                        <li>Java no permet declarar una variables globals que tinguin el mateix nom que algun paràmetre d'alguna funció</li>
+                                        <li>Java no permet declarar variables globals que tinguin el mateix nom que algun paràmetre d'alguna funció</li>
                                         <li>Java no permet declarar una variable en un bloc de codi si aquest es troba declarat en un altre bloc que contingui declarada una variable amb el mateix nom, a excepció que es tracti d'una variable global</li>
                                         <li>Java permet declarar variables amb noms iguals si pertanyen a àmbits diferents que no es continguin, com  per exemple en dues funcions diferents perquè mai hi haurà interferències</li>
                                     </ol>
@@ -1046,8 +1048,8 @@ public class IllegalitatsAmbitsVariables {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
-                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                                <p>Per fer el lliurament cal que, un cop hàgiu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu. D'aquesta manera el professor podrà constatar  l'evolució del vostre l'aprenentatge sense que afecti la vostra qualificació i donar-vos consells o fer-vos propostes d'ajuda. També us demanem que ompliu la valoració de l'activat que trobareu al final de l'informe. Això ajuda a valorar la utilitat de l'activitat en el conjunt del procés d'aprenentatge i permet planificar millores, si fos necessari. </p>
                             </div>
                         </div>
                     </div>
@@ -1067,8 +1069,10 @@ public class IllegalitatsAmbitsVariables {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                                <p>En aquesta activitat has estudiat el concepte de funció, tant des d'una perspectiva informal com formal. També has aprés a codificar usant funcions que has hagut de declarar i cridar per tal que els seu codi sigui executat.</p>
+                                <p>També has aprés a intercanviar informació entre funcions fent servir paràmetres d'entrada i sortida. A fer servir variables que només es reconeixen en un àmbit específic. L'àmbit de variables més utilitzat per reduir la complexitat de les implementacions és l'àmbit de les funcions.</p>
+                                <p>La introducció d'àmbits de variables en el codi obliga a estar pendents de les prioritats que uns àmbits tenen respecte d'altres o de les limitacions que el llenguatge JAVA defineix a l'hora de declarar variables amb un mateix nom.</p>
+                                <p>Si encara NO has lliurat l'informe, fes-ho ara abans de passar a la següent activitat. Si ja ho has fet, pots continuar ampliant en el coneixement de les funcions passant a la següent <a class="toNextActivity">activitat</a>. Tot i així recordeu que a l'apartat d'informació extra (i) disposeu d'un apartat de reforç i un d'ampliació per si ho necessiteu.</p>
                             </div>
                         </div>
                     </div>
@@ -1085,8 +1089,8 @@ public class IllegalitatsAmbitsVariables {
         <div id="goals_info" class="bodySlide hidden"> 
             <h2>Objectius d'aprenentatge de l'activitat</h2>
             <ul>
-                <li>Distingir i interpretar les funcions que es puguin trobar en un codi d'una aplicació</li>
-                <li>Declarar i cridar funcions quan s'implementi una aplicació</li>
+                <li>Distingir i interpretar les funcions que es puguin trobar en el codi d'una aplicació</li>
+                <li>Declarar i cridar funcions quan s'implementa una aplicació</li>
                 <li>Declarar les variables d'acord amb l'àmbit més adient segons la seva utilitat</li>
                 <li>Enumerar les polítiques de declaració i visibilitat de variables de Java, d'acord amb el seu àmbit</li>
             </ul>
@@ -1095,6 +1099,9 @@ public class IllegalitatsAmbitsVariables {
         </div>
         <div id="more_reinforcement" class="hidden"> 
             <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <p>Per reforçar els conceptes bàsics de declaració de funcions i interpretació de codi, podeu resoldre els exercicis d'autoavaluació dels materials que trobareu <a class="exercicisAutoavaluacioMaterials" target="_blank">aquí</a>.</p>
+            <p>Si el que necessiteu és practicar una mica més la implementació de funcions, podeu mirar el document d'exercicis extres que trobareu <a class="exercicisExtres" target="_blank">aquí</a>.</p>
+            <!--
             <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en construcció"> Text provisional. Estem treballant per millorar</div>                               
             <p>En aquesta primera part és molt important que s'entengui què és una funció i com s'implementa, tenint en compte els paràmetres que rep i el tipus de valor a retornar.
  A l'exemple que es troba a continuació es pot analitzar com definir paràmetres d'entrada:</p>
@@ -1147,11 +1154,12 @@ public class IllegalitatsAmbitsVariables {
             }
             
 </code></pre>
+-->
         </div>
         <div id="more_info" class="hidden"> 
             <h2>Informació sobre funcions  per ampliar</h2>
             <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-            <p>Entre altres, podeu consultar les activitats del material del mòdul: <a href="http://ioc.xtec.cat/materials/FP/Materials/225x_ASD/ASD_225x_M03/web/html/WebContent/u4/a2/activitats.html">Activitats funcions</a></p>
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
         </div>
     </div>
     <!--=========== END META-INFO PANELS ================-->    

@@ -1,6 +1,6 @@
 {
     "defaultValues":{
-        "projectDir":{"type":"text", "value":"projecte/"},
+        "projectDir":{"type":"text", "value":"projecte16171/"},
         "targetBlank":{"type":"attr", "name":"target", "value":"_blank"},
         "forumPrincipalUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317893"},
         "forumPrincipal":{"type":"html", "value":"<a target='_blank' class='forumPrincipalUrl' href=\"#\">fòrum generalde l'aula</a>"},
@@ -9,6 +9,8 @@
         "enunciatProjecteUrl":{"type":"attr", "name":"href", "value":"docs/DA2_M03B2_Projecte_Enunciat.odt"},
         "enunciatProjecte":{"type":"html", "value":"<a class='enunciatProjecteUrl' href=\"#\">enunciat del projecte</a>"},
         "matEntradaPerteclatUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/materials/FP/Materials/IC_S_INF/INF_IC_S_M03/web/html/WebContent/u3/a1/continguts.html#entrada_de_sequeencies_de_valors_per_teclat"},
+        "exercicisAutoavaluacioMaterials":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/materials/FP/Materials/225x_ASD/ASD_225x_M03/web/html/WebContent/u4/a2/exercicis.html"},
+        "exercicisExtres":{"type":"attr", "name":"href", "value":"docs/exercicisRepas.odt"},
         "midaGrupCol":{"type":"text", "value":"15"},
         "ponderacioAC":{"type":"text", "value":"50%"},
         "ponderacioPAF":{"type":"text", "value":"50%"},
@@ -310,6 +312,8 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP1", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP1", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA401.odt'> l'informe </a>"},
+        "exercicisAutoavaluacioMaterials":{"selector":".exercicisAutoavaluacioMaterials", "defaultValue":"exercicisAutoavaluacioMaterials"},
+        "exercicisExtres":{"selector":".exercicisExtres", "defaultValue":"exercicisExtres"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":"A402_funcions2.html"}
     },
     "A402": {
