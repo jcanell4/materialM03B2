@@ -110,7 +110,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>Aquí aprofundirem en el concepte i ús de les funcions. L'activitat us servirà per descobrir quina utilitat podem donar a les funcions per tal de treure'n el màxim profit. Bàsicament aprendrem a: usar les funcions per crear blocs de codi (mòduls) independents entre sí, donar estructura a les aplicacions a partir de les crides a les funcions o bé crear funcions parametritzades que puguin reutilitzar-se, ja sigui a la mateixa aplicació o bé en d'altres.</p>
+                                <p>Ara que ja us heu iniciat, toca aprofundir en el concepte i ús de les funcions. L'activitat us servirà per descobrir quina utilitat podem donar a les funcions per tal de treure'n el màxim profit. Bàsicament aprendrem a: usar les funcions per crear blocs de codi independents entre sí, donar estructura a les aplicacions a partir de les crides a les funcions i a crear funcions parametritzades que puguin reutilitzar-se, ja sigui a la mateixa aplicació o bé en d'altres.</p>
                                 <p>Aquesta activitat, no conté l'apartat <em>Què cal saber</em>, perquè aquí, l'aprenentatge l'obtindreu en fer els exercicis. L'aprenentatge implícit que esdevé en fer el que se us proposa, s'assimila millor que el contingut explícit d'una lectura.</p>
                                 <p>Aneu a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em> on trobareu detallades, les diferents propostes.</p>
                                 <p>A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions</p> 
@@ -138,13 +138,14 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Ja heu vist, en activitats anteriors, que les funcions encapsulen, delimiten o simplement agrupen codi que pot executar-se amb una simple invocació del nom de la funció. També hem vist que les crides, en Java, cal fer-les des d'una funció. Aquestes característiques són bàsiques perquè ens permetran estructurar i organitzar acuradament els programes, modularitzar o dividir blocs de codi, de forma que es puguin tractar amb un alt grau independència entre ells. A més, les funcions ens ajudaran també a no repetir codi i reutilitzar el que ja es troba escrit.</p>
+                                    <p>Ja heu vist, que les funcions encapsulen, delimiten o simplement agrupen codi que pot executar-se amb una simple invocació del nom de la funció. També heu vist que les crides, en Java, cal fer-les sempre des d'alguna funció i que la única que s'executa sense cridar-la explícitament, és la funció <em>main</em>, la qual es crida implícitament en executar un programa des de la màquina virtual de JAVA. Per això aprofitarem la funció <em>main</em> per fer les cries pertinents que iniciïn l'aplicació. De forma particular, s'ha convingut reduir la funció <em>main</em> i usar-la només per instanciar l'aplicació i cridar a la funció <em>inici</em>.</p>
+                                    <p>L'encapsulació de les funcions, és una característica bàsica, perquè ens permetrà estructurar i organitzar acuradament els programes, dividint-los en blocs de codi (funcions) que s'executaran a voluntat del programador en invocar el seu nom (crida). Això presenta un avantatge molt important, ja que cada funció es pot tractar amb un alt grau independència, evitant les típiques interferències que es produeixen en manipular variables des de línies de codi allunyades. A més, les funcions faciliten la comprensió i interiorització que el programador ha de fer dels processos a implementar. De fet actuen com ho faria un esquema que resumís un escrit. Els esquemes ens ajuden a recordar i relacionar millor les diferents parts d'un escrit sense necessitat de recordar amb exactitud les paraules escrites. D'altra banda, les funcions ens ajudaran també a no repetir codi i reutilitzant el que ja es troba escrit.</p>
                                     <p>Anem a veure-ho. Us proposem crear una aplicació que permeti calcular l'àrea de diferents figures planes com ara els triangles, els quadrats, els rectangles o els cercles. L'aplicació en iniciar-se informarà a l'usuari del que podrà fer i mostrarà per pantalla un menú que permeti escollir la figura plana de la que es vol calcular l'àrea. Un cop feta la selecció, el programa demanarà les dades pertinents, calcularà l'àrea i mostrarà els resultats per la pantalla.</p>
-                                    <p> Sabent això, ens proposem modularitzar l'aplicació tant com siguem capaços. Ens adonem que cada àrea de cada figura ha de rebre un tractament diferent i per tant ens proposem crear un mòdul diferent per cada càlcul, com si d'una aplicació diferent es tractés. És a dir, crearem un implementació específica per cada figura que demani a l'usuari les dades adequades per calcular-ne l'àrea, realitzi el càlcul amb la fórmula correcta i mostri el resultat per la pantalla. Ara bé, en comptes d'implementar-ho en aplicacions diferents (diferents fitxers que continguin el seu <em>main</em> i la seva funció <em>inici</em>), realitzarem la implementació encapsulada en un funció que anomenarem <strong><em>modulCalculAreaX</em></strong>, on <em>X</em> serà el nom de la figura: <em>triangle</em>, <em>quadrat</em>, ...</p> 
-                                    <p>Encapsular-ho tot en una funció, no significa pas que tot el codi s'hagi d'escriure en una única funció, sinó que la crida a la funció que encapsula, ha de ser suficient per executar tot el necessari per obtenir el que s'espera de la funció. En el nostre cas: la petició de dades, el càlcul de l'àrea i la mostra del resultat calculat.</p>
-                                    <p> Per descomptat, podrem usar tantes funcions com creiem necessari durant la implementació. De fet, com que fa temps que no toquem la geometria i tenim les fórmules de les àrees un mica rovellades, necessitarem refrescar-les. Per sort un amic matemàtic s'ens ha brindat per ajudar-nos. Li demanarem que ens escrigui cada fórmula en una funció diferent, a fi que esn resulti fàcil identificar-les sense haver de recordar a quina figura correspon cada una d'elles.</p>
-                                    <p>A banda de les funcions per calcular les diferents àrees, cal que ens adonem que d'acord amb l'enunciat, l'aplicació ha de mostrar un missatge inicial a mode de presentació i un menú que permeti escollir quin dels mòdul caldrà executar. Els diferents mòduls demanaran a l'usuari la mida de les figures a les que s'hagi de calcular l'àrea i també hauran de mostrar els resultats obtinguts. Ens estem referint a la forma com l'aplicació es comunicarà amb l'usuari, tant per demanar-li informació com per mostrar-la. <strong>Les funcions també ens poden servir de gran ajuda per estandarditzar la forma de mostrar missatges o demanar informació</strong>. A més, si les implementem amb paràmetres aconseguirem reutilitzar la mateixa funció en diferents situacions.</p>
-                                    <p>Per tal que us resulti més fàcil, seguidament se us plantegen 3 exercicis, la realització dels quals us permetrà acabar implementant l'aplicació plantejada. Passeu a la següent pàgina per començar la implementació</p>
+                                    <p> Sabent això, ens proposem modularitzar l'aplicació tant com siguem capaços. Ens adonem que cada àrea de cada figura ha de rebre un tractament diferent i per tant ens proposem crear un mòdul diferent per cada càlcul, com si d'una aplicació diferent es tractés. És a dir, crearem una implementació específica per cada figura, que demani a l'usuari les dades adequades per calcular-ne l'àrea, realitzi el càlcul amb la fórmula correcta i mostri el resultat per la pantalla. Ara bé, en comptes d'implementar-ho en aplicacions diferents (diferents fitxers que continguin el seu <em>main</em> i la seva funció <em>inici</em>), realitzarem la implementació encapsulada en funcions que anomenarem <strong><em>modulCalculAreaX</em></strong>, on <em>X</em> serà el nom de la figura: <em>triangle</em>, <em>quadrat</em>, ...</p> 
+                                    <p>Encapsular-ho tot en una funció, no significa pas que tot el codi s'hagi d'escriure en una única funció, sinó que en cridar-la s'haurà d'executar tot el necessari i obtenir el resultat que s'espera de la funció, però les instruccions poden estar definides en altres funcions de manera que l'execució es seqüenciï fent crides a les altres funcions. En el nostre cas caldrà fer la petició de dades, el càlcul de l'àrea i la mostra del resultat calculat.</p>
+                                    <p> Per descomptat, podrem usar tantes funcions com creiem necessari durant la implementació. De fet, com que fa temps que no toquem la geometria i tenim les fórmules de les àrees un mica rovellades, necessitarem refrescar-les. Per sort un amic matemàtic s'ha brindat a ajudar-nos. Li demanarem que ens indiqui cada fórmula ben detallada a fi que puguem escriure una funció diferent per cada una d'elles, així no ens caldrà memoritzar-les, només les haurem d'identificar adequadament pel nom.</p>
+                                    <p>A banda de les funcions per calcular les diferents àrees, cal recordar que d'acord amb l'enunciat, l'aplicació ha de mostrar un missatge inicial a mode de presentació i un menú que permeti escollir quin dels mòdul caldrà executar. Els diferents mòduls demanaran a l'usuari la mida de les figures a les que s'hagi de calcular l'àrea i també hauran de mostrar els resultats obtinguts. Ens estem referint a la forma com l'aplicació es comunicarà amb l'usuari, tant per demanar-li informació com per mostrar-la. <strong>Les funcions també serveixen de gran ajuda per estandarditzar la forma de mostrar missatges i demanar informació a l'usuari</strong>. A més, si les implementem amb paràmetres aconseguirem reutilitzar la mateixa funció en diferents situacions.</p>
+                                    <p>Per tal que us resulti més fàcil, seguidament se us plantegen 3 exercicis, la realització dels quals us permetrà acabar implementant l'aplicació plantejada. Passeu a la següent pàgina per començar la implementació.</p>
                                 </div> 
                             </div>
                         </div>
@@ -166,9 +167,9 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Com ja s'ha comentat, és important separar el codi dedicat a l'intercanvi d'informació  entre l'usuari i l'aplicació (interfície d'usuari) de la resta. Les interfícies d'usuari són probablement de les utilitats que més ràpidament canvien. Es poden crear interfícies d'usuari utilitzant codi HTML, fent servir les utilitats gràfiques dels sistemes operatius o bé les utilitats de consola (teclat i pantalla) tal com fem nosaltres. Si mantenim ben separat el codi de la interfície, ens resultarà força senzill convertir per exemple una aplicació de consola en una aplicació WEB.</p>
+                                    <p>Com ja s'ha comentat, és important separar el codi dedicat a l'intercanvi d'informació  entre l'usuari i l'aplicació (interfície d'usuari) de la resta. Les interfícies d'usuari són probablement de les utilitats que més ràpidament canvien. Es poden crear interfícies d'usuari utilitzant codi HTML, fent servir les utilitats gràfiques dels sistemes operatius o bé les utilitats de consola (teclat i pantalla) tal com fem nosaltres. Si mantenim ben separat el codi de la interfície, ens resultarà força senzill convertir, per exemple, una aplicació de consola en una aplicació WEB.</p>
                                     <p>Les utilitats de consola de Java (<em>System.in</em> i <em>System.out</em>), són tan simples que sovint, en implementar un programa cal repetir una i altre vegada instruccions força similars. Per exemple, la majoria de vegades que desitgem que l'usuari ens entri dades a través del teclat, li escrivim un missatge explicatiu, indicant què esperem de l'usuari. Per la calculadora d'àrees caldrà demanar diverses vegades que l'usuari entri les mides de les figures. Depenent de les figures, caldrà demanar la mesura de l'alçada, d'un costat o bé del radi, però en definitiva, al marge del contingut del missatge, l'usuari acabarà sempre entrant un valor double per teclat.</p>
-                                    <p><strong>Us demanarem que implementeu una funció anomenada <em>entrarUnNumero</em></strong>, que rebi una cadena de text per paràmetre. La funció mostrarà el text per pantalla a mode de missatge explicatiu i esperarà que l'usuari escrigui un valor double. Per tal de prevenir errors, la funció comprovarà que l'usuari entri realment un valor numèric. En cas que no sigui així, caldrà repetir la petició aclarint a l'usuari que esprem que entri un valor numèric. Quan l'usuari hagi entrat un valor correcte, la funció el retornarà a la instrucció que hagi fet la crida. Recordeu que la utilitat Scanner, després de retornar un valor numèric (double, enter, etc.) és necessari invocar el mètode <em>nextLine</em> del mateix <em>Scanner</em> per tal de netejar el retorn de carro del <em>buffer</em> del teclat i evitar comportaments inesperats a les crides posteriors.</p>
+                                    <p><strong>Us demanarem que implementeu una funció anomenada <em>entrarUnNumero</em></strong>, que rebi una cadena de text per paràmetre. La funció mostrarà el text per pantalla a mode de missatge explicatiu i esperarà que l'usuari escrigui un valor double. Per tal de prevenir errors, la funció comprovarà que l'usuari entri realment un valor numèric. En cas que no sigui així, caldrà repetir la petició aclarint a l'usuari que esprem que entri un valor numèric. Quan l'usuari hagi entrat un valor correcte, la funció el retornarà a la instrucció que hagi fet la crida. Recordeu que la utilitat Scanner, després de retornar un valor numèric (double, enter, etc.), és necessari invocar el mètode <em>nextLine</em> del mateix <em>Scanner</em> per tal de netejar el retorn de carro del <em>buffer</em> del teclat i evitar comportaments inesperats a les crides posteriors.</p>
                                     <p>De forma semblant a la funció anterior, la calculadora d'àrees necessitarà també una funció que permeti mostrar el resultat calculat per la pantalla indicant quina és la figura, i quina l'àrea. <strong>Se us demana </strong>doncs<strong> que implementeu una funció anomenada <em>mostrarResultat</em></strong> que rebi per paràmetre el nom de la figura i el valor de l'àrea. La funció mostrarà un missatge semblant a:</p>
                                     <div class="iocexample"><pre>
         ---------------------------------------------------
@@ -177,8 +178,8 @@
                                     </pre></div>
                                     <p>La funció <em>mostrarResultat</em> no retorna cap valor.</p>
                                     <p>A banda de les funcions descrites, l'aplicació requerirà també d'un menú que permeti escollir a l'usuari la figura amb la que treballar. Per tal de separar la interfície d'usuari de la resta de codi, forçarem que el menú, només mostri per pantalla les opcions possibles i esperi i retorni la selecció de de l'usuari. Més endavant ja farem la funció que invoqui el mòdul adequat a partir de la selecció feta, però aquesta part no es pot considerar interfície d'usuari. <strong>Implementeu </strong>doncs<strong>, una funció anomenada <em>menu</em>, tal com s'ha descrit.</strong></p>
-                                    <p>Per finalitzar serà també adient que <strong>implementeu una funció anomenada <em>presentacio</em></strong>. Es tracta de la funció que mostrarà el missatge de benvinguda o s'explicarà a l'usuari la finalitat de l'aplicació.</p>
-                                    <p>No us oblideu de provar que tot funciona. Per fer la comprovació invoqueu les funcions creades amb valors de prova des de la funció inici.</p>
+                                    <p>Per finalitzar, serà també adient que <strong>implementeu una funció anomenada <em>presentacio</em></strong>. Es tracta de la funció que mostrarà el missatge de benvinguda o s'explicarà a l'usuari la finalitat de l'aplicació.</p>
+                                    <p>No us oblideu de provar que tot funciona. Per fer la comprovació invoqueu les funcions creades amb valors de prova des de la funció inici, i seguiu la plantilla convinguda a la funció main </p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -760,7 +761,7 @@ public class CalculadoraDArees {
                         <div class="col-lg-12">
                             <div class=bodySlide>
                                 <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
-                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu. D'aquesta manera el professor podrà constatar  l'evolució del vostre l'aprenentatge sense que afecti la vostra qualificació i donar-vos consells o fer-vos propostes d'ajuda. També us demanem que ompliu la valoració de l'activat que trobareu al final de l'informe. Això ajuda a valorar la utilitat de l'activitat en el conjunt del procés d'aprenentatge i permet planificar millores, si fos necessari. </p>
                             </div>
                         </div>
                     </div>
@@ -780,8 +781,10 @@ public class CalculadoraDArees {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                                <p>L'activitat que acabeu de realitzar, hauria de oferir-vos una idea de com les funcions ens permeten estructurar i organitzar els programes.</p>
+                                <p>Es important adonar-se que una gran part de la implementació s'ha de dedicar a intercanviar informació entre l'usuari i l'aplicació. Gastar esforços per estandarditzar-ho pot beneficiar-nos, tant durant la implementació de la pròpia aplicació com en futures implementacions si aconseguim crear funcions prou genèriques.</p>
+                                <p>També hauríeu d'haver copsat de quina manera és possible independitzar parts del codi d'un mateix programa per tal que interaccionin el menys possible, tot i que comparteixin i reutilitzin funcions.</p>
+                                <p>Si encara NO has lliurat l'informe, fes-ho ara abans de passar a la següent activitat. Si ja ho has fet, pots passar a la següent <a class="toNextActivity">activitat</a>. Tot i així, recordeu que a l'apartat d'informació extra (i) disposeu d'un apartat de reforç i un d'ampliació per si ho necessiteu.</p>
                             </div>
                         </div>
                     </div>
@@ -797,17 +800,17 @@ public class CalculadoraDArees {
         <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
         <div id="goals_info" class="bodySlide hidden"> 
             <h2>Objectius d'aprenentatge de l'activitat</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-            <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
-
+            <ul>
+                <li>Trobar maneres de crear funcions genèriques que es puguin reutilitzar amb facilitat.</li>
+                <li>Descobrir com les funcions ens ajuden a independitzar parts de codi dins una mateixa aplicació.</li>
+                <li>Estandarditzar l'intercanvi d'informació amb l'usuari a través de funcions</li>
+            </ul>
             <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+            <p>RA 1. Escriu i prova programes senzills reconeixent i aplicant els fonaments de la programació modular </p>
         </div>
         <div id="more_reinforcement" class="hidden"> 
             <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-            <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+            <p>Podeu practicar una mica més la implementació d'aplicacions usant funcions en el document d'exercicis extres que trobareu <a class="exercicisExtres" target="_blank">aquí</a>.</p>
         </div>
         <div id="more_info" class="hidden"> 
             <h2>Informació sobre funcions  per ampliar</h2>
@@ -882,49 +885,7 @@ public class CalculadoraDArees {
             activityManager.init("data/toReplace.json", "A402");
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
-        });
-        
-        /*
-        iocSlider = new IocSlider();
-        
-        $("[data-display-on-set-slide]").each(function(){
-            var slide;
-            var self = this;
-            var slideId = this.dataset.displayOnSetSlide; 
-            iocSlider.watch("onSetCurrentSlide", function(e){
-                var slide;
-                var oldSlide =e.oldValues.vindx!=-1
-                                    ?e.oldValues.vslides[e.oldValues.vindx]
-                                    :e.oldValues.hslides[e.oldValues.hindx];
-                if($(oldSlide).attr("id")===slideId){
-                   $(self).hide();
-                   if($(self).hasClass("active")){
-                        $(self).click();
-                   }
-                }
-                slide = this.hasVerticalSlides()
-                                    ?this.vslides[this.vindx]
-                                    :this.hslides[this.hindx];
-                if($(slide).attr("id")===slideId){
-                   $(self).show();
-                }
-            });
-    
-            slide = iocSlider.hasVerticalSlides()
-                                ?iocSlider.vslides[iocSlider.vindx]
-                                :iocSlider.hslides[iocSlider.hindx];
-            if($(slide).attr("id")===slideId){
-               $(this).show();
-            }
-        });
-
-        hljs.addLineNumbers();
-        hljs.initHighlightingOnLoad();
-        
-        $(document).ready(function(){
-            toReplaceOnLoad("data/toReplace.json", "A402");
-        });
-        */
+        });        
     </script>
 
 </body>

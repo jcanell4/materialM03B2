@@ -139,11 +139,11 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>Els arrays són un tipus de dada compost. Com sabeu, un array referencia tota una col·lecció de dades, i disposa de mecanismes per accedir i manipular els seus elements. El gran avantatge dels arrays és que amb una única variable podem accedir a multitud de dades. De fet, són també un mecanisme per reduir la complexitat. Es mantenen el nombre de dades, però s'aconsegueix reduir el nombre de variables cosa que facilita la implementació del programador.</p>
-                                    <p>De forma semblant a l'ús d'arrays per mitjà de variables, és possible fer servir paràmetres de funcions que referenciïn també arrays, de manera que sigui possible accedir a tots els seus elements utilitzant només un únic paràmetre</p>
-                                    <p>En aquest primer exercici se us proposa que practiqueu a crear funcions on rebin arrays. Concretament us proposem que feu tres funcions a les que rebin arrays de tipus <em>double</em>.</p>
+                                    <p>De forma semblant a l'ús d'arrays a la declaració de variables, és possible fer servir paràmetres de funcions que també referenciïn arrays, de manera que sigui possible accedir a tots els seus elements utilitzant només un únic paràmetre</p>
+                                    <p>En aquest primer exercici se us proposa que practiqueu la creació de funcions que rebin arrays. Concretament us proposem que feu tres funcions que rebin arrays de tipus <em>double</em>.</p>
                                     <p>La primera s'anomenarà <em>valorMitjà</em> i calcularà el valor mitjà de la col·lecció de <em>doubles</em> que li arribi a través d'un paràmetre de tipus array. La funció haurà de retornar el valor calculat</p>
                                     <p>La segona funció s'anomenarà <em>valorMinim</em> i en aquest cas, cercarà el valor mínim de tots els <em>doubles</em> que arribin per paràmetre. Per tant la funció retornarà un double amb el valor mínim trobat</p>
-                                    <p>La darrera funció s'anomenarà posicioMaxim. Es tracta d'una funció que tindrà per objectiu trobar el valor màxim dins l'array que li arribi per paràmetres, però en comptes de retornar el valor, el que retornarà és la posició de l'array on es trobi l'element amb el valor màxim. Retornar la posició en comptes del valor pot tenir certes avantatges; sovint cal treballar amb diversos arrays relacionats a través de la posició, per exemple per emmagatzemar les notes i els noms dels alumnes. En aquest cas caldrà fer servir dos arrays perquè les dades son de tipus diferent. En un array de cadenes de text hi guardarem els noms dels alumnes i en un altre de doubles les seves notes. Ambdós arrays els mantindrem relacionats per posició. És a dir, el primer alumne tindrà la primera nota, el segon, la segona nota i així successivament. Saber la posició d'un element especific d'un dels arrays suposa també disposar del valor corresponent de l'array realcionat. És per això que quan programen amb arrays pot ser preferible treballar amb les posicions i obtenir el valor només quan sigui necessari.</p>
+                                    <p>La darrera funció s'anomenarà posicioMaxim. Es tracta d'una funció que tindrà per objectiu trobar el valor màxim dins l'array que li arribi per paràmetres, però en comptes de retornar el valor, el que retornarà és la posició de l'array on es trobi l'element amb el valor màxim. Retornar la posició en comptes del valor pot tenir certes avantatges; sovint cal treballar amb diversos arrays relacionats a través de la posició, per exemple per emmagatzemar les notes i els noms dels alumnes. En aquest cas caldrà fer servir dos arrays perquè les dades son de tipus diferent. En un array de cadenes de text hi guardarem els noms dels alumnes i en un altre de doubles les seves notes. Ambdós arrays els mantindrem relacionats per posició. És a dir, el primer alumne tindrà la primera nota, el segon, la segona nota i així successivament. Saber la posició d'un element especific d'un dels arrays suposa també disposar del valor corresponent de l'array relacionat. És per això que quan programen amb arrays pot ser preferible treballar amb les posicions i obtenir el valor només quan sigui necessari.</p>
                                     
                                     <p>Per tal de provar que us funcionen les vostres codificacions, us facilitem la funció <em>inici</em> i <em>main</em>:</p>
                                     <pre><code class="java">
@@ -181,6 +181,7 @@ private void inici(){
 }
                                     </code></pre>
                                     <p>Copieu ambdues funcions a la classe que estigueu implementant i arregleu el codi de la funció main d'acord amb el nom que hagueu posat al vostre fitxer de codi.</p>
+                                    <p>Un cop copiat el codi i feta l'adaptació, passeu a implementar les tres funcions demanades: <em>valorMitja</em>, <em>valorMinim</em> i <em>posicioMaxim</em>.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -191,7 +192,7 @@ private void inici(){
                                     </button>                                        
                                     <div id="slc-toDo10-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <p>Recordeu de declarar correctament les 3 funcions que heu de codificar, cal assegurar que rebin un array com a paràmetre i que retornin un valor double. Per exemple:</p>
+                                        <p>Recordeu declarar correctament les 3 funcions que heu de codificar, cal assegurar que rebin un array com a paràmetre i que retornin un valor double. Per exemple:</p>
                                          <pre><code class="java">
 ...
 
@@ -211,7 +212,7 @@ double valorMitja(double[] valors){
                                     </button>                                        
                                     <div id="slc-toDo10-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                        <p>Quan hagueu de trobar el valor mínim, no doneu mai, per defecte, cap valor predeterminat a la variable que hagi de prendre el valor mínim. Ja que per gran que assigneu el valor, sempre podrien haver valors coincidents a la col·lecció. EL millor és inicialitzar la variable amb el valor de la posició zero de la col·lecció i iniciar les comparacions a partir d'aquesta posició. </p>
+                                        <p>Quan hagueu de trobar el valor mínim, no doneu mai, per defecte, cap valor predeterminat a la variable que hagi de prendre el valor mínim. Ja que per gran que assigneu el valor, sempre podrien haver valors coincidents a la col·lecció. El millor és inicialitzar la variable amb el valor de la posició zero de la col·lecció i iniciar les comparacions a partir d'aquesta posició. </p>
                                     </div> 
 
                                     <!-- Button trigger pannel -->
@@ -322,9 +323,9 @@ public class FuncionsIArrays {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>La proposta que us fem aquí pretén generar una discussió per tal que arribeu a la conclusió de quin és el comportament específic dels arrays com a paràmetres d'entrada i en conseqüència quines precaucions haureu de prendre durant la codificació de funcions que usin paràmetres de tipus <em>array</em>.</p>
+                                    <p>La proposta que us fem aquí, pretén generar una discussió per tal que arribeu a la conclusió de quin és el comportament específic dels arrays com a paràmetres d'entrada i en conseqüència, quines precaucions haureu de prendre durant la codificació de funcions que usin paràmetres de tipus <em>array</em>.</p>
                                     <p>Abans de començar la discussió us demanarem que analitzeu el codi que aneu trobant, doncs us ajudarà a centrar el debat i deduir les conclusions.</p>
-                                    <p>En primer lloc ens preguntarem què passa si modifiquem el valor d'un paràmetre de tipus bàsic. Caldria estendre la pregunta tant a nivell intern de la funció que rep el paràmetre com de la variable utilitzada a la crida. És a dir, caldria preguntar-nos, què passa amb el valor d'una variable que enviem com a paràmetre en cridar una funció, la qual en invocar-se, canvia el valors del paràmetre rebut?. Anem a deduir-ho amb un exemple. Genereu un projecte de Netbeans i copieu-hi en un fitxer anomenat <em>FuncionsIArrays</em> el següent codi:</p>
+                                    <p>En primer lloc ens preguntarem què passa si modifiquem el valor d'un paràmetre de tipus bàsic. Caldria estendre la pregunta tant a nivell intern de la funció que rep el paràmetre com de la variable utilitzada a la crida. És a dir, caldria preguntar-nos, què passa amb el valor d'una variable que enviem com a paràmetre en la crida d'una funció, si en invocar-se canvia el valors del paràmetre rebut? Anem a deduir-ho amb un exemple. Genereu un projecte de Netbeans i copieu-hi, en un fitxer anomenat <em>FuncionsIArrays</em>, el següent codi:</p>
                                     <pre><code class="java linenumbers">
 
 
@@ -362,11 +363,13 @@ public class FuncionsIArrays {
     }
 }
                                     </code></pre>
+                                <div class="frameBox">
+                                    <h4>Qüestions pel <span class="forumDeDiscussio"></span></h4>
                                     <p>Executeu el codi i intenteu contestar a les preguntes anteriors. Què passa amb la variable <em>varEnter</em> de la funció inic? Intenteu deduir-ho a partir del valor que la variable pren abans i després de fer la crida a la funció  <em>canviarValorParametreInt</em>. Hi han hagut canvis?</p>
                                     <p>Valoreu també el que succeeix dins la funció <em>canviarValorParametreInt</em>. Què passa amb el valor del paràmetre <em>param</em>? Amb quin valor ha entrat? Amb quin valor surt?</p>
-                                    
-                                    <p>Continuem analitzant codi. Ara afegirem una funció que rebi un paràmetre de tipus array i dins de la funció modificarem alguns dels seus elements:</p>
-                                    <pre><code class="java linenumbers">
+                                </div>
+                                <p>Continuem analitzant codi. Ara afegirem una funció que rebi un paràmetre de tipus array i dins de la funció modificarem alguns dels seus elements:</p>
+                                <pre><code class="java linenumbers">
 
 
 public class FuncionsIArrays {
@@ -446,10 +449,13 @@ public class FuncionsIArrays {
 }
                                     </code></pre>
                                     <p>Fixeu-vos que per ajudar-nos a mostrar per pantalla el contingut d'un array d'enters, sense repetir codi, hem, creat una funció anomenada <em>printIntArray</em>. Un cop clarificat això, passeu a copiar-lo de nou al vostre projecte i executeu-lo. Intenteu contestar a la mateixes preguntes que abans, però adaptades a les noves variables i paràmetres.</p>
+                                <div class="frameBox">
+                                    <h4>Qüestions pel <span class="forumDeDiscussio"></span></h4>
                                     <p>Quin valor prenen els elements de la variable <em>varArray</em> abans i després de cridar la funció <em>canviarValorElementsParametreArray</em>? Hi han hagut canvis?.</p>
                                     <p>Analitzeu també els canvis realitzats dins la funció <em>canviarValorElementsParametreArray</em> als elements del paràmetre rebut. Quina relació hi ha entre els canvis de la variable <em>varArray</em> i el paràmetre <em>param</em>?.</p>
                                     <p>Compareu aquest resultat amb el de la variable <em>varEnter</em> i la funció <em>canviarValorParametreInt</em>.</p>
-                                    <p>Per finalitzar, repetirem l'exemple anterior, però farem que la funció invocada, en compte de fer canvis en els elements, modifiqui directament tota la col·lecció sencera. Veiem'ho:</p>
+                                </div>
+                                <p>Per finalitzar, repetirem l'exemple anterior, però farem que la funció invocada, en compte de fer canvis en els elements, modifiqui directament tota la col·lecció sencera. Veiem'ho:</p>
                                     <pre><code class="java linenumbers">
 
 
@@ -530,9 +536,12 @@ public class FuncionsIArrays {
     }
 }
                                     </code></pre>
+                                <div class="frameBox">
+                                    <h4>Qüestions pel <span class="forumDeDiscussio"></span></h4>
                                     <p>Què ha passat aquest cop? Quins canvis ha experimentat la variable <em>varArray</em>? Hi ha hagut modificació del paràmetre de la funció <em>canviarValorParametreArray</em>? Ha repercutit a la variable <em>varArray</em>?</p>
                                     <p>Intenteu elaborar una regla que us ajudi a predir, quan els canvis dins les funcions repercuteixen sobre les variable usades com a paràmetres a la invocació de la funció. Discutiu la regla al <span class="forumDeDiscussio"></span>, tot argumentat-ho amb les vostres deduccions.</p>
-                                    <p>Tenint en comte que, quan passem un paràmetre a una funció de forma que un canvi en aquest implica també una canvi a la variable,  es diu que fem un "<em>pas de paràmetres per referència</em>", en contraposició amb el pas clàssic de paràmetres anomenat "<em>pas de paràmetres per valor</em>". Com diries que passen els arrays? i els tipus enters? I en general els tipus bàsics? </p>
+                                    <p>Quan un canvi en el valor del paràmetre d'una funció, implica també el mateix canvi a la variable usada a la crida,  es diu que fem un "<em>pas de paràmetres per referència</em>", en contraposició amb el pas clàssic de paràmetres anomenat "<em>pas de paràmetres per valor</em>". Com diries que passen els arrays, per valor o per referència? i els tipus enters? I en general els tipus bàsics? </p>
+                                </div>
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
                                             data-parent-selector="#leftColumnPanel"
@@ -668,7 +677,7 @@ public class FuncionsIArrays {
 
 }
                                     </code></pre>
-                                    <p>Discuteix al <span class="forumDeDiscussio"></span> si seria possible la següent inicialització, aprofitant les característiques dels arrays, de passar per referència:</p>
+                                    <p>Discuteix al <span class="forumDeDiscussio"></span> si seria possible la següent inicialització, aprofitant que els arrays tenen la característica de passar per referència:</p>
                                     <pre><code class="java">
 private void inici(){
     int[] varArray;
@@ -685,6 +694,10 @@ void inicialitzarArray(int[] param){
     }
 }
                                     </code></pre>
+                                    <div class="frameBox">
+                                        <h4>Qüestions pel <span class="forumDeDiscussio"></span></h4>
+                                        <p>Què passaria en intentar assignar a la funció <em>inici</em>, un valor a la posició zero de <em>varArray</em>? Per què?</p>
+                                    </div>
                                     <p>Apliqueu el que heu aprés i codifiqueu un petit programa que pregunti a l'usuari de quina mida necessita un array de cadenes de text i seguidament inicialitzi una variable de la mida indicada i l'ompli de cadenes buides. Per inicialitzar l'array, creeu una funció d'inicialització. Feu servir el fòrum per plantejar els dubtes que us vagin sortint.</p>
                                       <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
@@ -720,7 +733,7 @@ void inicialitzarArray(int[] param){
                         <div class="col-lg-12">
                             <div class=bodySlide>
                                 <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
-                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu. D'aquesta manera el professor podrà constatar  l'evolució del vostre l'aprenentatge sense que afecti la vostra qualificació i donar-vos consells o fer-vos propostes d'ajuda. També us demanem que ompliu la valoració de l'activat que trobareu al final de l'informe. Això ajuda a valorar la utilitat de l'activitat en el conjunt del procés d'aprenentatge i permet planificar millores, si fos necessari. </p>
                             </div>
                         </div>
                     </div>
@@ -740,8 +753,8 @@ void inicialitzarArray(int[] param){
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                                <p>Un cop acabada aquesta activitat, heu de ser capaços d'enfrontar-vos a aplicacions molt més complexes que les que heu fet fins ara. L'ús d'arrays a les funcions permet reduir dràsticament la complexitat sempre que es tinguin en compte les precaucions vistes aquí: els arrays inicialitzats passen a les funcions per referències, malgrat que una instanciació d'un paràmetre de tipus array dins una funció esborraria totalment el vincle referencial amb la variable original. Sortosament és possible retornar arrays a les funcions. El retorn d'una array es fa també per referència. Retornar arrays, és una bona manera d'accedir als canvis d'un array instanciat dins la mateixa funció.</p>
+                                <p>Si us ha quedat clar el comportament dels arrays, podeu passar a la següent <a class="toNextActivity">activitat</a>. Tot i així, recordeu que a l'apartat d'informació extra (i) disposeu d'un apartat de reforç i un d'ampliació per si ho necessiteu.</p>
                             </div>
                         </div>
                     </div>
@@ -757,17 +770,17 @@ void inicialitzarArray(int[] param){
         <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
         <div id="goals_info" class="bodySlide hidden"> 
             <h2>Objectius d'aprenentatge de l'activitat</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-            <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
-
+            <ul>
+                <li>Saber usar arrays i funcions per reduir la complexitat d'una implementació.</li>
+                <li>Predir com es comporten esl arrays passats com a paràmentes</li>
+                <li>Saber usar funcions per instanciar i inicalitzar arrays durant l'execució de l'aplició.</li>
+            </ul>
             <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+            <p>RA 1. Escriu i prova programes senzills reconeixent i aplicant els fonaments de la programació modular </p>
         </div>
         <div id="more_reinforcement" class="hidden"> 
             <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-            <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+            <p>Si necessiteu practicar una mica més l'ús d'arrays i de funcions, podeu mirar el document d'exercicis extres que trobareu <a class="exercicisExtres" target="_blank">aquí</a>.</p>
         </div>
         <div id="more_info" class="hidden"> 
             <h2>Informació sobre funcions  per ampliar</h2>
