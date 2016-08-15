@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
     <meta name="author" content="Josep Cañellas i Alicia Vila ">
-    <title>A504. Implementació II</title>
+    <title>A504. Implementació I</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
@@ -106,7 +106,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Inici activitat A504 - Implementació II</h2>
+                                 <h2 >Inici activitat A504 - Implementació I</h2>
                              </div>
                         </div>
                     </div>
@@ -125,13 +125,153 @@
             <!--=========== END SECTION toStart ================-->    
             <!--=========== BEGIN SECTION discussion ================-->    
             <section id="slc-discussion" class="vsections">
+                <!--=========== BEGIN SUBSECTION Fòrum 4 ================-->    
+                <section id="slc-discussion25" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Implementació usant múltiples classes </h2>
+                                     <h3>Instanciació de classes</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Recordeu que en JAVA, per poder cridar un mètode declarat en una classe diferent a la classe des d'on es fa la crida és necessari crear instàncies fent servir la instrucció <em>new</em>. Consulteu l'activitat A501 per refrescar-ho. Només a través de les instancies podrem accedir als mètodes de la classe:</p>
+                                        <pre><code class="java">
+//Sigui ClasseX una classe que disposi, almenys d'un mètode anomenat metodeY.
+ClasseX instanciaClasseX = new ClasseX();
+...
+instanciaClasseX.metodeY();
+                                        </code></pre>
+                                        <p>Aquesta regla, té però una excepció: si els mètodes de les classes estan declarats com estàtics, no caldrà crear cap instancia per poder-los usar, n'hi haurà prou amb el nom de classe per fer la crida correcta:</p>
+                                        <pre><code class="java">
+//Sigui ClasseX una classe que disposi, almenys d'un mètode estàtic anomenat metodeEstaticY.
+...
+ClasseX.metodeEstaticY();
+...
+                                        </code></pre>
+                                        <p>Quelcom de semblant passa amb les classes definides per contenir dades (tipus compostos). Per poder-les fer operatives i guardar o accedir a les dades definides, necessitarem crear també instàncies. De fet, Exceptuant els mètodes estàtics, quan treballeu en una implementació en la que intervinguin diverses classes, siguin tipus compostos o de codi, haureu, inevitablement de crear instancies de les classes.</p>
+                                        <p>De vegades, treballar amb instancies pot suposar certa dificultat si no es domina massa la tècnica. Aquí intentarem explicar la raó d'aquestes dificultats, de manera que pugueu raonar durant la implementació del projecte quantes instàncies d'una classe caldrà fer i en quin moment de l'execució.</p>
+                                        <p>Les instancies que contenen dades (Tipus Compostos), són les que ens poden arribar a donar més problemes. Intentarem explicar aquesta problemàtica usant una metàfora per tal de fer-ho més entenedor. Començarem explicant què passa quan es crea una instància.</p>
+                                        <h4 id="instanciesDeDades">Instàncies de tipus compostos</h4>
+                                        <p>La analogia que ens servirà per explicar el significat de la instanciació i les implicacions que aquesta comporta, serà la construcció d'un armari a partir dels plànols que ens mostren com cal muntar-lo. Els plànols serien l'equivalent als tipus de dades: la definició de l'estructura, mentre que la construcció pròpiament dita de l'armari, d'acord amb les instruccions dels plànols, equivaldria a la instanciació. El llenguatge JAVA té la instrucció <em>new</em> per construir les instàncies (armaris) tal com indiquen els corresponents tipus compostos (plànols).</p>
+                                        <p>Seguim amb la metàfora. Un cop realitzada la construcció, l'armari estarà buit, però preparat per emmagatzemar coses. Si no l'haguéssim construït, no hi podríem emmagatzemar res, perquè només tindríem els plànols, però l'armari no hi seria. És el que passa quan declarem una variable d'un tipus compost però no construïm la instància. La declaració de la variable seria equivalent a buscar-li un lloc a l'armari, però si no el construïm, només tindrem un lloc buit.</p>
+                                        <p>Imagineu que tenim una classe anomenada <em>DadesJugador</em>, la qual representa un tipus composts com el que veieu tot seguit:</p>
+                                        <pre><code class="java">
+        public class DadesJugador {    
+            String nom;
+            int partidesGuanyades;
+        }
+                                        </code></pre>
+                                        <p>Imagineu també que escrivim un classe que inicialitzi 2 variables d'aquest tipus compost:</p>
+                                        <pre><code class="java">
+        public class AppJoc {
+            public static void main(String[] args) {
+                AppJoc prog = new AppJoc();
+                prog.inici();
+            }
+
+            private void inici() {
+               DadesJugador jugadorA = new DadesJugador();
+               DadesJugador juagadorB;
+               
+               jugadorA.nom = "Sara";
+               jugadorB.nom = "Francesc";
+               
+               ...
+            }
+        }
+                                            
+                                        </code></pre>
+                                        <p>Fixeu-vos que la variable jugadorA està ben inicialitzada i podrem fer-la servir sense problemes. Podem assignar-hi el nom i també el nombre de partides guanyades perquè abans hem construït la instància. L'armari existeix!</p>
+                                        <p>Per contra la variable jugadorB, només està declarada, però no inicialitzada (encara ens cal construir l'armari) i per tant si intentem assignar-hi algun valor obtindrem un error.</p>
+                                        <h4>Diferències entre instanciar un tipus compost o una classe que només conté codi</h4>
+                                        <p>La diferència essencial entre ambdues categories és que les instancies dels tipus compostos serviran per emmagatzemar dades, mentre que les instancies de classes que només contenen codi, no emmagatzemen res. Seguint amb la metàfora anterior, si les estructures de dades fossin armaris, per guardar roba per exemple, les classes de codi serien electrodomèstics que la processessin, posem per cas una planxa.</p>
+                                        <p>Si tinguéssim al capacitat de construir armaris i planxes amb només l'acció de picar els dits, podríem construir una planxa cada cop que en tinguéssim necessitat, sense  detriment de la nostra feina (exceptuant el malbaratament del medi ambient que causaríem), perquè aconseguiríem planxar la roba sense cap entrebanc. Ara bé, a ningú se li acudiria construir armaris quan passéssim pel costat d'una planxa i ens agafés el rampell de deixar la roba impecable, perquè els armaris construïts estarien buits i no ens quedaríem sense poder planxar. No tindríem més remei que agafar la planxa i desplaçar-nos a l'armari més proper.</p>
+                                        <p>Quelcom semblant passa amb les estructures de dades i amb les classes que contenen codi. Les primeres, no es poden anar creant lleugerament si no volem perdre dades pel camí. Les segones en canvi, són com les planxes.</p>
+                                        <p>Analitzeu el codi d'exemple que us posem a continuació i intenteu esbrinar perquè les crides <em>processaImprimirNom(jugador)</em> (línia 31) i <em>processarImprimirTot(impressora, jugador)</em> (línia 36) tindran èxit, mentre que la crida <em>processaImprimirGuanyades()</em> (línia 33) no aconseguirà imprimir res.</p>
+                                        <pre><code class="linenumbers java">
+    /*Fitxer ioc.m03.uf2.ImpresoraJugador.java*/
+    package ioc.m03.uf2;
+
+    public class ImpresoraJugador {
+        public void imprimirNom(DadesJugador jugador) {
+            System.out.print("Nom del jugador:");
+            System.out.println(jugador.nom);
+        }
+
+        public void imprimirGuanyades(DadesJugador jugador) {
+            System.out.print("Partides guanyades del jugador:");
+            System.out.println(jugador.partidesGuanyades);        
+        }
+    }
+
+    /*Fitxer ioc.m03.uf2.Debat52.java*/
+    package ioc.m03.uf2;
+
+    public class Debat52 {
+       public static void main(String[] args) {
+            Debat52 prog = new Debat52();
+            prog.inici();
+        }
+
+        private void inici() {
+           DadesJugador jugador = new DadesJugador();
+           
+           jugador.nom = "Sara";
+           jugador.partidesGuanyades=10;
+           
+           processaImprimirNom(jugador);
+
+           processaImprimirGuanyades();
+           
+           ImpresoraJugador impressora = new ImpresoraJugador();
+           processarImprimirTot(impressora, jugador);
+
+        }    
+
+        private void processaImprimirNom(DadesJugador jugador) {
+            ImpresoraJugador impressora = new ImpresoraJugador();
+            impressora.imprimirNom(jugador);
+        }
+
+        private void processaImprimirGuanyades() {
+            ImpresoraJugador impressora = new ImpresoraJugador();
+            DadesJugador jugador = new DadesJugador();
+            impressora.imprimirGuanyades(jugador);
+        }
+
+        private void processarImprimirTot(ImpresoraJugador impressora, 
+                                            DadesJugador jugador) {
+            impressora.imprimirNom(jugador);
+            impressora.imprimirGuanyades(jugador);
+        }
+    }
+                                        </code></pre>
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Quines diferencies veus entre cada una de les tres funcions següents: processaImprimirNom, processaImprimirGuanyades, processarImprimirTot, en realció als paràmetres rebuts i les instàncies creades?</p>
+                                        <p>Perquè creus que la crida de la línia 31 (processaImprimirNom) tindrà èxit?</p>
+                                        <p>Perquè creus que la crida de la línia 33 (processaImprimirGuanyades) NO tindrà èxit?</p>
+                                        <p>Perquè creus que la crida de la línia 33 (processarImprimirTot) tindrà èxit?</p>
+                                    </div>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Fòrum 4 ================-->
                 <!--=========== BEGIN SUBSECTION Fòrum 1 ================-->    
                 <section id="slc-discussion0" class="debat section">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades a les aplicacions</h2>
                                      <h3 >Tasques: unitats de processament</h3>
                                  </div>
                             </div>
@@ -139,24 +279,33 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Les aplicacions són procediments que tracten i manipulen dades (inicials), a fi d'obtenir resultats i informació (dades finals) a partir d'aquests tractaments. És a dir, podem suposar que les aplicacions necessiten un conjunt de dades inicials a les quals se les processa de diferents formes i s'obtenen un resultats o dades finals. Les dades inicials solen demanar-se als usuaris, però no sempre és així. De fet, les dades podrien obtenir-se també des de bases de dades, fitxers, Internet, etc.  Com és natural, segons l'origen de dades, caldrà disposar de diferents procediments que les obtinguin. Si l'origen prové de l'usuari caldrà implementar alguna forma demanar les dades a la pantalla i recollir-les a partir del teclat o els dispositius d'entrada adients (ratolí, etc.). En canvi si l'origen fos un fitxer, el que caldria seria implementar procediments de lectura del mateix. El que volem dir amb això, és que si volem crear aplicacions versàtils que es puguin adaptar fàcilment a diferents orígens de dades sense haver de refer l'aplicació de dalt a baix, resulta molt i molt important mantenir ben separats els procediments destinats a obtenir les dades i emmagatzemar-les a la memòria de l'ordinador, dels procediments destinats a fer-ne el tractament i obtenir els resultats i també d'aquells que permetin a l'usuari veure els resultats (no podem suposar que l'usuari només pot veure els resultats per la pantalla, potser es necessitin imprimir o bolcar-los en un fitxer per recuperar-los posteriorment, etc.)</p>
-                                    <p>En general, les aplicacions classifiquen les seqüències indicades, de demanda de dades, tractament i mostra de resultats, en tasques. És a dir les tasques són, per dir-ho d'alguna forma unitats de procediment complertes on a partir d'unes dades inicials, es fan un seguit de tractaments i s'obtenen uns resultats que s'emmagatzemaran o es mostraran a l'usuari d'alguna manera. L'obtenció de dades, els tractaments de les mateixes i la mostra dels resultats són les accions en que es descompon la tasca. Recordeu els esquemes que vàreu veure a l'activitat A502 on es podia entreveure la composició de les tasques:</p>
-                                    <figure id ="descomposicioAplicacions">
-                                        <img src="images/activities/descomposicioAplicacions.png" alt="descomposició d'aplicacions">
-                                        <figcaption style="width: 510px; max-width: 75%;">
-                                            <span class="figuretitle">figura </span> Descomposició d'aplicacions.                               
-                                        </figcaption>
-                                     </figure>
-                                    <p>I el fet que les tasques necessiten una entrada de dades inicial, uns tractaments i una mostra dels resultats.</p>
-                                     <figure id ="figura_pantalles">
-                                        <img src="images/activities/fluxControl.png" alt="Control"/>
-                                        <figcaption >
-                                            <span class="figuretitle">figura </span> Esquema simplificat del flux d'execució d'una aplicació.                               
-                                        </figcaption>
-                                    </figure>
+                                    <p>Les aplicacions són procediments que tracten i manipulen dades (inicials), a fi d'obtenir resultats i informació (dades finals) a partir de certs tractaments i manipulacions de les dades. És a dir, podem suposar que les aplicacions necessiten un conjunt de dades inicials a les quals se les processa de diferents formes i s'obtenen un resultats o dades finals. Les dades inicials solen demanar-se als usuaris, però no sempre és així. De fet, les dades podrien obtenir-se també des de bases de dades, fitxers, Internet, etc.  Com és natural, segons l'origen de dades, caldrà disposar de diferents procediments que les obtinguin. Si l'origen prové de l'usuari caldrà implementar alguna forma demanar les dades a la pantalla i recollir-les a partir del teclat o els dispositius d'entrada adients (ratolí, etc.). En canvi si l'origen fos un fitxer, el que caldria seria implementar procediments de lectura del mateix. El que volem dir amb això, és que si volem crear aplicacions versàtils que es puguin adaptar fàcilment a diferents orígens de dades sense haver de refer l'aplicació de dalt a baix, resulta molt i molt important mantenir ben separats els procediments destinats a obtenir les dades i emmagatzemar-les a la memòria de l'ordinador, dels procediments destinats a fer-ne el tractament i obtenir els resultats i també d'aquells que permetin a l'usuari veure els resultats (no podem suposar que l'usuari només pot veure els resultats per la pantalla, potser es necessitin imprimir o bolcar-los en un fitxer per recuperar-los posteriorment, etc.)</p>
+                                    <p>En general, les aplicacions solen disposar de múltiples procediments on es demanen dades inicials,  després es tracten i finalment es mostren a l'usuari. Anomenarem a cada un d'aquests procediments, tasques. </p>
+                                    <p class="iocimportant">Les tasques són, per dir-ho d'alguna forma, unitats de procediment complertes on inicialment unes dades externes, normalment demandes a l'usuari, s'incorporen a la memòria de l'aplicació, seguidament se'n fa un seguit de tractaments fins obtenir uns resultats que s'emmagatzemaran o es mostraran a l'usuari d'alguna manera. </p>
+                                    <div class="figscope">
+                                        <p>L'obtenció de dades, els tractaments d'aquestes i la mostra dels resultats són <strong>les accions</strong> en que es descompon la tasca. Recordeu els esquemes que vàreu veure a l'activitat A503 on es podia entreveure la composició de les tasques (<span class="figref">figura</span>):</p>
+                                        <figure id ="descomposicioAplicacions">
+                                            <img src="images/activities/descomposicioAplicacions.png" alt="descomposició d'aplicacions">
+                                            <figcaption style="width: 510px; max-width: 75%;">
+                                                <span class="figuretitle">figura </span> Descomposició d'aplicacions.                               
+                                            </figcaption>
+                                         </figure>
+                                    </div>
+                                    <div class="figscope">
+                                        <p>I el fet que les tasques necessiten una entrada de dades inicial, uns tractaments i una mostra dels resultats (<span class="figref">figura</span>).</p>
+                                         <figure id ="figura_pantalles">
+                                            <img src="images/activities/fluxControl.png" alt="Control"/>
+                                            <figcaption >
+                                                <span class="figuretitle">figura </span> Esquema simplificat del flux d'execució d'una aplicació.                               
+                                            </figcaption>
+                                        </figure>
+                                    </div>
                                      <div class="frameBox">
                                         <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
-                                        <p>Per què creus que quan parlem de tasques, parlem d'unitats complertes de processament?.</p>
+                                        <ul>
+                                            <li><p>Per què quan parlem de tasques, diem que són unitats complertes de processament?</p></li>
+                                            <li>En quantes accions com a mínim hauria de dividir-se una tasca?</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -178,16 +327,30 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>A l'hora de descompondre les tasques, intenteu evitar la barreja de funcions de demanda o sortida de dades amb funcions de tractament. Si ho feu, els vostres programes seran més fàcils de llegir, de modificar i aconseguireu reutilitzar codi més fàcilment. Probablement caldrà escriure algunes línies de codi, de més, però a els avantatges obtinguts s'ho valdran.</p>
-                                    <p>Els avantatges de separar així el codi són diversos. Un dels més importants, té a veure amb la reutilització del codi. Al fòrum anterior ja hem vist que les aplicacions no sempre han de tenir un mateix origen o sortida de dades, fins i tot suposant que l'origen de les dades fos sempre la interpel·lació de l'usuari, la proliferació que avui dia hi ha de plataformes (mòbils, WEB, d'interfícies gràfiques, de consola, etc.) fa molt difícil reutilitzar el codi dissenyat específicament per una d'aquestes plataformes. És més, les interpel·lacions als usuaris, solen estar acompanyades de textos molt contextualitzats i per tant, de difícil reutilització en altres contextos.</p>
+                                    <p>A l'hora de descompondre les tasques, intenteu <strong>evitar</strong> la barreja de funcions de demanda i de sortida de dades amb funcions de tractament. Si ho feu, els vostres programes seran més fàcils de llegir, de modificar i aconseguireu reutilitzar codi més fàcilment. Probablement caldrà escriure algunes línies de més, però a els avantatges obtinguts s'ho valdran.</p>
+                                    <p>Els avantatges de separar així el codi són diversos. Un dels més importants, té a veure amb la reutilització del codi. Al fòrum anterior ja hem vist que les aplicacions no sempre han de tenir un mateix origen o sortida de dades, fins i tot suposant que l'origen de les dades fos sempre la interpel·lació de l'usuari, la proliferació que avui dia hi ha de plataformes (mòbils, WEB, d'interfícies gràfiques, de consola, etc.) fa molt difícil reutilitzar el codi dissenyat específicament per una d'aquestes plataformes. És més, les interpel·lacions als usuaris, solen estar acompanyades de textos molt contextualitzats i per tant, de difícil reutilització.</p>
                                     <p>Per contra, les accions de tractament, si es configuren bé, podran reutilitzar-se en múltiples contextos i amb independència del tipus d'entrada o sortida que acabem implementant o de la plataforma finalment usada. Per exemple, si una tasca calcula la temperatura mínima o mitjana o ... i prenem la precaució de independitzar la demanda i sortida de dades del propi càlcul, adaptar la tasca a diferents plataformes o formes d'obtenció de dades (fitxers, Internet), consistirà només en reescriure les funcions específiques d'entrada i sortida, però podrem deixar intactes les de tractament i càlcul de resultats.</p>
                                      <div class="frameBox">
                                         <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
-                                        <p>
+                                        <ul>
+                                            <li>
                                             Què creus que a la pràctica pot significar implementar una funció descontextualitzada?.<br/>
                                             Indica com es podria aconseguir.
-                                        </p>
+                                            </li>
+                                        </ul>
                                     </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-discussion21" 
+                                            data-selector-clue="#slc-discussion21-clue1">
+                                        Pista
+                                    </button>                                        
+                                    <div id="slc-discussion21-clue1" class="iocClue hidden">
+                                        <h2>Pista</h2>
+                                        <p>Per a què serveixen els paràmetres de les funcions? </p>
+                                    </div>                                    
                                 </div> 
                             </div>
                         </div>
@@ -208,9 +371,9 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Si com acabem de veure, les funcions que implementen interfícies d'usuari estan molt contextualitzades i són realment difícils de reutilitzar, per què a l'activitat A503 us vàrem demanar que intentéssiu crear una biblioteca genèrica que ajudés a implementar interfícies d'usuari basades en consola? Què és el que determina el context d'una funció?.</p>
+                                    <p>Si com acabem de veure, les funcions que implementen interfícies d'usuari estan molt contextualitzades i són realment difícils de reutilitzar, per què a l'activitat A404 us vàrem demanar que implementeu 4 funcions específiques d'interfície d'usuari que ajudaven a demanar a l'usuari diversos tipus de dades? Què és el que determina el context d'una funció?</p>
                                    <p>Efectivament, són els missatges i al informació de sortida la que dóna la contextualització. Per tant si que ha de ser possible implementar funcions genèriques per permetin crear interfícies d'usuari, sempre i quan les descontextualitzem eliminant els textos i la informació específica de la implementació, però permeten que aquesta arribi a través de paràmetres.</p>
-                                   <p>De fet, si cerqueu una mica, us adonareu que JAVA i la majoria de llenguatges d'alt nivell, disposen de moltes biblioteques genèriques per a poder crear interfícies gràfiques. Això és així, perquè la complexitat requerida a les interfícies gràfiques és gran i no surt rentable implementar les des de zero.</p>
+                                   <p>De fet, si cerqueu una mica, us adonareu que JAVA i la majoria de llenguatges d'alt nivell, disposen de moltes biblioteques genèriques per a poder crear interfícies gràfiques d'usuari. Això és així, perquè la complexitat requerida a les interfícies gràfiques és gran i no surt rentable implementar les des de zero.</p>
                                    <p>Malgrat les interfícies basades en consola presenten sempre una complexitat molt menor, ens pot resultar eficient i útil implementar també biblioteques genèriques que ajudin a estandarditzar les pantalles de la nostra aplicació de forma que totes segueixin un patró similar, tant a l'hora de controlar errors,  de mostrar informació,  de seqüenciar les peticions múltiples, de mostra de determinats resultats, etc.</p>
                                    <p>L'estandardització, resulta clau per reduir la corba d'aprenentatge que els usuaris necessiten per aprendre una  aplicació nova.</p> 
                                      <div class="frameBox">
@@ -223,7 +386,7 @@
                     </div>                
                 </section>
                 <!--=========== END SUBSECTION Fòrum 3 ================-->
-                <!--=========== BEGIN SUBSECTION Fòrum 4 ================-->    
+                <!--=========== BEGIN SUBSECTION Fòrum 5 ================-->    
                 <section id="slc-discussion24" class="debat section">
                     <div class="container">
                         <div class="row">
@@ -243,40 +406,7 @@
                                         <li>L'Usuari ha de tenir sempre clar el que ha de fer. És a dir la pantalla ha de donar una informació clara i precisa de les accions que l'usuari pot fer. Les informacions ambigües són contraproduents i les llargues també.</li>
                                         <li>La interfície ha de ser tot l'intuïtiva que sigui possible. És a dir l'usuari hauria d'endevinar el que ha de fer sense necessitat de llegir-se el manual.</li>
                                         <li>La interfície ha d'estar estandarditzada. És a dir, cal que les demandes i presentacions d'informació segueixin  un patró similar d'acord amb la seva funcionalitat, tipus de dades, etc.</li>
-                                        <li>La interfície ha de ser tolerant a errades de l'usuari. Cal tenir present que els usuaris no sempre faran el que se'ls demana, ja sigui per equivocació o per simple curiositat. En qualsevol cas, la interfície no s'ha de penjar mai per acció de l'usuari; i també cal assegurar sempre que es recullen exactament el tipus i el nombre de dades previstes. </li>
-                                    </ul>
-                                     <div class="frameBox">
-                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
-                                        <p>Valoreu els criteris de qualitat exposats més amunt</p>
-                                    </div>
-                                    
-                                </div> 
-                            </div>
-                        </div>
-                    </div>                
-                </section>
-                <!--=========== END SUBSECTION Fòrum 4 ================-->
-                <!--=========== BEGIN SUBSECTION Fòrum 5 ================>    
-                <section id="slc-discussion25" class="debat section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
-                                     <h3>Criteris de qualitat de les interfícies d'usuari</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>Avui en dia, una bona interfície d'usuari ha de complir un seguit de criteris de qualitat. No n'hi ha prou en estandarditzar la interfície, sinó que cal estandarditzar-la seguint els criteris de qualitat comunament acceptats. Veiem-ne els principals</p>
-                                    <ul>
-                                        <li>És important que l'usuari no es perdi mai durant la navegació. Això significa que a totes les pantalles de l'aplicació hi hauria d'haver informació que indiqui a l'usuari a quin mòdul o quina tasca es troba.</li>
-                                        <li>L'Usuari ha de tenir sempre clar el que ha de fer. És a dir la pantalla ha de donar una informació clara i precisa de les accions que l'usuari pot fer. Les informacions ambigües són contraproduents i les llargues també.</li>
-                                        <li>La interfície ha de ser tot l'intuïtiva que sigui possible. És a dir l'usuari hauria d'endevinar el que ha de fer sense necessitat de llegir-se el manual.</li>
-                                        <li>La interfície ha d'estar estandarditzada. És a dir, cal que les demandes i presentacions d'informació segueixin  un patró similar d'acord amb la seva funcionalitat, tipus de dades, etc.</li>
-                                        <li>La interfície ha de ser tolerant a errades de l'usuari. Cal tenir present que els usuaris no sempre faran el que se'ls demana, ja sigui per equivocació o per simple curiositat. En qualsevol cas, la interfície no s'ha de penjar mai per acció de l'usuari; i també cal assegurar sempre que es recullen exactament el tipus i el nombre de dades previstes. </li>
+                                        <li>La interfície ha de ser tolerant a errades de l'usuari. Cal tenir present que els usuaris no sempre faran el que se'ls demana, ja sigui per equivocació o per simple curiositat. En qualsevol cas, la interfície no s'ha de penjar mai per acció de l'usuari. També cal assegurar sempre, que es recullen exactament el tipus i el nombre de dades previstes. </li>
                                     </ul>
                                      <div class="frameBox">
                                         <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
@@ -303,7 +433,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament -Implementació II</h2>
+                                 <h2 >Lliurament -Implementació I</h2>
                              </div>
                         </div>
                     </div>
@@ -326,7 +456,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Com continuar - Implementació II</h2>
+                                 <h2 >Com continuar - Implementació I</h2>
                              </div>
                         </div>
                     </div>

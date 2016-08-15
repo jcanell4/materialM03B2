@@ -47,6 +47,9 @@
                     <a href="#slc-laPlanificacio__slc-planificacioCalendari" onclick = '$("#menu-close").click();'>Taula d'activitats</a>
                 </li>
                 <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
                     <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Ampliació</a>
                 </li>
             </ul>
@@ -106,7 +109,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Inici Unitat Formativa 2</h2>
+                                 <h2 >Unitat Formativa 2</h2>
                                  <h3>Unitat Formativa 2. Programació modular</h3>
                              </div>
                         </div>
@@ -302,7 +305,7 @@
                                 <p>El seguiment de l'<b>avaluació contínua (AC)</b> és obligatòria per la UF2. Això significa que si no feu els lliuraments mínims indicats més abaix, no podreu presentar-vos a la <strong>prova final d'avaluació (PAF)</strong> i la unitat formativa us quedarà suspesa. D'altra banda, el pes d'aquesta AC suposa el <b><span class="ponderacioAC"></span></b> de la qualificació final. L'altre <b><span class="ponderacioPAF"></span> </b>correspondrà a la qualificació obtinguda a les proves d'avaluació final.</p>
                                 <p>Les raons que ens porten a ponderar d'aquesta manera la l'AC són, d'una banda el reconeixement de la feina que feu l'aula i de l'altra, la dificultat de valorar els vostres coneixements amb només un examen de poc més d'una hora. Gràcies al seguiment continu de la vostra activitat, podem donar un pes important a l'AC, tot i mantenir la PAF.</p>
                                 <h4>Prova final d'avaluació (PAF)</h4>
-                                <p>Al final del semestre, el professor us farà arribar uns consells i unes indicacions del tipus de preguntes que tindrà la prova. Malgrat tot, heu de tenir en compte, que les preguntes pretenen d'una banda validar l'autoria dels vostres lliuraments, també es valora la qualitat de l'aprenentatge i per últim permet establir un filtre de mínims a partir del qual es considera  que la qualitat de l'aprenentatge ha estat insuficient. En aquest sentit, només es ponderarà la de la PAF i de l'AC si la nota de la prova final és <strong>superior a 3</strong>. Qualsevol altre cas implicara suspendre la UF2.</p>
+                                <p>Al final del semestre, el professor us farà arribar uns consells i unes indicacions del tipus de preguntes que tindrà la prova. Malgrat tot, heu de tenir en compte, que les preguntes pretenen d'una banda validar l'autoria dels vostres lliuraments, també es valora la qualitat de l'aprenentatge i per últim permet establir un filtre de mínims a partir del qual es considera  que la qualitat de l'aprenentatge ha estat insuficient. En aquest sentit, només es ponderarà la de la PAF i de l'AC si la nota de la prova final és <strong>superior a <span class="notaMinimPaf">ERROR 3</span></strong>. Qualsevol altre cas implicarà suspendre la UF2.</p>
                                 <h4>Avaluació contínua (AC)</h4>
                                  <p>Totes les activitats que se us proposen de fer en aquesta guia, formen part del que anomenem l'avaluació contínua (AC).  Això significa que totes elles ponderen, en major o menor mesura, en la qualificació d'aquesta. Tingueu en compte però, que per poder obtenir una nota d'AC serà imprescindible lliurar al menys el <span class="lliuramentsMinims">ERROR</span> de les activitats proposades. Una taxa de lliurament inferior suposarà que no us podreu presentar a les proves finals i per tant implicarà el suspens de la unitat formativa.</p> 
 
@@ -316,7 +319,7 @@
                                 </table> 
                                 </div>
                                 <p>La fórmula no és aplicable si el percentatge de lliuraments (qualificables i no qualificables) es troben per sota del <span class="lliuramentsMinims">ERROR</span>. La fórmula bonifica els estudiants que facin un major nombre de lliuraments. De fet estableix una proporcionalitat de zero a deu entre el mínim de lliuraments (<span class="lliuramentsMinims">ERROR</span>) possibles i el màxim (100%).</p>
-                                <p>Les activitats Q, a més de contribuir al valor del SAC, es qualifiquen en funció de les respostes lliurades. Cada activitat pot tenir un nombre variable d'exercicis que haureu de contestar i lliurar a la bústia corresponent. Si no s'especifica el contrari, tots els exercicis d'una mateixa activitat tenen la mateixa ponderació. Com veureu a la taula d'activitats de la secció de planificació, només 3 activitats són de tipus Q: l'A404, l'A407 i l'A505.</p>
+                                <p>Les activitats Q, a més de contribuir al valor del SAC, es qualifiquen en funció de les respostes lliurades. Cada activitat pot tenir un nombre variable d'exercicis que haureu de contestar i lliurar a la bústia corresponent. Si no s'especifica el contrari, tots els exercicis d'una mateixa activitat tenen la mateixa ponderació. Com veureu a la taula d'activitats de la secció de planificació, només <span class="nombreActivitatsQ"></span> activitats són de tipus Q: <span class="llistaActivitatsQ"></span>.</p>
                                 <p>La qualificació d'aquestes activitats donarà lloc a la nota d'activitats de l'avaluació contínua (AAC), la qual pondera de la següent manera:</p>
                                 <div class="iocexample single em">
                                     <table>
@@ -335,7 +338,7 @@
                                     <table border="1">
                                         <tr>
                                             <td rowspan="2">AC = </td>
-                                            <td align=left> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sí el nombre de lliuraments és inferior al <span class="lliuramentsMinims">ERROR</span> de les activitats proposades.</td>
+                                            <td align=left> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;si el nombre de lliuraments és inferior al <span class="lliuramentsMinims">ERROR</span> de les activitats proposades.</td>
                                         </tr>
                                         <tr>
                                             <td align=left><span class="ponderacioSAC">ERROR</span> SAC + <span class="ponderacioAAC">ERROR</span> AAC</td>
@@ -346,8 +349,11 @@
                                 <div class="iocexample single em">
                                     <table border="1">
                                         <tr>
-                                            <td rowspan="2">UF2 = </td>
-                                            <td align=left> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sí el nombre de lliuraments de l'AC és inferior al <span class="lliuramentsMinims">ERROR</span> de les activitats proposades.</td>
+                                            <td rowspan="3">UF2 = </td>
+                                            <td align=left> 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;si el nombre de lliuraments de l'AC és inferior al <span class="lliuramentsMinims">ERROR</span> de les activitats proposades.</td>
+                                        </tr>
+                                        <tr>
+                                            <td align=left>PAF &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;si la qualificació de la PAF no arriba a <span class="notaMinimPaf">ERROR</span></td>
                                         </tr>
                                         <tr>
                                             <td align=left><span class="ponderacioAC">ERROR</span> AC + <span class="ponderacioPAF">ERROR</span> (PAF)</td>
@@ -420,7 +426,7 @@
                                         </tr>                                        
                                         <!--Període 0 -->
                                         <tr>
-                                            <td>0</td>
+                                            <td><span id="A400p0ID"></span></td>
                                             <td>del <span id="A400p0I"></span> al <span id="A400p0F"></span></td> 
                                             <td><span id="A400idA400"></span></td>
                                             <td><span id="A400naA400"></span></td>
@@ -433,7 +439,7 @@
                                         </tr>                                        
                                         <!--Període 1 -->
                                         <tr>
-                                            <td rowspan="2">1</td>
+                                            <td rowspan="2"><span id="A400p1ID"></span></td>
                                             <td rowspan="2">del <span id="A400p1I"></span> al <span id="A400p1F"></span></td> 
                                             <td><span id="A400idA401"></span></td>
                                             <td><span id="A400naA401"></span></td>
@@ -456,7 +462,7 @@
                                         </tr>
                                         <!--Període 2 -->
                                         <tr>
-                                            <td rowspan="3">2</td>
+                                            <td rowspan="3"><span id="A400p2ID"></span></td>
                                             <td rowspan="3">del <span id="A400p2I"></span> al <span id="A400p2F"></span></td> 
                                             <td><span id="A400idTGC"></span></td>
                                             <td><span id="A400naTGC"></span></td>
@@ -489,7 +495,7 @@
                                         </tr>
                                         <!--Període 3 -->
                                         <tr>
-                                            <td>3</td>
+                                            <td><span id="A400p3ID"></span></td>
                                             <td>del <span id="A400p3I"></span> al <span id="A400p3F"></span></td> 
                                             <td><span id="A400idA405"></span></td>
                                             <td><span id="A400naA405"></span></td>
@@ -502,7 +508,7 @@
                                         </tr>
                                         <!--Període 4 -->
                                         <tr>
-                                            <td>4</td>
+                                            <td><span id="A400p4ID"></span></td>
                                             <td>del <span id="A400p4I"></span> al <span id="A400p4F"></span></td> 
                                             <td><span id="A400idA406"></span></td>
                                             <td><span id="A400naA406"></span></td>
@@ -513,9 +519,9 @@
                                             <td><span id="A400agrA406"></span></td>
                                             <td><span id="A400tipA406"></span></td>
                                         </tr>
-                                        <!--Període 5 -->
+                                        <!--Període 5 >
                                         <tr>
-                                            <td>5</td>
+                                            <td><span id="A400p5ID"></span></td>
                                             <td>del <span id="A400p5I"></span> al <span id="A400p5F"></span></td> 
                                             <td><span id="A400idA407"></span></td>
                                             <td><span id="A400naA407"></span></td>
@@ -528,7 +534,7 @@
                                         </tr>
                                         <!--Període 6 -->
                                         <tr>
-                                            <td>6</td>
+                                            <td><span id="A400p6ID"></span></td>
                                             <td>del <span id="A400p6I"></span> al <span id="A400p6F"></span></td> 
                                             <td><span id="A400idA501"></span></td>
                                             <td><span id="A400naA501"></span></td>
@@ -541,7 +547,7 @@
                                         </tr>
                                         <!--Període 7 -->
                                         <tr>
-                                            <td rowspan="2">7</td>
+                                            <td rowspan="2"><span id="A400p7ID"></span></td>
                                             <td rowspan="2">del <span id="A400p7I"></span> al <span id="A400p7F"></span></td> 
                                             <td><span id="A400idA502"></span></td>
                                             <td><span id="A400naA502"></span></td>
@@ -564,7 +570,7 @@
                                         </tr>
                                         <!--Període 8 -->
                                         <tr>
-                                            <td rowspan="2">8</td>
+                                            <td rowspan="2"><span id="A400p8ID"></span></td>
                                             <td rowspan="2">del <span id="A400p8I"></span> al <span id="A400p8F"></span></td> 
                                             <td><span id="A400idA504"></span></td>
                                             <td><span id="A400naA504"></span></td>
@@ -587,7 +593,7 @@
                                         </tr>
                                         <!--Període MI -->
                                         <tr>
-                                            <td>MI</td>
+                                            <td><span id="A400pmID"></span></td>
                                             <td>del <span id="A400pmI"></span> al <span id="A400pmF"></span></td> 
                                             <td><span id="A400idA5MI"></span></td>
                                             <td><span id="A400naA5MI"></span></td>
@@ -790,16 +796,17 @@
                                             </figcaption>
                                        </figure>
                                         <p>En totes les activitats, disposareu sempre d'un botó(<span class="figref">figura</span>) que us permetrà accedir al menú d'informació addicional de l'activitat. El menú es desplega clicant el botó i es replega tornant-lo a clicar. </p>
-                                        <br/>
-                                     </div>
+                                    </div>
                                       <div class=figscope>
+                                        <p>En el menú podeu trobar-hi informació addicional com ara els objectius didàctics associats a l'activitat, l'enunciat del projecte, llocs i materials per a reforçar els coneixements treballats o per ampliar-los (<span class="figref">figura</span>).</p>
+                                        <br/>
                                        <figure id ="fig_menu_informacio_addicional" class="left">
                                             <img width="470" src="images/activities/MenuInformacioDespelegat.png" alt="Menú d'informació addicional">
                                             <figcaption style="width: 449px; max-width: 75%;">
                                                 <span class="figuretitle">figura </span>Botó per accedir al menú d'informació addicional'.
                                             </figcaption>
                                        </figure>
-                                        <p>En el menú podeu trobar-hi informació addicional com ara els objectius didàctics associats a l'activitat, una relació de llocs i materials per a reforçar els coneixements treballats o bé per ampliar amb nous coneixements relacionats (<span class="figref">figura</span>)).</p>
+                                        <p>Els objectius us informen del que haureu d'aconseguir aprendre en l'activitat i per tant faciliten que us centreu en l'essencial. L'enunciat del projecte us donarà una visió contextualitzada del que aneu aprenent en el sentit de evidenciar la seva aplicació en un problema real. Els materials de reforç, en moments puntuals, poden servir de catalitzadors per assimilar el conceptes o procediments nous, tot i que no podeu centrar permanentment l'estratègia d'aprenentatge en el reforç. Si això passa consulteu al professor, probablement es tractarà d'algun aspecte mal après que el professor us pot ajudar a resoldre.</p>
                                     </div>
                                 </div> 
                             </div>

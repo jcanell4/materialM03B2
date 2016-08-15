@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	 <meta name="author" content="Alícia Vila" >    
+     <meta name="author" content="Alícia Vila" >    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenentatge per introduir els conceptes de classe, biblioteques i tipus composts">
     
@@ -49,6 +49,9 @@
                 </li>
                 <li>
                     <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
                 </li>
                 <li>
                     <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
@@ -119,10 +122,9 @@
                         <div class="col-lg-12">
                              <div class=bodySlide>
                                  <p>Tal i com hem vist a l'aplicar el disseny descendent i l'ús de funcions, els programes resulten molt més llegibles, fàcils d'escalar i de localitzar errors si els dividim en parts, que no si fem l'aplicació, escrivint el codi tot seguit a la funció principal.</p>
-				<p>No obstant, a mesura que el programa es fa més gran i complex, necessitem distribuir encara més la informació i, en ocasions, re-aprofitar parts de codi d'uns programes a altres. Així doncs, ara anem més enllà i el que farem serà agrupar diferents funcions o mètodes que facin referència a un mateix tema en el que se sol anomenar <b>mòduls</b>. 
-				A JAVA aquests mòduls són equivalents al concepte de <b>classe</b>. Per tant, el que definirem a partir d'ara serà un programa dividit en diverses classes interrelacionades i organitzades en diferents fitxers.</p>
-				<p>Per últim, també veurem que en moltes ocasions els tipus de dades que coneixem fins ara (variables simples, arrays,...) no són suficients per representar les dades d'un programa. 
-				Per això, definirem el que s'anomenen <b>tipus composts</b> com una agrupació de dades de diferents tipus i veurem com es gestionen en JAVA. 
+                <p>No obstant, a mesura que el programa es fa més gran i complex, necessitem distribuir encara més la informació i, en ocasions, re-aprofitar parts de codi d'altres programes. Així doncs, aquí anirem més enllà; el que farem serà agrupar diferents funcions o mètodes que facin referència a un mateix tema, constituint el que anomenarem <b>mòduls</b>. A JAVA, aquests mòduls els implementarem com a classes independents, cada mòdul estarà contingut en una <b>classe</b>, dins de la qual hi disposarem les funcions específiques del mòdul. Per tant, el que definirem a partir d'ara, a més de les funcions, seran també les classes contenidores (d'aquestes funcions), les quals permetran mantenir el codi ben organitzat en mòduls.</p>
+                <p>Per últim, també veurem que en moltes ocasions els tipus de dades que coneixem fins ara (variables simples, arrays,...) no són suficients per representar les dades d'un programa. 
+                Per això, definirem el que s'anomenen <b>tipus composts</b> com una agrupació de dades de diferents tipus i veurem com es gestionen en JAVA. 
                                  <p>Aquesta activitat us permetrà aprendre com implementar i fer servir <em>classes, biblioteques i tipus composts</em>, de manera que us serveixi de pràctica per posteriors implementacions del projecte.</p>
                                  <p>En primer lloc haureu de llegir l'apartat <em><a href="#slc-toKnow">Què cal saber</a></em>. Allà, se us explicaran els coneixements bàsics que necessitareu per dur a tyerme l'activitat. </p>
                                  <p>Després caldrà que feu els exercicis que se us demana a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em>. Es tracta d'un conjunt d'exercicis que us ajudaran a consolidar l'aprenentatge dels conceptes explicats.</p>
@@ -153,38 +155,26 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Com hem vist fins ara, el disseny descendent ens ha permès tenir el codi d'un programa ben endreçat.
-                                    No obstant, això no serà suficient quan el programa creix en mida i complexitat, ja que ens trobarem amb un programa amb molts mètodes que, igualment, ens generarà un fitxer molt llarg de llegir i localitzar errors.
-                                    La solució a aquest problema és desenvolupar el codi dividint-lo en components més fàcils de modificar que s'anomenen <b>mòduls</b>, 
-                                    on cadascun d'ells agrupa un conjunt de funcions o mètodes que realitzen tasques relacionades.
-                                    Arribats a aquest punt, cal recordar que hem de defugir dels programes monolítics, on tot el codi es centra en un únic mòdul. 
-                                     </p>
-                                    <p>En general, en un programa modular cada mòdul es representa amb un fitxer de codi font diferent que facilita, entre altres, el reaprofitament. 
-                                    En el cas de JAVA, un mòdul equival al que anomenem <b>classe</b> i així, un programa modular està compost pel conjunt de diverses classes, en lloc de només una, i cada classe estaria implementada en un fitxer diferent.</p>
-                                    <p>L'ús que fem de les classes és:</p>
-				<ul>
-					<li><b>Programa en JAVA</b>: Els fitxers dels programes, pròpiament, són classes (<code>public class…</code>). En aplicar disseny descendent, el seu codi queda distribuït en un mètode principal (<code>main</code>), que indica el seu punt d’inici, junt amb diferents mètodes addicionals que poden ser cridats directament.</li>
-					<li><b>Repositori de funcions o biblioteques</b>: Correspondrien a un conjunt de funcions definides per l'usuari o bé pel propi llenguatge JAVA. Per exemple, la classe <code>Scanner</code>, que ofereix un repertori de mètodes per controlar la lectura de dades des del teclat (<code>nextLine()</code>, <code>nextInt()</code>, <code>hasNextFloat()</code>, etc.). </li>
-					<li><b>Tipus compost</b>: Aquest mateix terme s’ha usat com a sinònim de tipus compost. Per exemple, la classe <code>String</code>, utilitzada per referir-se a cadenes de text dins de JAVA. Els tipus compostos de JAVA permeten manipular dades complexes mitjançant la crida de mètodes (<code>charAt(…)</code>,<code>indexof(…)</code>, etc.).</li>
-				</ul>
-				<p>Cal destacar que els tres casos anteriors tenen característiques comunes, doncs tots ells són classes amb variables o mètodes. La diferència està en el context en el que s'usen i la manera d'invocar el seu contingut.
-				El cas de biblioteques i tipus composts, els tractarem en apartats posteriors.</p>
-				<p>Per exemple, tot i que no ens cal conèixer el codi sencer, la classe <code>Scanner</code> ha estat desenvolupada dins d’un fitxer anomenat <code>Scanner.java</code>, i una part del seu codi és:</p>
-				<pre><code class="java">
-public class Scanner {
-    //Altres declaracions (constants, vars. globals...) ...
-	
-	public String nextLine() {
-		//Codi del mètode ...
-	}
-	
-	public int nextInt() {
-		//Codi del mètode ...
-	}
-	
-	//Altres mètodes ...
-}
-				</code></pre>
+                                    <p>Com hem vist fins ara, el disseny descendent ens ha permès tenir el codi d'un programa ben endreçat en funcions. No obstant, això no és suficient quan el programa creix en mida i complexitat, ja que, aleshores, els programes necessiten dividir-se en tal quantitat de mètodes, que si els implementem en una única classe, ens generarà un fitxer molt llarg de llegir, difícil de relacionar i de localitzar-hi errors.</p>
+                                    <p>Els noms de les funcions, també se'ns complicaran perquè caldrà trobar noms significatius però diferents per a cada funció. Podem intentar seguir un patró sistemàtic per anomenar les funcions, però sovint, els patrons són insuficients quan la quantitat de noms augmenta desmesuradament. Aviat ens trobarem amb aspectes que no havíem contemplat en el patró, i o bé caldrà fer una excepció, o bé caldrà reanomenar de nou tots els mètodes incorporant el nou aspecte. Sigui quina sigui la solució presa, el ritme d'implementació se'n ressentirà.</p>
+                                    <p>La solució a aquest problema, consisteix en dividir el codi en components jeràrquics més fàcils de modificar, les classes, on cadascuna d'elles agrupa un conjunt de funcions o mètodes que realitzen tasques relacionades. Gràcies a les classes, podrem codificar dues funcions amb el mateix nom, en classes diferents, sense que això representi cap problema durant l'execució. A més, cada classe pot seguir el seu patró específic de nomenclatura, de manera que un canvi no hagi d'implicar el reanomenament de totes les funcions de l'aplicació, sinó només dels mètodes de la classe afectada (pocs en comparació amb tots els de l'aplicació).</p>
+                                    <p>La divisió en classes presenta encara una altra avantatge, ja que les classes, en JAVA, s'implementen en fitxers diferents. Això facilita el reaprofitament de codi en altres contextos i aplicacions, ja que en tindrem prou en referenciar el fitxer de codi a reaprofitar.</p>
+                                    <p class="iocimportant"> Arribats a aquest punt, cal deixar molt clar que hem de defugir tant com sigui possible dels programes monolítics, on tot el codi es concentra en una única classe. Si volem enfrontar-nos a la implementació d'aplicacions de debò, cal que ens acostumem a modularitzar el codi.</p>
+                                    <h4>Usos de les classes durant la implementació</h4>
+                                    
+                                    <p>Cal adonar-se que en realitat les classes són contenidors de codi. De moment, seguint el paradigma de la programació estructurada, direm que en funció del contingut de les classes els podem donar diferents usos en la implementació d'una aplicació. A mode d'esquema direm que les classes poden ser:</p>
+                                    <ul>
+                                        <li><strong>Classes específiques de l'aplicació</strong>: Són les classes que contenen la funcionalitat específica d'un programa. En aplicar disseny descendent, el codi queda distribuït en diferents funcions que agruparem per afinitat en diverses classes. Distingirem al menys, dos tipus: 
+                                            <ul>
+                                                <li><b>Classe principal</b>: és la classe que conté el mètode <strong><em>main</em></strong>, el qual representa el punt d’inici de l'aplicació a partir del qual comença el flux d'execució del programa cap a la resta de mètodes addicionals.</li>
+                                                <li><strong>Mòduls en que es divideix un programa</strong>: En aplicacions grans, és necessari organitzar la funcionalitat en mòduls. Cada mòdul s'implementarà, com a mínim, en una classe diferent.</li>
+                                            </ul>
+                                        </li>
+                                        <li><b>Repositori de funcions o biblioteques</b>: Correspondrien a un conjunt de funcions reaprofitables, definides per l'usuari o bé pel propi llenguatge JAVA. Per exemple, la classe <code>Scanner</code>, que ofereix un repertori de mètodes per controlar la lectura de dades des del teclat (<code>nextLine()</code>, <code>nextInt()</code>, <code>hasNextFloat()</code>, etc.). </li>
+                                        <li><b>Dades especials</b>: Per exemple, la classe <code>String</code>, utilitzada per referir-se a cadenes de text dins de JAVA. Algunes classes de JAVA permeten manipular dades complexes mitjançant la crida de mètodes (<code>charAt(…)</code>,<code>indexof(…)</code>, etc.).</li>
+                                        <li><b>Tipus compostos</b>: Les classes ens permeten mantenir ben agrupat un conjunt de dades diverses. Això resulta molt útil perquè amb una única variable podem accedir a tot el conjunt de dades.</li>
+                                    </ul>
+                                    <p>Aquesta és una visió específica del paradigma de la programació estructurada, quan arribeu al paradigma de la programació orientada a l'objecte, veureu que les classes són en realitat, molt més del que hem explicat aquí. De moment però ens quedarem amb aquesta visió.</p>
                                 </div>
                             </div>
                         </div>
@@ -206,92 +196,121 @@ public class Scanner {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Per a realitzar un programa modular en JAVA cal definir un criteri per distribuir els mètodes en diferents classes i, aquestes, en diferents fitxers. 
-                                    És important tenir en compte que sempre ha d'haver-hi una classe principal (<code>Main class</code>) que és la que disposa d'un mètode principal declarat al seu codi i que suposa el punt d'inici de l'execució del programa.</p>
-				<p>Per tal d'executar un programa modular en JAVA, només cal executar aquesta classe principal. A partir d’aquí, l’execució de les diferents instruccions segueix el flux de control habitual (figura 1), partint del mètode principal d’aquesta classe.</p>
-				<figure id ="figura_flux" class="left">
-                    <img width="464" src="images/activities/ic10m3u5_02.png" alt="flux de control en un programa amb classes addicionals">
-                    <figcaption class="figscope" style="width: 510px; max-width: 75%;">
-                        <span class="figuretitle">figura </span> Flux de control en un programa modular.                               
-                    </figcaption>
-                </figure>
-				<p>Cal destacar, que a la classe principal hi ha d’haver tant el mètode <code>main</code> com el mètode <code>inici</code>. Cap dels dos és necessari a la resta de classes.</p>
-				<p>En un programa modular, podem definir <b>classes addicionals</b> (que no són la classe principal) nosaltres mateix o bé altres desenvolupadors per requeriments del programa. 
-				En tots els casos, les classes estaran declarades i codificades en fitxers <em>.java</em> per separat. L'objectiu principal que tindran aquests tipus de classes seran la de repositoris de mètodes.</p>
-				<p>Abans de començar a implementar les classes, cal raonar en quins casos ens pot interessar dividir els mètodes d’un programa entre diferents classes. Entre altres, podeu pensar en els següents:</p>
-				<ul>
-					<li>Quan tenim molts mètodes</li>
-					<li>Quan tenim mètodes que fan referència a un mateix concepte</li>
-					<li>Quan tenim mètodes que podríem reaprofitar a altres programes</li>
-				</ul>
-               <p>Un exemple de programa fent servir aquestes classes addicionals o creades pel propi usuari, seria el següent: </p>                                 
-   				<pre><code class="java">
+                                    <p>Els programes modulars, tenen les seves funcions distribuïdes en diferents mòduls (classes en JAVA). Les raons per les que ens pot interessar dividir una aplicació en mòduls pode ser diversos, però els més comuns són:</p>
+                                    <ul>
+                                        <li>Quan tenim molts mètodes</li>
+                                        <li>Quan tenim mètodes que fan referència a un mateix concepte</li>
+                                        <li>Quan tenim mètodes que podríem reaprofitar a altres programes</li>
+                                    </ul>
+                                    <p>Sigui com sigui, és important, abans de començar la distribució de les funcions en classes, definir un criteri clar que ajudi a distingir i diferenciar cada mòdul, de manera que ens pugui resultar fàcil ubicar les funcions en un o altre mòdul, segons el que faci cada una d'elles.</p>
+                                    <div class="figscope">
+                                        <figure id ="figura_flux" class="left">
+                                            <img width="564" src="images/activities/ic10m3u5_02.png" alt="flux de control en un programa amb classes addicionals">
+                                            <figcaption style="width: 610px; max-width: 75%;">
+                                                <span class="figuretitle">figura </span> Comparació del flux de control en un programa monolític i en un de modular.
+                                            </figcaption>
+                                        </figure>
+                                        <p>Els programes modulars, a més de les classes amb els mòduls, necessiten també una classe principal, des d'on es comenci a executar l'aplicació. És a dir, una classe on es defineixi el mètode <code>main</code>. La resta de classes i funcions només s'executaran quan es realitzi una crida, per tant, per cada aplicació només hi pot haver una única classe principal amb un únic mètode <em>main</em>, el qual s'encarregarà d'iniciar les crides a les diferents funcions de les classes que conformen el programa, de forma semblant a com succeeix quan s'executa un programa organitzat en diverses funcions però implementat amb una única classe. Vegeu la <span class="figref">figura</span> per visualitzar la comparació. </p>
+                                    </div>
+                                    <p>Per poder cridar un mètode d'una classe diferent a la classe des d'on es fa la crida, cal disposar d'una instància de la classe on es trobi el mètode a cridar. En JAVA, les instancies s'aconsegueixen usant la instrucció <em><strong>new</strong></em> seguida del nom de la classe a instanciar. Encara que no és imprescindible, el més normal és emmagatzemar les instàncies en variables. Les variables actuen com a referències per poder fer les crides als mètodes continguts a la classe. Per exemple, si volguéssim obtenir una instància d'una classe anomenada <em>CalculsEstadistics</em>, per tal de poder executar algun càlcul estadístic (funcions implementades a la classe), caldria definir una variable de tipus <em>CalculsEstadistics</em>, assignar-hi una instància i fer les crides a les funcions estadístiques pertinents:</p>
+                                    <pre><code class="java">
+...
+double[] dades;
+double resultat;
+...
+//declaració de la variable que contindrà la instància de la classes
+CalculsEstadistics instanciaCalculs = new CalculsEstadistics();
+...
+//us de la instancia per cridar algunes de les seves funcions
+resultat = instanciaCalculs.mitjana(dades);
+...
+</code></pre>
+                                    <p>Fixeu-vos que la instanciació és semblant a la que habitualment realitzeu en el mètode <em>main</em> en crear una instancia del programa i cridar la funció inici:</p>
+                                    <pre><code class="java">
+public class UnProgramaQualsevol {
+
+    static void main(String[] args) {
+        UnProgramaQualsevol programa = new UnProgramaQualsevol();
+        programa.inici();
+    }
+    
+    void inici() {
+         ...
+    }
+...
+}
+</code></pre>
+
+                                    <p>Efectivament. Per poder cridar les funcions d'una classe, des del mètode <em>main</em> cal disposar d'una instància de la classe.</p>
+                                    <p class=iocimportant>A mode de resum podem dir que per fer crides a mètodes implementats a la pròpia  classe des d'on es fa la crida, no cal disposar d'instancia excepte si la crida es fa des del mètode <em>main</em>. Qualsevol crida a un mètode situat fora de la classe des d'on es fa la crida, precisarà d'una instancia per referenciar el conjunt de mètodes de la classe.</p>
+                                    <p>Veiem a continuació un exemple sencer a fi que disposeu d'una idea global de com cal fer les crides quan treballem amb diverses classes:</p>
+                   <pre><code class="java">
 public class RegistreNotes {
 
-	public static void main(String[] args) {
-		RegistreNotes programa = new RegistreNotes();
-		programa.inici();
-	}
+    public static void main(String[] args) {
+        //Instanciació del programa des del mètode main
+        RegistreNotes programa = new RegistreNotes();
+        //crida a la funció inici a través de la instància del programa
+        programa.inici();
+    }
 
-	public void inici() {
-		double[] notes = {2.0, 5.5, 7.25, 3.0, 9.5, 8.25, 7.0, 7.5};
+    void inici() {
+        double max;
+        double min;
+        double mitjana;
+        double[] notes = {2.0, 5.5, 7.25, 3.0, 9.5, 8.25, 7.0, 7.5};
 
-	//Per cridar els mètodes cal inicialitzar la classe que els conté				
-	CalculsArrayReals calculador = new CalculsArrayReals();
+        //Instanciació de la classe CalculsArrayReals per tal de poder cridar les seves funcions
+        CalculsArrayReals calculador = new CalculsArrayReals();
 
-    //Un cop fet, cal cridar-los usant com a prefix l'identificador
-	double max = calculador.calcularMaxim(notes);
-	double min = calculador.calcularMinim(notes);
-	double mitjana = calculador.calcularMitjana(notes);
-	System.out.println("La nota màxima és " + max + ".");
-	System.out.println("La nota mínima és " + min + ".");
-	System.out.println("La mitjana de les notes és " + mitjana + ".");
-	}
+        //Un cop feta la instància, ja es poden fer les crides usant com a prefix la variable amb la instància.
+        max = calculador.calcularMaxim(notes);
+        min = calculador.calcularMinim(notes);
+        mitjana = calculador.calcularMitjana(notes);
+        
+        //crida a un funció de la mateixa classe. No cal instanciació
+        mostrarResultats(max, min, mitjana);
+    }
+    
+    void mostrarResultats(double max, double min, double mitjana){
+        System.out.println("La nota màxima és " + max + ".");
+        System.out.println("La nota mínima és " + min + ".");
+        System.out.println("La mitjana de les notes és " + mitjana + ".");
+    }
 }
             </code></pre>
-				<p>On la classe <em>CalculsArrayReals()</em> està definida en altre fitxer:</p>
-				<pre><code class="java">
+                <p>La classe <em>CalculsArrayReals()</em> estaria definida en altre fitxer i es podria fer servir en diversos projectes:</p>
+                <pre><code class="java">
 public class CalculsArrayReals {
-	public double calcularMaxim(double[] array) {
-		double max = array[0];
-		for (int i = 1; i &lt; array.length; i++) {
-			if (max &lt; array[i]) {
-				max = array[i];
-			}
-		}
-    	return max;
-	}
-	public double calcularMinim(double[] array) {
-		double min = array[0];
-		for (int i = 1; i &lt; array.length; i++) {
-    		if (min &gt; array[i]) {
-        		min = array[i];
-    		}
-		}
-		return min;
-	}
-	public double calcularMitjana(double[] array) {
-		double suma = 0;
-		for (int i = 0; i &lt; array.length; i++) {
-    		suma = suma + array[i];
-		}
-    	return suma/array.length;
-	}
+    double calcularMaxim(double[] array) {
+        double max = array[0];
+        for (int i = 1; i &lt; array.length; i++) {
+            if (max &lt; array[i]) {
+                max = array[i];
+            }
+        }
+        return max;
+    }
+    
+    double calcularMinim(double[] array) {
+        double min = array[0];
+        for (int i = 1; i &lt; array.length; i++) {
+            if (min &gt; array[i]) {
+                min = array[i];
+            }
+        }
+        return min;
+    }
+    
+    double calcularMitjana(double[] array) {
+        double suma = 0;
+        for (int i = 0; i &lt; array.length; i++) {
+            suma = suma + array[i];
+        }
+        return suma/array.length;
+    }
 }
-				</code></pre>
-				<p>És molt important tenir en compte com es realitza la <b>invocació o crida de mètodes</b> que no estan implementats en el mateix fitxer. 
-				Primer cal un pas previ d’inicialització, a partir del qual es permet la invocació dels mètodes externs. 
-				En dur a terme aquest procés, s’assigna un identificador a partir del qual és possible invocar els mètodes d’aquella classe, usant-lo com a prefix a la invocació. 
-				Sense aquest pas previ, és impossible invocar mètodes escrits a altres classes. La sintaxi per fer-ho és la següent:</p>
-					<pre><code class="java">                                      
-NomClasse identificador = new NomClasse();
-identificador.nomMetode(parametres);</code></pre>
-					
-					<p>En nomenclatura JAVA, el procés d’inicialització s’anomena formalment <b>instanciació</b> de la classe.
-               El comportament de la invocació del mètode és idèntica a quan es fa sobre un mètode escrit a la mateixa classe. 
-               Només canvia la sintaxi, ja que es requereix aquest prefix producte de la inicialització. 
-               Cal dir que, donades diverses invocacions a mètodes d’una mateixa classe externa, només és necessari fer la inicialització una única vegada. 
-               L’àmbit i la validesa de l’identificador és el mateix que una variable.</p>
+                </code></pre>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +332,7 @@ identificador.nomMetode(parametres);</code></pre>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Per crear programes modulars no és necessari crear cadascun dels mòduls que formen part del programa. Sovint els llenguatges de programació incorporen biblioteques de mòduls auxiliars que ja han estat completament desenvolupats. Aquests mòduls auxiliars ofereixen funcionalitats que van més enllà del que permet la seva sintaxi estrictament o incorporant l’opció d’executar blocs de codi que resolen tasques que es consideren de propòsit general i que poden ser d’utilitat en una àmplia gamma de programes.</p>
+                                    <p>Sovint els llenguatges de programació incorporen mòduls completament desenvolupats amb funcions genèriques que ens poden ajudar a desenvolupar molt més ràpidament que si haguéssim d'implementar-les nosaltres. Es coneixen com a biblioteques o utilitats del llenguatge i en general resolen tasques de propòsit general que poden ser d’utilitat en una àmplia gamma de programes.</p>
                                     <div class="iocnoteOpener">
                                         <a href='#' role="button" data-toggle='tooltip' role= "tooltip" title="Què són els paquets o packages?" data-target="queSonPaquets" data-note-by="paquets">
                                             <img src="images/nota2.png" alt="nota sobre paquets" style="width: 100%;"/>
@@ -324,55 +343,68 @@ identificador.nomMetode(parametres);</code></pre>
                                             </span>
                                     </div>
                                     <p>En el cas del llenguatge Java, el seu kit de desenvolupament (JDK) incorpora un quantiós repositori de classes, organitzats en diferents <em><span id=paquets>paquets</span> (packages)</em>  d’acord a la seva temàtica, que poden ser accedides lliurement en realitzar qualsevol programa. Aquest repositori és el que s’anomena l’<b>API</b> de JAVA. </p>
-                                    <p>La documentació de l’API de JAVA ofereix un enorme repertori de classes que contenen mètodes amb funcionalitats molt diverses.</p>
+                                    <p>La <a class="apiJavaUrl" target="_blank">documentació de l’API de JAVA</a> ofereix un enorme repertori de classes que contenen mètodes amb funcionalitats molt diverses.</p>
                                     <p>Els <em>packages</em> que contenen les classes més usuals són:
-												<ul>
-													<li><code>java.lang</code>: conté totes les classes vinculades a operacions essencials dels tipus de dades del llenguatge.</li>
-													<li><code>java.util</code>: una mena de calaix de sastre amb classes de propòsit general.</li>
-													<li><code>java.io</code>: conté totes les classes vinculades a entrada / sortida (tractament de fitxers).</li>
-													<li><code>javax.swing</code>: conté les classes bàsiques vinculades a la creació d’interfícies gràfiques.</li>
-												</ul>
-												<p>L’avantatge de conèixer aquests paquets és que, com que aquestes classes ja estan creades i incorporades com a part del llenguatge, si en trobeu una que ja faci la feina requerida, us estalviareu haver d’escriure parts de codi font del programa.</p>
-												<p>Per poder usar qualsevol classe d’entre les definides a l’API de JAVA cal seguir exactament les mateixes passes que per a una classe realitzada per vosaltres, però dins un <em>package</em> diferent: importar-la a l’inici del codi font i inicialitzar-la. 
-												Un cop fet, la sintaxi per invocar els seus mètodes és exactament la mateixa. Aquest procés només té una particularitat molt especial, i és que no cal disposar del codi font de la classe en qüestió. En estar incorporada dins el JDK, Java ja sap localitzar el seu codi automàticament.</p>
-												<p>Per exemple, suposeu que heu de fer un programa que ha de generar dos valors reals a l’atzar, entre 0 i 100, i voleu que els mostri per pantalla. 
-												D’entrada, resoldre aquest problema suposaria haver de crear dins del codi font algun mètode que generés aquests valors reals aleatoris, donat que existeix una classe anomenada Random ja incorporada a l’API de Java, la podem fem servir.
-												Cercant-la a la documentació de l’API de Java, es veu que forma part del <code>package java.util</code>. A continuació veiem com es pot fer servir aquesta classe:</p>
+                                                <ul>
+                                                    <li><code>java.lang</code>: conté totes les classes vinculades a operacions essencials dels tipus de dades del llenguatge.</li>
+                                                    <li><code>java.util</code>: una mena de calaix de sastre amb classes de propòsit general.</li>
+                                                    <li><code>java.io</code>: conté totes les classes vinculades a entrada / sortida (tractament de fitxers).</li>
+                                                    <li><code>javax.swing</code>: conté les classes bàsiques vinculades a la creació d’interfícies gràfiques.</li>
+                                                </ul>
+                                                <p>L’avantatge de conèixer aquests paquets és que, com que aquestes classes ja estan creades i incorporades com a part del llenguatge, si en trobeu una que ja faci la feina requerida, us estalviareu haver d’escriure parts de codi font del programa. Podeu trobar informació detallada de <a class="apiJavaUrl" target="_blank">l'API a l'adreça oficial de JAVA</a>. Si coneixeu el nom de la classe, podeu cercar directament a <em>Google</em>, afegint la paraula API al nom de la classe i us portarà directament a la documentació específica de la classe indicada.</p>
+                                                <p>Per poder usar qualsevol classe d’entre les definides a l’API de JAVA, cal abans indicar que la volem fer servir amb la instrucció <strong><em>import</em></strong>. La instrucció <em><strong>import</strong></em> indicarà a la màquina virtual que cerqui el fitxer corresponent i el carregui per poder crear instàncies fer servir els seus mètodes.</p>
+                                                <p>Un cop feta la importació, la sintaxi per invocar els seus mètodes és exactament la mateixa que l'explicada.</p>
+                                                <p>Per exemple, suposeu que heu de fer un programa que ha de generar dos valors reals a l’atzar, entre 0 i 100, i voleu que els mostri per pantalla. D’entrada, resoldre aquest problema suposaria haver de crear dins del codi font algun mètode que generés aquests valors reals aleatoris. Ara bé, JDK disposa ja d'una classe anomenada Random que fa aquesta feina i que podem fer-la servir sense haver d'implementar-la.</p>
+                                                <p>Cercant-la a la documentació de l’API de Java, es veu que forma part del <code>package java.util</code>. A continuació veiem com es pot fer servir aquesta classe:</p>
                                     
                                  <pre><code class="java">
-package ioc.m03.uf2.funcions.a501;
 //Importació de la classe, en estar en un altre package
 import java.util.Random;
+
 public class RealsAleatoris {
-	public static void main(String[] args) {
-		RealsAleatoris programa = new RealsAleatoris();
-			programa.inici();
-							}
-	public void inici() {
-			//Cal generar un valor a l'atzar
-			//Cal generar-ne l'altre
-			//Mostrar-los
-								}
-						}
-                                    </code></pre>
-                                    <p> Com forma part de l’API de Java, l’ús de la classe Random no implica la incorporació de cap altre fitxer de codi font.
-                                     Un cop ja està tot llest per usar-la, caldrà mirar quins mètodes ofereix per generar reals a l’atzar.</p>   
-                                     <p>Cal destacar que el procés tot just descrit ja l’heu usat anteriorment en diverses ocasions, per exemple, cada cop que us calia llegir dades pel teclat i heu usat <em>Scanner</em>. 
-                                     Si mireu la documentació de l’API de JAVA, trobareu aquesta classe dins el mateix <code>package java.util</code>.</p>     
+    public static void main(String[] args) {
+        RealsAleatoris programa = new RealsAleatoris();
+        programa.inici();
+    }
+    public void inici() {
+        Random instanciaRandom;
+        double valorDoubleAleatori1;
+        double valorDoubleAleatori2;
+        
+        //Instanciació de la classe Random
+        instanciaRandom = new Random();
+        
+        //Generar un valor a l'atzar
+        valorDoubleAleatori1 = instanciaRandom.nextDouble();
+        //Generar-ne un altre
+        valorDoubleAleatori2 = instanciaRandom.nextDouble();
+        ...
+    }
+}
+</code></pre>
+                                    <p> Com que forma part de l’API de Java, l’ús de la classe Random no implica la incorporació de cap altre fitxer de codi font. Un cop ja està tot llest per usar-la, caldrà mirar quins mètodes ofereix per generar reals a l’atzar.</p>   
+                                     <p>Cal destacar que el procés tot just descrit ja l’heu usat anteriorment en diverses ocasions, per exemple, cada cop que us calia llegir dades pel teclat i heu usat <em>Scanner</em>. Si mireu la documentació de l’API de JAVA, trobareu aquesta classe dins el mateix paquet <em>java.util</em>.</p>     
+                                     <p class=iocimportant> Hi ha però, una excepció amb les classes del paquet <em>java.lang</em>. Donada la importància d'aquestes no és necessari fer cap importació  per poder-les usar. En aquest paquet trobarem les classes de dades com <em>String</em>, <em>Double</em>, <em>Integer</em>, <em>Boolean</em>, etc. Classes bàsiques com <em>System</em> o utilitats imprescindibles com la classe <em>Math</em>.</p>
+                                     <h4 >Instanciació de classes amb paràmetres</h4>
+                                     
                                      <p>Algunes classes de Java tenen una particularitat, i és que a l’hora d’inicialitzar-les cal especificar un conjunt d’informació addicional en forma de <b>paràmetres</b>.                                      
-												 <p>Fins al moment, s’ha dit que per inicialitzar una classe per tal de poder invocar els mètodes que ofereix calia fer:</p>
-												  <pre><code class="java">
+                                                 <p>Fins al moment, s’ha dit que per inicialitzar una classe per tal de poder invocar els mètodes que ofereix calia fer:</p>
+                                                  <pre><code class="java">
 NomClasse identificador = new NomClasse();
-												  </code></pre>   
-												 <p>Però hi ha casos en què, per inicialitzar correctament la classe, cal afegir un conjunt de valors entre els parèntesis, de manera idèntica a com es faria en invocar un mètode. Si no es posen aquests paràmetres quan pertoca, hi haurà un error de compilació.</p>                       
-													<pre><code class="java">
+                                                  </code></pre>   
+                                                 <p>Però hi ha casos en què, per inicialitzar correctament la classe, cal afegir un conjunt de valors entre els parèntesis, de manera idèntica a com es faria en invocar un mètode. Si no es posen aquests paràmetres quan pertoca, hi haurà un error de compilació.</p>                       
+                                                    <pre><code class="java">
 NomClasse identificador = new NomClasse(paràmetres);
-												  </code></pre>   
-												  <p>Per exemple, la classe <em>Scanner</em>. Per inicialitzar-la correctament li cal un paràmetre indicant quin sistema d’entrada ha de processar:</p>
-												  <pre><code class="java">
+                                                  </code></pre>   
+                                                  <p>Per exemple, la classe <em>Scanner</em>. Per inicialitzar-la correctament li cal un paràmetre indicant quin sistema d’entrada ha de processar:</p>
+                                                  <pre><code class="java">
 Scanner lector = new Scanner(System.in);
-												  </code></pre>   
-												  <p>Per veure si cal o no incloure un paràmetre en inicialitzar una classe, caldrà cercar-lo a la seva documentació. Concretament, a l’apartat anomenat resum de constructors (<em>Constructor Summary</em>) indica la sintaxi de la part dreta de la inicialització.</p>                       
+                                                  </code></pre>   
+                                                  <p>La classe Random també permet inicialitzar-se amb paràmetres. Concretament se li pot passar un número, a fi que s'incrementi el potencial aleatori. Normalment se li passa el valor numèric retornat pel rellotge del sistema expressant el nombre de milisegons transcorreguts.</p>
+                                                  <pre><code class="java">
+Random random = new Random(System.currentTimeMillis());
+                                                  </code></pre>   
+                                                  <p>Per veure si cal o no incloure un paràmetre en inicialitzar una classe, caldrà cercar-lo a la seva documentació. Concretament, a l’apartat anomenat resum de constructors (<em>Constructor Summary</em>) indica la sintaxi de la part dreta de la inicialització. Feu la consulta dels <a class="apiRandomUrl" target="_blank">constructors de la classe Random</a> i veureu que accepta ambdues formes, amb paràmetres (un valor numèric de tipus long anomenat <em>seed</em>) i sense.</p>                       
                                 </div>
                             </div>
                         </div>
@@ -394,9 +426,9 @@ Scanner lector = new Scanner(System.in);
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>En general, per poder invocar mètodes d’una classe cal inicialitzar-la prèviament fent servir la sentència <em>new</em>. 
-                                    Ara bé, d’entre tots els mètodes proporcionats dins de les classes disponibles a l’API de Java, hi ha un petit subconjunt que s'anomenen <b>mètodes estàtics</b> que poden ser invocats sense haver d' inicialitzar la seva classe. S’identifiquen perquè a la documentació apareixen marcats amb la paraula clau <code>static</code>. </p>
-												<p>Per invocar aquests mètodes, la sintaxi correcta és posar com a prefix el nom de la classe directament. A part d’això, el seu comportament és idèntic a qualsevol altre mètode. És a dir: </p>                                    
+                                    <p>Tot i que, com s'ha comentat, per poder invocar mètodes d’una classe cal instanciar-la prèviament fent servir la sentència <em>new</em>, JAVA permet definir excepcions de forma que es pugui fer una crida a funcions d'una classe sense necessitat d'haver de crear cap instància. Són el que mètodes semblants als altres, però es troben marcats amb la paraula <em>static</em>. Això indic a JAVA que es poden fer servir sense necessitat de crear una instancia.</p>
+                                    <p>Trobarem alguns exemples a l'API de JAVA. A la documentació distingirem aquestes funcions perquè apareixen marcats amb la paraula clau <code>static</code>. Trobareu alguns exemple a la classe String: <a class="apiStringFormatUrl" target="_blank">format</a>, <a class="apiStringValueOfUrl" target="_blank">valueOf</a> i a tots els mètodes de la classe <a class="apiMathUrl" target="_blank"><em>Math</em></a>.</p>
+                                                <p>Per invocar aquests mètodes, la sintaxi correcta és posar com a prefix el nom de la classe directament. A part d’això, el seu comportament és idèntic a qualsevol altre mètode. És a dir, la sintaxi és: </p>                                    
                                     <pre><code class="java">
 NomClasse.nomMetode(paràmetres);
                                     </code></pre>   
@@ -406,9 +438,9 @@ double resultat = Math.sqrt(36);
                                     </code></pre> 
                                     <p>A continuació veurem els mètodes estàtics d'algunes de les classes més importants:</p>
                                     <ul>
-												<li><b>La classe Math: </b>Pertany al <em>package</em> <code>java.lang</code>, i per tant pot ser usada sense haver d’importar-la. 
-												Ofereix un ventall de mètodes estàtics per realitzar operacions matemàtiques avançades com: arrodoniment de valors(<code>round(valor)</code>), potència(<code>pow(base, exponent)</code>), arrel quadrada (<code>sqrt(valor)</code>), màxims i mínims (<code>max(a, b)</code>, <code>min(a, b)</code>),...Per exemple:
- <pre><code class="java">												
+                                                <li><b>La classe Math: </b>Pertany al <em>package</em> <code>java.lang</code>, i per tant pot ser usada sense haver d’importar-la. 
+                                                Ofereix un ventall de mètodes estàtics per realitzar operacions matemàtiques avançades com: arrodoniment de valors(<code>round(valor)</code>), potència(<code>pow(base, exponent)</code>), arrel quadrada (<code>sqrt(valor)</code>), màxims i mínims (<code>max(a, b)</code>, <code>min(a, b)</code>),...Per exemple:
+ <pre><code class="java">                                                
 package ioc.m03.uf2.funcions.a501;
 import java.util.Random;
 
@@ -430,12 +462,12 @@ public class ArrodonirReal {
     }
 }
 </code></pre>  
-												</li> 
-												<li><b>La classe Array:</b>Pertany al <em>package</em> <code>java.util</code> (com Random i Scanner). 
-												Ofereix mètodes estàtics per fer operacions típiques amb arrays (ordenacions(<code>sort(array)</code>), còpies(<code>copyOfRange(array, posInici, posFi)</code>) , cerques(<code>binarySearch(array, clau)</code>), igualtats (<code>equals(array1, array2)</code>), conversió a text (<code>toString(array)</code>), etc.). 
-												Per usar-los cal tenir present que alguns d’aquests manipulen els paràmetres d’entrada de tipus compost, en aquest cas arrays. Per tant, en finalitzar la invocació, l’array original haurà canviat.
-												A continuació podem veure un exemple:
-<pre><code class="java">												
+                                                </li> 
+                                                <li><b>La classe Array:</b>Pertany al <em>package</em> <code>java.util</code> (com Random i Scanner). 
+                                                Ofereix mètodes estàtics per fer operacions típiques amb arrays (ordenacions(<code>sort(array)</code>), còpies(<code>copyOfRange(array, posInici, posFi)</code>) , cerques(<code>binarySearch(array, clau)</code>), igualtats (<code>equals(array1, array2)</code>), conversió a text (<code>toString(array)</code>), etc.). 
+                                                Per usar-los cal tenir present que alguns d’aquests manipulen els paràmetres d’entrada de tipus compost, en aquest cas arrays. Per tant, en finalitzar la invocació, l’array original haurà canviat.
+                                                A continuació podem veure un exemple:
+<pre><code class="java">                                                
 package ioc.m03.uf2.funcions.a501
 import java.util.Arrays;
 
@@ -452,10 +484,10 @@ public class OrdenaArrayText {
             System.out.println(array[i]);
         }
     }
-}	
+}    
 </code></pre> 
-											
-												</li>                                 
+                                            
+                                                </li>                                 
                                     </ul>      
                                     <p>De forma semblant a com s'han codificat les classes de l'API que tenen mètodes estàtics, nosaltres podem també caracteritzar d'estàtiques les nostres funcions. N'hi ha prou de posar la paraula clau <em>static</em> just després del modificador <em>public</em>, però davant de la resta de la declaració de la funció, de forma idèntica a com hem declarat fins ara el mètode <em>main</em> de la nostra classe principal. Per exemple:</p>              
                                     <pre><code class="java">
@@ -498,13 +530,13 @@ public class ClasseExemple{
                                 <p>Malgrat tot, l'alternativa de treballar amb variables locals no és menys arriscada ja que sovint, en els processos de nivell alt podem arribar a necessitar moltes variables i pot ser realment tediós haver-les de passar per paràmetres i per descomptat, en el fons no deixa de ser també una font d'errors.</p>
                                 <p>Sortosament, ja hem vist que podem fer servir arrays per agrupar dades. Ara bé, no totes les dades es poden emmagatzemar en arrays, i ni que així fos, una aplicació gran podria necessitar també un nombre gran d'arrays. Caldrà doncs, cercar altra solució que ens permeti agrupar dades amb independència del seu tipus. </p>
                                 <p>La majoria de llenguatges de programació permeten la creació d'<b>estructures de dades</b> per poder pal·liar el problema de la disgregació de dades. Es tracta d'una forma d'agrupar dades de diferent tipus fent servir una única variable.</p>
-                                <p>L'estructura de dades ideal per aplicacions grans ja que permet organitzar les dades de forma jeràrquica i obtenir subconjunts de dades coherents escollint el tros adequat de la jerarquia. Quan parlem d'estructura jeràrquica ens referim a algun sistema en que unes dades s'englobin dins d'altres formant un arbre. Per tal que això sigui possible, cal procurar agrupar les dades relacionades sota un mateix concepte.</p>
-                                <p>Seleccionar la jerarquia correcta no sempre es senzill. Si l'aplicació es petita, és possible agrupar totes les dades en un sol bloc, o crear un número reduït de blocs independents. Internament, cada bloc tindrà un un conjunt de dades de diversos tipus (enters, cadenes, arrays,...) però organitzades de forma que siguin conceptualment coherents.</p>
-												<p class="iocimportant">Les estructures de dades són organitzacions més o menys complexes de dades, de tal forma que la seva organització ens configura un valor extra que ens ajuda a interpretar la informació que representen. Per exemple, hem de considerar una estructura de dades el conjunt de valors que poden identificar i representar una persona. Per exemple el seu nom, la seva edat, el seu DNI, les titulacions que posseeix, els treballs que ha realitzat, etc.</p>
-												<p>Els llenguatges de programació donen suport a les estructures de dades per mitjà dels tipus compostos de dades i concretament, el llenguatge JAVA, fa servir classes per definir els seus tipus de dades compostos.</p>
-												<p class="iocimportant">Els tipus de dades compostos (classe en el llenguatge JAVA) permeten definir com s'identifiquen i organitzen els valors entre sí. Com identificadors usarem noms conceptuals que ens ajudin a interpretar el que representen.</p>
-												<p>Per exemple, si haguéssim d'implementar una calculadora que hagués de fer les 4 operacions bàsiques entre dos números qualsevol, el tipus compost a fer servir podria ser:</p>
-												                                    
+                                <p>L'estructura de dades és ideal per aplicacions grans ja que permet organitzar les dades de forma jeràrquica i obtenir subconjunts de dades coherents escollint el tros adequat de la jerarquia. Quan parlem d'estructura jeràrquica ens referim a algun sistema en que unes dades s'englobin dins d'altres formant un arbre. Per tal que això sigui possible, cal procurar agrupar les dades relacionades sota un mateix concepte.</p>
+                                <p>Seleccionar la jerarquia correcta no sempre es senzill. Si l'aplicació es petita, és possible agrupar totes les dades en un sol bloc, o crear un número reduït de blocs independents. Internament, cada bloc tindrà un conjunt de dades de diversos tipus (enters, cadenes, arrays,...) però organitzades de forma que siguin conceptualment coherents.</p>
+                                                <p class="iocimportant">Les estructures de dades són organitzacions més o menys complexes de dades, de tal forma que la seva organització ens configura un valor extra que ens ajuda a interpretar la informació que representen. Per exemple, hem de considerar una estructura de dades el conjunt de valors que poden identificar i representar una persona: el seu nom, la seva edat, el seu DNI, les titulacions que posseeix, els treballs que ha realitzat, etc.</p>
+                                                <p>Els llenguatges de programació donen suport a les estructures de dades per mitjà dels tipus compostos de dades i concretament, el llenguatge JAVA, fa servir classes per definir els seus tipus de dades compostos.</p>
+                                                <p class="iocimportant">Els tipus de dades compostos (classe en el llenguatge JAVA) permeten definir com s'identifiquen i organitzen els valors entre sí. Com identificadors usarem noms conceptuals que ens ajudin a interpretar el que representen.</p>
+                                                <p>Per exemple, si haguéssim d'implementar una calculadora que hagués de fer les 4 operacions bàsiques entre dos números qualsevol, el tipus compost a fer servir podria ser:</p>
+                                                                                    
                                     <div class="iocexample">
                                          
                                     <pre><code class="java">
@@ -545,7 +577,7 @@ if(operacio1.operacio == '+'){
                                          <pre><code class="java">
 DadesCalculadora operacio2;
 operacio2.operador1 = 7; //Això dona error perquè no s'ha instanciat la variable: operacio2 = new DadesCalculadora() 
-												</code></pre>
+                                                </code></pre>
                                 </div>
                             </div>
                         </div>
@@ -580,7 +612,7 @@ operacio2.operador1 = 7; //Això dona error perquè no s'ha instanciat la variab
                 </section>
                 <!--=========== END SUBSECTION Descripció dels exercicis  ================-->    
                 
-  					<!--=========== BEGIN SUBSECTION Debat 1 ================-->    
+                      <!--=========== BEGIN SUBSECTION Debat 1 ================-->    
                 <section id="slc-discussion11" class=" section">
                     <div class="container">
                         <div class="row">
@@ -659,7 +691,7 @@ temperatures[i]=scanner.nextFloat();
                 </section>
                 <!--=========== END SUBSECTION Debat 1 ================-->     
 
-  					<!--=========== BEGIN SUBSECTION Debat 2 ================-->    
+                      <!--=========== BEGIN SUBSECTION Debat 2 ================-->    
                 <section id="slc-discussion20" class=" section">
                     <div class="container">
                         <div class="row">
@@ -704,7 +736,7 @@ String retorn = Strings.farcirFinsMida("Curt", 10);
                                     <div id="slc-discussion20-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
                                         <p>Recordeu que en la operació + sobre cadenes de caràcters permet concatenar qualsevol valor de qualsevol tipus. Només cal que el primer element de la suma sigui una cadena per tal que el llenguatge converteixi la resta de valors en cadenes i els concateni un darrera l'altre.</p>
-                                        <p>Recordeu també que la classe String (la pròpia de java), ja disposa d'una utilitat anomenada <em>substring</em> que permet retallar cadenes. Trobareu informació de com fer servir aquest mètode consultant <a target=_blank" href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-">l'API de la classe String</a>. Tot i això les vostres funcions hauran d'afegir 3 punts quan els calgui retallar cadenes.</p>
+                                        <p>Recordeu també que la classe String (la pròpia de java), ja disposa d'una utilitat anomenada <em>substring</em> que permet retallar cadenes. Trobareu informació de com fer servir aquest mètode consultant <a class="apiStringSubstringUrl" target="_blank">l'API de la classe String</a>. Tot i això les vostres funcions hauran d'afegir 3 punts quan els calgui retallar cadenes.</p>
                                         <p>D'altra banda haureu de tenir en compte que la classe String no disposa de cap utilitat específica per farcir cadenes. Per aconseguir-ho, podeu anar afegint reiteradament els caràcters de farciment fins aconseguir la mida desitjada.</p>
                                     </div>  
                                     <!-- Button trigger pannel -->
@@ -899,9 +931,9 @@ public class Tasca2 {
                                 <div class=bodySlide>
                                 <p>Imaginem una aplicació per jugar al senzill joc de les dames.  
                                 Recordeu que es juga amb un tauler de 10x10 caselles, que juguen 2 jugadors i que cada jugador disposa de 12 fitxes de diferent color que cal disposar a certes caselles del tauler. 
-                                Imaginem que l'aplicació vol identificar el nom dels dos jugadors i també el nombre de partides guanyades. </p> 	
-						    	<p>Si decidim representar el tauler com una matriu de valors numèrics, en el que el valor -1 representi les caselles buides, el valor 0, representi les fitxes blanques i el valor 2, les negres; podríem crear les següents especificacions per donar resposta a les necessitats de l'aplicació:</p>
-								<div class="iocexample">        
+                                Imaginem que l'aplicació vol identificar el nom dels dos jugadors i també el nombre de partides guanyades. </p>     
+                                <p>Si decidim representar el tauler com una matriu de valors numèrics, en el que el valor -1 representi les caselles buides, el valor 0, representi les fitxes blanques i el valor 2, les negres; podríem crear les següents especificacions per donar resposta a les necessitats de l'aplicació:</p>
+                                <div class="iocexample">        
                                     <table border="0" cellspacing="0" cellpadding="0" width="100%">
                                        <tr>
                                            <td>                                    
@@ -1133,7 +1165,7 @@ joc.jugador[joc.FITXA_NEGRE].nom = demanarNomJugador();
                         <div class="col-lg-12">
                             <div class=bodySlide>
                                 <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
-                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                                 <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu. D'aquesta manera el professor podrà constatar  l'evolució del vostre l'aprenentatge sense que afecti la vostra qualificació i donar-vos consells o fer-vos propostes d'ajuda. També us demanem que ompliu la valoració de l'activat que trobareu al final de l'informe. Això ajuda a valorar la utilitat de l'activitat en el conjunt del procés d'aprenentatge i permet planificar millores, si fos necessari. </p>
                             </  div>
                         </div>
                     </div>
@@ -1171,26 +1203,23 @@ joc.jugador[joc.FITXA_NEGRE].nom = demanarNomJugador();
         <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
         <div id="goals_info" class="bodySlide hidden"> 
             <h2>Objectius d'aprenentatge de l'activitat</h2>
-            <ul>
-            <li>	1. Descompodre un programa en funcions i classificar les funcions en mòduls (classes) d'acord a criteris ben definits i útils. Entre d'altres, són criteris bàsics mòduls d'entrada i sortida, mòduls de control, i mòduls de tractament de dades.</li>
-				<li>	2. Implementar biblioteques reutilitzables i específiques d'una aplicació.</li>
-				<li>	3. Usar estructures de dades senzilles per agrupar les dades de l'aplicació en pocs accessos.</li>
-				<li>	4. Identificar quan cal instanciar les estructures de dades i compassar-les a les diverses funcions. </li>
-				<li>	5. Crear instancies de classes repositori de codi abans d'executar els seus mètodes escollint si es creen a nivell local o global. En qualsevol cas cal  vigilar no entrar en inicialitzacions recursisves que malbaratin o fins i tot exhaureixin la memòria.</li>
-				<li>	6. Documentar les diferents classes usant la sintaxi javadoc.</li>
-				<li>	7. Usar classes internes del llenguatge JAVA: String, Arrays, Math i Random.</li>
-				<li>	8. Planificar planificar les pantalles, controls i funcions d'alt nivell que estructuren un programa.</li>
-				<li>	9. Fer una transferència correcte de les dades mitjançant paràmetres durant l'execució. </li>
-				<li>	10. Descompondre un programa en funcions i classificar les funcions en mòduls (classes) d'acord a criteris ben definits i útils. Entre d'altres, són criteris bàsics mòduls d'entrada i sortida, mòduls de control, i mòduls de tractament de dades.</li>
-            </ul>
+            <ol>
+            <li>    Descompodre un programa en funcions i classificar les funcions en mòduls (classes) d'acord a criteris ben definits i útils. Entre d'altres, són criteris bàsics els mòduls d'entrada i sortida, els mòduls de control, i els mòduls de tractament de dades.</li>
+                <li>    Implementar biblioteques reutilitzables i específiques d'una aplicació.</li>
+                <li>    Usar estructures de dades senzilles per agrupar les dades de l'aplicació en pocs accessos.</li>
+                <li>    Identificar quan cal instanciar les estructures de dades i compassar-les a les diverses funcions. </li>
+                <!--li>    Crear instancies de classes repositori de codi abans d'executar els seus mètodes escollint si es creen a nivell local o global. En qualsevol cas cal  vigilar no entrar en inicialitzacions recursisves que malbaratin o fins i tot exhaureixin la memòria.</li-->
+                <!--i>    Documentar les diferents classes usant la sintaxi javadoc.</li-->
+                <li>    Usar classes internes del llenguatge JAVA: String, Arrays, Math i Random.</li>
+                <!--li>    Planificar les pantalles, controls i funcions d'alt nivell que estructuren un programa.</li-->
+                <li>    Fer una transferència correcte de les dades mitjançant paràmetres durant l'execució. </li>
+            </ol>
             <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
             <ul>
-            	 <li>Prova, depura, comenta i documenta els programes.</li>
+                 <li>Prova, depura, comenta i documenta els programes.</li>
                 <li>Defineix el concepte de llibreries i la seva utilitat.</li>
                 <li>Utilitza llibreries en l’elaboració de programes</li>
             </ul>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en construcció"> Text provisional. Estem treballant per millorar</div>                                           
-            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
         </div>
         <div id="more_reinforcement" class="hidden"> 
             <h2>Més activitats i idees per reforçar l'aprenentatge</h2>

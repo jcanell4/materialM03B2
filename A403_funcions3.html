@@ -44,6 +44,9 @@
                     <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
                 </li>
                 <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
                     <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
                 </li>
                 <li>
@@ -780,6 +783,8 @@ void inicialitzarArray(int[] param){
         </div>
         <div id="more_reinforcement" class="hidden"> 
             <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <p>En el bloc 1 vàreu veure arrays i matrius. EN aquest bloc es dona per suposat que ja sabeu treballar amb aquest tipus de dades. Si tens dificultats et proposem que repassis el <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u3/a1/continguts.html" target="_blank">material estudiat el semstre passat</a>.</p>
+            <p>També pots consultar el document de repas on, de forma resumida es tracten tots els conceptes necessaris per aprovar aquest bloc. Podeu aconseguir-lo <a class="docArrays">aquí</a></p>
             <p>Si necessiteu practicar una mica més l'ús d'arrays i de funcions, podeu mirar el document d'exercicis extres que trobareu <a class="exercicisExtres" target="_blank">aquí</a>.</p>
         </div>
         <div id="more_info" class="hidden"> 
@@ -856,49 +861,7 @@ void inicialitzarArray(int[] param){
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
         });
-        
-        /*
-        iocSlider = new IocSlider();
-        
-        $("[data-display-on-set-slide]").each(function(){
-            var slide;
-            var self = this;
-            var slideId = this.dataset.displayOnSetSlide; 
-            iocSlider.watch("onSetCurrentSlide", function(e){
-                var slide;
-                var oldSlide =e.oldValues.vindx!=-1
-                                    ?e.oldValues.vslides[e.oldValues.vindx]
-                                    :e.oldValues.hslides[e.oldValues.hindx];
-                if($(oldSlide).attr("id")===slideId){
-                   $(self).hide();
-                   if($(self).hasClass("active")){
-                        $(self).click();
-                   }
-                }
-                slide = this.hasVerticalSlides()
-                                    ?this.vslides[this.vindx]
-                                    :this.hslides[this.hindx];
-                if($(slide).attr("id")===slideId){
-                   $(self).show();
-                }
-            });
-    
-            slide = iocSlider.hasVerticalSlides()
-                                ?iocSlider.vslides[iocSlider.vindx]
-                                :iocSlider.hslides[iocSlider.hindx];
-            if($(slide).attr("id")===slideId){
-               $(this).show();
-            }
-        });
-
-        hljs.addLineNumbers();
-        hljs.initHighlightingOnLoad();
-        
-        $(document).ready(function(){
-            toReplaceOnLoad("data/toReplace.json", "A403");
-        });
-        */
-    </script>
+   </script>
     <!--=========== END SCRIPTS ================-->    
 
 </body>

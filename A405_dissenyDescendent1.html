@@ -44,6 +44,9 @@
                     <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
                 </li>
                 <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
                     <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
                 </li>
                 <li>
@@ -1117,7 +1120,7 @@ public class Exercici2DissenyDescendent {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament - Funcions</h2>
+                                 <h2 >Lliurament - Disseny descendent</h2>
                              </div>
                         </div>
                     </div>
@@ -1125,7 +1128,7 @@ public class Exercici2DissenyDescendent {
                         <div class="col-lg-12">
                             <div class=bodySlide>
                                 <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
-                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, però això és també important per el professor doncs pot avaluar  l'evolució del vostre l'aprenentatge així com la utilitat l'activitat en el conjunt del procés i proposar canvis futurs si calguessin. </p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu. Així, el professor pot valorar l'evolució del vostre l'aprenentatge i també la utilitat d'aquesta activitat en el conjunt del procés. </p>
                             </div>
                         </div>
                     </div>
@@ -1252,48 +1255,6 @@ public class Exercici2DissenyDescendent {
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
         });
-        
-        /*
-        iocSlider = new IocSlider();
-        
-        $("[data-display-on-set-slide]").each(function(){
-            var slide;
-            var self = this;
-            var slideId = this.dataset.displayOnSetSlide; 
-            iocSlider.watch("onSetCurrentSlide", function(e){
-                var slide;
-                var oldSlide =e.oldValues.vindx!=-1
-                                    ?e.oldValues.vslides[e.oldValues.vindx]
-                                    :e.oldValues.hslides[e.oldValues.hindx];
-                if($(oldSlide).attr("id")===slideId){
-                   $(self).hide();
-                   if($(self).hasClass("active")){
-                        $(self).click();
-                   }
-                }
-                slide = this.hasVerticalSlides()
-                                    ?this.vslides[this.vindx]
-                                    :this.hslides[this.hindx];
-                if($(slide).attr("id")===slideId){
-                   $(self).show();
-                }
-            });
-    
-            slide = iocSlider.hasVerticalSlides()
-                                ?iocSlider.vslides[iocSlider.vindx]
-                                :iocSlider.hslides[iocSlider.hindx];
-            if($(slide).attr("id")===slideId){
-               $(this).show();
-            }
-        });
-
-        hljs.addLineNumbers();
-        hljs.initHighlightingOnLoad();
-        
-        $(document).ready(function(){
-            toReplaceOnLoad("data/toReplace.json", "A405");
-        });
-        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 

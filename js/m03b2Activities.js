@@ -182,7 +182,7 @@ ActivityManager = function (){
                     });
                     $(advices).detach().removeClass("hidden");
                     modalBody.append(advices);
-                    //modalBody.css("max-height", ""+($(document).height()-140)+"px");
+                    modalBody.css("max-height", ""+($(document).height()-140)+"px");
                     modalWindow.toggleClass("iocModalAdvice hidden");            
                 });
             });    
