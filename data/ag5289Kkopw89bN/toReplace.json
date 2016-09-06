@@ -45,11 +45,11 @@
     "RP0":{
         "id": {"type":"text", "value":"0"},
         "dataInici": {"type":"text", "value":"12/09/2016"},
-        "dataFinal": {"type":"text", "value":"12/09/2016"}        
+        "dataFinal": {"type":"text", "value":"13/09/2016"}        
     },        
     "RP1":{
         "id": {"type":"text", "value":"1"},
-        "dataInici": {"type":"text", "value":"12/09/2016"},
+        "dataInici": {"type":"text", "value":"14/09/2016"},
         "dataFinal": {"type":"text", "value":"23/09/2016"},       
         "dataLimit": {"type":"text", "value":"30/09/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P1</a>"},
