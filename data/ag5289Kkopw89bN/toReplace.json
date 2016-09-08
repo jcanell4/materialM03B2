@@ -18,7 +18,7 @@
         "docArraysUrl":{"type":"text", "value":"docs/C49_225X03B2_arrays.odt"},
         "docStringFormatUrl":{"type":"text", "value":"docs/C59_DA2_M03B2_formatarCadenes.odt"},
         "midaGrupCol":{"type":"text", "value":"15"},
-        "notaMinimPaf":{"type":"text", "value":"3,5"},
+        "notaMinimPaf":{"type":"text", "value":"4"},
         "ponderacioAC":{"type":"text", "value":"50%"},
         "ponderacioPAF":{"type":"text", "value":"50%"},
         "ponderacioSAC":{"type":"text", "value":"20%"},
