@@ -53,9 +53,9 @@
         "dataFinal": {"type":"text", "value":"23/09/2016"},       
         "dataLimit": {"type":"text", "value":"30/09/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P1</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317914"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=371377"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumPrincipalUrl' href=\"#\">fòrum de discussió del període I</a>"},
-        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317910"}
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=371376"}
     },        
     "RP2":{
         "id": {"type":"text", "value":"2"},
@@ -63,9 +63,9 @@
         "dataFinal": {"type":"text", "value":"04/10/2016"},       
         "dataLimit": {"type":"text", "value":"10/10/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P2</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317919"},        
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=371385"},        
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període II</a>"},
-        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317902"},
+        "forumDeDiscussioUrl":{"type":"attr", "name":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=371384"},
         "triaGrupCol":{"type":"html", "value":"<a class='triaGrupColUrl' target='_blank'>aplicatiu per triar grup de col·laboració</a>"},
         "triaGrupColUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3735#triaGrupCol"}
     },        
@@ -75,9 +75,9 @@
         "dataFinal": {"type":"text", "value":"16/10/2016"},       
         "dataLimit": {"type":"text", "value":"21/10/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P3</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317925"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=371389"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període III</a>"},
-        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317901"}
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=371388"}
     },        
     "RP4":{
         "id": {"type":"text", "value":"4"},
@@ -85,9 +85,9 @@
         "dataFinal": {"type":"text", "value":"28/10/2016"},       
         "dataLimit": {"type":"text", "value":"02/11/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P4</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317934"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=371391"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període V</a>"},
-        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=317933"}
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=371406"}
     },        
     "RP6":{
         "id": {"type":"text", "value":"5"},
@@ -95,9 +95,9 @@
         "dataFinal": {"type":"text", "value":"07/11/2016"},       
         "dataLimit": {"type":"text", "value":"10/11/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P5</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317940"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=371394"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període V</a>"},
-        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=322347"}
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=371393"}
     },        
     "RP7":{
         "id": {"type":"text", "value":"6"},
@@ -105,9 +105,9 @@
         "dataFinal": {"type":"text", "value":"17/11/2016"},       
         "dataLimit": {"type":"text", "value":"19/11/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P6</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317943"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=371399"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum del període VI</a>"},
-        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=322352"}
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=371398"}
     },        
     "RP8":{
         "id": {"type":"text", "value":"7"},
@@ -115,9 +115,9 @@
         "dataFinal": {"type":"text", "value":"27/11/2016"},       
         "dataLimit": {"type":"text", "value":"27/11/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P7</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=322221"},
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=371403"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període VII</a>"},
-        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/forum/view.php?id=322355"}
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=371402"}
     },        
     "RPM":{
         "id": {"type":"text", "value":"MI"},
@@ -125,7 +125,7 @@
         "dataFinal": {"type":"text", "value":"15/12/2016"},       
         "dataLimit": {"type":"text", "value":"19/12/2016"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament PM</a>"},
-        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=317945"}       
+        "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=371409"}       
     },         
     "A400": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='#'>A400</a>"},
