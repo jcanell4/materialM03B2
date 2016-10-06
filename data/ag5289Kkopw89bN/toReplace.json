@@ -65,7 +65,7 @@
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P2</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/mod/assign/view.php?id=371385"},        
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període II</a>"},
-        "forumDeDiscussioUrl":{"type":"attr", "name":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=371384"},
+        "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=371384"},
         "triaGrupCol":{"type":"html", "value":"<a class='triaGrupColUrl' target='_blank'>aplicatiu per triar grup de col·laboració</a>"},
         "triaGrupColUrl":{"type":"attr", "name":"href", "value":"http://ioc.xtec.cat/campus/course/view.php?id=3735#triaGrupCol"}
     },        
