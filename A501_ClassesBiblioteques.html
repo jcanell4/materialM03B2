@@ -633,26 +633,26 @@ operacio2.operador1 = 7; //Això dona error perquè no s'ha instanciat la variab
                                     <p>Tal com està codificada la funció no serviria per trobar les temperatures mínimes emmagatzemades en el disc dur, en comptes de demanar-les a l'usuari, ni molt menys per trobar el valor mínim de quelcom que no fossin temperatures, ni permetria emmagatzemar el valor mínim en el disc dur, o enviar-lo a un servidor, en comptes de mostrar-lo per pantalla, ja que la petició de dades, el càlcul del resultat i la mostra d'aquest formen un tot indivisible.</p>
                                     <pre><code class="java linenumbers">
 public void trobarTemperaturaMinima(){
-float[] temperatures;
-int posMin;            
-System.out.println("Quantes temperatures vols omplir?");
-int mida = scanner.nextInt();
-temperatures = new float[mida];
+    float[] temperatures;
+    int posMin;            
+    System.out.println("Quantes temperatures vols omplir?");
+    int mida = scanner.nextInt();
+    temperatures = new float[mida];
             
-System.out.println("Entra el valor de les temperatures");
-for(int i=0; i&lt;temperatures.length; i++){
-System.out.println("Temperatura " + (i+1) + ": ");
-temperatures[i]=scanner.nextFloat();
-     }
+    System.out.println("Entra el valor de les temperatures");
+    for(int i=0; i&lt;temperatures.length; i++){
+        System.out.println("Temperatura " + (i+1) + ": ");
+        temperatures[i]=scanner.nextFloat();
+    }
 
-       posMin=0;
-            for(int i=1; i&lt;temperatures.length; i++){
-                if(temperatures[posMin]&gt;temperatures[i]){
-                    posMin=i;
-                }
-            }
-            System.out.println("La Temperatura mínima és: " +  temperatures[posMin]);
+    posMin=0;
+    for(int i=1; i&lt;temperatures.length; i++){
+        if(temperatures[posMin]&gt;temperatures[i]){
+            posMin=i;
         }
+    }
+    System.out.println("La Temperatura mínima és: " +  temperatures[posMin]);
+}
                                      </code></pre>
                                      <p>Es demana que recodifiqueu la funció, dividint-la, de manera que agrupeu una part del codi en almenys una funció realment reutilitzable, poden ser més si ho creieu oportú (consulteu la pista 2 si us interessa). Acompanyeu la codificació amb un raonament que justifiqui la divisió realitzada i pengeu-ho al <span class="forumDeDiscussio">forum de discussió</span>.</p>
                                     <p>També es demana que reflexioneu en el fòrum, si les noves funcions substituirien totalment la funció <em>trobarTemperaturaMinima</em> de manera que caldria eliminar-la del codi, o si per contra, les noves funcions, necessitarien encara de la funció <em>trobarTemperaturaMinima</em> adaptada a la crida d'aquestes.</p>
