@@ -43,6 +43,9 @@
                 <li>
                     <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
                 </li>
+                <li> 
+                    <a class="toActivityTable targetBlank" onclick = '$("#menu-close").click();'>Taula d'activitats</a>
+                </li>
                 <li>
                     <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
                 </li>
@@ -817,7 +820,7 @@ public class Exemple2DissenyDescendent {
                                     <p>D'altres vegades ens adonem que no ho hem controlat tot, que hem deixat algun error latent i es clar, la seva aparició només es cosa de temps.</p>
                                     <p> A <a href="#slc-exemples__slc-exemples30">la implementació de l'exemple 2</a> s'ha detectat que la funció <em>demanarNumDigits</em>, només funciona si l'usuari escriu correctament un valor enter, però si s'equivoca, i prem <em>[ENTRAR]</em> sense haver escrit cap número, obtindrem un error.</p>
                                     <p>Es tracta d'un problema molt típic, de qualsevol aplicació que requereixi entrades numèriques i se soluciona fent una comprovació prèvia del que l'usuari està escrivint. No cal fer una lectura del teclat, n'hi ha prou sabent si el que s'escriu és o no un enter. En cas afirmatiu es passaria a la lectura, però en cas negatiu, caldria recordar que es tractat d'una introducció no vàlida i que s'espera és un valor enter.</p>
-                                    <p> El més aconsellable seria crear un funció genèrica que es pugui reutilitzar en qualsevol context i parametritzar-la adequadament en el cas que ens ocupa. Ja heu fet una funció com aquesta a l'activitat <a class="toA402" href="">A402</a> per a <em>doubles</em>. Aquí us demanarem que escriviu una funció anomenada <em>entrarUnEnter</em> que rebi un missatge explicatiu per mostrar a l'usuari i esperi fins que l'usuari escrigui un valor enter, fent la comprovació d'error esmentada. La funció retornarà l'enter entrat des de teclat.</p> 
+                                    <p> El més aconsellable seria crear un funció genèrica que es pugui reutilitzar en qualsevol context i parametritzar-la adequadament en el cas que ens ocupa. Ja heu fet una funció com aquesta a l'activitat <a class="toA402" href="">A402</a> per a <em>doubles</em>. Aquí us demanem que escriviu una funció anomenada <em>entrarUnEnter</em> que rebi un missatge explicatiu per mostrar a l'usuari i esperi fins que l'usuari escrigui un valor enter, fent la comprovació d'error esmentada. Si l'usuari ha escrit números, la funció retornarà l'enter entrat des de teclat, en cas contrari, avisarà a l'usuari i tornarà a fer la petició d'un enter correcte.</p> 
                                     <p>A banda de la funció <em>entrarUnEnter</em>, també us demanem que modifiqueu la funció <em>demanarNumDigits</em> per tal que faci servir la nova utilitat. Feu la modificació a la funció <em>demanarNumDigits</em> i no a la funció <em>inici</em>, perquè així es manté la informació intrínseca derivada del seu nom i el codi resulta més fàcil de llegir.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
@@ -1127,7 +1130,7 @@ public class Exercici2DissenyDescendent {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>Per fer el lliurament cal que, un cop hagueu realitzat els exercicis, obriu <span class="informeLliurament"></span>, l'ompliu i el lliureu a la <span class="bustiaLliurament"></span>, seguint les indicacions del propi document. No heu de lliurar el codi de les tasques, només l'informe. Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
                                 <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu. Així, el professor pot valorar l'evolució del vostre l'aprenentatge i també la utilitat d'aquesta activitat en el conjunt del procés. </p>
                             </div>
                         </div>
@@ -1151,6 +1154,7 @@ public class Exercici2DissenyDescendent {
                                             <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
 
                                 <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                                <p>Si us cal, també podeu saltar <a class="toActivityTable targetBlank">a la taula d'activitats</a> per accedir a qualsevol altra activitat.</p>
                             </div>
                         </div>
                     </div>

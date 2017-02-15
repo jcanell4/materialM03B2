@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila ">
+    <title>A505. Implementació II</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li> 
+                    <a class="toActivityTable targetBlank" onclick = '$("#menu-close").click();'>Taula d'activitats</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-toDo">Tasques a realitzar</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A505 - Implementació II</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Aquesta és la darrera activitat d'implementació abans de lliurar tot el projecte. Per tant, caldrà centrar els esforços en anar acabant totes les funcionalitats que ens quedin pendents. Si heu anat seguint les indicacions donades a les anteriors activitats, us adonareu que realment us queda molt poca feina per acabar. Bàsicament la importació de dades i les funcions de tractamet de dades, que majoritariament, ja teniu implementades totalment o en gran mesura en el gestor de dades.</p>
+                                <p>A la secció de <em>tasques a implementar</em> analitzarem en detall la funcionalitat que us pot quedar per tal que aconseguiu acabar l'aplicació. També se us dóna, a la darrera tasca els criteris d'avaluació que es faran servir per corregir el projecte. Llegiu-los atentament. Encara esteu a temps de fer canvis i millores abans de fer el lliurament definitiu.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+            <!--=========== BEGIN SECTION implementació ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION impl 1 ================-->    
+                <section id="slc-toDo1" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació II</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Importació de dades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>La immobiliària ens informa que per tal de fer proves, ens fa arribar una classe que simula la importació de dades de la base de dades central. La classe s'anomena <em>ImportacioDades.java</em> i la podeu trobar <a class="toImportacioDades">aquí</a>. La classe conté dos funcions marcades com <em>static</em>. La primera s'anomena <em>obtenirDadesUsuarisDesDeCentral</em> i retorna un cadena de text contenint els usuaris a importar. La segona s'anomena <em>obtenirDadesImmoblesDesDeCentral</em> i permetrà recuperar la cadena de text amb els anuncis dels immobles que caldrà incorporar a l'aplicació.</p>
+                                    <p>Per poder-la fer servir, podeu copiar el fitxer al directori on esteu implementant el vostre projecte. Si us baixeu el fitxer i l'arrossegueu amb el ratolí fins el Netbeans (cal tenir-lo executant-se i amb el vostre projecte obert) i el deixeu anar sobre el paquet on esteu desenvolupant la resta de classes, se us copiarà fàcilment i podreu usar-lo sense necessitat de fer cap més canvi si accepteu les propostes que us faci per defecte.</p>
+                                    <p>Si ho desitgeu, també podeu crear en el vostre projecte una classe buida amb el mateix nom i copiar-hi les funcions usant la utilitat de <em>copy&paste</em> del sistema. Si ho feu així tampoc hauríeu de tenir cap problema per fer servir les seves funcions en el vostre projecte.</p>
+                                    <p>Finalment donarem encara una tercera fórmula, la copia del fitxer a través del sistema operatiu. Aquesta però, requereix que localitzeu el directori on es guarden les classes del vostre projecte que implementeu, feu la còpia i modifiqueu la instrucció referent al paquet (<em>package ioc.m3.uf2;</em>), canviant-lo pel corresponent al vostre projecte. Mireu la resta de classes per saber quin és.</p>
+                                <p>Un cop aconseguida la incorporació de la classe al vostre projecte, caldrà que implementeu una funció que faci una crida a les dues funcions esmentades de la classe <em>ImportacioDades</em>, reculli les cadenes amb les dades, les transformi en dades adequades i les afegeixi a l'estructura de dades de l'aplicació. Abans però, haureu de conèixer el format com us arribaran les dades dins de cada cadena.</p>
+                                <p>La immobiliària ens explica que la cadena que contindrà els usuaris anirà formatada de la següent manera:</p>
+                                <ul>
+                                    <li>Cada usuari anirà separat per una cadena de tres caràcters <em>coixinet</em>: "###". És a dir que cada cop que trobem tres coixinets a la cadena significa que comencen les dades d'un nou usuari.</li>
+                                    <li>Les diferents dades de cada usuari aniran separades només per un <em>coixinet</em>: "#"</li>
+                                    <li>
+                                        L'ordre en que es lliuren les dades dels usuaris és el següent:
+                                        <ul>
+                                            <li>DNI.</li>
+                                            <li>Nom i cognoms de l'usuari.</li>
+                                            <li>Correu electrònic per poder contactar.</li>
+                                            <li>contrasenya d'accés a l'aplicació</li>
+                                        </ul>
+                                     </li>
+                                    
+                                </ul>
+                                <p>La cadena que contindrà els anuncis també utilitza tres coixinets (###) per separar cada un dels anuncis i un (#) per distingir entre les diferents dades d'un mateix anunci. L'ordre en que trobarem les dades dels anuncis a la cadena d'exportació és:</p>
+                                <ul>
+                                    <li>Un numero que indica quin usuari és el propietari de l'immoble. El número representa l'ordre en que s'ha passat l'usuari a la cadena d'exportació, tenint en compte que el primer usuari ocuparia la posició zero.</li>
+                                    <li>Una cadena indicant quin tipus d'immoble és. Ja sabeu que la immobiliària treballa amb 6 tipus d'immobles: locals, oficines, pisos, cases, pàrquings i trasters. Respectivament s'identifiquen per les cadenes: Local, Oficina, Pis, Casa, Pàrquing i Traster.</li>
+                                    <li>Una cadena contenint la descripció de l'immoble que el venedor hagi considerat oportuna. Per descomptat, les descripcions no contenen caràcters <em>coixinet</em> (#). </li>
+                                    <li>L'adreça, composta per una cadena amb el nom del carrer, el número, el pis i la porta si s'escau.</li>
+                                    <li>La població on es troba ubicat l'immoble.</li>
+                                    <li>La superfície de l'immoble, expressada amb un valor enter que representa el metres quadrats.</li>
+                                    <li>El preu en Euros, al que el propietari desitja vendre l'immoble. El preu està expressat com un valor enter.</li>
+                                </ul>
+                                <p>La funció que haureu d'implementar cal que extregui les dades contingudes a les cadenes i les afegeixi a la vostra estructura de dades de forma coherent a com ha estat dissenyada. Recordeu que es tracta d'un procés que cal realitzar a l'inici de l'execució, justa abans que la funcionalitat resti al servei de l'usuari.</p>
+                                
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo1" 
+                                            data-selector-clue="#slc-toDo1-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo1-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Per extreure les dades de les cadenes, podeu fer servei algunes de els funcions estàndards de la classe <em>String</em>. Concretament doneu una ullada a als mètodes <em>split</em>, <em>indexOf</em> o <em>charAt</em>, la documentació de la qual es troba a <a class="apiStringUrl" target="_blank">l'API de la classe String</a>.</p>
+                                        <p>També necessitareu convertir els trossos de text que representin valors enters, al seu tipus corresponent. En aquest cas disposeu d'informació de com realitzar la conversió a <a class="apiStringUrl" target="_blank">l'api de la classe Integer</a>, concretament podeu consultar els mètodes <em>parseInt</em> i <em>valueOf</em>.</p>
+                                        <p>Par afegir les dades de forma coherent a la vostre estructura un cop hàgiu aconseguit separar-les, useu les funcions que heu implementat al gestor de dades. Segur que us resultaran útils.</p>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION impl 1  ================-->    
+                <!--=========== BEGIN SECTION impl 2 ================-->    
+                <section id="slc-toDo2" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació II</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Creació del filtre</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>El filtre que els usuaris poden fer servir per garbellar els anuncis i extraure només aquells que compleixin certes condicions, es manté actiu mentre l'usuari no el modifiqui, entrant noves condicions. Això significa que les condicions s'hauran d'emmagatzemar a l'estructura de dades. Si heu seguit els consells donat s a l'activitat corresponent, segurament ja ho haureu tingut en compta, ja sigui en el mateix tipus compost on s'emmagatzemen les dades de la importació, o en un tipus compost diferent. Sigui com sigui, caldria que aquí, completéssiu la tasca de creació del filtre emmagatzemant les dades demanades a l'usuari, dins el tipus compost que tingueu preparat per fer-ho. La funció és senzilla per tant, no calen gaire més explicacions.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION impl 2 ================-->    
+                <!--=========== BEGIN SECTION impl 3 ================-->    
+                <section id="slc-toDo3" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació II</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Filtratge dels immobles</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Amb el filtre actiu, ja sigui amb els valor per defecte o amb els valors concrets definits per l'usuari, cal pensar algoritme per obtenir la llista d'immobles emmagatzemats que compleixin les condicions del filtre. Depenent de la decisió que hàgiu pres a l'hora de dissenyar l'estructura de dades, caldrà fer diferents implementacions. Si vau decidir emmagatzemar de forma temporal el conjunt d'immobles filtrats, caldrà que realitzau una un funció que recorri tot els immobles i vagi seleccionant i emmagatzemant al tipus compost corresponent cada immoble trobat. Per contra, si no vau preveure l'emmagatzematge temporal, haureu de crear un funció que seleccioni i retorni els immobles filtrats en forma d'array per tal d'invocar la funció cada cop que necessitem el llistat i obtinguem així, els anuncis que cal incloure. Per descomptat hi ha altres maneres de gestionar el filtre. Per tant si cap d'aquestes alternatives us fa el pes, podeu implementar aquella que més us convenci.</p>
+                                    <p>Sigui com sigui, el filtre, a més d'identificar els anuncis que cal incloure en el llistat, també ha de permetre verificar que l'identificador escollit per l'usuari en demanar les dades detallades, es correspongui a un immoble que acompleixi el filtre vigent.</p>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo3" 
+                                            data-selector-clue="#slc-toDo3-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo3-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Una forma fàcil de filtrar els immobles, és disposar d'una funció especifica que recorri tots els immobles, per cada element verifiqui les condicions del filtre i si cal, l'emmagatzemi en algun lloc adient, ja sigui un tipus compost o una matriu. En el primer cas, el tipus compost es passarà per referència i no caldrà retornar-lo, però en el segon cas caldrà instanciar la matriu dins la funció i retornar-la per tal de disposar de la col·lecció d'immobles filtrats fora de la funció.</p>
+                                    </div>  
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION impl 3 ================-->    
+
+                <!--=========== BEGIN SECTION impl 3 ================-->    
+                <section id="slc-toDo4" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació II</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Implementació de la resta de codi</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Repasseu de nou totes les tasques i accions. Ara és hora d'implementar totes aquelles funcions que hagin quedat sense implementar i canviar els comentaris que vau escriure durat la implementació de l'activitat A504, per les crides i implementacions correctes.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION impl 3 ================-->    
+                <!--=========== BEGIN SECTION impl 7 ================-->    
+                <section id="slc-toDo7" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació II</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Valoració de la implementació</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Abans de lliurar el projecte us recomanem que feu proves exhaustives per valorar el funcionament de l'aplicació i la seva qualitat.</p>
+                                    <p>Les proves funcionals haurien de consistir en provar el bon funcionament de cada una de les funcionalitats (tasques) en que es divideix l'aplicació, aplicant els següents criteris, que d'altra banda seran també els utilitzats per fer la correcció i la qualificació d'acord amb la ponderació expressada a continuació:</p>
+                                    <ul>
+                                        <li>
+                                            Importació de dades (0,25 per llistat):
+                                            <ul>
+                                                <li>Complerta (100%): Les dades s'importen correctament</li>
+                                                <li>Incomplerta (50%): Algunes dades no s'importen (no més de 3 propietats) no acaben d'importar-se correctament.</li>
+                                                <li>Deficient (0%): No s'importen les dades o hi ha més de tres propietats que no s'importen correctament o, el procediment es penja durant l'execució.</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Mòdul de propietaris
+                                            <ul>
+                                                <li>
+                                                    Autenticació de l'usuari(0,25):
+                                                    <ul>
+                                                        <li>Complerta (100%): Els usuaris s'autentiquen sempre correctament. l'autenticació serveix també per identificar l'usuari actual que demanarà les opcions disponibles</li>
+                                                        <li>Incomplerta (50%): Hi ha usuaris que no s'autentiquen bé, en funció de la posició que ocupen a la matriu d'usuaris de l'estructura de dades. malgrat tot els que s'autentiquen, s'identifiquen com usuaris actius en demanar qualsevol opció disponible</li>
+                                                        <li>Deficient (0%): No s'autentica cap usuari o l'autenticació és aleatòria. No s'¡identifica l'usuari autenticat i per tant no se sap quin usuari fa les peticions de les opcions disponibles al menú.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Enregistrament d'anuncis(0,5):
+                                                    <ul>
+                                                        <li>Complerta (100%): Els anuncis s'enregistren correctament i de forma coherent a l'estructura de dades dissenyada. A més, es manté permanentment la relació entre l'anunci i el propietari que l'afegeix.</li>
+                                                        <li>Incomplerta (50%): Les dades s'emmagatzemen correctament, però no es manté la relació entre el propietari i l'anunci.</li>
+                                                        <li>Deficient (0%): Hi ha pèrdua de dades total o parcial, de l'anunci afegit o de qualsevol altre ja enregistrat. Es perd la coherència a l'estructura de dades un cop afegit l'anunci.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Llistat d'anuncis propis(0,25):
+                                                    <ul>
+                                                        <li>Complerta (100%): S'aconsegueix llistar correctament i ben formatats, tots els anuncis afegits per l'usuari que demani el llistat.</li>
+                                                        <li>Incomplerta (50%): S'aconsegueix llistar correctament  els anuncis afegits per l'usuari que demani el llistat, però els formats de sortida són incorrectes o no estan ben alineats.</li>
+                                                        <li>Deficient (0%): No s'aconsegueix obtenir el llistat dels anuncis afegits per l'usuari que demana el llistat, ja sigui per excés (es llisten més del compte) o per defecte (se'n llisten menys).</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Consulta detallada d'un anunci'(0,25):
+                                                    <ul>
+                                                        <li>Complerta (100%): L'informe contempla tots els guanyadors dels premis patrocinats.</li>
+                                                        <li>Incomplerta (50%): L'informe contempla al menys el guanyador de la competició o bé, malgrat que contempli altres guanyadors el càlcul d'algun d'ells és erroni..</li>
+                                                        <li>Deficient (0%): No es genera l'informe de guanyadors o bé, es genera però els guanyadors mostrats no són els correctes.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Eliminació d'un anunci(0,5):
+                                                    <ul>
+                                                        <li>Complerta (100%): Un cop eliminat no és possible accedir a l'anunci, malgrat que l'usuari ho demani.</li>
+                                                        <li>Incomplerta (50%): Un cop eliminat, és possible accedir a l'anunci quan un usuari ho demani, malgrat que l'estructura de dades manté la coherència interna.</li>
+                                                        <li>Deficient (0%): Després de l'eliminació es perd la coherència interna de l'estructura de dades.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Mòdul de consultes d'immobles
+                                            <ul>
+                                                <li>
+                                                    Autenticació de l'usuari(0,25):
+                                                    <ul>
+                                                        <li>Complerta (100%): Els usuaris s'autentiquen sempre correctament. l'autenticació serveix també per identificar l'usuari actual que demanarà les opcions disponibles</li>
+                                                        <li>Incomplerta (50%): Hi ha usuaris que no s'autentiquen bé, en funció de la posició que ocupen a la matriu d'usuaris de l'estructura de dades. malgrat tot els que s'autentiquen, s'identifiquen com usuaris actius en demanar qualsevol opció disponible</li>
+                                                        <li>Deficient (0%): No s'autentica cap usuari o l'autenticació és aleatòria. No s'identifica l'usuari autenticat i per tant no se sap quin usuari fa les peticions de les opcions disponibles al menú.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Enregistrament del filtre(0,25):
+                                                    <ul>
+                                                        <li>Complerta (100%): L'usuari pot enregistrar un filtre flexible en el que combina valors per defecte amb valors específics. </li>
+                                                        <li>Incomplerta (50%): Es força a l'usuari a escollir algun valor de forma específica. És a dir no es permeten valors per defecte, total o parcialment en el filtre.</li>
+                                                        <li>Deficient (0%): El filtre no s'emmagatzema o s'enregistra de forma errònia o amb valors incoherents.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Aplicació correcte del filtre en llistats i consultes (0,5):
+                                                    <ul>
+                                                        <li>Complerta (100%): El llistat obtingut en demanar la llista d'immobles és sempre coherent amb el filtre definit, fins i tot abans que l'usuari en configuri cap, és a dir aplicant un filtre amb totes les propietats contenint els valors per defecte. Es valida l'immoble demanat per a consultar les seves dades detallades de manera que només es mostrin els immobles demanats que verifiquin les condicions del filtre. </li>
+                                                        <li>Incomplerta (50%):El llistat obtingut en demanar la llista d'immobles és sempre coherent amb el filtre definit, fins i tot abans que l'usuari en configuri cap, és a dir aplicant un filtre amb totes les propietats contenint els valors per defecte. No es té en compte la validació de l'immoble demanat per a consultar les seves dades detallades de manera que sempre es mostra, si existeix, però amb independència de si acompleix o no les condicions del filtre. </li>
+                                                        <li>Deficient (0%): Hi ha ocasions en que el llistat no es correspon al filtre definit.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Llistat d'anuncis filtrats(0,25):
+                                                    <ul>
+                                                        <li>Complerta (100%): S'aconsegueix llistar correctament i ben formatats, tots els anuncis corresponents al filtre vigent.</li>
+                                                        <li>Incomplerta (50%): S'aconsegueix llistar correctament  els anuncis  corresponents al filtre vigent, però els formats de sortida són incorrectes o no estan ben alineats.</li>
+                                                        <li>Deficient (0%): No s'aconsegueix obtenir el llistat dels anuncis  corresponents al filtre vigent.</li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Consulta detallada d'un anunci(0,25):
+                                                    <ul>
+                                                        <li>Complerta (100%): La pantalla amb les dades de l'anunci segueix un format ben definit i identificable.</li>
+                                                        <li>Incomplerta (50%): La pantalla amb les dades de l'anunci segueix un format ben definit, tot i que a vegades segons la mida de les dades es desquadra.</li>
+                                                        <li>Deficient (0%): No hi ha cap patró definit de la pantalla de dades.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    
+                                    <p>A banda de les proves funcionals, també caldria fer una anàlisi dels criteris de qualitat de més avall, els quals també s'usaran per a calcular la qualificació d'acord amb la ponderació i els criteris definits:</p>
+                                    <ul>
+                                        <li>
+                                            Llegibilitat del codi (2,5):
+                                            <ul>
+                                                <li>Correcta (100%): Es fan servir constants de forma habitual en lloc de valors literals.<br />
+Els noms de les classes, dels mètodes i les variables són descriptius de manera que és molt intuïtiu saber per a què es fan servir.<br/>
+El codi està  ben indentat.<br/>
+Les estructures de dades ajuden a interpretar el flux de les dades durant l'execució.
+                                            </li>
+                                            <li>Millorable (50%):
+Es fan servir poques constants.<br />
+Costa deduir la utilització de mètodes i variables a partir dels seus noms.<br />
+El codi no està sempre ben indentat.
+                                            </li>
+                                            <li>Deficient(0%):
+Mai o quasi bé mai, es fan servir constants.<br />
+Costa deduir la utilització de mètodes i variables a partir dels seus noms.<br />
+No se segueix un criteri fix a l'hora de nombrar variables, mètodes i classes.<br />
+Sovint el codi està mal indentat.</li>
+                                        </ul>
+                                            
+                                        </li>
+                                        <li>
+                                            Modularitat i estructura del codi (2,5):
+                                            <ul>
+                                                <li>Correcta(100%)
+    El codi es troba distribuït en mètodes, els quals s'agrupen en classes seguint criteris lògics o funcionals.<br/>
+    El codi no es concentra  en pocs mètodes o en poques classes sinó que es troba ben distribuït i segmentat en nivells de profunditat raonables per la mida de l'aplicació que ajuda a fer el seguiment del flux.<br/>
+    Mai es barreja codi encarregat de calcular i processar les dades   amb l'encarregat d'intercanviar informació amb l'usuari.<br />
+    Les estructures de dades ajuden a mantenir les dades agrupades i ben identificades al llarg del codi.<br />
+    Hi ha funcions que ajuden a mantenir la coherència de les dades.
+                                                </li>
+                                                <li>Millorable (50%):
+    El codi està estructurat però hi ha poques classes o algunes d'elles concentren bona part del codi.<br/>
+    No sempre són evidents els criteris de separació del codi en classes.<br />
+    Ocasionalment es barreja codi encarregat de calcular i processar les dades   amb l'encarregat d'intercanviar informació amb l'usuari.<br />
+    No sempre es fan servir les estructures de dades i de vegades les dades resten disperses.
+                                                </li>
+                                                <li>Deficient(0%):
+    Hi ha mètodes monolítics que són els responsables d'una part important de la funcionalitat.<br />
+    No hi ha criteris identificables de les raons usades per separar el codi en funcions o classes.<br />
+    Es difícil de preveure les conseqüències de modificar alguna part del codi.<br />
+    Les captures de teclat i les sortides per pantalla es barregen amb la resta processament en gairebé tot el codi.<br />
+    Quasi mai es fan servir estructures de dades, treballant amb un nombre gran de variables disperses.
+                                                </li>
+                                            </ul>
+                                            
+                                        </li>
+                                        <li>
+                                            Interfície d'usuari (1,5):
+                                            <ul>
+                                                <li>Correcta(100%)
+    L'usuari sempre sap on es troba i com sortir o tronar a la pantalla anterior.<br />
+    Sempre es deixa clar el que l'usuari ha de fer en cada moment.<br />
+    Les accions que l'usuari ha de fer són intuïtives o fàcils de deduir.
+                                                </li>
+                                                <li>Millorable (50%):
+    No resulta fàcil saber en quina pantalla es troba l'usuari.<br />
+    Malgrat que hi ha missatges orientadors per l'usuari, aquest no sempre clarifiquen el que s'espera que l'usuari faci.
+                                                </li>
+                                                <li>Deficient(0%):
+    No hi ha missatges o els missatges que es mostren no expliquen el que l'usuari ha de fer, cosa que provoca que sovint aquest s'equivoqui.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p>Si cal, intenteu millorar el projecte seguint els criteris anteriors, abans de fer el lliurament definitiu.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION impl 7 ================-->    
+            </section>
+            <!--=========== END SECTION implementació ================-->    
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament -Implementació II</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>El lliurament cal fer-lo amb un únic fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span> i que contindrà el codi sencer del projecte CicliCat.</p>
+                                <p>Recordeu que la data límit per a fer el lliurament és: <strong class="dataLimit"></strong>. No s'admetran lliuraments passada aquesta data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar - Implementació II</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+                                <p>De forma voluntària, podeu realitzar la següent <a class="toNextActivity">activitat</a> si desitgeu millorar la qualificació obtinguda amb el projecte.</p>
+                                <p>Si us cal, també podeu saltar <a class="toActivityTable targetBlank">a la taula d'activitats</a> per accedir a qualsevol altra activitat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A505");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

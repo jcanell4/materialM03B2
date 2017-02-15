@@ -1,0 +1,126 @@
+            <!--=========== BEGIN SECTION toDo10 ================-->    
+            <section id="slc-toDo10" class=" section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Tasques individuals - Introducció</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Seguint els consells que heu extret dels fòrums, cal que implementeu l'esquelet de l'aplicació i mòduls del projecte. Recordeu que la creació de l'esquelet no implica haver d'implementar el codi dels mètodes de les classes que creareu, sinó que més aviat consisteix en preveure quines funcions seran necessàries, declarar-les (indicant el nom, els paràmetres i el retorn, però deixant buit el codi intern) i organitzar-les en les diferents classes que hàgim detectat com a necessàries per a la implementació.</p>
+                                <p>Per aconseguir-ho amb èxit, us demanarem que feu dues tasques. A la primera us demanarem  que feu el disseny descendent i també l'esquema de mòduls i tasques. La segona tasca a realitzar consistirà en implementar pròpiament l'esquelet de classes i funcions de l'aplicació a partir del disseny i l'esquema realitzats a la primera tasca.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDo10 ================-->    
+            <!--=========== BEGIN SECTION toDo20 ================-->    
+            <section id="slc-toDo20" class=" section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Tasques individuals - Disseny descendent i esquema de mòduls i tasques</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>En primer lloc caldrà que feu el disseny descendent del projecte (tal com heu aprés a l'activitat A405) i a continuació l'esquema de mòduls i tasques, de forma similar a com s'ha fet en l'exemple de telefonia. Del disseny descendent podreu extreure informació sobre la funcionalitat de l'aplicació (tasques i accions) que en el seu moment acabarem implementat com a funcions. L'esquema de mòduls i tasques, en canvi, us ajudarà a distingir quines són les principals classes i com organitzar i agrupar les funcions dins d'aquestes classes.</p>
+                                <p>Per realitzar el disseny descendent guieu-vos de la informació que us hem anat donant i que resumim tot seguit:</p>
+                                <ul>
+                                    <li><p>En executar el prototipus, caldrà realitzar una importació de les dades d'usuaris i anuncis d'immobles, provinents de la base de dades central. Això emmagatzemarà les dades a l'estructura que heu dissenyat, per aquest fi, a l'activitat A502. Es tracta d'un procés que només és realitza un única vegada per execució. Tingueu-ho doncs en compte en el disseny descendent, l'esquema de tasques i també a l'esquelet. De moment no cal entrar en el detall de com es farà la importació, però si que caldria preveure-la, En quina classe creieu que hauria de situar-se aquesta tasca?</p></li>
+                                    <li><p>Recordeu també que aquest prototipus no disposarà de la possibilitat de gestionar els usuaris. Només haurà d'importar-los i autenticar-los quan intentin accedir a la gestió dels anuncis com a propietaris o quan cerquin immobles com a venedors. Per a l'autenticació es demanarà a l'usuari que escrigui el seu DNI i la seva contrasenya. Hem preguntat a la immobiliària i ens ha comentat que l'autenticació d'usuaris no s'ha de realitza en obrir l'aplicació sinó en el moment que demanin entrar a la gestió dels anuncis com a propietaris o quan demanin de cercar anuncis com a compradors. Això implica que un usuari que s'hagi autenticat per donar d'alta un anunci, haurà de tornar-se a autenticar quan desitgi consultar els anuncis d'altres usuaris per comprar un immoble.</p></li>
+                                    <li><p>Així, el prototipus ha de disposar d'una gestió d'anuncis (altes, baixes i consultes...). Un cop autenticat l'usuari, aquest podrà obtenir una llista de tots els immobles que mantingui a la venda, consultar el detall d'un d'aquest anuncis, afegir nous anuncis d'immobles per posar-los a venda i eliminar anuncis que s'hagin quedat desfasats o que ja no vulgui vendre.</p></li>
+                                    <li><p>La llista d'anuncis mostrarà una relació de les principals dades (id, tipus d'immoble, població, superfície i preu) dels immobles que l'usuari mantingui donats d'alta.</p></li>
+                                    <li><p>Per consultar el detall d'un anunci propi, es demanarà l'identificador (id) per poder-lo localitzar i un cop localitzat es mostraran totes les dades de l'anunci. Cal vigilar que l'identificador sigui correcte, ja que des d'aquí només es podran mostrar els anuncis dels immobles dels quals l'usuari en sigui el propietari.</p></li>
+                                    <li><p>En el procés d'inserció d'un nou anunci, en primer lloc es comprovarà que l'alta és possible, assegurant que l'usuari no tingui ja, donats d'alta, 3 anuncis. Si es verifica la possibilitat, s'anirà preguntant a l'usuari per cada una de les característiques de l'immoble. Un cop recollida tota la informació es passarà a afegir l'anunci de l'immoble per tal que els usuaris interessat en comprar, puguin trobar-lo.</p></li>
+                                    <li><p>L'eliminació, suposarà que l'usuari indiqui usant l'identificador, quin immoble vol donar de baixa. Per descomptat, un usuari només podrà eliminar els anuncis que hagi donat d'alta, per tant, caldrà comprovar que l'identificador correspon a un dels immobles del que l'usuari és propietari. Un cop comprovat, es demanarà confirmació del procés i es procedirà a eliminar l'anunci del sistema.</p></li>
+                                    <li><p>Recordeu però, que de moment no caldrà implementar cap procediment per exportar les actualitzacions dels canvis realitzat a la col·lecció d'anuncis, a la base de dades central.</p></li>
+                                    <li><p>La cerca de pisos implicarà també l'autenticació. Un cop autenticat, l'usuari podrà optar a diverses opcions: definir el filtre a aplicar, obtenir el llistat dels immobles aplicant el filtre que hi hagi definit i consultar el detall de les dades d'algun dels immobles que acompleixin les propietats definides al filtre vigent. Per defecte, el filtre vigent seran tots els anuncis existents.</p></li>
+                                    <li><p>La creació del filtre implicarà que l'aplicació vagi interrogant l'usuari per tal de saber quins valors desitja per cada una de les propietats del filtre. Un cop introduïdes les dades del filtre, s'emmagatzemaran per poder-les aplicar a la resta de consultes (llistat i detall).</p></li>
+                                    <li><p>El llistat mostrarà l'identificador, el tipus d'immoble, la població, la superfície i també el preu de tots els immobles que compleixin el filtre. Quan l'usuari trobi en el llistat un immoble que l'interessi en particular, podrà demanar el detall indicant el seu identificador.</p></li>
+                                    <li><p>La consulta de la informació detallada d'un immoble comprovarà que l'identificador indicat per l'usuari es correspongui amb un immoble existent que compleixi la les propietats del filtre. En cas afirmatiu es mostraran totes les dades de l'immoble.</p></li>
+                                </ul>
+                                <p>Tant el disseny descendent com l'esquema de mòduls i tasques són informació textual que podeu realitzar usant una aplicació de tractament de text com el libreOffice.</p>
+                                <!-- Button trigger pannel -->
+                                <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                        data-toggle="button"
+                                        data-parent-selector="#leftColumnPanel"
+                                        data-display-on-set-slide="slc-toDo20" 
+                                        data-selector-clue="#slc-toDo20-clue1">
+                                    Pista
+                                </button>                                        
+                                <div id="slc-toDo20-clue1" class="iocClue hidden">
+                                    <h2>Pista</h2>
+                                    <p>Consulteu l'activitat <span class="A405">A405</span> per refrescar com fer un disseny descendent. Com a resultat, hauríeu d'obtenir un esquema on quedaria plasmada la funcionalitat de l'aplicació. Un cop realitzat el disseny aprofiteu-lo per extreure crear l'esquema de mòduls i tasques. Preneu com exemple l'exemple que vàreu discutir <a href="#slc-discussion__slc-discussion23" target="_blank">al fòrum 4</a>. Si us fixeu es tracta d'organitzar la funcionalitat detectada al disseny descendent en un esquema on quedi clar: </p>
+                                    <ul>
+                                        <li>Les opcions inicials de l'aplicació.</li>
+                                        <li>Els diferents mòduls que composaran l'aplicació.</li>
+                                        <li>Les tasques que cada mòdul inclou.</li>
+                                        <li>Les accions necessàries per dur a terme cada tasca.</li>
+                                    </ul>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDo20 ================-->    
+            <!--=========== BEGIN SECTION toDo30 ================-->    
+            <section id="slc-toDo30" class=" section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Tasques individuals - Codificació de l'esquelet de classes i funcions del projecte</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Agafeu de base el disseny descendent i també l'esquema de mòduls i tasques per començar a implementar l'esquelet de classes. Recordeu que la creació de l'esquelet no implica haver d'implementar el codi dels mètodes de les classes que creareu, sinó que consisteix en declarar les funcions (indicant el nom, els paràmetres i el retorn, però deixant buit el codi intern) que hàgim previst a partir del disseny,  i organitzar-les en les diferents classes que hàgim detectat (a l'esquema de mòduls i tasques) com a necessàries per a la implementació.</p>
+                                <p>En ser el primer esquelet que feu, no caldrà que el detalleu massa. Us demanem només que plasmeu els mòduls i les tasques. No cal que de moment, tingueu en compte les accions. Recordeu que els mòduls han de correspondre's amb classes i les tasques amb funcions.</p>
+                                <!-- Button trigger pannel -->
+                                <button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
+                                        data-toggle="button"
+                                        data-parent-selector="#leftColumnPanel"
+                                        data-display-on-set-slide="slc-toDo30" 
+                                        data-selector-clue="#slc-toDo30-clue1">
+                                    Consell
+                                </button>                                        
+                                <div id="slc-toDo30-clue1" class="iocClue hidden">
+                                    <h2>Consell</h2>
+                                    <p>En començar a definir un esquelet és impossible tenir-ho tot molt clar des del principi. Heu d'aprendre a jugar amb la incertesa. No passa res si no podem detallar-ho tot, començarem amb una esquema que anirem concretant a mida que sigui possible. A vegades no podrem concretar exactament quins paràmetres arribaran a una funció o quin tipus de dada retornarà, però això no ha d'impedir començar a fer la declaració de les funcions afegint comentaris d'allò que quedi sense concretar. De forma metafòrica podem dir que la implementació d'aplicacions és semblant a la construcció d'un trencaclosques on les peces són les funcions i les dades. Si aconseguim encaixar-les, la'aplicació funcionarà correctament. Si les peces (dades i funcions) no encaixen, la funció no farà el que hauria de fer.</p>
+                                    <p>De forma semblant a la construcció de trencaclosques, cal anar encaixant les peces parcialment, deixant forats per omplir i que acabarem encaixant quan trobem la peça adequada. Aquí cal fer el mateix comencem a declarar classes i funcions malgrat ens faltin peces per encaixar que ja implementarem en un futur quan ho tinguem més clar. La implementació presenta a més, l'avantatge que en realitat les peces les creem nosaltres a mida que implementem l'aplicació o per tant podem modificar-les en qualsevol moment per tal que encaixin perfectament.</p>
+                                </div>  
+                                <!-- Button trigger pannel -->
+                                <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                        data-toggle="button"
+                                        data-parent-selector="#leftColumnPanel"
+                                        data-display-on-set-slide="slc-toDo30" 
+                                        data-selector-clue="#slc-toDo30-clue2">
+                                    Pista 2
+                                </button>                                        
+                                <div id="slc-toDo30-clue2" class="iocClue hidden">
+                                    <h2>Pista 2</h2>
+                                    <p>Identifiqueu les principals classes que tindrà l'aplicació a partir de l'esquema de mòduls i distribuïu-hi les funcions extres de les tasques del mateix esquema.</p>
+                                    <p>Creeu les classes detectades, en el projecte de Netbeans que vàreu generar a l'activitat A502. Declareu dins les classes les funcions que els correspongui. Això és, implementar les funcions indicant només el nom, els paràmetres que sigui possible intuir i si podem també el tipus de retorn. El codi de cada funció l'implementarem més tard, a les següents activitats.</p>
+                                    <p>Intenta donar noms significatius a les classes i als mètodes que hi declaris.</p>
+                                    <p>És possible que detecteu que algunes mòduls contenen tasques comunes. Intenta, si és possible trobar una solució, creant per exemple, una nova classe i traslladant allà el codi comú, per aconseguir reutilitzar i no repetir codi idèntic o molt semblant. </p>
+                                    <p>Per descomptat, si teniu funcions o classes ja implementades en altres activitats, les podeu afegir. Se sobreentén que l'esquelet només fa referència a les funcions noves que encara no estiguin implementades.</p>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDo30 ================-->    
+

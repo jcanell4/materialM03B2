@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Alicia Vila">
+    <title>A404. UF2 Projecte I</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li> 
+                    <a class="toActivityTable targetBlank" onclick = '$("#menu-close").click();'>Taula d'activitats</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-individuals">Tasques a realitzar</a></li> 
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A404 - UF2 Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Aquesta activitat us servirà per començar a implementar alguna funcionalitat senzilla del projecte que heu de desenvolupar individualment per la UF2, posant en pràctica el que heu aprés fins el moment.</p>
+                                <p>Si encara no ho heu fet, podeu consultar l'enunciat del projecte en el següent enllaç: <a class="toProjectStatement">enunciat del projecte</a>, així contextualitzareu el que se us anirà demanant al llarg de la UF2. </p>
+                                <p>En relació a les tasques que haureu d'implementar en aquesta activitat, es tracta de funcions que podreu reutilitzar quan implementau tot el projecte o bé que us ajudaran a saber com implementar altres funcions del projecte. En aquesta activitat, encara no teniu els coneixements suficients per començar a implementar el projecte de forma global, però en canvi si que sabeu implementar funcions.</p>
+                                <p>Algunes de les funcions que se demanaran aquí, les podreu reutilitzar posteriorment en el projecte. N'hi ha de caire genèric i es podrien aprofitar en qualsevol altre projecte, però d'altres són específiques i plantejades expressament per aquest projecte. Potser de moment, encara no els veureu una aplicació pràctica, però quan entreu a la fase de disseny i implementació, ja trobareu la manera d'incorporar-les a fi que us ajudin reduir la quantitat de línies a escriure.</p>
+                                <p>Passeu a l'apartat <a href="#slc-individuals">tasques a realitzar</a> per començar la implementació.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION individuals ================-->    
+            <section id="slc-individuals" class="vsections">
+                <!--=========== BEGIN SUBSECTION individuals10  ================-->    
+                <section id="slc-individuals10" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>esData</em></h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca us demanarem que implementeu una funció anomenada <em>esData</em> que rebi, per paràmetre, una cadena de caràcters contenint una data en format <em>dd/mm/aaaa</em>, on <em>dd</em> siguin dos dígits que representin el dia del mes, <em>mm</em> el mes en valor numèric (usant també dos dígits) i <em>aaaa</em> l'any de la data. La funció retornarà un valor lògic indicant si la data és o no vàlida d'acord amb el format explicat i la pròpia coherència del valor. Així doncs la funció retornarà cert si:</p>
+                                    <ul>
+                                        <li>Els primers dos caràcters de la cadena són dígits numèrics i el seu valor es troba entre <em>1</em> i el nombre màxim de dies corresponent al mes de la data.</li>
+                                        <li>Els caràcters corresponents al mes són també dos dígits i el seu valor es troba entre 1 i 12 (ambdós inclosos)  </li>
+                                        <li>Els darrers 4 caràcters són 4 dígits numèrics</li>
+                                        <li>El caràcter emprat per separar els dígits del dia, del mes i de l'any és exclusivament el caràcter '/'. </li>
+                                    </ul>
+                                    <p>El qualsevol altre cas retornarà fals.</p>
+                                    <p>Només se us demana que implementeu la funció <em>esData</em>, tot i així, si ho creieu convenient, podeu crear més funcions auxiliars que us facilitin la implementació.</p>
+                                    <p>D'altra banda, per tal que pugueu provar el vostre codi us demanem que codifiqueu la solució en una classe anomenada <em>Tasca1</em> on podreu copiar el codi que se us facilita més a sota. Allà trobareu la declaració de la funció que us demanem (la funció <em>esData</em>), cal que implementeu el vostre codi allà. També trobareu 4 funcions ja implementades que us ajudaran a verificar si el vostre codi és o no correcte i fa el que es demana. N'hi ha prou en que executeu la classe Tasca1. A la pantalla us apareixeran múltiples verificacions de diverses dates amb el resultat aconseguit. El resultat s'acompanya d'una sentencia indicant si el vostre algoritme ha funcionat correctament o ha errat en el veredicte amb els missatges:</p>
+                                    <ul>
+                                        <li><em>*** la funció <em>esData</em> funciona correctament ***</em>, si l'algoritme ha funcionat correctament amb l'exemple proposat</li>
+                                        <li><em>*** la funció <em>esData</em> no acaba de funcionar bé ***</em>, si hi ha discrepàncies entre el vostre resultat i el resultat correcte.</li>
+                                    </ul>
+                                    <p>Codi de la Tasca1 a copiar en el NetBeans:</p>
+                                    <pre><code class="java">
+public class Tasca1 {
+
+    boolean esData(String data){
+        //escriviu aquí la vostra codificació
+    }
+        
+    /*******************************************************/
+    /*                Activitat A404 Tasca 1               */
+    /*                   Codi per provar                   */
+    /*******************************************************/
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Tasca1 prg = new Tasca1();
+        prg.prova();
+    }
+    private void prova() {
+        String valor;
+        boolean dataOk;
+        
+        valor = "18052017";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 1);
+        mostrarVerificacio(dataOk, false);
+
+        valor = "18/05/2017";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 0);
+        mostrarVerificacio(dataOk, true);
+
+        valor = "30-11-1929";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 1);
+        mostrarVerificacio(dataOk, false);
+
+        valor = "30/11/1929";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 0);
+        mostrarVerificacio(dataOk, true);
+
+        valor = "29/02/2001";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 2);
+        mostrarVerificacio(dataOk, false);
+
+        valor = "20/02/2001";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 0);
+        mostrarVerificacio(dataOk, true);
+
+        valor = "11/5/2001";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 1);
+        mostrarVerificacio(dataOk, false);
+
+        valor = "11/05/2001";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 0);
+        mostrarVerificacio(dataOk, true);
+
+        valor = "31/11/2025";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 2);
+        mostrarVerificacio(dataOk, false);
+
+        valor = "31/11/2025";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 0);
+        mostrarVerificacio(dataOk, true);
+
+        valor = "10/15/2015";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 2);
+        mostrarVerificacio(dataOk, false);
+
+        valor = "10/12/2015";
+        dataOk = esData(valor);
+        mostrarResultat(valor, 0);
+        mostrarVerificacio(dataOk, true);
+    }
+    
+    private void mostrarResultat(String valor, int rao){
+        String[] raons = {" és correcta", " no segueix el format.", " no és vàlida"};
+        System.out.print("La data ");
+        System.out.print(valor);
+        System.out.println(raons[rao]);
+    }
+    
+    private void mostrarVerificacio(boolean valorObtingut, boolean valorEsperat){
+        if(valorObtingut==valorEsperat){
+            System.out.println("*** la funció esData funciona correctament ***");
+        }else{
+            System.out.println("*** la funció esData no acaba de funcionar bé ***");
+        }
+        System.out.println();
+    }
+}
+                                    </code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Tingueu en compte la mida de la cadena a l'hora de verificar el format de la data. També us haureu d'assegurar que els caràcters separadors són els adequats i es troben a la posició correcta o que la resta de caràcters només poden ser dígits numèrics entre '0' i '9'. Recordeu que els caràcters admeten els operadors de comparació  ==, &lt;, &gt;, &lt;= i &gt;= per saber quins caràcters es troben abans o després segons l'ordre alfanumèric, el qual respecte l'ordre natural dels dígits numèrics. Qualsevol dígit numèric s'ha de trobar entre el valor '0' i el valor '9' (ambdós inclosos).</p> 
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue2">
+                                        Pista 
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Recordeu que la classe estring disposa de mètodes que us poden ajudar a conèixer el contingut de d'una cadena. Per exemple, per saber el valor del caràcter d'una cadena situat a la posició p, cal que feu servir el mètode <em>text.charAt(p)</em> de la classe String (consulteu l'apartat <a href="https://ioc.xtec.cat/materials/FP/Materials/IC_S_INF/INF_IC_S_M03/web/html/WebContent/u3/a2/continguts.html#acces_als_caracters_d_una_cadena_de_text"  target="_blanc">Accés als caràcters d'una cadena de text</a> del material docent del semestre passat). Si voleu obtenir el fragment d'una cadena entre dues posicions de la mateixa caldrà que feu servir el mètode <em>text.substring(posicioInicial, posicioFinal)</em> (també hi teniu referències a l'apartat <a href="https://ioc.xtec.cat/materials/FP/Materials/IC_S_INF/INF_IC_S_M03/web/html/WebContent/u3/a2/continguts.html#creacio_de_subcadenes" target="_blanc">Creació de subcadenes</a> del material docent del semestre passat). Per passar de cadena de text a tipus enter Caldrà que feu servir la instrucció <em>Integer.parseInt(text)</em> (consulteu també el material docent del semestre passat, l'apartat <a href="https://ioc.xtec.cat/materials/FP/Materials/IC_S_INF/INF_IC_S_M03/web/html/WebContent/u3/a2/continguts.html#conversio_de_cadena_de_text_a_tipus_primitiu"  target="_blanc">Conversió de cadena a tipus primitiu</a>).</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue3">
+                                        Pista 
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Recordeu que cada mes té un rang vàlid de dies diferent. Haureu de trobar la manera de saber el rang a partir del número del més.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals10 ================-->    
+
+                <!--=========== BEGIN SUBSECTION individuals30  ================-->    
+                <section id="slc-individuals30" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>calcularPeriodeEnDies</em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquí us demanarem que codifiqueu una funció que calculi el nombre de dies que hi ha entre dues dates. La funció rebrà dues dates passades com a <em>String</em> en format <em>dd/mm/aaaa</em> i retornarà en nombre de dies que hi ha entre la primera i la segona. No cal que verifiqueu aquí el format de les dates; suposeu que sempre arribaran amb el format correcte.</p>
+                                    <p>Per a fer el càlcul, no tingueu en compte els anys de traspàs. És a dir, suposeu que tots els anys tenen 365 dies i que febrer en té sempre 28.</p>
+                                    <p>De forma semblant a la tasca anterior, aquí també us fem arribar el codi que us permetrà provar la vostra codificació. Creeu una classe anomenada Tasca2 i copieu el codi següent:</p>
+                                    <pre><code class="java">
+public class Tasca2 {
+
+    static int calcularPeriodeEnDies(String dataInicial, String dataFinal){
+        //Codifiqueu aquí
+    }
+    
+    //podeu crear altres funcions auxiliars si ho considereu necessari
+
+
+    /******************************************************/
+    /*                Activitat A404 Tasca 2              */
+    /*                   Codi per provar                  */
+    /* ****************************************************/
+    public static void main(String[] args) {
+        //adapteu la instanciació del programa d'acord amb el nom del fitxer (i nom de la classe) on treballeu.
+        Tasca2 prg = new Tasca2();  //canvieu FuncionsIArrays pel nom del vostre fitxer.
+        prg.prova();
+    }
+
+    private void prova() {
+        String data1;
+        String data2;
+        int diesPassats;
+
+        data1 = "20/07/2018";
+        data2 = "20/07/2018";
+        diesPassats = calcularPeriodeEnDies(data1, data2);
+        mostrarResultat(data1, data2, diesPassats);
+        mostrarVerificacio(diesPassats, 0);
+
+        data1 = "01/05/2015";
+        data2 = "25/05/2015";
+        diesPassats = calcularPeriodeEnDies(data1, data2);
+        mostrarResultat(data1, data2, diesPassats);
+        mostrarVerificacio(diesPassats, 24);
+
+        data1 = "16/05/2017";
+        data2 = "23/06/2017";
+        diesPassats = calcularPeriodeEnDies(data1, data2);
+        mostrarResultat(data1, data2, diesPassats);
+        mostrarVerificacio(diesPassats, 38);
+
+        data1 = "11/07/2016";
+        data2 = "15/10/2017";
+        diesPassats = calcularPeriodeEnDies(data1, data2);
+        mostrarResultat(data1, data2, diesPassats);
+        mostrarVerificacio(diesPassats, 461);
+
+        data1 = "15/05/2015";
+        data2 = "10/06/2015";
+        diesPassats = calcularPeriodeEnDies(data1, data2);
+        mostrarResultat(data1, data2, diesPassats);
+        mostrarVerificacio(diesPassats, 26);
+
+        data1 = "15/09/2015";
+        data2 = "20/04/2016";
+        diesPassats = calcularPeriodeEnDies(data1, data2);
+        mostrarResultat(data1, data2, diesPassats);
+        mostrarVerificacio(diesPassats, 217);
+
+        data1 = "25/12/2015";
+        data2 = "12/07/2016";
+        diesPassats = calcularPeriodeEnDies(data1, data2);
+        mostrarResultat(data1, data2, diesPassats);
+        mostrarVerificacio(diesPassats, 199);
+    }
+
+    private void mostrarResultat(String data1, String data2, int valor){
+        System.out.print("Entre la data ");
+        System.out.print(data1);
+        System.out.print(" i la data ");
+        System.out.print(data2);
+        System.out.print(", hi ha ");
+        System.out.println(valor);
+        System.out.print(" dies.");
+    }
+    
+    private void mostrarVerificacio(int valorObtingut, int valorEsperat){
+        if(valorObtingut==valorEsperat){
+            System.out.println("*** la funció calcularPeriodeEnDies funciona correctament ***");
+        }else{
+            System.out.println("*** la funció calcularPeriodeEnDies no acaba de funcionar bé ***");
+        }
+        System.out.println();
+    }
+}
+                                    </code></pre>
+                                    <p>Codifiqueu la funció calcularPeriodeEnDies tenint en compte que si ho considereu, podeu codificar funcions auxiliars que us ajudin a fer el càlcul.</p> 
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Si ja hi heu donat alguna que altra volta al problema de calcular el nombre de dies que hi ha entre dues dates, haureu vist que no es tracta d'un problema trivial. Per ajudar-vos a trobar una solució correcte us proposem dues fórmules diferents. La primera consistiria en comptar, un a un, cada una del dies entre la primer i la segona data. En termes de programació direm que  cal iterar dia a dia des de la primera data fins arriba a la segona i per cada iteració incrementa en un, el comptador de dies. Si es tractés de números en lloc de dates, segur que tots sabríeu implementar aquest algorisme. Ara bé, la diferencia entre números i dates es troba en que els dies, en arribar al valor màxim corresponent, incrementen el valor del mes i es reinicien al valor 1. De forma semblant, els mesos, en sobrepassar el valor de 12, incrementen el valor de l'any i es reinicien també a 1. Per tant l'estructura de repetició haurà de controlar, quan cal canviar de mes i quan d'any a més de comprovar en quina iteració arribem a la data final per deixar de comptar dies. Segur que per facilitar els càlculs és millor que passeu el dies, el mesos i els anys de les dues dates a un tipus numèric. </p>
+                                        <p> Comptar un a un els dies entre dates, no sembla la forma més eficient de realitzar aquesta operació, tot i que és totalment efectiva. Ara bé, segur que hi ha d'haver una forma de simplificar el recompte aplicant operacions que ens evitin haver de recomptar un a un els dies entre dates. Si partim del mateix símil que a la fórmula anterior, podem observar que per trobar quants números enters hi ha entre dos enters qualsevol sense fer cap iteració, caldria simplement realitzar una resta. Quelcom semblant s'ha de poder fer amb les dates, però tenint en compte les singularitats pròpies dels tipus de dada, ja que en tractar-se d'un tipus compost per 3 tipus diferents d'unitats (dies, mesos i anys), no n'hi haurà prou amb una simple resta, sinó que caldrà trobar la deferència entre els dies, entre els mesos i entre els anys i passar-les totes elles a dies. Ara bé, aquí la dificultat es troba en que no tots els mesos tenen els mateixos dies i per tant no és possible calcular el nombre de dies restant mesos, ja que una mateixa diferencia contindrà més o menys dies en funció dels mesos implicats. Per exemple una diferencia de 3 mesos, poden ser 89 dies si fossin febrer, març i abril, o 92 dies si comencem a comptar des de juny. A més, per realitzar correctament la operació s'ha de preveure si és necessari traspassar dies des de les unitats mes grans a les més petites per poder realitzar la resta de forma semblant a com operem manualment passant centenes a desenes o desenes a unitats segons convingui.</p>
+                                        <p>La segona fórmula permet simplificar tota aquesta lògica partint de la base que si calculem el nombre de dies que han passat des del moment zero en que es va començar a comptar el calendari fins la data final i a aquest valor li restem el nombre de dies que han passat des del moment zero fins la data inicial, el resultat obtingut serà exactament la diferencia de dies entre les dues dates. Sortosament calcular el nombre de dies des del moment zero fins una data qualsevol, resulta força senzill, ja que només cal sumar els dies que ja han passat del més en curs, sumar els dies que tenen els mesos compresos entre gener i el mes anterior al mes en curs i a aquest resultat sumar-hi el nombre de dies corresponents a la quantitat d'anys de la data menys un. Cal treure una unitat a l'any en curs a fi de comptar només anys sencers i no errar el càlcul. Així per exemple per saber el nombre de dies transcorreguts des del moment zero fins el dia 10/04/1001 caldrà:</p>
+                                        <ul>
+                                            <li>Iniciar el comptador amb els 10 dies transcorreguts del mes d'abril</li>
+                                            <li>Incrementar el comptador en 90 dies corresponents als mesos de gener, febrer i març (31+28+31).</li>
+                                            <li>Incrementar el comptador en 3650 dies corresponents als mil anys sencers que han passat des del moment zero.</li>
+                                        </ul>
+                                        <p>Total 3750 dies.</p>
+                                        <p>Si voléssim saber la diferència entre la data 10/04/1001 i la data 20/04/1001, caldria calcular el dies des del moment zero per ambdues dates i fer la diferència: 3760-3750 = 10</p>
+                                        <p>Usant aquesta fórmula podem fins i tot calcular períodes negatius, és a dir períodes en que la data inicial és posterior a la data final.</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Per saber quants dies han passat corresponents als mesos sencers d'una data cal iterar des de gener fins el mes anterior al mes en curs incrementant el nombre de dies que tingui el mes corresponent a la iteració.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals30 ================-->
+                
+              <!--=========== BEGIN SUBSECTION individuals40  ================-->    
+                <section id="slc-individuals40" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>trobarPrimeraFilaCoincidentAPartirDe</em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca haureu de codificar la funció <em>trobarPrimeraFilaCoincidentAPartirDe</em>. La funció rebrà una matriu d'enters, un valor enter que servirà per comparar-lo amb els valors de les columnes situades on indiqui el paràmetre <em>columnaOnComparar</em> i retornarà la posició de la primera fila coincident. La cerca es començarà sempre a partir de la posició indicada en el paràmetre <em>cercarDesDeFila</em>. En cas que no existeixi cap fila amb un valor coincident, es retornarà -1.</p>
+                                    <p>La funció tindrà la forma següent:</p>
+                                    <p class="iocimportant"> 
+                                        <pre><code class="java">
+    public int trobarPrimeraFilaCoincidentAPartirDe(int[][] matriu, int valorAComparar, int columnaOnComparar, int cercarDesDeFila){
+        ...
+    }
+                                            
+                                        </code></pre>
+                                    </p>
+                                    <p>Així, si el paràmetre <em>matriu</em> tingués el valor:</p>
+                                    <p class="iocimportant">
+                                    <pre><code class="java">
+{
+    {6, 2, 5, 3, 1, 5, 7},
+    {5, 7, 3, 3, 2, 8, 1},
+    {2, 2, 6, 5, 7, 3, 1},
+    {4, 3, 1, 8, 6, 1, 0},
+    {2, 5, 7, 3, 2, 6, 1},
+    {5, 1, 2, 8, 0, 4, 3},
+    {8, 2, 1, 1, 1, 8, 9},
+    {0, 4, 3, 1, 8, 7, 2},
+    {7, 2, 1, 9, 1, 5, 9}
+};
+                                            
+                                    </code></pre>
+                                    </p>
+                                    <p>Si el paràmetre columnaOnComparar fos igual a <em>1</em>, valorAComparar valgués <em>2</em> i el paràmetre <em>cercarDesDeFila</em> tingués el valor 3, la funció hauria de retornar el valor 6, perquè a partir de la fila 3, la primera fila que tingui un 2 a la columna 1, es troba a la posició 6. En canvi si <em>cercarDesDeFila</em> hagués valgut <em>2</em> la funció hauria retornat el valor 2, ja que a la fila 2, des d'on cal començar a buscar, el valor de la columna <em>columnaOnComparar</em> coincideix amb el valor a cercar (valorAComparar) i per tant no cal avançar de fila fins trobar un valor coincident. D'altra banda, si el valor a cercar hagués estat 7, la funció retornaria -1 perquè a la columna 1, no existeix cap valor 7 a partir de la fila 2.</p>
+                                    <p>Es demana que implementeu la funció <em>trobarPrimeraFilaCoincidentAPartirDe</em> com a part d'una classe anomenada Tasca3 o hi podeu copiar el codi que us facilitem en el següent paràgraf, a fi de poder provar adequadament la vostra codificació.</p>
+                                    <pre><code class="java">
+public class Tasca3 {
+
+    int trobarPrimeraFilaCoincidentAPartirDe(int[][] matriu, 
+                                                int valorAComparar, 
+                                                int columnaOnComparar, 
+                                                int cercarDesDeFila){
+        //Codifiqueu aquí el vostre codi
+    }
+    
+    /*******************************************************/
+    /*                Activitat A404 Tasca 3               */
+    /*                   Codi per provar                   */
+    /*******************************************************/
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Tasca3 prg = new Tasca3(); 
+        prg.prova();
+    }
+    private void prova(){
+        int resposta;
+        int[][] valors = {
+            {0,0,0,0,0,0,0,0},        //0
+            {1,20161001,1,0,0,0,0,0}, //1
+            {2,20161001,2,2,1,0,1,0}, //2
+            {0,0,0,0,0,0,0,0},        //3
+            {2,20161001,4,2,1,0,1,1}, //4
+            {2,20161001,0,0,0,0,0,0}, //5
+            {1,0,0,0,0,0,0,0},        //6
+            {1,20161001,0,0,0,0,0,0}, //7
+            {2,20161001,2,1,1,0,0,0}  //8
+        };
+
+        resposta = trobarPrimeraFilaCoincidentAPartirDe(valors, 0, 1, 0);
+        mostrarResultat(0, resposta, 0, 1);
+        mostrarVerificacio(resposta, 0);
+        resposta = trobarPrimeraFilaCoincidentAPartirDe(valors, 0, 1, 2);
+        mostrarResultat(2, resposta, 0, 1);
+        mostrarVerificacio(resposta, 3);
+        resposta = trobarPrimeraFilaCoincidentAPartirDe(valors, 0, 1, 4);
+        mostrarResultat(4, resposta, 0, 1);
+        mostrarVerificacio(resposta, 6);
+        resposta = trobarPrimeraFilaCoincidentAPartirDe(valors, 0, 1, 7);
+        mostrarResultat(7, resposta, 0, 1);
+        mostrarVerificacio(resposta, -1);        
+    }
+
+    private void mostrarResultat(int cercatDesDe, int resposta, int valorComparat, int columnaComparada){
+        System.out.print("La primera fila trobada amb la columna ");
+        System.out.print(columnaComparada);
+        System.out.print(" de valor ");
+        System.out.print(valorComparat);
+        System.out.print(" des de la posicio ");
+        System.out.print(cercatDesDe);
+        System.out.print(" ha estat: ");
+        System.out.print(resposta);
+        System.out.println(".");
+    }
+    
+    private void mostrarVerificacio(int valorObtingut, int valorEsperat){
+        if(valorObtingut == valorEsperat){
+            System.out.println("*** la funció calcularPeriodeEnDies funciona correctament ***");
+        }else{
+            System.out.println("*** la funció calcularPeriodeEnDies no acaba de funcionar bé ***");
+        }
+        System.out.println();
+    }
+}
+                                    </code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue1">
+                                        Pista
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue1" class="iocClue hidden">
+                                        <h2>Pista</h2>
+                                        <p>Per trobar el valor coincident, no és necessari recórrer tots els elements de la matriu. De fet, només caldria saltar de fila en fila i comparar directament el valor de la columna específica amb el paràmetre a comparar.</p>
+                                        <p>Recordeu que en una matriu, la fila és la primera dimensió, mentre que la columna és la segona.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals40 ================--> 
+
+                <!--=========== BEGIN SUBSECTION individuals20  ================-->    
+                <section id="slc-individuals20" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funcions d'interfície d'usuari</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca us proposem que escriviu 3 funcions per facilitar la creació d'interfícies d'usuari. Es tracta, però de 3 funcions que requerixen a l'usuari que escrigui alguna cosa per teclat i retronen el que aquest indiqui. Si us esforceu un mica trobareu maneres de reutilització entre elles. D'altra banda, en algun cas, podreu reutilitzar també funcions que ja heu codificat en altres tasques. No us despisteu i les codifiqueu de nou. Per reutilitzar-les, de moment i mentre no en sabeu més, caldrà que copieu el codi codificat dins la classe on voleu fer la reutilització. Més endavant ja us ensenyarem altres formes.</p>
+                                    <p>Tot seguit passem a comentar cada una de les funcions que cal implementar:</p>
+                                    <ul>
+                                        <li><em>String <strong>entrarCadena</strong>(String missatgeExplicatiu)</em>: Aquesta funció mostrarà per pantalla el text que rebi com a únic paràmetre i seguidament esperarà a que l'usuari escrigui per teclat qualsevol text fins que premi la tecla <em>[ENTRAR]</em>. És important que només se surti prement la tecla <em>[ENTRAR]</em> i no cap altre. El text escrit no ha de complir cap requisit. Pot ser una cadena buida o qualsevol altre combinació de caràcters sense límit de longitud. La funció retornarà el text introduït sense el caràcter de sortida. És a dir, sense la tecla [ENTRAR] equivalent al salt de línia.</li>
+                                        <li>
+                                            <p><em>String <strong>entrarDataAmbDef</strong>(String missatgeExplicatiu, String valorPerDefecte)</em>: Es tracta d'una funció que espera l'escriptura d'una data en format dd/mm/aaaa. El format és estricte, això vol dir que el dia i el mes han de tenir forçosament 2 digits i l'any 4. A més, el caràcter separador ha de ser obligatòriament la barra inclinada. Si la data compleix el format, es retornarà com una cadena de text. Per contra, si el format és erroni, s'indicarà a l'usuari i es demanarà a l'usuari que ho torni a intentar.</p>
+                                        <p>La funció rep dos paràmetres en lloc d'un. El primer servirà, igual que en el cas anterior, per mostrar el missatge a la pantalla abans de començar a esperar la interacció de l'usuari. El segon es farà servir com a valor per defecte en cas que l'usuari escrigui una cadena buida. És a dir, si l'usuari prem la tecla <em>[ENTRAR]</em> sense haver escrit res prèviament (cadena buida), la funció retornarà el text passat en el segon paràmetre. Cal suposar que el valor per defecte és una data en el format correcte. En principi no caldria fer cap comprovació. En qualsevol altre cas (l'usuari escriu una cadena no buida), caldrà comprovar el format abans de retornar el valor.</li>
+                                        <li>
+                                            <p><em>boolean <strong>confirmarAmbDef</strong>(String missatgeExplicatiu, char defaultValue)</em>: Es tracta d'una funció que ha de servir perquè l'usuari confirmi amb un "si" o un "no" la informació que se li passa en el primer paràmetre i que es mostrarà per la pantalla en el moment de l'execució. Un cop mostrat el missatge s'esperarà que l'usuari escrigui per teclat i premi la tecla <em>[ENTRAR]</em>. La funció retornarà un valor lògic (booleà), de manera que si el text escrit per l'usuari comença pel caràcter 's' o 'S', es retornarà cert. En qualsevol altre cas es retornarà fals. El segon paràmetre conté el valor per defecte ('s' o 'n') o bé el caràcter de codi zero ('\0'). En cas que el valor per defecte no sigui el valor '\0', s'avaluarà com si hagués estat introduït per l'usuari retornat cert si fos 's' o 'S' i fals en cas contrari. Ara bé, si el valor per defecte és '\0' i la interacció amb l'usuari pren el valor d'una cadena buida, caldrà repetir la demanda tot indicant que no s'admeten valors per defecte.</p>
+                                            <p>Suposeu que el missatge serà explicit amb els valors demanats i que presentarà coherència en funció de quina sigui la opció per defecte. És a dir suposarem que el text del primer paràmetre, a més d'explicar el que cal confirmar, indicarà en algun lloc les opcions que es reconeixeran (per exemple amb la cadena 's/n', 'S/n' o 's/N'), entenent que el valor de la opció en majúscula és el valor per defecte. Sigui com sigui, no heu de fer cap comprovació, heu de suposar que el missatge arriba seguint aquest requeriments.</p>
+                                        </li>
+                                    </ul>
+                                    <p>Per tal que pugueu provar el vostre codi, en aquest cas, també us passem la classe <em>Tasca4</em> amb el <em>main</em> i la funció de <em>prova</em> que us ha de permetre saber si la vostra codificació funciona bé. </p>
+                                    <pre><code class="java">
+import java.util.Scanner;
+
+public class Tasca4 {
+
+    String entrarText(String missatgeExplicatiu){
+        //PENDENT!
+    }
+    
+    String entrarDataAmbDef(String missatgeExplicatiu, String defaultValue){
+        //PENDENT!
+    }      
+
+    String entrarTextNoBuit(String missatgeExplicatiu){
+        //PENDENT!
+    }
+
+    
+    boolean confirmarAmbDef(String missatgeExplicatiu, char defaultValue){
+        //PENDENT!
+    }
+    
+    /*******************************************************/
+    /*                    Codi per provar                  */
+    /*******************************************************/
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Tasca2 prg = new Tasca2();
+        prg.prova();
+    }
+    
+    /*******************************************************/
+    /*                Activitat A404 Tasca 7               */
+    /*                   Codi per provar                   */
+    /*******************************************************/
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Tasca4 prg = new Tasca4();
+        prg.prova();
+    }
+    
+    public void prova() {
+        boolean confirmacio;
+        String valor;
+        
+        //Prova la funció entrarText
+        valor = entrarCadena("Entra un text qualsevol. Pot ser buit:\n");
+        System.out.print("El texte entrat per teclat és: " );
+        System.out.println(valor);
+
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------");
+        valor = entrarDataAmbDef("Entra una data qualsevol. No deixa entrar dates no valides.\nSi entres una cadena buita, retornarà \"24/03/2000\":\n"
+                                      , "24/03/2000");
+        System.out.print("El texte entrat per teclat és: " );
+        System.out.println(valor);
+
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------");
+        valor = entrarDataAmbDef("Entra una data qualsevol. No deixa entrar dates no valides:\n", "");
+        System.out.print("El texte entrat per teclat és: " );
+        System.out.println(valor);
+        
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------");
+        confirmacio = confirmarAmbDef("Confirmació 1: afirmatiu per defecte. Vols confirmar? (S/n) ", 's');
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------------------------------");
+        confirmacio = confirmarAmbDef("Confirmació 2: negatiu per defecte. Vols confirmar? (s/N) ", 'n');
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------------------------------");
+        confirmacio = confirmarAmbDef("Confirmació 3: cal contestar. Vols confirmar? (s/n) ", '\0');
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------------------------------");
+        confirmacio = confirmarAmbDef("Confirmació 4: cal contestar. Vols confirmar? (s/n) ", '\0');
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+    }
+}
+
+                                    </code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Consulta l'API de la <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html" target="_blank">classe Scanner</a> i de la <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html" target="_blank">classe String</a> de JAVA, per refrescar quines instruccions poden ajudar-te a forçar que només se surti del procés de detecció de tecles, si es prem [ENTRAR] i no cap altra tecla o, per saber com es pot saber si una cadena és buida o no.</p>
+                                        <p>Específicament aturat a les instruccions de tipus <em>hasNextXXX</em> i <em>nextXXX</em> de la classe Scanner.</p>
+                                        <p>De la classe String, estigues atent als mètodes <em>long</em>, <em>isEmpty</em>, <em>charAt</em>, <em>toLowerCase</em> i <em>toUpperCase</em>.</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Per fer aquesta tasca, us podeu inspirar en la funció implementada a l'exercici 1 de l'activitat <a href="../A402_funcions2.html#slc-toDo__slc-toDo21" target="_blank">A402</a>.</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Recordeu que per comprovar la validesa de la data, heu codificat una funció anomenada esData. Per reutilitzar-la, copieu el seu codi a la classe Tasca4. Copieu estrictament el codi de la funció, NO la resta de la classe o està codificada. Més endavant aprendreu a fer servir funcions codificades en diferents classes sense necessitat d'haver de copia el seu codi, però de moment la còpia pot considerar-se una bona opció.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals20 ================-->  
+            </section>
+            <!--=========== END SECTION individuals ================-->    
+            
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>En aquesta <b>activitat 404</b> heu de lliurar els 5 fitxers de codi corresponents a les tasques que heu realitzat a la secció <em>Tasques a realitzar</em>. Comprimiu-los en un ZIP (A404ProjecteI.zip) i lliureu el fitxer comprimit a la <span class="bustiaLliurament"></span>. Recordeu que aquesta bústia és multilliurament, per tant, si ja teniu fet algun enviament anterior no us preocupeu que no s’esborrarà.</p>
+                                <p>Es recomana lliurar aquestes activitats abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class='dataLimit'></strong></p>
+                                <p>Recordeu que aquesta activitat és qualificable i per tant té un pes important sobre la nota final.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Un cop hàgiu lliurat les tasques demanades podreu passar a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <ul>
+                <li>Assimilar la creació de funcions a partir d'una descripció que explica els seu comportament.</li>
+                <li>Assimilar la sintaxi necessària per crear i cridar funcions</li>
+                <li>Reutilitzar funcions senzilles a l'hora de codificar per evitar repetir codi.</li>
+            </ul>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <p>RA 1. Escriu i prova programes senzills reconeixent i aplicant els fonaments de la programació modular</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <p>Podeu consultar els materials que fèieu servir al bloc 1 per recordar funcions que us permeten treballar amb cadenes de caràcters a <a class="materialCadenesDeText targetBlank">aquí</a> </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A404");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

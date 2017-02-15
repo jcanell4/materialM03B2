@@ -1,0 +1,196 @@
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer? Classes, biblioteques i tipus composts</h2>
+                                     <h3> Tasca 2. Codificació de Biblioteques de funcions estàtiques</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquí us proposem crear una biblioteca de diverses utilitats que de ben segur podreu reutilitzar en el projecte. A fi de practicar el que heu anat descobrint, en aquesta activitat, us proposem la creació d'una biblioteca d'utilitats que no precisi la inicialització de la classe. És a dir que faci servir mètodes estàtics.</p>
+                                    <p>Us proposem que codifiqueu 4 funcions en una classe anomenada Utils:</p>
+                                    <ul>
+                                        <li>Funció <em>String <strong>obtenirDataAvui</strong>()</em>. Aquesta funció està pensada per obtenir la data del dia en format dd/mm/aaaa. No rep cap paràmetre. Només retorna la data actual. Per codificar-la investigueu la classe Calendar i String. Podeu trobar informació aquí:
+                                            <ul>
+                                                <li><em>Calendar:</em> És una classe per tractar dates i hores. Aconsegueix la data i hora actual de forma fàcil. També permet obtenir cada component de la data i l'hora per separat (hora, minut, dia, mes, etc.). Presteu especial atenció a: <a class="apiCalendarGetInstance targetBlank">Calendar.getInstance()</a>, <a class="apiCalendarGet targetBlank">Calendar.get(field)</a> i als <em>fields</em> anomenats <a class="apiCalendarDAY targetBlank">Calendar.DAY_OF_MONTH</a>, <a class="apiCalendarMONTH targetBlank">Calendar.MONTH</a> i  <a class="apiCalendarYEAR targetBlank">Calendar.YEAR</a>.</li>
+                                                <li><em>String.format():</em> permet convertir qualsevol tipus de dada en una cadena de caràcters amb un format que es pot especificar. Veieu <a class="apiStringFormatUrl targetBlank">String.format()</a>. També teniu informació sobre la manera usar aquesta funció al <a class="docStringFormat targetBlank">document intern C59</a>.</li>
+                                            </ul>
+                                        </li>
+                                        <li><p>La funció <em>String <strong>obtenirHoraAra</strong>()</em>, de forma similar a l'anterior, obtindrà i retornarà la hora actual. La funció tampoc rep cap paràmetre. Si heu codificat la funció <em>obtenirDataAvui</em>, no us costarà massa extrapolar la investigació que ja heu fet a la obtenció i conversió de la hora a una cadena amb format.</li>
+                                        <li>La funció <em>int <strong>ConvertirStringDataAInt</strong>(String data)</em> ha de permetre convertir una data que arribi per paràmetre com una cadena de caràcters amb el format dd/mm/aaaa, en una valor enter calculat a partir dels dígits de la data seguint l'esquema aaaammdd. És a dir si per paràmetre se li passa el valor "20/11/2013", la funció haurà de retornar 20131120. No és necessari que comproveu la validesa del paràmetre d'entrada. Suposeu que el paràmetre arribarà sempre amb el format correcte.</li>
+                                        <li>La darrera funció a implementar és <em>String <strong>convertirIntDataAString</strong>(int data)</em>. Es tracta de la funció que fa la operació inversa a l'anterior. És a dir rep un paràmetre de tipus enter representant una data amb el format  aaaammdd i converteix la dada en una cadena de caràcter amb el format dd/mm/aaaa, la qual retronarà un cop convertida. En aquest, cas tampoc cal que valideu el format d'entrada, podeu suposar que sempre arriba correctament. A mode d'exemple direm que si la funció rep el valor 20131120, haurà de retornar la següent cadena de text: "20/11/2013".</li>
+                                    </ul>
+                                    <p>A més de la classe <em>Utils</em>, feu també una classe anomenada Tasca2 que us permeti provar el bon funcionament de les funcions anteriors, a mode de joc de proves.</p>
+                                    <p>De manera voluntària, per tal de completar la biblioteca, podeu afegir-hi les funcions de l'activitat A404 que ja teniu codificades. De fet només es tractaria de copiar el codi de les 4 funcions i adaptar-lo per tal de convertir-les en funcions estàtiques igual que les que acabeu de codificar. Això s'aconsegueix només afegint-hi la paraula static al codi copiat. Així us queda una biblioteca acabada i a punt per fer servir en el projecte.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Us proposem dues maneres per obtenir la data o la hora com una cadena amb format. La primera consisteix en obtenir per separat els valors enters de cada component i amb aquests, fer servir la funció format per aconseguir un format correcte (investigueu la classe Calendar si opteu per aquesta forma). El segon mètode consisteix en fer servir directament la dada de tipus Calendar a la funció <em>format</em>. En aquest darrer cas caldrà que feu sevir les marques %td, %tm, %tY, %tH o %tM a la cadena patró (investigueu doncs la formatació de cadenes si opteu per la segona metodologia).</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Recordeu que per extreure parts d'una cadena, la classe String disposa d'una utilitat anomenada <em>substring</em>. Trobareu informació de com fer servir aquest mètode en els materials del bloc 1 i també consultant <a class="apiStringSubstringUrl" target="_blank">l'API de la classe String</a>.</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>La manera d¡aconseguir extreure parcialment els dígits que composen un número consisteix en usar de forma combinada les operacions de divisió (/) i de mòdul (%). El mòdul per una potència de 10, ens permet extreure un nombre dígits variable de la part dreta de la xifra. La divisió per una potència 10, en canvi, ens permet retallar un nombre variable de dígits situats també a la part dreta de la xifra. Així, si primer obtenim el nombre de dígits de la dreta que necessitem i després retallem la mateixa quantitat de dígits, aconseguirem obtenir grups de dígits a partir de la part dreta de la xifra i avançant cap a la part esquerra. Vegem algun exemple:</p>
+                                        <p>Per separar un xifra dígit a dígit, farem successives operacions de mòduls i divisions per 10. Imaginem que volem separar en tots els dígits que composen la xifra 2194. En primer lloc calcularem el dígit de més a la dreta operant el valor 2194 pel mòdul 10 (2194%10) i obtindrem el valor 4. Seguidament eliminarem el digit que acabem de descobrir dividint per 10, dons recordeu que la divisió entera dona com a resultat un entre sense decimals. És a dir 2194/10. Així obtindrem el valor 219. Tornarem a aplicar el mòdul (219%10) i aconseguirem el valor 9. Un cop descobert eliminarem el dígit dividint per 10 (219/10 = 21). Si repetim el procés dos cops més aconseguirem extreure tots els dígits.</p>
+                                        <p>Si en comptes de separar dígit a dígit voléssim aconseguir 3 dígits de més a la dreta, el dos següents i un dígit més de la xifra 352684, caldrà  usar la potència de 10<sup>3</sup> per extreure el 3 dígits, la potencia de 10<sup>2</sup> pels següents i 10 pel darrer. Així farem: </p>
+                                        <pre><code class="java">
+           352684%1000  = 684    Aconseguim els 3 dígits de més a la dreta
+           352684/1000  = 352    Retallem 
+           352%100      =  52    Aconseguim els 2 dígits de més a dreta
+           352/100      =   3    Retallem
+           3%10         =   3    Aconseguim el darrer dígit. 
+                                        </code></pre>
+                                    </div>  
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-solution="#slc-toDo20-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo20-solution" class="iocSolution hidden">
+                                    <p>Classe Utils:</p>
+                                        <pre><code class="java">
+public class Utils {
+    static String obtenirDataAvui(){
+        Calendar calendar = Calendar.getInstance();
+        return String.format("%td/%tm/%tY", calendar, calendar, calendar);
+    }
+
+    static String obtenirHoraAra(){
+        Calendar calendar = Calendar.getInstance();
+        return String.format("%tH:%tM", calendar, calendar);
+    }
+    
+    static int ConvertirStringDataAInt(String data){
+        String strData;
+        strData = data.substring(6, 10);
+        strData += data.substring(3, 5);
+        strData += data.substring(0, 2);
+        return Integer.valueOf(strData);
+    }
+    
+    static String convertirIntDataAString(int data){
+        String ret="";
+        ret += String.format("%02d", data % 100);
+        data /= 100;
+        ret += "/";
+        ret += String.format("%02d", data % 100);
+        data /= 100;
+        ret += "/";
+        ret += String.format("%04d", data);
+        return ret;
+    }    
+}
+                                        </code></pre>                         
+                                        <p>Classe Tasca2 de prova:</p>
+                                        <pre><code class="java">
+public class Tasca2 {
+    
+     public static void main(String[] args) {
+         Tasca2 prg = new Tasca2();
+         prg.prova();
+     }
+    
+    void prova(){
+        String valorText;
+        int valorInt;
+        
+        valorText = Utils.obtenirDataAvui();
+        mostrarDataAvui(valorText);
+        
+        valorText = Utils.obtenirHoraAra();
+        mostrarHoraAra(valorText);
+        
+        valorText = "22/01/1995";
+        valorInt = Utils.ConvertirStringDataAInt(valorText);
+        mostrarResultatConvertirStrAInt(valorText, valorInt);
+        mostrarVerificacioStrAInt(valorInt, 19950122);
+        
+        valorInt = 21531024;
+        valorText = Utils.convertirIntDataAString(valorInt);
+        mostrarResultatConvertirIntAStr(valorInt, valorText);
+        mostrarVerificacioIntAStr(valorText, valorText);
+        
+    }   
+    
+    private void mostrarDataAvui(String valor){
+        System.out.print("La data actual és ");
+        System.out.println(valor);
+    }
+    
+    private void mostrarHoraAra(String valor){
+        System.out.print("La hora actual és ");
+        System.out.println(valor);
+    }
+    
+    private void mostrarResultatConvertirStrAInt(String valor, int calcul){
+        System.out.print("La data ");
+        System.out.print(valor);
+        System.out.print(" s'ha convertit a ");
+        System.out.println(calcul);
+    }
+    
+    private void mostrarVerificacioStrAInt(int valorObtingut, int valorEsperat){
+        if(valorObtingut==valorEsperat){
+            System.out.println("*** la funció ConvertirStringDataAInt funciona correctament ***");
+        }else{
+            System.out.println("*** la funció ConvertirStringDataAInt no acaba de funcionar bé ***");
+        }
+        System.out.println();
+    }
+
+    private void mostrarResultatConvertirIntAStr(int valor, String calcul){
+        System.out.print("La data ");
+        System.out.print(valor);
+        System.out.print(" s'ha convertit a ");
+        System.out.println(calcul);
+    }
+    
+    private void mostrarVerificacioIntAStr(String valorObtingut, String valorEsperat){
+        if(valorObtingut.equals(valorEsperat)){
+            System.out.println("*** la funció convertirIntDataAString funciona correctament ***");
+        }else{
+            System.out.println("*** la funció convertirIntDataAString no acaba de funcionar bé ***");
+        }
+        System.out.println();
+    }
+}
+                                        </code></pre>
+                                    </div>                                    
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Debat 2 ================-->     
+
