@@ -517,12 +517,23 @@ figcaption .figuretitle {
     counter-increment: ctable;
 }
 
-.tablescope caption {
+.tablescope caption,
+.caption{
     caption-side: bottom;
     padding-top: 5px;
 }
 
-caption .tabletitle {
+.caption{
+    font-size: 0.8em;
+    text-align: right;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #777;
+    text-align: left;
+}
+
+caption .tabletitle,
+.caption .tabletitle{
     font-weight: bold;
 }
 

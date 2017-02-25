@@ -1,0 +1,101 @@
+            <!--=========== BEGIN SECTION toDo10 ================-->    
+            <section id="slc-toDo10" class=" section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Tasques individuals - Introducció</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Seguint els consells que heu extret dels fòrums, cal que implementeu l'esquelet dels mòduls del projecte. Recordeu que la creació de l'esquelet no implica haver d'implementar el codi dels mètodes de les classes que creareu, sinó que més aviat consisteix en preveure quines funcions seran necessàries, declarar-les (indicant el nom, els paràmetres i el retorn, però deixant buit el codi intern) i organitzar-les en les diferents classes que hàgim detectat com a necessàries per a la implementació.</p>
+                                <p>Per aconseguir-ho amb èxit, us demanarem que feu dues tasques. A la primera us demanarem  que feu l'esquema de mòduls i tasques. La segona tasca consisteix en implementar pròpiament l'esquelet de classes i funcions de l'aplicació a partir de l'esquema realitzats a la primera tasca.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDo10 ================-->    
+            <!--=========== BEGIN SECTION toDo20 ================-->    
+            <section id="slc-toDo20" class=" section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Tasques individuals - Esquema de mòduls, tasques i disseny descendent</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>En aquesta tasca us demanem que dissenyeu un esquema semblant al realitzat a l'exemple vist en el <a href="#slc-discussion__slc-discussion23" target="_blank">fòrum 4</a> on quedi ben establert quins mòduls i quines tasques necessitarà el vostre codi. En el mòduls descriviu-hi els menús que necessitaran i a les tasques, indiqueu de forma descriptiva quines accions requeriran per poder-les dur a terme.</p>
+                                <p>La descripció de les tasques la podeu fer en la mateixa taula de l'esquema, de forma idèntica a com s'ha fet a l'exemple del fòrum 4. Les tasques que siguin complexes, podeu, a més, detallar-ne el disseny descendent (a mode d'esquema o en format taula - vegeu l'activitat <span class="A405">A405</span> ).</p>
+                                <p>Per realitzar l'esquema, rellegiu i tingueu present el que demana l'enunciat. Recordeu que els preus de les tarifes es definiran literalment en el codi i per tant no caldrà implementar la introducció ni el manteniment d'aquestes dades. Com sabeu, el càmping treballa amb dues tarifes que s'han de poder escollir i canviar tal com recull l'enunciat. Recordeu també que malgrat que el càmping disposa de 218 parcel·les, esteu fent un prototipus i podeu reduir-les al voltant d'unes 15 per tal de provar l'aplicació. L'enunciat narra també que l'aplicació ha de poder llistar totes les parcel·les buides que hi hagi en un moment donat, a fi de poder-les mostrar al client. Quan el client acabi decidint on s'instal·larà, haurà de comunicar la decisió a la recepció on entraran les dades d'ocupació i indicaran els serveis que el client desitja contractar. Quan el client marxi haurà de passar per recepció a pagar. En aquest cas, l'aplicació haurà de calcular l'import de la factura i mostrar-ne el detall. Òbviament caldrà implementar també les formes d'indicar que les parcel·les han quedat desocupades, les quals estan explicades a l'enunciat. Fixeu-vos que alguns clients marxen en el moment de pagar, però altres en canvi, prefereixen pagar el dia abans de la partida. L'enunciat proposa que per facilitar la feina sigui possible marcar les parcel·les que s'han pagat amb antel·lació per tal de poder-les llistar i controlar al dia següent, a fi de desocupar-les tant bon punt sigui possible.</p>
+                                <p> Per descomptat, podeu fer servir el fòrum reduït per exposar dubtes, plantejar solucions i col·laborar amb els vostres companys a fi de trobar una bona solució. No us faci por discutir, ni compartir.</p>
+                                <!-- Button trigger pannel -->
+                                <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                        data-toggle="button"
+                                        data-parent-selector="#leftColumnPanel"
+                                        data-display-on-set-slide="slc-toDo20" 
+                                        data-selector-clue="#slc-toDo20-clue1">
+                                    Pista
+                                </button>                                        
+                                <div id="slc-toDo20-clue1" class="iocClue hidden">
+                                    <h2>Pista</h2>
+                                    <p>En referència al nombre de mòduls que l'aplicació hauria de tenir, cal pensar que el prototipus demanat és una aplicació senzilla i segurament, serà correcte aglutinar tota la funcionalitat demanada, en un únic mòdul. Podeu optar per altres solucions, però aquesta us resultarà més senzilla d'implementar.</p>
+                                    <p>Les tasques es desprenen del resum que s'ha fet aquí. També podeu fer servir l'enunciat per assegurar que no se us n'escapa cap. Seguiu la descripció i plantegeu-vos  si tot el que es descriu pot quedar inclòs en alguna de les tasques que heu posat. Sigueu sistemàtics. Si fos precís elaboreu una llista manualment per evitar que se us escapin coses. Si descobriu alguna cosa que no estès encara contemplada, caldrà afegir una nova tasca que la contempli.</p>
+                                    <p>Finalment, en referència a les accions, no li doneu massa voltes. Declareu només les que tingueu clares, les que esteu segurs que seran un funció i deixeu estar la resta. Quan comenceu a implementar tasca per tasca, amb el disseny descendent a la mà, tindreu el problema molt més acotat i aconseguireu millors resultats. Recordeu que aquesta tasca només té per objectiu definir l'estructura de classes i mètodes que pugui donar resposta de forma global a l'aplicació plantejada en el projecte. Tot i així, per tenir una mica de guia, podeu agafar com a referència l'exemple vist en el fòrum 4. Plantegeu-vos quines serien les accions per inicialitzar els mòduls, els menús, els controls, etc.</p>
+                                    <p>Repetim, no us deixeu atabalar per les accions, si surten bé, si no, ja les reprendreu més endavant.</p>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDo20 ================-->    
+            <!--=========== BEGIN SECTION toDo30 ================-->    
+            <section id="slc-toDo30" class=" section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Tasques individuals - Codificació de l'esquelet de classes i funcions del projecte</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Agafeu de base l'esquema de mòduls i tasques per començar a implementar l'esquelet de classes. Recordeu que la creació de l'esquelet no implica haver d'implementar el codi dels mètodes de les classes que creareu, sinó que consisteix en declarar les funcions (indicant el nom, els paràmetres i el retorn, però deixant buit el codi intern) que hàgim previst a partir del disseny.</p>
+                                <p>En ser el primer esquelet que feu, us demanarem que escriviu un comentari descriptiu en les classes i els mètodes que finalment declareu. La memòria sovint juga males passades,  però si tenim les coses apuntades aconseguirem recordar els detalls que ens varen dur a prendre tal o qual decisió i la implementació serà molt més àgil.</p>
+                                <p>Un cop declarades les classes i els mètodes a partir del disseny, afegiu-hi també les classes que hàgiu implementat fins ara:</p>
+                                <ul>
+                                    <li>L'estructura de dades</li>
+                                    <li>El gestor de les dades</li>
+                                    <li>La biblioteca d'utilitats</li>
+                                </ul>
+                                <p> Per descomptat, podeu fer servir el fòrum reduït per exposar dubtes, plantejar solucions i col·laborar amb els vostres companys a fi de trobar una bona solució. No us faci por discutir, ni compartir.</p>
+                                <!-- Button trigger pannel -->
+                                <button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
+                                        data-toggle="button"
+                                        data-parent-selector="#leftColumnPanel"
+                                        data-display-on-set-slide="slc-toDo30" 
+                                        data-selector-clue="#slc-toDo30-clue1">
+                                    Consell
+                                </button>                                        
+                                <div id="slc-toDo30-clue1" class="iocClue hidden">
+                                    <h2>Consell</h2>
+                                    <p>En començar a definir un esquelet és impossible tenir-ho tot molt clar des del principi. Heu d'aprendre a jugar amb la incertesa. No passa res si no podem detallar-ho tot, començarem amb una esquema que anirem concretant a mida que sigui possible. A vegades no podrem concretar exactament quins paràmetres arribaran a una funció o quin tipus de dada retornarà, però això no ha d'impedir començar a fer la declaració de les funcions afegint comentaris d'allò que quedi sense concretar. De forma metafòrica podem dir que la implementació d'aplicacions és semblant a la construcció d'un trencaclosques on les peces són les funcions i les dades. Si aconseguim encaixar-les, la'aplicació funcionarà correctament. Si les peces (dades i funcions) no encaixen, la funció no farà el que hauria de fer.</p>
+                                    <p>De forma semblant a la construcció de trencaclosques, cal anar encaixant les peces parcialment, deixant forats per omplir i que acabarem encaixant quan trobem la peça adequada. Aquí cal fer el mateix comencem a declarar classes i funcions malgrat ens faltin peces per encaixar que ja implementarem en un futur quan ho tinguem més clar. La implementació presenta a més, l'avantatge que en realitat les peces les creem nosaltres a mida que implementem l'aplicació o per tant podem modificar-les en qualsevol moment per tal que encaixin perfectament.</p>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDo30 ================-->    
+
