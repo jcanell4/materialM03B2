@@ -1007,7 +1007,7 @@ public class Exercici2DissenyDescendent {
         programa.inici();
     }
 
-    private void inici() {
+    void inici() {
         int limitIntents; 
         boolean encertat;
         presentacio();
@@ -1016,7 +1016,7 @@ public class Exercici2DissenyDescendent {
         despedirJugador(encertat);
     }
 
-    private void presentacio() {
+    void presentacio() {
         System.out.println(
                 "---------------------------------------------------------------");
         System.out.println(
@@ -1031,7 +1031,7 @@ public class Exercici2DissenyDescendent {
                 "---------------------------------------------------------------");
     }
 
-    private int demanarLimitIntents() {
+    int demanarLimitIntents() {
         int limitIntents;
         limitIntents = entrarUnEnter(                  
                 "Va! Atreveix-te! Quants intents creus que necessitaràs? "
@@ -1039,7 +1039,7 @@ public class Exercici2DissenyDescendent {
         return limitIntents;
     }
 
-    private boolean demanarPropostes(int limitIntents) {
+    boolean demanarPropostes(int limitIntents) {
         int intents=0;
         int comparacio = MENOR;
         while(intents&lt;limitIntents && comparacio!=ENCERTAT){
@@ -1052,7 +1052,7 @@ public class Exercici2DissenyDescendent {
         return comparacio==ENCERTAT;
     }
 
-    private void despedirJugador(boolean encert) {
+    void despedirJugador(boolean encert) {
         if(encert){
             System.out.println("Molt be! Ho has aconseguit!");
         }else{
@@ -1061,14 +1061,14 @@ public class Exercici2DissenyDescendent {
         }
     }
 
-    private int demanarProposta() {
+    int demanarProposta() {
         int proposta;
         proposta = entrarUnEnter("Fes una proposta. Quin numero creus que has d'endevinar? \n"
                 + "Escriu-lo i prem [ENTRAR] ");
         return proposta;
     }
 
-    private int compararProposta(int proposta) {
+    int compararProposta(int proposta) {
         int comparacio;
         if(proposta==VALOR_A_ENCERTAR){
             comparacio= ENCERTAT;        
@@ -1080,7 +1080,7 @@ public class Exercici2DissenyDescendent {
         return comparacio;
     }
 
-    private void informaCOmparacio(int comparacio) {
+    void informaCOmparacio(int comparacio) {
         if(comparacio==MENOR){
             System.out.println("T'has quedat curt.");
         }else if(comparacio==MAJOR){

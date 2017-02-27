@@ -280,7 +280,7 @@ public class InterficieUsuariCalculadoraArees {
         prg.inici();
     }
     
-    private void inici(){
+    void inici(){
         double mesura;
         char opcio=0;
         //proves
@@ -298,7 +298,7 @@ public class InterficieUsuariCalculadoraArees {
         System.out.println(opcio);
     }
     
-    private double entrarUnNumero(String missatgeExplicatiu){
+    double entrarUnNumero(String missatgeExplicatiu){
         Scanner scanner = new Scanner(System.in);
         double ret;
         boolean correcte=false;
@@ -315,7 +315,7 @@ public class InterficieUsuariCalculadoraArees {
         return ret;
     }
     
-    private void mostrarResultat(String figura, double resultat){
+    void mostrarResultat(String figura, double resultat){
         System.out.println();
         System.out.println("---------------------------------------------------");
         System.out.print("L'àrea del ");
@@ -326,7 +326,7 @@ public class InterficieUsuariCalculadoraArees {
         System.out.println();
     }
     
-    private void presentacio(){
+    void presentacio(){
         System.out.println("======================================================================");
         System.out.println("Benvinguts a la calculadora d'àrees.");
         System.out.println("Seleccioneu la figura geomèrica de la que volugueu calcular l'àrea, ");
@@ -335,7 +335,7 @@ public class InterficieUsuariCalculadoraArees {
         System.out.println();
     }
     
-    private char menu(){
+    char menu(){
         Scanner scanner = new Scanner(System.in);
         String line;
         char opcio=0;
@@ -435,7 +435,7 @@ public class ModulsCalculadoraDArees {
         prg.inici();
     }
     
-    private void inici(){
+    void inici(){
         modulCalculAreaTriangle();
         modulCalculAreaQuadrat();
         modulCalculAreaRectangle();
@@ -458,7 +458,7 @@ public class ModulsCalculadoraDArees {
         return 3.14159265*radi*radi;
     }
     
-    private double entrarUnNumero(String missatgeExplicatiu){
+    double entrarUnNumero(String missatgeExplicatiu){
         Scanner scanner = new Scanner(System.in);
         double ret;
         boolean correcte=false;
@@ -475,7 +475,7 @@ public class ModulsCalculadoraDArees {
         return ret;
     }
     
-    private void mostrarResultat(String figura, double resultat){
+    void mostrarResultat(String figura, double resultat){
         System.out.println();
         System.out.println("---------------------------------------------------");
         System.out.print("L'area del ");
@@ -486,7 +486,7 @@ public class ModulsCalculadoraDArees {
         System.out.println();
     }
     
-    private void modulCalculAreaTriangle() {
+    void modulCalculAreaTriangle() {
         double base;
         double alcada;
         double area;
@@ -499,7 +499,7 @@ public class ModulsCalculadoraDArees {
         mostrarResultat("triangle", area);        
     }
 
-    private void modulCalculAreaQuadrat() {
+    void modulCalculAreaQuadrat() {
         double costat;
         double area;
         costat = entrarUnNumero("Quant mesura el costat del quadrat? ");
@@ -509,7 +509,7 @@ public class ModulsCalculadoraDArees {
         mostrarResultat("quadrat", area);        
     }
 
-    private void modulCalculAreaRectangle() {
+    void modulCalculAreaRectangle() {
         double base;
         double alcada;
         double area;
@@ -522,7 +522,7 @@ public class ModulsCalculadoraDArees {
         mostrarResultat("rectangle", area);        
     }
 
-    private void modulCalculAreaCercle() {
+    void modulCalculAreaCercle() {
         double radi;
         double area;
         radi = entrarUnNumero("Quant mesura el radi del cercle? ");
@@ -591,7 +591,7 @@ public class CalculadoraDArees {
         prg.inici();
     }
     
-    private void inici(){
+    void inici(){
         char opcio=0;
         presentacio();
         
@@ -619,7 +619,7 @@ public class CalculadoraDArees {
         return 3.141592*radi*radi;
     }
     
-    private double entrarUnNumero(String missatgeExplicatiu){
+    double entrarUnNumero(String missatgeExplicatiu){
         Scanner scanner = new Scanner(System.in);
         double ret;
         boolean correcte=false;
@@ -636,7 +636,7 @@ public class CalculadoraDArees {
         return ret;
     }
     
-    private void mostrarResultat(String figura, double resultat){
+    void mostrarResultat(String figura, double resultat){
         System.out.println();
         System.out.println("---------------------------------------------------");
         System.out.print("L'area del ");
@@ -647,7 +647,7 @@ public class CalculadoraDArees {
         System.out.println();
     }
     
-    private void presentacio(){
+    void presentacio(){
         System.out.println("======================================================================");
         System.out.println("Benvinguts a la calculadora d'àrees.");
         System.out.println("Seleccioneu la figura geomèrica de la que volugueu calcular l'àrea, ");
@@ -656,7 +656,7 @@ public class CalculadoraDArees {
         System.out.println();
     }
     
-    private char menu(){
+    char menu(){
         Scanner scanner = new Scanner(System.in);
         String line;
         char opcio=0;
@@ -678,7 +678,7 @@ public class CalculadoraDArees {
         return opcio;
     }
     
-    private void executaModul(char opcio){
+    void executaModul(char opcio){
         switch(opcio){
             case '1':
                 modulCalculAreaTriangle();
@@ -695,7 +695,7 @@ public class CalculadoraDArees {
         }            
     }
 
-    private void modulCalculAreaTriangle() {
+    void modulCalculAreaTriangle() {
         double base;
         double alcada;
         double area;
@@ -708,7 +708,7 @@ public class CalculadoraDArees {
         mostrarResultat("triangle", area);        
     }
 
-    private void modulCalculAreaQuadrat() {
+    void modulCalculAreaQuadrat() {
         double costat;
         double area;
         costat = entrarUnNumero("Quant mesura el costat del quadrat? ");
@@ -718,7 +718,7 @@ public class CalculadoraDArees {
         mostrarResultat("quadrat", area);        
     }
 
-    private void modulCalculAreaRectangle() {
+    void modulCalculAreaRectangle() {
         double base;
         double alcada;
         double area;
@@ -731,7 +731,7 @@ public class CalculadoraDArees {
         mostrarResultat("rectangle", area);        
     }
 
-    private void modulCalculAreaCercle() {
+    void modulCalculAreaCercle() {
         double radi;
         double area;
         radi = entrarUnNumero("Quant mesura el radi del cercle? ");

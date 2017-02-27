@@ -232,7 +232,7 @@ resultat = instanciaCalculs.mitjana(dades);
                                     <pre><code class="java">
 public class UnProgramaQualsevol {
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         UnProgramaQualsevol programa = new UnProgramaQualsevol();
         programa.inici();
     }
@@ -369,7 +369,7 @@ public class RealsAleatoris {
         RealsAleatoris programa = new RealsAleatoris();
         programa.inici();
     }
-    public void inici() {
+    void inici() {
         Random instanciaRandom;
         double valorDoubleAleatori1;
         double valorDoubleAleatori2;
@@ -452,7 +452,7 @@ public class ArrodonirReal {
         ArrodonirReal programa = new ArrodonirReal();
         programa.inici();
     }
-    public void inici() {
+    void inici() {
         //Inicialització de Random
         Random rnd = new Random();
         //Ús per generar un real entre 0 i 1
@@ -479,7 +479,7 @@ public class OrdenaArrayText {
         OrdenaArrayText programa = new OrdenaArrayText();
         programa.inici();
     }
-    public void inici() {
+    void inici() {
         String[] array = {"Un", "Dos", "Tres", "Quatre", "Cinc"};
         Arrays.sort(array);
         System.out.println("Els elements ordenats són:");
@@ -496,12 +496,12 @@ public class OrdenaArrayText {
                                     <pre><code class="java">
 public class ClasseExemple{
 
-    public static funcioEstatica1(/* Declaració normal de paràmetres si s'escau */){
+    static funcioEstatica1(/* Declaració normal de paràmetres si s'escau */){
         /* Codi de la funció */
         ...
     }
     
-    public static funcioEstatica2(...
+    static funcioEstatica2(...
         ...
     }
     
@@ -635,7 +635,7 @@ operacio2.operador1 = 7; //Això dona error perquè no s'ha instanciat la variab
                                     <p>A continuació se us presenta la funció <em>trobarTemperaturaMinima</em>, la qual permet trobar el valor mínim d'un conjunt de temperatures introduïdes per l'usuari. Fixeu-vos però que la funció no compleix els requisits indicats per poder ser considerada reutilitzable, ja que només es podria fer servir en algun context que calgués trobar la temperatura mínima d'una conjunt de temperatures donades per l'usuari. És a dir exclusivament l'actual!</p>
                                     <p>Tal com està codificada la funció no serviria per trobar les temperatures mínimes emmagatzemades en el disc dur, en comptes de demanar-les a l'usuari, ni molt menys per trobar el valor mínim de quelcom que no fossin temperatures, ni permetria emmagatzemar el valor mínim en el disc dur, o enviar-lo a un servidor, en comptes de mostrar-lo per pantalla, ja que la petició de dades, el càlcul del resultat i la mostra d'aquest formen un tot indivisible.</p>
                                     <pre><code class="java linenumbers">
-public void trobarTemperaturaMinima(){
+void trobarTemperaturaMinima(){
     float[] temperatures;
     int posMin;            
     System.out.println("Quantes temperatures vols omplir?");

@@ -226,7 +226,7 @@
                                     <p>La declaració bàsica d’un mètode es fa usant la sintaxi que es mostra tot seguit:</p>                                 
                                     
                                     <pre><code class="java">
-    public void nomMetode() {
+    void nomMetode() {
         //Aquí dins aniran les seves instruccions
         //...
     }
@@ -234,13 +234,13 @@
                                     <p>La declaració de mètodes es pot dur a terme en qualsevol lloc del fitxer font sempre que sigui entre les claus que identifiquen l’inici i fi de fitxer <code>(public class NomClasse { … })</code> i fora del bloc d’instruccions del mètode principal, o qualsevol altre mètode.</p>
                                     <p>La declaració dels mètodes no executa el seu contingut. Per executar el codi d'un mètode, cal invocar els seu nom seguit de dos parèntesis, que són els signes que identifiquen les funcions i les distingeixen de les variables. La invocació de mètodes s'anomena també crida. Vegem-ne un exemple</p>
                                     <pre><code class="java">
-    public void inici(){
+    void inici(){
         //...
         nomMetode(); //aquesta és la instrucció de crida que executarà el codi contingut a la funció "<em>nomMetode</em>"
         //...
     }
 
-    public void nomMetode() {
+    void nomMetode() {
         //Aquí dins aniran les seves instruccions
         //...
     }
@@ -355,7 +355,7 @@ public class ProgramaX {
     programa.inici();
   }
 
-  public void inici() {
+  void inici() {
     //Instruccions del mètode principal (problema general)
     //...
   }
@@ -401,7 +401,7 @@ public class Exemple1 {
        programa.inici();
     }
 
-    private void inici() {
+    void inici() {
         //Declaració de la utilitat Scanner per llegir del teclat
         Scanner scanner = new Scanner(System.in);
         //Declaració de variables dins l'ambit de la funció
@@ -477,7 +477,7 @@ public class Exemple1 {
                                     <div class="iocexample">
                                          
                                     <pre><code class="java">
-                                            public void unaFuncio(){
+                                            void unaFuncio(){
                                                 //àmbit de funció
                                                 int variableDeLaFuncio;
                                                 
@@ -620,7 +620,7 @@ public class DiesDelMes {
         programa.inici();
     }
 
-    public void inici() {
+    void inici() {
         //variables de l'àmbit de la funció
         int mes;
         int diesMes;
@@ -640,7 +640,7 @@ public class DiesDelMes {
      * Aquesta funció anomenada demanaMes, demana a l'usuari que escrigui un mes 
      * fent servir la notació numèrica. Retorna el valor introduït per l'usuari.
      */
-    private int demanarMes() {
+    int demanarMes() {
         int retorn;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Indica el nombre d'un més per saber quants dies té:");
@@ -653,7 +653,7 @@ public class DiesDelMes {
      * valor numèric comprés entre 1 i 12, calcula el nombre de dies que té el 
      * mes  especificat i en retorna el resultat obtingut.
      */
-    private int calcularDiesQueTeElMes(int mes) {
+    int calcularDiesQueTeElMes(int mes) {
         int retorn =0;
         switch(mes){
             case 1:
@@ -701,7 +701,7 @@ public class DiesDelMes {
      * s'ha demanat i el nombre de dies calculat. La funció rep ambdós valors 
      * a mostrar com a paràmetres i no retorna res.
      */
-    private void mostrarDiesDelMes(int mes, int diesMes) {
+    void mostrarDiesDelMes(int mes, int diesMes) {
         System.out.print("T'informem que el mes ");
         System.out.print(mes);
         System.out.print(" conté ");
@@ -748,7 +748,7 @@ public class AccessibilitatVariables {
        programa.inici();
     }
 
-    private void inici() {
+    void inici() {
         int variable2; //Variable d'àmbit de la funció inici
         int variable3; //Variable d'àmbit de la funció inici
         
@@ -780,7 +780,7 @@ public class AccessibilitatVariables {
         variable2*=2;
     }
     
-    private void funcioDeProva(int variable8){
+    void funcioDeProva(int variable8){
         int variable7=0; //Variable d'àmbit de la funció funcioDeProva
         
         variable7 -= variable2;
@@ -910,7 +910,7 @@ public class IllegalitatsAmbitsVariables {
         prog.inici();
     }
 
-    private void inici() {
+    void inici() {
         funcioDeProva1(0);
         funcioDeProva2(0, 1);
         funcioDeProva3();
@@ -922,7 +922,7 @@ public class IllegalitatsAmbitsVariables {
     /*
     Declaració d'una variable local de funció amb el mateix nom que un paràmetre
     */
-    public void funcioDeProva1(int variable2){
+    void funcioDeProva1(int variable2){
         int variable2=11;
         int variable3=12;
     }
@@ -931,7 +931,7 @@ public class IllegalitatsAmbitsVariables {
     Declaració de variables locals de bloc amb el mateix nom que un paràmetre 
     o una variable local de funció
     */
-    public void funcioDeProva2(int variable4, int variable5){
+    void funcioDeProva2(int variable4, int variable5){
         int variable4=11;
         while(variable4&gt;0){
             int variable5=11;
@@ -944,7 +944,7 @@ public class IllegalitatsAmbitsVariables {
     Declaració de variables locals de bloc amb el mateix nom que un paràmetre 
     o una variable local de funció
     */
-    public void funcioDeProva3(){
+    void funcioDeProva3(){
         int variable4=-11;
         int variable5=11;
         while(variable4&gt;0){
@@ -957,7 +957,7 @@ public class IllegalitatsAmbitsVariables {
     Declaració de paràmetres d'una funció amb el mateix nom que una variable 
     global;
     */
-    public void funcioDeProva4(int variable0){
+    void funcioDeProva4(int variable0){
         System.out.print("funcioDeProva4(0)-&gt;");
         System.out.print("El paràmetre 'variable0' val: ");
         System.out.println(variable0);
@@ -966,7 +966,7 @@ public class IllegalitatsAmbitsVariables {
     /*
     Declaració de variables locals amb el mateix nom que una variable global
     */
-    public void funcioDeProva5(){
+    void funcioDeProva5(){
         int variable0=90;
         System.out.print("funcioDeProva5()-&gt;");
         
@@ -977,7 +977,7 @@ public class IllegalitatsAmbitsVariables {
     /*
     Declaració de variables locals amb el mateix nom
     */
-    public void funcioDeProva6(int variable10){
+    void funcioDeProva6(int variable10){
         System.out.print("funcioDeProva6(0)-&gt;");
         if(variable10==0){
             int variable11=10;
@@ -994,13 +994,13 @@ public class IllegalitatsAmbitsVariables {
     /*
     Declaració de variables locals amb el mateix nom en dues funcions difrents
     */
-    public void funcioDeProva7(){
+    void funcioDeProva7(){
         int variable12 = 1;
         System.out.print("funcioDeProva7()-&gt;");
         System.out.print("La variable 'variable12' val: ");
         System.out.println(variable12);
     }
-    public void funcioDeProva8(){
+    void funcioDeProva8(){
         int variable12 = 100;
         System.out.print("funcioDeProva8()-&gt;");
         System.out.print("La variable 'variable12' val: ");

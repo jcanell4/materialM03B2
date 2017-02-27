@@ -266,11 +266,9 @@
                                     <p>Hi ha una manera d'evitar aquest tipus d'errades. Consisteix en crear funcions específiques que s'encarreguin de fer tots els canvis a la vegada. Caldrà identificar aquelles accions que modifiquin l'estructura en diversos llocs i en conseqüència siguin susceptibles de generar incoherències, i crear per aquestes una funció encarregada de fer l'acció de forma sempre complerta i correcta. És aconsellable mantenir totes les funcions específiques d'una mateixa estructura de dades agrupades en una única classe.</p>
                                     <p>Imaginem que hem de gestionar una estructura que contingui una llista variable de dades. Per exemple, imaginem que hem de codificar el registre d'alumnes matriculats d'una escola. El nombre d'alumnes que es matricularan és impossible de saber a priori. Si s'opta per crear una estructura amb un comptador de matriculats, a més de l'array de dades dels alumnes, tindrem una estructura semblant a:</p>
                                     <pre><code class="java">
-package ioc.m03.uf2;
-
 public class DadesAlumnes {
-    public String[] alumnes;
-    public int matriculats;
+    String[] alumnes;
+    int matriculats;
 }
                                     </code></pre>
                                     <p>Com es pot suposar, cada cop que fem una matrícula, cal afegir el nom de l'alumne a una posició lliure de l'array <em>alumnes</em> i cal actualitzar el valor de l'element matriculats. També caldria fer quelcom semblant per donar de baixa una matrícula, etc.</p>
@@ -279,14 +277,14 @@ public class DadesAlumnes {
 
 public class GestorDadesAlumnes {
     
-    public void novaMatriculaAlumne(DadesAlumnes dades, String alumne){
+    void novaMatriculaAlumne(DadesAlumnes dades, String alumne){
         //Cal afegir les dades del nou alumne
         dades.alumnes[dades.matriculats]=alumne;
         //I també cal incrementar el comptador de matriculats
         dades.matriculats++;
     }
     
-    public void baixaAlumne(DadesAlumnes dades, int posicioAlumneAEliminar){
+    void baixaAlumne(DadesAlumnes dades, int posicioAlumneAEliminar){
         //Cal traslladar l'alumne a eliminar més enllà del límit indicat pel comptador de matrícules,
         //a fi quedi amagat i no s'hi pugui accedir; com si s'hagués eliminat.
         for(int i=posicioAlumneAEliminar; i&lt;dades.matriculats; i++){
@@ -307,7 +305,7 @@ public class GestorDadesAlumnes {
                                     <p>Per exemple, en el cas anterior de la gestió de matrícules, necessitarem dimensionar l'array d'alumnes a la mida màxima abans de començar a treballar. Com que la mida màxima dependrà del renom de l'escola, del municipi/barri on estigui i fins i tot de l'any en que es faci la matrícula, es pot optar per deixar la dimensió configurable en el moment de començar. Podem encarregar al gestor de dades GestorDadesAlumnes l'acció de crear i d'inicialitzar una instancia dimensionada a una mida especificada des de paràmetre, estimada per l'ajuntament:
 </p>
                                     <pre><code class="java">
-  public DadesAlumnes crearDadesAlumnes(int dimensio){
+  DadesAlumnes crearDadesAlumnes(int dimensio){
         DadesAlumnes dades = new DadesAlumnes();
         dades.alumnes=new String[dimensio];
         return dades;

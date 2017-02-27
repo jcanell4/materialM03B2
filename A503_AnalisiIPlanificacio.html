@@ -429,13 +429,13 @@
 
 public class AplicacioComunicacio {
 
-    public void inici(){
+    void inici(){
         //A CODIFICAR... 
         // inicialitza l'estructura de dades
         // mostra el menú i crida al controlPrincipal
     }
 
-    public char menuInicial(){
+    char menuInicial(){
         char opcio = 0;
         // A CODIFICAR... 
         // Mostra el menú principal i espera la selecció de l'usuari en format de char. 
@@ -443,7 +443,7 @@ public class AplicacioComunicacio {
         return opcio;
     }
     
-    public boolean controlOpcioPrincipal(char opcio , EstructuraDades dades){
+    boolean controlOpcioPrincipal(char opcio , EstructuraDades dades){
         boolean ret=false;
         // A CODIFICAR... 
         // Selecciona el mòdul adequat o la tasca d'enviar missatge a través de WhatsApp segons la opció arribada.
@@ -456,13 +456,13 @@ public class AplicacioComunicacio {
         return ret;
     }
     
-    public void tascaEnviarWhatsApp(EstructuraDades dades){
+    void tascaEnviarWhatsApp(EstructuraDades dades){
         // A CODIFICAR... 
         // Seleccionar un contacte de la llista de contactes de WhatsApp
         // Carregar el xat del contacte seleccionat
     }
     
-    public boolean accioPerConfirmarLaSortidaDeLAplicacio(){
+    boolean accioPerConfirmarLaSortidaDeLAplicacio(){
         boolean ret=false;
         //A CODIFICAR... 
 
@@ -521,7 +521,7 @@ public class ModulTrucades {
         return ret;
     }    
     
-    public int ferTrucada(char[] numero){
+    int ferTrucada(char[] numero){
         int ret=0;
         //A CODIFICAR... 
         Realitza la trucada del número passat per paràmetre i retorna el número de segons que ha durat.
@@ -534,12 +534,12 @@ public class ModulTrucades {
 
 public class ModulSms {
 
-   public void iniciSms(EstructuraDades dades){
+   void iniciSms(EstructuraDades dades){
         // A CODIFICAR... 
         // mostra el menú dels SMS i crida al control
    }
    
-    public char menuSms(){
+    char menuSms(){
         char opcio = 0;
         // A CODIFICAR... 
         // Mostra el menú dels SMS i espera la selecció de l'usuari en format de char. 
@@ -547,21 +547,21 @@ public class ModulSms {
         return opcio;
     }
     
-    public boolean controlOpcioSms(char opcio, EstructuraDades dades){
+    boolean controlOpcioSms(char opcio, EstructuraDades dades){
         boolean ret=false;
         // A CODIFICAR... 
         // Executa la tasca corresponent a la opció.
         return ret;
     }    
     
-    public void tascaEnviarSmsAmbMarcatgeDirecte(EstructuraDades dades){
+    void tascaEnviarSmsAmbMarcatgeDirecte(EstructuraDades dades){
         // A CODIFICAR... 
         // Demana a l'usuari que escrigui el missatge 
         // Es demana el número a marcar
         // S'envia el text escrit per SMS al numero indicat. 
     }
 
-    public void tascaEnviarSmsAmbLlistaDeContactes(EstructuraDades dades){
+    void tascaEnviarSmsAmbLlistaDeContactes(EstructuraDades dades){
         // A CODIFICAR... 
         // Demana a l'usuari que escrigui el missatge
         // Se li demana que seleccioni un contacte per extreure el número a marcar.
@@ -585,7 +585,7 @@ public class ModulSms {
         return ret;
     }    
 
-    public String demanarMissatgeSms(){
+    String demanarMissatgeSms(){
         String ret="";
         //A CODIFICAR... 
         /*
@@ -595,7 +595,7 @@ public class ModulSms {
         return ret;        
     }
 
-    public int enviarMissatge(char[] numero, String missatge){
+    int enviarMissatge(char[] numero, String missatge){
         int ret=0;
         //A CODIFICAR... 
         /*

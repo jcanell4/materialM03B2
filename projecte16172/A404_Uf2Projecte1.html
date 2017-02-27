@@ -175,7 +175,7 @@ public class Tasca1 {
         Tasca1 prg = new Tasca1();
         prg.prova();
     }
-    private void prova() {
+    void prova() {
         String valor;
         boolean dataOk;
         
@@ -240,14 +240,14 @@ public class Tasca1 {
         mostrarVerificacio(dataOk, true);
     }
     
-    private void mostrarResultat(String valor, int rao){
+    void mostrarResultat(String valor, int rao){
         String[] raons = {" és correcta", " no segueix el format.", " no és vàlida"};
         System.out.print("La data ");
         System.out.print(valor);
         System.out.println(raons[rao]);
     }
     
-    private void mostrarVerificacio(boolean valorObtingut, boolean valorEsperat){
+    void mostrarVerificacio(boolean valorObtingut, boolean valorEsperat){
         if(valorObtingut==valorEsperat){
             System.out.println("*** la funció esData funciona correctament ***");
         }else{
@@ -337,7 +337,7 @@ public class Tasca2 {
         prg.prova();
     }
 
-    private void prova() {
+    void prova() {
         String data1;
         String data2;
         int diesPassats;
@@ -385,7 +385,7 @@ public class Tasca2 {
         mostrarVerificacio(diesPassats, 199);
     }
 
-    private void mostrarResultat(String data1, String data2, int valor){
+    void mostrarResultat(String data1, String data2, int valor){
         System.out.print("Entre la data ");
         System.out.print(data1);
         System.out.print(" i la data ");
@@ -395,7 +395,7 @@ public class Tasca2 {
         System.out.print(" dies.");
     }
     
-    private void mostrarVerificacio(int valorObtingut, int valorEsperat){
+    void mostrarVerificacio(int valorObtingut, int valorEsperat){
         if(valorObtingut==valorEsperat){
             System.out.println("*** la funció calcularPeriodeEnDies funciona correctament ***");
         }else{
@@ -465,7 +465,7 @@ public class Tasca2 {
                                     <p>La funció tindrà la forma següent:</p>
                                     <p class="iocimportant"> 
                                         <pre><code class="java">
-    public int trobarPrimeraFilaCoincidentAPartirDe(int[][] matriu, int valorAComparar, int columnaOnComparar, int cercarDesDeFila){
+    int trobarPrimeraFilaCoincidentAPartirDe(int[][] matriu, int valorAComparar, int columnaOnComparar, int cercarDesDeFila){
         ...
     }
                                             
@@ -509,7 +509,7 @@ public class Tasca3 {
         Tasca3 prg = new Tasca3(); 
         prg.prova();
     }
-    private void prova(){
+    void prova(){
         int resposta;
         int[][] valors = {
             {0,0,0,0,0,0,0,0},        //0
@@ -537,7 +537,7 @@ public class Tasca3 {
         mostrarVerificacio(resposta, -1);        
     }
 
-    private void mostrarResultat(int cercatDesDe, int resposta, int valorComparat, int columnaComparada){
+    void mostrarResultat(int cercatDesDe, int resposta, int valorComparat, int columnaComparada){
         System.out.print("La primera fila trobada amb la columna ");
         System.out.print(columnaComparada);
         System.out.print(" de valor ");
@@ -549,7 +549,7 @@ public class Tasca3 {
         System.out.println(".");
     }
     
-    private void mostrarVerificacio(int valorObtingut, int valorEsperat){
+    void mostrarVerificacio(int valorObtingut, int valorEsperat){
         if(valorObtingut == valorEsperat){
             System.out.println("*** la funció calcularPeriodeEnDies funciona correctament ***");
         }else{
@@ -628,18 +628,7 @@ public class Tasca4 {
         //PENDENT!
     }
     
-    /*******************************************************/
-    /*                    Codi per provar                  */
-    /*******************************************************/
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Tasca2 prg = new Tasca2();
-        prg.prova();
-    }
-    
+      
     /*******************************************************/
     /*                Activitat A404 Tasca 7               */
     /*                   Codi per provar                   */
@@ -653,7 +642,7 @@ public class Tasca4 {
         prg.prova();
     }
     
-    public void prova() {
+    void prova() {
         boolean confirmacio;
         String valor;
         

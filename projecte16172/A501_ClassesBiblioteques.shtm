@@ -81,7 +81,7 @@
                                     <p>Classe Utils:</p>
                                         <pre><code class="java">
 public class Utils {
-    static String obtenirDataAvui(){
+    public static String obtenirDataAvui(){
         Calendar calendar = Calendar.getInstance();
         return String.format("%td/%tm/%tY", calendar, calendar, calendar);
     }
@@ -143,24 +143,24 @@ public class Tasca2 {
         
     }   
     
-    private void mostrarDataAvui(String valor){
+    void mostrarDataAvui(String valor){
         System.out.print("La data actual és ");
         System.out.println(valor);
     }
     
-    private void mostrarHoraAra(String valor){
+    void mostrarHoraAra(String valor){
         System.out.print("La hora actual és ");
         System.out.println(valor);
     }
     
-    private void mostrarResultatConvertirStrAInt(String valor, int calcul){
+    void mostrarResultatConvertirStrAInt(String valor, int calcul){
         System.out.print("La data ");
         System.out.print(valor);
         System.out.print(" s'ha convertit a ");
         System.out.println(calcul);
     }
     
-    private void mostrarVerificacioStrAInt(int valorObtingut, int valorEsperat){
+    void mostrarVerificacioStrAInt(int valorObtingut, int valorEsperat){
         if(valorObtingut==valorEsperat){
             System.out.println("*** la funció ConvertirStringDataAInt funciona correctament ***");
         }else{
@@ -169,14 +169,14 @@ public class Tasca2 {
         System.out.println();
     }
 
-    private void mostrarResultatConvertirIntAStr(int valor, String calcul){
+    void mostrarResultatConvertirIntAStr(int valor, String calcul){
         System.out.print("La data ");
         System.out.print(valor);
         System.out.print(" s'ha convertit a ");
         System.out.println(calcul);
     }
     
-    private void mostrarVerificacioIntAStr(String valorObtingut, String valorEsperat){
+    void mostrarVerificacioIntAStr(String valorObtingut, String valorEsperat){
         if(valorObtingut.equals(valorEsperat)){
             System.out.println("*** la funció convertirIntDataAString funciona correctament ***");
         }else{

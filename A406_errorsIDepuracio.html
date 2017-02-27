@@ -231,7 +231,7 @@
                                     <p>Aquest és un exemple senzill per il·lustrar l'ús dels jocs de proves. L'error que veurem, probablement es pugui deduir d'un cop d'ull, sense necessitat de fer cap joc de proves, però sovint hi ha molts errors difícils de veure que només es poden descobrir amb tècniques com aquesta. </p>
                                     <p>Tenim el requeriment de fer una funció que sumi els 3 primers elements d'una col·lecció d'enters que arriba en forma de paràmetre de tipus array d'enters. Despres de donar alguna vola escrivim la funció següent:</p>
                                     <pre><code class="java">
-    private int sumaTres(int[] valors){
+    int sumaTres(int[] valors){
         int suma=0;
         for(int i=0; i&lt;3; i++){
             suma+=valors[i];
@@ -253,7 +253,7 @@ public class ExempleJocDeProves {
         prg.proves();
     }
     
-    private void proves(){
+    void proves(){
         int res;
         int[] col1 = {2,2,2,100,100};
         res = sumaTres(col1);
@@ -261,7 +261,7 @@ public class ExempleJocDeProves {
         System.out.println(res);;
     }
     
-    private int sumaTres(int[] valors){
+    int sumaTres(int[] valors){
         int suma=0;
         for(int i=0; i&lt;3; i++){
             suma+=valors[i];
@@ -273,7 +273,6 @@ public class ExempleJocDeProves {
                                     </code></pre>
                                     <p>De moment tot funciona. Decidim però ampliar el joc de proves usant una col·lecció de just 3 elements i una altra de menys de 3</p>
                                     <pre><code class="java">
-package ioc.m03.uf2.funcions.a406;
 
 public class ExempleJocDeProves {
 
@@ -285,7 +284,7 @@ public class ExempleJocDeProves {
         prg.proves();
     }
     
-    private void proves(){
+    void proves(){
         int res;
         int[] col1 = {2,2,2,100,100};
         res = sumaTres(col1);
@@ -303,7 +302,7 @@ public class ExempleJocDeProves {
         System.out.println(res);;
     }
     
-    private int sumaTres(int[] valors){
+    int sumaTres(int[] valors){
         int suma=0;
         for(int i=0; i&lt;3; i++){
             suma+=valors[i];
@@ -315,7 +314,7 @@ public class ExempleJocDeProves {
                                     <p>Aquest cop ja no hi ha hagut tanta sort, perquè a la tercera prova s'ha produït un error que ens permet corregir adequadament la funció:</p>
                                     <pre><code class="java">
 ...
-    private int sumaTres(int[] valors){
+    int sumaTres(int[] valors){
         int suma=0;
         for(int i=0; i&lt;valors.length && i&lt;3; i++){
             suma+=valors[i];
@@ -351,16 +350,16 @@ public class ExempleJocDeProves {
                                     <pre><code class="java linenumbers">
 
 
-    import java.util.Scanner;
+import java.util.Scanner;
 
-    public class ExempleDepuracio {
+public class ExempleDepuracio {
         
     public static void main(String[] args) {
         ExempleDepuracio prg = new ExempleDepuracio();
         prg.inici();
     }
     
-    private void inici(){
+    void inici(){
         double valorDoble = 12345.6789;
         int valorEnter = 1000;
         int resultat;
@@ -372,7 +371,7 @@ public class ExempleJocDeProves {
         System.out.println("re: " + resultat);        
     }
     
-    private int calcul(double valorDoble, int valorEnter){
+    int calcul(double valorDoble, int valorEnter){
         int aux;
         int comptador=0;
         while(comptador&lt;10){
@@ -495,7 +494,7 @@ public class ExempleJocDeProves {
                                     <p>Ens adonem que en el moment d'executar la línia 8 després de dues iteracions el valor de valorEnter1 és zero i per tant en intentar fer la divisió es produeix un error d'intent de dividir per zero. Per arreglar l'error, decidim retornar -1 si el valor no es pot calcular:</p>
                                     <pre><code class="java">
 ...
-    private int calcul(double valorDoble, int valorEnter){
+    int calcul(double valorDoble, int valorEnter){
         int aux;
         int comptador=0;
         while(comptador&lt;10){
@@ -543,7 +542,6 @@ public class ExempleJocDeProves {
                                     <p>La funció és:</p>
                                     
                                     <pre><code class="java">
-package ioc.m03.uf2.funcions.a406;
 
 public class ExerciciJocDeProves {
 
@@ -611,7 +609,7 @@ public class ExerciciJocDeProves {
         prg.proves();
     }
     
-    private void proves() {
+    void proves() {
         int pos;
         double[] col = {10.5, 1.0, 8.9, 5.2, 1.0, 7.5, -5.8, 0, 18.1};
         
@@ -637,7 +635,7 @@ public class ExerciciJocDeProves {
 
     }
 
-    public int cercarPosicioValor(double[] colleccio, double aCercar){
+    int cercarPosicioValor(double[] colleccio, double aCercar){
         boolean trobat = false;
         int posicio=0;
         
@@ -653,7 +651,6 @@ public class ExerciciJocDeProves {
                                             </code></pre>                         
                                             <p>Ens adonem que la funció retorna una posició de més que la que hauria de retornar. Analitzant el codi ens adonem que sempre s'incrementa la posició, fins hi tot quan es troba el valor, cosa que explicaria el comportament. Decidim arreglar la funció i tronar-la a provar.</p>
                                             <pre><code class="java">
-package ioc.m03.uf2.funcions.a406;
 
 public class ExerciciJocDeProves {
     public static void main(String[] args) {
@@ -661,7 +658,7 @@ public class ExerciciJocDeProves {
         prg.proves();
     }
     
-    private void proves() {
+    void proves() {
         int pos;
         double[] col = {10.5, 1.0, 8.9, 5.2, 1.0, 7.5, -5.8, 0, 18.1};
         
@@ -687,7 +684,7 @@ public class ExerciciJocDeProves {
 
     }
 
-    public int cercarPosicioValor(double[] colleccio, double aCercar){
+    int cercarPosicioValor(double[] colleccio, double aCercar){
         boolean trobat = false;
         int posicio=0;
         
@@ -730,7 +727,7 @@ public class ExerciciJocDeProves {
                                     <p>En aquest exercici se us demana que fent servir el depurador, aconseguir saber el valor d'una variable just en el moment que una altra prengui un determinat valor.</p>
                                     <p>Sigui l'algoritme següent:</p>
                                     <pre><code class="java">
-    public void exercici1(){
+    void exercici1(){
         double valor=3027688.78618199;
         int i=0;
         
@@ -899,7 +896,7 @@ public class ExerciciDepuracio {
         programa.cercarValor();
     }
     
-    public void cercarValor(){
+    void cercarValor(){
         /* Aquest algorisme demana a l'usuari que introdueixi una col·lecció
          * de dades per teclat. Després demana que introdueixi un valor a 
          * cercar i finalment mostra per pantalla la posició dins la col·lecció
@@ -940,7 +937,7 @@ public class ExerciciDepuracio {
         }  
     }
     
-    public int cercarPosicioValor(double[] colleccio, double aCercar){
+    int cercarPosicioValor(double[] colleccio, double aCercar){
         boolean trobat = false;
         int posicio=0;
         
