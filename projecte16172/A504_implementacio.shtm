@@ -1,0 +1,102 @@
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar-Implementació I</h2>
+                                     <h3 ><span class="tascaTitle">Tasca</span> - Implementació d'una biblioteca per crear interfícies d'usuari</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca un demanarem que creeu una classe anomenada <em>BibliotecaInterficieUsuari</em> on hi copiareu totes les funcions reutilitzables, relacionades amb la creació d'interfícies d'usuari, que hàgiu fet fins ara. A més us demanarem també que complementeu la biblioteca amb noves funcions que us ajudin a crear interfície de consola de forma ràpida i fàcil.</p>
+                                    <p>Comenceu per crear la classe i copieu-hi les funcions implementades a la tasca 4 de l'activitat A404. Afegiu-hi també la funció <em>entrarEnter</em>, enriquida a l'exercici 1 de l'activitat A405.</p>
+                                    <p>Un cop creada la classe i copiades les funcions, caldrà afegir-ne de noves. Tingueu en compte el següent catàleg de mínims:</p>
+                                    <ol>
+                                        <li>Una funció per mostrar un títol (cadena de text) en un format específic que l'identifiqui com a títol o capçalera d'una pantalla. Serà útil per estandarditzar els títols de les diferents pantalles d'una aplicació.</li>
+                                        <li>Una funció per mostrar les opcions d'un menú i, un cop mostrades, esperi la selecció de l'usuari i la retorni.</li>
+                                        <li>Una funció que afegeixi un nombre de línies determinat a fi de simular un salt a una nova pantalla.</li>
+                                        <li>Un funció que mostri un missatge d'error.</li>
+                                        <li>Una funció que mostri un missatge indicant que l'execució d'una tasca o acció s'ha realitzat amb èxit.</li>
+                                        <li>Acció per permeti mantenir visible a la pantalla, un llistat o un text, mentre l'usuari no premi la tecla <em>ENTRAR</em> a fi que li doni temps a llegir.</li>
+                                    </ol>
+                                    <p>Per descomptat podeu ampliar aquest catàleg de funcions amb les propostes que hagin sortit en el debat anterior o amb d'altres que se us puguin acudir durant la implementació.</p>
+                                    <p>Recordeu que disposeu del fòrum reduït per exposar dubtes, plantejar solucions i col·laborar amb els vostres companys a fi de trobar una bona solució. No us faci por discutir, ni compartir.</p>
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Recordeu que les funcions a crear han de ser reusables i per tant cal que les descontextualitzeu passant els missatges i el text a mostrar com a paràmetres.</p>
+                                    </div>  
+                                     <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue5">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue5" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Suposa que la funció menú pugui mostrar per pantalla totes les opcions d'un menú identificades per un caràcter (a, b, c, ...) i després de demanar a l'usuari que seleccioni una opció, retorni la opció escollida. Quins paràmetres creieu que hauria de rebre una funció que pugui ajudar a implementar menús, tenint en compte que cada menú tindrà diferents opcions? Intenta sistematitzar la presentació dels menús. Què creus que pot identificar cada una de les opcions del menú? Tenint en compte això, quin tipus de dada caldria demanar a l'usuari? I per tant, quin tipus de dada creus que hauria de retornar la funció</p>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue2">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue2" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>A l'hora de crear interfícies d'usuari de qualsevol aplicació, és important que els usuaris puguin identificar la categoria dels diferents missatges i textos de la pantalla gràcies a la seva situació i format. Aquesta identificació permet a l'usuari cercar la informació de forma més ràpida i predisposar-se a llegir el text amb major o menor atenció, segons l'activitat del moment.</p>
+                                        <p>Així, per exemple podríem definir que cada pantalla de la nostra aplicació contingués a a la part superior dos títols identificant l'aplicació o la pantalla. Per tal d'identificar fàcilment els títols, es podrien formatar d'una forma específica que ajudés a identificar-los. Per exemple: </p>
+                                        <pre>
+************************************************************
+**               Volta Ciclista a Catalunya               **
+**                     Menú principal                     **
+************************************************************                                        </pre>
+                                        <p>També podem identificar de forma específica els missatges informatius que indiquin com ha anat una determinada operació:</p>
+                                        <pre>
+------------------------------------------------------------
+Inscripció realitzada correctament
+------------------------------------------------------------
+                                        </pre>
+                                        <p>O ressaltar els errors de forma prou contrastada per captar l'atenció del client:</p>
+                                        <pre>
+************************************************************
+************************************************************
+**                         ERROR                          **
+************************************************************
+************************************************************
+************************************************************
+L'equip al que voleu inscriure el ciclista
+ ja està complert. La inscripció no és possible.
+************************************************************
+************************************************************                                        
+                                        </pre>
+                                    </div>  
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-biblioteques" 
+                                            data-selector-clue="#slc-biblioteques-clue3">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-biblioteques-clue3" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Tot i que no ha de ser obligatori centrar el text a la pantalla, si ho necessiteu, a continuació s'explica com aconseguir centrar un text en una línia de la pantalla. En primer lloc, cal saber la mida màxima de la línia on s'hagi de centrar. Seguidament cal treure (restar) a la mida màxima, la mida del text a centrar. Així aconseguirem saber quants espais no es troben  ocupats pel text. A continuació, caldrà dividir aquest resultat per 2, per saber quina quantitat caldrà afegir davant del text i quina darrera. Finalment cal concatenar: tants espais en blanc com caràcters es precisin abans del text, el text mateix i per últim tants espais en blanc com calguin després del text.</p>
+                                    </div>  
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+

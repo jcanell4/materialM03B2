@@ -820,8 +820,8 @@ public class Exemple2DissenyDescendent {
                                     <p>D'altres vegades ens adonem que no ho hem controlat tot, que hem deixat algun error latent i es clar, la seva aparició només es cosa de temps.</p>
                                     <p> A <a href="#slc-exemples__slc-exemples30">la implementació de l'exemple 2</a> s'ha detectat que la funció <em>demanarNumDigits</em>, només funciona si l'usuari escriu correctament un valor enter, però si s'equivoca, i prem <em>[ENTRAR]</em> sense haver escrit cap número, obtindrem un error.</p>
                                     <p>Es tracta d'un problema molt típic, de qualsevol aplicació que requereixi entrades numèriques i se soluciona fent una comprovació prèvia del que l'usuari està escrivint. No cal fer una lectura del teclat, n'hi ha prou sabent si el que s'escriu és o no un enter. En cas afirmatiu es passaria a la lectura, però en cas negatiu, caldria recordar que es tractat d'una introducció no vàlida i que s'espera és un valor enter.</p>
-                                    <p> El més aconsellable seria crear un funció genèrica que es pugui reutilitzar en qualsevol context i parametritzar-la adequadament en el cas que ens ocupa. Ja heu fet una funció com aquesta a l'activitat <a class="toA402" href="">A402</a> per a <em>doubles</em>. Aquí us demanem que escriviu una funció anomenada <em>entrarUnEnter</em> que rebi un missatge explicatiu per mostrar a l'usuari i esperi fins que l'usuari escrigui un valor enter, fent la comprovació d'error esmentada. Si l'usuari ha escrit números, la funció retornarà l'enter entrat des de teclat, en cas contrari, avisarà a l'usuari i tornarà a fer la petició d'un enter correcte.</p> 
-                                    <p>A banda de la funció <em>entrarUnEnter</em>, també us demanem que modifiqueu la funció <em>demanarNumDigits</em> per tal que faci servir la nova utilitat. Feu la modificació a la funció <em>demanarNumDigits</em> i no a la funció <em>inici</em>, perquè així es manté la informació intrínseca derivada del seu nom i el codi resulta més fàcil de llegir.</p>
+                                    <p> El més aconsellable seria crear un funció genèrica que es pugui reutilitzar en qualsevol context i parametritzar-la adequadament en el cas que ens ocupa. Ja heu fet una funció com aquesta a l'activitat <a class="toA402" href="">A402</a> per a <em>doubles</em>. Aquí us demanem que escriviu una funció anomenada <em>entrarEnter</em> que rebi un missatge explicatiu per mostrar a l'usuari i esperi fins que l'usuari escrigui un valor enter, fent la comprovació d'error esmentada. Si l'usuari ha escrit números, la funció retornarà l'enter entrat des de teclat, en cas contrari, avisarà a l'usuari i tornarà a fer la petició d'un enter correcte.</p> 
+                                    <p>A banda de la funció <em>entrarEnter</em>, també us demanem que modifiqueu la funció <em>demanarNumDigits</em> per tal que faci servir la nova utilitat. Feu la modificació a la funció <em>demanarNumDigits</em> i no a la funció <em>inici</em>, perquè així es manté la informació intrínseca derivada del seu nom i el codi resulta més fàcil de llegir.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
                                             data-parent-selector="#leftColumnPanel"
@@ -836,14 +836,14 @@ public class Exemple2DissenyDescendent {
    
    int demanarNumDigits(){
         int digits;
-        digits=entrarUnEnter("Seguidament indiqueu quin és el nombre de "
+        digits=entrarEnter("Seguidament indiqueu quin és el nombre de "
                     + "dígits minim que han de tenir els números a "
                     + "comptabilitzar: ");
         System.out.println();
         return digits;
     }
     
-    int entrarUnEnter(String missatge){
+    int entrarEnter(String missatge){
         Scanner scanner = new Scanner(System.in);
        int enter = 0;
        boolean correcte=false;
@@ -1033,7 +1033,7 @@ public class Exercici2DissenyDescendent {
 
     int demanarLimitIntents() {
         int limitIntents;
-        limitIntents = entrarUnEnter(                  
+        limitIntents = entrarEnter(                  
                 "Va! Atreveix-te! Quants intents creus que necessitaràs? "
                 + "Afina be. Escriu el nombre màxim d'intents i prem [ENTRAR]:");
         return limitIntents;
@@ -1063,7 +1063,7 @@ public class Exercici2DissenyDescendent {
 
     int demanarProposta() {
         int proposta;
-        proposta = entrarUnEnter("Fes una proposta. Quin numero creus que has d'endevinar? \n"
+        proposta = entrarEnter("Fes una proposta. Quin numero creus que has d'endevinar? \n"
                 + "Escriu-lo i prem [ENTRAR] ");
         return proposta;
     }
@@ -1088,7 +1088,7 @@ public class Exercici2DissenyDescendent {
         }
     }
 
-   int entrarUnEnter(String missatge){
+   int entrarEnter(String missatge){
         Scanner scanner = new Scanner(System.in);
        int enter = 0;
        boolean correcte=false;

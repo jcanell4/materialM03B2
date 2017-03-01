@@ -105,8 +105,8 @@
     "RP7":{
         "id": {"type":"text", "value":"6"},
         "dataInici": {"type":"text", "value":"05/04/2017"},
-        "dataFinal": {"type":"text", "value":"16/04/2017"},       
-        "dataLimit": {"type":"text", "value":"20/04/2017"},
+        "dataFinal": {"type":"text", "value":"09/04/2017"},       
+        "dataLimit": {"type":"text", "value":"17/04/2017"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P6</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=432495"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum del període VI</a>"},
@@ -114,7 +114,7 @@
     },        
     "RP8":{
         "id": {"type":"text", "value":"7"},
-        "dataInici": {"type":"text", "value":"17/04/2017"},
+        "dataInici": {"type":"text", "value":"10/04/2017"},
         "dataFinal": {"type":"text", "value":"24/04/2017"},       
         "dataLimit": {"type":"text", "value":"24/04/2017"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P7</a>"},
@@ -524,8 +524,8 @@
         "toActivityTable":{"selector":".toActivityTable", "type":"attr", "name":"href", "value":{"defaultValue":"toActivityTableUrl"}}
     },
     "A504": {
-        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A504_Implementacio1.html?4c7e67089a6b8ab'>A504</a>"},
-        "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A504 Implementació I"},
+        "idActivitat": {"selector":".idActivitat", "type":"html", "value":"<a href='A504_InterficieUsuari.html?4c7e67089a6b8ab'>A504</a>"},
+        "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A504 Biblioteca de l'interfície d'usuari"},
         "lliurament": {"selector":".lliurament", "type":"arrayText", "value":[{"defaultValue":"Ll_FD"},{"defaultValue":"Ll_B"}]},
         "dataRecomanada":{"selector":".dataRecomanada", "type":"ref", "name":"RP7", "value":"dataFinal"},
         "dataLimit":{"selector":".dataLimit", "type":"ref", "name":"RP7", "value":"dataLimit"},
@@ -535,7 +535,7 @@
         "bustiaLliurament":{"selector":".bustiaLliurament", "type":"ref", "name":"RP7", "value":"bustiaLliurament"},
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP7", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA504.odt'> l'informe </a>"},
-        "toDo":{"selector":"#slc-toDo", "type":"file/html", "value":{"type":"arrayText", "value":[{"defaultValue":"projectDir"}, "A504_implementacio.shtm"], "separator":""}}, 
+        "toDo":{"selector":"#slc-biblioteques", "type":"file/html", "value":{"type":"arrayText", "value":[{"defaultValue":"projectDir"}, "A504_implementacio.shtm"], "separator":""}}, 
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":[{"defaultValue":"projectDir"}, "A505_Implementacio2.html?4c7e67089a6b8ab"], "separator":""}},
         "toProjectStatement":{"selector":".toProjectStatement", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":[{"defaultValue":"projectDir"},{"defaultValue":"enunciatProjecteUrl"}], "separator":""}},
         "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP7", "value":"forumDeDiscussio"},
