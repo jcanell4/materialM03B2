@@ -173,6 +173,18 @@
     font-size: 0.95em;
   }
 
+.iocClue .iocimportant,
+.modal-body .iocimportant{
+    font-family: Georgia,"Times New Roman",serif;
+    color: #1C335C;
+    clear: both !important;
+    width: 90%;
+    background-color: #aac9ee;
+    padding: 10px;
+    margin: 1em auto;
+    font-size: 0.95em;
+  }
+
   @keyframes centerSlide {
     0%  {
         transform:translateX(100%);
@@ -255,6 +267,10 @@
 .iocexample.small .ioccontent,
 .iocexample.small.single {
     font-size: 70%;
+}
+.iocexample.mono .ioccontent,
+.iocexample.mono.single {
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
 .iocexample.em{

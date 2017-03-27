@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila ">
+    <title>A505. Implementació II</title>
+    <!-- Bootstrap Core CSS --> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="css/m03b2Activities.css" rel="stylesheet">
+    <link href="css/scrolling-slides.css" rel="stylesheet">
+    <link href="css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li> 
+                    <a class="toActivityTable targetBlank" onclick = '$("#menu-close").click();'>Taula d'activitats</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-discussion">Fòrums</a></li>
+                          <li><a href="#slc-toDo">Implementació</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A505 - Interfície d'usuari i implementació final</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Finalment, ha arribat l'hora d'implementar l'aplicació complerta. Per aconseguir-ho caldrà que tingueu present l'esquema bàsic del disseny que vau realitzar a l'activitat A503 on vau poder descompondre el projecte en mòduls, tasques, accions. Per crear una aplicació de qualitat intenteu posar en pràctica tot allò que heu anat aprenent i que podem considerar com unes bones pràctiques. A mode de recordatori genèric, recordeu que és important escriure el codi de forma que:</p>
+                                <ul>
+                                    <li>Sigui fàcil de llegir i interpretar, això significa que cal respectar les estructures de flux, fent-les servir tal com varen ser ideades, evitant l'escriptura críptica i/o poc entenedora, usar la indentació per identificar de forma fàcil les estructures de flux i els elements modulars, fer servir constants en lloc de literals, posar noms significatius a les variables, les funcions i les classes per tal d'intuir la seva funcionalitat sense haver d'analitzar massa el codi, escriure comentaris quan calgui (però no en excés), etc. </li>
+                                    <li>Es trobi ben distribuït en funcions i classes, aplicant la metodologia del disseny descendent.</li>
+                                    <li>Quedi ben diferenciades les funcions de tractament de dades de les funcions que permetin interaccionar amb l'usuari.</li>
+                                    <li>Que hi hagi estructures de dades que agrupin les dades de forma lògica.</li>
+                                    <li>Que existeixin funcions per gestionar les dades de l'aplicació de forma coherent i consistent.</li>
+                                    <li>Que les funcions es codifiquin tenint en compte la seva reutilització.</li>
+                                    <li>Que disposi d'una bona interfície d'usuari.</li>
+                                </ul>
+                                <p>Per tal d'ajudar-vos a implementar els diferents nivells trobats en el disseny descendent i amb una interfície d'usuari de qualitat, us proposarem dues activitats de discussió o reflexió. Useu per a tal fi, el <span class="forumDeDiscussio">fòrum de discussió del període</span>. És important que feu aquestes reflexions abans de començar a implementar, ja que intenten donar-vos una visió de com realitzar la implementació, així com mostrar-vos les principals característiques que qualsevol interfície hauria de complir.</p>
+                                <p>En el darrer fòrum se us plantejarà a més, un interessant debat amb l'objectiu que aprengueu a usar funcions declarades en classes diferents a la classe des d'on es faci la crida. També haureu de descobrir com treballar amb les instàncies de les estructures de dades a fi de mantenir la coherència d'aquestes mentre duri l'execució.</p>
+                                <p>Finalment, a la secció <em>Implementació</em>, trobareu alguns consells per realitzar les funcions i classes que us falten, intentant aplicar el que hàgiu aprés en els fòrums i intentant també, aprofitar el codi que ja teniu implementat (estructura de dades, gestor de dades, biblioteques diverses).</p>
+	                     </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+            <!--=========== BEGIN SECTION discussion ================-->    
+            <section id="slc-discussion" class="vsections">
+                <!--=========== BEGIN SUBSECTION Fòrum 1 ================-->    
+                <section id="slc-discussion0" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades a les aplicacions</h2>
+                                     <h3 >Tasques: unitats de processament</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Les aplicacions són procediments que tracten i manipulen dades (inicials), a fi d'obtenir resultats i informació (dades finals) a partir de certs tractaments i manipulacions de les dades. És a dir, podem suposar que les aplicacions necessiten un conjunt de dades inicials a les quals se les processa de diferents formes, obtenint uns resultats o dades finals. Les dades inicials solen demanar-se als usuaris, encara que no sempre és així, de fet, les dades podrien obtenir-se també des de bases de dades, fitxers, Internet, etc.  Com és natural, segons l'origen de dades, caldrà disposar de diferents procediments que les obtinguin. Si l'origen prové de l'usuari caldrà implementar alguna forma de demanar-li les dades per la pantalla i recollir-les a partir del teclat o els dispositius d'entrada adients (ratolí, etc.). En canvi si l'origen fos un fitxer, el que caldria seria implementar procediments de lectura del mateix. El que volem dir amb això, és que si volem crear aplicacions versàtils que es puguin adaptar fàcilment a diferents orígens de dades sense haver de refer l'aplicació de dalt a baix, resulta molt i molt important mantenir ben separats els procediments destinats a obtenir les dades i emmagatzemar-les a la memòria de l'ordinador, dels procediments destinats a fer-ne el tractament i obtenir els resultats i també d'aquells que permetin a l'usuari disposar dels resultats (no podem suposar que l'usuari només pot veure els resultats per la pantalla, potser es necessitin imprimir o bolcar-los en un fitxer per recuperar-los posteriorment, etc.)</p>
+                                    <p>En general, les aplicacions poden considerar-se com un conjunt de múltiples procediments que anomenarem tasques. </p>
+                                    <p class="iocimportant">Les tasques són, per dir-ho d'alguna forma, unitats de procediment complertes on inicialment unes dades externes, normalment demanades a l'usuari, s'incorporen a la memòria de l'aplicació, seguidament se'n fa un seguit de tractaments, fins obtenir uns resultats que s'emmagatzemaran o es mostraran a l'usuari d'alguna manera. </p>
+                                    <div class="figscope">
+                                        <p>Els tractaments als que se sotmeten les dades, així com la mostra dels resultats són <strong>les accions</strong> en que es descompon la tasca. Recordeu els esquemes que vàreu veure a l'activitat A503 on es podia entreveure la composició de les tasques (<span class="figref">figura</span>):</p>
+                                        <figure id ="descomposicioAplicacions">
+                                            <img src="images/activities/descomposicioAplicacions.png" alt="descomposició d'aplicacions">
+                                            <figcaption style="width: 510px; max-width: 75%;">
+                                                <span class="figuretitle">figura </span> Descomposició d'aplicacions.                               
+                                            </figcaption>
+                                         </figure>
+                                    </div>
+                                    <div class="figscope">
+                                        <p>O el fet que les tasques necessiten una entrada de dades inicial, uns tractaments i una mostra dels resultats (<span class="figref">figura</span>).</p>
+                                         <figure id ="figura_pantalles">
+                                            <img src="images/activities/fluxControl.png" alt="Control"/>
+                                            <figcaption >
+                                                <span class="figuretitle">figura </span> Esquema simplificat del flux d'execució d'una aplicació.                               
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <ul>
+                                            <li><p>Per què quan parlem de tasques, diem que són unitats complertes de processament?</p></li>
+                                            <li>En quantes accions creieu que es podria dividir una tasca?</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Fòrum 1 ================-->    
+              <!--=========== BEGIN SUBSECTION Fòrum 2 ================-->    
+                <!--section id="slc-discussion21" class="debat section">                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
+                                     <h3> Mantenir les entrades i sortides de dades separades dels tractaments.</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>A l'hora de descompondre les tasques, intenteu <strong>evitar</strong> la barreja de funcions de demanda i de sortida de dades amb funcions de tractament. Si ho feu, els vostres programes seran més fàcils de llegir, de modificar i aconseguireu reutilitzar codi més fàcilment. Probablement caldrà escriure algunes línies de més, però els avantatges obtinguts s'ho valdran.</p>
+                                    <p>Els avantatges de separar així el codi són diversos. Un dels més importants, té a veure amb la reutilització del codi. Al fòrum anterior ja hem vist que les aplicacions no sempre han de tenir un mateix origen o sortida de dades, fins i tot suposant que l'origen de les dades fos sempre la interpel·lació de l'usuari, la proliferació que avui dia hi ha de plataformes (mòbils, WEB, d'interfícies gràfiques, de consola, etc.) fa molt difícil reutilitzar el codi dissenyat específicament per una d'aquestes plataformes. És més, les interpel·lacions als usuaris, solen estar acompanyades de textos molt contextualitzats i per tant, de difícil reutilització.</p>
+                                    <p>Per contra, les accions de tractament, si es configuren bé, podran reutilitzar-se en múltiples contextos i amb independència del tipus d'entrada o sortida que acabem implementant, ni de la plataforma finalment usada. Per exemple, si una tasca calcula la temperatura mínima o mitjana o ... i prenem la precaució de independitzar la demanda i sortida de dades del propi càlcul, adaptar la tasca a diferents plataformes o formes d'obtenció de dades (fitxers, Internet), consistirà només en reescriure les funcions específiques d'entrada i sortida, però podrem deixar intactes les de tractament i càlcul de resultats.</p>
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <ul>
+                                            <li>
+                                            Què creus que a la pràctica pot significar implementar una funció descontextualitzada?.<br/>
+                                            Indica com es podria aconseguir.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Button trigger pannel --><!--
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-discussion21" 
+                                            data-selector-clue="#slc-discussion21-clue1">
+                                        Pista
+                                    </button>                                        
+                                    <div id="slc-discussion21-clue1" class="iocClue hidden">
+                                        <h2>Pista</h2>
+                                        <p>Per a què serveixen els paràmetres de les funcions? </p>
+                                    </div>                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Fòrum 2 ================-->
+                <!--=========== BEGIN SUBSECTION Fòrum 5 ================-->    
+                <section id="slc-discussion24" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
+                                     <h3>Criteris de qualitat de les interfícies d'usuari</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Avui en dia, una bona interfície d'usuari ha de complir un seguit de criteris de qualitat. No n'hi ha prou en estandarditzar la interfície, sinó que cal estandarditzar-la seguint els criteris de qualitat comunament acceptats. Veiem-ne els principals</p>
+                                    <ul>
+                                        <li>És important que l'usuari no es perdi mai durant la navegació. Això significa que a totes les pantalles de l'aplicació hi hauria d'haver informació que indiqui a l'usuari a quin mòdul o quina tasca es troba.</li>
+                                        <li>L'Usuari ha de tenir sempre clar el que ha de fer. És a dir la pantalla ha de donar una informació clara i precisa de les accions que l'usuari pot fer. Les informacions ambigües són contraproduents i les llargues també.</li>
+                                        <li>La interfície ha de ser tot l'intuïtiva que sigui possible. És a dir l'usuari hauria d'endevinar el que ha de fer sense necessitat de llegir-se el manual.</li>
+                                        <li>La interfície ha d'estar estandarditzada. És a dir, cal que les demandes i presentacions d'informació segueixin  un patró similar d'acord amb la seva funcionalitat, tipus de dades, etc.</li>
+                                        <li>La interfície ha de ser tolerant a errades de l'usuari. Cal tenir present que els usuaris no sempre faran el que se'ls demana, ja sigui per equivocació o per simple curiositat. En qualsevol cas, la interfície no s'ha de penjar mai per acció de l'usuari. També cal assegurar sempre, que es recullen exactament el tipus i el nombre de dades previstes. </li>
+                                    </ul>
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Valoreu els criteris de qualitat exposats més amunt</p>
+                                    </div>
+                                    
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Fòrum 5 ================-->
+                <!--=========== BEGIN SUBSECTION Fòrum 4 ================-->    
+                <section id="slc-discussion25" class="debat section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="debatTitle">Fòrum</span> - Implementació usant múltiples classes </h2>
+                                     <h3>Instanciació de classes</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Recordeu que en JAVA, per poder cridar un mètode declarat en una classe diferent a la classe des d'on es fa la crida és necessari crear instàncies fent servir la instrucció <em>new</em>. Consulteu l'activitat A501 per refrescar-ho. Només a través de les instancies podrem accedir als mètodes de la classe:</p>
+                                        <pre><code class="java">
+//Sigui ClasseX una classe que disposa, almenys d'un mètode anomenat metodeY.
+ClasseX instanciaClasseX = new ClasseX();
+...
+instanciaClasseX.metodeY();
+                                        </code></pre>
+                                        <p>Aquesta regla, té però una excepció: si els mètodes de les classes estan declarats com estàtics, no caldrà crear cap instancia per poder-los usar, n'hi haurà prou amb el nom de classe per fer la crida correcta:</p>
+                                        <pre><code class="java">
+//Sigui ClasseX una classe que disposa, almenys d'un mètode estàtic anomenat metodeEstaticY.
+...
+ClasseX.metodeEstaticY();
+...
+                                        </code></pre>
+                                        <p>Quelcom de semblant passa amb les classes definides per contenir dades (tipus compostos). Per poder-les fer operatives i guardar o accedir a les dades definides, necessitarem crear també instàncies. De fet, Exceptuant els mètodes estàtics, quan treballeu en una implementació en la que intervinguin diverses classes, siguin tipus compostos o de codi, haureu, inevitablement de crear instancies de les classes.</p>
+                                        <p>De vegades, treballar amb instancies pot suposar certa dificultat si no es domina massa la tècnica. Aquí intentarem explicar la raó d'aquestes dificultats, de manera que pugueu raonar durant la implementació del projecte quantes instàncies d'una classe caldrà fer i en quin moment de l'execució.</p>
+                                        <p>Les instancies que contenen dades (Tipus Compostos), són les que ens poden arribar a donar més problemes. Intentarem explicar aquesta problemàtica usant una metàfora per tal de fer-ho més entenedor. Començarem explicant què passa quan es crea una instància.</p>
+                                        <h4 id="instanciesDeDades">Instàncies de tipus compostos</h4>
+                                        <p>La analogia que ens servirà per explicar el significat de la instanciació i les implicacions que aquesta comporta, serà la construcció d'un armari a partir dels plànols que ens mostren com muntar-lo. Els plànols serien l'equivalent als tipus de dades (la definició de l'estructura), mentre que la construcció pròpiament dita de l'armari, d'acord amb les instruccions dels plànols, equivaldria a la instanciació. El llenguatge JAVA té la instrucció <em>new</em> per construir les instàncies (armaris) tal com indiquen els corresponents tipus compostos (plànols).</p>
+                                        <p>Seguim amb la metàfora. Un cop realitzada la construcció, l'armari estarà buit, però preparat per emmagatzemar coses. Si no l'haguéssim construït, no hi podríem emmagatzemar res, perquè només tindríem els plànols, però l'armari no hi seria. És el que passa quan declarem una variable d'un tipus compost però no construïm la instància. La declaració de la variable seria equivalent a buscar-li un lloc a l'armari, però si no el construïm, només tindrem un lloc buit.</p>
+                                        <p>Imagineu que tenim una classe anomenada <em>DadesJugador</em>, la qual representa un tipus composts com el que veieu tot seguit:</p>
+                                        <pre><code class="java">
+        public class DadesJugador {    
+            String nom;
+            int partidesGuanyades;
+        }
+                                        </code></pre>
+                                        <p>Imagineu també que escrivim un classe que inicialitzi 2 variables d'aquest tipus compost:</p>
+                                        <pre><code class="java">
+        public class AppJoc {
+            public static void main(String[] args) {
+                AppJoc prog = new AppJoc();
+                prog.inici();
+            }
+
+            private void inici() {
+               DadesJugador jugadorA = new DadesJugador();
+               DadesJugador juagadorB;
+               
+               jugadorA.nom = "Sara";
+               jugadorB.nom = "Francesc";
+               
+               ...
+            }
+        }
+                                            
+                                        </code></pre>
+                                        <p>Fixeu-vos que la variable jugadorA està ben inicialitzada i podrem fer-la servir sense problemes. Podem assignar-hi el nom i també el nombre de partides guanyades perquè abans hem construït la instància. L'armari existeix!</p>
+                                        <p>Per contra la variable jugadorB, només està declarada, però no inicialitzada (encara ens cal construir l'armari) i per tant si intentem assignar-hi algun valor obtindrem un error.</p>
+                                        <h4>Diferències entre instanciar un tipus compost o una classe que només conté codi</h4>
+                                        <p>La diferència essencial entre ambdues categories és que les instancies dels tipus compostos serviran per emmagatzemar dades, mentre que les instancies de classes que només contenen codi, no emmagatzemen res. Seguint amb la metàfora anterior, si les estructures de dades fossin armaris, per guardar roba per exemple, les classes de codi serien els electrodomèstics que la processessin, posem per cas les planxes.</p>
+                                        <p>Si tinguéssim al capacitat de construir armaris i planxes amb només l'acció de picar els dits, podríem construir una planxa cada cop que en tinguéssim necessitat, sense  detriment de la nostra feina (exceptuant el malbaratament del medi ambient que causaríem), perquè aconseguiríem planxar la roba sense cap entrebanc. Ara bé, a ningú se li acudiria construir armaris quan passéssim pel costat d'una planxa i ens agafés el rampell de deixar la roba impecable, perquè els armaris construïts estarien buits i ens quedaríem sense poder planxar. No tindríem més remei que agafar la planxa i desplaçar-nos a l'armari més proper que contingués roba.</p>
+                                        <p>Quelcom semblant passa amb les estructures de dades i amb les classes que contenen codi. Les primeres, no es poden anar creant lleugerament si no volem perdre dades pel camí. Les segones en canvi, són com les planxes.</p>
+                                        <p>Analitzeu el codi d'exemple que us posem a continuació i intenteu esbrinar perquè les crides <em>processaImprimirNom(jugador)</em> (línia 31) i <em>processarImprimirTot(impressora, jugador)</em> (línia 36) tindran èxit, mentre que la crida <em>processaImprimirGuanyades()</em> (línia 33) no aconseguirà imprimir res.</p>
+                                        <pre><code class="linenumbers java">
+    /*Fitxer ioc.m03.uf2.ImpresoraJugador.java*/
+    package ioc.m03.uf2;
+
+    public class ImpresoraJugador {
+        public void imprimirNom(DadesJugador jugador) {
+            System.out.print("Nom del jugador:");
+            System.out.println(jugador.nom);
+        }
+
+        public void imprimirGuanyades(DadesJugador jugador) {
+            System.out.print("Partides guanyades del jugador:");
+            System.out.println(jugador.partidesGuanyades);        
+        }
+    }
+
+    /*Fitxer ioc.m03.uf2.Debat52.java*/
+    package ioc.m03.uf2;
+
+    public class Debat52 {
+       public static void main(String[] args) {
+            Debat52 prog = new Debat52();
+            prog.inici();
+        }
+
+        private void inici() {
+           DadesJugador jugador = new DadesJugador();
+           
+           jugador.nom = "Sara";
+           jugador.partidesGuanyades=10;
+           
+           processaImprimirNom(jugador);
+
+           processaImprimirGuanyades();
+           
+           ImpresoraJugador impressora = new ImpresoraJugador();
+           processarImprimirTot(impressora, jugador);
+
+        }    
+
+        private void processaImprimirNom(DadesJugador jugador) {
+            ImpresoraJugador impressora = new ImpresoraJugador();
+            impressora.imprimirNom(jugador);
+        }
+
+        private void processaImprimirGuanyades() {
+            ImpresoraJugador impressora = new ImpresoraJugador();
+            DadesJugador jugador = new DadesJugador();
+            impressora.imprimirGuanyades(jugador);
+        }
+
+        private void processarImprimirTot(ImpresoraJugador impressora, 
+                                            DadesJugador jugador) {
+            impressora.imprimirNom(jugador);
+            impressora.imprimirGuanyades(jugador);
+        }
+    }
+                                        </code></pre>
+                                     <div class="frameBox">
+                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
+                                        <p>Quines diferencies veus entre cada una de les tres funcions següents: processaImprimirNom, processaImprimirGuanyades, processarImprimirTot, en relació als paràmetres rebuts i les instàncies creades?</p>
+                                        <p>Perquè creus que la crida de la línia 31 (processaImprimirNom) tindrà èxit?</p>
+                                        <p>Perquè creus que la crida de la línia 33 (processaImprimirGuanyades) NO tindrà èxit?</p>
+                                        <p>Perquè creus que la crida de la línia 35 (processarImprimirTot) tindrà èxit?</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Fòrum 4 ================-->
+            </section>
+            <!--=========== END SECTION discussion ================-->    
+            
+            <!--=========== BEGIN SECTION implementació ================-->    
+            <section id="slc-toDo" class="vsections">
+
+            </section>
+            <!--=========== END SECTION implementació ================-->    
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament -Implementació II</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>El lliurament cal fer-lo amb un únic fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span> i que contindrà el codi sencer del projecte.</p>
+                                <p>Recordeu que la data límit per a fer el lliurament és: <strong class="dataLimit"></strong>. No s'admetran lliuraments passada aquesta data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar - Implementació II</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+                                <p>De forma voluntària, podeu realitzar la següent <a class="toNextActivity">activitat</a> si desitgeu millorar la qualificació obtinguda en el projecte.</p>
+                                <p>Si us cal, també podeu saltar <a class="toActivityTable targetBlank">a la taula d'activitats</a> per accedir a qualsevol altra activitat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="js/jssor.js"></script>
+    <script src="js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("data/toReplace.json", "A505", false);
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+        
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+
