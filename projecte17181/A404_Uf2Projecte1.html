@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Alicia Vila">
+    <title>A404. UF2 Projecte I</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li> 
+                    <a class="toActivityTable targetBlank" onclick = '$("#menu-close").click();'>Taula d'activitats</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>  
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-individuals">Tasques a realitzar</a></li> 
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A404 - UF2 Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Aquesta activitat us servirà per començar a implementar alguna funcionalitat senzilla del projecte que heu de desenvolupar individualment a la UF2, posant en pràctica el que heu aprés fins el moment.</p>
+                                <p>Si encara no ho heu fet, podeu consultar l'enunciat del projecte en el següent enllaç: <a class="toProjectStatement">enunciat del projecte</a>, així contextualitzareu el que se us anirà demanant al llarg de la UF2. </p>
+                                <p>En relació a les tasques que haureu d'implementar en aquesta activitat, es tracta de funcions que podreu reutilitzar quan implementeu tot el projecte, o bé que us ajudaran a saber com implementar altres funcions del projecte. En aquesta activitat, encara no teniu els coneixements suficients per començar a implementar el projecte de forma global, però en canvi si que sabeu implementar funcions.</p>
+                                <p>Algunes de les funcions que se demanaran aquí, són de caire genèric i es podrien aprofitar en qualsevol altre projecte, però d'altres són específiques i plantejades expressament per aquest projecte. Potser de moment, encara no els veureu una aplicació pràctica, però quan entreu a la fase de disseny i implementació, ja trobareu la manera d'incorporar-les a fi que us ajudin reduir la quantitat de línies a escriure.</p>
+                                <p>Passeu a l'apartat <a href="#slc-individuals">tasques a realitzar</a> per començar la implementació.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION individuals ================-->    
+            <section id="slc-individuals" class="vsections">
+                <!--=========== BEGIN SUBSECTION individuals30  ================-->    
+                <section id="slc-individuals30" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>obtenirPosDiferencia</em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>D'acord amb el que diu l'enunciat, a cada intent del jugador per endevinar la paraula amagada, podrà escriure el nombre de lletres que desitgi. El programa haurà de comprovar quantes de les lletres entrades segueixen l'ordre correcte per tal de seleccionar les bones i separar-les de la resta. Cal tenir en compte que en funció dels intents anteriors, la comparació a realitzar no ha de començar sempre des de a primera lletra de la paraula, sinó des del punt on encara manquin lletres per descobrir. Per exemple, si la paraula amagada fos PLATA i en intents anteriors hagués aconseguit descobrir les dues primeres lletres (PL), per completar la paraula el jugador hauria d'escriure ATA i, la comparació amb la paraula plata hauria de començar a la posició 2, perquè la 0 i la 1 ja s'han descobert en altres intents.</p>
+                                    <p>Així, us demanem que escriviu una funció que compari dues cadenes de caràcters (String) a partir d'una posició indicada. La funció rebrà els següents paràmetres:</p>
+                                    <ol>
+                                        <li>Cadena de text contenint la paraula amagada</li>
+                                        <li>Enter indicant la posició de la paraula amagada on cal començar la comparació</li>
+                                        <li>Cadena de text amb les lletres a comprovar</li>
+                                    </ol>
+                                    <p>La funció compararà les lletres del tercer paràmetre començant per la primera, amb les lletres del primer paràmetre, començant per la posició indicada en el segon paràmetre. La funció retornarà la primera posició no coincident, referida a la cadena contenint l'intent (tercer paràmetre), o en el cas que totes les lletres coincideixin la longitud total de la cadena del tercer paràmetre. Hi ha un cas, però que cal penalitzar. Si la longitud de la cadena del tercer paràmetre més la posició indicada al tercer paràmetre superen la longitud de la paraula amagada, el valor retornat serà sempre 0 amb independència de l'ordre de les lletres entrades. Vegeu els següents exemples:</p>
+                                    <p>Si la funció rep els paràmetres: "CULLERA", 2 i "LLAR", haurà de retornar el valor 2 perquè la posició 0 i 1 es troben en l'ordre correcte, i és la posició 2 de la cadena LLAR (corresponent a la lletra A) la que no coincideix, com podeu observar a la taula següent:</p>
+                                    <table border="1" cellspacing="0" cellpadding="0">
+                                        <tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                                        <tr><td>C</td><td>U</td><td>L</td><td>L</td><td bgcolor="red">E</td><td>R</td><td>A</td></tr>
+                                        <tr><td colspan=2 border="0"  bgcolor="#000000"></td><td>L</td><td>L</td><td bgcolor="red">A</td><td>R</td><td  bgcolor="#000000"></td></tr>
+                                        <tr><td colspan=2 border="0" bgcolor="#000000"></td><td>0</td><td>1</td><td>2</td><td>3</td><td  bgcolor="#000000"></td></tr>
+                                        
+                                    </table>
+                                    <p>En canvi, si amb la mateixa paraula amagada i la mateixa posició inicial, el jugador hagués entrat ""LLER", la funció hauria d'haver retornat 4, que és la longitud de la cadena entrada, ja que totes les lletres coincideixen.</p>
+                                    <p>O si seguint amb la mateixa paraula amagada i la mateixa posició inicial, el jugador hagués entrat ""LLERAS", la funció hauria d'haver retornat 0, perquè la longitud de d'aquesta cadena més 2 supera la longitud de CULLERA.</p>
+                                    <p>Suposeu que ambdues cadenes arriben sempre amb majúscules i que la posició inicial passada per paràmetre no supera mai la longitud de la cadena del primer paràmetre.</p>
+                                    <p>D'altra banda, per tal que pugueu provar el vostre codi, us demanem que codifiqueu la solució en una classe anomenada Tasca1 on podreu copiar el codi que se us facilita més a sota. Allà trobareu la declaració de la funció que us demanem (la funció obtenirPosDiferencia). Cal que implementeu el vostre codi allà. També trobareu 4 funcions ja implementades que us ajudaran a verificar si el vostre codi és o no correcte i fa el que es demana. N'hi ha prou en que executeu la classe Tasca1. A la pantalla us apareixeran múltiples verificacions de diverses dades, amb el resultat aconseguit. El resultat s'acompanya d'una sentencia indicant si el vostre algoritme ha funcionat correctament o ha errat en el veredicte amb els missatges:
+
+    *** la funció obtenirPosDiferencia funciona correctament ***, si l'algoritme ha funcionat correctament amb l'exemple proposat
+    *** la funció obtenirPosDiferencia NO ACABA de funcionar bé ***, si hi ha discrepàncies entre el vostre resultat i el resultat correcte.
+
+Codi de la Tasca1 a copiar en el NetBeans:</p>
+                                    <pre><code class="java">
+public class Tasca1 {
+
+    int obtenirPosDiferencia(String paraula, int posInicial, String intent) {
+        //CODIFIQUEU AQUÍ LA SOLUCIÓ 
+    }    
+
+        
+    /*******************************************************/
+    /*                Activitat A404 Tasca 1               */
+    /*                   Codi per provar                   */
+    /*******************************************************/
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Tasca1 prg = new Tasca1();
+        prg.prova();
+    }
+    
+    private void prova() {
+        String paraulaAmagada = "CULLERA";
+        int posicioIncial;
+        String cadenaEntrada;
+        int posicioRetornada;
+        
+        posicioIncial = 0;
+        cadenaEntrada = "ULL";
+        posicioRetornada = obtenirPosDiferencia(paraulaAmagada, posicioIncial, cadenaEntrada);
+        mostrarResultat(paraulaAmagada, posicioIncial, cadenaEntrada, posicioRetornada);
+        mostrarVerificacio(posicioRetornada, 0);
+
+        posicioIncial = 0;
+        cadenaEntrada = "CULL";
+        posicioRetornada = obtenirPosDiferencia(paraulaAmagada, posicioIncial, cadenaEntrada);
+        mostrarResultat(paraulaAmagada, posicioIncial, cadenaEntrada, posicioRetornada);
+        mostrarVerificacio(posicioRetornada, 4);
+
+        posicioIncial = 0;
+        cadenaEntrada = "CURE";
+        posicioRetornada = obtenirPosDiferencia(paraulaAmagada, posicioIncial, cadenaEntrada);
+        mostrarResultat(paraulaAmagada, posicioIncial, cadenaEntrada, posicioRetornada);
+        mostrarVerificacio(posicioRetornada, 2);
+
+        posicioIncial = 2;
+        cadenaEntrada = "LLAR";
+        posicioRetornada = obtenirPosDiferencia(paraulaAmagada, posicioIncial, cadenaEntrada);
+        mostrarResultat(paraulaAmagada, posicioIncial, cadenaEntrada, posicioRetornada);
+        mostrarVerificacio(posicioRetornada, 2);
+
+        posicioIncial = 2;
+        cadenaEntrada = "LLER";
+        posicioRetornada = obtenirPosDiferencia(paraulaAmagada, posicioIncial, cadenaEntrada);
+        mostrarResultat(paraulaAmagada, posicioIncial, cadenaEntrada, posicioRetornada);
+        mostrarVerificacio(posicioRetornada, 4);
+
+        posicioIncial = 2;
+        cadenaEntrada = "REL";
+        posicioRetornada = obtenirPosDiferencia(paraulaAmagada, posicioIncial, cadenaEntrada);
+        mostrarResultat(paraulaAmagada, posicioIncial, cadenaEntrada, posicioRetornada);
+        mostrarVerificacio(posicioRetornada, 0);
+
+        posicioIncial = 1;
+        cadenaEntrada = "ULLERA";
+        posicioRetornada = obtenirPosDiferencia(paraulaAmagada, posicioIncial, cadenaEntrada);
+        mostrarResultat(paraulaAmagada, posicioIncial, cadenaEntrada, posicioRetornada);
+        mostrarVerificacio(posicioRetornada, 6);
+
+        posicioIncial = 1;
+        cadenaEntrada = "ULLERAS";
+        posicioRetornada = obtenirPosDiferencia(paraulaAmagada, posicioIncial, cadenaEntrada);
+        mostrarResultat(paraulaAmagada, posicioIncial, cadenaEntrada, posicioRetornada);
+        mostrarVerificacio(posicioRetornada, 0);
+
+    }
+    
+    private void mostrarResultat(String paraula, int posInicial, String intent, int retorn){
+        System.out.println();
+        System.out.print("Paraula amagada: ");
+        System.out.print(paraula);
+        System.out.print(". Posició des d'on comparar: ");
+        System.out.print(posInicial);
+        System.out.print(". Cadena entrada: ");
+        System.out.print(intent);
+        System.out.print(". Retorn: ");
+        System.out.println(retorn);
+    }
+    
+    private void mostrarVerificacio(int valorObtingut, int valorEsperat){
+        if(valorObtingut==valorEsperat){
+            System.out.println("*** la funció 'obtenirPosDiferencia' funciona correctament ***");
+        }else{
+            System.out.println("*** la funció 'obtenirPosDiferencia' NO ACABA de funcionar bé ***");
+        }
+        System.out.println();
+    }
+}
+
+                                    </code></pre>
+                                    <p>Codifiqueu la funció obtenirPosDiferencia tenint en compte que si ho considereu, podeu codificar funcions auxiliars que us ajudin a fer el càlcul.</p> 
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Recordeu que la funció que us permet obtenir el valor del caràcter que es troba en en una posició determinada s'anomena <em>charAt(pos)</em> i que per saber la longitud d'una cadena cal fer servir la funció <em>length()</em>. Consulteu la forma d'usar-la en el material de consulta del semestre passat: <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/index.html" class="materialCadenesDeText">cliqueu aquí per anar-hi</a>.</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Si teniu algun problema en com plantejar aquest algoritme, us proposem que comenceu separant el cas en que la longitud del tercer paràmetre més la posició inicial (segon paràmetre) superin la longitud de la primera cadena. Plantegeu-vos com resoldríeu un algoritme que retornés el valor 0 en cas de superació i qualsevol altre valor (suposem el valor 1) en cas contrari.</p>
+                                        <p>Un cop solucionat, caldrà canviar el retorn del valor 1, pel resultat de comparar caràcter a caràcter totes les lletres de la cadena del tercer paràmetre amb els caràcters de la paraula del primer paràmetre començant des de la posició indicada pel segon paràmetre. En cas que alguna de les lletres no coincideixi, caldrà aturar la comparació i retornar la posició discordant.</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Si la dificultat la teniu en com afrontar la comparació entre cadenes, us aconsellem que abans de resoldre l'algoritme complert, intenteu fer una comparació per saber si dues cadenes són iguals o no. Com faríeu aquesta comparació? Hauríeu de començar per la primera posició d'ambdues cadenes (la posició zero) i comparar els seus caràcters per saber si són iguals o no. Caldria repetir la comparació per la resta de posicions sempre i quant ambdós caràcters vagin coincidint.</p>
+                                        <p>Un cop aconseguiu implementar l'anterior, plantegeu-vos com adaptar el codi als requisits específics de l'algoritme que es demana a la funció obtenirPosDiferencia</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Plantegeu-vos de mantenir dos variables amb les posicions respectives de cada paraula. Així podreu comparar la posició X d'una d'elles amb la posició Y de l'altra. Ara bé, plantegeu-vos també quant caldrà incrementar cada variable per anar passant de caràcter en caràcter? Fins quan caldrà anar comparant en cas que no hi hagi mai discordança?  </p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals30 ================-->
+
+              <!--=========== BEGIN SUBSECTION individuals40  ================-->    
+                <section id="slc-individuals40" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>concatenaParaulesFinsMida</em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca haureu de codificar la funció <em>concatenaParaulesFinsMida</em>. Aquesta funció rebrà dues cadenes de text i un enter i retornarà com a resultat el procés de concatenar a la primera paraula tants caràcters de la segona com indiqui el tercer paràmetre.Suposeu que el tercer paràmetre vindrà sempre correcte en un rang comprés entre zero i la longitud de la segona cadena.</p>
+                                    <p>Així per exemple si arriben els paràmetres "CU", "LLERA" i 3, la funció hauria de retornar la cadena "CULLE", ja que al valor CU es concatenarien les 3 primeres lletres de "LLERA".</p>
+                                    <p>Es demana que implementeu la funció <em>concatenaParaulesFinsMida</em> com a part d'una classe anomenada Tasca2 on hi haureu de copiar el codi que us facilitem en el següent paràgraf, a fi de poder provar adequadament la vostra codificació.</p>
+                                    <pre><code class="java">
+public class Tasca2 {
+    
+    String concatenaParaulesFinsMida(String paraula1, String paraula2, int quantitat) {
+        //CODIFIQUEU EL CODI A AQUÏ 
+    }
+
+    
+    /******************************************************/
+    /*                Activitat A404 Tasca 2              */
+    /*                   Codi per provar                  */
+    /* ****************************************************/
+    public static void main(String[] args) {
+        //adapteu la instanciació del programa d'acord amb el nom del fitxer (i nom de la classe) on treballeu.
+        Tasca2 prg = new Tasca2();  //canvieu FuncionsIArrays pel nom del vostre fitxer.
+        prg.prova();
+    }
+
+    private void prova() {
+        String paraula1;
+        String paraula2;
+        int quantitat;
+        String resultat;
+
+        paraula1 = "CU";
+        paraula2 = "LLERA";
+        quantitat = 3;
+        resultat = concatenaParaulesFinsMida(paraula1, paraula2, quantitat);
+        mostrarResultat(paraula1, paraula2, quantitat, resultat);
+        mostrarVerificacio(resultat, "CULLE");
+
+        paraula1 = "CU";
+        paraula2 = "LLERA";
+        quantitat = 0;
+        resultat = concatenaParaulesFinsMida(paraula1, paraula2, quantitat);
+        mostrarResultat(paraula1, paraula2, quantitat, resultat);
+        mostrarVerificacio(resultat, "CU");
+
+        paraula1 = "CU";
+        paraula2 = "LLERA";
+        quantitat = 5;
+        resultat = concatenaParaulesFinsMida(paraula1, paraula2, quantitat);
+        mostrarResultat(paraula1, paraula2, quantitat, resultat);
+        mostrarVerificacio(resultat, "CULLERA");
+
+    }
+
+    private void mostrarResultat(String par1, String par2, int quantitat, String resultat){
+        System.out.print("Paraula 1: ");
+        System.out.print(par1);
+        System.out.print(". Paraula 2: ");
+        System.out.print(par2);
+        System.out.print(". Quantitat: ");
+        System.out.print(quantitat);
+        System.out.print(". Resultat:");
+        System.out.println(resultat);
+    }
+    
+    private void mostrarVerificacio(String valorObtingut, String valorEsperat){
+        if(valorObtingut.equals(valorEsperat)){
+            System.out.println("*** la funció concatenaParaulesFinsMida funciona correctament ***");
+        }else{
+            System.out.println("*** la funció concatenaParaulesFinsMida NO ACABA de funcionar bé ***");
+        }
+        System.out.println();
+    }
+}
+                                    </code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue1">
+                                        Pista
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue1" class="iocClue hidden">
+                                        <h2>Pista</h2>
+                                        <p>Amb els coneixements que teniu actualment, segurament la forma més fàcil d'abordar aquest problema és plantejar un iteració que us permeti afegir lletra a lletra, la quantitat indicada.</p>
+                                        <p>Recordeu que la operació + en un tipus String equival a concatenar a la cadena de l'esquerra, el valor de la dreta i que per saber el valor d'una caràcter de la cadena ca usar <em>charAt(pos)</em>. Consulteu la forma d'usar-la en el material de consulta del semestre passat: <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/index.html" class="materialCadenesDeText">cliqueu aquí per anar-hi</a>.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals40 ================--> 
+
+                <!--=========== BEGIN SUBSECTION individuals10  ================-->    
+                <section id="slc-individuals10" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>eliminarChars</em></h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca us demanarem que implementeu una funció anomenada <em>eliminarChars</em>. Es tracta també, d'una funció específica del projecte, que us permetrà eliminar o marcar les lletres desordenades que ja hagin estat traspassades en l'ordre correcte a la paraula que s'està descobrint, de manera que deixem de visualitzar-les en el conjunt de lletres desordenades. Si mireu l'enunciat, veureu que el jugador pot anar afegint lletres de forma parcial, per tal d'anar descobrint la paraula amagada. Cada cop que el jugador encerta l'ordre de les lletres sense acabar de completar la paraula, les lletres correctes s'afegeixen a la paraula amagada i desapareixen del conjunt de lletres desordenades.</p>
+                                    <p>En el llenguatge JAVA, el tipus de dada String és un tipus de dada una mica especial, perquè internament és com un array de caràcters, però en realitat no es comporta com a tal; de fet, es comporta com un tipus de dada elemental i no admet manipulació dels seus caràcters interns. Per això, quan és necessari fer una manipulació dels caràcters d'un text, és preferible fer servir directament un array de caràcters en lloc d'un tipus String. Java preveu funcions per passar d'un tipus a l'altre de forma senzilla i efectiva.</p>
+                                    <p>Com que el nostre objectiu és eliminar caràcters (o marcar-los com eliminats) del conjunt de lletres barrejades, suposarem que, per la raó esmentada, el tipus usat per contenir aquestes lletres serà un array de caràcters. Així farem que la funció <em>eliminarChars</em> rebi com a primer paràmetre un array de caràcters contenint les lletres barrejades. Com a segon paràmetre rebra les lletres escrites pel jugador i com a tercer paràmetre, el nombre de lletres que es troben en ordre correcte i que per tant, cal eliminar del conjunt de lletres del primer paràmetre.</p>
+                                    <p>Així per exemple, si rebem el conjunt {'E', 'C', 'L', 'A', 'U', 'R', 'L' }, junt amb la cadena "LLEUR" i el valor 3 indicant que de totes les lletres entrades només les tres primeres són correcte i cal eliminar-les, però no la resta, la funció hauria de manipular el conjunt de lletres fent desaparèixer les lletres L, L i E. De manera que el conjunt es visualitzi com {'C', 'A', 'U', 'R'}.</p>
+                                    <p>Fixeu-vos que parlem de visualització i no dels elements reals continguts en el conjunt. En molts llenguatges de programació (inclòs JAVA), canviar la mida d'un array és molt més costós que manipular els seus elements, és per això que se us demana que en comptes de procedir a l'eliminació física de les lletres, implementeu un algoritme que marqui la posició eliminada d'alguna manera que ens permeti distingir la posició i evitar (quan calgui) de pintar-la a la pantalla.</p>
+                                    <p>Plantegeu-vos que en realitat les dades internes no es veuen i que de cara al jugador l'important és el que ell veu. Per tant, l'objectiu últim és poder fer que en el moment de pintar les lletres per pantalla es visualitzin totes menys les ja descobertes. N'hi ha prou si només canviem el seu valor per un caràcter especial que indiqui que aquella posició ha estat eliminada. Per exemple podem substituir el caràcter pel valor '\0', ja que el codi ASCII 0 no representa un caràcter NULL, sense representació gràfica.</p>
+                                    <p>Quan més endavant, hàgiu de reusar aquesta funció  per pintar les lletres no eliminades, haureu de tenir en compte el resultat obtingut per tal de no pintar les posicions marcades.</p>
+                                    <p>A banda de la funció <em>eliminarChars</em>, podeu crear més funcions auxiliars si ho considereu necessari. L'important no és el nombre de funcions creades, sinó que la implemetació us resulti fàcil.</p>
+                                    <p>El codi de la classe Tasca3 a copiar en el NetBeans és:</p>
+                                    <pre><code class="java">
+public class Tasca3 {
+    void eliminarChars(char[] lletresDesordenades, String paraula, int posicioMax) {
+       //CODIFIQUEU AQUÍ EL VOSTRE CODI
+    }
+    
+    
+    /*******************************************************/
+    /*                Activitat A404 Tasca 3               */
+    /*                   Codi per provar                   */
+    /*******************************************************/
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Tasca3 prg = new Tasca3(); 
+        prg.prova();
+    }
+    private void prova(){
+        String aEliminar;
+        char[] lletresOriginal = {'E', 'C', 'L', 'A', 'U', 'R', 'L' };
+        char[] lletres = {'E', 'C', 'L', 'A', 'U', 'R', 'L' };
+        char[] resultatEsperat;
+        int quantitat;
+
+        aEliminar = "LLERA";
+        resultatEsperat = new char[] {'E', 'C', 'L', 'A', 'U', 'R', 'L' };
+        quantitat = 0;
+        eliminarChars(lletres, aEliminar, quantitat);
+        mostrarResultat(lletresOriginal, aEliminar, quantitat, lletres);
+        mostrarVerificacio(lletres, resultatEsperat);
+        
+        aEliminar = "LLERA";
+        resultatEsperat = new char[] {0, 'C', 0,  'A', 'U', 'R', 0};
+        quantitat = 3;
+        eliminarChars(lletres, aEliminar, quantitat);
+        mostrarResultat(lletresOriginal, aEliminar, quantitat, lletres);
+        mostrarVerificacio(lletres, resultatEsperat);
+        
+        aEliminar = "LLERA";
+        resultatEsperat = new char[] {0, 'C', 0, 0, 'U', 0, 0};
+        quantitat = 5;
+        eliminarChars(lletres, aEliminar, quantitat);
+        mostrarResultat(lletresOriginal, aEliminar, quantitat, lletres);
+        mostrarVerificacio(lletres, resultatEsperat);
+        
+        aEliminar = "CULLERA";
+        resultatEsperat = new char[] {0, 0, 0, 0, 0, 0, 0};
+        quantitat = 7;
+        eliminarChars(lletres, aEliminar, quantitat);
+        mostrarResultat(lletresOriginal, aEliminar, quantitat, lletres);
+        mostrarVerificacio(lletres, resultatEsperat);
+        
+        
+    }
+
+    private void mostrarResultat(char[] lletresOri, String aEliminar, int quantitat, char[] resultat){
+        System.out.print("Lletres originals: ");
+        System.out.print("{");
+        for(int i=0; i<lletresOri.length; i++){
+            if(i>0){
+                System.out.print(", ");
+            }
+            System.out.print(lletresOri[i]);
+        }
+        System.out.print("}");
+        System.out.print(". Lletres a eliminar: ");
+        System.out.print(aEliminar);
+        System.out.print(". Quantitat: ");
+        System.out.print(quantitat);
+        System.out.print(". Resultat obtingut: ");
+        System.out.print("{");
+        boolean primer=true; 
+        for(int i=0; i&lt;resultat.length; i++){
+            if(resultat[i]!=0){
+                if(primer){
+                    primer=false;
+                }else{
+                    System.out.print(", ");
+                }
+                System.out.print(resultat[i]);
+            }
+        }
+        System.out.println("}");
+    }
+    
+    private void mostrarVerificacio(char[] valorObtingut, char[] valorEsperat){
+        boolean ok=true;
+        for(int i=0; ok && i&lt;valorEsperat.length; i++){
+            if(valorObtingut[i]!=valorEsperat[1]){
+                ok=false;
+            }
+        }
+        if(ok){
+            System.out.println("*** la funció eliminarChars funciona correctament ***");
+        }else{
+            System.out.println("*** la funció eliminarChars NO  ACABA de funcionar bé ***");
+        }
+        System.out.println();
+    }
+}
+
+                                    </code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Podeu separar l'algoritme en dos processos, un consistent en cercar un caràcter dins l'array de lletres i en trobar-lo canviar el seu valor pel codi ASCII zero, i l'altre, consistent en repetir el procés anterior per cada lletra a eliminar.</p> 
+                                        <p>Recordeu que per saber el valor d'un caràcter de la cadena cal usar la funció <em>charAt</em>. Consulteu la forma d'usar-la en el material de consulta del semestre passat: <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/index.html" class="materialCadenesDeText">cliqueu aquí per anar-hi</a>.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals10 ================-->    
+
+                <!--=========== BEGIN SUBSECTION individuals20  ================-->    
+                <section id="slc-individuals20" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funcions d'interfície d'usuari</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca us proposem que escriviu 2 funcions per facilitar la creació d'interfícies d'usuari. Es tracta, però de 2 funcions que requerixen a l'usuari que escrigui alguna cosa per teclat i retornen el que aquest indiqui; si us esforceu un mica trobareu maneres de reutilització.</p>
+                                    <p>Tot seguit passem a comentar cada una de les funcions que cal implementar:</p>
+                                    <ul>
+                                        <li><em>String <strong>entrarCadena</strong>(String missatgeExplicatiu)</em>: Aquesta funció mostrarà per pantalla el text que rebi com a únic paràmetre i seguidament esperarà a que l'usuari escrigui per teclat qualsevol text fins que premi la tecla <em>[ENTRAR]</em>. És important que només se surti prement la tecla <em>[ENTRAR]</em> i no cap altre. El text escrit no ha de complir cap requisit. Pot ser una cadena buida o qualsevol altre combinació de caràcters sense límit de longitud. La funció retornarà el text introduït sense el caràcter de sortida. És a dir, sense la tecla [ENTRAR] equivalent al salt de línia.</li>
+                                        <li>
+                                            <p><em>boolean <strong>confirmarAmbDef</strong>(String missatgeExplicatiu, char defaultValue)</em>: Es tracta d'una funció que ha de servir perquè l'usuari confirmi amb un "si" la informació que se li passa en el primer paràmetre i que es mostrarà per la pantalla en el moment de l'execució. Un cop mostrat el missatge s'esperarà que l'usuari escrigui per teclat i premi la tecla <em>[ENTRAR]</em>. La funció retornarà un valor lògic (booleà), de manera que si el text escrit per l'usuari comença pel caràcter 's' o 'S', es retornarà cert. En qualsevol altre cas es retornarà fals. El segon paràmetre conté un valor per defecte que es prendrà en cas que l'usuari premi la tecla [ENTRAR] sense valor anterior. El valor per defecte podrà ser qualsevol caràcter, inclòs el caràcter  valor '\0'. El caràcter '\0' invalidarà la opció per defecte, és a dir quan la interacció amb l'usuari prengui el valor d'una cadena buida ([ENTRAR] sense valor previ), caldrà repetir la demanda tot indicant que no s'admeten valors per defecte.</p>
+                                            <p>Per contra, si el valor per defecte es correspon amb qualsevol altre caràcter diferent de '\0', en cas que l'usuari premi [ENTRAR] sense valor previ (cadena buida), es prendrà el valor del segon paràmetre i s'avaluarà com si hagués estat introduït per l'usuari retornant cert si fos 's' o 'S' i fals en cas contrari.</p>
+                                            <p>Suposeu que el missatge serà explicit amb els valors demanats i que presentarà coherència en funció de quina sigui la opció per defecte. És a dir suposarem que el text del primer paràmetre, a més d'explicar el que cal confirmar, indicarà en algun lloc les opcions que es reconeixeran (per exemple amb la cadena 's/n', 'S/n' o 's/N'), entenent que el valor de la opció en majúscula és el valor per defecte. Sigui com sigui, no heu de fer cap comprovació, heu de suposar que el missatge arriba seguint aquest requeriments.</p>
+                                        </li>
+                                    </ul>
+                                    <p>Per tal que pugueu provar el vostre codi, en aquest cas, també us passem la classe <em>Tasca4</em> amb el <em>main</em> i la funció de <em>prova</em> que us ha de permetre saber si la vostra codificació funciona bé. </p>
+                                    <pre><code class="java">
+public class Tasca4 {
+
+    String entrarCadena(String missatgeExplicatiu){
+       //CODIFIQUEU AQUÍ EL VOSTRE CODI
+    }
+    
+    boolean confirmarAmbDef(String missatge, char defaultValue){
+       //CODIFIQUEU AQUÍ EL VOSTRE CODI
+    }
+   
+    /*******************************************************/
+    /*                Activitat A404 Tasca 4               */
+    /*                   Codi per provar                   */
+    /*******************************************************/
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Tasca4 prg = new Tasca4();
+        prg.prova();
+    }
+    
+    public void prova() {
+        boolean confirmacio;
+        String valor;
+        
+        //Prova la funció entrarText
+        valor = entrarCadena("Entra un text qualsevol. Pot ser buit:\n");
+        System.out.print("El texte entrat per teclat és: " );
+        System.out.println(valor);
+       
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------");
+        confirmacio = confirmarAmbDef("Confirmació 1: afirmatiu per defecte. Vols confirmar? (S/n) ", 's');
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------------------------------");
+        confirmacio = confirmarAmbDef("Confirmació 2: negatiu per defecte. Vols confirmar? (s/N) ", 'n');
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+
+        System.out.println();
+        System.out.println("--------------------------------------------------------------------------------------");
+        confirmacio = confirmarAmbDef("Confirmació 3: cal contestar. Vols confirmar? (s/n) ", '\0');
+        System.out.print("La resposta a la confirmació ha estat: " );
+        System.out.println(confirmacio?"Si":"No");
+
+    }
+}
+
+                                    </code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Podeu fer servir les funcions de la classe String <em>length()</em> o <em>isEmpty()</em>, per saber si una cadena és buida o no.</p>
+                                        <p>Consulteu també el material del <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/index.html" class="matEntradaPerteclatUrl">semestre passat</a>, per saber com usar les funcions de la classe Scanner que us poden ajudar-te a forçar que només se surti del procés de detecció de tecles, si es prem [ENTRAR] i no cap altra tecla. Específicament atureu-vos a mirar les instruccions de tipus <em>hasNextXXX</em> i <em>nextXXX</em>.</p>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Per fer aquesta tasca, us podeu inspirar en la funció implementada a l'exercici 1 de l'activitat <a href="../A402_funcions2.html#slc-toDo__slc-toDo21" target="_blank" class="A402">A402</a>.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals20 ================-->  
+                
+                <!--=========== BEGIN SUBSECTION individuals50  ================-->    
+                <section id="slc-individuals50" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> - Funció <em>seleccionarDeLlista</em></h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta darrera tasca us proposem que escriviu 1 funció més per facilitar la creació d'interfícies d'usuari. En aquest cas es tractarà d'una funció que ajudi a l'usuari, a seleccionar un valor seleccionat entre diversos de predefinits. Es tracta d'una funció que mostrà un text explicatiu arribat per paràmetre i desplegarà una llista numerada, a patir d'un array arribat també per paràmetre. un cop mostrat el missatge i les opcions, esperarà que l'usuari entri un valor numèric vàlid (comprés entre la primera i la darrera opció) i el retornarà. Així la funció permetrà escollir una opció textual sense necessitat d'escriure-la (evitant així errades). En el seu lloc l'usuari escriurà la posició o número que identifica la opció.</p>
+                                    <p>Suposant que arribi la cadena "Escull una de les següents opcions indicant el número de la opció" i l'array de cadenes: {"opció A", "opció B", "opció C", "opció D"} com opcions a escollir, la funció hauria de mostrar a la pantalla quelcom semblant al següent:</p>
+                                    <div class="iocexample">
+                                    <pre><code class="java">
+Escull una de les següents opcions indicant el número de la opció:
+	Opcions vàlides:
+	1) opció A
+	2) opció B
+	3) opció C
+	4) opció D
+Escriu una opció vàlida:
+                                    </code></pre>
+                                    </div>
+                                    <p>Com a la tasca anterior podeu copiar el codi següent en una classe anomenada Tasca5. Això us permetrà provar el vostre codi.</p>
+                                    <pre><code class="java">
+public class Tasca5 {
+
+    int seleccionarDeLlista(String missatge, String[] llistaOpcions){
+        //CODIFIQUEU AQUÍ LA FUNCIÓ
+    }
+ 
+    
+    /*******************************************************/
+    /*                Activitat A404 Tasca 5               */
+    /*                   Codi per provar                   */
+    /*******************************************************/
+    public static void main(String[] args) {
+        Tasca5 prg = new Tasca5();  
+        prg.prova();
+    }
+
+    private void prova(){
+        int valor;
+        String[] llista = {"opció A", "opció B", "opció C", "opció D"};
+        
+                //Prova la funció entrarText
+        valor = seleccionarDeLlista("Escull una de les següents opcions indicant el número de la opció:", llista);
+        System.out.print("La opció escollida és: " );
+        System.out.println(llista[valor]);
+    }
+}
+                                    </code></pre>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals50 ================-->  
+            </section>
+            <!--=========== END SECTION individuals ================-->    
+            
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>En aquesta <b>activitat 404</b> heu de lliurar els 5 fitxers de codi corresponents a les tasques que heu realitzat a la secció <em>Tasques a realitzar</em>. Comprimiu-los en un ZIP (A404ProjecteI.zip) i lliureu el fitxer comprimit a la <span class="bustiaLliurament"></span>. Recordeu que aquesta bústia és multilliurament, per tant, si ja teniu fet algun enviament anterior no us preocupeu que no s’esborrarà.</p>
+                                <p>Es recomana lliurar aquestes activitats abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class='dataLimit'></strong></p>
+                                <p>Recordeu que aquesta activitat és qualificable i per tant té un pes important sobre la nota final.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Un cop hàgiu lliurat les tasques demanades podreu passar a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <ul>
+                <li>Assimilar la creació de funcions a partir d'una descripció que explica els seu comportament.</li>
+                <li>Assimilar la sintaxi necessària per crear i cridar funcions</li>
+                <li>Reutilitzar funcions senzilles a l'hora de codificar per evitar repetir codi.</li>
+            </ul>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <p>RA 1. Escriu i prova programes senzills reconeixent i aplicant els fonaments de la programació modular</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <p>Podeu consultar els materials que fèieu servir al bloc 1 per recordar funcions que us permeten treballar amb cadenes de caràcters a <a class="materialCadenesDeText targetBlank">aquí</a> </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A404");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

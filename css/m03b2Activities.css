@@ -574,6 +574,10 @@ ol > li {
     counter-increment: item;
 }
 
+ol > li.jump {
+    counter-increment: item 2;
+}
+
 ol.nestedCounter ol > li {
     display: block;
 }

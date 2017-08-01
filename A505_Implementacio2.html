@@ -121,9 +121,9 @@
                                 <ul>
                                     <li>Sigui fàcil de llegir i interpretar, això significa que cal respectar les estructures de flux, fent-les servir tal com varen ser ideades, evitant l'escriptura críptica i/o poc entenedora, usar la indentació per identificar de forma fàcil les estructures de flux i els elements modulars, fer servir constants en lloc de literals, posar noms significatius a les variables, les funcions i les classes per tal d'intuir la seva funcionalitat sense haver d'analitzar massa el codi, escriure comentaris quan calgui (però no en excés), etc. </li>
                                     <li>Es trobi ben distribuït en funcions i classes, aplicant la metodologia del disseny descendent.</li>
-                                    <li>Quedi ben diferenciades les funcions de tractament de dades de les funcions que permetin interaccionar amb l'usuari.</li>
+                                    <li>Quedin ben diferenciades les funcions de tractament de dades respecte de les funcions que permetin interaccionar amb l'usuari.</li>
                                     <li>Que hi hagi estructures de dades que agrupin les dades de forma lògica.</li>
-                                    <li>Que existeixin funcions per gestionar les dades de l'aplicació de forma coherent i consistent.</li>
+                                    <li>Que existeixin funcions per gestionar les dades de l'aplicació de forma coherent i consistent (gestor de dades).</li>
                                     <li>Que les funcions es codifiquin tenint en compte la seva reutilització.</li>
                                     <li>Que disposi d'una bona interfície d'usuari.</li>
                                 </ul>
@@ -152,9 +152,9 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Les aplicacions són procediments que tracten i manipulen dades (inicials), a fi d'obtenir resultats i informació (dades finals) a partir de certs tractaments i manipulacions de les dades. És a dir, podem suposar que les aplicacions necessiten un conjunt de dades inicials a les quals se les processa de diferents formes, obtenint uns resultats o dades finals. Les dades inicials solen demanar-se als usuaris, encara que no sempre és així, de fet, les dades podrien obtenir-se també des de bases de dades, fitxers, Internet, etc.  Com és natural, segons l'origen de dades, caldrà disposar de diferents procediments que les obtinguin. Si l'origen prové de l'usuari caldrà implementar alguna forma de demanar-li les dades per la pantalla i recollir-les a partir del teclat o els dispositius d'entrada adients (ratolí, etc.). En canvi si l'origen fos un fitxer, el que caldria seria implementar procediments de lectura del mateix. El que volem dir amb això, és que si volem crear aplicacions versàtils que es puguin adaptar fàcilment a diferents orígens de dades sense haver de refer l'aplicació de dalt a baix, resulta molt i molt important mantenir ben separats els procediments destinats a obtenir les dades i emmagatzemar-les a la memòria de l'ordinador, dels procediments destinats a fer-ne el tractament i obtenir els resultats i també d'aquells que permetin a l'usuari disposar dels resultats (no podem suposar que l'usuari només pot veure els resultats per la pantalla, potser es necessitin imprimir o bolcar-los en un fitxer per recuperar-los posteriorment, etc.)</p>
-                                    <p>En general, les aplicacions poden considerar-se com un conjunt de múltiples procediments que anomenarem tasques. </p>
-                                    <p class="iocimportant">Les tasques són, per dir-ho d'alguna forma, unitats de procediment complertes on inicialment unes dades externes, normalment demanades a l'usuari, s'incorporen a la memòria de l'aplicació, seguidament se'n fa un seguit de tractaments, fins obtenir uns resultats que s'emmagatzemaran o es mostraran a l'usuari d'alguna manera. </p>
+                                    <p>Les aplicacions són procediments que tracten i manipulen dades (inicials), a fi d'obtenir resultats i informació (dades finals) a partir de certs tractaments i manipulacions de les dades. És a dir, podem suposar que les aplicacions necessiten un conjunt de dades inicials, les quals seran processades de diferents formes, obtenint uns resultats o dades finals. Les dades inicials solen demanar-se als usuaris, encara que no sempre és així, de fet, les dades podrien obtenir-se també des de bases de dades, fitxers, Internet, etc.  Com és natural, segons l'origen de dades, caldrà disposar de diferents procediments que les obtinguin. Si l'origen prové de l'usuari caldrà implementar alguna forma de demanar-li les dades per la pantalla i recollir-les a partir del teclat o els dispositius d'entrada adients (ratolí, etc.). En canvi si l'origen fos un fitxer, el que caldria seria implementar procediments de lectura del mateix. El que volem dir amb això, és que si volem crear aplicacions versàtils que es puguin adaptar fàcilment a diferents orígens de dades sense haver de refer l'aplicació de dalt a baix, resulta molt i molt important mantenir ben separats els procediments destinats a obtenir les dades i emmagatzemar-les a la memòria de l'ordinador, dels procediments destinats a fer-ne el tractament i obtenir els resultats o també, d'aquells que permetin a l'usuari disposar dels resultats (no podem suposar que l'usuari només pot veure els resultats per la pantalla, potser es necessitin imprimir o bolcar-los en un fitxer per recuperar-los posteriorment, etc.)</p>
+                                    <p>Ja hem vist que en general, les aplicacions poden considerar-se com un conjunt de múltiples procediments que anomenarem tasques. </p>
+                                    <p class="iocimportant">Les tasques són, per dir-ho d'alguna forma, unitats de procediment complertes on inicialment unes dades externes, normalment demanades a l'usuari, s'incorporen a la memòria de l'aplicació, seguidament se'n fan uns tractaments, fins obtenir uns resultats que s'emmagatzemaran o es mostraran a l'usuari d'alguna manera. </p>
                                     <div class="figscope">
                                         <p>Els tractaments als que se sotmeten les dades, així com la mostra dels resultats són <strong>les accions</strong> en que es descompon la tasca. Recordeu els esquemes que vàreu veure a l'activitat A503 on es podia entreveure la composició de les tasques (<span class="figref">figura</span>):</p>
                                         <figure id ="descomposicioAplicacions">
@@ -186,50 +186,6 @@
                     </div>
                 </section>
                 <!--=========== END SUBSECTION Fòrum 1 ================-->    
-              <!--=========== BEGIN SUBSECTION Fòrum 2 ================-->    
-                <!--section id="slc-discussion21" class="debat section">                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 ><span class="debatTitle">Fòrum</span> - Entrada i sortida de dades de les aplicacions</h2>
-                                     <h3> Mantenir les entrades i sortides de dades separades dels tractaments.</h3>
-                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>A l'hora de descompondre les tasques, intenteu <strong>evitar</strong> la barreja de funcions de demanda i de sortida de dades amb funcions de tractament. Si ho feu, els vostres programes seran més fàcils de llegir, de modificar i aconseguireu reutilitzar codi més fàcilment. Probablement caldrà escriure algunes línies de més, però els avantatges obtinguts s'ho valdran.</p>
-                                    <p>Els avantatges de separar així el codi són diversos. Un dels més importants, té a veure amb la reutilització del codi. Al fòrum anterior ja hem vist que les aplicacions no sempre han de tenir un mateix origen o sortida de dades, fins i tot suposant que l'origen de les dades fos sempre la interpel·lació de l'usuari, la proliferació que avui dia hi ha de plataformes (mòbils, WEB, d'interfícies gràfiques, de consola, etc.) fa molt difícil reutilitzar el codi dissenyat específicament per una d'aquestes plataformes. És més, les interpel·lacions als usuaris, solen estar acompanyades de textos molt contextualitzats i per tant, de difícil reutilització.</p>
-                                    <p>Per contra, les accions de tractament, si es configuren bé, podran reutilitzar-se en múltiples contextos i amb independència del tipus d'entrada o sortida que acabem implementant, ni de la plataforma finalment usada. Per exemple, si una tasca calcula la temperatura mínima o mitjana o ... i prenem la precaució de independitzar la demanda i sortida de dades del propi càlcul, adaptar la tasca a diferents plataformes o formes d'obtenció de dades (fitxers, Internet), consistirà només en reescriure les funcions específiques d'entrada i sortida, però podrem deixar intactes les de tractament i càlcul de resultats.</p>
-                                     <div class="frameBox">
-                                        <h4>Raona la resposta al <span class="forumDeDiscussio"></span></h4>
-                                        <ul>
-                                            <li>
-                                            Què creus que a la pràctica pot significar implementar una funció descontextualitzada?.<br/>
-                                            Indica com es podria aconseguir.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Button trigger pannel --><!--
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-discussion21" 
-                                            data-selector-clue="#slc-discussion21-clue1">
-                                        Pista
-                                    </button>                                        
-                                    <div id="slc-discussion21-clue1" class="iocClue hidden">
-                                        <h2>Pista</h2>
-                                        <p>Per a què serveixen els paràmetres de les funcions? </p>
-                                    </div>                                    
-                                </div> 
-                            </div>
-                        </div>
-                    </div>                
-                </section>
-                <!--=========== END SUBSECTION Fòrum 2 ================-->
                 <!--=========== BEGIN SUBSECTION Fòrum 5 ================-->    
                 <section id="slc-discussion24" class="debat section">
                     <div class="container">
@@ -327,7 +283,7 @@ ClasseX.metodeEstaticY();
                                         <p>Fixeu-vos que la variable jugadorA està ben inicialitzada i podrem fer-la servir sense problemes. Podem assignar-hi el nom i també el nombre de partides guanyades perquè abans hem construït la instància. L'armari existeix!</p>
                                         <p>Per contra la variable jugadorB, només està declarada, però no inicialitzada (encara ens cal construir l'armari) i per tant si intentem assignar-hi algun valor obtindrem un error.</p>
                                         <h4>Diferències entre instanciar un tipus compost o una classe que només conté codi</h4>
-                                        <p>La diferència essencial entre ambdues categories és que les instancies dels tipus compostos serviran per emmagatzemar dades, mentre que les instancies de classes que només contenen codi, no emmagatzemen res. Seguint amb la metàfora anterior, si les estructures de dades fossin armaris, per guardar roba per exemple, les classes de codi serien els electrodomèstics que la processessin, posem per cas les planxes.</p>
+                                        <p>La diferència essencial entre ambdues categories és que les instancies dels tipus compostos serviran per emmagatzemar dades, mentre que les instancies de classes que només contenen codi, no emmagatzemen res. Seguint amb la metàfora anterior, si les estructures de dades fossin armaris, per guardar roba per exemple, les classes de codi serien els electrodomèstics que la processessin, posem per cas, les planxes.</p>
                                         <p>Si tinguéssim al capacitat de construir armaris i planxes amb només l'acció de picar els dits, podríem construir una planxa cada cop que en tinguéssim necessitat, sense  detriment de la nostra feina (exceptuant el malbaratament del medi ambient que causaríem), perquè aconseguiríem planxar la roba sense cap entrebanc. Ara bé, a ningú se li acudiria construir armaris quan passéssim pel costat d'una planxa i ens agafés el rampell de deixar la roba impecable, perquè els armaris construïts estarien buits i ens quedaríem sense poder planxar. No tindríem més remei que agafar la planxa i desplaçar-nos a l'armari més proper que contingués roba.</p>
                                         <p>Quelcom semblant passa amb les estructures de dades i amb les classes que contenen codi. Les primeres, no es poden anar creant lleugerament si no volem perdre dades pel camí. Les segones en canvi, són com les planxes.</p>
                                         <p>Analitzeu el codi d'exemple que us posem a continuació i intenteu esbrinar perquè les crides <em>processaImprimirNom(jugador)</em> (línia 31) i <em>processarImprimirTot(impressora, jugador)</em> (línia 36) tindran èxit, mentre que la crida <em>processaImprimirGuanyades()</em> (línia 33) no aconseguirà imprimir res.</p>

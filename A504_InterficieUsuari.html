@@ -118,9 +118,9 @@
                              <div class=bodySlide>
                                 <p>Una part molt important de la implementació de la majoria d'aplicacions correspon a la implementació de la interfície de l'usuari. perquè malgrat que hi ha aplicacions que no han de comunicar-se amb éssers humans, aquestes són un minoria.</p>
                                 <p>Una bona interfície d'usuari facilita l'èxit de l'aplicació i pot arribar a minimitzar en gran mesura la corba d'aprenentatge que els usuaris necessitaran quan usin per primer cop l'aplicació. Això és així perquè aquestes interfícies gestionen el diàleg entre l'aplicació i l'usuari. És a dir, la demanda de dades o la mostra d'informació intel·ligible per els éssers humans.</p>
-                                <p>Malauradament, la interfície d'usuari depèn molt del sistema operatiu i el dispositiu (físic o lògic) utilitzat. Per exemple no és el mateix usar el ratolí, que el teclat, com a dispositiu d'entrada, ni fer servir la consola o el sistema gràfic, ni haver de programar una aplicació per Windows, per Linux o per un Android, ni per descomptat, la interfície generada per aplicacions WEB, de la interfície generada per aplicacions locals. Cada sistema presenta unes característiques pròpies que cal tenir en compte a l'hora de fer el disseny i la implementació.</p>
+                                <p>Malauradament, la interfície d'usuari depèn molt del sistema operatiu i el dispositiu (físic o lògic) utilitzat. Per exemple no és el mateix usar el ratolí, que el teclat, com a dispositiu d'entrada, ni fer servir la consola o el sistema gràfic, ni haver de programar una aplicació per Windows, per Linux o per un Android; ni per descomptat la interfície generada per aplicacions WEB s'assembla gaire a la interfície generada per aplicacions locals. Cada sistema presenta unes característiques pròpies que cal tenir en compte a l'hora de fer el disseny i la implementació.</p>
                                 <p>Generalment cada sistema disposa de biblioteques específiques que ajuden a crear interfícies d'usuari de qualitat. Ara bé, per la seva infrautilització i la seva senzillesa, les biblioteques especifiques de les aplicacions de tipus consola, són més aviat escasses i força limitades.</p>
-                                <p>Abans de començar la implementació concreta de l'aplicació indicada al projecte, us proposem que abans codifiqueu un petita biblioteca que us ajudi a generar i dissenyar interfícies d'usuari per aplicacions de consola. Així aconseguireu estandarditzar les entrades i sortides d'usuari creant aplicacions de major qualitat amb un esforç mínim. A la secció <em>Implementació</em>, trobareu alguns consells per dissenyar i implementar aquesta biblioteca.</p>
+                                <p>Abans de començar la implementació concreta de l'aplicació indicada al projecte, us proposem codifiqueu un petita biblioteca que us ajudi a generar i dissenyar interfícies d'usuari per aplicacions de consola. Així aconseguireu estandarditzar les entrades i sortides d'usuari creant aplicacions de major qualitat amb un esforç mínim. A la secció <em>Implementació</em>, trobareu alguns consells per dissenyar i implementar aquesta biblioteca.</p>
                      </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>Aquí, us demanem que discutiu en el fòrum, com hauria de ser una biblioteca que ens pogués ajudar a implementar interfícies d'usuari. Tingueu en compte que generalment, les interfícies d'usuari solen ser molt contextualitzades a l'aplicació que es desenvolupa, cosa que les fa difícils de reutilitzar, almenys en la seva globalitat.</p>
-                                    <p>Feu memòria, però. Recordeu que a l'activitat A404, se us va demanar d'implementar funcions específiques d'interfície d'usuari que permetien demanar a l'usuari diversos tipus de dades, de forma descontextualitzada, i per tant reusable.</p>
+                                    <p>Feu memòria. Recordeu que a l'activitat A404, se us va demanar d'implementar funcions específiques d'interfície d'usuari que permetien demanar a l'usuari diversos tipus de dades, de forma descontextualitzada, i per tant reusable.</p>
                                    <p>De fet, si cerqueu una mica, us adonareu que JAVA i la majoria de llenguatges d'alt nivell, disposen de moltes biblioteques genèriques per a poder crear interfícies gràfiques d'usuari. Això és així, perquè la complexitat requerida a les interfícies gràfiques és gran i no surt rentable implementar-les des de zero.</p>
                                    <p>Malgrat que les interfícies basades en consola presenten sempre una complexitat molt menor, pot resultar eficient i útil implementar també biblioteques genèriques que ajudin a estandarditzar les pantalles de la nostra aplicació de forma que totes segueixin un patró similar, tant a l'hora de controlar errors,  de mostrar informació,  de seqüenciar les peticions múltiples, de mostra de determinats resultats, etc.</p>
                                      <div class="frameBox">
@@ -153,7 +153,7 @@
                                         <ol>
                                             <li>Basant-vos en les funcions d'interfície d'usuari de l'activitat A404, què creieu que determina el context d'una funció?</li>
                                             <li>Com és possible per tant descontextualitzar funcions d'interfície d'usuari?</li>
-                                            <li>En referencia a l'estandardització, indiqueu diferents situacions en les que calgui mostrar informació i indiqueu les caracterísitiques especíifiques que identifiquen la situació. Per exemple quan l'usuari demana ajuda per saber què fa una funcionalitat: les ajudes d'una placació tenen la característica d'explicar a l'usuari què fa i com funciona l'aplicació. Un altre exemple seria la resposta que prové de tractament de dades com a resultat de l'execució d'una funcionalitat de l'aplicació. En aquest cas, la caraqcterística d'aquesta informació és que es trcata de la resposta que l'suauri espera a partir de les dades entrades. Busqueu altres situacions i discutiu-les al fòrum.</li>
+                                            <li>En referencia a l'estandardització, indiqueu diferents situacions en les que calgui mostrar informació i indiqueu les característiques específiques que identifiquen la situació. Per exemple quan l'usuari demana ajuda per saber què fa una funcionalitat: les ajudes d'una aplicació tenen la característica d'explicar a l'usuari què fa i com funciona l'aplicació. Un altre exemple seria la resposta que prové de tractament de dades com a resultat de l'execució d'una funcionalitat de l'aplicació. En aquest cas, la característica d'aquesta informació és que es tracta de la resposta que l'usuari espera, a partir de les dades entrades. Busqueu altres situacions i discutiu-les al fòrum.</li>
                                             <li>Com convertiríeu les propostes anteriors en funcions reusables (descontextualitzades)?</li>
                                            <li>Per què creieu que l'estandardització, resulta clau per reduir la corba d'aprenentatge que els usuaris necessiten per aprendre una aplicació nova.</li> 
                                            <li>Creieu que de forma semblant al que passa amb els usuaris, als programadors, els pot resultar també més fàcil d'implementar les interfícies d'una aplicació si aquestes es torben altament estandarditzades? Relaciona-ho amb el fet que l'estandardització redueix el grau de llibertat a l'hora de d'implementar les interfícies i en el fet de l'ús de biblioteques genèriques</li>
@@ -170,21 +170,22 @@
                                     <div id="slc-discussion22-clue1" class="iocClue hidden">
                                         <ol>
                                             <li>Quin paper creieu que juguen els textos que cal mostrar per la pantalla en relació a la contextualització?</li>
-                                            <li>Dirieu que si es creen funcions a les que es substitueixin els textos a mostrar per la pantalla, per variables passades per paràmetre, podem afiramar que es trcata d'un funció reutilitzable?</li>
+                                            <li>Diríeu que si es creessin funcions a les que es substituïssin els textos a mostrar per la pantalla, per variables passades per paràmetre, podríem afirmar que es tracta de funcions reutilitzables?</li>
                                             <li>
                                                 <p>Penseu en:</p>
                                                 <ul>
-                                                    <li>Demada de dades predefinides per una llista d'opcions</li>
+                                                    <li>Demanda de dades predefinides per una llista d'opcions</li>
                                                     <li>Demanda de dades amb un format específic</li>
-                                                    <li>Titols de les pantalles</li>
+                                                    <li>Títols de les pantalles</li>
                                                     <li>Informació sobre errors</li>
                                                     <li>Informació sobre una tasca que no produeix resultats.</li>
+                                                    <li>Visualització d'un text llarg per la pantalla.</li>
                                                     <li>...</li>
                                                 </ul>
                                             </li>
-                                            <li>Recordeu que cal fer per descontextualitzar i declareu una funció (nom paràmetres i retorn) per cada proposta.</li>
-                                            <li>Creie que mostrar sempre amb el mateix format, un mateix tipus d'informació poat ajudar a l'aprenetatge? I el fet de fixar la ubicació a la pantalla, de la informació mostrada segons la seva tipologia, ajuda també a l'aprenentatge?</li>
-                                            <li>Penseu en el que cal controlar a l'hora de crear interficies d'usuari, poden les funcions que heu pensat, simplificar la seva codificació en usar-les un cop ja estiguin implementades?</li>
+                                            <li>Recordeu el que cal fer per descontextualitzar aquestes funcions i declareu per cada proposta, el nom, els paràmetres i el retorn.</li>
+                                            <li>Creieu que mostrar sempre un mateix tipus d'informació fent servir un mateix format, pot ajudar a l'aprenentatge? I el fet de fixar la informació mostrada en una zona específica de la pantalla, segons la seva tipologia. Ajuda també a l'aprenentatge?</li>
+                                            <li>Penseu en el que cal controlar a l'hora de crear interfícies d'usuari, poden les funcions que heu pensat, simplificar la seva codificació en usar-les un cop ja estiguin implementades?</li>
                                         </ol>
                                     </div>  
                                 </div>          

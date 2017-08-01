@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Alicia Vila ">
+    <title>A502. Estructura de dades</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li> 
+                    <a class="toActivityTable targetBlank" onclick = '$("#menu-close").click();'>Taula d'activitats</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-toDo">Tasques a realitzar</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A502 - Estructura de dades i gestor de dades</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Durant la implementació d'una aplicació, tenir clara l'estructura de dades, és probablement una de les tasques claus per garantir l'èxit del projecte, juntament amb l'anàlisi i el disseny que haureu de realitzar en la següent activitat. De moment, en aquesta, donarem només forma a les estructures que permetin gestionar les dades i implementarem les funcions bàsiques per manipular-les, assegurant que sempre es mantindrà la seva coherència. </p>
+                                <p>Abans de començar, donada la importància d'aquest procés, ens hem posat en contacte amb l'empresa i ens han comentat que per aquest prototipus preveuen que seran necessàries dues estructures de dades. Una per mantenir les dades de configuració (diccionaris temàtics, tema actual d'on escollir la paraula a endevinar o el nombre màxim d'errades que es poden fer en cada repte) i l'altre per mantenir les dades del joc, des de que es comencen els reptes fins que es decideix acaba-los i es mostres les estadístiques. L'estructura de configuració ens la fan ells perquè així inclouen les dades de tres diccionaris temàtics, de manera que puguem fer proves en la nostre implementació sense necessitat d'haver d'introduir les dades manualment, ni d'haver-les d'inventar.</p>
+                                <p>Us quedarà però, per definir, l'estructura per mantenir les dades del joc quan un jugador comenci una sèrie de reptes fins que decideixi parar. També us demanarem d'implementar un gestor de dades que faciliti el tractament i manipulació d'ambdues estructures, l'aportada per l'empresa i la dissenyada per vosaltres.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+            <!--=========== BEGIN SECTION implementació ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION estructura de dades ================-->    
+                <section id="slc-estructuraDeDades" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar- Estructura de dades i gestor de dades</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Disseny i implementació de les estructures de dades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                 <p>A l'activitat <a class="A501ToDo30" target="_blank">A501</a> vau veure que una classe que contingui variables, pot constituir un tipus compost i que els tipus compostos són la base de les estructures de dades de les aplicacions. A la tasca 3, vau veure diferents implementacions d'una mateixa estructura. Com ja vau constatar, les estructures complexes poden implementar-se de múltiple maneres, i segurament no existeix una única implementació millor que les altres, sinó més aviat, cal adonar-se que unes implementacions faciliten uns tractaments en detriment dels altres. L'ideal és poder escollir aquella implementació que suposi més avantatges que inconvenients per els tractaments que caldrà realitzar a la nostra aplicació.</p>
+                                <p>Aquí haureu de dissenyar i implementar les estructures de dades de l'aplicació. En primer lloc caldrà que copieu al Netbeans, l'estructura que l'empresa <em>Jocs Per Tu SCCP</em> ens ha fet arribar i que trobareu a la classe següent:</p>
+                                <pre><code class="java">
+public class DadesConfiguracio {
+    static final int INSTRUMENTS=0;
+    static final int CUINA=1;
+    static final int INFORMATICA=2;
+    String[] temes={ "Instruments", "Cuina", "Informàtica"};
+    String[][] paraulesTematiques={
+       {
+            "ACORDIÓ", "ARPA", "BALALAICA", "BANJO", "BATERIA",  "BENDIR", 
+            "BOMBARDA", "BOMBO", "BONGOS", "BUIRO", "CAMPANA", "CAMPANETES", 
+            "CARRACA", "CARILLÓ", "CASCAVELLS", "CASTANYOLES", "CÍTARA",
+            "CLARINET", "CLAUS", "CLAVICÈMBAL", "CLAVICORDI", "CONTRABAIX", 
+            "CORN", "CORNETA", "CUICA", "DARBUKA", "DJEMBÉ", "DOLÇAINA", 
+            "DUFF", "FAGOT", "FLABIOL", "FLAUTA", "FLAUTÍ", "GAITA", 
+            "GUIMBARDA", "GONG", "GRALLA", "GUITARRA", "HARMÒNICA", "KALIMBA", 
+            "LLAÜT", "MANDOLINA", "MARAQUES", "MARIMBA", "MATRACA", "OBOÈ", 
+            "OCARINA", "ORGUE", "PANDERETA", "PANDERO", "PIANO", "PICACANYA",
+            "PLATERETS", "RABELL", "SALTIRI", "SAXOFON", "TABAL", "TABALET", 
+            "TAMBOR", "TAMBORÍ", "TAROTA", "TENORA", "TIBLE", "TIMBAL", 
+            "TIMBALES", "TRIANGLE", "TROMBÓ", "TROMPA", "TROMPETA", "TUBA", 
+            "VIOLA", "VIOLÍ", "VIOLONCEL", "XIFLA", "XILÒFON", "XIMBOMBA"        
+        },{
+            "AGAFADOR", "AIGÜERA", "AIXETA", "AMPOLLA", "BATEDOR", "BATERIA", 
+            "BOL", "CAFETERA", "CASSO", "CASSOLA", "COBERTERIA", "COBERTS", 
+            "COLADOR", "COPA", "CORRO", "CRISTALLERIA", "CULLERA", "CULLEROT", 
+            "DAVANTAL", "DESTRAL", "DRAP", "ESCORREDORA", "ESCORREPLATS", 
+            "ESCUMADORA", "ESPÀTULA", "ESTALVI", "ESTOVALLES", "FORQUILLA", 
+            "FRUITERA", "GANIVET", "GERRA", "GOT", "LLETERA", "LLEVATAPS", 
+            "MANYOPLA", "MORTER", "MOTLLO", "OBREAMPOLLES", "OBRELLAUNES", 
+            "OLLA", "PAELLA", "PEBRER", "PLAT", "PLATA", "POT", "RATLLADORA", 
+            "RENTAPLATS", "SAFATA", "SALER", "SETRILL", "SETRILLERES", "SOPERA", 
+            "SOTAGOT", "SUCRERA", "TALLAR", "TAP", "TAPADORA", "TASSA", "TAULA", 
+            "TETERA", "TISORES", "TOVALLÓ", "TRENCANOUS", "VAIXELLA"       
+        },{
+            "ACCÉS","ADJUNTAR","ADREÇA","ÀLIES","ALTAVEUS","ANTIVIRUS",
+            "APLICACIÓ", "ARQUITECTURA", "ARROVA", "AURICULAR", "BAIXAR", 
+            "BASE DE DADES", "BIT", "BUS", "BÚSTIA ELECTRÒNICA", "BYTE", 
+            "FIBRA", "CABLE", "CÀMERA WEB", "CARTERA ELECTRÒNICA", "CERCADOR", 
+            "CIBERCAFÈ", "CIBERCULTURA ", "CLIC", "CODI FONT", "CODIFICACIÓ", 
+            "COMERÇ ELECTRÒNIC ", "COMPTE", "CONTRASENYA", "CÒPIA DE SEGURETAT", 
+            "CORREU ELECTRÒNIC ", "CORREU WEB", "DESAR", "DISC DUR", "DISC ÒPTIC", 
+            "DISQUET", "DOMINI", "EMOTICONA", "EMULADOR", "ENCAMINADOR ", 
+            "ENLLAÇ", "ESCÀNER", "ETIQUETA", "EXTRANET", "FINESTRA", "FITXER", 
+            "FORMAT", "FÒRUM", "GALETA", "HIPERTEXT", "HOSTATGE", "HTML", "HTTP", 
+            "IMPRESSORA", "INFOGRAFIA", "INFORMÀTICA", "INSTAL·LAR", "INTERFÍCIE D'USUARI", 
+            "INTERFÍCIE GRÀFICA D'USUARI", "INTERNET", "KILOBYTE", "LLAPIS ÒPTIC ", 
+            "LLENGUATGE", "LLIBRE ELECTRÒNIC", "LLIBRETA D'ADRECES", "LLOC WEB", 
+            "MAPA DEL WEB", "MARCATGE", "MEGABYTE", "MEMÒRIA", "MICRÒFON", 
+            "MICROPROCESSADOR", "MÒDEM", "MONITOR", "NAVEGAR", "NODE", "ORDINADOR", 
+            "PORTÀTIL", "PÀGINA WEB", "PERFIL", "PERIFÈRIC", "PÍXEL", "PROCESSADOR", 
+            "PROGRAMA", "QUADRE DE DIÀLEG", "RATOLÍ", "REALITAT VIRTUAL", "REDIRIGIR", 
+            "RESOLUCIÓ", "ROBOT WEB", "RUTINA", "SERVIDOR", "SIMULADOR", "SIMULAR", 
+            "SISTEMA INFORMÀTIC", "SISTEMA OPERATIU", "TALLAFOC", "TASCA", "TECLAT", 
+            "TELEMÀTICA", "TELEVISIÓ DIGITAL", "USABILITAT", "VERIFICAR", "VERSIÓ BETA", 
+            "VÍDEO DIGITAL", "VIDEOCONFERÈNCIA", "VIRUS", "VISITANT", "VÒXEL", 
+            "WEB", "XARXA", "XAT", "XIFRAR ", "XIP", "ZONA D'OMBRA", "ZONA SENSIBLE"
+        }        
+    };
+    int temaActual=0;
+    int nombreMaximErrades=3;
+}
+                                </code></pre>
+                                <p>La classe <em>DadesConfiguracio</em> està composta per una matriu de cadenes de caràcters en la que a les files hi trobem cada un dels diccionaris temàtics i a les columnes les entrades d'aquests. Noteu que algunes de les entrades són paraules compostes separades per un espai. Hem preguntat quin tractament haurem de donar-li als espais, i ens comenten que cal tractar-los com si fos un caràcter més. És a dir cal incloure'ls com una lletra més i barrejar-los com la resta, perquè el jugador ha d'endevinar també la seva posició quan intenti un repte. També està composada d'un array amb els noms del temes i 3 constants que identifiquen la posició dels diccionaris dins la matriu en relació al tema i, de 2 variables més, que permeten definir quin serà el tema escollit quan es comenci a jugar i quin serà el nombre màxim d'errors que es permeten realitzar en cada repte.</p>
+                                <p>Un cop copiada la classe <em>DadesConfigració</em>, caldrà que dissenyeu l'estructura per mantenir les dades del joc. Aquesta estructura s'haurà d'implementar en una classe independent i contendrà la informació per poder desenvolupar la sèrie de reptes iniciada per un jugador en escollir la opció de jugar, del menú principal.</p>
+                                    <p>A fi que us resulti molt més fàcil de decidir quina estructura caldrà implementar, us proposem que feu servir el grup de discussió reduït al que us vau incorporar a l'activitat anterior. Allà hi podreu discutir i valorar les dades que caldrà contemplar a l'estructura, de quin tipus s'hauran de declarar, etc. Es tracta només d'un grup de discussió i d'intercanvi d'idees que us ajudi prendre la vostra decisió pròpia. No cal per tant, que arribeu a cap consens, ni que tots acabeu implementat la mateixa estructura.</p>
+                                    <p>Si encara no tinguessiu grup, escolliu-lo ara i dirigiu-vos al <span class="forumDeDiscussio">ERROR - fòrum de discussió del període</span> per començar la discussió. <strong>HEU D'EVITAR ESCRIURE EXPLÍCITAMENT L'ESTRUCTURA DE DADES</strong> pròpia del projecte, només es tracta d'expressar idees i argumentar-les. Tingueu en compte que en acabar la discussió del fòrum us hauria de quedar clar quines variables i de quin tipus han de compondre l'estructura de l'aplicació.  El següent guió us ajudarà a donar consistència a la discussió. Llegiu-lo abans de participar.</p>
+                                    <div class="frameBox">
+                                        <h4>Guió de discussió en el <span class="forumDeDiscussio">ERROR - fòrum de discussió del període</span></h4>
+                                        <p>Tingueu sempre present que tal com s'indica a l'enunciat, els objectius principals del prototipus que se us han encomanat, són:</p>
+                                        <ol>
+                                            <li>Dades estadístiques que permetin mostrar el nombre de reptes jugats, el nombre de reptes guanyats i la taxa d'encert que això suposa.</li>
+                                            <li><p>A  més, per cada repte, cal mantenir les dades necessàries per mostrar per pantalla la informació indicada a l'enunciat i que es visualitza a la imatge de la pantalla mostrada a continuació:</p>
+                                            <img src="images/pantallaJocRepte.png" alt="pantalla del joc" title="Pantalla del joc de lletres barrejades" width="100%" style="max-width: 800px";/>
+                                            </li>
+                                            <li>I també les dades que permetin decidir si el repte s'ha acabat, ja sigui perquè el jugador ha endevinat la paraula o perquè ha superat en nombre màxim d'errors.</li>
+                                        </ol>
+                                        <p>En base a això contesteu les següents qüestions en el fòrum: </p>
+                                        <ol class="nestedCounter">
+                                            <li>En relació a les dades estadístiques
+                                                <ol>
+                                                    <li>Enumereu, concepte per concepte, quines dades necessitareu per fer el càlcul de la taxa d'encert.</li>
+                                                    <li>Sabríeu trobar la fórmula que descrigui el càlcul de la taxa? Quines dades necessita la fórmula. Les teniu contemplades en el disseny?</li>
+                                                </ol>
+                                            </li>
+                                            <li>En relació a les dades de cada repte. 
+                                                <ol>
+                                                    <li>Enumereu les dades que trobeu a la pantalla.</li>
+                                                    <li>De quin tipus creieu hauria de ser la variable que permeti mostrar la paraula a endevinar? Quines dades penseu que cal emmagatzemar en aquesta variable? Cal incloure els asteriscs que amaguen les lletres encara no descobertes com a contingut de la variable?</li>
+                                                    <li>Quin tipus de dades escolliríeu per mantenir les lletres desordenades que encara no s'hagin descobert?</li>
+                                                </ol>
+                                            </li>
+                                            <li>En referència a les dades que permeten decidir el moment en que cal donar per acabat el repte.</li>
+                                                <ol>
+                                                    <li>Indiqueu quins són els supòsits que fan que calgui finalitzar un repte</li>
+                                                    <li>Quines dades són necessàries per verificar els supòsits?</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <p>Amb les conclusions que extrèieu del fòrum, implementeu l'estructura de dades que us falta.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-estructuraDeDades" 
+                                            data-selector-clue="#slc-estructuraDeDades-clue1">
+                                        Pista 
+                                    </button>                                        
+                                    <div id="slc-estructuraDeDades-clue1" class="iocClue hidden">
+                                        <h2>Pista </h2>
+                                        <ol class="nestedCounter">
+                                            <li>En referència a les dades estadístiques 
+                                                <ol>
+                                                    <li>
+                                                        <p>Una taxa és una mesura relativa, una relació entre dues magnituds a fi d'obtenir una  proporció que permet comparar valors dispars. S'aconsegueix dividint el valor que es vol comparar entre el valor màxim possible que podria agafar la magnitud a comparar. Per exemple la taxa d'atur es calcula dividint el nombre de persones aturades (magnitud a comparar), entre la quantitat total de població activa (màxim nombre de persones que volen treballar). D'aquesta, malgrat la població activa variï, la taxa ens ajuda a comparar si el nombre d'aturats és gran o petit en relació a la població activa de cada moment. Sovint les taxes es multiplique per 100 per tal de poder-les expressar en forma de percentatge. Així, calcularem la taxa d'atur fent:</p>
+                                                        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML"></script>
+                                                        <p>$${\text{taxa  d'atur}} = \frac {\text{nombre  d'aturats}} {\text{població  activa}} \times 100$$</p>
+                                                    </li>
+                                                    <li>Quina seria la fórmula per calcular la taxa d'encerts del jugador?</li>
+                                                </ol>
+                                            </li>
+                                            <li value=3 class="jump">En referència a les dades per decidir si el repte continua o s'ha acabat
+                                                <ol>
+                                                    <li>Els criteris implicats en la decisió de finalitzar un repte, suposen comparar. Les comparacions necessiten al menys 2 valors. Heu reconeguts els dos valors de cada comparació per cada un dels supòsits?</li>
+                                                </ol>
+                                            </li>
+                                        </ol>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION estructura de dades  ================-->    
+                <!--=========== BEGIN SECTION gestor de dades ================-->    
+                <section id="slc-gestorDeDades" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar- Estructura de dades i gestor de dades</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> - Implementació del gestor dades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca se us demana que implementeu un gestor de dades perquè us ajudi a manipular les estructures de dades de l'aplicació. Heu de crear el gestor de dades en una classe independent que podeu anomenar <em>GestorDades</em>. Abans però, us demanem que llegiu les següents reflexions i consideracions sobre el tema. <!-- i, participeu  la discussió del vostre fòrum contestant les preguntes que us fem </p>
+                                    <p>
+                                    
+                                    
+                                     que us poden ajudar en la implementació </p-->
+                                    <div class="iocimportant">
+                                    <p>Mantenir les dades juntes i organitzades en una estructura, no garanteix la coherència interna d'aquestes. La organització de les dades juga un paper molt important, però quan implementem aplicacions usant estructures de dades, és també important vetllar per la coherència de les mateixes. Tenir un disseny de dades amb una estructura impecable, amb contingut incoherent vindria a ser com redactar una frase sintàcticament ben escrita però semànticament sense sentit ("la casa caminava lentament" és un exemple de frase ben construïda sintàcticament, però semànticament errònia).</p>
+                                    <p>Malauradament, els errors deguts a una incoherència interna de les dades d'una estructura són molt comuns i cal trobar maneres d'evitar-los. Ja sabem que no disposem de cap vareta màgica per trobar la solució, però sempre que codifiquem ens hauríem d'imposar trobar maneres d'evitar les incoherències o, si més no, de reduir-ne la possibilitat.</p>
+                                    <h4>incoherència en modificar les dades</h4>
+                                    <p>Les incoherències solen produir-se perquè sovint una acció sobre les dades pot implicar canvis en diversos elements de l'estructura. Si durant la codificació ens oblidem de fer algun dels canvis necessaris, ens trobarem davant d'un error realment difícil de detectar.</p>                                    
+                                    <p>Hi ha una manera d'evitar aquest tipus d'errades. Consisteix en crear funcions específiques que s'encarreguin de fer tots els canvis a la vegada. Caldrà identificar aquelles accions que modifiquin l'estructura en diversos llocs i en conseqüència siguin susceptibles de generar incoherències, i crear per aquestes una funció encarregada de fer l'acció de forma sempre complerta i correcta. És aconsellable mantenir totes les funcions específiques d'una mateixa estructura de dades agrupades en una única classe.</p>
+                                    <p>Imaginem que hem de gestionar una estructura que contingui una llista variable de dades. Per exemple, imaginem que hem de codificar el registre d'alumnes matriculats d'una escola. El nombre d'alumnes que es matricularan és impossible de saber a priori. Si s'opta per crear una estructura amb un comptador de matriculats, a més de l'array de dades dels alumnes, tindrem una estructura semblant a:</p>
+                                    <pre><code class="java">
+public class DadesAlumnes {
+    String[] alumnes;
+    int matriculats;
+}
+                                    </code></pre>
+                                    <p>Com es pot suposar, cada cop que fem una matrícula, cal afegir el nom de l'alumne a una posició lliure de l'array <em>alumnes</em> i cal actualitzar el valor de l'element matriculats. També caldria fer quelcom semblant per donar de baixa una matrícula, etc.</p>
+                                    <p>Per gestionar aquestes accions sense errades, decidim crear una classe específica, anomenada GestorDadesAlumnes, encarregada d'implementar accions d'alt nivell sobre instancies del tipus compost <em>DadesAlumnes</em>:</p>
+                                    <pre><code class="java">
+
+public class GestorDadesAlumnes {
+    
+    void novaMatriculaAlumne(DadesAlumnes dades, String alumne){
+        //Cal afegir les dades del nou alumne
+        dades.alumnes[dades.matriculats]=alumne;
+        //I també cal incrementar el comptador de matriculats
+        dades.matriculats++;
+    }
+    
+    void baixaAlumne(DadesAlumnes dades, int posicioAlumneAEliminar){
+        //Cal traslladar l'alumne a eliminar més enllà del límit indicat pel comptador de matrícules,
+        //a fi quedi amagat i no s'hi pugui accedir; com si s'hagués eliminat.
+        for(int i=posicioAlumneAEliminar; i&lt;dades.matriculats; i++){
+            String[] aux = dades.alumnes[i];
+            dades.alumnes[i]=dades.alumnes[i+1];
+            dades.alumnes[i+1] = aux;
+        }
+        //I en aquest cas, cal decrementar el comptador.
+        dades.matriculats--;
+    }
+    
+    ...
+}
+                                    </code></pre>
+                                    <p>D'aquesta manera, si a la implementació de l'aplicació es fa servir sempre la funció del gestor, les dades seran sempre coherents.</p>
+                                    <h4>incoherència en la inicialització de les dades</h4>
+                                    <p>La inicialització de les dades d'una estructura també acostuma a ser una font d'incoherències i errades, ja que algunes vegades, abans de fer servir una instancia de tipus compost és necessari donar valors específics a alguns dels seus elements per tal que les seves dades siguin coherents, o s'ajustin al que s'espera. En ocasions n'hi haurà prou només inicialitzant un array a la dimensió correcta o instanciant els tipus compostos interns.</p>
+                                    <p>Per exemple, en el cas anterior de la gestió de matrícules, necessitarem dimensionar l'array d'alumnes a la mida màxima abans de començar a treballar. Com que la mida màxima dependrà del renom de l'escola, del municipi/barri on estigui i fins i tot de l'any en que es faci la matrícula, es pot optar per deixar la dimensió configurable en el moment de començar. Podem encarregar al gestor de dades GestorDadesAlumnes l'acció de crear i d'inicialitzar una instancia dimensionada a una mida especificada des de paràmetre, estimada per l'ajuntament:
+</p>
+                                    <pre><code class="java">
+  DadesAlumnes crearDadesAlumnes(int dimensio){
+        DadesAlumnes dades = new DadesAlumnes();
+        dades.alumnes=new String[dimensio];
+        return dades;
+    }
+                                    </code></pre>
+                                    <p>Recordeu que en JAVA, tots els tipus simples (short, int, long, float, double, char, ...) s'inicialitzem sempre a zero i per tant, aquest tipus de dades, només precisaran inicialització en cas d'haver-se s'inicialitzar amb valors diferents de zero.</p>
+                                    <h4>altres usos del gestor de dades</h4>
+                                    <p>La classe especifica de gestió de les dades de l'estructura, pot contenir a més de les funcions que ajudin a minimitzar la incoherència, totes aquelles altres que considerem útils per ajudar-nos a manipular l'estructura de dades. De fet, aquestes classes poden admetre funcions de consulta, de càlcul, etc. Sovint és molt més senzill cridar una funció i esperar el resultat que haver de pensar com tractar l'estructura per obtenir el resultat desitjat, sobretot si cal repetir diverses vegades un tractament determinat. Tot allò que ens ajudi a gestionar les dades específiques de l'estructura pot tenir cabuda dins la classe.</p>
+                                    </div>
+                                    <p>Un cop llegit el text, us demanem que contesteu les següents preguntes en el vostre fòrum:</p>
+                                    <div class="frameBox">
+                                        <h4>Guió de discussió en el <span class="forumDeDiscussio">ERROR - fòrum de discussió del període</span></h4>
+                                        <ol class="nestedCounter">
+                                            <li>Analitzeu totes les dades d'ambdues estructures de dades i els requeriments de l'enunciat. Creieu que alguna d'elles necessita crear-se usant un funció específica? Per exemple, l'estructura de la configuració té una dada per indicar quin és el nombre màxim d'errades en cada repte i una altra per saber quin és el tema d'on cal treure les paraules en el moment d'iniciar la sèrie de reptes. Però a l'enunciat especifica que: <em>"Per defecte, el nombre d'errades màxim és 3 i el tema s'escollirà a l'atzar, just en iniciar el joc."</em>. Creieu que això fa candidata a la classe <em>DadesConfiguracio</em> a ser creada mitjançant una funció específica que asseguri la seva coherència? Raona la resposta.</li>
+                                            <li>Creus que l'altre estructura de dades conté dades sensibles de ser inicialitzades en el moment de la creació? Quines diries que són aquestes dades?</li>
+                                            <li>A banda del moment de crear les instancies, analitzeu també quins processos de la implementació requereixen manipular les dades i si en algun d'aquests casos es manipulen diverses variables de manera que l'oblit de la modificació d'una d'elles produís un incoherència interna.
+                                                <ol>
+                                                    <li>Analitzeu els canvis que cal fer en el moment d'iniciar un repte. És a dir, en el moment d'escollir la opció jugar del menú principal i després de confirmar la continuïtat, cada cop que un dels reptes hagi finalitzat. Els canvis justifiquen la creació d'una funció específica evitar la incoherència de les dades?</li>
+                                                    <li>Analitzeu també els canvis a realitzar cada cop que calgui actualitzar un intent del jugador d'endevinar una o més lletres, verificant si l'intent és o no sancionable, si cal amb l'intent s'ha endevinat la paraula, etc.</li>
+                                                    <li>No deixeu d'analitzar tampoc l'actualització de les dades un cop finalitzat cada repte. </li>
+                                                </ol>
+                                            </li>
+                                            <li>Centreu-vos ara amb els paràmetres que considereu que hauran de rebre les funcions que hàgiu decidit implementar. Hi haurà alguna d'aquestes funcions que no rebi una instància d'alguna de les estructures de dades? Per què?</li>
+                                        </ol>
+                                    </div>
+                                    <p>Un cop finalitzada la discussió, us toca implementar la classe <em>GestorDades</em> amb les conclusions i les reflexions que n'hàgiu tret.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION gestor de dades ================-->    
+
+            </section>
+            <!--=========== END SECTION implementació ================-->    
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Estructura de dades i gestor de dades</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Baixa't l'<span class="informeLliurament"></span> d'aquesta activitat i omple'l per poder fer el lliurament, ja que bàsicament, aquesta és una activitat de seguiment que serveix com indicador per verificar que avanceu correctament. El professor restarà atent al lliurament de l'informe on indicaràs si has aconseguit implementar l'estructura de dades, les funcions del gestor de dades i les biblioteques que se t'han demanat a les diverses tasques. En cas que hagis tingut dificultats, pots exposar-les a l'informe a fi que puguem donar-te una resposta durant la retroacció.</p>
+                                <p>Només cal que enviïs l'informe. Malgrat tot, si ho creus necessari, pots enviar més d'un fitxer empaquetant-los tots junts en un fitxer ZIP que penjareu a la <span class="bustiaLliurament"></span>.</p>
+                                <p>Es recomana acabar i lliurar aquesta activitat abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class="dataLimit"></strong>.</p>
+                                <p>És molt important per el vostre aprenentatge que feu els exercicis proposats, que ompliu l'informe i que el lliureu, ja que el professor podrà avaluar l'evolució del projecte i si cal us donarà un cop de mà. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar - Estructura de dades i gestor de dades</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                                <p>Si us cal, també podeu saltar <a class="toActivityTable targetBlank">a la taula d'activitats</a> per accedir a qualsevol altra activitat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A502");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+
