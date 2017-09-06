@@ -125,9 +125,9 @@
     },        
     "RPM":{
         "id": {"type":"text", "value":"SO"},
-        "dataInici": {"type":"text", "value":"25/04/2017"},
-        "dataFinal": {"type":"text", "value":"14/05/2017"},       
-        "dataLimit": {"type":"text", "value":"14/05/2017"},
+        "dataInici": {"type":"text", "value":"28/11/2017"},
+        "dataFinal": {"type":"text", "value":"17/12/2017"},       
+        "dataLimit": {"type":"text", "value":"17/12/2017"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament PM</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=432500"}       
     },         
