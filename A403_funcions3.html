@@ -60,15 +60,15 @@
         <nav id="bottom-wrapper">
              <!-- SCROLL PREVIOUS BUTTON -->
             <span id="prevArrow" class="btn arrownav previousSection" ></span>
-            <!-- END SCROLL PREVIOUS BUTTON -->
+            <!-- END SCROLL TOP BUTTON -->
              <!-- SCROLL NEXT BUTTON -->
             <span id="nextArrow" class="btn arrownav nextSection" ></span>
-            <!-- END SCROLL NEXT BUTTON -->
+            <!-- END SCROLL TOP BUTTON -->
         </nav>        
     </aside>
     <!--=========== BEGIN HEADER SECTION ================-->
      <header id="header">
-         <!-- BEGIN TOP MENU -->
+         <!-- BEGIN MENU -->
         <div class="menu_area">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
                 <!-- LOGO -->
@@ -94,7 +94,7 @@
                 </div>     
             </nav>  
         </div>
-        <!-- END TOP MENU -->
+        <!-- END MENU -->
    </header>
     <!--=========== END HEADER SECTION ================-->
     
@@ -116,11 +116,15 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>Aquesta és la darrera activitat destinada específicament a funcions. Aquí aprendreu a fer servir arrays a les funcions. Els arrays són un tipus de dada compost i no es comporten exactament igual que els tipus de dades bàsics com els números, els caràcters o el text. Podrem utilitzar-los de forma semblant als altres tipus, això si, però caldrà tenir en compte algunes consideracions, sobretot si els fem servir de paràmetres d'entrada.</p>
-                                <p>Un cop més se us faran propostes que demandaran una resposta activa. Concretament, se us proposaran exercicis de codificació i també discussions al fòrum. Aquestes us han de permetre extreure les conclusions que us portaran a l'aprenentatge. </p>
-                                <p>Aneu a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em>, on trobareu detallades les propostes.</p>
-                                <p>A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions.</p> 
-                                 <p>Finalment, a l'apartat <em><a href="#slc-toContinue">Com continuar</a></em>, us redirigirà a la següent activitat. </p> 
+                                <p>Ara que ja us heu iniciat, toca aprofundir en el concepte i ús de les funcions. L'activitat us servirà per descobrir quines utilitats podem donar-los-hi per tal de treure'n el màxim profit. Ja heu vist, que les funcions encapsulen, delimiten o simplement agrupen codi, el qual, pot executar-se amb una simple invocació del nom de la funció. També heu vist que les crides, en Java, cal fer-les sempre des d'alguna funció i que la única que s'executa sense cridar-la explícitament, és la funció <em>main</em>. Aquesta es crida implícitament en executar un programa des de la màquina virtual de JAVA. Per això aprofitarem la funció <em>main</em> per fer les cries pertinents que iniciïn l'aplicació. De forma particular, en aquest mòdul, s'ha convingut reduir la funció <em>main</em> i usar-la només per instanciar l'aplicació i cridar a la funció <em>inici</em>.</p>
+                                    <p>L'encapsulació de les funcions, és una característica bàsica, perquè ens permetrà estructurar i organitzar acuradament els programes, dividint-los en blocs de codi (funcions) que s'executaran a voluntat del programador en invocar el seu nom (crida). Això presenta avantatges molt importants:</p>
+                                    <div class="iocexample em single">
+                                        <p>Per exemple, reduir la repetició de codi usant funcions permet evitar la mala costum -des del punt de vista de la programació- de copiar, enganxar i si cal adaptar codi d'una banda a una altra dels programes. Aquest procediment intuïtiu és, en realitat, una font d'errors i caldria desterrar-lo dels nostres hàbits.</p>
+                                        <p>Usant funcions que treballin amb paràmetres i variables locals, resulta molt més fàcil evitar les típiques interferències que es produeixen en manipular variables des de línies de codi allunyades, ja que cada funció es pot tractar amb un alt grau d'independència i el canvi de valor de les seves variables internes mai afectarà altres funcions.</p>
+                                        <p>Les funcions poden també facilitar la comprensió i interiorització que el programador ha de fer dels processos a implementar. De fet actuen com ho faria un esquema que resumís un escrit. Els esquemes ens ajuden a recordar i relacionar millor les diferents parts d'un escrit sense necessitat de recordar amb exactitud les paraules escrites.</p>
+                                        <p>D'altra banda, les funcions ens ajudaran també a no repetir codi i reutilitzar el que ja es troba escrit, fins i tot en aplicacions diferents, si prenem la precaució de crear funcions genèriques que puguin respondre davant de diverses situacions.</p>
+                                    </div>
+                                <p>Aquesta activitat, no conté l'apartat <em>Què cal saber</em>, perquè aquí, l'aprenentatge l'obtindreu en fer els exercicis. L'aprenentatge implícit que esdevé en fer el que se us proposa, s'assimila millor que el contingut explícit d'una lectura. Aneu a l'apartat <em><a href="#slc-toDo">Què cal fer</a></em> on trobareu detallades, les diferents propostes. A l'apartat <em><a href="#slc-toDelivery">Lliurament</a></em>, se us dóna la informació bàsica per poder fer el lliurament de l'activitat. No us oblideu de llegir l'apartat i seguir les seves indicacions. Finalment, a l'apartat <em><a href="#slc-toContinue">Com continuar</a></em>, us redirigirà a la següent activitat. </p> 
                              </div>
                         </div>
                     </div>
@@ -130,64 +134,32 @@
 
             <!--=========== BEGIN SECTION toDo ================-->    
             <section id="slc-toDo" class="vsections">
-                <!--=========== BEGIN SUBSECTION Exercici 1 ================-->    
-                <section id="slc-toDo10" class=" section">
+                <!--=========== BEGIN SUBSECTION Aplicació 1 ================-->    
+                <section id="slc-toDo10" class=" section tasca">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Què cal fer - Funcions</h2>
-                                     <h3> Exercici 1 - Ús d'arrays com a paràmetres d'entrada o sortida</h3>
+                                     <h3> <span class="tascaTitle">Exercici</span> Ús de les funcions per el processament de les dades</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Els arrays són un tipus de dada compost. Com sabeu, un array referencia tota una col·lecció de dades, i disposa de mecanismes per accedir i manipular els seus elements. El gran avantatge dels arrays és que amb una única variable podem accedir a multitud de dades. De fet, són també un mecanisme per reduir la complexitat. Es mantenen el nombre de dades, però s'aconsegueix reduir el nombre de variables cosa que facilita la implementació del programador.</p>
-                                    <p>De forma semblant a l'ús d'arrays a la declaració de variables, és possible fer servir paràmetres de funcions que també referenciïn arrays, de manera que sigui possible accedir a tots els seus elements utilitzant només un únic paràmetre</p>
-                                    <p>En aquest primer exercici se us proposa que practiqueu la creació de funcions que rebin arrays. Concretament us proposem que feu tres funcions que rebin arrays de tipus <em>double</em>.</p>
-                                    <p>La primera s'anomenarà <em>valorMitjà</em> i calcularà el valor mitjà de la col·lecció de <em>doubles</em> que li arribi a través d'un paràmetre de tipus array. La funció haurà de retornar el valor calculat</p>
-                                    <p>La segona funció s'anomenarà <em>valorMinim</em> i en aquest cas, cercarà el valor mínim de tots els <em>doubles</em> que arribin per paràmetre. Per tant la funció retornarà un double amb el valor mínim trobat</p>
-                                    <p>La darrera funció s'anomenarà posicioMaxim. Es tracta d'una funció que tindrà per objectiu trobar el valor màxim dins l'array que li arribi per paràmetres, però en comptes de retornar el valor, el que retornarà és la posició de l'array on es trobi l'element amb el valor màxim. Retornar la posició en comptes del valor pot tenir certes avantatges; sovint cal treballar amb diversos arrays relacionats a través de la posició, per exemple per emmagatzemar les notes i els noms dels alumnes. En aquest cas caldrà fer servir dos arrays perquè les dades son de tipus diferent. En un array de cadenes de text hi guardarem els noms dels alumnes i en un altre de doubles les seves notes. Ambdós arrays els mantindrem relacionats per posició. És a dir, el primer alumne tindrà la primera nota, el segon, la segona nota i així successivament. Saber la posició d'un element especific d'un dels arrays suposa també disposar del valor corresponent de l'array relacionat. És per això que quan programen amb arrays pot ser preferible treballar amb les posicions i obtenir el valor només quan sigui necessari.</p>
-                                    
-                                    <p>Per tal de provar que us funcionen les vostres codificacions, us facilitem la funció <em>inici</em> i <em>main</em>:</p>
-                                    <pre><code class="java">
- public static void main(String[] args) {
-    //adapteu la instanciació del programa d'acord amb el nom del fitxer (i nom de la classe) on treballeu.
-    FuncionsIArrays prg = new FuncionsIArrays();  //canvieu FuncionsIArrays pel nom del vostre fitxer.
-    prg.inici();
-}
-    
-void inici(){
-    double[] valors ={2.5, 8.34, 1.42, 7.59, 3.22, 4.57, 12.5, 6.01, 5.54, 8.31};
-    /* Operar amb els valors d'una col·lecció*/
-    double valorMitja;
-    valorMitja = valorMitja(valors);
-    System.out.print("El valor mitjà de la col·lecció de doubles és: ");
-    System.out.println(valorMitja); //El valor que ha de sortir és 6.0
-    
-    /* Obtenir un valor d'una col·lecció */
-    double valorMinim;
-    valorMinim = valorMinim(valors);
-    System.out.print("El valor mínim de la col·lecció de doubles és: ");
-    System.out.println(valorMinim); //El valor mínim és 1.42
-    
-    /* Obtenir la posició en comptes del valor */
-    int posicioNotaMaxima;
-    double[] notes ={2.5, 8.34, 1.42, 7.69, 9.26, 5.57, 1.0, 6.01};
-    String[] alumnes ={"Albert", "Rosalia", "Jaume", "Maria", "Joana", 
-                       "Francesc", "Ramon", "Berta"};
-    posicioNotaMaxima = posicioMaxim(notes);
-    System.out.print("L'alumne/a ");
-    System.out.print(alumnes[posicioNotaMaxima]);
-    System.out.print(" ha tret un ");
-    System.out.print(notes[posicioNotaMaxima]);
-    System.out.println(", que és la nota màxima."); //la nota màxima l'ha tret la Joana
-}
-                                    </code></pre>
-                                    <p>Copieu ambdues funcions a la classe que estigueu implementant i arregleu el codi de la funció main d'acord amb el nom que hagueu posat al vostre fitxer de codi.</p>
-                                    <p>Un cop copiat el codi i feta l'adaptació, passeu a implementar les tres funcions demanades: <em>valorMitja</em>, <em>valorMinim</em> i <em>posicioMaxim</em>.</p>
+                                    <p>A efectes pràctics com podem saber quan és necessari crear un nova funció i quan no? La resposta no és trivial perquè molts són els factors que condicionen la decisió de crear una funció. Per exemple, la funció <em>main</em> és la solució que els dissenyadors del llenguatge JAVA varen trobar per identificar el punt d'inici de l'execució d'un programa. Ho hagueren pogut solucionar de diferent manera, però van optar per aquesta. De forma semblant, la funció <em>inici</em>, només pretén facilitar la crida de funcions, simplificant la sintaxi de JAVA que cal fer servir, de manera que s'adapti a estudiants novells i amb poca experiència. Probablement, un programador experimentat opti per no incloure-la.</p>
+                                    <p class="iocimportant"> La regla general seria doncs, que cal crear aquelles funcions que ens facilitin la tasca quan estem programant o dissenyant una aplicació.</p>
+                                    <p> Segurament el criteri més intuïtiu és aquell que fa referencia a la transformació de dades per tal d'obtenir algun resultat a partir de dades inicials. És el que coneixem com a <em>processament</em, <em>tractament</em> o <em>càlcul</em> de dades.</p>
+                                    <p>En general aquest tipus de funció ha d'evitar interactuar amb l'usuari per tal de fer-la el màxim d'independent i reusable possible. Per aconseguir-ho, serà necessari dissenyar-les amb paràmetres, que usarem per informar a la funció del valor de les dades inicials. A més, la funció haurà de retornar un valor amb la resposta calculada a partir de les dades passades en cada crida. Així podrem mostrar la resposta fora de la funció, quan sigui necessari.</p>
+                                    <p>Anem a veure un exemple. Imagineu que ens demanen fer una aplicació que ajudi a saber quants metres de barra de ferro cal comprar per construir reixes que s'adaptin a una finestra. Estareu d'acord en que la funció més evident que se'n deriva, és la que hauria de fer els càlculs matemàtics per obtenir els metres de barra a parir de l'amplada i l'alçada de la finestra on instal·lar la reixa. Suposeu que per ajustar els càlculs ens diuen:</p>
+                                    <ol>
+                                        <li>Que les reixes, estan constituïdes per un marc rectangular de la mateixa mida que l'alçada i l'amplada. Sobre aquest marc caldrà disposar barrots verticals de la mida que faci l'alçada.</li>
+                                        <li>Que el càlcul ha d'assegurar, que entre barrot i barrot vertical no hi haurà una mida superior a un límit que definirà l'usuari. L'alçada i l'amplada de la finestra, també les definirà l'usuari.</li>
+                                        <li>Que les mides de l'amplada, alçada i separació màxima es demanaran en mil·límetres, però el resultat del càlcul s'expressarà en metres i serà un valor sencer, ja que la el proveïdor de barres de ferro no ens ven fraccions de metro.</li>
+                                        <li>Que per fer els càlculs podem desestimar el gruix dels barrots que conformaran la reixa. </li>
+                                    </ol>
+                                    <p>Us demanem que codifiqueu l'aplicació esmentada. En primer lloc caldrà crear, en un projecte de <em>Netbeans</em>, una classe anomenada  <em>Reixes</em>. Aquesta disposarà de la funció <em>main</em> i la funció <em>inici</em> tal com s'ha explicat a l'activitat A401. A la funció inici haureu de codificar l'aplicació demanada, però assegureu-vos d'incloure una funció anomenada  <em>calculaMida</em> per realitzar els càlculs que obtinguin la mida de la barra de ferro necessària.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -198,15 +170,26 @@ void inici(){
                                     </button>                                        
                                     <div id="slc-toDo10-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <p>Recordeu declarar correctament les 3 funcions que heu de codificar, cal assegurar que rebin un array com a paràmetre i que retornin un valor double. Per exemple:</p>
-                                         <pre><code class="java">
-...
+                                        <p>Obriu un projecte de Netbeas o creeu-ne un de nou i seguidament afegiu una classe anomenada <em>Reixes</em>.</p>
+                                        <p>Afegiu-hi la funció main i la funció inici (de moment buides) </p>
+                                        <p>Codifiqueu la funció main per tal que executi la funció inici com ja s'ha indicat a l'activitat A401 i que també mostrem aquí:</p>
+                                        <pre><code class="java">
+public class CalculReixes {
+    public static void main(String[] args) {
+        CalculReixes prg = new CalculReixes();
+        prg.inici();
+    }
+    
+    void inici(){
+        //aquí codificarem l'aplicació
+    }    
 
-double valorMitja(double[] valors){
-   ...
 }
-...
-                                         </code></pre>
+                                        </code></pre>
+                                        <p>Afegiu a la classe <em>Reixes</em> una funció també buida, anomenada <em>calculaMida</em>.</p>
+                                        <p>Finalment codifiqueu les funcions <em>inici</em> i <em>calculaMida</em> amb les indicacions que se us han indicat a l'enunciat.</p>
+                                        <p>A <em>calculaMida</em>, serà necessari afegir-hi tants paràmetres com dades inicials necessiti, fer el calcul pertinent i retornar el resultat.</p>
+                                        <p>A la funció inici caldrà demanar a l'usauri les mides necessàries, fe la crida de <em>calculaMida</em> i recollir el resultatper mostrar-lo per pantalla.</p>
                                     </div>                                    
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -218,9 +201,12 @@ double valorMitja(double[] valors){
                                     </button>                                        
                                     <div id="slc-toDo10-clue2" class="iocClue hidden">
                                         <h2>Pista 2</h2>
-                                        <p>Quan hagueu de trobar el valor mínim, no doneu mai, per defecte, cap valor predeterminat a la variable que hagi de prendre el valor mínim. Ja que per gran que assigneu el valor, sempre podrien haver valors coincidents a la col·lecció. El millor és inicialitzar la variable amb el valor de la posició zero de la col·lecció i iniciar les comparacions a partir d'aquesta posició. </p>
-                                    </div> 
-
+                                        <p>Per calcular el nombre de barrots caldrà dividir l'amplada per la separació màxima desitjada. Això ens dirà el nombre de separacions que tindrà la finestra. Per tant, el nombre de barrots serà el mateix que el de separacions menys un.</p>
+                                        <p>En cas que la divisió entre l'amplada i la separació mínima no sigui exacte, cal deduir que s'ha d'afegir una separació extra que ocuparia una fracció de la separació màxima, a fi d'evitar que una de les separacions superi la separació màxima. Per tant, a efectes pràctics, caldrà afegir un barrot més al comput obtingut.</p>
+                                        <p>Al nombre de barrots calculat, caldrà afegir-hi la dimensió del marc on s'hi muntaran els barrots. És a dir, dues alçades i dues amplades.</p>
+                                        <p>Assegureu-vos de retornar el valor expressat en metres. Per fer-ho cal dividir els mil·límetres obtinguts entre 1000.</p>
+                                        <p>Recordeu que si el nombre de milimetres sobrepassa en alguna fracció el metre, cal afegir un metre més al resultat!</p>
+                                    </div>                                    
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -231,10 +217,19 @@ double valorMitja(double[] valors){
                                     </button>                                        
                                     <div id="slc-toDo10-clue3" class="iocClue hidden">
                                         <h2>Pista 3</h2>
-                                        <p>Per trobar la posició del valor màxim, inicieu per defecte amb la posició zero, la variable que guardi la posició del valor màxim i que useu per anar-la comparant amb la resta.</p>
-                                    </div>                                    
+                                        <p>Per recollir el valor que retorna una funció cal fer una assignació a una variable. Si no es fa cap assignació no es produeix cap error, però es perd el resultat. L'assignació cal fer-la de forma semblant al següent exemple:</p>
+                                        <pre><code class="java">
+int var;
+...
+var = cridaAFuncio(/*valors passats per paràmetre*/);
+...
+System.out.println(var);
+...
+                                        </code></pre>
+                                        <p>A l'exemple anterior, la variable var, recollirà el valor retornat per <em>cridaFuncio</em>. En les línies següents podrem fer servir <em>var</em> per disposar del valor retornat per la funció.</p>
+                                    </div>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-toDo10" 
                                             data-selector-solution="#slc-toDo10-solution">
@@ -242,70 +237,352 @@ double valorMitja(double[] valors){
                                     </button>
                                     <div id="slc-toDo10-solution" class="iocSolution hidden">
                                         <pre><code class="java">
+import java.util.Scanner;
 
-
-public class FuncionsIArrays {
+public class CalculReixes {
     public static void main(String[] args) {
-        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
-        FuncionsIArrays prg = new FuncionsIArrays();
+        CalculReixes prg = new CalculReixes();
         prg.inici();
     }
     
     void inici(){
-        double[] valors ={2.5, 8.34, 1.42, 7.59, 3.22, 4.57, 12.5, 6.01, 5.54, 8.31};
-        /* Operar amb els valors d'una col·lecció*/
-        double valorMitja;
-        valorMitja = valorMitja(valors);
-        System.out.print("El valor mitjà de la col·lecció de doubles és: ");
-        System.out.println(valorMitja); //El valor que ha de sortir és 6.0
+        int amplada;
+        int alcada;
+        int separacioMaxima;
+        int mida;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Aplicació per calcular quants metros de barra cal comprar per fer una reixa");
+        System.out.println("----------------------------------------------------------------------------");
         
-        /* Obtenir un valor d'una col·lecció */
-        double valorMinim;
-        valorMinim = valorMinim(valors);
-        System.out.print("El valor mínim de la col·lecció de doubles és: ");
-        System.out.println(valorMinim); //El valor mínim és 1.42
+        System.out.println();
+        System.out.println("Indica l'amplada (en mil·límetres) de la finestra:");
+        amplada = scanner.nextInt();
+        System.out.println();
+        System.out.println("Indica l'alçada (en mil·límetres) de la finestra:");
+        alcada = scanner.nextInt();
+        System.out.println();
+        System.out.println("Indica la separació màxima (en mil·límetres) que voleu deixar entre barrots:");
+        separacioMaxima = scanner.nextInt();
         
-        /* Obtenir la posició en comptes del valor */
-        int posicioNotaMaxima;
-        double[] notes ={2.5, 8.34, 1.42, 7.69, 9.26, 5.57, 1.0, 6.01};
-        String[] alumnes ={"Albert", "Rosalia", "Jaume", "Maria", "Joana", 
-                           "Francesc", "Ramon", "Berta"};
-        posicioNotaMaxima = posicioMaxim(notes);
-        System.out.print("L'alumne/a ");
-        System.out.print(alumnes[posicioNotaMaxima]);
-        System.out.print(" ha tret un ");
-        System.out.print(notes[posicioNotaMaxima]);
-        System.out.println(", que és la nota màxima."); //la nota màxima l'ha tret la Joana
-    }
+        mida = calculaMida(alcada, amplada, separacioMaxima);
+        
+        System.out.println();
+        System.out.println("-------------------------------------");
+        System.out.print("Cal que compris ");
+        System.out.print(mida);
+        System.out.println(" metres de barra");
+        System.out.println("-------------------------------------");
+    }    
     
-    double valorMitja(double[] valors){
-        double vSuma = 0;
-        for(int i=0; i&lt;valors.length; i++){
-            vSuma+=valors[i];
+    int calculaMida(int alcada, int amplada, int sepMax){
+        int millimetres;
+        int metres;
+        int numBarrots= amplada/sepMax; //Hi ha un barrot de més
+        if(amplada%sepMax==0){ //Si la mida és exacta traiem el barrot de més
+            numBarrots--;      
+        }//Peró si no és exacte, deixem la quantitat per assegurar que la separació no superi la màxima
+        millimetres = alcada*(numBarrots+2); //afegim els barrots verticals i els de l'alçada del marc.
+        millimetres +=amplada*2; // afegim els barrots de l'amplada del marc.
+        
+        metres = millimetres/1000; //això dona l'enter que es troba a per sota de la fracció
+        if(metres*1000&lt;millimetres){
+            metres++;  //cal afegir un metre més corresponent a la fracció no comptada
         }
-        return vSuma/valors.length;
-    }
-    
-    double valorMinim(double[] valors){
-        double vMinim = valors[0];
-        for(int i=1; i&lt;valors.length; i++){
-            if(valors[i]&lt;vMinim){
-                vMinim=valors[i];
-            }
-        }
-        return vMinim;
-    }
-    
-    int posicioMaxim(double[] valors){
-        int pMaxim = 0;
-        for(int i=1; i&lt;valors.length; i++){
-            if(valors[i]&gt;valors[pMaxim]){
-                pMaxim= i;
-            }
-        }
-        return pMaxim;
+        return metres;
     }
 }
+                                        </code></pre>                         
+                                    </div>
+
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Aplicació 1 ================-->    
+                
+                <!--=========== BEGIN SUBSECTION Exercici 1 ================-->    
+                <section id="slc-toDo21" class=" section tasca">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer - Funcions</h2>
+                                     <h3 ><span class="tascaTitle">Exercici</span> Funcions per intercanviar informació amb l'usuari</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Una altre criteri que ens pot ajudar a reconèixer quines funcions hem d'acabar creant, fa referència a la necessitat que tenen la majoria d'aplicacions, de demanar dades a l'usuari o presentar-li els resultats. És el que es coneix com interfície d'usuari i engloba aquells processos que permeten intercanviar informació entre l'aplicació i l'usuari.</p>
+                                    <p>Les interfícies d'usuari són probablement de les utilitats que més ràpidament canvien. Es poden crear interfícies d'usuari utilitzant codi HTML, fent servir les utilitats gràfiques dels sistemes operatius o bé les utilitats de consola (teclat i pantalla) tal com fem nosaltres. Si mantenim ben separat i identificat el codi de la interfície, ens resultarà força senzill convertir, per exemple, una aplicació de consola en una aplicació WEB.</p>
+                                    <p>Les utilitats de consola de Java (<em>System.in</em> i <em>System.out</em>), són tan simples que sovint, en implementar un programa cal repetir una i altre vegada instruccions força similars. Per exemple, la majoria de vegades que desitgem que l'usuari ens entri dades a través del teclat, li escrivim un missatge explicatiu, indicant què esperem que faci. Crear funcions que ens ajudin a implementar aquest processos d'intercanvi d'informació pot resultar-nos molt útil per agilitzar la codificació d'aplicacions mantenint ben separat el codi de la interfície del corresponent al calcul i tractament de les dades.</p>
+                                    <p>Us demanarem que implementeu diverses funcions que poden ajudar-vos a crear interfícies d'usuari en aplicacions de consola. En primer lloc, haureu d'implementar una funció anomenada <strong><em>entrarUnNumero</em></strong>, que rebi una cadena de text per paràmetre. La funció mostrarà el text per pantalla a mode de missatge explicatiu i esperarà que l'usuari escrigui un valor double. Per tal de prevenir errors, la funció comprovarà que l'usuari entri realment un valor numèric. En cas que no sigui així, caldrà repetir la petició aclarint a l'usuari que esprem que entri un valor numèric. Quan l'usuari hagi entrat un valor correcte, la funció el retornarà a la instrucció que hagi fet la crida. Recordeu que usant la utilitat Scanner, després de retornar un valor numèric (double, enter, etc.), és necessari invocar el mètode <em>nextLine</em> del mateix <em>Scanner</em> per tal de netejar el retorn de carro del <em>buffer</em> del teclat i evitar comportaments inesperats a les crides posteriors.</p>
+                                    <p>De forma semblant a la funció anterior, us demanem que implementeu també, una funció que permeti mostrar el resultat d'algun càlcul per la pantalla. La funció s'anomenarà <strong><em>mostrarResultat</em></strong>, rebrà un paràmetre amb el missatge a mostrar i a més d'ensenyar el missatge per la pantalla, formatarà la sortida d'alguna manera que l'usuari pugui identificar com la informació esperada. Per exemple delimitant el missatge amb una línia inferior i una superior que destaquin el text.quelcom semblant a:</p>
+                                    <div class="iocexample"><pre>
+---------------------------------------------------
+    L'àrea del cercle demanat val: 25.3278
+---------------------------------------------------
+                                    </pre></div>
+                                    <p>Tingueu en compte que la funció <em>mostrarResultat</em> no retorna cap valor, ja que la seva única funció és canviar l'estat de la pantalla.</p>
+                                    <p>Seguint en aquesta línia, una altre funció d'interfície d'usuari força útil, pot ser la que mostri un menú per la pantalla amb les diverses opcions que cal oferir a l'usuari i gestioni la captura de la resposta que aquest fa per teclat retornant un valor que identifiqui la opció escollida (un caràcter o un número).</p>
+                                    <p>Us demanem que implementeu una funció anomenada <strong><em>menu</em></strong> que rebi dos paràmetres: una cadena de text amb el títol del menú i un array de cadenes de text amb les diferents opcions que caldrà mostrar en el menú. La funció mostrarà per pantalla el títol, les opcions i les instruccions adreçades a l'usuari, de forma semblant a la següent:</p>
+                                    <div class="iocexample"><pre>
+---------------------------------------
+    Menú d'operacions bancàries
+---------------------------------------
+    a. Consultar el saldo
+    b. Consultar els moviments
+    c. Realitzar transferència
+    s. Sortir
+
+Escolliu una de les opcions i premeu [ENTRAR].
+                                    </pre></div>
+                                    <p>A l'exemple, la funció hauria rebut com a títol la cadena <em>Menú d'operacions bancàries</em> i com a opcions un array de text amb les 4 cadenes a mostrar (<em>a. Consultar el saldo</em>, <em>b. Consultar els moviments</em>, <em>c. Realitzar transferència</em> i <em>s. Sortir</em>).
+                                    <p>Un cop mostrat per pantalla el contingut, la funció esperarà que l'usuari escrigui per teclat una de les opcions (a, b, c, s) i premi [ENTRAR] per confirmar la selecció. La funció retornarà un caràcter amb el valor de la opció escollida.</p>
+                                    <p>Per finalitzar, seria també adient que implementeu una funció anomenada <strong><em>presentacio</em></strong>. Es tracta d'una funció que rep una array de cadenes de caràcter. Cada element de serà una línia de pantalla. El missatge s'embolcallarà entre símbols gràfics identificadors. Per exemple:</p>
+                                    <div class="iocexample"><pre>
+====================================================================
+Benvinguts a la calculadora d'àrees.
+Seleccioneu la figura geomètrica de la que vulgueu calcular l'àrea, 
+introduïu  les dades que se us demanin i espereu el resultat.
+====================================================================
+                                    </pre></div>
+                                    <p>A la practica podeu fer servir aquesta funció per donar explicacions de la funcionalitat d'una aplicació, per donar ajuda o per informar de quelcom.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo21" 
+                                            data-selector-clue="#slc-toDo21-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo21-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Per realitzar la pràctica, en un projecte de <em>Netbeans</em> creeu una classe nova (anomenada pes exemple <em>InterficiUsuaris</em>)on hi implementareu les diferents funcions.</p>
+                                        <p>També hi podeu afegir la funció <em>main</em> i la funció <em>inici</em> que us pot servir per provar les funcions si hi codifiqueu un codi semblant a:</p>
+                                        <pre><code class="java">
+public class InterficieUsuari {
+    public static void main(String[] args) {
+        InterficieUsuari prg = new InterficieUsuari();
+        prg.inici();
+    }
+    
+    void inici(){
+        double mesura;
+        char opcio=0;
+        
+        //proves
+        String[] explicacions = {"Benvinguts a la calculadora d'àrees.",
+                        "Seleccioneu la figura geomètrica de la que vulgueu calcular l'àrea,",
+                        "Introduïu  les dades que se us demanin i espereu el resultat."}; 
+        presentacio(explicacions);
+        mesura = entrarUnNumero("Entreu un valor per provar: ");
+        
+        System.out.print("La mesura entrada és: ");
+        System.out.println(mesura);
+        
+        mostrarResultat("L'àrea del cercle demanat val: 25,3278");
+        
+        String[] opcions={"a. Consultar el saldo",
+                        "b. Consultar els moviments",
+                        "c. Realitzar transferència",
+                        "s. Sortir"};  
+        opcio = menu("Menú d'operacions bancàries", opcions);
+        
+        System.out.println();
+        System.out.print("La opció escollida és: ");
+        System.out.println(opcio);
+    }
+    
+    //escriviu aquí les funcions demanades
+}
+                                        </code></pre>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo21" 
+                                            data-selector-clue="#slc-toDo21-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo21-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Per saber com comprovar que l'usuari està entrant un tipus de dada correcta, consulteu els <a class="materialsM03U3" target="_blank">materials del mòdul, la unitat 3, apartat <em>1.3.1 Entrada de seqüències de valors per teclat</em></a> on explica l'ús del mètode <em>hasNext...</em> de la utilitat <em>Scanner</em>. La lectura us serà útil per codificar la funció <em>entrarUnNumero</em></p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo21" 
+                                            data-selector-clue="#slc-toDo21-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo21-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Per tal que quedi més bonic, podeu precedir algunes de les cadenes enviades per paràmetre amb un tabulador fent:</p>
+                                        <pre><code class="java">
+System.out.print("\t");
+                                        </code></pre>
+                                        <p>Per exemple a la funció <em>mostrarResultat</em> i al títol i opcions de la funció menú. Fixeu-vos bé en la combinació dels mètodes <em>println</em> i <em>print</em> de l'eina <em>System.out</em>, per imprimir amb o sense salt de línia.</p>
+                                    </div>                                    
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo21" 
+                                            data-selector-clue="#slc-toDo21-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-toDo21-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>El més habitual en un menú de tipus consola és que les opcions es puguin escollir prement alguna tecla. La forma més senzilla de identificar una tecla acostuma a ser el seu valor de tipus caràcter, és per això que podeu optar per fer que el menú retorni una dada de tipus char.</p>
+                                        <p>El llenguatge Java obliga a finalitzar l'entrada de teclat fent servir una tecla especial com ara la tecla [ENTRAR]. Per tant, caldria avisar a l'usuari que cal escollir la opció del menú i prémer la tecla entrar, a més de mostrar les diferents opcions.</p>
+                                        <p>L'utilitat Scanner pot recollir l'entrada fent servir el mètode <em>nextLine</em> i recuperar el primer caràcter de la cadena retornada amb el mètode <em>charAt(0)</em>. El problema, esdevé si l'usuari prem [ENTRAR] sense haver escollit cap opció, ja que en aquest cas la cadena serà buida i si apliquem el mètode <em>charAt</em> sobre una cadena buida, sempre ens donarà error perquè no hi ha caràcters a consultar en cap posició.</p>
+                                        <pre><code class="java">
+/*
+ * El següent codi dóna error perquè la variable cadena és buida i no conté cap 
+ * caràcter a la posició zero.
+ */
+
+char caracter;
+String cadena = "";
+
+//...
+
+caracter = cadena.charAt(0);
+
+//...
+                                        </code></pre>
+                                        <p>Per evitar l'error caldrà comprovar si es pot invocar el mètode i en cas que no sigui possible, caldrà assignar un valor per defecte...</p>
+                                        <pre><code class="java">
+/*
+ * El següent codi NO dóna error perquè només invoquem charAt si la cadena no 
+ * és buida.
+ */
+
+char caracter;
+String cadena = "";
+
+//...
+if(cadetna.length()>0){
+    caracter = cadena.charAt(0);
+}else{
+    caracter=0;  //valor per defecte en cas que la cadena estigui buida.
+}
+
+//...
+                                        </code></pre>
+                                        <p>Generalment els menús no avisen mai de si la opció escollida forma part de les opcions o no. En cas de no coincidir amb cap opció, s'acostuma simplement a tornar a mostrar el menú sense comentaris.</p>
+                                        <br />
+                                        
+                                    </div>                                    
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo21" 
+                                            data-selector-solution="#slc-toDo21-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo21-solution" class="iocSolution hidden">
+                                        <pre><code class="java">
+
+
+import java.util.Scanner;
+
+public class InterficieUsuari {
+    public static void main(String[] args) {
+        InterficieUsuari prg = new InterficieUsuari();
+        prg.inici();
+    }
+    
+    void inici(){
+        double mesura;
+        char opcio=0;
+        
+        //proves
+        String[] explicacions = {"Benvinguts a la calculadora d'àrees.",
+                        "Seleccioneu la figura geomètrica de la que vulgueu calcular l'àrea,",
+                        "Introduïu  les dades que se us demanin i espereu el resultat."}; 
+        presentacio(explicacions);
+        mesura = entrarUnNumero("Entreu un valor per provar: ");
+        
+        System.out.print("La mesura entrada és: ");
+        System.out.println(mesura);
+        
+        mostrarResultat("L'àrea del cercle demanat val: 25,3278");
+        
+        String[] opcions={"a. Consultar el saldo",
+                        "b. Consultar els moviments",
+                        "c. Realitzar transferència",
+                        "s. Sortir"};  
+        opcio = menu("Menú d'operacions bancàries", opcions);
+        
+        System.out.println();
+        System.out.print("La opció escollida és: ");
+        System.out.println(opcio);
+    }
+    
+    double entrarUnNumero(String missatgeExplicatiu){
+        Scanner scanner = new Scanner(System.in);
+        double ret;
+        boolean correcte=false;
+        do{
+            System.out.print(missatgeExplicatiu);
+            correcte=scanner.hasNextDouble();
+            if(!correcte){ //Comprovem si l'usuari escriu un número o text
+                scanner.next();
+                System.out.println("Cal que entris un valor numèric si us plau.");
+            }
+        }while(!correcte);
+        ret = scanner.nextDouble();  
+        scanner.nextLine(); //buidem el buffer del teclat
+        return ret;
+    }
+    
+    void mostrarResultat(String resultat){
+        System.out.println();
+        System.out.println("---------------------------------------------------");
+        System.out.print("\t");
+        System.out.println(resultat);
+        System.out.println("---------------------------------------------------");
+        System.out.println();
+    }
+    
+    void presentacio(String[] linies){
+        System.out.println("======================================================================");
+        for(int i=0; i&lt;linies.length; i++){
+            System.out.println(linies[i]);
+        }
+        System.out.println("======================================================================");
+        System.out.println();
+    }
+    
+    char menu(String titol, String[] opcions){
+        Scanner scanner = new Scanner(System.in);
+        String line;
+        char opcio=0;
+        System.out.println("---------------------------------------");
+        System.out.print("\t");
+        System.out.println(titol);
+        System.out.println("---------------------------------------");
+        for(int i=0; i&lt;opcions.length; i++){
+            System.out.print("\t");
+            System.out.println(opcions[i]);
+        }
+        System.out.println();
+        System.out.print("Escull una opció i prem [ENTRAR]: ");
+        line = scanner.nextLine();
+        //Evitem l'error si l'usuari prem només [ENTRAR]
+        if(line.length()&gt;0){
+            opcio = line.charAt(0);
+        }
+        return opcio;
+    }
+}
+
                                         </code></pre>                         
                                     </div>
                                 </div> 
@@ -314,414 +591,247 @@ public class FuncionsIArrays {
                     </div>
                 </section>
                 <!--=========== END SUBSECTION Exercici 1 ================-->    
-                
+
                 <!--=========== BEGIN SUBSECTION Exercici 2 ================-->    
-                <section id="slc-toDo20" class=" section">
+                <section id="slc-toDo22" class=" section tasca">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Què cal fer - Funcions</h2>
-                                     <h3 >Exercici 2 - Ús d'arrays com a paràmetres d'entrada o sortida</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class=bodySlide>
-                                    <p>La proposta que us fem aquí, pretén generar una discussió per tal que arribeu a la conclusió de quin és el comportament específic dels arrays com a paràmetres d'entrada i en conseqüència, quines precaucions haureu de prendre durant la codificació de funcions que usin paràmetres de tipus <em>array</em>.</p>
-                                    <p>Abans de començar la discussió us demanarem que analitzeu el codi que aneu trobant, doncs us ajudarà a centrar el debat i deduir les conclusions.</p>
-                                    <p>En primer lloc ens preguntarem què passa si modifiquem el valor d'un paràmetre de tipus bàsic. Caldria estendre la pregunta tant a nivell intern de la funció que rep el paràmetre com de la variable utilitzada a la crida. És a dir, caldria preguntar-nos, què passa amb el valor d'una variable que enviem com a paràmetre en la crida d'una funció, si en invocar-se canvia el valors del paràmetre rebut? Anem a deduir-ho amb un exemple. Genereu un projecte de Netbeans i copieu-hi, en un fitxer anomenat <em>FuncionsIArrays</em>, el següent codi:</p>
-                                    <pre><code class="java linenumbers">
-
-
-public class FuncionsIArrays {
-    public static void main(String[] args) {
-        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
-        FuncionsIArrays prg = new FuncionsIArrays();
-        prg.inici();
-    }
-    
-    void inici(){
-
-        /* Per investigar què passa si fem canvis a un paràmetre de tipus bàsic, 
-         * com per exemple un int 
-         */
-        int varEnter = 5;
-        System.out.print("Abans d'entrar a la funció canviarValorParametreInt(param) ");
-        System.out.print("la variable val: ");
-        System.out.println(varEnter);
-        canviarValorParametreInt(varEnter);
-        System.out.print("Despres d'entrar a la funció canviarValorParametreInt(param) ");
-        System.out.print("la variable val: ");
-        System.out.println(varEnter);
-    }
-    
-    void canviarValorParametreInt(int param){
-        int valorACanviar=10;
-        System.out.print("Dins la funció canviarValorParametreInt(param), ");
-        System.out.print("abans del canvi [param=10] el paràmetre val: ");
-        System.out.println(param);
-        param=valorACanviar;
-        System.out.print("Dins la funció canviarValorParametreInt(param), ");
-        System.out.print("després del canvi [param=10] el paràmetre val: ");
-        System.out.println(param);
-    }
-}
-                                    </code></pre>
-                                <div class="frameBox">
-                                    <h4>Qüestions pel <span class="forumDeDiscussio"></span></h4>
-                                    <p>Executeu el codi i intenteu contestar a les preguntes anteriors. Què passa amb la variable <em>varEnter</em> de la funció inic? Intenteu deduir-ho a partir del valor que la variable pren abans i després de fer la crida a la funció  <em>canviarValorParametreInt</em>. Hi han hagut canvis?</p>
-                                    <p>Valoreu també el que succeeix dins la funció <em>canviarValorParametreInt</em>. Què passa amb el valor del paràmetre <em>param</em>? Amb quin valor ha entrat? Amb quin valor surt?</p>
-                                </div>
-                                <p>Continuem analitzant codi. Ara afegirem una funció que rebi un paràmetre de tipus array i dins de la funció modificarem alguns dels seus elements:</p>
-                                <pre><code class="java linenumbers">
-
-
-public class FuncionsIArrays {
-    public static void main(String[] args) {
-        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
-        FuncionsIArrays prg = new FuncionsIArrays();
-        prg.inici();
-    }
-    
-    void inici(){
-
-        /* Per investigar què passa si fem canvis a un paràmetre de tipus bàsic, 
-         * com per exemple un int 
-         */
-        int varEnter = 5;
-        System.out.print("Abans d'entrar a la funció canviarValorParametreInt(param) ");
-        System.out.print("la variable val: ");
-        System.out.println(varEnter);
-        canviarValorParametreInt(varEnter);
-        System.out.print("Despres d'entrar a la funció canviarValorParametreInt(param) ");
-        System.out.print("la variable val: ");
-        System.out.println(varEnter);
-        
-        /* Per investigar què passa si fem canvis als elements d'un paràmetre de tipus Array*/
-        int[] varArray = new int[8];
-        for(int i=0; i&lt;varArray.length; i++){
-            varArray[i]=i*2;
-        }
-        System.out.print("Abans d'entrar a la funció ");
-        System.out.print("canviarValorElementsParametreArray(param) ");
-        System.out.print("la variable val: ");
-        printIntArray(varArray);
-        canviarValorElementsParametreArray(varArray);
-        System.out.print("Despres d'entrar a la funció ");
-        System.out.print("canviarValorElementsParametreArray(param) ");
-        System.out.print("la variable val: ");
-        printIntArray(varArray);
-    }
-    
-    void canviarValorParametreInt(int param){
-        int valorACanviar=10;
-        System.out.print("Dins la funció canviarValorParametreInt(param), ");
-        System.out.print("abans del canvi [param=10] el paràmetre val: ");
-        System.out.println(param);
-        param=valorACanviar;
-        System.out.print("Dins la funció canviarValorParametreInt(param), ");
-        System.out.print("després del canvi [param=10] el paràmetre val: ");
-        System.out.println(param);
-    }
-    
-     
-    void canviarValorElementsParametreArray(int[] param){
-        int valorACanviar=0;
-        System.out.print("Dins la funció canviarValorElementsParametreArray(param), ");
-        System.out.print("abans del canvi [param[i]=0] el paràmetre val: ");
-        printIntArray(param);
-        for(int i=2; i&lt;param.length; i++){
-            param[i]=valorACanviar;
-        }
-        System.out.print("Dins la funció canviarValorElementsParametreArray(param), ");
-        System.out.print("després del canvi [param[i]=0] el paràmetre val: ");
-        printIntArray(param);
-    }
-    
-    void printIntArray(int[] valors){
-        int limitFor = valors.length-1;
-        System.out.print("{ ");
-        for(int i=0; i&lt;limitFor; i++){
-            System.out.print(valors[i]);        
-            System.out.print(", ");        
-        }
-        if(limitFor&gt;=0){
-            System.out.print(valors[limitFor]);        
-        }
-        System.out.println(" }");        
-    }
-}
-                                    </code></pre>
-                                    <p>Fixeu-vos que per ajudar-nos a mostrar per pantalla el contingut d'un array d'enters, sense repetir codi, hem, creat una funció anomenada <em>printIntArray</em>. Un cop clarificat això, passeu a copiar-lo de nou al vostre projecte i executeu-lo. Intenteu contestar a la mateixes preguntes que abans, però adaptades a les noves variables i paràmetres.</p>
-                                <div class="frameBox">
-                                    <h4>Qüestions pel <span class="forumDeDiscussio"></span></h4>
-                                    <p>Quin valor prenen els elements de la variable <em>varArray</em> abans i després de cridar la funció <em>canviarValorElementsParametreArray</em>? Hi han hagut canvis?.</p>
-                                    <p>Analitzeu també els canvis realitzats dins la funció <em>canviarValorElementsParametreArray</em> als elements del paràmetre rebut. Quina relació hi ha entre els canvis de la variable <em>varArray</em> i el paràmetre <em>param</em>?.</p>
-                                    <p>Compareu aquest resultat amb el de la variable <em>varEnter</em> i la funció <em>canviarValorParametreInt</em>.</p>
-                                </div>
-                                <p>Per finalitzar, repetirem l'exemple anterior, però farem que la funció invocada, en compte de fer canvis en els elements, modifiqui directament tota la col·lecció sencera. Veiem'ho:</p>
-                                    <pre><code class="java linenumbers">
-
-
-public class FuncionsIArrays {
-    public static void main(String[] args) {
-        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
-        FuncionsIArrays prg = new FuncionsIArrays();
-        prg.inici();
-    }
-    
-    void inici(){
-
-        /* Per investigar què passa si fem canvis a un paràmetre de tipus bàsic, 
-         * com per exemple un int 
-         */
-        int varEnter = 5;
-        System.out.print("Abans d'entrar a la funció canviarValorParametreInt(param) ");
-        System.out.print("la variable val: ");
-        System.out.println(varEnter);
-        canviarValorParametreInt(varEnter);
-        System.out.print("Despres d'entrar a la funció canviarValorParametreInt(param) ");
-        System.out.print("la variable val: ");
-        System.out.println(varEnter);
-        
-        /* Per investigar què passa si fem canvis als elements d'un paràmetre de tipus Array*/
-        int[] varArray = new int[8];
-        for(int i=0; i&lt;varArray.length; i++){
-            varArray[i]=i*2;
-        }
-        System.out.print("Abans d'entrar a la funció ");
-        System.out.print("canviarValorParametreArray(param) ");
-        System.out.print("la variable val: ");
-        printIntArray(varArray);
-        canviarValorParametreArray(varArray);
-        System.out.print("Despres d'entrar a la funció ");
-        System.out.print("canviarValorParametreArray(param) ");
-        System.out.print("la variable val: ");
-        printIntArray(varArray);
-    }
-    
-    void canviarValorParametreInt(int param){
-        int valorACanviar=10;
-        System.out.print("Dins la funció canviarValorParametreInt(param), ");
-        System.out.print("abans del canvi [param=10] el paràmetre val: ");
-        System.out.println(param);
-        param=valorACanviar;
-        System.out.print("Dins la funció canviarValorParametreInt(param), ");
-        System.out.print("després del canvi [param=10] el paràmetre val: ");
-        System.out.println(param);
-    }
-    
-     
-    void canviarValorParametreArray(int[] param){
-        int[] valorACanviar = new int[8];
-        for(int i=0; i&lt;valorACanviar.length; i++){
-            valorACanviar[i]=i*3;
-        }
-        System.out.print("Dins la funció canviarValorParametreArray(param), ");
-        System.out.print("abans del canvi [param={0, 3, 9, ...}] el paràmetre val: ");
-        printIntArray(param);
-        param = valorACanviar;
-        System.out.print("Dins la funció canviarValorParametreArray(param), ");
-        System.out.print("després del canvi [param={0, 3, 9, ...}] el paràmetre val: ");
-        printIntArray(param);
-    }
-    
-    void printIntArray(int[] valors){
-        int limitFor = valors.length-1;
-        System.out.print("{ ");
-        for(int i=0; i&lt;limitFor; i++){
-            System.out.print(valors[i]);        
-            System.out.print(", ");        
-        }
-        if(limitFor&gt;=0){
-            System.out.print(valors[limitFor]);        
-        }
-        System.out.println(" }");        
-    }
-}
-                                    </code></pre>
-                                <div class="frameBox">
-                                    <h4>Qüestions pel <span class="forumDeDiscussio"></span></h4>
-                                    <p>Què ha passat aquest cop? Quins canvis ha experimentat la variable <em>varArray</em>? Hi ha hagut modificació del paràmetre de la funció <em>canviarValorParametreArray</em>? Ha repercutit a la variable <em>varArray</em>?</p>
-                                    <p>Intenteu elaborar una regla que us ajudi a predir, quan els canvis dins les funcions repercuteixen sobre les variable usades com a paràmetres a la invocació de la funció. Discutiu la regla al <span class="forumDeDiscussio"></span>, tot argumentat-ho amb les vostres deduccions.</p>
-                                    <p>Quan un canvi en el valor del paràmetre d'una funció, implica també el mateix canvi a la variable usada a la crida,  es diu que fem un "<em>pas de paràmetres per referència</em>", en contraposició amb el pas clàssic de paràmetres anomenat "<em>pas de paràmetres per valor</em>". Com diries que passen els arrays, per valor o per referència? i els tipus enters? I en general els tipus bàsics? </p>
-                                </div>
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-toDo20" 
-                                            data-selector-solution="#slc-toDo20-solution">
-                                        Solució
-                                    </button>
-                                    <div id="slc-toDo20-solution" class="iocSolution hidden">
-                                        <p>Aquest exercici no té una solució oficial, per això és important que la discussió al fòrum sigui acurada i estigui ben argumentada per tal d'arribar a conclusions certes.</p>
-                                        <p>Tot i així, heu d'estar tranquils, perquè el professor de l'aula vigilarà el fòrum i en cas que observi conclusions errònies reconduirà ràpidament la discussió.</p>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--=========== END SUBSECTION Exercici 2 ================-->    
-
-                <!--=========== BEGIN SUBSECTION Exercici 3 ================-->    
-                <section id="slc-toDo22" class=" section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class= "headSlide">
-                                     <h2 >Què cal fer - Funcions</h2>
-                                     <h3 >Exercici 3- Ús d'arrays com a paràmetres d'entrada o sortida</h3>
+                                     <h3 ><span class="tascaTitle">Exercici</span> Utilitats</h3>
                                  </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class=bodySlide>
-                                    <p>Cal tenir en compte, que de la mateixa manera que les funcions retornen tipus bàsics, és també possible retornar arrays. L'array retornat es pot assignar a una variable, de forma que a trevés d'aquesta es pugui accedir als elements de l'array retornat.</p>
-                                    <p>Crea un nou projecte Netbeans i copia-hi el codi següent:</p>
-                                    <pre><code class="java linenumbers">
-
-
-public class FuncionsIArrays {
-    public static void main(String[] args) {
-        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
-        FuncionsIArrays prg = new FuncionsIArrays();
-        prg.inici();
+                                    <p>El disseny de funcions presenta, sobretot per programadors novells, algunes dificultats que acaben impedint la seva reutilització en altres situacions. Sovint quan comencem, tenim la tendència a crear funcions massa concretes, crear macro-funcions que implementin gran part de les especificacions del programa que ens hagin encarregat o barrejar sense criteri tractament de dades amb interfície d'usuari. No us preocupeu doncs si us passa això, l'experiència us ajudarà a fer abstracció i de mica en mica anireu plantejant funcions cada cop més genèriques i nuclears (que només resolguin un únic problema).</p>
+                                    <p>Sovint les funcions nuclears i genèriques s'acostumen a conèixer com utilitats. Java disposa ja de moltes utilitats codificades que estudiareu més endavant. Aquí però, voldríem proposar-vos un recull d'utilitats que JAVA no ha codificat i que us poden ajudar a agafar part de l'experiència que us falta.</p>
+                                    <p>La primera funció que us proposem, l'anomenarem <strong><em>farciment</em></strong>. Aquesta funció ha de permetre afegir a una cadena el valor repetit d'un caràcter que anomenarem de <em>farciment</em> fins aconseguir que la cadena tingui una longitud determinada. Així la funció rebrà 3 paràmetres: la cadena a ampliar, el caràcter de farciment i la mida final que haurà de fer a cadena un cop modificada. La funció retornarà la nova cadena farcida. Així per exemple si la funció rep la cadena "Hola", el caràcter de farciment '-' i la mida 8, haurà de retornar la cadena "Hola----". No serà necessari que verifiqueu la mida de la cadena entrada per paràmetre, si aquesta sobrepassa la mida  que es vol aconseguir, no s'afegirà cap caràcter i es retornarà la cadena sense canvis. És a dir si es passa la cadena "Això és una cadena llarga" i es demana farcir-la a mida 5, la funció no afegirà cap caràcter a l'original i retornarà: "Això és una cadena llarga".</p>
+                                    <p>La segona funció que us proposem és <strong>retalla</strong>. En aquest cas es tracta d'una funció que rep una cadena i una valor numèric indicant la mida a la que es vol retallar la cadena. Si la cadena supera la mida indicada, es retallaran el nombre de caràcters que sobrin, tenint en compte que per indicar que s'ha retallat s'afegiran tres punts (...) al final. La longitud de la cadena un cop retallada i amb els tres punts afegits no haurà de superar la mida passada per paràmetre. Així si rebem la cadena "Marca d'aigua" i la mida 8, la funció retornarà la cadena "Marca...". En canvi si la cadena fos "pa negre" i al mida 10, ens retornaria la cadena original: "pa negre".</p>
+                                    <p>Finalment us proposem crear la funció <em><strong>midaExacta</strong></em>. En aquest cas la funció rebrà també una cadena, un caràcter de farciment i la mida a la que es desitja deixar la cadena. Si la cadena supera la mida indicada, es retallarà seguint el procediment descrit a la funció <em>retalla</em>. Si la cadena  no arriba a la mida indicada es farcirà seguint el procediment descrit a la funció <em>farciment</em>. Només en el cas que la cadena mesuri exactament la mida indicada es retornarà intacta. Així per exemple, si es passa la cadena "El senyor dels anells", el caracter de farciment ' ' i la mida 17, la funció retornarà "El senyor dels...". Si la cadena fos "Teclat", el caràcter de farciment ' ' i al mida 17, la funció retornaria: "Teclat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;". Finalment si la cadena fos "estadística", el farciment ' ' i la mida 11, retornaria: "estadística".</p>
+                                    <p>Com haureu vist són utilitat de tractament de cadenes de text. Podeu usar aquestes utilitats per forçar que una cadena faci una mida determinada o no sobrepassi certa mida. Això us serà útil per exemple per mostrar llistats on les dades no poden sobrepassar certa longitud. Segur que durant aquest semestre li podeu trobar d'altres utilitats en el projecte que haureu de fer.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo22" 
+                                            data-selector-clue="#slc-toDo22-clue10">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo22-clue10" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Per realitzar la pràctica, en un projecte de <em>Netbeans</em> creeu una classe nova (anomenada pes exemple <em>Utilitats</em>)on hi implementareu les diferents funcions.</p>
+                                        <p>També hi podeu afegir la funció <em>main</em> i la funció <em>inici</em> que us pot servir per provar el vostre codi si hi escriviu un codi semblant a:</p>
+                                        <pre><code class="java">
+public class Utilitats {
+    public static void main(String[] args){
+        Utilitats programa = new Utilitats();
+        programa.inici();
     }
     
     void inici(){
-        /* Per investigar què passa si fem canvis als elements d'un paràmetre de tipus Array*/
-        int[] varArray = new int[8];
-        for(int i=0; i&lt;varArray.length; i++){
-            varArray[i]=i*2;
-        }
-        /* retorn d'arrays*/
-        int[] var2Array = retornarArray(varArray);
-        System.out.print("varArray2 pren els valors retornats per la funció ");
-        System.out.print("retornarArray: ");
-        printIntArray(var2Array);
-    }
-    
-    int[] retornarArray(int[] param){
-        return param;
-    }
-
-    void printIntArray(int[] valors){
-        int limitFor = valors.length-1;
-        System.out.print("{ ");
-        for(int i=0; i&lt;limitFor; i++){
-            System.out.print(valors[i]);        
-            System.out.print(", ");        
-        }
-        if(limitFor>=0){
-            System.out.print(valors[limitFor]);        
-        }
-        System.out.println(" }");        
-    }
-
-}
-                                    </code></pre>
-                                    <p>Comprova quina similitud té el codi anterior amb haver assignat directament la variable <em>varArray</em> a la variable <em>var2Array</em>:</p>
-                                    <pre><code class="java">
-var2Array  = varArray;
-                                    </code></pre>
-                                    <p>Ara bé, les funcions, a més de retornar arrays arribats a través de paràmetres, també poden instanciar nous arrays, donar-los valors i retornar-los. Així, és habitual fer servir funcions per inicialitzar arrays amb valors per defecte o per crear instàncies d'arrays dels que desconeixem la seva mida en el moment de codificar, però que durant l'execució sigui possible calcular-la.</p>
-                                    <pre><code class="java linenumbers">
-public class FuncionsIArrays {
-    public static void main(String[] args) {
-        //adapteu la instanciació del programa d'acord amb el fitxer on treballeu
-        FuncionsIArrays prg = new FuncionsIArrays();
-        prg.inici();
-    }
-    
-    void inici(){
-        /* retorn d'arrays*/
-        int[] varArray;
+        String cadena;
         
-        varArray = retornarArrayInicialitzat();
-        System.out.print("varArray pren els valors retornats per la funció ");
-        System.out.print("retornarArrayInicialitzat: ");
-        printIntArray(varArray);
+        cadena = "Hola";
+        cadena = farciment(cadena,'-', 8);
+        System.out.print("La cdena farcida és ");
+        System.out.println(cadena);
         
-        varArray = retornarArrayInicialitzatIndicantMida(3);
-        System.out.print("varArray pren els valors retornats per la funció ");
-        System.out.print("retornarArrayInicialitzat: ");
-        printIntArray(varArray);
-    }
-    
-    int[] retornarArrayInicialitzat(){
-        int[] valorARetornar = new int[8];
-        for(int i=0; i&lt;valorARetornar.length; i++){
-            valorARetornar[i]=i*3;
-        }
-        return valorARetornar;
-    }
+        cadena =  "Això és una cadena llarga";
+        cadena = farciment(cadena,'-', 5);
+        System.out.print("La cadena farcida és ");
+        System.out.println(cadena);
+        
+        cadena = "Marca d'aigua";
+        cadena = retalla(cadena, 8);
+        System.out.print("La cadena retallada és ");
+        System.out.println(cadena);
 
-    int[] retornarArrayInicialitzatIndicantMida(int mida){
-        int[] valorARetornar = new int[mida];
-        for(int i=0; i&lt;valorARetornar.length; i++){
-            valorARetornar[i]=0;
-        }
-        return valorARetornar;
-    }
+        cadena = "Pa negre";
+        cadena = retalla(cadena, 10);
+        System.out.print("La cadena retallada és ");
+        System.out.println(cadena);
+        
+        cadena = "El senyor dels anells";
+        cadena = midaExacta(cadena, ' ', 17);
+        System.out.print("La cadena d'axactament 17 caràcters és ");
+        System.out.println(cadena);
 
-    void printIntArray(int[] valors){
-        int limitFor = valors.length-1;
-        System.out.print("{ ");
-        for(int i=0; i&lt;limitFor; i++){
-            System.out.print(valors[i]);        
-            System.out.print(", ");        
-        }
-        if(limitFor&gt;=0){
-            System.out.print(valors[limitFor]);        
-        }
-        System.out.println(" }");        
-    }
+        cadena = "Teclat";
+        cadena = midaExacta(cadena, '-', 17);
+        System.out.print("La cadena d'axactament 17 caràcters és ");
+        System.out.println(cadena);
 
+        cadena = "Estadística";
+        cadena = midaExacta(cadena, '-', 11);
+        System.out.print("La cadena d'axactament 11 caràcters és ");
+        System.out.println(cadena);
+    }
+        
+    //escriviu aquí les funcions demanades
 }
-                                    </code></pre>
-                                    <p>Discuteix al <span class="forumDeDiscussio"></span> si seria possible la següent inicialització, aprofitant que els arrays tenen la característica de passar per referència:</p>
-                                    <pre><code class="java">
-void inici(){
-    int[] varArray;
+                                        </code></pre>
+                                    </div>             
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo22" 
+                                            data-selector-clue="#slc-toDo22-clue1">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo22-clue1" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Recorda que per concatenar una caràcter a una cadena podeu fer servir l'operació + o l'operació +=. Per exemple per concatenar a la cadena "Amic" el caràcter 's' podem fer</p>
+                                        <pre><code class="java">
+String cadena = "Amic";
 
-    inicialitzarArray(varArray);
-    
-//    ...
-}
+cadena = cadena + 's'
+                                        </code></pre>
+                                        <p>O bé:</p>
+                                        <pre><code class="java">
+String cadena = "Amic";
 
-void inicialitzarArray(int[] param){
-    param = new int[8];
-    for(int i=0; i&lt;param.length; i++){
-        param[i]=i*3;
-    }
-}
-                                    </code></pre>
-                                    <div class="frameBox">
-                                        <h4>Qüestions pel <span class="forumDeDiscussio"></span></h4>
-                                        <p>Què passaria en intentar assignar a la funció <em>inici</em>, un valor a la posició zero de <em>varArray</em>? Per què?</p>
+cadena += 's'
+                                        </code></pre>
+                                        <p>Recordeu també podem conèixer la longitud d'una cadena cal usar length():</p>
+                                        <pre><code class="java">
+String cadena = "Amic";
+int mida;
+
+...
+
+mida = cadena.length();
+                                        </code></pre>
+                                        <p>Per repetir la concatenació del caràcter de farciment haure de fer servir una estructura de repetició. </p>
                                     </div>
-                                    <p>Apliqueu el que heu aprés i codifiqueu un petit programa que pregunti a l'usuari de quina mida necessita un array de cadenes de text i seguidament inicialitzi una variable de la mida indicada i l'ompli de cadenes buides. Per inicialitzar l'array, creeu una funció d'inicialització. Feu servir el fòrum per plantejar els dubtes que us vagin sortint.</p>
-                                      <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo22" 
+                                            data-selector-clue="#slc-toDo22-clue2">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-toDo22-clue2" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Per tal de retallar una cadena, caldrà que aneu afegint al resultat, caràcter a caràcter el valor de la cadena fins arribar a la mida màxima. Tingueu en compta el 3 punts que cal afegir a la cadena tallada per saber quina serà la mida màxima a la que cal deixar de copiar caràcters.</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo22" 
+                                            data-selector-clue="#slc-toDo22-clue3">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-toDo22-clue3" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Si podeu reutilitzar les funcions ja codificades, feu-ho!</p>
+                                    </div>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off btn-3d" 
                                             data-parent-selector="#leftColumnPanel"
                                             data-display-on-set-slide="slc-toDo22" 
                                             data-selector-solution="#slc-toDo22-solution">
                                         Solució
                                     </button>
                                     <div id="slc-toDo22-solution" class="iocSolution hidden">
-                                        <p>Aquest exercici no té una solució oficial, per això és important que useu el fòrum per verificar les conclusions a les que arribeu.</p>
-                                        <p>Tot i així, heu d'estar tranquils, perquè el professor de l'aula vigilarà el fòrum i en cas que observi conclusions errònies reconduirà ràpidament la discussió.</p>
+                                        <pre><code class="java">
+
+
+public class Utilitats {
+    public static void main(String[] args){
+        Utilitats programa = new Utilitats();
+        programa.inici();
+    }
+    
+    void inici(){
+        String cadena;
+        
+        cadena = "Hola";
+        cadena = farciment(cadena,'-', 8);
+        System.out.print("La cdena farcida és ");
+        System.out.println(cadena);
+        
+        cadena =  "Això és una cadena llarga";
+        cadena = farciment(cadena,'-', 5);
+        System.out.print("La cadena farcida és ");
+        System.out.println(cadena);
+        
+        cadena = "Marca d'aigua";
+        cadena = retalla(cadena, 8);
+        System.out.print("La cadena retallada és ");
+        System.out.println(cadena);
+
+        cadena = "Pa negre";
+        cadena = retalla(cadena, 10);
+        System.out.print("La cadena retallada és ");
+        System.out.println(cadena);
+        
+        cadena = "El senyor dels anells";
+        cadena = midaExacta(cadena, ' ', 17);
+        System.out.print("La cadena d'axactament 17 caràcters és ");
+        System.out.println(cadena);
+
+        cadena = "Teclat";
+        cadena = midaExacta(cadena, '-', 17);
+        System.out.print("La cadena d'axactament 17 caràcters és ");
+        System.out.println(cadena);
+
+        cadena = "Estadística";
+        cadena = midaExacta(cadena, '-', 11);
+        System.out.print("La cadena d'axactament 11 caràcters és ");
+        System.out.println(cadena);
+    }
+
+    String farciment(String cadena, char farciment, int mida){
+        int midaActual = cadena.length();
+        
+        while(midaActual&lt;mida){
+            cadena += farciment;
+            midaActual++;
+        }
+        return cadena;
+    }      
+
+    String retalla(String cadena, int mida){
+        int midaActual = cadena.length();
+        String ret ="";
+        
+        if(midaActual>mida){
+            mida = mida - 3;
+            for(int i=0; i&lt;mida; i++){
+                ret += cadena.charAt(i);
+            }
+            ret += "...";
+        }else{
+            ret = cadena;
+        }
+        return ret;
+    }      
+
+    String midaExacta(String cadena, char farciment, int mida){
+        int midaActual = cadena.length();
+        
+        if(midaActual>mida){
+            cadena = retalla(cadena, mida);
+        }else{
+            cadena = farciment(cadena, farciment, mida);
+        }
+        return cadena;
+    }    
+}
+                                        </code></pre>                         
                                     </div>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!--=========== END SUBSECTION Exercici 3 ================-->
+                <!--=========== END SUBSECTION Exercici 2 ================-->    
             </section>
             <!--=========== END SECTION toDo ================-->    
 
@@ -759,9 +869,12 @@ void inicialitzarArray(int[] param){
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>Un cop acabada aquesta activitat, heu de ser capaços d'enfrontar-vos a aplicacions molt més complexes que les que heu fet fins ara. L'ús d'arrays a les funcions permet reduir dràsticament la complexitat sempre que es tinguin en compte les precaucions vistes aquí: els arrays inicialitzats passen a les funcions per referències, malgrat que una instanciació d'un paràmetre de tipus array dins una funció esborraria totalment el vincle referencial amb la variable original. Sortosament és possible retornar arrays a les funcions. El retorn d'una array es fa també per referència. Retornar arrays, és una bona manera d'accedir als canvis d'un array instanciat dins la mateixa funció.</p>
-                                <p>Si us ha quedat clar el comportament dels arrays, podeu passar a la següent <a class="toNextActivity">activitat</a>. Tot i així, recordeu que a l'apartat d'informació extra (i) disposeu d'un apartat de reforç i un d'ampliació per si ho necessiteu.</p>
+                                <p>L'activitat que acabeu de realitzar, hauria de oferir-vos una idea de com les funcions ens permeten estructurar i organitzar els programes.</p>
+                                <p>Es important adonar-se que una gran part de la implementació s'ha de dedicar a intercanviar informació entre l'usuari i l'aplicació. Gastar esforços per estandarditzar-ho pot beneficiar-nos, tant durant la implementació de la pròpia aplicació com en futures implementacions si aconseguim crear funcions prou genèriques.</p>
+                                <p>També hauríeu d'haver copsat de quina manera és possible independitzar parts del codi d'un mateix programa per tal que interaccionin el menys possible, tot i que comparteixin i reutilitzin funcions.</p>
+                                <p>Si encara NO has lliurat l'informe, fes-ho ara abans de passar a la següent activitat. Si ja ho has fet, pots passar a la següent <a class="toNextActivity">activitat</a>. Tot i així, recordeu que a l'apartat d'informació extra (i) disposeu d'un apartat de reforç i un d'ampliació per si ho necessiteu.</p>
                                 <p>Si us cal, també podeu saltar <a class="toActivityTable targetBlank">a la taula d'activitats</a> per accedir a qualsevol altra activitat.</p>
+                                
                             </div>
                         </div>
                     </div>
@@ -778,18 +891,16 @@ void inicialitzarArray(int[] param){
         <div id="goals_info" class="bodySlide hidden"> 
             <h2>Objectius d'aprenentatge de l'activitat</h2>
             <ul>
-                <li>Saber usar arrays i funcions per reduir la complexitat d'una implementació.</li>
-                <li>Predir com es comporten esl arrays passats com a paràmentes</li>
-                <li>Saber usar funcions per instanciar i inicalitzar arrays durant l'execució de l'aplició.</li>
+                <li>Trobar maneres de crear funcions genèriques que es puguin reutilitzar amb facilitat.</li>
+                <li>Descobrir com les funcions ens ajuden a independitzar parts de codi dins una mateixa aplicació.</li>
+                <li>Estandarditzar l'intercanvi d'informació amb l'usuari a través de funcions</li>
             </ul>
             <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
             <p>RA 1. Escriu i prova programes senzills reconeixent i aplicant els fonaments de la programació modular </p>
         </div>
         <div id="more_reinforcement" class="hidden"> 
             <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
-            <p>En el bloc 1 vàreu veure arrays i matrius. EN aquest bloc es dona per suposat que ja sabeu treballar amb aquest tipus de dades. Si tens dificultats et proposem que repassis el <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/WebContent/u3/a1/continguts.html" target="_blank">material estudiat el semstre passat</a>.</p>
-            <p>També pots consultar el document de repas on, de forma resumida es tracten tots els conceptes necessaris per aprovar aquest bloc. Podeu aconseguir-lo <a class="docArrays">aquí</a></p>
-            <p>Si necessiteu practicar una mica més l'ús d'arrays i de funcions, podeu mirar el document d'exercicis extres que trobareu <a class="exercicisExtres" target="_blank">aquí</a>.</p>
+            <p>Podeu practicar una mica més la implementació d'aplicacions usant funcions en el document d'exercicis extres que trobareu <a class="exercicisExtres" target="_blank">aquí</a>.</p>
         </div>
         <div id="more_info" class="hidden"> 
             <h2>Informació sobre funcions  per ampliar</h2>
@@ -864,9 +975,8 @@ void inicialitzarArray(int[] param){
             activityManager.init("data/toReplace.json", "A403");
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
-        });
-   </script>
-    <!--=========== END SCRIPTS ================-->    
+        });        
+    </script>
 
 </body>
 

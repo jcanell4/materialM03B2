@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Alicia Vila">
+    <title>A404. UF2 Projecte I</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li> 
+                    <a class="toActivityTable targetBlank" onclick = '$("#menu-close").click();'>Taula d'activitats</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>  
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-individuals">Tasques a realitzar</a></li> 
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A404 - UF2 Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>Aquesta activitat us demanarà que implementeu 4 tasques relacionades amb el projecte que anireu desenvolupant durant aquest semestre. </p>
+                                <p>Si encara no ho heu fet, podeu consultar l'enunciat del projecte en el següent enllaç: <a class="toProjectStatement">enunciat del projecte</a>, així contextualitzareu el que se us anirà demanant al llarg de la UF2. </p>
+                                <p>Les tasques que aquí se us plantegen us permetran implementar la primera fase de l'aplicació de gestió d'una cursa popular de muntanya, concretament la fase d'inscripcions.</p>
+                                <p>Si llegiu l'enunciat, en referència a la fase d'inscripcions, veureu que es demana una manera de poder emmagatzemar en el sistema, les dades dels participants a mida que es vagin inscrivint. És a dir cal trobar un forma de fer que inicialment el sistema contingui zero corredors, però permeti anar-los afegint un a un.</p> 
+                                <p>Tot i que aquesta no és una solució difícil, tampoc és trivial i menys si el problema es complica degut a la quantitat de dades que cal guardar de cada corredor. És per això que la primera tasca us proposa fer una abstracció del problema, reduint-lo a la mínima expressió: com es pot anar afegint, una a una, dades d'un únic tipus bàsic, per exemple valors enters. La solució a aquest problema us permetrà extrapolar una solució semblant aplicada però a tota una col·lecció de corredors.</p>
+                                <p>Llegint l'enunciat veureu també que el procés d'inscripció demana d'evitar inscripcions repetides comprovant el DNI. Per tal d'evitar errors de comparació usant lletres majúscules o minúscules, us proposa que el DNI s'emmagatzemi sempre amb lletres majúscules malgrat l'usuari hagi fet l'entrada en minúscula. És per això que a la tasca 2 se us demana de trobar una solució que permeti transformar fàcilment cadenes de text a majúscules amb independència de com hagin estat escrites. </p>
+                                <p>A la tasca 3 us plantegem d'implementar una funció per verificar el DNI de manera que si la funció dóna el vist-i-plau, estiguem segurs que el DNI està ben format i no es troba repetit en una inscripció anterior, de manera que puguem afegir a la col·lecció de corredors un nou participant amb el DNI verificat.</p>
+                                <p>Finalment, a la tasca 4, haureu de posar en pràctica tot l'implementat (aquí i en activitats anteriors) per tal de codificar completament la primera fase de l'aplicació descrita a l'enunciat i detallada a la tasca 4.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+
+            <!--=========== BEGIN SECTION individuals ================-->    
+            <section id="slc-individuals" class="vsections">
+                <!--=========== BEGIN SUBSECTION individuals30  ================-->    
+                <section id="slc-individuals30" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> Funció <em>afegirEnter</em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>En aquesta tasca us proposem un exercici de reflexió que us ajudi a trobar la solució de com afegir nous corredors a la cursa popular de la festa major d'enguany. Per aconseguir-ho us proposem simplificar el problema. En lloc d'afegir corredors us demanarem que creeu un algoritme que permeti afegir nombres enters assegurant que no s'en repeteix cap.</p>
+                                    <p>El primer que us heu de preguntar a l'hora de cercar la solució del problema és què significa afegir nous valors al sistema. De fet, per tal de poder anar afegint números enters, cal disposar d'un conjunt o col·lecció on anar emmagatzemant els valors que desitgem afegir. A les aplicacions, les col·leccions prenen la forma de dades de tipus ARRAY, però com ja sabeu aquests tipus tenen sempre un mida fixa que no es pot canviar. Es a dir, un array de 3 elements tindrà sempre 3 elements, ni més, ni menys. Com podem doncs afegir nous elements a un ARRAY si la seva quantitat d'elements no varia amb el temps?</p>
+                                    <p>Us proposarem 3 solucions. Cal que les valoreu i escolliu una d'elles per implementar-la com a solució a aquesta tasca. No importa gaire la solució que finalment prengueu, totes tenen pros i contres. De fet, el realment important és que entengueu com funciona el mecanisme (al menys l'escollit) pel qual simulem una col·lecció que vagi creixent de mica en mica.</p>
+                                    <p>La primera solució consisteix en crear una nova col·lecció cada cop que necessitem canviar-li la mida i copia-hi els ítem antics extrets de la col·lecció antiga. Vegeu-ne els detalls a la <em>pista 1</em>.</p>
+                                    <p>Les altres solucions consisteixen en crear un array suficientment gran com per no haver-lo d'ampliar mai i aplicar sobre aquesta col·lecció alguna tècnica que permeti treballar amb arrays  parcialment ocupats. Així, com a segona solució us proposem que feu servir la tècnica emprada al bloc 1, que consistia en marcar les posicions buides amb un valor característic que les identifica i distingeix de la resta. Disposeu d'explicacions en detall a la pista 2</p>
+                                    <p>La tercera solució intenta millorar l'anterior evitant de buscar a l'array, on es troba la primera posició buida. A més, en tot moment se sap quants ítems manté ocupats la col·lecció sense necessitat d'haver-los de comptar. Aquesta solució consisteix en afegir una dada extra, un comptador de la ocupació real dels ítems al marge de la mida que tingui l'ARRAY. Fixeu-vos que el comptador, a més de calcular la ocupació real de la col·lecció ens indica justament quina és la primera posició buida de l'array on és possible afegir-hi un nou valor sense aixafar cap ítem ja introduït. Trobareu més informació a la pista 3</p>
+                                    <p>D'altra banda, per tal que pugueu provar el vostre codi, us demanem que codifiqueu la solució en una classe anomenada Tasca1 on podreu copiar un dels programes que se us facilita al final. Allà trobareu la declaració de la funció que us demanem (la funció <i>afegirEnter</i>) junt amb un petit programa, ja codificat que us pot permetre provar el bon funcionament de la vostra funció. De fet, hi trobareu 3 programes de prova un per cada una de les solucions, vosaltres heu de copiar el corresponent a la solució escollida, ja que cada solució s'implementa i es crida de diferent manera cal que adapteu la prova a la solució que hàgiu implementat.</p>
+                                    <p>Escolliu la solució que escolliu, la prova us haurà de mostrar per la pantalla una llista de  6 "OK". Si en comptes de rebre els "OK" obteniu algun "Error" cal que reviseu la vostra solució doncs alguna cosa no acaba de funcionar com caldria. Per tant </p>
+                                    <p>En resum, llegiu les tres solucions proposades. Si cal, entreu amb més detall en alguna d'elles o en totes fins que us permeti escollir quina considereu que us pot resultar més fàcil d'implementar. Un cop escollida la solució que voleu implementar, copieu la classe <em>Tasca1</em> que trobareu a la pestanya corresponent de següent paràgraf, en un projecte de Netbeans i codifiqueu la funció <em>afegirEnter</em> per tal que faci el que se us demana: <em>afegir enters a una array sense repetir cap valor i evitant l'error en cas que s'intenti afegir més números que els suportats per l'array</em>.  Si ho considereu, podeu codificar funcions auxiliars que us ajudin a fer el tractament correcte.</p> 
+                                    <p>Aquí teniu els 3 codis de la Tasca1. Escolliu l'adequat i copieu-lo al NetBeans:</p>
+                                    
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs nav-justified">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" data-toggle="tab" href="#panel1" role="tab">Codi de prova per la solució 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">Codi de prova per la solució 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">Codi de prova per la solució 3</a>
+                                            </li>
+                                        </ul>
+                                        <!-- Tab panels -->
+                                        <div class="tab-content card">
+                                            <!--Panel 1-->
+                                            <div class="tab-pane fade in active" id="panel1" role="tabpanel">
+                                                <pre><code class="java">
+public class Tasca1 {
+    int[] afegirEnter(int valor, int[] valors){
+        //Codifiqueu aquí la funció
+    }    
+ 
+    public static void main(String[] args){
+        Tasca1S1  prog = new Tasca1S1();
+        prog.inici();
+    }
+    
+    void inici() {
+        int[] col = new int[0];
+        
+        col = afegirEnter(5, col);
+        if(col.length==1 && col[0]==5){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        col = afegirEnter(4, col);
+        if(col.length==2 && col[1]==4){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        col = afegirEnter(8, col);
+        if(col.length==3 &&col[2]==8){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        col = afegirEnter(4, col);
+        if(col.length==3){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        col = afegirEnter(9, col);
+        if(col.length==4 && col[3]==9){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        col = afegirEnter(8, col);
+        if(col.length==4){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        col = afegirEnter(12, col);
+        if(col.length==5 && col[4]==12){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        col = afegirEnter(18, col);
+        if(col.length==6 && col[5]==18){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+
+        System.out.println("---------------------------");
+        System.out.println("Llista de números afegits");
+        System.out.println("---------------------------");
+        System.out.print("{");
+        for(int i=0; i&lt;col.length; i++){
+            if(i&gt;0){
+                System.out.print(", ");
+            }
+            System.out.print(col[i]);
+        }
+        System.out.println("}");
+    }    
+}
+
+                                                </code></pre>
+                                            </div>
+                                            <!--/.Panel 1-->
+                                            <!--Panel 2-->
+                                            <div class="tab-pane fade" id="panel2" role="tabpanel">
+                                            <pre><code class="java">
+public class Tasca1 {
+    static final int VALOR_BUID = -1;
+
+    boolean afegirEnter(int valor, int[] valors){
+        //Codifiqueu aquí la funció
+    }    
+ 
+    public static void main(String[] args){
+        Tasca1S2  prog = new Tasca1S2();
+        prog.inici();
+    }
+    
+    void inici() {
+        int[] col = {-1, -1, -1, -1, -1};
+        boolean elements=false;
+        
+        elements = afegirEnter(5, col);
+        if(elements && col[0]==5){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(4, col);
+        if(elements && col[1] == 4){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(8, col);
+        if(elements && col[2] == 8){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(4, col);
+        if(!elements){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(9, col);
+        if(elements && col[3] == 9){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(8, col);
+        if(!elements){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(12, col);
+        if(elements && col[4] == 12){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(18, col);
+        if(!elements){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        
+        System.out.println("---------------------------");
+        System.out.println("Llista de números afegits");
+        System.out.println("---------------------------");
+        System.out.print("{");
+        boolean primer=true;
+        for(int i=0; i&lt;col.length; i++){
+            
+            if(col[i]!=VALOR_BUID){
+                if(primer){
+                    primer= !primer;
+                }else{
+                    System.out.print(", ");
+                }                
+                System.out.print(col[i]);
+            }
+        }
+        System.out.println("}");
+    }    
+}
+
+                                            </code></pre>
+                                            </div>
+                                            <!--/.Panel 2-->
+                                            <!--Panel 3-->
+                                            <div class="tab-pane fade" id="panel3" role="tabpanel">
+                                            <pre><code class="java">
+public class Tasca1 {
+    int afegirEnter(int valor, int[] valors, int numElementsAfegits){
+        //Codifiqueu aquí la funció
+    }    
+ 
+    public static void main(String[] args){
+        Tasca1S3  prog = new Tasca1S3();
+        prog.inici();
+    }
+    
+    void inici() {
+        int[] col = new int[5];
+        int elements=0;
+        
+        elements = afegirEnter(5, col, elements);
+        if(elements==1){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(4, col, elements);
+        if(elements==2){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(8, col, elements);
+        if(elements==3){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(4, col, elements);
+        if(elements==3){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(9, col, elements);
+        if(elements==4){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(8, col, elements);
+        if(elements==4){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(12, col, elements);
+        if(elements==5){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        elements = afegirEnter(18, col, elements);
+        if(elements==5){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        
+        System.out.println("---------------------------");
+        System.out.println("Llista de números afegits");
+        System.out.println("---------------------------");
+        System.out.print("{");
+        for(int i=0; i&lt;elements; i++){
+            if(i&gt;0){
+                System.out.print(", ");
+            }
+            System.out.print(col[i]);
+        }
+        System.out.println("}");        
+
+    }    
+}
+
+                                            </code></pre>
+                                            </div>
+                                            <!--/.Panel 3-->
+                                        </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Aquesta solució passa per fer créixer, element per element, la capacitat d'emmagatzematge de l'array on es volen afegir el números. Inicialment, per tant, l'array caldrà inicialitzar-lo amb zero elemnts: </p>
+                                        <pre><code class="java">
+int[] varArray = new int[0];
+                                        </code></pre>
+                                        <p>I cada cop que hàgim d'afegir un nou element caldrà ampliar la capacitat de l'array. Però com? En realitat el que cal fer és crear una nova variable de tipus array i copiar-hi els valor ja existents de l'array original. Consulteu el material del bloc 1 on s'explica com canviar la mida d'un array usant aquesta tècnica a l'apartat anomenat <a class="matCanviMidaArrays">Canvi de mida</a>.</p>
+                                        <p>Esquemàticament, aquest procediment consta de 5 passes detallades a la imatge següent:</p>
+                                        <figure>
+                                            <img width="464" src="images/canviarMidaArray2.png" alt="fases per canviar de mida un array">
+                                        </figure>
+                                        <p>Òbviament, en el nostre cas, la redimensió es produirà dins la funció afegirEnter. Recordeu què passa quan es fa una assignació directa a un paràmetre d'una funció. Repercuteix el canvi fora? No, es clar, ja ho hem experimentat a l'activitat A402. Aquesta és la raó per la que en aquesta versió, la funció <em>afegirEnter</em>, haurà de retornar una array, l'array ampliat.</p>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>En aquest cas, la solució passa per gestionar un array parcialment ocupat marcant els elements buits amb un valor especial. Per provar, podeu suposar que el valor especial és -1. En aquest cas es pot representar el procediment de forma esquemàtica a partir de 3 passes:</p>
+                                        <figure>
+                                            <img width="464" src="images/arrayParcialmentOcupatA2.png" alt="fases per afegir un nou element a una posició buida">
+                                        </figure>
+                                        <p>Alerta, cal assegurar que inicialment l'array es troba dimensionat a la mida màxima i tots els seus elements es troben marcats adequadament:</p>
+                                        <figure>
+                                            <img width="464" src="images/arrayParcialmentOcupatA1.png" alt="iniicalització d'un array parcialment ocupat">
+                                        </figure>
+                                        <p>En aquest cas, per tal de saber si la funció aconsegueix afegir un nou valor, es proposa que la funció retorni un valor booleà indicant-ho. La funció retornarà cert si la inserció s'ha fet efectiva i retornarà fals en cas que el valor es trobés ja dins la col·lecció o en cas d'haver assolit la capacitat màxima de l'array.</p>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>La tercera solució és semblant a l'anterior, però cal assumir que en comptes de marcar les posicions buides cal disposar permanentment d'un comptador que ens indiqui quants ítems són vàlids (estan plens). Aquesta solució pressuposa que els ítems vàlids es troben sempre concentrats a les posicions més baixes i per tant, es pot suposar que a partir de la posició indicada pel comptador tots els ítems estan buits.</p>
+                                        <p>Mireu l'esquema del procediment d'inserció en aquest supòsit:</p>
+                                        <figure>
+                                            <img width="464" src="images/arrayParcialmentOcupatB2.png" alt="fases per afegir un nou element a una posició buida">
+                                        </figure>
+                                        <p>En aquest cas, la inicialització de l'array implica donar-li la màxima dimensió i assegurar que el comptador conté el valor zero. És a dir que no conté elements i per tant a partir de la posició zero es pot afegir el nou element.</p>
+                                        <figure>
+                                            <img width="464" src="images/arrayParcialmentOcupatB1.png" alt="iniicalització d'un array parcialment ocupat">
+                                        </figure>
+                                        <p>Al material del bloc 1 trobareu un exemple de com es pot fer servir un comptador per anar afegint nous valors a un array parcialment ocupat i també com posteriorment es pot fer servir el comptador per llistar només els elements vàlids. Podeu consultar l'exemple al material del bloc 1, apartat <a class="matArraysParcialmentOcupats">Arrays parcialment ocupats</a>.</p>
+                                        <p>És important actualitzar el comptador cada cop que s'intenti una inserció. Per això s'ha previst que en aquesta opció, la funció <em>afegirEnter</em> retorni el valor del comptador actualitzat de forma coherent al procediment d'inserció realitzat dins la funció.</p>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals30" 
+                                            data-selector-clue="#slc-individuals30-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-individuals30-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>Assegureu-vos, si opteu per la segona o tercera solució, que quan la ocupació arribi al màxim previst, no s'afegeixen nous elements evitant així l'errr del programa.</p>
+                                        <p>Assegureu-vos també, en qualsevol cas, que mai s'afegeixen valors repetits. Això implicarà que abans de fer efectiva la inserció cal buscar si el valor es troba ja dins la col·lecció i en cas que s'hi trobi, avortar el procés.</p>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals30 ================-->
+
+              <!--=========== BEGIN SUBSECTION individuals40  ================-->    
+                <section id="slc-individuals40" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> Funció <em>cadenaAMajuscula</em> </h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Si llegiu l'enunciat del projecte, es demana que el DNI s'emmagatzemi sempre amb la lletra escrita en majúscula, amb independència de si l'usuari la entra en minúscula o majúscula. Us proposem doncs, que escriviu una funció que rebi una cadena de caràcters i retorni la mateixa cadena havent canviat totes les lletres minúscules del paràmetre per la seva versió majúscula.</p>
+                                    <p>Per simplificar el procés, no cal que contempleu el canvi de lletres especials com ara la 'ç', la 'ñ' o les vocals accentuades. Considereu només els casos dels caràcters ASCII que es troben entre el valor 'a' i el valor 'z'. Recordeu que, tal com vau estudiar en el bloc 1, els diferents caràcters d'un text, en realitat són un valor numèric que representen el codi que identifica un caràcter d'acord amb alguna taula estàndard com la taula ASCII o la taula UTF. Recordeu també que ambdues taules organitzen els valors de la següent manera: els valors que van del codi 0 al codi 47 simbolitzen caràcters especials i signes de puntuació que no disposen de versió majúscula; els valors compresos entre el codi 48 i el codi 57 representen caràcters numèrics (dígits del '0' al '9'); des del valor 58 al 64, hi trobem signes matemàtics i de puntuació. Només a partir del valor 65 i fins el valor 90 trobem els codis que representen la versió majúscula de les lletres de l'alfabet anglès que van des de l'"A" fins la "Z". Des del codi 91 fins el 96 hi trobem signes diversos no alfabètics i a partir del valor 97 i fins el valor 122 trobarem la codificació de les lletres minúscules (des de l'"a" fins la "z" de l'alfabet anglès). Els codis per damunt del valor 122 representen caràcters diversos, inclosos els caràcters especials com ara les vocals accentuades o les versions majúscules i minúscules de la "ç" i la "ñ", etc.</p>
+                                    <p>És possible aplicar la operació de suma o resta a qualsevol caràcter, ja que com hem dit, en el fons, es tracta d'un valor numèric. La operació de suma o resta sobre un caràcter,  transforma el seu valor d'acord amb la taula usada pel llenguatge. En el nostre cas, si al valor 'a' (codi 97) li sumem 2 unitats obtindrem el valor 99 que a l'imprimir-lo per la pantalla ens mostrarà el valor "c". En qualsevol de les taules de caràcters estàndards (ASCII o UTF), entre el codi d'una lletra majúscula i el codi de la seva versió minúscula hi ha sempre la mateixa distància. ës a dir, la versió majúscula de la lletra 'a' val 65 i la minúscula 97, per tant la versió minúscula de la lletra b serà 66 i la majúscula el valor 98.</p>
+                                    <p>Podem fer servir aquestes característiques per reconèixer quan es tracta de caràcters alfabètics en la versió minúscula i per aquests casos, aconseguir fer el canvi a la versió minúscula, restant el seu valor de forma que es transformi en la versió majúscula del mateix caràcter.</p>
+                                    <p>En aquest cas, us passem també un petit programa que us ajudarà a comprovar el bon funcionament del vostre codi. En un projecte de Netbeans, creeu una classe anomenda Tasca2 i copieu-hi el codi que trobeu a continuació:</p>
+                                    <pre><code class="java">
+public class Tasca2 {
+    
+    String cadenaAMajuscula(String cad){
+        //codifiqueu aquí la funció
+    }
+
+    public static void main(String[] args){
+        Tasca2  prog = new Tasca2();
+        prog.inici();
+    }
+    
+    void inici() {
+        String cadena;
+                
+        cadena = cadenaAMajuscula("69988467Z");
+        if("69988467Z".equals(cadena)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        cadena = cadenaAMajuscula("69884678p");
+        if("69884678P".equals(cadena)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        cadena = cadenaAMajuscula("65884672a");
+        if("65884672A".equals(cadena)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        cadena = cadenaAMajuscula("Prova de cADEna llarga.");
+        if("PROVA DE CADENA LLARGA.".equals(cadena)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+    }
+}
+                                    </code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>En aquesta pista us proposem una petita anàlisi de codi per tal que us adoneu que en el fons és idèntic el valor d'un caràcter que el d'un número i per tant podem fer servir caràcters en qualsevol operació numèrica. Copieu la següent classe en un projecte de Netbeans i executeu-la.  </p>
+                                        <pre><code class="java">
+public class Pista1Tasca2 {
+    public static void main(String[] args) {
+        Pista1Tasca2 prg = new Pista1Tasca2();
+        prg.inici();
+    }
+    
+    void inici(){    
+        char varChar = 'a';
+        int varInt = 0;
+        
+        varChar = (char) (varChar + 4);
+        System.out.print("Despres de fer varChar+4 , el nou valor és: " );
+        System.out.print(varChar);
+        System.out.println(", perquè el codi del caràcter 'e' és el codi del caràcter 'a' + 4");
+        
+        varInt = varChar - 'a';
+        System.out.print("Per lògica, si fem la diferència entre varChar (que ara val 'e') i el valor 'a' ens ha de donar: ");
+        System.out.print(varInt);
+        System.out.println(", perquè a la taula ASCII i UTF, entre 'e' i 'a' hi ha 4 lletres");
+
+        varChar = 'E' + 32;
+        System.out.print("Finalment, fixeu-vos quin caràcter obtenim en sumar 32 al valor 'E'. 'E' + 33 = '" );
+        System.out.print(varChar);
+        System.out.println("'.");
+        
+    }
+}
+                                        </code></pre>
+                                        <p>Reflexioneu quin valor penseu que donaria la operació 'e' - 32?</p>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Continuem experimentant amb caràcters. En aquest anàlisi us volem fer adonar que la diferència existent entre un caràcter en minúscula i la seva versió en majúscula és sempre la mateixa, sigui quin sigui el caràcter analitzat. Per comprovar-ho copieu la classe Pista2Tasca2 al Netbeans i executau-la.</p>
+                                        <pre><code class="java">
+public class Pista2Tasca2 {
+    public static void main(String[] args) {
+        Pista2Tasca2 prg = new Pista2Tasca2();
+        prg.inici();
+    }
+    
+    void inici(){    
+        char[] arrayCharMinuscules = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'};
+        char[] arrayCharMajuscules = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'};
+        int diferencia = 0;
+        
+        for(int i=0; i&lt;arrayCharMinuscules.length; i++){
+            diferencia = arrayCharMinuscules[i] - arrayCharMajuscules[i];
+            
+            System.out.print("La diferència entre ");
+            System.out.print(arrayCharMinuscules[i]);
+            System.out.print(" i  ");
+            System.out.print(arrayCharMajuscules[i]);
+            System.out.print(" és: ");
+            System.out.println(diferencia);
+        }
+    }
+}
+                                        </code></pre>
+                                        <p>Reflexioneu quin valor penseu que donaria la operació 's' - 32?</p>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Ja per acabar, us proposem una darrera anàlisi de les operacions de suma i resta sobre caràcters. De nou us proposem que analitzeu el codi de més avall per adornar-vos que, sense recordar la diferència existent entre la versió majúscula i minúscula d'un caràcter, podem demanar a l'ordinador que ho calculi a través d'una diferència explícita, per exemple 'a'-'A', ja que ara sabem que aquesta diferència és constant per a qualsevol caràcter.</p>
+                                        <p>També sabem que les lletres alfabètiques minúscules es troben disposades a la taula (ASCII o UTF) de forma correlativa començant pel caràcter 'a i acabant per caràcter 'z'. De forma semblant, les lletres majúscules es troben també disposades de forma correlativa.</p>
+                                        <p>Analitzeu el resultat de copiar la classe a Netbeans i executar-la.</p>
+                                        <pre><code class="java">
+public class Pista3Tasca2 {
+    static final char DIFERENCIA = 'a'-'A';
+    
+    public static void main(String[] args) {
+        Pista3Tasca2 prg = new Pista3Tasca2();
+        prg.inici();
+    }
+    
+    void inici(){    
+        char charTransformat;
+        
+        for(char charMajuscula='A'; charMajuscula<='Z'; charMajuscula++){
+            charTransformat =  (char) (charMajuscula + DIFERENCIA);
+            
+            System.out.print("Fent la operació: ");
+            System.out.print(charMajuscula);
+            System.out.print(" +  ('a'-'A') = ");
+            System.out.println(charTransformat);
+        }
+    }
+}
+
+                                        </code></pre>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue4">
+                                        Pista 4
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue4" class="iocClue hidden">
+                                        <h2>Pista 4</h2>
+                                        <p>La darrera pista sobre el tractament de caràcters pretén que analitzeu com reconèixer quins caràcters són susceptibles de ser transformats a majúscula o a minúscula i quins no. La clau es troba en que les lletres alfabètiques es troben distribuïdes de forma correlativa a les taules (ASCII o UTF).</p>
+                                        <p>Copia el codi següent i executa'l:</p>
+                                        <pre><code class="java">
+public class Pista4Tasca2 {
+    static final int DIFERENCIA = 'a'-'A';
+
+    public static void main(String[] args) {
+        Pista4Tasca2 prg = new Pista4Tasca2();
+        prg.inici();
+    }
+    
+    void inici(){    
+        for(char varChar=' '; varChar<'~'; varChar++){
+            if(varChar &gt;='A' && varChar &lt;='Z'){
+                System.out.print("El caràcter ");
+                System.out.print(varChar);
+                System.out.print(" es pot passar a minúscula si li sumem ");
+                System.out.println(DIFERENCIA);
+            }else if(varChar &gt;='a' && varChar &lt;='z'){
+                System.out.print("El caràcter ");
+                System.out.print(varChar);
+                System.out.print(" es pot passar a majúscula si li restem ");
+                System.out.println(DIFERENCIA);
+            }else{
+                System.out.print("El caràcter ");
+                System.out.print(varChar);
+                System.out.println(" no es pot passar ni a majúscula ni a minúscula");
+            }
+        }
+    }
+}
+
+                                        </code></pre>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals40" 
+                                            data-selector-clue="#slc-individuals40-clue5">
+                                        Pista 5
+                                    </button>                                        
+                                    <div id="slc-individuals40-clue5" class="iocClue hidden">
+                                        <h2>Pista 5</h2>
+                                        <p>Segurament, la forma més fàcil per abordar el problema de modificar una cadena de caràcters, convertint els seus valors en minúscula a majúscula consisteix en analitzar el caràcters originals i crear una nova cadena concatenant-hi el valor transformat a majúscula i un cop acabada tota la concatenació, retornar el valor resultant.</p>
+                                        <p>Recordeu que la operació + en un tipus String equival a concatenar a la cadena de l'esquerra, el valor de la dreta i que per saber el valor d'una caràcter de la cadena ca usar <em>charAt(pos)</em>. Consulteu la forma d'usar-la en el material de consulta del semestre passat: <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/index.html" class="materialCadenesDeText">cliqueu aquí per anar-hi</a>.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals40 ================--> 
+
+                <!--=========== BEGIN SUBSECTION individuals10  ================-->    
+                <section id="slc-individuals10" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> Funció <em>verificarDni</em></h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Malgrat que, amb el que heu fet fins ara, us pot resultar força fàcil plantejar la manera d'inserir nous corredors, controlant de no repetir participants amb el mateix DNI, volem assegurar-nos que l'ús d'arrays bidimensionals en comptes d'arrays simples i el control d'altres aspectes relacionats amb el DNI al marge de la repetició no dificultarà la implementació final.</p>
+                                    <p>És per això que us proposem que escriviu una funció anomenada <em>verificarDni</em> que rebi una cadena amb un DNI, a més de la col·lecció  de corredors (matriu on es guardaran les dades dels participants) i comprovi:</p>
+                                    <ul>
+                                            <li>Que els 8 primers caràcters de la cadena són digits</li>
+                                            <li>Que el novè caràcter de la cadena sigui una caràcter alfabètic entre l'"A" i la "Z". Assegureu-vos que la lletra és majúscula i no pas minúscula.</li>
+                                            <li>Que el dni no es troba ja emmagatzemat a la col·lecció de corredors.</li>
+                                    </ul>
+                                    <p>La matriu actuarà a mode de taula on les files seran els diferents corredors i les columnes les seves dades (DNI, nom i número de mòbil respectivament), de manera que a la primera fila hi trobarem el dni, nom i mòbil del primer corredor, a la segona, el dni, nom i mòbil del segon corredor, etc. semblant a aquesta taula:</p>
+                                    <table border="1" cellspacing="0" cellpadding="1">
+                                            <tr>
+                                                    <th>DNI</th>
+                                                    <th>Nom</th>
+                                                    <th>Mòbil</th>
+                                            </tr>
+                                            <tr>
+                                                <td>58791145L</td>
+                                                <td>Pere García Font</td>
+                                                <td>65288492</td>
+                                            </tr>
+                                            <tr>
+                                                <td>24733651K</td>
+                                                <td>Ció Salvadó Cano</td>
+                                                <td>58963114</td>
+                                            </tr>
+                                            <tr>
+                                                <td>32257618B</td>
+                                                <td>Rosa Clemente Sanahuja</td>
+                                                <td>558733216</td>
+                                            </tr>
+                                    </table>
+                                    <p>Malauradament, el nombre de paràmetres que haurà de rebre la funció <em>verificarDni</em> canviarà en funció de la tècnica que decidiu aplicar per simular la inserció de nous corredors a la matriu, de mode semblant a com canviava a la tasca 1 la inserció d'enters a una col·lecció de números. Aquí suposarem que escollireu una tècnica equivalent a una de les 3 exposades a la tasca 1 i us oferirem també 3 versions diferents per provar el vostre codi. A la primera versió suposarem que s'aplica la tècnica de canvi de mida de la matriu i per tant la matriu passada, tindrà exactament el nombre de corredors que indiqui la seva mida. Com a segona versió, suposarem que la matriu està parcialment ocupada i que el valors buits estan marcats amb un array on la primera posició, corresponent al DNI pren el valor <em>null</em>. És a dir, una matriu amb valors semblants a:</p>
+                                    <table border="1" cellspacing="0" cellpadding="1">
+                                            <tr>
+                                                    <th>DNI</th>
+                                                    <th>Nom</th>
+                                                    <th>Mòbil</th>
+                                            </tr>
+                                            <tr>
+                                                <td>58791145L</td>
+                                                <td>Pere García Font</td>
+                                                <td>65288492</td>
+                                            </tr>
+                                            <tr>
+                                                <td>24733651K</td>
+                                                <td>Ció Salvadó Cano</td>
+                                                <td>58963114</td>
+                                            </tr>
+                                            <tr>
+                                                <td>null</td>
+                                                <td>null</td>
+                                                <td>null</td>
+                                            </tr>
+                                            <tr>
+                                                <td>null</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                    </table>
+                                    <p>que en passar-ho a codi quedaria:</p>
+                                    <pre><code class="java">
+        String[][] part = {
+            {"58791145L", "Pere García Font", "65288492"},
+            {"24733651K", "Ció Salvadó Cano", "58963114"},
+            {null, null, null},
+            {null, "", ""}
+        };
+                                    </code></pre>
+                                    <p>Només el valor null de la primera columna indica que la fila es troba buida. Quan una fila contingui <em>null</em> a la primera columna (la de la posició zero), no caldrà mirar la resta de columnes. Per això direm que a l'exemple anterior les files de la posició 2 i 3 estan buides.</p>
+                                    <p>La tercera versió, suposa també que es tracta d'un array parcialment ocupat, però que existeix un comptador indicant el nombre de corredors inscrits. En aquest cas, com  és lògic, la funció <em>verificarDni</em>, a més de rebre el dni i la matriu de corredors, haurà de rebre el comptador indicant el nivell d'ocupació de la matriu.</p>
+                                    <p>A continuació us mostrem els codis de prova que us permetran verificar el codi de la vostra funció ubicats en pestanyes diferents.</p>
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs nav-justified">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" data-toggle="tab" href="#panel31" role="tab">Codi de prova per la versió 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#panel32" role="tab">Codi de prova per la versió 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" data-toggle="tab" href="#panel33" role="tab">Codi de prova per la versió 3</a>
+                                            </li>
+                                        </ul>
+                                        <!-- Tab panels -->
+                                        <div class="tab-content card">
+                                            <!--Panel 1-->
+                                            <div class="tab-pane fade in active" id="panel31" role="tabpanel">
+                                                <pre><code class="java">
+public class Tasca3 {
+    
+    
+    boolean verificarDni(String dni, String[][] participants){
+        //Codifiqueu aquí la funció de verificació
+        //ajudeu-vos creant d'altres funcions auxiliars. 
+    }
+    
+    public static void main(String[] args){
+        Tasca3  prog = new Tasca3();
+        prog.inici();
+    }
+    
+    void inici() {
+        String[][] part = {
+            {"25469821K", "", ""},
+            {"65984472C", "", ""},
+            {"36521994H", "", ""}
+        };
+        if(verificarDni("23688218K", part)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        if(verificarDni("65984472C", part)){
+            System.out.println("Error");
+        }else{
+            System.out.println("OK");
+        }
+        if(verificarDni("25469821K", part)){
+            System.out.println("Error");
+        }else{
+            System.out.println("OK");
+        }
+        if(verificarDni("62984417L", part)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        if(verificarDni("62984417", part)){
+            System.out.println("Error");
+        }else{
+            System.out.println("Ok");
+        }
+        if(verificarDni("629844170", part)){
+            System.out.println("Error");
+        }else{
+            System.out.println("Ok");
+        }
+    }
+    
+}
+                                                </code></pre>
+                                            </div>
+                                            <!--/.Panel 1-->
+                                            <!--Panel 2-->
+                                            <div class="tab-pane fade" id="panel32" role="tabpanel">
+                                            <pre><code class="java">
+public class Tasca3 {
+    
+    
+    boolean verificarDni(String dni, String[][] participants){
+        //Codifiqueu aquí la funció de verificació
+        //ajudeu-vos creant d'altres funcions auxiliars. 
+    }
+    
+    public static void main(String[] args){
+        Tasca3  prog = new Tasca3();
+        prog.inici();
+    }
+    
+    void inici() {
+        String[][] part = {
+            {"25469821K", "", ""},
+            {"65984472C", "", ""},
+            {"36521994H", "", ""},
+            {null, null, null},
+            {null, "", ""}
+        };
+        if(verificarDni("23688218K", part)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        if(verificarDni("65984472C", part)){
+            System.out.println("Error");
+        }else{
+            System.out.println("OK");
+        }
+        if(verificarDni("25469821K", part)){
+            System.out.println("Error");
+        }else{
+            System.out.println("OK");
+        }
+        if(verificarDni("62984417L", part)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        if(verificarDni("62984417", part)){
+            System.out.println("Error");
+        }else{
+            System.out.println("Ok");
+        }
+        if(verificarDni("629844170", part)){
+            System.out.println("Error");
+        }else{
+            System.out.println("Ok");
+        }
+    }
+    
+}
+
+                                            </code></pre>
+                                            </div>
+                                            <!--/.Panel 2-->
+                                            <!--Panel 3-->
+                                            <div class="tab-pane fade" id="panel33" role="tabpanel">
+                                            <pre><code class="java">
+public class Tasca3 {
+    
+    
+    boolean verificarDni(String dni, String[][] participants, int numPart){
+        //Codifiqueu aquí la funció de verificació
+        //ajudeu-vos creant d'altres funcions auxiliars. 
+    }
+    
+    public static void main(String[] args){
+        Tasca3  prog = new Tasca3();
+        prog.inici();
+    }
+    
+    void inici() {
+        String[][] part = {
+            {"25469821K", "", ""},
+            {"65984472C", "", ""},
+            {"36521994H", "", ""},
+            {null, null, null},
+            {null, null, null}
+        };
+        if(verificarDni("23688218K", part, 3)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        if(verificarDni("65984472C", part, 3)){
+            System.out.println("Error");
+        }else{
+            System.out.println("OK");
+        }
+        if(verificarDni("25469821K", part, 3)){
+            System.out.println("Error");
+        }else{
+            System.out.println("OK");
+        }
+        if(verificarDni("62984417L", part, 3)){
+            System.out.println("OK");
+        }else{
+            System.out.println("Error");
+        }
+        if(verificarDni("62984417", part, 3)){
+            System.out.println("Error");
+        }else{
+            System.out.println("Ok");
+        }
+        if(verificarDni("629844170", part, 3)){
+            System.out.println("Error");
+        }else{
+            System.out.println("Ok");
+        }
+    }
+    
+}
+                                            </code></pre>
+                                            <p>Copieu la versió que vulgueu fer servir a la implementació final, codifiqueu la funció de verificació i comproveu el codi executant la classe Tasca3.</p>
+                                            </div>
+                                            <!--/.Panel 3-->
+                                        </div>
+
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals10" 
+                                            data-selector-clue="#slc-individuals10-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals10-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Us aconsellem que a més de la funció <em>verificarDni</em>, implementeu almenys dues funcions auxiliars, una que comprovi si les 8 primeres posicions de la cadena que hagi de contenir el DNI està formada per caràcters numèrics (compresos entre '0' i '9') i una altra que faci la comprovació de si el DNI amb la lletra inclosa es troba emmagatzemat a la col·lecció. Aquesta darrera funció podria retornar un valor booleà indicant si està o no emmagatzemat. Recordeu que en  funció de la versió escollida caldrà incloure en els paràmetres de la funció el comptador de corredors afegits.</p> 
+                                        <p>Serà necessari també que comproveu si el DNI, a més de contenir 8 digits numèrics, la darrera posició de la cadena contingui una lletra majúscula (entre el valor 'A' i el valor 'Z' ambdós inclosos).</p>
+                                        <p>Recordeu que per saber el valor d'un caràcter de la cadena cal usar la funció <em>charAt</em>. Consulteu la forma d'usar-la en el material de consulta del semestre passat: <a href="http://ioc.xtec.cat/materials/FP/Materials/2251_ASIX/ASIX_2251_M03/web/html/index.html" class="materialCadenesDeText">cliqueu aquí per anar-hi</a>.</p>
+                                        <p>Per saber si dos cadenes són iguals cal fer servir el mètode <em>equals</em> tal com s'indica en el següent exemple on cadena1 i cadena2 representen variables que contenen una cadena de text cada una.</p>
+                                        <pre><code class="java">
+...
+if(cadena1.equals(cadena2)){
+    System.out.println("Les cadenes són iguales");
+}else{
+    System.out.println("Les cadenes són diferents");
+}
+...
+                                        </code></pre>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals10 ================-->    
+
+                <!--=========== BEGIN SUBSECTION individuals20  ================-->    
+                <section id="slc-individuals20" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Projecte I</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> <em>Implementació de la fase d'inscripció del projecte</em></h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Ha arribat ja l'hora de realitzar la implementació de la fase d'inscripció del projecte de gestió de la cursa de muntanya. Repasseu de nou l'enunciat, veureu que us demana d'implementar un menú inicial per escollir entre 3 opcions:</p>
+                                    <pre class="iocexample">
+======================================================================
+    PROGRAMA PER INSCRIURE CORREDORS A LA CURSA DE LA FESTA MAJOR
+======================================================================
+
+---------------------------------------
+	 OPCIONS A ESCOLLIR
+---------------------------------------
+	1) Inscriure un nou participant
+	2) Llistar tots els participants
+	3) Sortir
+
+Escull una opció i prem [ENTRAR]:
+                                    </pre>
+                                    <p>Escollir la opció 1 portarà a una pantalla en la que s'indicarà que s'està a punt d'inscriure un corredor i s'anirà preguntant per cada una de les dades a emmagatzemar: DNI, nom sencer i número de mòbil. Abans, just després de preguntar el valor del DNI caldrà transformar la cadena a majúscules per assegurar que la lletra s'emmagatzema així, i verificar tot seguit el valor del DNI per saber si està ben format i si o està repetit. En cas que la verificació sigui positiva es continuarà demanant la resta de dades,  s'emmagatzemaran i es retornarà al menú principal.</p>
+                                    <pre class="iocexample">
+   --------------------------------------------------------------------
+	Inscripció d'un nou participant
+   ====================================================================
+
+Indica el seu DNI i prem [ENTAR]:
+65987428l
+Indica el seu nom i prem [ENTAR]:
+Joan Bota
+Indica el seu mòbil i prem [ENTAR]:
+95248872
+                                    </pre>
+                                    <p>Per contra, si la verificació no és positiva, s'indicarà a l'usuari que no es pot afegir el DNI i es tornarà directament al menú sense fer cap més pregunta.</p>
+                                    <pre class="iocexample">
+   --------------------------------------------------------------------
+	Inscripció d'un nou participant
+   ====================================================================
+
+Indica el seu DNI i prem [ENTAR]:
+6598742l
+El DNI és erroni o està repetit. Verifiqueu que sigui correcte i torneu a inscriure el participant
+                                    </pre>
+                                    <p>La opció 2 del menú durà a una pantalla on es podrà visualitzar la llista de tots els corredors inscrits fins el moment. Intenteu que a l'hora de mostrar el llistat aquest quedi ben alineat, és a dir, procureu que els DNI, els noms i el números del mòbil dels diferents corredors comencin a la mateixa posició de manera que sigui fàcil distingir les dades per cada corredor:</p>
+                                    <pre class="iocexample">
+   --------------------------------------------------------------------
+	 LLista de participants inscrits fins el dia d'avui
+   ====================================================================
+
+DNI       NOM                                            MÒBIL      
+--------------------------------------------------------------------
+65987428L Joana Bota Salvador                           795245431
+65458742M Fermí Rodríguez Ginesta                       695248872
+45986321K Jordi Sánchez Saavedra                        610013954
+
+                                    </pre>
+                                    <p>La tercera opció del menú preguntarà a l'usuari si vol realment sortir, demanant confirmació. Si aquest confirma, se sortirà de l'aplicació però si no confirma la sortida, es tronarà de nou al menú:</p>
+                                    <pre class="iocexample">
+Estas a punt de sortir de l'aplicació. Si marxes perdràs totes les dades introduïdes fins ara. Vols sortir?
+Indica S (si) o N (no) i prem [ENTRAR]. Si nomes prems [ENTRAR] es considerarà una resposta afirmativa.
+                                    </pre>
+                                    <p>Com veieu, aquí, ja no es tracta d'implementar algunes funcions, sinó tota una aplicació. Per descomptat haureu de fer servir funcions auxiliars que us ajudin a reduir la complexitat. De fet e las tasques anteriors i també en exercicis d'altres activitats heu implementat moltes funcions que podreu reaprofitar aquí. De moment amb els coneixements que teniu, fer servir el codi de funcions ja implementades suposa copiar les funcions, des de la classe on las vau escriure a la classe <em>Tasca4</em> on que creureu ara i on implementareu el codi de l'aplicació demanada</p>
+                                    <p>De moment no us preocupeu per la volatilitat de les dades quan tanqueu l'aplicació. L'emmagatzematge de les dades en fitxers o bases de dades no forma part dels objectius d'aquesta unitat, ja ho estudiareu més endavant. Aquí les dades les heu d'emmagatzemar en una matriu (array bidimensional) de cadenes de text que tingui 3 columnes per guardar-hi les tres dades que l'aplicació demana (DNI, nom i mòbil). Podeu suposar també que no s'inscriuran mai més de 30 corredors</p>
+                                    <p>Per tal d'ajudar-vos en aquesta primera implementació us passem la classe Tasca4 per tal que la copieu en un projecte de Netbeans i la feu servir de base per acabar la implementació de l'aplicació demanada.</p>
+                                    <pre><code class="java">
+public class Tasca4 {
+    static final int DNI =0;  //Columna on s'emmagatzema el DNI a la matriu de corredors
+    static final int NOM =1;  //Columna on s'emmagatzema el nom a la matriu de corredors
+    static final int MOBIL =2;   //Columna on s'emmagatzema el número de mòbil a la matriu de corredors
+    static final int MIDA_MAXIMA_NOM =45; // Mida màxima que donarem al nom d'un corredor en el llistat 
+                                          // per tal de fer quadrar les posicions de la resta de dades.
+    
+    public static void main(String[] args) {
+        Tasca4 programa = new Tasca4();
+        programa.inici();
+    }
+    
+    void inici(){
+        //IMPLEMENTEU AQUÍ EL VOSTRE CODI
+    } 
+    
+    //IMPLEMENTEU i COPIEU AQUÍ LES FUNCIONS AUXILIARS
+}
+                                    </code></pre>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Per implementar bona part de la interfície d'usuari que necessitareu, copieu les funcions que vàreu fer a l'activitat A403: <em>mostrarResultat</em>, <em>presentacio</em> i <em>menu</em>. Feu-les servir per implementar la presentació i el menú concrets de la vostra aplicació, així com la funció <em>mostrarResultat</em> quan necessiteu informar a l'usuari d'algun resultat intermedi o final.</p>
+                                        <p>També és aconsellable que cada opció la implementeu en una funció diferent. És a dir que codifiqueu la inscripció de participants en una funció específica, el llistat de corredors en una altra funció i la confirmació de la sortida en una de diferent.</p>
+                                        <p>Concreteu el menú de l'aplicació a la funció <em>inici</em> fen una crida a la funció <em>menu</em>, recollint la demanda de l'usuari i seleccionant la funció de la opció escollida a través d'una estructura de selecció. Recordeu que el menú s'ha de tancar en un bucle per tal que en acabar l'execució d'una opció es torni a mostrar el menú i s'esperi de nou la demanda de l'usuari. Només s'ha de sortir del bucle quan es confirmi que la opció escollida és la sortida. Vegem un exemple de menú:</p>
+                                        <pre><code class="java">
+void inici(){    
+    boolean sortir=false;
+    String[] opcions={"a) opció 1", "b) opció 2", "...", "s) sortir"};
+    char opcio;
+    do{
+        opcio = menu("Bla bla...", opcions);
+        //Estructura de selecció de la funció a 
+        //cridar d'acord amb la opció escollida:
+        //Si opcio és a cridem ...
+        //Si opcio és b cridem ...
+        // ...
+        //Si opcio és s demanem confirmació de sortida: sotir=confirmar...            
+    }while(!sortir);
+}    
+
+                                        </code></pre>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Per implementar la funció específica d'inscripció de corredors us heu d'inspirar en la funció <em>afegirEnter</em> que heu implementat a la tasca 1. De fet la diferencia bàsica és que en aquest cas la col·lecció és una array bidimensional, però això no us hauria de preocupar massa ja que en el fons usarem la matriu (array bidimensional) com si fos una col·lecció simple ja que per nosaltres un corredor està representat per tota una fila, de manera que iterar d'una corredor al següent de la col·lecció significa canviar a la següent fila. Per exemple:</p>
+                                        <pre><code class="java">
+    void inici(){    
+        String[][] colleccio = {
+            {"Item 1, dada 1", "Item 1, dada 2", "Item 1, dada 3"},
+            {"Item 2, dada 1", "Item 2, dada 2", "Item 2, dada 3"},
+            {"Item 3, dada 1", "Item 3, dada 3", "Item 3, dada 3"},
+            {"Item 4, dada 1", "Item 4, dada 4", "Item 4, dada 3"},
+            {null, null, null},
+            {null, null, null}
+        };
+        
+        //Iterem de fila en fila. Les columnes només serveixen per obtenir una dada concreta
+        for(int i=0; i&lt;colleccio.length; i++){  //el comptador i permet passar de fila en fila
+            if(colleccio[i][0]!=null){  // Accedim directament a una columna quan volem llegir o manipular
+                                        // la dada específica d'aquella columna per la fila consultada.
+                colleccio[i][0] = obtenirValorDeLItem(i, 0);
+                colleccio[i][1] = obtenirValorDeLItem(i, 1);
+                colleccio[i][2] = obtenirValorDeLItem(i, 2);
+                
+                System.out.print(colleccio[i][0]);
+                System.out.print(", ");
+                System.out.println(colleccio[i][1]);
+            }
+        }
+    }    
+                                        </code></pre>
+                                        <p>Com podeu veure, les matrius, si tenim en compte només les seves files es comporten com si es tractés d'una col·lecció simple.</p>
+                                        <p>Heu de tenir en compte també que quan es dimensiona una matriu de cadenes de caràcters, tots els seus valors valen <em>null</em>. És a dir, si fem:</p>
+                                        <pre><code class="java">
+String[][] col = new String[3][2];
+                                        </code></pre>
+                                        <p>Obtindrem una matriu idèntica a:</p>
+                                        <pre><code class="java">
+String[][] col = {
+    {nul, nul},
+    {nul, nul},
+    {nul, nul}
+};
+                                        </code></pre>
+                                        <p>Finalment, en relació a les matrius heu de tenir en compte que de a mateixa manera que és possible declarar un array amb zero elements, també es pot declarar una matriu amb zero files:</p>
+                                        <pre><code class="java">
+String[][] col = new String[0][2];
+                                        </code></pre>
+                                        <p>La declaració anterior indica que hem creat una matriu de zero files.</p>
+                                        <p>No us oblideu de copiar a la Tasca4 les funcions que heu implementat a les tasques 2 i 3. Aquí us ajudaran a canviar la lletra del DNI a majúscula i verificar el DNI per saber si és pot fer o no la inserció.</p>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                 <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-individuals20" 
+                                            data-selector-clue="#slc-individuals20-clue3">
+                                        Pista 3
+                                    </button>                                        
+                                    <div id="slc-individuals20-clue3" class="iocClue hidden">
+                                        <h2>Pista 3</h2>
+                                        <p>Per implementar el llistat haureu d'iterar de fila en fila per tot els participants vàlids emmagatzemats a la matriu i mostrar per pantalla les 3 dades de cada corredor.</p>
+                                        <p>Cal separar les dades dels diferents corredors per un salt de línia i mantenir fixa la posició on es comença a escriure cada una de les dades d'un corredor. Això no serà cap problema per les dades que mesuren sempre el mateix, com ara el DNI o el mòbil; per contra el nom, que pot tenir diferent nombre de caràcters, si que ens representarà un problema, ja que si no hi fem cap tractament podem obtenir un llistat semblant al següent: </p>
+                                        <pre class="iocexample">
+DNI       NOM                                            MÒBIL      
+--------------------------------------------------------------------
+65987428L Joan Bota Salvador 952488724
+65458742M Fermí Rodríguez Ginesta  695248872
+45986321K Jordi Sánchez Saavedra 695248872
+                                        </pre>
+                                        <p>Què podem fer per evitar-ho? L'ideal seria forçar que el nom sigués també de mida fixa.</p>
+                                        <p>Recordeu que a l'activitat A403, vàreu fer 3 funcions (farciment, retalla i midaExacta) que us poden servir de gran ajuda per resoldre aquest problema. Copieu doncs a la Tasca4 les funcions implementades i useu-les per forçar que nom faci exactament una mida determinada. Podeu fer servir la constant MIDA_MAXIMA_NOM declarada a la classe Tasca4 com la mida excata a la que desitgem el nom de tots els corredors.</p>
+                                        <p>Es tracta d'aconseguir un llistat com:</p>
+                                        <pre class="iocexample">
+DNI       NOM                                            MÒBIL      
+--------------------------------------------------------------------
+65987428L Joan Bota Salvador                            95248872
+65458742M Fermí Rodríguez Ginesta                       695248872
+45986321K Jordi Sánchez Saavedra                        695248872
+                                        </pre>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION individuals20 ================-->  
+            </section>
+            <!--=========== END SECTION individuals ================-->    
+            
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Projecte I</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>En aquesta <b>activitat 404</b> heu de lliurar els 5 fitxers de codi corresponents a les tasques que heu realitzat a la secció <em>Tasques a realitzar</em>. Comprimiu-los en un ZIP (A404ProjecteI.zip) i lliureu el fitxer comprimit a la <span class="bustiaLliurament"></span>. Recordeu que aquesta bústia és multilliurament, per tant, si ja teniu fet algun enviament anterior no us preocupeu que no s’esborrarà.</p>
+                                <p>Es recomana lliurar aquestes activitats abans de la data recomanada: <strong class='dataRecomanada'></strong> i en tot cas mai després de la data límit: <strong class='dataLimit'></strong></p>
+                                <p>Recordeu que aquesta activitat és qualificable i per tant té un pes important sobre la nota final.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Un cop hàgiu lliurat les tasques demanades podreu passar a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <ul>
+                <li>Assimilar la creació de funcions a partir d'una descripció que explica els seu comportament.</li>
+                <li>Assimilar la sintaxi necessària per crear i cridar funcions</li>
+                <li>Reutilitzar funcions senzilles a l'hora de codificar per evitar repetir codi.</li>
+            </ul>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <p>RA 1. Escriu i prova programes senzills reconeixent i aplicant els fonaments de la programació modular</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <p>Podeu consultar els materials que fèieu servir al bloc 1 per recordar funcions que us permeten treballar amb cadenes de caràcters a <a class="materialCadenesDeText targetBlank">aquí</a> </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!--script src="../js/bootstrap.min.js"></script-->
+    <script src="../js/bootstrap.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A404");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

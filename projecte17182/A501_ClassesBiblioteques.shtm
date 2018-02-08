@@ -1,0 +1,235 @@
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Què cal fer? Classes, biblioteques i tipus composts</h2>
+                                     <h3> <span class="tascaTitle">Tasca</span> Codificació de Biblioteques de funcions estàtiques</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquí us proposem crear una biblioteca de diverses utilitats que de ben segur podreu reutilitzar en el projecte. A fi de practicar el que heu anat descobrint, en aquesta activitat, us proposem la creació d'una biblioteca d'utilitats que no precisi la inicialització de la classe. És a dir que faci servir mètodes estàtics.</p>
+                                    <p>Us proposem que codifiqueu 2 funcions en una classe anomenada Utils:</p>
+                                    <ul>
+                                        <li>Funció <em>boolean <strong>hiHaChar</strong>(char valor, char[] valors)</em>. Aquesta funció està pensada per verificar si un determinat caràcter es troba en una col·lecció de caràcters, ambdues dades passades per paràmetre.  Cal que la funció retorni cert si el caràcter (primer paràmetre) es troba a l'array del segon paràmetre. Retornarà fals en cas contrari.</li>
+                                        <li>La funció <em>String <strong>seleccionarParaula</strong>()</em>. En aquest cas la funció rep un array de cadenes de text i en retorna una seleccionada a l'atzar. Per codificar-la investigueu la classe Random, la classe System i la classe Math. Podeu trobar informació aquí:
+                                            <ul>
+                                                <li><em>Random:</em> És una classe per generar valors aleatoris. Necessita un valor numèric anomenat llavor per generar un nombre infinit de nombres. Per tal que sembli realment aleatori cal que la llavor sigui diferent per cada execució. Sovint es fa sevir la hora del sistema o algun altre valor que canviï constantment i no sigui fàcil de repetir ni de deduir. Presteu especial atenció al: <a class="apiRandomRandom targetBlank">constructor Random(long llavor)</a> i <a class="apiRandomNextInt targetBlank">random.nextInt(int limit)</a>.</li>
+                                                <li><em>Math.random():</em> una funció estàtica de la classe Math que genera també valors decimals aleatoris compresos entre 0 (inclòs) i 1 (exclòs). No s'ha d'inicialitzar, però per contra és poc aleatori i només retorna valors decimals dins d'una rang molt petit. Per aconseguir altres rangs i/o tipus de dades diferents caldrà fer servir les utilitats del llenguatge i de les matemàtiques. Trobareu informació a <a class="apiMathRandomUrl">Math.random()</a>.</li>
+                                            </ul>
+                                        </li>
+                                        <li>Funció <em>void <strong>barrejarLletres</strong>(char[] valors)</em>. Aquesta funció està pensada per canviar aleatòriament l'ordre dels elements de l'array passat per paràmetre. La funció no té retorn, perquè manipula directament els elements del paràmetre. Com a l'anterior funció, disposeu de la classe Random i de la funció Math.random per implementar aquest funció.</li>
+                                    </ul>
+                                    <p>A més de la classe <em>Utils</em>, haureu de fer també una classe anomenada Tasca2 que us permeti provar el bon funcionament de les funcions anteriors, a mode de joc de proves.</p>
+                                    <p>Finalment, per tal de completar la biblioteca, afegiu-hi les funcions de l'activitat A404 que ja teniu codificades i modifiqueu la definició per tal que fer que es comportin com a funcions estàtiques. De fet només es tractaria de copiar el codi de les 4 funcions i adaptar la declaració afegint-hi la paraula static al codi copiat. Així us queda una biblioteca acabada i a punt per fer servir en el projecte.</p>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <ul>
+                                            <li>Per implementar la funció hiHaChar, cal que cerqueu el valor del caràcter passat per paràmetre entre tots els elements de l'array del segon paràmetre. En cas de trobar-lo avorteu la cerca i retorneu cert. En cas contrari caldrà arribar fins al final per estar segurs que no hi ha cap valor coincident.</li>
+                                            <li>Per seleccionar un element de l'array a l'atzar, caldrà obtenir un número aleatori comprés entre zero (inclòs) i la quantitat d'elements que tingui l'array (valor exclòs) i fer servir aquest número com a posició per obtenir el valor del seu element.</li>
+                                            <li>Per saber com barrejar les lletres del paràmetre, intenteu visualitzar la manera com barregem una pila de cartes. De fet, podem dir que les anem canviant de lloc sense preocupar-nos de la posició d'on venien ni de la posició on van. Fins i tot, si poguéssim seguir la trajectòria de  les cartes, potser ens adonaríem que alguna ha acabat exactament en el mateix lloc d'on partia. Però això no ens preocupa, perquè si remenem un nombre suficient de vegades, segur que aconseguirem canviar l'ordre inicial de les cartes. Feu un plantejament semblant amb les lletres, intercanvieu aleatòriament les seves posicions un nombre suficient de vegades, com per assegurar que es perdrà l'ordre original.</li>
+                                        </ul>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-clue="#slc-toDo20-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-toDo20-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Si feu servir la classe Random, disposa d'un mètode que permet obtenir valors enters compresos entre el valor zero i un límit màxim. En canvi si feu servir Math.random, caldrà realitzar el càlcul oportú per aconseguir el rang adequat. Hem de tenir en compte que el valor retornat es troba entre 0 (inclòs) i 1 (exclòs). A més, podem provar que en multiplicar qualsevol número per un valor comprés entre zero i la unitat obtenim un rang de números compresos entre zero i el valor multiplicat. Per exemple si multipliquem 100 per la unitat obtenim el valor 100 i si el multipliquem per zero obtenim el valor zero. Pe qualsevol altre valor entre 0 i 1, obtindrem números limitats pels valor obtinguts en les multiplicacions per 0 i 1.</p>
+                                    </div>                                      
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-toDo20" 
+                                            data-selector-solution="#slc-toDo20-solution">
+                                        Solució
+                                    </button>
+                                    <div id="slc-toDo20-solution" class="iocSolution hidden">
+                                    <p>Classe Utils:</p>
+                                        <pre><code class="java">
+public class Utils {
+
+    static boolean hiHaChar(char valor, char[] valors){
+        boolean ret=false;
+        int pos=0;
+        while(!ret && pos&lt;valors.length){
+            ret= valors[pos] == valor;
+            ++pos;
+        }
+        return ret;
+    }
+    
+    static void barrejarLletres(char[] lletres) {
+        Random random = new Random(System.nanoTime());
+        int max = lletres.length*2;
+        for(int i=0; i&lt;max; i++){
+            //int i1 = (int)(lletres.length*Math.random());  //versió Math.random
+            int i1 = random.nextInt(lletres.length);         //versió Random
+            //int i2 = (int)(lletres.length*Math.random());  //versió Math.random
+            int i2 = random.nextInt(lletres.length);         //versió Random
+            char aux = lletres[i2];
+            lletres[i2] = lletres[i1];
+            lletres[i1] = aux;
+        }
+    }  
+
+    static String seleccionarParaula(String[] paraules){
+        Random random = new Random(System.currentTimeMillis());
+        //int iParaula = (int)(paraules.length*Math.random());  //versió Math.random
+        int iParaula = random.nextInt(paraules.length);         //versió Random
+        return paraules[iParaula];    
+    }
+    
+    static int obtenirPosDiferencia(String paraula, int posInicial, String intent) {
+        boolean error=false;
+        int pos=0;
+        while(!error && pos&lt;intent.length()){
+            if(paraula.charAt(posInicial+pos)!=intent.charAt(pos)){
+                error = true;
+            }else{
+                pos++;
+            }
+        }
+        return pos;
+    }
+    
+    static String concatenaParaulesFinsMida(String paraula1, String paraula2, int posicioMax) {
+        for(int i=0; i&lt;posicioMax; i++){
+            paraula1 += paraula2.charAt(i);
+        }
+        return paraula1;
+    }
+
+    static void eliminarChars(char[] lletresDesordenades, String paraula, int posicioMax) {
+        for(int i=0; i&lt;posicioMax; i++){
+            eliminarChar(lletresDesordenades, paraula.charAt(i));
+        }
+    }
+   
+    static void eliminarChar(char[] lletresDesordenades, char charAt) {
+        int pos=0;
+        while (pos&lt;lletresDesordenades.length && lletresDesordenades[pos]!=charAt) {
+            pos++;            
+        }
+        if(pos&lt;lletresDesordenades.length){
+            lletresDesordenades[pos]=0;
+        }
+    }
+}
+                                        </code></pre>                         
+                                        <p>Classe Tasca2 de prova:</p>
+                                        <pre><code class="java">
+public class Tasca2 {
+    
+     static void main(String[] args) {
+         Tasca2 prg = new Tasca2();
+         prg.prova();
+     }
+    
+    void prova(){
+        String valorText;
+        int valorInt;
+        boolean  valorLogic;
+        char  valorChar;
+        
+        char[] valorsCh ={'a', 'à', 'á', 'â', 'ä'};
+        valorChar = 'a';
+        valorLogic = Utils.hiHaChar(valorChar, valorsCh);
+        mostrarResultatHiHaChar(valorChar, valorsCh, valorLogic);
+        mostrarVerificacioHiHaChar(valorLogic, true);
+        
+        valorChar = 'e';
+        valorLogic = Utils.hiHaChar(valorChar, valorsCh);
+        mostrarResultatHiHaChar(valorChar, valorsCh, valorLogic);
+        mostrarVerificacioHiHaChar(valorLogic, false);
+        
+        String[] valorsStr = {"Element 1", "Element 2", "Element 3", "Element 4"};
+        valorText = Utils.seleccionarParaula(valorsStr);
+        mostrarResultatSeleccionarParaula(valorText, valorsStr);
+        
+        valorText = "PARAULA";
+        valorsCh = valorText.toCharArray();
+        Utils.barrejarLletres(valorsCh);
+        mostrarResultatBarrejarLletres(valorText, valorsCh);
+        
+    }   
+ 
+    void mostrarResultatHiHaChar(char valorChar, char[] valors, boolean valorLogic) {
+        String hiESNoHiEs = valorLogic?" és a la col·lecció ": "  no és a la col·lecció ";
+        System.out.print("La funció mostrarResultatHiHaChar a dictaminat que el valor '");
+        System.out.print(valorChar);
+        System.out.print("'");
+        System.out.print(hiESNoHiEs);
+        System.out.print("{");
+        for(int i=0; i&lt;valors.length; i++){
+            if(i>0){
+                System.out.print(", ");
+            }
+            System.out.print(valors[i]);
+        }
+        System.out.println("}");
+    }
+
+    void mostrarVerificacioHiHaChar(boolean valorObtingut, boolean valorEsperat) {
+        if(valorObtingut==valorEsperat){
+            System.out.println("*** la funció concatenaParaulesFinsMida funciona correctament ***");
+        }else{
+            System.out.println("*** la funció concatenaParaulesFinsMida NO ACABA de funcionar bé ***");
+        }
+        System.out.println(); 
+    }
+
+    void mostrarResultatSeleccionarParaula(String valorText, String[] valors) {
+        System.out.print("El valor ");
+        System.out.print(valorText);
+        System.out.print(" es troba entre els valors ");
+        System.out.print("{");
+        for(int i=0; i&lt;valors.length; i++){
+            if(i>0){
+                System.out.print(", ");
+            }
+            System.out.print(valors[i]);
+        }
+        System.out.println("}");
+        System.out.println(); 
+    }
+
+    void mostrarResultatBarrejarLletres(String paraula, char[] valors) {
+        System.out.print("Després de barrejar les lleteres de la paraula  ");
+        System.out.print(paraula);
+        System.out.print(" tenim les lletres en lordre següent: ");
+        System.out.print("{");
+        for(int i=0; i&lt;valors.length; i++){
+            if(i>0){
+                System.out.print(", ");
+            }
+            System.out.print(valors[i]);
+        }
+        System.out.println("}");
+        System.out.println(); 
+    }
+}
+                                        </code></pre>
+                                    </div>                                    
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Debat 2 ================-->     
+

@@ -152,12 +152,17 @@ ActivityManager = function (){
             });
 
             $("[data-selector-solution]").each(function(){
+                var title;
                 var solution = $(this.dataset.selectorSolution).get(0);
                 $(this).click(function(){
                     var modalWindow = $(".iocModal")
                     var modalBody = $(modalWindow).find(".modal-body");
-
-                    $(modalWindow).find(".modal-title").html("SOLUCIÓ");
+                    if(this.dataset.title){
+                      title =  this.dataset.title; 
+                    }else{
+                      title = "SOLUCIÓ"; 
+                    }
+                    $(modalWindow).find(".modal-title").html(title);
                     modalBody.children().each(function(){
                         var element = $(this).detach();
                         $("#hiddenContent").append(element);                        
@@ -170,12 +175,17 @@ ActivityManager = function (){
             });    
 
             $("[data-selector-advice]").each(function(){
+                var title;
                 var advices = $(this.dataset.selectorAdvice).get(0);
                 $(this).click(function(){
                     var modalWindow = $(".iocModal")
                     var modalBody = $(modalWindow).find(".modal-body");
-
-                    $(modalWindow).find(".modal-title").html("CONSELLS");
+                    if(this.dataset.title){
+                      title =  this.dataset.title; 
+                    }else{
+                      title = "CONSELLS"; 
+                    }
+                    $(modalWindow).find(".modal-title").html(title);
                     modalBody.children().each(function(){
                         var element = $(this).detach();
                         $("#hiddenContent").append(element);                        
@@ -217,6 +227,21 @@ ActivityManager = function (){
                     }
                 });
             });  
+            $("input[data-content-selector]").each(function(){
+                $(this).click(function(){
+                    var aux;
+                    var selector = this.dataset.contentSelector;
+                    var $content = $(selector);
+                    if($content.hasClass("hidden")){
+                        $content.removeClass("hidden");
+                    }else{
+                        $content.addClass("hidden");
+                    }
+                    aux = this.val();
+                    this.val(this.dataset.valueToggle);
+                    this.dataset.valueToggle = aux;
+                });
+            });
             if(hljs){
                 hljs.addLineNumbers();
                 hljs.initHighlightingOnLoad();
@@ -272,9 +297,22 @@ ActivityManager = function (){
             };        
         }
         if(location.search){
+            dirToReplace = location.search;
+            indexOfDir_i = dirToReplace.indexOf("trf=");
+            if(indexOfDir_i==-1){
+                indexOfDir_i=1;
+            }else{
+                indexOfDir_i+=4;
+            }
+            indexOfDir_e = dirToReplace.indexOf("&", indexOfDir_i);
+            if(indexOfDir_e==-1){
+                dirToReplace = dirToReplace.substring(indexOfDir_i);
+            }else{
+                dirToReplace = dirToReplace.substring(indexOfDir_i, indexOfDir_e);
+            }
             url = url.substring(0,url.lastIndexOf("/")).concat(
                                             "/", 
-                                            location.search.substring(1),
+                                            dirToReplace,
                                             url.substring(url.lastIndexOf("/")));
         }
         $.ajax({

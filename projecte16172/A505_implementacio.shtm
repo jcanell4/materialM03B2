@@ -5,7 +5,7 @@
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar-Implementació II</h2>
-                                     <h3 > <span class="tascaTitle">Tasca</span> - Implementació del menú</h3>
+                                     <h3 > <span class="tascaTitle">Tasca</span> Implementació del menú</h3>
                                  </div>
                             </div>
                         </div>
@@ -124,7 +124,7 @@ public class ClassePrincipal{
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar-Implementació II</h2>
-                                     <h3 > <span class="tascaTitle">Tasca</span> - Implementació de les tasques</h3>
+                                     <h3 > <span class="tascaTitle">Tasca</span> Implementació de les tasques</h3>
                                  </div>
                             </div>
                         </div>
@@ -336,7 +336,7 @@ Parcel·la deslliurada correctament
                             <div class="col-lg-12">
                                 <div class= "headSlide">
                                      <h2 >Tasques a realitzar-Implementació II</h2>
-                                     <h3 > <span class="tascaTitle">Tasca</span> - Valoració de la implementació</h3>
+                                     <h3 > <span class="tascaTitle">Tasca</span> Valoració de la implementació</h3>
                                  </div>
                             </div>
                         </div>
