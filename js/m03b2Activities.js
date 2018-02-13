@@ -283,6 +283,7 @@ ActivityManager = function (){
     };
 
     this.toReplaceOnLoad = function(url, id, async, onError){
+        var dirToReplace, indexOfDir_i, indexOfDir_e;
         if(async===undefined && !onError){
             async=true;
         }else if(!onError){
