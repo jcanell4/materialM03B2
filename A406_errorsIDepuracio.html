@@ -1174,48 +1174,6 @@ public class ExerciciDepuracio {
             var iocSlider = new IocSlider();
             activityManager.updateDisplayButtons(iocSlider);
         });
-
-        /*
-        iocSlider = new IocSlider();
-        
-        $("[data-display-on-set-slide]").each(function(){
-            var slide;
-            var self = this;
-            var slideId = this.dataset.displayOnSetSlide; 
-            iocSlider.watch("onSetCurrentSlide", function(e){
-                var slide;
-                var oldSlide =e.oldValues.vindx!=-1
-                                    ?e.oldValues.vslides[e.oldValues.vindx]
-                                    :e.oldValues.hslides[e.oldValues.hindx];
-                if($(oldSlide).attr("id")===slideId){
-                   $(self).hide();
-                   if($(self).hasClass("active")){
-                        $(self).click();
-                   }
-                }
-                slide = this.hasVerticalSlides()
-                                    ?this.vslides[this.vindx]
-                                    :this.hslides[this.hindx];
-                if($(slide).attr("id")===slideId){
-                   $(self).show();
-                }
-            });
-    
-            slide = iocSlider.hasVerticalSlides()
-                                ?iocSlider.vslides[iocSlider.vindx]
-                                :iocSlider.hslides[iocSlider.hindx];
-            if($(slide).attr("id")===slideId){
-               $(this).show();
-            }
-        });
-
-        hljs.addLineNumbers();
-        hljs.initHighlightingOnLoad();
-        
-        $(document).ready(function(){
-            toReplaceOnLoad("data/toReplace.json", "A406");
-        });
-        */
     </script>
     <!--=========== END SCRIPTS ================-->    
 

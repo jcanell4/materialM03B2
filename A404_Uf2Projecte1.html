@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>A404. UF2 Projecte I</title>
+</head>
+
+<body id="page-top">
+    <a id='redirect'></a>
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!--script src="../js/bootstrap.min.js"></script-->
+    <script src="js/bootstrap.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="js/jssor.js"></script>
+    <script src="js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("data/toReplace.json", "A404R", false);
+            var url = $("#redirect").attr("href")
+            window.location.replace(url);
+        });
+    </script>
+    
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

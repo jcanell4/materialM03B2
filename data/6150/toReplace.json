@@ -60,7 +60,7 @@
         "dataInici": {"type":"text", "value":"15/02/2018"},
         "dataFinal": {"type":"text", "value":"23/02/2018"},       
         "dataLimit": {"type":"text", "value":"03/03/2018"},
-        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumPrincipalUrl' href=\"#\">fòrum de discussió del període I</a>"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període I</a>"},
         "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=556806"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P1</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=556807"}
@@ -410,6 +410,9 @@
         "targetBlank":{"selector":".targetBlank", "defaultValue":"targetBlank"},
         "toActivityTable":{"selector":".toActivityTable", "type":"attr", "name":"href", "value":{"defaultValue":"toActivityTableUrl"}}
     },
+    "A404R": {        
+        "redirect":{"selector":"#redirect", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":[{"defaultValue":"projectDir"}, "A404_Uf2Projecte1.html?",{"defaultValue":"dataDir"}],"separator":""}}
+    },
     "A404": {        
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":{"type":"arrayText", "value":["<a href='", {"defaultValue":"projectDir"}, "A404_Uf2Projecte1.html?",{"defaultValue":"dataDir"},"'>A404</a>"],"separator":""}},
         "nomActivitat": {"selector":".nomActivitat", "type":"text", "value":"A404 Projecte I"},
@@ -500,6 +503,9 @@
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":[{"defaultValue":"projectDir"}, "A502_EstructuraDeDades.html?",{"defaultValue":"dataDir"}],"separator":""}},
         "targetBlank":{"selector":".targetBlank", "defaultValue":"targetBlank"},
         "toActivityTable":{"selector":".toActivityTable", "type":"attr", "name":"href", "value":{"defaultValue":"toActivityTableUrl"}}
+    },
+    "A502R": {        
+        "redirect":{"selector":"#redirect", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":[{"defaultValue":"projectDir"}, "A502_EstructuraDeDades.html?",{"defaultValue":"dataDir"}],"separator":""}}
     },
     "A502": {
         "idActivitat": {"selector":".idActivitat", "type":"html", "value":{"type":"arrayText", "value":["<a href='", {"defaultValue":"projectDir"}, "A502_EstructuraDeDades.html?",{"defaultValue":"dataDir"},"'>A502</a>"],"separator":""}},

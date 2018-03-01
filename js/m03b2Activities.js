@@ -17,32 +17,32 @@ if(hljs){
 }
 
 $(".iocnoteOpener a").hover(function(e) {
-    var $svgc = new SvgConnector();
+//    var $svgc = new SvgConnector();
     var $target = $("#"+this.dataset.target);
-    var $noteBy = $("#"+this.dataset.noteBy);
-    var $svgContainer = $("#svgContainerId");
+//    var $noteBy = $("#"+this.dataset.noteBy);
+//    var $svgContainer = $("#svgContainerId");
     var bcolor = $(".iocnoteSlidePane").css("border-color");
-    var $path = $("#pathId");
-    var $svg = $("#svgId");
+//    var $path = $("#pathId");
+//    var $svg = $("#svgId");
     
     $target.addClass("top").removeClass("toggle-off").fadeTo(500,1);
     
-    var pathCoord = $svgc.calculatePathCoord($svgContainer, $target, $noteBy);
-    while(pathCoord.endY - pathCoord.startY < 20){
-        $target.offset({top:$target.offset().top+10, left:$target.offset().left});
-        pathCoord = $svgc.calculatePathCoord($svgContainer, $target, $noteBy);
-    }
-    
-    $path.attr("stroke", bcolor);
-    
-    $svgc.drawPath($svg, $path , pathCoord.startX, pathCoord.startY
-                                        , pathCoord.endX, pathCoord.endY);
-    
-    $svgContainer.addClass("top").removeClass("toggle-off").fadeTo(500,1);
+//    var pathCoord = $svgc.calculatePathCoord($svgContainer, $target, $noteBy);
+//    while(pathCoord.endY - pathCoord.startY < 20){
+//        $target.offset({top:$target.offset().top+10, left:$target.offset().left});
+//        pathCoord = $svgc.calculatePathCoord($svgContainer, $target, $noteBy);
+//    }
+//    
+//    $path.attr("stroke", bcolor);
+//    
+//    $svgc.drawPath($svg, $path , pathCoord.startX, pathCoord.startY
+//                                        , pathCoord.endX, pathCoord.endY);
+//    
+//    $svgContainer.addClass("top").removeClass("toggle-off").fadeTo(500,1);
                                     
 }, function(e){
     $("#"+this.dataset.target).fadeTo(500,0).addClass("toggle-off").removeClass("top");
-    $("#svgContainerId").fadeTo(500,0).addClass("toggle-off").removeClass("top");
+//    $("#svgContainerId").fadeTo(500,0).addClass("toggle-off").removeClass("top");
 });
 
 SvgConnector = function(){

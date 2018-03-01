@@ -658,12 +658,13 @@ section.tasca,
     background: #eee;
 }
 
-.frameBoxHeader{
-    text-align: left;
+.frameBox .frameBoxHeader{
+    text-align: center;
     font-weight: bold;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 15px;
+    font-size: 105%;
 }
 
 .smallFont{

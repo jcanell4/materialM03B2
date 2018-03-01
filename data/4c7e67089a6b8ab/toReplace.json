@@ -56,7 +56,7 @@
         "dataLimit": {"type":"text", "value":"01/03/2017"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P1</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=432471"},
-        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumPrincipalUrl' href=\"#\">fòrum de discussió del període I</a>"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període I</a>"},
         "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=432470"}
     },        
     "RP2":{
