@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
+    <meta name="author" content="Josep Cañellas i Ferran Borrell ">
+    <title>A502. Estructura de dades i Gestor de Dades</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+    <link rel="stylesheet" href="../js/styles/default.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom CSS -->
+    <!--link to css slides-->
+    <link href="../css/m03b2Activities.css" rel="stylesheet">
+    <link href="../css/scrolling-slides.css" rel="stylesheet">
+    <link href="../css/highlightActivities.css" rel="stylesheet">
+</head>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top">
+<!-- Navigation hidden panel -->
+    <aside>
+        <a id="menu-toggle" href="#" class="btn btn-dark toggle after-top-menu" title="Informació"><i class="glyphicon glyphicon-info-sign"></i></a>
+        <nav id="sidebar-wrapper" class=" after-top-menu">           
+            <ul class="sidebar-nav">
+                <a id="menu-close" href="#" class="btn btn-light pull-right toggle">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                </a>
+                <li class="sidebar-brand">
+                    <a href="#slc-toStart"  onclick = '$("#menu-close").click();' >Inici activitat</a>
+                </li>
+                <li>
+                    <a href="#" onclick = 'return $("#goals_info").togglePanelOnClick();'>Objectius</a>
+                </li>
+                <li> 
+                    <a class="toActivityTable targetBlank" onclick = '$("#menu-close").click();'>Taula d'activitats</a>
+                </li>
+                <li>
+                    <a class="toProjectStatement" onclick = '$("#menu-close").click();' >Enunciat del projecte</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_reinforcement").togglePanelOnClick(); '>Per reforçar</a>
+                </li>
+                <li>
+                    <a href="#" onclick ='return $("#more_info").togglePanelOnClick(); '>Més informació per ampliar</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="bottom-wrapper">
+             <!-- SCROLL PREVIOUS BUTTON -->
+            <span id="prevArrow" class="btn arrownav previousSection" ></span>
+            <!-- END SCROLL PREVIOUS BUTTON -->
+             <!-- SCROLL NEXT BUTTON -->
+            <span id="nextArrow" class="btn arrownav nextSection" ></span>
+            <!-- END SCROLL NEXT BUTTON -->
+        </nav>        
+    </aside>
+    <!--=========== BEGIN HEADER SECTION ================-->
+     <header id="header">
+         <!-- BEGIN TOP MENU -->
+        <div class="menu_area">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+                <!-- LOGO -->
+                <span class="navbar-brand navbar-left logo-nav"><img src="../images/logo.png" title="{{$LOGO_TITLE}}" /></span>
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Menú</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
+                          <li class="active"><a href="#slc-toStart">Inici</a></li> 
+                          <li><a href="#slc-toDo">Tasques a realitzar</a></li>
+                          <li><a href="#slc-toDelivery">Lliurament</a></li> 
+                          <li><a href="#slc-toContinue">Com continuar</a></li> 
+                        </ul>           
+                    </div>
+                </div>     
+            </nav>  
+        </div>
+        <!-- END TOP MENU -->
+   </header>
+    <!--=========== END HEADER SECTION ================-->
+    
+    <!--=========== BEGIN MAIN SLIDER SECTION ================-->    
+    <div id="mainSlider" class="iocMainPanel">
+        <div class="slides">
+            <!--=========== BEGIN SECTION toStart ================-->    
+            <section id="slc-toStart" class="section">
+                <div class="container">  <!--Bootstrap container-->
+                    <!-- header -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Inici activitat A502 - Estructura de dades i gestor de dades</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- body -->            
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class=bodySlide>
+                                <p>En anteriors períodes heu anat realitzant tasques que sol·licitaven la implementació d'un conjunt de funcions soltes.</p>
+                                <p>En aquesta programarem les estructures que permetin gestionar les dades i implementarem les funcions per manipular-les, assegurant que sempre es mantindrà la seva coherència.</p>
+                                <p>Abans de començar, feu una bona rellegida a l'apartat FASE DE CONTROL DE TEMPS I GUANYADORS del projecte, a partir d'aquí ens adonarem que cal guardar la informació dels temps dels corredors en estructures de dades, així com la realització d'un seguit de funcions sobre aquestes dades.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toStart ================-->    
+            <!--=========== BEGIN SECTION implementació ================-->    
+            <section id="slc-toDo" class="vsections">
+                <!--=========== BEGIN SUBSECTION Tasca1 ================-->    
+                <section id="slc-estructuraDeDades1" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar - Estructura de dades i gestor de dades</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> Disseny de les estructures de dades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>A l'activitat <a class="A404ToDo20" target="_blank">A404</a> es van tractar variables tipus array de dues dimensions on s'emmagatzemaven participants en les files i dades del participant en les seves columnes:</p>
+                                    <pre><code class="java">
+String[][] participants = new String[NUM_PARTICIANTS][3];   // 3 Columnes = DNI, NOM I MOBIL
+                                    </code></pre>
+                                    <p>A mesura que apareixen més i més dades de la nostra aplicació aquestes tendeixen a començar a dispersar-se pel codi tot i estar relacionades entre elles. Estaria bé tenir una estructura que pogués aglutinar tota aquest conjunt de variables i tractar-ho tot sota un mateix nom.</p>
+                                    <p>La resposta a aquest dilema rep el nom de classe. Si us heu fixat, el vostre programa principal o main ja es troba dins d'una classe que té el mateix nom que el fitxer en la que està definida. Existeixen altres classes en el vostre projecte que no han de tenir per força una funció main d'entrada. Poden simplement tenir variables i funcions que s'utilitzaran des d'altres parts del codi del nostre projecte.</p>
+                                    <p>Unes línies més amunt hem vist una variable participants. Suposeu que també ens cal una altre variable que ens guardi el nom de l'edició de la cursa on corren els participants i no volem que vagin separades en el vostre codi si no encapsulades en una estructura més gran. La solució és crear una nova classe que les contingui. Per exemple:<p>
+                                    
+                                    <pre><code class="java">                            
+public class EstructuraDades {
+    // variables o atributs de la classe EstructuraDades
+    String[][] participants;
+    String edicio;
+}                                
+                                    </code></pre>
+                                    <p>Això pot sobtar si no s'ha vist mai. I més quan s'intenta entendre com es pot utilitzar aquestes variables declarades a la classe <em>EstructuraDades</em> en una classe diferent a la que executa el programa principal o fins i tot, en funcions de la mateixa. Veiem-ho al següent exemple:</p>
+                                    <pre>
+                                        <code class="java">
+public class Exemple{
+    static final int DNI = 0;    // Columna on s'emmagatzema el DNI a la matriu de corredors
+    static final int NOM = 1;    // Columna on s'emmagatzema el nom a la matriu de corredors
+    static final int MOBIL = 2;    // Columna on s'emmagatzema el número de mòbil a la matriu de corredors per tal de fer quadrar les posicions de la resta de dades.
+
+    public static void main(String[] args) {
+            Exemple programa = new Exemple();
+            programa.inici();
+    }
+
+    void inici(){
+// Declarem una variable contenedora de tipus EstructuraDades i al fer el new també queda creada o instanciada a memòria
+            EstructuraDades eD = new EstructuraDades();
+            inicialitzar(eD);
+            imprimir(eD);
+            System.out.println("Fi de programa");
+    }
+
+// Funció que rep com a paràmetre una variable de tipus EstructuraDades per a donar valor a les variables que conté.
+    void inicialitzar(EstructuraDades eD){
+        // La variable participants estava declarada dins eD però no creada
+        // per tant la instanciem o creem mitjançant el new i li donem valors
+        eD.participants = new String[3][3];
+        eD.participants[0][DNI] = "39889787V";
+        eD.participants[0][NOM] = "Son goku";
+        eD.participants[0][MOBIL] = "898989889";
+        eD.participants[1][DNI] = "666666666D";
+        eD.participants[1][NOM] = "Vegeta";
+        eD.participants[1][MOBIL] = "0000000001";
+        eD.participants[2][DNI] = "777777777S";
+        eD.participants[2][NOM] = "Son gohan";
+        eD.participants[2][MOBIL] = "111111111";
+
+        // Fem el mateix amb la variable restant
+        eD.edicio = "Cursa 2018";
+
+        // Les estructures de dades definides en classes es passen per referència, per tant qualsevol canvi realitzat 
+        // en les funcions que les reben com a paràmetre té efectes fora de les mateixes
+    }
+    
+    // Funció que rep com a paràmetre una variable de tipus EstructuraDades i n'imprimeix el resultat per pantalla
+    void imprimir(EstructuraDades eD){
+            // Exemple d'Accés a les dades dels participants
+            System.out.println(eD.edicio);
+            System.out.println("El nombre de participants és de "+eD.participants.length+" i són els següents:");
+            for (int i = 0; i &lt; eD.participants.length; i++ ){
+                    System.out.println("-----------------");
+                    System.out.println("PARTICIPANT " + i);
+                    System.out.println("-----------------");
+                    System.out.println("Nom: " + eD.participants[i][NOM]);
+                    System.out.println("DNI: " + eD.participants[i][DNI]);
+                    System.out.println("MOBIL: " + eD.participants[i][MOBIL]);
+            }        
+    } 
+}
+                                        </code>
+                                    </pre>
+                                    <p>Fixeu-vos que les funcions que no han declarat l'estructura de dades, necessiten rebre-la a través de paràmetre. Queda doncs clar, com es contenen dades relacionades dins d'una classe i com es poden utilitzar, entre d'altres formes que anireu aprenent, dins d'un programa Java. Ara ja ens podem centrar-nos a reflexionar sobre quines dades haurà de contenir l'estructura del nostre projecte.</p>
+                                    <p>Primer de tot, sabem que caldrà emmagatzemar en alguna variable de la <em>classe estructura de dades</em>, les dades dels corredors: DNI, nom i telèfon mòbil. <b>Mireu atentament els exemples explicats en aquesta mateixa pàgina</b> i no us hauria de ser molt difícil determinar el primer tipus de variable que cal utilitzar.</p>
+                                    <p>Pel que fa al segon tipus que intentarem esbrinar, caldrà primer que llegiu atentament l’apartat <b>FASE DE CONTROL DE TEMPS I GUANYADORS</b> de l’enunciat del projecte, per tal de rumiar com podem emmagatzemar, <b>per a cada corredor</b>:</p>
+                                    <ol class="nestedCounter">
+                                        <li>L'hora de sortida del poble</li>
+                                        <li>L'hora d'arribada al cim</li>
+                                        <li>L'hora de sortida del cim</li>
+                                        <li>L'hora d'arribada al poble (meta)</li>
+                                    </ol>
+                                    <p>Seguim encara decidint quines dades són les que formaran part de la nostra aplicació i que caldrà tenir ben ubicades a la classe <em>EstructuraDades.java</em></p>
+                                    <p>Ara tocaria descobrir com es pot representar el temps total emprat per cada corredor. per tal d’esbrinar la variable que el resolgui, plantegeu-vos la següent pregunta: Quin tipus primitiu dels que coneixeu (int, char, long, etc) és més adient per emmagatzemar internament el temps total que ha fet un corredor a la cursa? Un cop decidiu el tipus primitiu plantegem una segona pregunta: Com guardo tots aquests temps per tots els corredors sota un mateix nom? Quan trobeu la resposta, sabreu el tipus de la tercera variable de la vostra estructura de dades.</p>
+                                    <p>Finalment caldrà abordar com aconseguirem mantenir disponibles quins son els 5 primers corredors de la cursa. Per no complicar-nos la vida a l'hora de mantenir aquesta informació, ens plantejarem com podem emmagatzemar d'alguna forma (en alguna variable), la col·lecció dels números que ens indicaran <b>la posició dels 5 primers corredors</b>. Òbviament això serà un càlcul que haurà de fer el nostre programa però que s'haurà d'emmagatzemar en algun lloc, un cop calculat, a la classe de l'estructura de dades.</p>
+                                    <div class="frameBox">
+                                        <h4>Obriu un debat al <a class="forumDeDiscussioUrl" target="_blank" url="https://ioc.xtec.cat/campus/mod/forum/view.php?id=556828">fòrum de discussió del període VI</a> </h4>
+                                        <p>Feu una entrada en que argumenteu les dues variables i els seus tipus escollides per a emmagatzemar dins la vostra classe EstructuraDades.java, les dades dels participants i les hores corresponents als punts de control. Proposeu també, el tipus de variable més adequat que penseu que pot ajudar-vos a mantenir els temps finals de cada corredor i el el tipus de variable més adequat que us ajudarà a emmagatzemar la posició dels 5 primers classificats</p>
+                                        <p>Amb les conclusions que extrèieu del fòrum amb els vostres companys, guardeu-vos la solució que creieu més adequada per al vostre projecte. En la propera tasca continuarem donant forma a l’estructura de dades.</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-estructuraDeDades1" 
+                                            data-selector-clue="#slc-estructuraDeDades1-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-estructuraDeDades1-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>A <a class="A501ToDo30" target="_blank">l'activitat 501</a> se us ha fet programar, entre d’altres, dues funcions molt relacionades amb la representació de les hores, els minuts i els segons. </p>
+                                        <p>En concret les funcions treballaven amb tipus String que tenien el format “HH:MM:SS” on HH eren les hores, MM els minuts i SS els segons. Per exemple: “09:30:30” per a representar les nou i mitja del matí amb trenta segons.</p>
+                                        <p>Una d’aquestes dues funcions obtenia la hora actual en aquest format i l’altre convertia a format numèric la diferència entre dues hores expressades també en aquest format.</p>
+                                        <p>És bona idea mirar d’aprofitar al màxim la feina feta i pensar si aquesta solució ens pot servir per guardar els temps dels corredors en format String de cara a la programació del projecte.</p>                                        
+                                    </div>                                    
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-estructuraDeDades1" 
+                                            data-selector-clue="#slc-estructuraDeDades1-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-estructuraDeDades1-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Ja heu vist en l’exemple d’aquesta primera tasca que una forma molt còmoda d’emmagatzemar dades dels participants era mitjançant una taula d’Strings amb tantes files com corredors i tantes columnes com dades tenen aquests corredors.</p>
+                                        <p>La segona variable que ens demanen també compleix una forma semblant. Tenim molts corredors i per cadascun d’ells cal guardar quatre registres de temps parcial. </p>
+                                        <p>El temps emprat per jugador és també una col·lecció de dades, però fixeu-vos que en aquest cas cada corredor es relaciona només amb una única dada: els temps total emprat.</p>
+                                        <p>Finalment cal que us plantegeu qui tipus de variable pot emmagatzemar les posicions de 5 corredors.</p>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SUBSECTION Tasca1 ================-->    
+                <!--=========== BEGIN SECTION Tasca3 ================-->    
+                <section id="slc-estructuraDeDades3" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar- Estructura de dades i gestor de dades</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span> Estructura de dades. Versió final</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Ara que ja hem anat discutint amb els/les companys/es el tipus d'informació que haurem d'emmagatzemar, toca implementar la classe que contindrà totes aquestes variables.</p>
+                                    <div class="frameBox">
+                                        <h4>Creació del projecte</h4>
+                                        <p>Implementeu en un projecte nou de Netbeans la classe <em>EstructuraDades.java</em> que proposeu. Aquest serà el projecte sobre el que realitzarem tota la programació de la cursa de corredors. Feu per donar-li un nom adequat.</p>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION Tasca 3 ================--> 
+                
+                <!--=========== BEGIN SECTION Tasca4 ================-->    
+                <section id="slc-gestorDeDades1" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar- Estructura de dades i gestor de dades</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span>Què és un gestor de dades?</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Fins ara hem parlat de la necessitat de tenir totes les dades relacionades agrupades dins d'una classe. En el cas que ens ocupa hem dedicat les tasques anteriors a consensuar la millor manera de dissenyar la classe que mantindrà l'estructura de dades de la cursa.</p>
+                                    <p>Estretament relacionat amb les estructures de dades (encapsulades dins una classe) que puguem utilitzar en aquest projecte i en futures feines com a programadors, trobem als gestors de dades.</p>
+                                    <p>Els gestors de dades no són altre cosa que classes que s'encarreguen de definir un seguit de funcions o mètodes que treballen sobre les estructures de dades de l'aplicació.</p>
+                                    <p><em>Exemple: Suposem la següent estructura de dades en un fitxer java anomenada</em> Agenda.java</p>                                    
+                                    <pre><code class="java">
+public class Agenda {
+    static final int MAX_PERSONES = 500;
+    static final int NOM = 0;
+    static final int COGNOM = 1;
+    static final int TELEFON = 2;
+
+    String[][] persones;
+    int numPersones;
+}
+                                    </code></pre>
+                                    <p>Un possible exemple de Gestor de dades relacionat amb aquesta estructura de dades i que aglutinarà totes les funcions que treballen amb tipus de dades de tipus Agenda podria ser aquest: </p>
+                                    <pre><code class="java">
+public class GestorDades {
+        public Agenda crearAgenda(){
+            Agenda agenda = new Agenda();
+            agenda.persones = new String[Agenda.MAX_PERSONES][3];
+            agenda.numPersones = 0;
+            return agenda;
+        }
+        
+        public boolean afegirPersona(Agenda agenda, String nom, String cognom, String telefon){
+            if ( agenda.numPersones &gt;= Agenda.MAX_PERSONES ){
+                return false;
+            }
+            agenda.persones[agenda.numPersones][Agenda.NOM] = nom;
+            agenda.persones[agenda.numPersones][Agenda.COGNOM] = cognom;
+            agenda.persones[agenda.numPersones][Agenda.TELEFON] = telefon;
+            agenda.numPersones++;
+            return true;
+        }
+    }
+                                    </code></pre>
+                                    <p>A mesura que aneu aprenent programació orientada a objectes en els posteriors semestres anireu polint tota aquesta forma de treballar. Fins al moment el que veiem són dos fitxers o classes de Java que defineixen per un costat un conjunt de dades i per l'altre costat un conjunt de funcions que manipulen les variables del primer fitxer.</p>
+                                    <p>En tractar-se de fitxers diferents, sempre caldrà passar les dades per paràmetre a fi que l'estructura arribi al gestor i aquest en pugui manipular les dades. Adoneu-vos que això és possible perquè les dades en estar encapsulades en una classe (estructura de dades) es passaran sempre per referència.</p>
+                                    <p>Recordeu que les classe que fan el paper d'estructures de dades no contenen pròpiament les dades sinó que són les instàncies les que obtenen espai a la memòria i on s'emmagatzemen realment les dades. Ho vàreu veure a l'activitat A501 on s'explicava <a class="A501ToKnow50">la diferència entre classe i instancia</a> i fins i tot vàreu fer <a class="A501ToDo30">un exercici al respecte</a>.</p>
+                                    <p>A continuació us posem un exemple que us mostra com cal instanciar i fer servir les dades usant la l'estructura (classe de declara les variables) i el gestor de dades  (classe que les manipula).</p>
+                                    <pre><code class="java">
+public class TascaGestor { 
+    public static void main(String[] args){
+        TascaGestor tascaG = new TascaGestor();
+        tascaG.inici();
+    }
+
+    void inici(){
+        // Creació d'una variable de tipus gestor
+        GestorDades gestor = new GestorDades();
+        // El gestor retorna una variable del tipus de l'estructura de dades 
+        // definida per tal de poder-hi treballar
+        Agenda agenda = gestor.crearAgenda();
+        Scanner sc = new Scanner(System.in);
+        // A continuació inserirem 10 perseones a l'Agenda a través del seu gestor de dades
+        for ( int i = 0; i != 10; i++ ){
+            System.out.println("Introdueix nom persona " + (i+1) + " i prem ENTER: ");
+            String nom = sc.nextLine();
+            System.out.println("Introdueix cognoms persona " + (i+1) + " i prem ENTER: ");
+            String cognom = sc.nextLine();
+            System.out.println("Introdueix telèfon persona " + (i+1) + " i prem ENTER: ");
+            String telefon = sc.nextLine();
+            
+            // Una vegada tenim recollides les dades per a cada persona fem la inserció
+            // Si aquesta retorna un error mostrarem missatge per pantalla informant del problema
+            if ( !gestor.afegirPersona(agenda, nom, cognom, telefon) ){
+                System.out.println("Error en inserció persona " + i);
+            }
+        }
+    }
+}
+                                    </code>
+                                    </pre>
+                                    <p>En aquest codi principal veiem com es fa ús de les dades de les persones però utilitzant en tot moment el seu gestor de dades per a accedir i manipular la informació. Adoneu-vos com per accedir a les dades, primer cal crear una instància. Per accedir a les variables internes de la instancia creada, cal escriure el nom de la variable de la instància seguit d'un punt i del nom de la variable interna a la que es vol accedir.</p>
+                                    <p>De cara al projecte és evident que no utilitzarem ni aquest gestor de dades ni aquest tipus d'estructura de dades. De fet l'estructura de dades ja la teniu perfilada de la tasca anterior. El que pretenem aquí és que us familiaritzeu en la forma d'accedir a les dades de l'estructura des d'altres zones del codi, especialment des del gestor de dades associat.</p>
+                                    <p>Entrem de ple en la codificació del gestor de dades del nostre projecte. De moment hauríeu de tenir creat el projecte de NetBeans amb la classe que conté l'estructura de dades.</p>
+                                    <p>Ara us demanem que incorporeu també la classe <em>BaseDeDades.java</em> fent una còpia del codi que us mostrem a continuació:</p>
+                                    <pre><code class="java">                            
+public class BaseDeDades {
+    String[][] participants = {
+                {"64702078L", "Monserrat Arevalo De la corte", "649312120"},
+                {"31422674M", "Iris Oliveira Vilamadrid", "630474563"},
+                {"13289227B", "Ester Aloy Ojeda", "588456286"},
+                {"49344915W", "Estel Carrio Tantiña", "312355979"},
+                {"51093509K", "Anasti Villarejo Andujar", "909022599"},
+                {"95038192F", "Olegario Malik Bes", "489209226"},
+                {"82393239V", "Antonio Saldaña Arboix", "591549363"},
+                {"95851561G", "Carlota Garces Barrero", "940771284"},
+                {"82550835V", "Simeó Ontiveros Manchon", "216518746"},
+                {"31417888A", "Vicente Boix Campuzano", "315522748"}
+        };
+    int obtenirNumeroDeParticipants(){
+        return participants.length;
+    }
+    String[] obtenirParticipant(int i){
+        return participants[i];
+    }
+}                                
+                                    </code></pre>                                    
+                                    <p>En realitat no és res més que una simulació d’una base de dades real mitjançant la qual es farà la importació o còpia de tots els corredors a la nostra estructura de dades per tal de no haver-los d’introduir cada cop per teclat.</p>
+                                    <p>Ja esteu a punt de poder implementar el gestor de dades del projecte. Passeu a la següent tasca on se us donaran les instruccions pertinents.</p>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION Tasca 4 ================--> 
+                
+                <!--=========== BEGIN SECTION Tasca5 ================-->    
+                <section id="slc-gestorDeDades2" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 >Tasques a realitzar- Estructura de dades i gestor de dades</h2>
+                                     <h3 > <span class="tascaTitle">Tasca</span>Implementació del gestor de dades</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "bodySlide">
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class=bodySlide>
+                                    <p>En aquesta tasca haureu de fer la implementació del gestor de de dades de la nostra aplicació. Seguiu les instruccions del quadre:</p>
+                                    <div class="frameBox">
+                                        <h4>Implementació de GestorDades.java</h4>
+                                        <ol>
+                                                <li>Creeu una classe GestorDades.java dins el projecte d’aquest semestre juntament amb les classes que ja tenim creades <em>EstructuraDades.java</em> i <em>BaseDeDades.java</em></li>
+                                                <li>Definiu la funció per <b>importar les dades</b>. Aquesta funció actuarà també d'inicialitzador de l'estructura ja que, tal com diu l'enunciat, la importació s'ha de fer només una vegada a l'inici de l'execució de l'aplicació. Aprofitarem aquesta característica per fer que la funció instanciï les dades de forma coherent i seguidament importi les dades de dla base de dades i retorni la instància de l'estructura a punt per poder ser utilitzada. Per tant, la funció d'importació rebrà cap paràmetre però retornarà una instància de tipus EstructuraDades.</p>
+                                                <p>Quan, en un futur, des del programa principal feu la crida a la funció d'importació, recordeu de recollir la instància en una variable de manera que pugueu anar-la passat per paràmetre a les diferents funcions que la necessitin, correctament inicialitzada.</li>
+                                                <li>Definiu la funció <b>guardar l'hora de sortida</b>. Aquesta no retornarà res, però rebrà com a paràmetres la variable de tipus EstructuraDades del vostre projecte i l’hora en la que surten els corredors. En ella haureu de recórrer la variable pertinent de la vostra estructura de dades per tal de guardar-hi, per a cada corredor, la hora de sortida indicada, la qual, com indica l'enunciat, és la mateixa per tots. El tipus de variable en que es passa com a paràmetre l’hora, haurà de coincidir amb el definit en el seu moment dins de l’estructura de dades.</li>
+                                                <li>Definiu la funció <b>guardar l'hora d'arribada i sortida del cim</b>. Aquesta no retornarà res, però rebrà com a paràmetres la variable de tipus EstructuraDades del vostre projecte i la hora d’arribada al cim i de sortida al cim així com el dorsal o posició del corredor pel qual cal registrar aquesta informació. El tipus de variable en que es passa com a paràmetre l’hora, haurà de coincidir amb el definit en el seu moment dins de l’estructura de dades.</li>
+                                                <li>Definiu la funció <b>guardar l'hora d'arribada a meta</b>. Aquesta no retornarà res, però rebrà com a paràmetres la variable de tipus EstructuraDades del vostre projecte i la hora de finalització d’un corredor/a així com el dorsal o posició pel qual cal registrar aquesta informació. El tipus de variable en que es passa com a paràmetre l’hora, haurà de coincidir amb el definit en el seu moment dins de l’estructura de dades. </li>
+                                                <li>També caldrà crear una funció per calcular el temps acumulat un cop hagin estat entrats tots els registres de les hores de sortida i arribada. La funció  calcularà el temps acumulat per a cada corredor. No retornarà res però rebrà com a paràmetre la variable del tipus <em>EstructuraDades</em>.  El que farà és recórrer tots els temps o hores registrades de tots els corredors i en calcularà el temps final emprat. Aquests temps final emprat es deixarà guardat també dins l'estructura, en concret a la variable que servia per emmagatzemar els temps dels corredors definida a la tasca 2 d’aquest període.</li>
+                                                <li>La darrera funció serà aquella que s’encarregarà de realitzar el càlcul de les posicions dels cinc primers classificats. Utilitzarem com a paràmetre novament la variable del tipus de la nostra estructura de dades. En ella trobarem la variable interna que hem declarat per emmagatzemar-hi les 5 posicions un cop les hàgim calculat. És evident que per a calcular els cinc primers corredors caldrà saber abans el temps final de tots ells i per tant farà falta que s’hagi cridat prèviament la funció anterior abans d’invocar aquesta.</li>
+                                        </ol>
+                                        <p>És aconsellable verificar que totes les funcions implementades funcionen mitjançant, com a mínim, una crida des d'un programa de proves.</p> 
+                                    </div>
+                                    <p>A banda de les funcions esmentades podeu completar la classe <em>GestorDades.java</em> amb les funcions de suport que hagueu de menester. Recordeu que sempre és millor separar codi complex en porcions de codi més simples com s’ha vist en el tema de disseny descendent.</p>
+                                    </div> 
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-gestorDeDades2" 
+                                            data-selector-clue="#slc-gestorDeDades2-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-gestorDeDades2-clue1" class="iocClue hidden">
+                                        <h2>Pista 1</h2>
+                                        <p>Per a la implementació de la funció que calculi el temps total emprat per cada jugador, haureu de recórrer la variable que conté totes les hores en format “HH:MM:SS” de cada participant. </p>
+                                        <p>Recordeu que per a cada participant es registrarà la seva hora de sortida, la seva hora d’arribada al cim, la seva hora de sortida del cim i la seva hora d’arribada a meta.</p>
+                                        <p>Seria fàcil tenir un corredor que per exemple tingues:</p>
+                                        <ol>
+                                                <ul>Hora de sortida del poble: “08:00:00”</ul>
+                                                <ul>Hora d’arribada al cim: “10:30:00” </ul>
+                                                <ul>Hora de sortida del cim: “10:35:00” </ul>
+                                                <ul>Hora d’arribada a meta: “11:40:00” </ul>
+                                        </ol>
+                                        <p>Repasseu les funcions de <a class="A501ToDo20" target="_blank">l'activitat 501</a>. Recordeu que allà vàreu implementar una biblioteca de tractament de dades de tipus hora que ara us podrà anar bé per realitzar el càlcul.</p>
+                                        <p>Recordeu que per poder fer servir la biblioteca caldrà que copieu la classe que vàreu implementar, dins del projecte actual.</p>
+                                    </div>                                    
+                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-gestorDeDades2" 
+                                            data-selector-clue="#slc-gestorDeDades2-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-gestorDeDades2-clue2" class="iocClue hidden">
+                                        <h2>Pista 2</h2>
+                                        <p>Per trobar els cinc primers cal fer un repàs a tots els temps finals dels corredors. Si aquests es troben en segons facilitarà molt la comparativa entre ells.</p>
+                                        <p>La idea és emmagatzemar les posicions o índexs on es troben guardats els temps dels 5 corredors més ràpids o, dit d’una altre forma, els 5 temps més petits. Una vegada localitzats només caldrà guardar a la variable de la nostra estructura de dades, la posició d’aquests corredors per tal d’obtenir el rànquing de la cursa.</p>
+                                        <p>La metodologia podria consistir en cercar 5 vegades el temps menor, tenim en compte que a cada cerca cal ignorar els temps de les posicions ja emmagatzemades (trobades en una cerca anterior).</p>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=========== END SECTION Tasca 5 ================--> 
+            </section>
+            <!--=========== END SECTION implementació ================-->   
+
+            
+            <!--=========== BEGIN SECTION toDelivery ================-->    
+            <section id="slc-toDelivery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Lliurament - Estructura de dades i gestor de dades</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>En aquesta <b>Activitat 502</b> haureu de lliurar a la <span class="bustiaLliurament"></span> el projecte Netbeans implementat fins al moment. Haurà d'estar comprimit en format A502_Cognom_Nom.zip. Dins hi ha d'haver totes les classe necessàries per poder provar executar el codi que hàgiu implementat. Incloeu també el programa principal de proves que hàgiu usat per verificar la vostra implementació, tot i que només es qualificarà la correcta implementació de l'estructura de dades i del gestor de dades amb les seves funcions.</p>
+                                <p>Es recomana lliurar aquestes activitats abans de la data: <strong class='dataRecomanada'>04/04/2018</strong> i en tot cas mai després de la data límit: <strong class='dataLimit'>09/04/2018</strong></p>
+                                <p>Recordeu que aquesta activitat és qualificable i per tant té un pes important sobre la nota final.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toDelivery ================-->    
+            <!--=========== BEGIN SECTION toContinue ================-->    
+            <section id="slc-toContinue">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class= "headSlide">
+                                 <h2 >Com continuar - Estructura de dades i gestor de dades</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=bodySlide>
+                                <p>Un cop hàgiu lliurat les tasques demanades podreu passar a la següent <a class="toNextActivity">activitat</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--=========== END SECTION toContinue ================-->    
+        </div>
+    </div>
+    <!--=========== END MAIN SLIDER SECTION ================-->    
+
+    <!--=========== BEGIN META-INFO PANELS ================-->    
+    <div id="sidepanel-wrapper" class="left-position after-top-menu">
+        <a id="panel-close" href="#" class="panel-close btn btn-light pull-right toggle"><i class="glyphicon glyphicon-remove-circle"></i></a>
+        <div id="goals_info" class="bodySlide hidden"> 
+            <h2>Objectius d'aprenentatge de l'activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els objectius específics d'aprenentatge treballats en aquesta activitat</p>
+
+            <h2>Resultats d'aprenentatge del mòdul treballats en aquesta activitat</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran els resultats d'aprenentatge del mòdul que es treballen en aquesta activitat</p>
+        </div>
+        <div id="more_reinforcement" class="hidden"> 
+            <h2>Més activitats i idees per reforçar l'aprenentatge</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran exercicis, activitats, lectures o referencies externes per tal que l'estudiant, pugui reforçar el conceptes estudiats </p>
+        </div>
+        <div id="more_info" class="hidden"> 
+            <h2>Informació sobre funcions  per ampliar</h2>
+            <div class="marquee centerSlide iocwarning"> <img src="../images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
+            <p>Aquí s'afegiran lectures, activitats referències externes o bibliografia on l'estudiant, pugui ampliar l'aprenentatge si ho desitja</p>
+        </div>
+    </div>
+    <!--=========== END META-INFO PANELS ================-->    
+    
+    <!--=========== BEGIN EMPTY PANEL ================-->    
+    <div id="emptypanel-wrapper" class="right-position after-top-menu">
+    </div>
+    <!--=========== END EMPTY PANEL ================-->    
+    
+    <!--=========== BEGIN EMPTY MODAL WINDOW ================-->    
+    <div id="modalWindow" class="iocModal hidden">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-selector-to-set-class="#modalWindow" data-class-to-set-class="iocModal hidden" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--=========== END EMPTY MODAL WINDOW ================-->    
+
+    <!--=========== BEGIN EMPTY LEFT COLUMN PANEL ================-->    
+    <div id="leftColumnPanel" class="left-position column-panel after-top-menu">
+    </div>
+    <!--=========== END EMPTY LEFT COLUMN PANEL ================-->    
+
+    <!--=========== BEGIN EMPTY HIDDEN PANEL ================-->    
+    <div id="hiddenContent" class="hidden">
+    </div>
+    <!--=========== END EMPTY HIDDEN PANEL ================-->    
+
+    <!--=========== BEGIN SCRIPTS ================-->    
+    <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- highlight.js plugin -->
+    <script src="../js/highlight.pack.js"></script>
+
+    <!-- jssor.js plugin -->
+    <script src="../js/jssor.js"></script>
+    <script src="../js/jssor.slider.js"></script>
+    
+    <!-- to run jssor here-->
+    <script src="../js/jssorActivities.js"></script>
+
+    <!-- slides functionality-->
+    <script src="../js/scrolling-slides.js"></script>
+
+    <!-- specific functionality for IOC activities-->
+    <script src="../js/m03b2Activities.js"></script>
+
+    <!-- specific functionality for this activ¡ty-->
+    <script>
+        $(document).ready(function(){
+            var activityManager = new ActivityManager();
+            
+            activityManager.init("../data/toReplace.json", "A502");
+            var iocSlider = new IocSlider();
+            activityManager.updateDisplayButtons(iocSlider);
+        });
+    </script>
+    <!--=========== END SCRIPTS ================-->    
+
+</body>
+
+</html>
+

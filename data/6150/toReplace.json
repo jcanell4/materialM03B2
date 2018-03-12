@@ -115,7 +115,7 @@
         "dataLimit": {"type":"text", "value":"09/04/2018"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període V</a>"},
         "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=556828"},
-        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P5</a>"},
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P6</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=556829"}
     },        
     "RP7":{
@@ -125,7 +125,7 @@
         "dataLimit": {"type":"text", "value":"14/04/2018"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum del període VI</a>"},
         "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=556831"},
-        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P6</a>"},
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P7</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=556832"}
     },        
     "RP8":{
@@ -135,7 +135,7 @@
         "dataLimit": {"type":"text", "value":"20/04/2018"},
         "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període VII</a>"},
         "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=562588"},
-        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P7</a>"},
+        "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P8</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=562589"}
     },        
     "RPM":{
@@ -520,7 +520,10 @@
         "bustiaLliuramentUrl":{"selector":".bustiaLliuramentUrl", "type":"ref", "name":"RP6", "value":"bustiaLliuramentUrl"},
         "informeLliurament":{"selector":".informeLliurament", "type":"html", "value":"<a href='docs/InformeA502.odt'> l'informe </a>"},
         "toProjectStatement":{"selector":".toProjectStatement", "type":"attr", "name":"href", "value":{"defaultValue":"enunciatProjecteUrl"}},
+        "A404ToDo20":{"selector":".A404ToDo20", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":["A404_Uf2Projecte1.html?",{"defaultValue":"dataDir"}, "#slc-individuals__slc-individuals20"],"separator":""}},
+        "A501ToDo20":{"selector":".A501ToDo20", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":["../A501_ClassesBiblioteques.html?",{"defaultValue":"dataDir"}, "#slc-toDo__slc-toDo20"],"separator":""}},
         "A501ToDo30":{"selector":".A501ToDo30", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":["../A501_ClassesBiblioteques.html?",{"defaultValue":"dataDir"}, "#slc-toDo__slc-toDo30"],"separator":""}},
+        "A501ToKnow50":{"selector":".A501ToKnow50", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":["../A501_ClassesBiblioteques.html?",{"defaultValue":"dataDir"}, "#slc-toKnow__slc-toKnow50"],"separator":""}},
         "forumDeDiscussio":{"selector":".forumDeDiscussio", "type":"ref", "name":"RP6", "value":"forumDeDiscussio"},
         "forumDeDiscussioUrl":{"selector":".forumDeDiscussioUrl", "type":"ref", "name":"RP6", "value":"forumDeDiscussioUrl"},
         "toNextActivity":{"selector":".toNextActivity", "type":"attr", "name":"href", "value":{"type":"arrayText", "value":["../A503_AnalisiIPlanificacio.html?",{"defaultValue":"dataDir"}],"separator":""}},

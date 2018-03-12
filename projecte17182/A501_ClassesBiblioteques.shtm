@@ -11,19 +11,46 @@
                             <div class="col-lg-12">
                                 <div class=bodySlide>
                                     <p>Aquí us proposem crear una biblioteca de diverses utilitats que de ben segur podreu reutilitzar en el projecte. A fi de practicar el que heu anat descobrint, en aquesta activitat, us proposem la creació d'una biblioteca d'utilitats que no precisi la inicialització de la classe. És a dir que faci servir mètodes estàtics.</p>
-                                    <p>Us proposem que codifiqueu 2 funcions en una classe anomenada Utils:</p>
+									<p>Recordeu que per cridar a funcions o mètodes static no cal inicialitzar la classe i crear l'objecte, únicament posarem el nom de la classe amb el mètode que volem invocar.</p>
+									 <pre><code class="java">
+public class Utils {
+  //Funció static
+  static void funcioStatic(){ 
+      //implementació
+  }
+
+  //Funció no static
+  void funcioNoStatic(){
+    //implementació
+  }
+
+
+  
+public class Tasca2 {
+    public static void main(String[] args) {
+	     Tasca2 prg = new Tasca2();
+         prg.prova();
+     }
+    
+    void prova(){
+       //Així es crida a una funció static d'una altre classe nomClasse.nomfuncio
+       Utils.funcioStatic();
+       //Així es crida a una funció no static d'una altra classe, primer es crea un objecte de la classe i posteriorment amb aquest objecte ja tens accés a les funcions públiques no static de la classe.
+       Utils ut = new Utils();
+       ut.funcioNoStatic();
+    }
+
+ }
+</code></pre> 
+								
+                                    <p>Us proposem que codifiqueu 3 funcions en una classe anomenada Utils:</p>
                                     <ul>
-                                        <li>Funció <em>boolean <strong>hiHaChar</strong>(char valor, char[] valors)</em>. Aquesta funció està pensada per verificar si un determinat caràcter es troba en una col·lecció de caràcters, ambdues dades passades per paràmetre.  Cal que la funció retorni cert si el caràcter (primer paràmetre) es troba a l'array del segon paràmetre. Retornarà fals en cas contrari.</li>
-                                        <li>La funció <em>String <strong>seleccionarParaula</strong>()</em>. En aquest cas la funció rep un array de cadenes de text i en retorna una seleccionada a l'atzar. Per codificar-la investigueu la classe Random, la classe System i la classe Math. Podeu trobar informació aquí:
-                                            <ul>
-                                                <li><em>Random:</em> És una classe per generar valors aleatoris. Necessita un valor numèric anomenat llavor per generar un nombre infinit de nombres. Per tal que sembli realment aleatori cal que la llavor sigui diferent per cada execució. Sovint es fa sevir la hora del sistema o algun altre valor que canviï constantment i no sigui fàcil de repetir ni de deduir. Presteu especial atenció al: <a class="apiRandomRandom targetBlank">constructor Random(long llavor)</a> i <a class="apiRandomNextInt targetBlank">random.nextInt(int limit)</a>.</li>
-                                                <li><em>Math.random():</em> una funció estàtica de la classe Math que genera també valors decimals aleatoris compresos entre 0 (inclòs) i 1 (exclòs). No s'ha d'inicialitzar, però per contra és poc aleatori i només retorna valors decimals dins d'una rang molt petit. Per aconseguir altres rangs i/o tipus de dades diferents caldrà fer servir les utilitats del llenguatge i de les matemàtiques. Trobareu informació a <a class="apiMathRandomUrl">Math.random()</a>.</li>
-                                            </ul>
-                                        </li>
-                                        <li>Funció <em>void <strong>barrejarLletres</strong>(char[] valors)</em>. Aquesta funció està pensada per canviar aleatòriament l'ordre dels elements de l'array passat per paràmetre. La funció no té retorn, perquè manipula directament els elements del paràmetre. Com a l'anterior funció, disposeu de la classe Random i de la funció Math.random per implementar aquest funció.</li>
+                                        <li>Funció <em>static String <strong>obtenirHoraAra</strong>()</em>. Aquesta funció ens retornarà en forma de string l'hora actual al moment de ser cridada. El format de l'hora serà "hh:mm:ss".</li>
+                                        <li>La funció <em>static int <strong>obtenirDiferenciaComSegons</strong>(String horaInicial, String horaFinal)</em>. Aquesta funció rep dos paràmetres String (horaInicial i horaFinal) que són dues marques de temps amb format hh:mm:ss. La funció retornarà la diferència de temps, en segons, d'aquestes dos temps.</li>
+                                        <li>Funció <em>static boolean <strong>hiHaValor</strong>(int valor, int[] valors)</em>. Aquesta funció està pensada per verificar si un valor està continguta a un array. La funció rebrà dos paràmetres el valor a buscar i un array d'enters. La funció buscarà dintre del array el valor i si el troba retornarà un true, en cas contrari un false.</li>
                                     </ul>
                                     <p>A més de la classe <em>Utils</em>, haureu de fer també una classe anomenada Tasca2 que us permeti provar el bon funcionament de les funcions anteriors, a mode de joc de proves.</p>
-                                    <p>Finalment, per tal de completar la biblioteca, afegiu-hi les funcions de l'activitat A404 que ja teniu codificades i modifiqueu la definició per tal que fer que es comportin com a funcions estàtiques. De fet només es tractaria de copiar el codi de les 4 funcions i adaptar la declaració afegint-hi la paraula static al codi copiat. Així us queda una biblioteca acabada i a punt per fer servir en el projecte.</p>
+                                    <p>Finalment, per tal de completar la biblioteca, afegiu-hi les funcions de l'activitat A404 que ja teniu codificades i modifiqueu la definició per tal que fer que es comportin com a funcions estàtiques. De fet només es tractaria de copiar el codi de les 5 funcions i adaptar la declaració afegint-hi la paraula static al codi copiat. Així us queda una biblioteca acabada i a punt per fer servir en el projecte.</p>
                                     <!-- Button trigger pannel -->
                                     <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                             data-toggle="button"
@@ -34,24 +61,58 @@
                                     </button>                                        
                                     <div id="slc-toDo20-clue1" class="iocClue hidden">
                                         <h2>Pista 1</h2>
-                                        <ul>
-                                            <li>Per implementar la funció hiHaChar, cal que cerqueu el valor del caràcter passat per paràmetre entre tots els elements de l'array del segon paràmetre. En cas de trobar-lo avorteu la cerca i retorneu cert. En cas contrari caldrà arribar fins al final per estar segurs que no hi ha cap valor coincident.</li>
-                                            <li>Per seleccionar un element de l'array a l'atzar, caldrà obtenir un número aleatori comprés entre zero (inclòs) i la quantitat d'elements que tingui l'array (valor exclòs) i fer servir aquest número com a posició per obtenir el valor del seu element.</li>
-                                            <li>Per saber com barrejar les lletres del paràmetre, intenteu visualitzar la manera com barregem una pila de cartes. De fet, podem dir que les anem canviant de lloc sense preocupar-nos de la posició d'on venien ni de la posició on van. Fins i tot, si poguéssim seguir la trajectòria de  les cartes, potser ens adonaríem que alguna ha acabat exactament en el mateix lloc d'on partia. Però això no ens preocupa, perquè si remenem un nombre suficient de vegades, segur que aconseguirem canviar l'ordre inicial de les cartes. Feu un plantejament semblant amb les lletres, intercanvieu aleatòriament les seves posicions un nombre suficient de vegades, com per assegurar que es perdrà l'ordre original.</li>
-                                        </ul>
+										<h3>obtenirHoraAra</h3>
+                                        <p>Per implementar la funció obtenirHoraAra, podeu fer servir diverses classes de java, les més típiques són java.util.Calendar i java.util.Date, les dues proveeixen funcions que recuperen la data i hora d'avui amb precisió de mil·lisegons. Caldria posteriorment donar format a aquesta data per únicament extreure i en format correcte hh:mm:ss. Per fe això ja coneixeu una funció de la classe String que es diu format.</p>
+										<p>A aquest document teniu informació de com formata cadenes i al quadre següent com formatar dates i hores</p>
+										<p>Es pot fer servir %T en comptes de %t de la taula de sota per fer servir majúscules.</p>
+										<table  class="table table-striped">
+										<tr  class="warning"><th>Etiquetes</th><th>Notes</th></tr>
+ <tr><td>%tA</td><td>	Nom complet del dia de la setmana p.e. “Sunday“, “Monday“</td></tr>
+ <tr><td>%ta</td><td>	Abreviatura del dia de la setmana p.e. “Sun“, “Mon“, etc.</td></tr>
+ <tr><td>%tB</td><td>	Nom complet del mes “January“, “February“, etc.</td></tr>
+ <tr><td>%tb</td><td>	Abreviatura del mes p.e. “Jan“, “Feb“, etc.</td></tr>
+ <tr><td>%tC</td><td>	Segle formatat amb dos digits p.e. “00” through “99”.</td></tr>
+ <tr><td>%tc</td><td>	Data i hora formatar amb “%ta %tb %td %tT %tZ %tY” p.e. “Fri Feb 17 07:45:42 PST 2017“</td></tr>
+ <tr><td>%tD</td><td>	Data formatada com “%tm/%td/%ty“</td></tr>
+ <tr><td>%td</td><td>	Dia del mes amb dos digits p.e. “01” to “31“.</td></tr>
+ <tr><td>%te</td><td>	Dia del mes sense 0  davant del digit p.e. “1” to “31”.</td></tr>
+<tr><td>%tF</td><td>	Format de data ISO 8601 amb “%tY-%tm-%td“.</td></tr>
+<tr><td>%tH</td><td>	Hora del dia en 24-hores p.e. “00” to “23“.</td></tr>
+<tr><td>%th</td><td>	El mateix que %tb.</td></tr>
+<tr><td>%tI</td><td>	Hora del dia amb 12 hores p.e. “01” – “12“.</td></tr>
+<tr><td>%tj</td><td>	Dia de l'any sense el 0 davant p.e. “001” to “366“.</td></tr>
+<tr><td>%tk</td><td>	Hora del dia en 24 hores sense o davant p.e. “0” to “23“.</td></tr>
+<tr><td>%tl</td><td>	Hora del dia en 12 hores sense o davant p.e. “1” to “12“.</td></tr>
+<tr><td>%tM</td><td>	Minuts del dia amb  davant p.e. “00” to “59“.</td></tr>
+<tr><td>%tm</td><td>	Mes amb el 0 davant p.e. “01” to “12“.</td></tr>
+<tr><td>%tN</td><td>	Nanosegons amb 9 dígits p.e. “000000000” to “999999999”.</td></tr>
+<tr><td>%tp</td><td>	Marca local “am” or “pm”.</td></tr>
+<tr><td>%tQ</td><td>	Mil·lisegons des de Jan 1 , 1970 00:00:00 UTC.</td></tr>
+<tr><td>%tR</td><td>	Temps formatat en 24-hores p.e. “%tH:%tM“.</td></tr>
+<tr><td>%tr</td><td>	Temps formatat en 12-hores p.e. “%tI:%tM:%tS %Tp“.</td></tr>
+<tr><td>%tS</td><td>	Segons formatat amb 2 dígits  “00” to “60”. “60” is required to support leap seconds.</td></tr>
+<tr><td>%ts</td><td>	Segons des de Jan 1, 1970 00:00:00 UTC.</td></tr>
+<tr><td>%tT</td><td>	Temps formatat com 24 hores p.e. “%tH:%tM:%tS“.</td></tr>
+<tr><td>%tY</td><td>	Any formatat amb 4 dígits p.e. “0000” to “9999“.</td></tr>
+<tr><td>%ty</td><td>	Any formatat amb 2 dígits p.e. “00” to “99“.</td></tr>
+<tr><td>%tZ</td><td>	Abreviació de la zona de temps. p.e. “UTC“, “PST“, etc.</td></tr>
+<tr><td>%tz</td><td>	Diferencia de la zona de temps GMT p.e. “-0800“.</td></tr>
+</table>
+										<h3>obtenirDiferenciaComSegons</h3>
+                                        <p>La idea en aquesta funció és poder restar els dos temps passats per paràmetres i retornar els segons de diferència. Una forma seria passar el temps a segons d'ambdós paràmetres i després restar-los. Per aconseguir separa hores, minuts i segons, podeu fer servir una funció de String.substring que ens permet agafar parts d'un strings.</p>
+ <pre><code class="java">
+<p>String s="java";
+System.out.println(s.substring(0,2));// imprimiria ja
+  que permet dividir el string en parts, String
+</p>										
+</code>
+										<h3>hiHaValor</h3>
+                                        <p>Aquesta funció haureu de buscar dintre d'un array si existeix un valor. Haureu de recorre l'array posició a posició i quan trobeu el valor podeu sortir del bucle que recorre el array i retornar un true. En cas d'arribar al final de l'array sense trobar el valor, retornareu un false.</p>
+										
+
+
+                                           
                                     </div>  
-                                    <!-- Button trigger pannel -->
-                                    <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
-                                            data-toggle="button"
-                                            data-parent-selector="#leftColumnPanel"
-                                            data-display-on-set-slide="slc-toDo20" 
-                                            data-selector-clue="#slc-toDo20-clue2">
-                                        Pista 2
-                                    </button>                                        
-                                    <div id="slc-toDo20-clue2" class="iocClue hidden">
-                                        <h2>Pista 2</h2>
-                                        <p>Si feu servir la classe Random, disposa d'un mètode que permet obtenir valors enters compresos entre el valor zero i un límit màxim. En canvi si feu servir Math.random, caldrà realitzar el càlcul oportú per aconseguir el rang adequat. Hem de tenir en compte que el valor retornat es troba entre 0 (inclòs) i 1 (exclòs). A més, podem provar que en multiplicar qualsevol número per un valor comprés entre zero i la unitat obtenim un rang de números compresos entre zero i el valor multiplicat. Per exemple si multipliquem 100 per la unitat obtenim el valor 100 i si el multipliquem per zero obtenim el valor zero. Pe qualsevol altre valor entre 0 i 1, obtindrem números limitats pels valor obtinguts en les multiplicacions per 0 i 1.</p>
-                                    </div>                                      
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
                                             data-parent-selector="#leftColumnPanel"
@@ -62,167 +123,84 @@
                                     <div id="slc-toDo20-solution" class="iocSolution hidden">
                                     <p>Classe Utils:</p>
                                         <pre><code class="java">
+										
 public class Utils {
 
-    static boolean hiHaChar(char valor, char[] valors){
+     static String obtenirHoraAra(){
+        Calendar calendar = Calendar.getInstance();
+        return String.format("%tH:%tM:%tS", calendar, calendar, calendar);
+    }
+    
+    static int obtenirDiferenciaComSegons(String horaInicial, String horaFinal){
+        return obtenirHoraComSegons(horaFinal) - obtenirHoraComSegons(horaInicial);        
+    }
+    
+    static int obtenirHoraComSegons(String hora){
+        int hores;
+        int minuts;
+        int segons;        
+        segons = Integer.parseInt(hora.substring(6, 8));
+        minuts = Integer.parseInt(hora.substring(3, 5));
+        segons += minuts*60;
+        hores = Integer.parseInt(hora.substring(0, 2)); 
+        segons += hores*60*60;
+        return segons;
+    }    
+    
+    static boolean hiHaValor(int valor, int[] valors){
         boolean ret=false;
         int pos=0;
-        while(!ret && pos&lt;valors.length){
+        while(!ret && pos<valors.length){
             ret= valors[pos] == valor;
             ++pos;
         }
         return ret;
     }
-    
-    static void barrejarLletres(char[] lletres) {
-        Random random = new Random(System.nanoTime());
-        int max = lletres.length*2;
-        for(int i=0; i&lt;max; i++){
-            //int i1 = (int)(lletres.length*Math.random());  //versió Math.random
-            int i1 = random.nextInt(lletres.length);         //versió Random
-            //int i2 = (int)(lletres.length*Math.random());  //versió Math.random
-            int i2 = random.nextInt(lletres.length);         //versió Random
-            char aux = lletres[i2];
-            lletres[i2] = lletres[i1];
-            lletres[i1] = aux;
-        }
-    }  
-
-    static String seleccionarParaula(String[] paraules){
-        Random random = new Random(System.currentTimeMillis());
-        //int iParaula = (int)(paraules.length*Math.random());  //versió Math.random
-        int iParaula = random.nextInt(paraules.length);         //versió Random
-        return paraules[iParaula];    
-    }
-    
-    static int obtenirPosDiferencia(String paraula, int posInicial, String intent) {
-        boolean error=false;
-        int pos=0;
-        while(!error && pos&lt;intent.length()){
-            if(paraula.charAt(posInicial+pos)!=intent.charAt(pos)){
-                error = true;
-            }else{
-                pos++;
-            }
-        }
-        return pos;
-    }
-    
-    static String concatenaParaulesFinsMida(String paraula1, String paraula2, int posicioMax) {
-        for(int i=0; i&lt;posicioMax; i++){
-            paraula1 += paraula2.charAt(i);
-        }
-        return paraula1;
-    }
-
-    static void eliminarChars(char[] lletresDesordenades, String paraula, int posicioMax) {
-        for(int i=0; i&lt;posicioMax; i++){
-            eliminarChar(lletresDesordenades, paraula.charAt(i));
-        }
-    }
-   
-    static void eliminarChar(char[] lletresDesordenades, char charAt) {
-        int pos=0;
-        while (pos&lt;lletresDesordenades.length && lletresDesordenades[pos]!=charAt) {
-            pos++;            
-        }
-        if(pos&lt;lletresDesordenades.length){
-            lletresDesordenades[pos]=0;
-        }
-    }
 }
                                         </code></pre>                         
                                         <p>Classe Tasca2 de prova:</p>
                                         <pre><code class="java">
+
+import java.util.Arrays;
+import static javaapplication60.Utils.*;
 public class Tasca2 {
-    
+   
      static void main(String[] args) {
          Tasca2 prg = new Tasca2();
          prg.prova();
      }
     
     void prova(){
-        String valorText;
-        int valorInt;
-        boolean  valorLogic;
-        char  valorChar;
+		String horaInicial, horaFinal;
+        String horaActual = Utils.obtenirHoraAra();  
+        System.out.println("Hora Actual: "+horaActual);
         
-        char[] valorsCh ={'a', 'à', 'á', 'â', 'ä'};
-        valorChar = 'a';
-        valorLogic = Utils.hiHaChar(valorChar, valorsCh);
-        mostrarResultatHiHaChar(valorChar, valorsCh, valorLogic);
-        mostrarVerificacioHiHaChar(valorLogic, true);
-        
-        valorChar = 'e';
-        valorLogic = Utils.hiHaChar(valorChar, valorsCh);
-        mostrarResultatHiHaChar(valorChar, valorsCh, valorLogic);
-        mostrarVerificacioHiHaChar(valorLogic, false);
-        
-        String[] valorsStr = {"Element 1", "Element 2", "Element 3", "Element 4"};
-        valorText = Utils.seleccionarParaula(valorsStr);
-        mostrarResultatSeleccionarParaula(valorText, valorsStr);
-        
-        valorText = "PARAULA";
-        valorsCh = valorText.toCharArray();
-        Utils.barrejarLletres(valorsCh);
-        mostrarResultatBarrejarLletres(valorText, valorsCh);
+        horaInicial="10:00:25";
+        horaFinal="10:00:50";
+        System.out.println("Diferencia segons entre: 10:00:25 i 10:00:50 -> "+ Utils.obtenirDiferenciaComSegons(horaInicial, horaFinal)+ " segons");
+
+        horaInicial="08:00:25";
+        horaFinal="12:10:50";
+        System.out.println("Diferencia segons entre: 10:00:25 i 10:00:50 -> "+ Utils.obtenirDiferenciaComSegons(horaInicial, horaFinal)+ " segons");
+
+        horaInicial="08:00:25";
+        horaFinal="23:10:50";
+        System.out.println("Diferencia segons entre: 10:00:25 i 10:00:50 -> "+ Utils.obtenirDiferenciaComSegons(horaInicial, horaFinal)+ " segons");
+
+
+        int[] valorsInt ={1,5,3,4,12,6,8,9,12};
+        int valorBuscar=5;
+        System.out.println("Està el valor "+valorBuscar+" a l'array "+Arrays.toString(valorsInt)+ " "+Utils.hiHaValor(valorBuscar, valorsInt));
+        valorBuscar=14;
+        System.out.println("Està el valor "+valorBuscar+" a l'array "+Arrays.toString(valorsInt)+ " "+Utils.hiHaValor(valorBuscar, valorsInt));
+        valorBuscar=4;
+        System.out.println("Està el valor "+valorBuscar+" a l'array "+Arrays.toString(valorsInt)+ " "+Utils.hiHaValor(valorBuscar, valorsInt));
+       
+        System.out.println("Diferencia entre començament execució i aquesta linia en segons: " + Utils.obtenirDiferenciaComSegons(horaActual, Utils.obtenirHoraAra()+ " segons"));
         
     }   
  
-    void mostrarResultatHiHaChar(char valorChar, char[] valors, boolean valorLogic) {
-        String hiESNoHiEs = valorLogic?" és a la col·lecció ": "  no és a la col·lecció ";
-        System.out.print("La funció mostrarResultatHiHaChar a dictaminat que el valor '");
-        System.out.print(valorChar);
-        System.out.print("'");
-        System.out.print(hiESNoHiEs);
-        System.out.print("{");
-        for(int i=0; i&lt;valors.length; i++){
-            if(i>0){
-                System.out.print(", ");
-            }
-            System.out.print(valors[i]);
-        }
-        System.out.println("}");
-    }
-
-    void mostrarVerificacioHiHaChar(boolean valorObtingut, boolean valorEsperat) {
-        if(valorObtingut==valorEsperat){
-            System.out.println("*** la funció concatenaParaulesFinsMida funciona correctament ***");
-        }else{
-            System.out.println("*** la funció concatenaParaulesFinsMida NO ACABA de funcionar bé ***");
-        }
-        System.out.println(); 
-    }
-
-    void mostrarResultatSeleccionarParaula(String valorText, String[] valors) {
-        System.out.print("El valor ");
-        System.out.print(valorText);
-        System.out.print(" es troba entre els valors ");
-        System.out.print("{");
-        for(int i=0; i&lt;valors.length; i++){
-            if(i>0){
-                System.out.print(", ");
-            }
-            System.out.print(valors[i]);
-        }
-        System.out.println("}");
-        System.out.println(); 
-    }
-
-    void mostrarResultatBarrejarLletres(String paraula, char[] valors) {
-        System.out.print("Després de barrejar les lleteres de la paraula  ");
-        System.out.print(paraula);
-        System.out.print(" tenim les lletres en lordre següent: ");
-        System.out.print("{");
-        for(int i=0; i&lt;valors.length; i++){
-            if(i>0){
-                System.out.print(", ");
-            }
-            System.out.print(valors[i]);
-        }
-        System.out.println("}");
-        System.out.println(); 
-    }
+   
 }
                                         </code></pre>
                                     </div>                                    
