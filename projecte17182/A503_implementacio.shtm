@@ -1,10 +1,10 @@
-            <!--=========== BEGIN SECTION toDo10 ================-->    
+            <!--=========== BEGIN SECTION toDo10 ================-->    <!--
             <section id="slc-toDo10" class=" section">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Tasques individuals - Introducció</h2>
+                                 <h2 >Tasques del projecte - Introducció</h2>
                              </div>
                         </div>
                     </div>
@@ -25,15 +25,24 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Tasques individuals - Esquema de mòduls, tasques i disseny descendent</h2>
+                                 <h2 >Tasques del projecte - Esquema de mòduls, tasques i disseny descendent</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-                                <p>Aquí us demanem que dissenyeu un esquema semblant al realitzat a l'exemple vist en el <a href="#slc-discussion__slc-discussion23" target="_blank">fòrum 4</a> on quedi ben establert quins mòduls i quines tasques necessitarà el vostre codi. En els mòduls descriviu-hi els menús que necessitaran i a les tasques, indiqueu de forma descriptiva quines accions requeriran per poder-les dur a terme.</p>
-                                <p>Per realitzar l'esquema, rellegiu i tingueu present el que demana l'enunciat. Recordeu que des del menú principal es poden escollir 4 opcions: configurar, jugar, obtenir ajuda i sortir. La majoria d'aquestes opcions es corresponen amb processos força senzills, excepte la opció jugar que serà necessari descompondre-la força més. Podeu escriure els esquemes (de mòduls i tasques i el del disseny descendent) en un document de text. Es tracta d'una ajuda per detectar quines funcions us permetran implementar l'aplicació i com cal organitzar-les. Resseguiu mentalment la funcionalitat i els procediments descrits i comproveu que tots ells es troben representats per una tasca o una acció, assegurant així que el vostre esquema està complert.</p>
+                                <p>Seguint les reflexions i conclusions que hàgiu extret de les tasques anteriors, caldrà que feu l'esquema de mòduls i tasques, els dissenys descendents de les tasques complexes que ho requereixin i implementeu l'esquelet de les principals funcions del vostre projecte. </p>
+                                <p>Aquí us demanem que comenceu per l'esquema de moduls i tasques, de manera semblant al realitzat a l'exemple vist a la <a href="#slc-discussion__slc-discussion23" target="_blank">tasca 3</a> on quedi ben establert quins mòduls i quines tasques necessitarà el vostre codi. En els mòduls descriviu-hi els menús que necessitaran i a les tasques, indiqueu de forma descriptiva quines accions requeriran per poder-les dur a terme.</p>
+                                <p>Per realitzar l'esquema, rellegiu i tingueu present el que demana l'enunciat. Recordeu que des del menú principal es poden escollir 5 opcions:</p>
+                                <ol>
+                                    <li> introducció de l'hora de sortida inicial</li> 
+                                    <li>introducció de les hores d'arribada i sortida de l'etapa intermèdia</li>
+                                    <li>introducció de l'hora d'arribada</li>
+                                    <li>llista de guanyadors</li> 
+                                    <li>tancament de l'aplicació</li>
+                                </ol>
+                                <p>Són opcions força senzilles, potser trobar la llista de guanyadors tingui una complexitat una mica major i per tant serà necessari descompondre-la més. Podeu escriure l'esquema d'implementació (de mòduls i tasques) i el del disseny descendent en un document de text. Recordeu que es tracta d'una ajuda per detectar quines funcions us permetran implementar l'aplicació i com cal organitzar-les. Resseguiu mentalment la funcionalitat i els procediments descrits i comproveu que tots ells es troben representats per una tasca o una acció, assegurant així que el vostre esquema està complet..</p>
                                 <p>Un cop definit l'esquema intenteu detectar quines tasques necessitaran disseny descendent. Segur que les tasques senzilles no necessitaran desplegar tot un disseny descendent, perquè la mateixa descripció de les seves accions actuaran de disseny descendent. En canvi les accions de les tasques complexes us costaran de concretar i serà necessari detallar-les en diferents nivell en un esquema a part, el del disseny descendent (vegeu l'activitat <span class="A405">A405</span> com a recordatori de com plasmar un disseny descendent).</p>
                                 <!-- Button trigger pannel -->
                                 <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
@@ -41,14 +50,74 @@
                                         data-parent-selector="#leftColumnPanel"
                                         data-display-on-set-slide="slc-toDo20" 
                                         data-selector-clue="#slc-toDo20-clue1">
-                                    Pista
+                                    Pista 1
                                 </button>                                        
                                 <div id="slc-toDo20-clue1" class="iocClue hidden">
-                                    <h2>Pista</h2>
+                                    <h2>Pista 1</h2>
                                     <p>En referència al nombre de mòduls que l'aplicació hauria de tenir, cal pensar que el prototipus demanat és una aplicació senzilla i segurament, serà correcte aglutinar tota la funcionalitat demanada, en un únic mòdul. Podeu optar per altres solucions, però aquesta us resultarà més senzilla d'implementar.</p>
                                     <p>Les tasques es desprenen de l'enunciat i també del petit resum que s'ha fet aquí. Assegureu-vos que no se us n'escapa cap. Recordeu que d'acord amb la nomenclatura convinguda, les tasques són elements funcionals independents que es poden executar sense necessitat de seguir un ordre preestablert. Habitualment les tasques es troben associades a l'execució d'una opció de menú, encara que hi poden haver excepcions.</p>
                                     <p>Finalment, en referència a les accions, no li doneu massa voltes, si no les veieu massa clares, feu una descripció seqüencial del procediment necessari per dur a terme la funcionalitat de la tasca i en detallar el disseny descendent d'aquestes, ja us sortiran a mida que aneu baixant de nivell.</p>
-                                    <p>Intenteu detectar les tasques complexes. De fet llegint l'enunciat podeu veure que la majoria d'elles són tasques senzilles a excepció d'una d'elles, la que concentra el procediment específic del joc. Per aquesta, detalleu-ne el disseny descendent seguint les indicacions de l'enunciat i les instruccions de l'activitat <span class="A405">A405</span>.</p>
+                                    <p>Intenteu detectar les tasques complexes. De fet llegint l'enunciat podeu veure que la majoria d'elles són tasques senzilles. La que és una mica més complexitat seria la de trobar els guanyadors, ja que intervindran més accions. Per aquesta, detalleu-ne el disseny descendent seguint les indicacions de l'enunciat i les instruccions de l'activitat  <span class="A405">A405</span>.</p>
+                                </div>  
+								 <button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
+                                        data-toggle="button"
+                                        data-parent-selector="#leftColumnPanel"
+                                        data-display-on-set-slide="slc-toDo20" 
+                                        data-selector-clue="#slc-toDo20-clue2">
+                                    Pista 2
+                                </button>                                        
+                                <div id="slc-toDo20-clue2" class="iocClue hidden">
+                                    <h2>Pista 2</h2>
+                                       <div class="tablescope">
+										<p>Si agafem com a referència l'Aplicació de comunicació per a mòbils vista anteriorment i tal com hem comentat aquest disseny, per la seva senzillesa es pot implementar amb un únic mòdul. </p>
+										<p>Amb aquesta pista no pretenem que seguiu l'esquema posterior, evidentment cadascun pot tenir un disseny perfectament vàlid amb unes accions totalment diferents. </p>
+                                         <table id="tableEsquMod" border="1" cellspacing="0" cellpadding="1">
+                                             <tr> 
+                                                <td rowspan="4"> <!--[1-5][1] -->
+                                                    <p><strong>Aplicació Cursa Popular</strong></p>
+                                                    <p>Opcions:</p>
+                                                    <ul>
+                                                        <li>1.1 Temps Sortida inicial  </li>
+                                                        <li></li>
+														<li></li>
+														<li></li>
+                                                    </ul>
+                                                </td>
+                                                <td> <!--[1][3] (op. 1.1) -->
+                                                    <p><em>1.1. Temps Sortida inicial </em></p>
+                                                    <ul>                                                       
+                                                        <li>Descriviu aquí les accions creieu que caldria implementar per aconseguir dur a terme la opció indicada.</li>
+                                                        <li>...</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> <!--[2][3] (op. 1.2) -->
+                                                    <p><em>1.2 </em></p>
+                                                    <ul>
+                                                        <li>...</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> <!--[2][3] (op. 1.2) -->
+                                                    <p><em>1.3 </em></p>
+                                                    <ul>
+                                                        <li>...</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td> <!--[2][3] (op. 1.2) -->
+                                                    <p><em>1.4</em></p>
+                                                    <ul>
+                                                        <li>...</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                         </table>
+                                         <br/>
+                                     </div>
                                 </div>  
                             </div>
                         </div>
@@ -62,7 +131,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Tasques individuals - Codificació de l'esquelet de classes i funcions del projecte</h2>
+                                 <h2 >Tasques del projecte - Codificació de l'esquelet de classes i funcions del projecte</h2>
                              </div>
                         </div>
                     </div>
@@ -71,25 +140,68 @@
                             <div class=bodySlide>
                                 <p>Agafeu de base l'esquema de mòduls i tasques per començar a implementar l'esquelet de classes. Recordeu que la creació de l'esquelet no implica haver d'implementar el codi dels mètodes de les classes que creareu, sinó que consisteix en declarar les funcions (indicant el nom, els paràmetres i el retorn, però deixant buit el codi intern) que hàgim previst a partir del disseny.</p>
                                 <p>En ser el primer esquelet que feu, us demanarem que escriviu un comentari descriptiu en les classes i els mètodes que finalment declareu. La memòria sovint juga males passades,  però si tenim les coses apuntades aconseguirem recordar els detalls que ens varen dur a prendre tal o qual decisió i la implementació serà molt més àgil.</p>
-                                <p>El resultat que haureu d'obtenir serà un projecte de Netbeans amb les classes que hàgiu decidit (una per cada mòdul) i dins de cada classe l'esquelet de les funcions on codificareu la seva funcionalitat seguint l'esquema de mòduls i tasques. Per descomptat aquestes classes no seran funcionals, no les podreu executar, però us estructuraran el codi que haureu d'acabar escrivint.</p>
-                                <p>Un cop declarades les classes i els mètodes a partir del disseny, afegiu-hi també (si les teniu en un projecte a part) les classes que hàgiu implementat fins ara:</p>
+                                <p>El resultat que haureu d'obtenir serà un projecte de Netbeans amb les classes que hàgiu decidit i dins de cada classe l'esquelet de les funcions on codificareu la seva funcionalitat seguint l'esquema de mòduls i tasques. Per descomptat aquestes classes no seran funcionals, no les podreu executar, però us estructuraran el codi que haureu d'acabar escrivint.</p>
+                                <p>Un cop declarades les classes i els mètodes a partir del disseny, afegiu-hi també (si les teniu en un projecte a part) les classes del projecte que hàgiu anat implementant en activitats anteriors:</p>
                                 <ul>
-                                    <li>L'estructura de dades</li>
-                                    <li>El gestor de les dades</li>
-                                    <li>La biblioteca d'utilitats</li>
+                                    <li>Biblioteques estàtiques</li>
+                                    <li>Estructura de dades</li>
+                                    <li>Gestor de dades</li>
                                 </ul>
                                 <!-- Button trigger pannel -->
                                 <button type="button" class="btn btn-warning btn-lg toggle-off  btn-3d" 
+                                        data-parent-selector="#leftColumnPanel"
+                                        data-display-on-set-slide="slc-toDo30" 
+                                        data-selector-advice="#slc-toDo30-advice1">
+                                    Consell
+                                </button>                                        
+                                <div id="slc-toDo30-advice1" class="iocAdvice hidden">
+                                    <p>En començar a definir un esquelet és impossible tenir-ho tot molt clar des del principi. Heu d'aprendre a jugar amb la incertesa. No passa res si no podem detallar-ho tot, començarem amb una esquema que anirem concretant a mida que sigui possible. A vegades no podrem concretar exactament quins paràmetres arribaran a una funció o quin tipus de dada retornarà, però això no ha d'impedir començar a fer la declaració de les funcions afegint comentaris d'allò que quedi sense concretar. De forma metafòrica podem dir que la implementació d'aplicacions és semblant a la construcció d'un trencaclosques on les peces són les funcions i les dades. Si aconseguim encaixar-les, l'aplicació funcionarà correctament. Si les peces (dades i funcions) no encaixen, la funció no farà el que hauria de fer.</p>
+                                    <p>Durant la construcció de trencaclosques, cal anar encaixant les peces parcialment, deixant forats per omplir, que acabarem encaixant quan trobem la peça adequada. Aquí cal fer el mateix comencem a declarar classes i funcions malgrat ens faltin peces per encaixar que ja implementarem en un futur quan ho tinguem més clar. La implementació de codi, a més, presenta l'avantatge que en realitat les peces les creem nosaltres a mida que codifiquem l'aplicació. Per tant, podem modificar-les en qualsevol moment per tal de fer-les encaixar a la perfecció.</p>
+                                </div>  
+								<button type="button" class="btn btn-primary btn-lg btn-toggle toggle-off" 
                                         data-toggle="button"
                                         data-parent-selector="#leftColumnPanel"
                                         data-display-on-set-slide="slc-toDo30" 
                                         data-selector-clue="#slc-toDo30-clue1">
-                                    Consell
-                                </button>                                        
+                                    Pista                                </button>                                        
                                 <div id="slc-toDo30-clue1" class="iocClue hidden">
-                                    <h2>Consell</h2>
-                                    <p>En començar a definir un esquelet és impossible tenir-ho tot molt clar des del principi. Heu d'aprendre a jugar amb la incertesa. No passa res si no podem detallar-ho tot, començarem amb una esquema que anirem concretant a mida que sigui possible. A vegades no podrem concretar exactament quins paràmetres arribaran a una funció o quin tipus de dada retornarà, però això no ha d'impedir començar a fer la declaració de les funcions afegint comentaris d'allò que quedi sense concretar. De forma metafòrica podem dir que la implementació d'aplicacions és semblant a la construcció d'un trencaclosques on les peces són les funcions i les dades. Si aconseguim encaixar-les, l'aplicació funcionarà correctament. Si les peces (dades i funcions) no encaixen, la funció no farà el que hauria de fer.</p>
-                                    <p>Durant la construcció de trencaclosques, cal anar encaixant les peces parcialment, deixant forats per omplir, que acabarem encaixant quan trobem la peça adequada. Aquí cal fer el mateix comencem a declarar classes i funcions malgrat ens faltin peces per encaixar que ja implementarem en un futur quan ho tinguem més clar. La implementació de codi, a més, presenta l'avantatge que en realitat les peces les creem nosaltres a mida que codifiquem l'aplicació. Per tant, podem modificar-les en qualsevol moment per tal de fer-les encaixar a la perfecció.</p>
+                                    <h2>Pista</h2>
+                                    <p>De forma idèntica a l'exemple de l'Aplicació de comunicació per a mòbils, tindrem un esquelet de la nostra aplicació com una classe on hi declararem les tasques i accions necessàries en forma de funcions.</p>
+									<p>A continuació teniu un exemple de com començar aquesta codificació</p>
+									<pre><code class="java">
+
+/*<strong style="background-color: yellow;">Fitxer AplicacioComunicacio.java </strong>*/
+
+public class AplicacioCursaPopular {
+
+    void inici(){
+        // inicialitza l'estructura de dades
+        // mostra el menú i crida al controlPrincipal
+    }
+
+    char menuInicial(){
+        char opcio = 0;
+        // Mostra el menú principal i espera la selecció de l'usuari en format de char. 
+        // Aquest valor serà el que es retornarà.
+        return opcio;
+    }
+    
+    boolean controlOpcioPrincipal(char opcio , EstructuraDades dades){
+        boolean ret=false;
+        // Seleccionar la tasca a partir del valor d'opcio i fer la crida a la funció
+        // En cas que la opció correspongui amb la demanda d'abandonar l'aplicació, 
+        // es demanarà la confirmació de l'usuari. 
+        // Es retornarà cert si la opció es corresponia amb la demanda d'abandonar l'aplicació i l'usuari ha confirmat
+        // la sortida. En cas contrari es retornarà sempre fals.
+        return ret;
+    }
+    
+    /*Declaració de la resta de tasques i accions*/
+}
+                 
+
+                                     </code></pre>
+									</p>
                                 </div>  
                             </div>
                         </div>

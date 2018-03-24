@@ -113,7 +113,7 @@
         "dataInici": {"type":"text", "value":"24/03/2018"},
         "dataFinal": {"type":"text", "value":"04/04/2018"},       
         "dataLimit": {"type":"text", "value":"09/04/2018"},
-        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període V</a>"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període VI</a>"},
         "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=556828"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P6</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=556829"}
@@ -123,7 +123,7 @@
         "dataInici": {"type":"text", "value":"05/04/2018"},
         "dataFinal": {"type":"text", "value":"10/04/2018"},       
         "dataLimit": {"type":"text", "value":"14/04/2018"},
-        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum del període VI</a>"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum del període VII</a>"},
         "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=556831"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P7</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=556832"}
@@ -133,7 +133,7 @@
         "dataInici": {"type":"text", "value":"11/04/2018"},
         "dataFinal": {"type":"text", "value":"20/04/2018"},       
         "dataLimit": {"type":"text", "value":"20/04/2018"},
-        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període VII</a>"},
+        "forumDeDiscussio":{"type":"html", "value":"<a target='_blank' class='forumDeDiscussioUrl' href=\"#\">fòrum de discussió del període VIII</a>"},
         "forumDeDiscussioUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/forum/view.php?id=562588"},
         "bustiaLliurament":{"type":"html", "value":"<a class=\"bustiaLliuramentUrl\">bústia de lliurament P8</a>"},
         "bustiaLliuramentUrl":{"type":"attr", "name":"href", "value":"https://ioc.xtec.cat/campus/mod/assign/view.php?id=562589"}
