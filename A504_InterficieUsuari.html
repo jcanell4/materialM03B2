@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Activitat d'aprenetatge per introduir el concepte de funció i la operativa bàsica per a declarar-les i fer-les servir durant la codificació.">
     <meta name="author" content="Josep Cañellas i Alicia Vila ">
-    <title>A504. Implementació I</title>
+    <title>A504. Interfície d'usuari</title>
     <!-- Bootstrap Core CSS --> 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
@@ -108,20 +108,20 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Inici activitat A504 - Implementació I</h2>
-                             </div>
+                                 <h2 >Inici activitat A504 - Interfície d'usuari</h2>
+                            </div>
                         </div>
                     </div>
                     <!-- body -->            
                     <div class="row">
                         <div class="col-lg-12">
                              <div class=bodySlide>
-                                <p>Una part molt important de la implementació de la majoria d'aplicacions correspon a la implementació de la interfície de l'usuari. perquè malgrat que hi ha aplicacions que no han de comunicar-se amb éssers humans, aquestes són un minoria.</p>
+                                <p>Una part molt important de la implementació de la majoria d'aplicacions correspon a la implementació de la interfície de l'usuari, perquè malgrat que hi ha aplicacions que no han de comunicar-se amb éssers humans, aquestes són un minoria.</p>
                                 <p>Una bona interfície d'usuari facilita l'èxit de l'aplicació i pot arribar a minimitzar en gran mesura la corba d'aprenentatge que els usuaris necessitaran quan usin per primer cop l'aplicació. Això és així perquè aquestes interfícies gestionen el diàleg entre l'aplicació i l'usuari. És a dir, la demanda de dades o la mostra d'informació intel·ligible per els éssers humans.</p>
-                                <p>Malauradament, la interfície d'usuari depèn molt del sistema operatiu i el dispositiu (físic o lògic) utilitzat. Per exemple no és el mateix usar el ratolí, que el teclat, com a dispositiu d'entrada, ni fer servir la consola o el sistema gràfic, ni haver de programar una aplicació per Windows, per Linux o per un Android; ni per descomptat la interfície generada per aplicacions WEB s'assembla gaire a la interfície generada per aplicacions locals. Cada sistema presenta unes característiques pròpies que cal tenir en compte a l'hora de fer el disseny i la implementació.</p>
+                                <p>Malauradament, la interfície d'usuari depèn molt del sistema operatiu i el dispositiu (físic o lògic) utilitzat. Per exemple no és el mateix usar el ratolí, que el teclat, com a dispositiu d'entrada, ni fer servir la consola o el sistema gràfic, ni haver de programar una aplicació per Windows, per Linux o per un Android; ni per descomptat, la interfície generada per aplicacions WEB s'assembla gaire a la interfície generada per aplicacions locals. Cada sistema presenta unes característiques pròpies que cal tenir en compte a l'hora de fer el disseny i la implementació.</p>
                                 <p>Generalment cada sistema disposa de biblioteques específiques que ajuden a crear interfícies d'usuari de qualitat. Ara bé, per la seva infrautilització i la seva senzillesa, les biblioteques especifiques de les aplicacions de tipus consola, són més aviat escasses i força limitades.</p>
                                 <p>Abans de començar la implementació concreta de l'aplicació indicada al projecte, us proposem codifiqueu un petita biblioteca que us ajudi a generar i dissenyar interfícies d'usuari per aplicacions de consola. Així aconseguireu estandarditzar les entrades i sortides d'usuari creant aplicacions de major qualitat amb un esforç mínim. A la secció <em>Implementació</em>, trobareu alguns consells per dissenyar i implementar aquesta biblioteca.</p>
-                     </div>
+                             </div>
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class= "headSlide">
-                                     <h2 ><span class="tascaTitle">Tasca</span> Debat</h2>
+                                     <h2 ><span class="tascaTitle">Tasca</span> Interfície d'usuari</h2>
                                      <h3>Estandardització d'interfícies i ús de biblioteques reusables</h3>
                                  </div>
                             </div>
@@ -194,6 +194,111 @@
                     </div>                
                 </section>
                 <!--=========== END SUBSECTION Fòrum 3 ================-->            
+                
+                 <!--=========== BEGIN SUBSECTION Fòrum 4 ================-->    
+                <section id="slc-discussion25" class="tasca section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class= "headSlide">
+                                     <h2 ><span class="tascaTitle">Tasca</span> Interfície d'usuari</h2>
+                                     <h3>Estandardització d'interfícies i ús de biblioteques reusables</h3>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=bodySlide>
+                                    <p>Aquesta tasca us servirà per meditar sobre possibles funcions/accions d'interfícies d'usuari que acostumin a repetir-se a la majoria d'aplicacions. Sovint, tot i que probablement el context sigui diferent, la majoria d'aplicacions acostumen a demanar i mostrar dades, informació, instruccions, etc. Segur que les dades i la informació varia d'una aplicació a una altra, però les accions que l'usuari ha de fer o el tipus d'informació a presentar segur que s'assemblen i per tant a l'hora de codificar-ho ha de ser possible aprofitar molt codi si parametritzem adequadament les funcions. És a dir,  si fem que la informació variable arribi per paràmetres però el tractament comú romangui dins d'una funció.</p>
+                                    <p>Un exemple podria ser la creació de menús. Moltes són les aplicacions en les que cal escollir entre múltiples opcions d'execució a fi de realitzar alguna acció o funcionalitat prevista. La forma d'evitar errors tipogràfics a l'hora de demanar quina opció cal executar, sol ser presentar una llista predefinida d'accions associades a un valor numèric o a un caràcter de manera que l'usuari hagi de prémer únicament una o dues tecles per escollir una de les opcions.</p>
+                                    <p>Quan comencem a programar la tendència és a codificar tants menús com necessitem a la part de codi que toca. Però si reflexionem una mica, podríem crear una funció que ens permeti crear diferents tipus de menú i seleccionar una opció.</p>
+                                    <p>Imaginem una funció que rebi com a paràmetres un títol i una llista d’opcions.</p>
+                                    <pre><code class="java">
+                                            char mostrarMenu(String titol, String[] opcions){
+                                                char opcioEscollida;
+                                                System.out.println(titol);
+                                                for (int i = 0; i &lt; opcions.length; i++) {
+                                                    System.out.println(opcions[i]);
+                                                }
+                                                opcioEscollida = demanarCaracter("Esculliu una de les opcions de la llista: ")
+                                                return opcioEscollida;
+                                            }
+                                        </code>
+                                    </pre>
+                                    <p>Com veieu, es tracta d'una funció genèrica capaç de tractar qualsevol llista d'opcions en qualsevol context, perquè no és fins el moment de la crida que haurem de resoldre el context. La funció genèrica formaria part d'una biblioteca, de manera que la implementació de l'aplicació resoldria només el títol i les opcions a passar co es mostra als exemples següents:</p>
+                                    <pre><code class="java">
+                                            //crear un menú amb 3 opcions
+                                            char seleccio;
+                                            String [] opcions = {"1.- opcio 1","2.- Opcio 2","3.- Sortir"};
+                                            seleccio = mostrarMenu("Menú d'exemple", opcions);
+                                            
+                                            //Escollir delegat de classe entre els 4 aspirants
+                                            String [] menuDelegats = {"1.- Martina","2.- Eric","3.- Paula","4.- Laura"};
+                                            seleccio = mostrarMenu("Vota al teu candidat",menuDelegats);
+                                        </code>
+                                    </pre>
+                                    <p>En general, quan demanem dades, mostrem un missatge informatiu o una ajuda del que volem demanar i esperem la resposta. En canvi, quan mostrem informació volem que l'usuari pugui reconèixer d'un cop d'ull, de quin tipus d'informació es tracta (presentacions de resultats, títols, errors, alertes, missatges informatius, ajudes, etc.) i quina transcendència tenen les dades presentades. El millor és associar un tipus de presentació específica per a cada tipus de missatge. Per tant podríem crear una funció parametritzable per cada tipus d'informació que ens permeti reutilitzar-les en qualsevol aplicació.</p>
+                                    <p>Pesem en alguns casos:</p>
+                                    <ul>
+                                        <li>Un missatge d’alerta que ens demani confirmació  sobre una acció futura de gran importància com per exemple si esborrar o no un element, si guardar o un fitxer, etc.</li>
+                                        <li>Un missatge d’error aclarint alguna cosa que hem fet malament a la nostra aplicació.</li>
+                                        <li>Un missatge d’ajuda molt llarg.</li>
+                                        <li>Un llista de dades de longitud variable.</li>
+                                        <li>Una acció de conformació activa per part de l'usuari per assegurar la lectura de la informació, per exemple prenem [ENTRAR] quan hagi acabat de llegir.</li>
+                                    </ul>
+                                    <p>Malauradament, l'estudi del sistema que usa JAVA per formatar la sortida de consola amb colors o altres atributs de text, s'escapa d'aquest mòdul, però podeu fer sevir la imaginació per mostrar una text de diferents formes usant la sortida estàndard de consola que ja coneixem.</p>
+                                    <div class="frameBox">
+                                        <p>Us demanem que reflexioneu al <span class="forumDeDiscussio">fòrum de discussió</span> sobre quines accions creieu que s’acostumen a fer a les aplicacions, quines són les interaccions amb l’usuari i quin tractament hauria de ser comú i com caldria parametritzar la funció per tal que fos genèrica.</p>
+                                        <p>També us demanem que penseu en una funció que permeti visualitzar (formatar) un tipus específic d'informació i en envieu la codificació al fòrum. Intenteu no repetir les funcions que ja hagin estat enviades.</p>
+                                    </div>
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-discussion25" 
+                                            data-selector-clue="#slc-discussion25-clue1">
+                                        Pista 1
+                                    </button>                                        
+                                    <div id="slc-discussion25-clue1" class="iocClue hidden">
+                                        <h3>Pista 1</h3>
+                                        <p>Penseu en les següents situacions</p>
+                                        <ul>
+                                            <li>Què cal fer per visualitzar el final d'una tasca i l'inici d'una altra?</li>
+                                            <li>Que cal fer per assegurar-nos que l'usuari ha pogut llegir un text o una llista de grans dimensions? </li>
+                                            <li>Què fem per assegurar que l'usuari ha demanat de fer una acció en la qual es poden perdre dades? </li>
+                                        </ul>
+                                    </div>  
+                                    <!-- Button trigger pannel -->
+                                    <button type="button" class="btn btn-primary btn-lg toggle-off  btn-3d" 
+                                            data-toggle="button"
+                                            data-parent-selector="#leftColumnPanel"
+                                            data-display-on-set-slide="slc-discussion25" 
+                                            data-selector-clue="#slc-discussion25-clue2">
+                                        Pista 2
+                                    </button>                                        
+                                    <div id="slc-discussion25-clue2" class="iocClue hidden">
+                                        <h3>Pista 2</h3>
+                                        <p>Penseu en els diferents tipus d'informació que es pot mostrar en una aplicació, co per exemple:</p>
+                                        <ul>
+                                            <li>Presentació</li>
+                                            <li>Títol</li>
+                                            <li>Resultat</li>
+                                            <li>Error</li>
+                                            <li>Alerta</li>
+                                            <li>Missatge informatiu.</li>
+                                            <li>Ajuda</li>
+                                            <li>...</li>
+                                        </ul>
+                                    </div>  
+                                </div>          
+                            </div>
+                        </div>
+                    </div>                
+                </section>
+                <!--=========== END SUBSECTION Fòrum 4 ================-->            
+                
+                
+                
                 <!--=========== BEGIN SECTION toDo20 ================-->    
                 <section id="slc-biblioteques" class="tasca section">
                 </section>
@@ -206,7 +311,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Lliurament -Implementació I</h2>
+                                 <h2 >Lliurament - Interfície d'usuari</h2>
                              </div>
                         </div>
                     </div>
@@ -229,15 +334,15 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class= "headSlide">
-                                 <h2 >Com continuar - Implementació I</h2>
+                                 <h2 >Com continuar - Interfície d'usuari</h2>
                              </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class=bodySlide>
-            <div class="marquee centerSlide iocwarning"> <img src="images/enConstruccio.png" width="35" height="35" alt="en cosntrucció"> Text provisional. Estem treballant per millorar</div>                               
-                                <p>Passeu a la següent <a class="toNextActivity">activitat</a></p>
+                                <p>En aquesta activitat heu implementat una biblioteca per facilitat la implementació d'interfícies d'usuari de tipus consola que podreu usar a la implementació de l'aplicació del projecte.</p>
+                                <p>Recordeu que heu de omplir i lliurar l'informe de l'activitat. feu si encara no l'heu lliurat. Si ja ho heu fet, passeu a la següent <a class="toNextActivity">activitat</a></p>
                                 <p>Si us cal, també podeu saltar <a class="toActivityTable targetBlank">a la taula d'activitats</a> per accedir a qualsevol altra activitat.</p>
                             </div>
                         </div>
